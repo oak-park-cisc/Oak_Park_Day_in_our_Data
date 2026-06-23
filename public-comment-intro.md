@@ -4,7 +4,7 @@ One of our core goals is to increase the amount of village data that’s availab
 
 To raise awareness of Village data sources and promote their usage, CISC is sponsoring a “Day in Our Data” event. This is a one day ‘hackathon’ where citizens come together to explore our data and use it to create new tools, websites and apps.
 
-We are coming to you, a fellow commission, to see if you have any seed ideas for the Day In Our Data event. What data sources do you know of that could help your commission if structured or presented in a different way? What problems do you have that are caused by a lack of data? Or plagued by poor data? (Maybe make something up here specific to the commission as an example, mapping never hurts)
+We are coming to you, a fellow commission, to see if you have any seed ideas for the Day In Our Data event. What data sources do you know of that could help your commission if structured or presented in a different way? What problems do you have that are caused by a lack of data? Or plagued by poor data? (Create some examples specific to the commission as an example if possible)
 
 The more ideas we have that are based on real needs, the more successful this event will be.
 
