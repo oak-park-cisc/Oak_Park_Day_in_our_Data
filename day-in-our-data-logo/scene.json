@@ -1,0 +1,430 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 1800,
+    "height": 760,
+    "background": "transparent"
+  },
+  "layers": [
+    {
+      "id": "sun",
+      "name": "Sun",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "ellipse",
+      "rect": {
+        "x": 179.59866333007812,
+        "y": 202.9625244140625,
+        "w": 338,
+        "h": 338
+      },
+      "fill": "#ffc629ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "sun-ray-top",
+      "name": "Sun ray top",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 285.4369812011719,
+        "y": 150.73817443847656,
+        "w": 24,
+        "h": 74,
+        "rotation": -15.7
+      },
+      "fill": "#ffc629ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "sun-ray-upper-left",
+      "name": "Sun ray upper left",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 175.5740203857422,
+        "y": 221.93482971191406,
+        "w": 24,
+        "h": 74,
+        "rotation": -52
+      },
+      "fill": "#ffc629ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "sun-ray-left",
+      "name": "Sun ray left",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 144.2925567626953,
+        "y": 337.4511413574219,
+        "w": 24,
+        "h": 70,
+        "rotation": 269.9
+      },
+      "fill": "#ffc629ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "sun-ray-upper-right",
+      "name": "Sun ray upper right",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 418.5943298339844,
+        "y": 157.17764282226562,
+        "w": 24,
+        "h": 74,
+        "rotation": 24.9
+      },
+      "fill": "#ffc629ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "sun-ray-right",
+      "name": "Sun ray right",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 510.0111083984375,
+        "y": 252.7369384765625,
+        "w": 24,
+        "h": 70,
+        "rotation": 63.7
+      },
+      "fill": "#ffc629ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "bar-low",
+      "name": "Data bar low",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 140,
+        "y": 490,
+        "w": 120,
+        "h": 190
+      },
+      "fill": "#1559d6ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "bar-mid",
+      "name": "Data bar middle",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 300,
+        "y": 405,
+        "w": 120,
+        "h": 275
+      },
+      "fill": "#1559d6ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "bar-high",
+      "name": "Data bar high",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 460,
+        "y": 305,
+        "w": 120,
+        "h": 375
+      },
+      "fill": "#1559d6ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "line-halo-1",
+      "name": "Line chart halo 1",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 196.895,
+        "y": 539.5,
+        "w": 166.21,
+        "h": 26,
+        "rotation": 15.71
+      },
+      "fill": "#ffffffff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "line-halo-2",
+      "name": "Line chart halo 2",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 317.68,
+        "y": 469.5,
+        "w": 244.64,
+        "h": 26,
+        "rotation": -49.15
+      },
+      "fill": "#ffffffff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "line-red-1",
+      "name": "Red line chart 1",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 196.895,
+        "y": 545.5,
+        "w": 166.21,
+        "h": 14,
+        "rotation": 15.71
+      },
+      "fill": "#e53935ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "line-red-2",
+      "name": "Red line chart 2",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "rect",
+      "rect": {
+        "x": 317.68,
+        "y": 475.5,
+        "w": 244.64,
+        "h": 14,
+        "rotation": -49.15
+      },
+      "fill": "#e53935ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "point-halo-1",
+      "name": "Line point halo 1",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "ellipse",
+      "rect": {
+        "x": 178,
+        "y": 508,
+        "w": 44,
+        "h": 44
+      },
+      "fill": "#ffffffff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "point-halo-2",
+      "name": "Line point halo 2",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "ellipse",
+      "rect": {
+        "x": 338,
+        "y": 553,
+        "w": 44,
+        "h": 44
+      },
+      "fill": "#ffffffff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "point-halo-3",
+      "name": "Line point halo 3",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "ellipse",
+      "rect": {
+        "x": 498,
+        "y": 368,
+        "w": 44,
+        "h": 44
+      },
+      "fill": "#ffffffff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "point-red-1",
+      "name": "Red line point 1",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "ellipse",
+      "rect": {
+        "x": 186,
+        "y": 516,
+        "w": 28,
+        "h": 28
+      },
+      "fill": "#e53935ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "point-red-2",
+      "name": "Red line point 2",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "ellipse",
+      "rect": {
+        "x": 346,
+        "y": 561,
+        "w": 28,
+        "h": 28
+      },
+      "fill": "#e53935ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "point-red-3",
+      "name": "Red line point 3",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "shape",
+      "shape": "ellipse",
+      "rect": {
+        "x": 506,
+        "y": 376,
+        "w": 28,
+        "h": 28
+      },
+      "fill": "#e53935ff",
+      "stroke": null,
+      "stroke_width": 0
+    },
+    {
+      "id": "wordmark-day-in",
+      "name": "DAY IN",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "text",
+      "text": {
+        "content": "DAY IN",
+        "x": 630.3873291015625,
+        "y": 324.33619689941406,
+        "font": "Avenir Next",
+        "size": 229.15517461262777,
+        "weight": "800",
+        "style": "normal",
+        "align": "left",
+        "fill": "#102a56ff",
+        "stroke": null,
+        "stroke_width": 0,
+        "line_height": 1.15,
+        "letter_spacing": 3,
+        "rotation": 0
+      }
+    },
+    {
+      "id": "wordmark-our-data",
+      "name": "OUR DATA",
+      "opacity": 1,
+      "blend": "normal",
+      "visible": true,
+      "adjustEnabled": true,
+      "type": "text",
+      "text": {
+        "content": "OUR DATA",
+        "x": 634.6712036132812,
+        "y": 533.2575073242188,
+        "font": "Avenir Next",
+        "size": 214.19505940413703,
+        "weight": "800",
+        "style": "normal",
+        "align": "left",
+        "fill": "#1559d6ff",
+        "stroke": null,
+        "stroke_width": 0,
+        "line_height": 1.15,
+        "letter_spacing": -2,
+        "rotation": 0
+      }
+    }
+  ]
+}
