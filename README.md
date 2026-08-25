@@ -8,4 +8,4 @@ Planning documents for the Oak Park CISC "Day in our Data" civic hackathon.
 - [civic-hackathon.md](civic-hackathon.md) — event concept and project starter ideas
 - [project-ideas.md](project-ideas.md) — detailed attendee project prompts with data-readiness guidance
 - [commissions-diod.csv](commissions-diod.csv) — Oak Park citizen commissions: descriptions, meeting locations, schedules, and links
-- [data/](data/) — repository-friendly open-data catalog, category index, and participant quick reference
+- [data/open-data-catalog.md](data/open-data-catalog.md) — merged, categorized catalog of Village, county, regional, and federal data sources
