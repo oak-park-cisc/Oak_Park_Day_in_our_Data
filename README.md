@@ -27,17 +27,17 @@ Fourteen organizer-seeded briefs are ready to go, each with a clear question, da
 
 1. [Is my assessment fair?](starter-projects/01-is-my-assessment-fair.md) Compare assessed value per square foot across every Oak Park home.
 2. [Where does my tax dollar go?](starter-projects/02-where-does-my-tax-dollar-go.md) Twenty years of levies from six taxing agencies, adjusted for inflation.
-3. [Can a kid bike to school safely?](starter-projects/03-can-a-kid-bike-to-school-safely.md) Map the bike network against school routes and crash records.
-4. [Oak Park over time](starter-projects/04-oak-park-over-time.md) Census data on how the village is changing, compared with county and state.
-5. [What do our commissions do?](starter-projects/05-what-do-our-commissions-do.md) Build the "find your commission" tool that does not exist yet.
-6. [How are our schools doing?](starter-projects/06-how-are-our-schools-doing.md) Illinois Report Card: D97 and D200 versus peers, over time.
-7. [Oak Park crime data explorer](starter-projects/07-oak-park-crime-explorer.md) What incident data shows about what happens where and when.
-8. [How resilient is our urban forest?](starter-projects/08-how-resilient-is-our-urban-forest.md) 18,800 public trees against the 10-20-30 diversity rule.
-9. [Are the worst alleys getting fixed?](starter-projects/09-are-the-worst-alleys-getting-fixed.md) Alley condition ratings versus the reconstruction plan.
-10. [Which bus stops need help?](starter-projects/10-which-bus-stops-need-help.md) Shelter, ridership, and who lives nearby, for every stop.
+3. [Where is business activity changing?](starter-projects/03-where-is-business-activity-changing.md) Openings and closings by corridor from 2,519 business licenses.
+4. [Can a kid bike to school safely?](starter-projects/04-can-a-kid-bike-to-school-safely.md) Map the bike network against school routes and crash records.
+5. [Can I park here right now?](starter-projects/05-can-i-park-here-right-now.md) An address-plus-time answer from the Village's curb restriction data.
+6. [Which bus stops need help?](starter-projects/06-which-bus-stops-need-help.md) Shelter, ridership, and who lives nearby, for every stop.
+7. [Are the worst alleys getting fixed?](starter-projects/07-are-the-worst-alleys-getting-fixed.md) Alley condition ratings versus the reconstruction plan.
+8. [Oak Park over time](starter-projects/08-oak-park-over-time.md) Census data on how the village is changing, compared with county and state.
+9. [How are our schools doing?](starter-projects/09-how-are-our-schools-doing.md) Illinois Report Card: D97 and D200 versus peers, over time.
+10. [How resilient is our urban forest?](starter-projects/10-how-resilient-is-our-urban-forest.md) 18,800 public trees against the 10-20-30 diversity rule.
 11. [Build an architecture walking tour](starter-projects/11-build-an-architecture-walking-tour.md) 4,958 surveyed historic buildings by architect, style, or street.
-12. [Can I park here right now?](starter-projects/12-can-i-park-here-right-now.md) An address-plus-time answer from the Village's curb restriction data.
-13. [Where is business activity changing?](starter-projects/13-where-is-business-activity-changing.md) Openings and closings by corridor from 2,519 business licenses.
+12. [What do our commissions do?](starter-projects/12-what-do-our-commissions-do.md) Build the "find your commission" tool that does not exist yet.
+13. [Oak Park crime data explorer](starter-projects/13-oak-park-crime-explorer.md) What incident data shows about what happens where and when.
 14. [What does ECHO see?](starter-projects/14-what-does-echo-see.md) What the Village's non-police response team handles, in aggregate.
 
 ## Data

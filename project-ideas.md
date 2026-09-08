@@ -28,7 +28,7 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 1. Alley Repair Reality Check
 
-**Now a starter table:** see [brief 09](starter-projects/09-are-the-worst-alleys-getting-fixed.md), with the data cached in `data/`.
+**Now a starter table:** see [brief 07](starter-projects/07-are-the-worst-alleys-getting-fixed.md), with the data cached in `data/`.
 
 **Civic question:** Are the alleys in the worst condition being prioritized for reconstruction?
 
@@ -60,7 +60,7 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 2. Accessible Transit and Bus Stop Gaps
 
-**Now a starter table:** see [brief 10](starter-projects/10-which-bus-stops-need-help.md), with the data cached in `data/`.
+**Now a starter table:** see [brief 06](starter-projects/06-which-bus-stops-need-help.md), with the data cached in `data/`.
 
 **Civic question:** Which Oak Park bus stops should be prioritized for accessibility or shelter improvements?
 
@@ -92,7 +92,7 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 3. Can I Park Here Right Now?
 
-**Now a starter table:** see [brief 12](starter-projects/12-can-i-park-here-right-now.md), with the data cached in `data/`.
+**Now a starter table:** see [brief 05](starter-projects/05-can-i-park-here-right-now.md), with the data cached in `data/`.
 
 **Civic question:** Can Oak Park parking rules be made easier to understand at a specific place and time?
 
@@ -126,7 +126,7 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 4. Oak Park Urban Forest Resilience
 
-**Now a starter table:** see [brief 08](starter-projects/08-how-resilient-is-our-urban-forest.md), with the data cached in `data/`.
+**Now a starter table:** see [brief 10](starter-projects/10-how-resilient-is-our-urban-forest.md), with the data cached in `data/`.
 
 **Civic question:** Where is Oak Park's public tree population diverse and resilient, and where is it overly dependent on a small number of species?
 
@@ -315,7 +315,7 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 11. Commission and Data Matchmaker
 
-**Now a starter table:** see [What do our commissions do?](starter-projects/05-what-do-our-commissions-do.md) (brief 05).
+**Now a starter table:** see [What do our commissions do?](starter-projects/12-what-do-our-commissions-do.md).
 
 **Civic question:** Which Village commission should a resident approach about an issue, and what public data could help frame the discussion?
 
@@ -340,7 +340,7 @@ The following ideas use public dashboards or sensitive subject areas. They shoul
 
 ### 12. Vision Zero Coverage Gap Finder
 
-**Now a starter table:** the school-route version is [Can a kid bike to school safely?](starter-projects/03-can-a-kid-bike-to-school-safely.md) (brief 03). The crash data is prepared: `data/crashes-village-oak-park.csv` (the Traffic Crash Dashboard export this idea asked for, Jan 2024 on), `data/crashes-oak-park.csv` (IDOT, 2019 to 2025), and `data/crashes-bike-ped-oak-park.csv`.
+**Now a starter table:** the school-route version is [Can a kid bike to school safely?](starter-projects/04-can-a-kid-bike-to-school-safely.md). The crash data is prepared: `data/crashes-village-oak-park.csv` (the Traffic Crash Dashboard export this idea asked for, Jan 2024 on), `data/crashes-oak-park.csv` (IDOT, 2019 to 2025), and `data/crashes-bike-ped-oak-park.csv`.
 
 **Civic question:** Are recent serious-crash locations being addressed by planned or completed safety improvements?
 
@@ -381,7 +381,7 @@ The following ideas use public dashboards or sensitive subject areas. They shoul
 
 ### 14. Oak Park Business Pulse
 
-**Now a starter table:** see [brief 13](starter-projects/13-where-is-business-activity-changing.md), with the data cached in `data/`. The dashboard export this idea asked for is cached.
+**Now a starter table:** see [brief 03](starter-projects/03-where-is-business-activity-changing.md), with the data cached in `data/`. The dashboard export this idea asked for is cached.
 
 **Civic question:** Where is business activity growing, changing, or declining across Oak Park's commercial areas?
 
