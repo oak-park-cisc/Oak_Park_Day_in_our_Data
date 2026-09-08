@@ -6,7 +6,7 @@ Links checked September 2026. Sources change, so verify endpoints before buildin
 
 ## At a glance
 
-- **74 distinct resources** across **17 categories**
+- **75 distinct resources** across **17 categories**
 - Village portal maps, feature services, and downloads are consolidated into one row when they represent the same underlying resource
 - Oak Park filters for county, state, and federal sources are collected once in [Filtering to Oak Park](#filtering-to-oak-park) rather than repeated row by row
 - Hosts that block scripted clients but open normally in a browser (oak-park.us, bls.gov, ssa.gov, Hub `apps/` pages) are noted in the row
@@ -24,7 +24,7 @@ Links checked September 2026. Sources change, so verify endpoints before buildin
 | Maps & Imagery | 2 |
 | Portals | 3 |
 | Property & Assessment | 11 |
-| Public Safety | 4 |
+| Public Safety | 5 |
 | Schools & Education | 4 |
 | Taxes & Levies | 2 |
 | Transportation & Parking | 7 |
@@ -161,6 +161,7 @@ Police incident data, police zones, and state crash records for Oak Park.
 | --- | --- | --- | --- |
 | **Oak Park PD Crime Incidents (Power BI dashboard)** | Village of Oak Park | Incident-level police data from January 2022 to present: date and time, NIBRS offense code and group, UCR code, block address, post and zone, lat/lon; updated about 15 days after month end. The dashboard has no export button; a cached extract is in this folder (`crime-incidents-oak-park.csv`) and the query-replay recipe is under Working with the data. | [Dashboard](https://app.powerbigov.us/view?r=eyJrIjoiMTg0ZGI4YTYtZTgxNC00MzVmLThlNDYtMTE4MTQwNDlkYzdlIiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9&pageName=2180cdf0aa49c0286272) · [Village Crime Maps page](https://www.oak-park.us/Public-Safety/Police-Department/Reports-Maps/Crime-Maps) |
 | **Police neighborhood zones (VOP layer 171)** | Village of Oak Park | Eight police zone polygons (`Police_NeighborhoodZone_POLY`) that join to the `Post` and `Zone` fields in the crime dashboard. | [Live map](https://www.arcgis.com/apps/mapviewer/index.html?url=https://utility.arcgis.com/usrsvcs/servers/4cff1aaefa364b57b8c70d5c606f2088/rest/services/VOP/AGOL_VOP_Project/MapServer/171) · [GeoJSON query](https://utility.arcgis.com/usrsvcs/servers/4cff1aaefa364b57b8c70d5c606f2088/rest/services/VOP/AGOL_VOP_Project/MapServer/171/query?where=1%3D1&outFields=*&f=geojson) |
+| **Oak Park PD Traffic Crash Dashboard (Power BI)** | Village of Oak Park, Police Department | Every public-roadway crash reported to Oak Park Police since January 2024, one row per report (about 1,700 a year), with date and time, street or intersection, lat/lon, severity and KABCO injury counts, crash type including pedestrian and bicyclist, contributing causes, hit and run, damage band, weather, lighting, road surface, and traffic control. Includes minor crashes below IDOT's reporting threshold but not state-police crashes on I-290. Posted about 7 days after the crash. Cached as `crashes-village-oak-park.csv`; see the data README. | [Village page](https://opendata.oak-park.us/TrafficCrash/) · [Power BI report](https://app.powerbigov.us/view?r=eyJrIjoiMGVkYjlkYzktMDU4ZS00MDFiLThjYjgtZmFjN2JlZjIzYzAyIiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9) (no export button; `data/scripts/fetch_crashes_village.py` replays the report's public query API) |
 | **IDOT Crashes by year (2014-2025)** | Illinois Department of Transportation | Statewide crash points, one feature service per year, with about 85 fields (date, hour, severity, injuries, collision type, cause, lighting, weather, lat/lon). Oak Park sees roughly 1,100-1,550 crashes per year 2019-2025. Oak Park and the per-year service names: see Filtering (IDOT). | [2023 Oak Park GeoJSON](https://services2.arcgis.com/aIrBD8yn1TDTEXoz/arcgis/rest/services/CRASHES_2023/FeatureServer/0/query?where=CityName%3D%27OAK%20PARK%27&outFields=*&outSR=4326&f=geojson) · [IDOT open data portal](https://gis-idot.opendata.arcgis.com/) |
 | **IDOT Bicycle and Pedestrian Crashes** | Illinois Department of Transportation | Multi-year bike and pedestrian crash points with `StatisticalYearofCrash`, `CrashReportCity`, severity, and intersection streets; 243 Oak Park records. Oak Park: see Filtering (IDOT). | [Live map](https://www.arcgis.com/apps/mapviewer/index.html?layers=ab2fdd4083794c05ba68469723ef4d62) · [Item page](https://www.arcgis.com/home/item.html?id=ab2fdd4083794c05ba68469723ef4d62) · [Oak Park GeoJSON](https://services2.arcgis.com/aIrBD8yn1TDTEXoz/arcgis/rest/services/BikePedCrash/FeatureServer/0/query?where=CrashReportCity%3D%27OAK%20PARK%27&outFields=*&outSR=4326&f=geojson) |
 

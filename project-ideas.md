@@ -330,7 +330,7 @@ The following ideas use public dashboards or sensitive subject areas. They shoul
 
 ### 12. Vision Zero Coverage Gap Finder
 
-**Now a starter table:** the school-route version is [Can a kid bike to school safely?](starter-projects/03-can-a-kid-bike-to-school-safely.md) (brief 03). The crash data is prepared: `data/crashes-oak-park.csv` (IDOT, 2019 to 2025) and `data/crashes-bike-ped-oak-park.csv`.
+**Now a starter table:** the school-route version is [Can a kid bike to school safely?](starter-projects/03-can-a-kid-bike-to-school-safely.md) (brief 03). The crash data is prepared: `data/crashes-village-oak-park.csv` (the Traffic Crash Dashboard export this idea asked for, Jan 2024 on), `data/crashes-oak-park.csv` (IDOT, 2019 to 2025), and `data/crashes-bike-ped-oak-park.csv`.
 
 **Civic question:** Are recent serious-crash locations being addressed by planned or completed safety improvements?
 

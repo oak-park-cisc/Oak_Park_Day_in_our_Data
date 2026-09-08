@@ -11,6 +11,7 @@ Two things live here: the [Oak Park Civic Data Catalog](open-data-catalog.md), a
 | [cpi-annual.csv](cpi-annual.csv) | 02, 04 | 26 | CPI-U annual averages 2000 to 2025 with 2025-dollar multipliers | FRED CPIAUCSL |
 | [crashes-oak-park.csv](crashes-oak-park.csv) | 03 Can a kid bike to school safely? | 9,331 | All Oak Park crashes 2019 to 2025 | IDOT annual crash layers |
 | [crashes-bike-ped-oak-park.csv](crashes-bike-ped-oak-park.csv) | 03 | 243 | Bike and pedestrian crashes 2020 to 2024 | IDOT bike/ped crash layer |
+| [crashes-village-oak-park.csv](crashes-village-oak-park.csv) | 03 | 4,640 | Every crash reported to Oak Park Police, Jan 2024 to Aug 2026 | Village traffic crash dashboard |
 | [schools-oak-park.csv](schools-oak-park.csv) | 03, 06 | 21 | Every K-12 school in Oak Park, public and private, with coordinates | ISBE directory, Village GIS, county address points |
 | [d97-attendance-zones.geojson](d97-attendance-zones.geojson) | 03 | 8 | D97 elementary attendance zone polygons | Village GIS |
 | [acs-oak-park-timeseries.csv](acs-oak-park-timeseries.csv) | 04 Oak Park over time | 1,554 | 35 ACS indicators for Oak Park, Cook County, Illinois, every 5-year vintage 2009 to 2024 | U.S. Census Bureau ACS |
@@ -29,6 +30,7 @@ python3 data/scripts/fetch_oak_park_levies.py         # stdlib only, downloads ~
 python3 data/scripts/fetch_cpi_annual.py              # stdlib only
 python3 data/scripts/fetch_crashes_oak_park.py        # stdlib only
 python3 data/scripts/fetch_crashes_bike_ped_oak_park.py
+python3 data/scripts/fetch_crashes_village.py         # stdlib only
 python3 data/scripts/fetch_schools_oak_park.py
 python3 data/scripts/fetch_d97_attendance_zones.py
 python3 data/scripts/fetch_acs_timeseries.py          # needs requests; CENSUS_API_KEY optional; about 8 minutes
@@ -85,6 +87,16 @@ Source: IDOT [Bicycle and Pedestrian Crashes](https://services2.arcgis.com/aIrBD
 Key columns: `icn`, `statistical_yearof_crash`, `type_of_first_crash` (Pedestrian or Pedalcyclist), `crash_injury_severity`, `is_injury`, `is_fatal_injury`, `crash_time_hour`, `crash_time_mins`, `crash_day_of_week`, `is_intersection`, `intersection_streets`, `is_hit_and_run`, `contrib_cause_prim`, `contrib_cause_sec`, `lighting_cond`, `weather_cond`, `is_pedestrain` (source spelling kept), `is_pedalcyclist`, `dooring_with_pedalcyclist`, `total_fatals`, `total_injured`, `latitude`, `longitude`.
 
 Caveats: no 2019 or 2025. The source has no crash date, only year, day of week, and time.
+
+### crashes-village-oak-park.csv
+
+Every public-roadway crash reported to the Oak Park Police Department, January 1, 2024 through August 31, 2026, one row per crash report with coordinates, severity, KABCO injury counts, crash type, contributing causes, road and weather conditions, and hit-and-run flag. Yearly counts: 2024 1,724; 2025 1,716; 2026 (Jan to Aug) 1,200.
+
+Source: Village of Oak Park Police Department "Traffic Crash - Public" Power BI dashboard, linked from [opendata.oak-park.us/TrafficCrash](https://opendata.oak-park.us/TrafficCrash/). The dashboard has no export button; the script replays the report's public query API and joins the crash, crash-type, cause, and geocode tables locally.
+
+Key columns: `record_id`, `report_number` (police report, e.g. "24 00002"), `crash_id` (joins to IDOT `agency_report_number` for city-investigated crashes), `idot_crash_number`, `date`, `time`, `occurred_at`, `location`, `street_number`, `street_name`, `cross_street`, `at_intersection`, `intersection_related`, `hit_and_run`, `crash_severity` (Property Damage, Injury, Fatal), `crash_injury_severity` (KABCO), `crash_mode` (Car, Pedestrian, Pedalcyclist), `crash_type`, `total_units`, `num_motor_vehicles`, `dooring_pedalcyclist`, `damage` (band), `fatalities`, `a_injuries`, `b_injuries`, `c_injuries`, `total_injured`, `cause1`, `cause2`, code and label pairs for `traffic_control`, `device_condition`, `weather`, `lighting`, `trafficway`, `road_surface`, `flow_condition`, `road_defects`, `beat_zone`, `post_district`, `latitude`/`longitude` (what the dashboard map plots), `latitude_geocoded`/`longitude_geocoded` (address geocode), `state_plane_x`/`state_plane_y`.
+
+Caveats: 2024 onward only. Includes crashes below IDOT's reporting threshold, so totals run 20 to 25 percent above the IDOT file, but it lacks the roughly 280 state-police crashes a year on I-290 that IDOT carries. About 55 percent of rows match an IDOT row by report number for 2024 and 2025; dates agree except for 25 rows. A few rare condition codes have no label. One amended report appears twice. Recent weeks are incomplete: crashes post about 7 days after they happen and the monthly export lags about 15 days. Damage band labels are inferred from the state's reporting threshold.
 
 ### schools-oak-park.csv
 
