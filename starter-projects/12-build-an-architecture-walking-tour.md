@@ -19,9 +19,9 @@
 - [Historic Building Dataset](https://www.arcgis.com/home/item.html?id=5a02234ddbed497a809810430a61853a): feature service `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/OPHR_FGDB_V3_PUBLIC/FeatureServer/0`, or the [Hub CSV](https://oak-park-open-data-portal-v2-oakparkil.hub.arcgis.com/api/download/v1/items/5a02234ddbed497a809810430a61853a/csv?layers=0)
 - [Historic Districts](https://www.arcgis.com/home/item.html?id=d3ff666dfb764e8183879667acce810e), VOP MapServer layer 13 `https://utility.arcgis.com/usrsvcs/servers/4cff1aaefa364b57b8c70d5c606f2088/rest/services/VOP/AGOL_VOP_Project/MapServer/13`
 - [Historic Survey Areas](https://www.arcgis.com/home/item.html?id=315557a64ac84d45b71e55d94fd583ac), layer 155 on the same MapServer
-- Cached in this repo: `data/historic-buildings-oak-park.csv` (one row per surveyed building with `address`, `architect`, `style_primary`, `construction_year`, `construction_decade`, `resource_rating`, designation flags, `historical_summary`, `image_url`, `form_url`, `latitude`, `longitude`, and `historic_district`; 4,958 rows)
-- Cached in this repo: `data/historic-districts-oak-park.geojson` (the three historic district polygons plus the nine survey areas, tagged `layer` = district or survey_area)
-- Cached in this repo: `data/assessed-values-oak-park.csv` (`prop_address` and the Assessor's `year_built` for every parcel, for the stretch)
+- Cached in this repo: [historic-buildings-oak-park.csv](../data/historic-buildings-oak-park.csv) (one row per surveyed building with `address`, `architect`, `style_primary`, `construction_year`, `construction_decade`, `resource_rating`, designation flags, `historical_summary`, `image_url`, `form_url`, `latitude`, `longitude`, and `historic_district`; 4,958 rows)
+- Cached in this repo: [historic-districts-oak-park.geojson](../data/historic-districts-oak-park.geojson) (the three historic district polygons plus the nine survey areas, tagged `layer` = district or survey_area)
+- Cached in this repo: [assessed-values-oak-park.csv](../data/assessed-values-oak-park.csv) (`prop_address` and the Assessor's `year_built` for every parcel, for the stretch)
 
 **Potential users:** Historic Preservation Commission, schools, residents, visitors
 

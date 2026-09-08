@@ -17,8 +17,8 @@
 
 - Cook County Clerk Tax Extension API, levy and extension history by taxing agency, 2006 to present: [metadata](https://www.cookcountyclerkil.gov/api-tax/public/getreportdata) and [report PDFs](https://www.cookcountyclerkil.gov/api-tax/public/viewreport)
 - [CPI for inflation adjustment, FRED series CPIAUCSL](https://fred.stlouisfed.org/series/CPIAUCSL)
-- Cached in this repo: `data/oak-park-levies.csv` (already-extracted levies for six agencies, D97, D200 share, Village, Library, Parks, Township, 160 rows)
-- Cached in this repo: `data/cpi-annual.csv` (annual CPI with a to-latest-year-dollars factor, 26 rows)
+- Cached in this repo: [oak-park-levies.csv](../data/oak-park-levies.csv) (already-extracted levies for six agencies, D97, D200 share, Village, Library, Parks, Township, 160 rows)
+- Cached in this repo: [cpi-annual.csv](../data/cpi-annual.csv) (annual CPI with a to-latest-year-dollars factor, 26 rows)
 
 **Potential users:** Residents, Village Finance, D97 and D200 boards
 

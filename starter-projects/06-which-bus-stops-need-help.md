@@ -22,9 +22,9 @@
 - CMAP transit rider vulnerability `https://services5.arcgis.com/LcMXE3TFhi1BSaCY/arcgis/rest/services/TRVI_Data_Data_Hub/FeatureServer` (layer 0 CTA stops, layer 1 Pace stops)
 - [Social Vulnerability](https://www.arcgis.com/home/item.html?id=18fee8d54a4348e88775e74af99defd2), layer `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/ClimateActionPlan_Service/FeatureServer/35`; low and moderate income block groups are Village layer 158
 - [Municipal Boundary](https://www.arcgis.com/home/item.html?id=6c1807a7ef5d4d77a9fbb1801d9d36d1)
-- Cached in this repo: `data/transit-stops-oak-park.csv` (CTA and Pace bus stops plus CTA and Metra stations with routes, weekday trip counts, `wheelchair_boarding`, `cmap_sheltered_2024`, `pace_shelter_2015`, Pace ridership `apc_total`, and `cmap_trvi`; 225 rows, `in_oak_park` = Y for the 147 inside the boundary)
-- Cached in this repo: `data/social-vulnerability-oak-park.geojson` (the Village's Social Vulnerability Index for 53 block groups, scored 1 to 5 on `Senior_Index`, `Disability_Index`, `LackOfVehicle_Index`, and more, summed in `Composite_Index`)
-- Cached in this repo: `data/schools-oak-park.csv` (school locations)
+- Cached in this repo: [transit-stops-oak-park.csv](../data/transit-stops-oak-park.csv) (CTA and Pace bus stops plus CTA and Metra stations with routes, weekday trip counts, `wheelchair_boarding`, `cmap_sheltered_2024`, `pace_shelter_2015`, Pace ridership `apc_total`, and `cmap_trvi`; 225 rows, `in_oak_park` = Y for the 147 inside the boundary)
+- Cached in this repo: [social-vulnerability-oak-park.geojson](../data/social-vulnerability-oak-park.geojson) (the Village's Social Vulnerability Index for 53 block groups, scored 1 to 5 on `Senior_Index`, `Disability_Index`, `LackOfVehicle_Index`, and more, summed in `Composite_Index`)
+- Cached in this repo: [schools-oak-park.csv](../data/schools-oak-park.csv) (school locations)
 
 **Potential users:** Disability Access Commission, Aging in Communities Commission, Transportation Commission
 

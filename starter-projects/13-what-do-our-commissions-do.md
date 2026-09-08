@@ -17,7 +17,7 @@
 - [Oak Park commissions directory](../commissions-diod.csv)
 - [Oak Park Open Data Portal](https://oak-park-open-data-portal-v2-oakparkil.hub.arcgis.com/)
 - Granicus meeting video archive (agendas, minutes, recordings), linked per commission from the Village site, and the Village board and commission pages on oak-park.us
-- Cached in this repo: `commissions-diod.csv` at the repo root (every commission with description, meeting schedule, and links; 15 rows)
+- Cached in this repo: [commissions-diod.csv](../commissions-diod.csv) at the repo root (every commission with description, meeting schedule, and links; 15 rows)
 
 **Potential users:** Citizen Involvement Commission, CISC, residents
 

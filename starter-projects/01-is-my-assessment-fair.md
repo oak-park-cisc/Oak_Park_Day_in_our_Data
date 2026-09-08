@@ -17,7 +17,7 @@
 
 - [Assessed values, every Oak Park parcel by year](https://datacatalog.cookcountyil.gov/resource/uzyt-m557.json?$where=township_name='Oak%20Park'%20AND%20year='2025') (Cook County Assessor, Socrata)
 - [Building characteristics: sqft, age, class](https://datacatalog.cookcountyil.gov/resource/x54s-btds.json)
-- Cached in this repo: `data/assessed-values-oak-park.csv` (every Oak Park parcel with assessed values and building characteristics by year, 37,468 rows; no API needed on event day)
+- Cached in this repo: [assessed-values-oak-park.csv](../data/assessed-values-oak-park.csv) (every Oak Park parcel with assessed values and building characteristics by year, 37,468 rows; no API needed on event day)
 
 **Potential users:** Residents deciding whether to appeal, Village Finance
 

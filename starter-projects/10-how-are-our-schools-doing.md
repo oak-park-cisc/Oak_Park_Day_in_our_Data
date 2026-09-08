@@ -16,7 +16,7 @@
 
 - [Illinois Report Card](https://www.illinoisreportcard.com), browseable per school and district (search "Oak Park ESD 97" and "Oak Park & River Forest HS D200")
 - [ISBE Report Card Data Library](https://www.isbe.net/Pages/Illinois-State-Report-Card-Data.aspx), the full downloadable statewide datasets behind the site (Excel and CSV, many years)
-- Cached in this repo: `data/report-card-d97-d200.csv` (key indicators for D97, D200, and a handful of comparison districts, 200 rows)
+- Cached in this repo: [report-card-d97-d200.csv](../data/report-card-d97-d200.csv) (key indicators for D97, D200, and a handful of comparison districts, 200 rows)
 
 **Potential users:** D97 and D200 boards, parents and students, residents
 

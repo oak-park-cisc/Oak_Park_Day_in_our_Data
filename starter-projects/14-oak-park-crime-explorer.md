@@ -17,8 +17,8 @@
 **Data:**
 
 - [Village of Oak Park Crime Maps page](https://www.oak-park.us/Public-Safety/Police-Department/Reports-Maps/Crime-Maps), which links the current Power BI dashboard (the embed key rotates when the Village republishes)
-- [Dashboard as of September 2026](https://app.powerbigov.us/view?r=eyJrIjoiMTg0ZGI4YTYtZTgxNC00MzVmLThlNDYtMTE4MTQwNDlkYzdlIiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9&pageName=2180cdf0aa49c0286272); no export button, so the CSV was pulled from its public data feed with `data/scripts/fetch_crime_incidents.py`
-- Cached in this repo: `data/crime-incidents-oak-park.csv` (incidents January 2022 to present with incident type, date and time, police post and beat, and lat/lon, 13,913 rows; refreshed before the event, source updates about 15 days after month end)
+- [Dashboard as of September 2026](https://app.powerbigov.us/view?r=eyJrIjoiMTg0ZGI4YTYtZTgxNC00MzVmLThlNDYtMTE4MTQwNDlkYzdlIiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9&pageName=2180cdf0aa49c0286272); no export button, so the CSV was pulled from its public data feed with [fetch_crime_incidents.py](../data/scripts/fetch_crime_incidents.py)
+- Cached in this repo: [crime-incidents-oak-park.csv](../data/crime-incidents-oak-park.csv) (incidents January 2022 to present with incident type, date and time, police post and beat, and lat/lon, 13,913 rows; refreshed before the event, source updates about 15 days after month end)
 
 **Potential users:** Residents, Village Police, CISC
 

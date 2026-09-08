@@ -16,12 +16,12 @@
 
 **Data:**
 
-- [Business License Dashboard](https://opendata.oak-park.us/BusinessLicense/), a Power BI report with no export button (as of September 2026, `https://app.powerbigov.us/view?r=eyJrIjoiZmNjOWJlNGEtYjE2NS00YjYzLWEwNzQtMWFlYzFjNTA5MjI1IiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9`); the CSV was pulled with `data/scripts/fetch_business_licenses.py` and the report refreshes nightly
+- [Business License Dashboard](https://opendata.oak-park.us/BusinessLicense/), a Power BI report with no export button (as of September 2026, `https://app.powerbigov.us/view?r=eyJrIjoiZmNjOWJlNGEtYjE2NS00YjYzLWEwNzQtMWFlYzFjNTA5MjI1IiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9`); the CSV was pulled with [fetch_business_licenses.py](../data/scripts/fetch_business_licenses.py) and the report refreshes nightly
 - Zoning polygons are in the [data catalog](../data/open-data-catalog.md#zoning--land-use) under Zoning Districts and Maps; building permits are searchable by address on the Village's CityView portal (same catalog, Property section) but are not cached
-- Cached in this repo: `data/business-licenses-oak-park.csv` (every license record as of September 8, 2026, with start and end dates, three category levels, `business_district`, `zoning`, and `latitude`/`longitude` for 2,072 storefront addresses; 2,519 rows, 1,426 active and 1,093 inactive)
-- Cached in this repo: `data/streets-oak-park.geojson` (centerlines with address ranges)
-- Cached in this repo: `data/capital-projects-oak-park.geojson` (2026 street and alley projects)
-- Cached in this repo: `data/transit-stops-oak-park.csv` (every stop and station)
+- Cached in this repo: [business-licenses-oak-park.csv](../data/business-licenses-oak-park.csv) (every license record as of September 8, 2026, with start and end dates, three category levels, `business_district`, `zoning`, and `latitude`/`longitude` for 2,072 storefront addresses; 2,519 rows, 1,426 active and 1,093 inactive)
+- Cached in this repo: [streets-oak-park.geojson](../data/streets-oak-park.geojson) (centerlines with address ranges)
+- Cached in this repo: [capital-projects-oak-park.geojson](../data/capital-projects-oak-park.geojson) (2026 street and alley projects)
+- Cached in this repo: [transit-stops-oak-park.csv](../data/transit-stops-oak-park.csv) (every stop and station)
 
 **Potential users:** Village economic vitality staff, Plan Commission, business districts
 
