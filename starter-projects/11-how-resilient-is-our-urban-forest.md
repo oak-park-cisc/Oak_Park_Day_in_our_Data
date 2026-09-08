@@ -1,40 +1,34 @@
 # How resilient is our urban forest?
 
-**The question:** Oak Park's parkways hold about 18,800 Village-maintained trees. Where is that forest diverse enough to shrug off the next pest or disease, and which blocks are leaning on one genus?
+**Civic question:** Where is Oak Park's public tree population diverse and resilient, and where is it overly dependent on a small number of species?
 
-**Why it matters:** Dutch elm disease took the elms; emerald ash borer took the ash (128 are left, under 1% of the inventory). The standard test foresters use is the 10-20-30 rule: no more than 10% one species, 20% one genus, 30% one family. Oak Park's public trees sit at 8.8% for the top species (Norway maple) and 20.5% for the top genus (maple), right at the line villagewide, and the picture block by block is much more uneven. Where the Village plants next, and what, is exactly what the Forestry division and the Environment and Energy Commission decide.
+**Minimum viable demo:**
 
-## The data
+- Calculate tree-species diversity by block, street, or grid area.
+- Identify places where a single species represents a large share of recorded trees.
+- Use diameter, height, and spread as simple size and shade indicators.
 
-- Village of Oak Park Tree Inventory: every public tree with common and Latin name, DBH (trunk diameter, inches), height and spread (feet, in 10 foot steps), and a point location. Feature service:
-  `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/VOP_TreeInventory_PUBLICVIEW/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson` (2,000 per page; add `resultOffset`). CSV download from the [open data portal](https://oak-park-open-data-portal-v2-oakparkil.hub.arcgis.com/api/download/v1/items/792e798104b140c3b8063e86dc09d991/csv?layers=0).
-  Cached: `data/trees-oak-park.csv`, 18,837 rows with `latitude`, `longitude`, a `genus` column, and a `block` column (hundred block plus street, snapped from the nearest centerline) so you can group without any GIS.
-  The layer has no condition, age, or planting-year field. Do not claim tree health from it; DBH is the only size proxy.
-- Streets centerlines with address ranges, for blocks and base maps: `data/streets-oak-park.geojson` (live: `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/Streets_Centerlines/FeatureServer/0`).
-- Optional overlays from the same Village GIS: D97 attendance zones (`data/d97-attendance-zones.geojson`), parks, and the ACS block-group indicators in `data/acs-oak-park-timeseries.csv`.
+**Stretch goals:**
 
-## First win (15 minutes)
+- Create a resident-facing "trees near me" explorer.
+- Estimate approximate canopy area using recorded tree spread.
+- Compare tree distribution with recreation areas or demographic indicators, and suggest candidate areas for further field assessment or planting analysis.
 
-Pivot the CSV on `common_name`: a top-10 list and a pie. Then pivot on `genus` and check the 10-20-30 rule. You will find 137 species and 69 genera villagewide, one species near 9%, one genus just over 20%, and hackberry, hybrid elm, honeylocust, and Kentucky coffeetree filling out the top five. That table is a complete first slide.
+**Data:**
 
-## The build (by 2:15)
+- [Oak Park Tree Inventory](https://www.arcgis.com/home/item.html?id=792e798104b140c3b8063e86dc09d991): feature service `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/VOP_TreeInventory_PUBLICVIEW/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson` (2,000 per page; add `resultOffset`), or the [CSV download](https://oak-park-open-data-portal-v2-oakparkil.hub.arcgis.com/api/download/v1/items/792e798104b140c3b8063e86dc09d991/csv?layers=0)
+- [Streets Centerlines](https://www.arcgis.com/home/item.html?id=095a733fbde4479980ee9a026728bc0b), feature service `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/Streets_Centerlines/FeatureServer/0`
+- [Municipal Boundary](https://www.arcgis.com/home/item.html?id=6c1807a7ef5d4d77a9fbb1801d9d36d1)
+- Cached in this repo: `data/trees-oak-park.csv` (every public tree with common and Latin name, DBH, height, spread, `latitude`, `longitude`, a `genus` column, and a `block` column snapped from the nearest centerline; 18,837 rows)
+- Cached in this repo: `data/streets-oak-park.geojson` (centerlines with address ranges, for blocks and base maps)
+- Cached in this repo: `data/d97-attendance-zones.geojson` and `data/acs-oak-park-timeseries.csv` (optional overlays: D97 attendance zones and ACS block-group indicators)
 
-A block-by-block diversity map. Group by `block` (814 blocks, 646 with 15 or more trees), compute for each the share of its most common genus and a diversity score (count of genera, or Shannon or Simpson if someone knows them), and color the blocks or the tree points. Villagewide the rule holds; on 164 blocks a single genus is 30% or more of the trees, and on 9 blocks it is over half. Show the map next to the top-10 table and name the five least diverse blocks.
+**Potential users:** Environment & Energy Commission, Public Works, residents
 
-## Stretch
+**Difficulty:** Beginner to intermediate
 
-- Age structure by genus: DBH under 6 inches is roughly the last decade of planting, 24 inches and up is the mature canopy. Oaks lead the young trees; maples, elms, and lindens dominate the big ones. Is the Village's planting fixing the maple dependence?
-- Canopy estimate: `spread_ft` gives a crown diameter; sum crown area per block (pi times spread squared over four) and map it.
-- "Trees near me": type an address, list the trees on that block with species and size.
-- Compare canopy or diversity with park proximity or with income and age by block group, and pick blocks to recommend for a field assessment or planting.
+**Readiness:** Ready now, data cached in this repo
 
-## No-code roles
+**No-code roles:** Walk one of the least diverse blocks and photograph the parkway, translate genera into what residents recognize and write the two-sentence "why one genus is a risk" explainer, or read the Village forestry pages for the current planting list.
 
-- Ground truth: walk one of the least diverse blocks near the venue and photograph the parkway. If it is a row of one species, the map is right.
-- Anyone who gardens: help translate genera into what residents recognize (Acer is maple, Celtis is hackberry, Gymnocladus is Kentucky coffeetree) and write the two-sentence "why one genus is a risk" explainer.
-- Read the Village forestry and parkway tree pages and find the current planting list; check the young-tree data against it.
-- Own the demo for the Environment and Energy Commission: "these ten blocks should be first in line."
-
-## Claude tips
-
-Paste the header plus a few hundred rows and ask: "compute species share, genus share, and check the 10-20-30 rule; then group by block and give me the ten blocks with the highest single-genus share among blocks with at least 15 trees." Ask for a Leaflet page that colors each tree point by genus with a block-level popup, or a Python snippet that computes Shannon diversity per block from the CSV.
+**Limits:** The layer has no condition, age, or planting-year field, so do not claim tree health or age from it; DBH is the only size proxy. Villagewide the top species is 8.8 percent and the top genus 20.5 percent, right at the 10-20-30 line, but on 164 blocks a single genus is 30 percent or more of the trees.

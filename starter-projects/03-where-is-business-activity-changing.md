@@ -1,35 +1,34 @@
 # Where is business activity changing?
 
-**The question:** Where is business activity growing, changing, or declining across Oak Park's commercial corridors, and in what kinds of business?
+**Civic question:** Where is business activity growing, changing, or declining across Oak Park's commercial areas?
 
-**Why it matters:** Every business that operates in Oak Park holds a Village license, and the license record carries the two dates that matter, when the business started and when it closed. The Village's dashboard shows 1,426 active licenses and a five-year monthly matrix of starts and ends, but it cannot answer "is Madison Street coming back," "what replaced the shops that closed on Lake Street in 2024," or "which corridor keeps losing restaurants." From 2017 through August 2026 the Village recorded 1,344 business starts and 1,032 closings; 2021 and 2024 were the only years closings beat starts. Economic development staff, the business district associations, the Plan Commission, and anyone deciding whether to open a shop on Roosevelt argue about corridor health from anecdotes. This table settles some of those arguments.
+**Minimum viable demo:**
 
-## The data
+- Analyze new and canceled licenses by year, business category, and corridor or district.
+- Chart starts and ends per year from 2017 on, one panel per corridor, with the category mix per corridor.
+- Map the geocoded storefront licenses colored by status or start year.
 
-- Every license, one row each: `data/business-licenses-oak-park.csv`, 2,519 rows, every business license record in the Village's CityView system as of September 8, 2026: 1,426 active and 1,093 inactive. Columns: `name`, `doing_business_as`, `license_status` (Active or InActive), `date_start` and `start_year` (the business's start date, back to the 1970s for the long-lived ones), `date_end` and `end_year` (closings, 2015 onward), the annual `last_issued_date` and `last_issued_expired_date`, three levels of category (`major_category` Retail / Service / Other, `general_category` in 11 groups, `sub_category` in 140 types), `license_classes` (the liquor class, food risk category, and square-footage class), `home_based`, `liquor` and `mobile` flags, `business_district` (the Village's 12 districts: Downtown Oak Park, Hemingway, Madison Street, North Avenue, Oak Park Arts, Roosevelt Road, South Town, Lake @ Austin, Chicago @ Austin, Chicago @ Harlem, Pleasant, Garfield @ Harlem), `street_address`, `street` (just the street, for corridor grouping), `zoning`, and `latitude` / `longitude` for 2,072 storefront addresses.
-  Live: the Village's Business License Dashboard, `https://opendata.oak-park.us/BusinessLicense/`, which redirects to a Power BI report (as of September 2026, `https://app.powerbigov.us/view?r=eyJrIjoiZmNjOWJlNGEtYjE2NS00YjYzLWEwNzQtMWFlYzFjNTA5MjI1IiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9`). It has no export button; the CSV was pulled with `data/scripts/fetch_business_licenses.py`, which replays the report's public data feed and joins its address, GIS, category, and class tables, and the report refreshes nightly. Each row has a `cityview_link` to the Village's permit portal.
-- Corridor context, all cached: `data/streets-oak-park.geojson` (centerlines with address ranges), `data/capital-projects-oak-park.geojson` (2026 street and alley projects), `data/transit-stops-oak-park.csv` (every stop and station). Zoning is already on each license row (`zoning`: DT-1 to DT-3 downtown, NC neighborhood commercial, MS Madison Street, NA North Avenue, HS Harrison, RR Roosevelt); the polygons are in the [data catalog](../data/open-data-catalog.md#zoning--land-use) under Zoning Districts and Maps. Building permits are searchable by address on the Village's CityView portal (same catalog, Property section) but are not cached.
+**Stretch goals:**
 
-**Watch out.** A license is not a storefront. 262 rows are home-based businesses (153 active), and most of their names are people's names; the Village's map hides them, so the CSV leaves their coordinates blank on purpose. Filter `home_based` = 0 for anything about corridors, and do not map the rest. Another 180 rows have no Oak Park address at all, mostly contractors and vendors based elsewhere. Renewals can look like churn: `last_issued_date` is the April renewal (the license year runs April 1 to March 31), not an opening, so use `date_start` for openings and `date_end` for closings. 361 active licenses have an expired last issue; they have lapsed without being closed, so "active" overstates what is open. Closings only exist from 2015, when the Village moved to CityView, and 2016 has three, so start your year charts at 2017. 2019 shows 194 starts and 159 ends, far above its neighbors, which looks like an administrative cleanup rather than a boom; check a sample before you headline it. `date_start` of 1900-01-01 means unknown.
+- Compare business-license activity with building permits, zoning, transit, or capital projects.
+- Compute lifespan (`date_end` minus `date_start`) for closed businesses and compare the median by category or corridor.
+- Map the 102 active liquor licenses by corridor and year using the class in `license_classes`.
 
-## First win (15 minutes)
+**Data:**
 
-Filter `license_status` = Active and pivot on `general_category`: Personal Services 307, Professional Services 306, Medical 239, Retail/General 166, Restaurant 114. Then pivot every row by `start_year` and by `end_year` from 2017 on and put the two series on one chart: starts 110, 108, 194, 87, 142, 171, 144, 127, 141, 120; ends 56, 58, 159, 75, 173, 143, 102, 140, 71, 55. Those two charts are the opening slide.
+- [Business License Dashboard](https://opendata.oak-park.us/BusinessLicense/), a Power BI report with no export button (as of September 2026, `https://app.powerbigov.us/view?r=eyJrIjoiZmNjOWJlNGEtYjE2NS00YjYzLWEwNzQtMWFlYzFjNTA5MjI1IiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9`); the CSV was pulled with `data/scripts/fetch_business_licenses.py` and the report refreshes nightly
+- Zoning polygons are in the [data catalog](../data/open-data-catalog.md#zoning--land-use) under Zoning Districts and Maps; building permits are searchable by address on the Village's CityView portal (same catalog, Property section) but are not cached
+- Cached in this repo: `data/business-licenses-oak-park.csv` (every license record as of September 8, 2026, with start and end dates, three category levels, `business_district`, `zoning`, and `latitude`/`longitude` for 2,072 storefront addresses; 2,519 rows, 1,426 active and 1,093 inactive)
+- Cached in this repo: `data/streets-oak-park.geojson` (centerlines with address ranges)
+- Cached in this repo: `data/capital-projects-oak-park.geojson` (2026 street and alley projects)
+- Cached in this repo: `data/transit-stops-oak-park.csv` (every stop and station)
 
-## The build (by 2:15)
+**Potential users:** Village economic vitality staff, Plan Commission, business districts
 
-A corridor view. Keep `home_based` = 0, group by `street` (Lake St, Madison St, Roosevelt Rd, Harrison St, North Ave, Chicago Ave, N and S Oak Park Ave, N and S Marion St), or by `business_district` if you would rather use the Village's own boundaries, and count starts and ends per year 2017 to 2026. Small multiples, one panel per corridor, openings above the line and closings below, is the visual; Lake Street's 252 active storefront licenses and its 28 closings in 2024 against 8 in 2025 is the kind of thing that pops out. Add the category mix per corridor (what Lake gains is not what Madison gains). Then the map: a Leaflet page with the 2,072 geocoded rows, colored by status or by `start_year`, with a year slider. The demo table is "what closed since 2024 and what opened at the same address": group by `street_address`, sort by date, and read down.
+**Difficulty:** Intermediate
 
-## Stretch
+**Readiness:** Ready now, data cached in this repo
 
-Survival: `date_end` minus `date_start` for closed businesses gives lifespan; compare the median for restaurants, salons, and professional offices, or by corridor. Capital projects: overlay `data/capital-projects-oak-park.geojson` and ask whether blocks being rebuilt in 2026 gained or lost licenses in the last three years. Transit: distance from each storefront to the nearest station in `data/transit-stops-oak-park.csv` against survival. Zoning: compare churn in NC (neighborhood commercial) against DT-1 (downtown). Liquor: 102 active liquor licenses with their class in `license_classes`, mapped by corridor and year.
+**No-code roles:** Walk a corridor with the active list and note vacant storefronts and businesses missing from the list, design an eight to ten group category scheme a resident would recognize, or tell one corridor's ten years in three charts.
 
-## No-code roles
-
-- Ground-truth a corridor: walk Madison or Lake with the active list for that street and note vacant storefronts, businesses on the list that are gone, and businesses on the street that are not on the list. You are measuring how far a license is from a storefront.
-- Categorize: 290 active licenses are `sub_category_group` "Miscellaneous," and `sub_category` has 140 values. Design a scheme of eight to ten groups a resident would recognize (eat and drink, health, beauty, shop, office, kids, auto, other).
-- Storyteller: pick one corridor and tell its ten years in three charts, then say what the Village or the district association should do about it.
-
-## Claude tips
-
-Paste the header plus 30 rows and ask: "group by street and start_year for home_based = 0, count starts and ends per year 2017 to 2026 for these eight corridors, and give me a pivot I can chart." Ask for a Leaflet page from the CSV with circles colored by `license_status` and a slider on `start_year`. For the survival cut: "compute days between date_start and date_end where both exist, then the median by general_category, in plain Python with the csv module." For the address-turnover table: "group rows by street_address, keep addresses with at least one end_year of 2024 or later, and list the closed and current businesses at each."
+**Limits:** A license is not a storefront: 262 rows are home-based businesses whose coordinates are left blank on purpose (filter `home_based` = 0 for corridor work and do not map them), 180 rows have no Oak Park address, and 361 active licenses have an expired last issue. Use `date_start` for openings and `date_end` for closings, not `last_issued_date` (the April renewal); closings only exist from 2015, so start year charts at 2017, and the 2019 spike looks like an administrative cleanup rather than a boom.

@@ -1,33 +1,30 @@
 # What do our commissions do?
 
-**The question:** Oak Park has dozens of citizen commissions. What does each one actually do, how often do they meet, and how would a resident find the one that matches their interests?
+**Civic question:** Which Village commission should a resident approach about an issue, and what public data could help frame the discussion?
 
-**Why it matters:** Commissions are the front door to local government (this event is run by one), and most residents can't name three. A "find your commission" tool is genuinely missing.
+**Minimum viable demo:**
 
-## The data
+- Let a resident describe an issue and return the most relevant commission, its purpose, meeting schedule, link, and related portal resources.
+- A "find your commission" quiz: pick your interests (housing, environment, safety, tech), get your commission, its next meeting, and how to join. A static page or a well-organized spreadsheet-turned-flyer demos fine.
 
-- `commissions-diod.csv`, right here in this repo: every commission with description, meeting schedule, and links
-- Granicus meeting video archive (agendas, minutes, recordings): linked per commission from the Village site
-- Village board/commission pages on oak-park.us
+**Stretch goals:**
 
-## First win (15 minutes)
+- Add an event calendar, reminders, a guided question builder, or an AI-assisted search that cites its sources.
+- Summarize a few recent meeting agendas or minutes per commission into "what they've actually worked on this year".
 
-Load the CSV and answer one question: which commissions meet most often? Which haven't met lately?
+**Data:**
 
-## The build (by 2:15)
+- [Oak Park commissions directory](../commissions-diod.csv)
+- [Oak Park Open Data Portal](https://oak-park-open-data-portal-v2-oakparkil.hub.arcgis.com/)
+- Granicus meeting video archive (agendas, minutes, recordings), linked per commission from the Village site, and the Village board and commission pages on oak-park.us
+- Cached in this repo: `commissions-diod.csv` at the repo root (every commission with description, meeting schedule, and links; 15 rows)
 
-A "find your commission" mini-site or quiz: pick your interests (housing, environment, safety, tech...), get your commission, its next meeting, and how to join. A static page or even a well-organized spreadsheet-turned-flyer demos fine.
+**Potential users:** Citizen Involvement Commission, CISC, residents
 
-## Stretch
+**Difficulty:** Beginner to intermediate
 
-Use Claude to summarize a few recent meeting agendas/minutes per commission into "what they've actually worked on this year", this is the best LLM showcase in the room.
+**Readiness:** Ready now, data cached in this repo
 
-## No-code roles
+**No-code roles:** Read agendas and write the one-paragraph "what this commission really does" blurbs, design the quiz questions that map interests to commissions, and anyone who has attended a commission meeting can add the "what it's like to show up" field.
 
-- Read agendas and write the one-paragraph "what this commission really does" blurbs
-- Design the quiz questions that map interests to commissions
-- Anyone who has attended a commission meeting: add the "what it's like to show up" field
-
-## Claude tips
-
-Paste an agenda PDF's text and ask for a 3-sentence plain-language summary. Ask Claude to build the interest-matching quiz as a single HTML page from your CSV.
+**Limits:** The CSV holds only description, meeting schedule, and links; agendas, minutes, and recordings are on Granicus and the Village site and are not cached in this repo, so any summary should cite its source.

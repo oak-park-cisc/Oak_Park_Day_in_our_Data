@@ -1,34 +1,30 @@
 # Is my assessment fair?
 
-**The question:** Do similar Oak Park homes get similar assessments? Who's over- or under-assessed relative to comparable properties?
+**Civic question:** Do similar Oak Park homes get similar assessments, and who is over- or under-assessed relative to comparable properties?
 
-**Why it matters:** Every homeowner in the room pays property taxes based on these numbers. 2026 is a reassessment year for Oak Park, and appeal decisions ride on exactly this comparison.
+**Minimum viable demo:**
 
-## The data
+- Compute assessed value per square foot of building from the cached CSV and sort; the spread between top and bottom is the project.
+- Group by property class, Assessor neighborhood code (`nbhd`), or building age and chart how much value per square foot varies across otherwise-similar homes.
+- Show a histogram plus a top-10 table of the homes most over- and under-assessed versus their peers.
 
-- Assessed values, every Oak Park parcel, by year (Cook County Assessor, Socrata):
-  `https://datacatalog.cookcountyil.gov/resource/uzyt-m557.json?$where=township_name='Oak Park' AND year='2025'`
-- Building characteristics (sqft, age, class): `https://datacatalog.cookcountyil.gov/resource/x54s-btds.json`
-- Cached CSV in this repo: `data/assessed-values-oak-park.csv` (no API needed on event day)
+**Stretch goals:**
 
-## First win (15 minutes)
+- Map the outliers using parcel lat/lons from the address-points dataset.
+- Compare 2025 and 2026 reassessment values to find the biggest movers.
 
-Load the CSV in a spreadsheet, compute assessed value per square foot of building, sort. The spread between the top and bottom is the whole project.
+**Data:**
 
-## The build (by 2:15)
+- [Assessed values, every Oak Park parcel by year](https://datacatalog.cookcountyil.gov/resource/uzyt-m557.json?$where=township_name='Oak%20Park'%20AND%20year='2025') (Cook County Assessor, Socrata)
+- [Building characteristics: sqft, age, class](https://datacatalog.cookcountyil.gov/resource/x54s-btds.json)
+- Cached in this repo: `data/assessed-values-oak-park.csv` (every Oak Park parcel with assessed values and building characteristics by year, 37,468 rows; no API needed on event day)
 
-A chart, table, or map answering: how much does $/sqft vary across otherwise-similar homes? Group by property class, neighborhood code, or building age. A histogram plus a "most over/under vs. peers" top-10 table is a complete demo.
+**Potential users:** Residents deciding whether to appeal, Village Finance
 
-## Stretch
+**Difficulty:** Beginner
 
-Map it (parcel lat/lons are in the address-points dataset), or compare 2025 vs 2026 reassessment values to find the biggest movers.
+**Readiness:** Ready now, data cached in this repo
 
-## No-code roles
+**No-code roles:** Look up the outliers on cookcountyassessor.com and sanity-check them, explain why a block you know looks odd, and own the demo of what a homeowner should do with the result.
 
-- Look up specific homes on cookcountyassessor.com and sanity-check the outliers the data folks find
-- Know the neighborhoods? Explain *why* a block looks weird
-- Own the demo: what should a homeowner do with this?
-
-## Claude tips
-
-Paste a few hundred rows and ask: "compute value per square foot, group by class, and flag outliers more than 2 standard deviations from their group." Ask it to write the chart code, or to explain what a class code means.
+**Limits:** These are Cook County assessed values (10 percent of market value for residential), not market values, and 2026 is a reassessment year with Board of Review values not yet published. Condo square footage is mostly estimated (`condo_est_unit_sqft`, within roughly 10 to 20 percent of actual), so label any per-square-foot result for class 299 as an estimate.

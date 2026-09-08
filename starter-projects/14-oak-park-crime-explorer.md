@@ -1,37 +1,31 @@
 # Oak Park crime data explorer
 
-**The question:** What does Oak Park's incident data actually show, what happens where, when, and is it trending up or down?
+**Civic question:** What does Oak Park's incident data actually show about what happens where and when, and is it trending up or down?
 
-**Why it matters:** Crime perception drives more local decisions than almost any dataset, and it usually runs on Nextdoor anecdotes. The Village publishes the real numbers; almost nobody explores them.
+**Minimum viable demo:**
 
-**Framing:** the Village already has a crime dashboard, so don't rebuild it. Pick one clearly defined question it doesn't answer. Avoid predictive policing and anything that stigmatizes a neighborhood; block-level points are approximate by design.
+- Pivot the cached CSV by incident type to find the actual top-5 categories, then design a sane grouping (property, vehicle, person, other).
+- An explorer with any two of: a map of incidents, a time view (by month, day of week, or hour), and a type breakdown.
+- Trend lines, 2022 versus now: up or down?
 
-## The data
+**Stretch goals:**
 
-- Cached extract in this repo: `data/crime-incidents-oak-park.csv`: incidents January 2022 to present, with incident type, date/time, police post/beat, and lat/lon
-- Source: the Village of Oak Park's public crime dashboard (Power BI):
-  `https://www.oak-park.us/Public-Safety/Police-Department/Reports-Maps/Crime-Maps` (Crime Maps page, which links the current dashboard; the embed key rotates when the Village republishes)
-  Dashboard as of Sep 2026: `https://app.powerbigov.us/view?r=eyJrIjoiMTg0ZGI4YTYtZTgxNC00MzVmLThlNDYtMTE4MTQwNDlkYzdlIiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9&pageName=2180cdf0aa49c0286272`
-  It has no export button. The CSV here was pulled from the dashboard's public data feed with `data/scripts/fetch_crime_incidents.py` and is refreshed before the event (the source updates about 15 days after month end)
+- Small multiples by beat or post.
+- Pair with the Census brief's tract data to ask where incidents concentrate relative to population.
+- A "burglary seasons" hour-by-month heatmap.
 
-## First win (15 minutes)
+**Data:**
 
-Load the CSV, pivot by incident type. What are Oak Park's actual top-5 incident categories? (They're rarely what people guess.)
+- [Village of Oak Park Crime Maps page](https://www.oak-park.us/Public-Safety/Police-Department/Reports-Maps/Crime-Maps), which links the current Power BI dashboard (the embed key rotates when the Village republishes)
+- [Dashboard as of September 2026](https://app.powerbigov.us/view?r=eyJrIjoiMTg0ZGI4YTYtZTgxNC00MzVmLThlNDYtMTE4MTQwNDlkYzdlIiwidCI6IjZjOGIyOTRlLTVmZjUtNDJiMi1hM2Q3LWMzYmQ3MGE3OWYyNSJ9&pageName=2180cdf0aa49c0286272); no export button, so the CSV was pulled from its public data feed with `data/scripts/fetch_crime_incidents.py`
+- Cached in this repo: `data/crime-incidents-oak-park.csv` (incidents January 2022 to present with incident type, date and time, police post and beat, and lat/lon, 13,913 rows; refreshed before the event, source updates about 15 days after month end)
 
-## The build (by 2:15)
+**Potential users:** Residents, Village Police, CISC
 
-An explorer with any two of: a map of incidents (lat/lon is in the data), a time view (by month, day of week, or hour), and a type breakdown with trend lines, 2022 vs. now, up or down?
+**Difficulty:** Intermediate
 
-## Stretch
+**Readiness:** Ready now, data cached in this repo
 
-Small multiples by beat/post; or pair with the Census brief's tract data to ask where incidents concentrate relative to population; or a "burglary seasons" hour-by-month heatmap.
+**No-code roles:** Grouping the messy raw incident types is core work that needs judgment, not code; reality-check the map against what neighbors experience, and the demo is "three things the data says that Nextdoor doesn't."
 
-## No-code roles
-
-- Categorize: the raw incident types are messy: designing a sane grouping (property / vehicle / person / other) is core work and needs judgment, not code
-- Reality-check the map: does the hot block match what neighbors actually experience?
-- Storyteller: the demo is "three things the data says that Nextdoor doesn't"
-
-## Claude tips
-
-Paste a sample and ask Claude to propose the category groupings, then to write the pivot/chart code. For the map, "make me a Leaflet page plotting these points colored by category" is one prompt.
+**Limits:** Pick one clearly defined question the Village dashboard does not already answer, avoid predictive policing and anything that stigmatizes a neighborhood, and treat points as block-level and approximate by design. One row per offense, not per incident (count distinct `incident_id`), classifications are preliminary and revised, and the current and prior month are partial.

@@ -1,33 +1,29 @@
 # How are our schools doing?
 
-**The question:** What does state data say about Oak Park's schools, demographics, spending per pupil, test performance, and how do D97 and OPRF (D200) compare to peer districts and their own past?
+**Civic question:** What does state data say about Oak Park's schools, and how do D97 and OPRF (D200) compare to peer districts and their own past on demographics, spending per pupil, and test performance?
 
-**Why it matters:** Schools drive Oak Park's home prices, tax levies, and family decisions, and the debates usually run on reputation rather than the published numbers.
+**Minimum viable demo:**
 
-## The data
+- One chart from the cached extract: spending per pupil, D97 versus two neighboring districts, or enrollment over the last decade.
+- A comparison dashboard-lite: three or four indicators (enrollment, demographics, per-pupil spend, a proficiency measure) as trends over time.
+- D97 and D200 against three to five comparison districts (River Forest 90, Berwyn, Evanston 65 and 202); charts in a slide deck are a complete demo.
 
-- Illinois Report Card: browseable per school/district: `https://www.illinoisreportcard.com` (search "Oak Park ESD 97" and "Oak Park & River Forest HS D200")
-- ISBE Report Card Data Library: the full downloadable datasets behind the site (Excel/CSV, statewide, many years): `https://www.isbe.net/Pages/Illinois-State-Report-Card-Data.aspx`
-- Cached starter extract in repo: `data/report-card-d97-d200.csv` (key indicators for D97, D200, and a handful of comparison districts)
+**Stretch goals:**
 
-## First win (15 minutes)
+- Scatter spend-per-pupil against proficiency for all Cook County districts and locate Oak Park on it.
 
-From the cached extract: one chart of spending per pupil, D97 vs. two neighboring districts. Or enrollment over the last decade, is it growing or shrinking?
+**Data:**
 
-## The build (by 2:15)
+- [Illinois Report Card](https://www.illinoisreportcard.com), browseable per school and district (search "Oak Park ESD 97" and "Oak Park & River Forest HS D200")
+- [ISBE Report Card Data Library](https://www.isbe.net/Pages/Illinois-State-Report-Card-Data.aspx), the full downloadable statewide datasets behind the site (Excel and CSV, many years)
+- Cached in this repo: `data/report-card-d97-d200.csv` (key indicators for D97, D200, and a handful of comparison districts, 200 rows)
 
-A comparison dashboard-lite: 3–4 indicators (enrollment, demographics, per-pupil spend, a proficiency measure) for D97/D200 against 3–5 comparison districts (River Forest 90, Berwyn, Evanston 65/202...), as trends over time. Charts in a slide deck are a complete demo.
+**Potential users:** D97 and D200 boards, parents and students, residents
 
-## Stretch
+**Difficulty:** Beginner
 
-Scatter spend-per-pupil against proficiency for all Cook County districts and locate Oak Park on it. That single chart tends to start the best conversations.
+**Readiness:** Ready now, data cached in this repo
 
-## No-code roles
+**No-code roles:** The statewide files are big spreadsheets, so filtering to a district list is the core task; parents and students pick which indicators matter and call out where the state's measure misleads, and a storyteller owns "compared to five years ago."
 
-- The statewide files are big but they're spreadsheets: filtering to a district list is the core task and needs no code
-- Parents and students: pick which indicators actually matter and call out where the state's measure misleads
-- Storyteller: "compared to five years ago..." is the demo
-
-## Claude tips
-
-Paste the column dictionary and ask "which columns do I need for per-pupil spending and proficiency?", the ISBE files have hundreds of columns and this saves an hour. Then paste filtered rows and ask for the comparison charts.
+**Limits:** 2025 proficiency is not comparable with earlier years (new performance levels, high school test moved from SAT to ACT), 2020 has no assessments, and finance columns lag one year.

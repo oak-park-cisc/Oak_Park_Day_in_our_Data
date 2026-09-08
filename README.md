@@ -23,7 +23,7 @@ Full schedule and ground rules: [event-program.md](event-program.md).
 
 ## Pick a project
 
-Fifteen organizer-seeded briefs are ready to go, each with a clear question, data already cached in this repo, a quick first win, and a no-code lane. See the [starter projects index](starter-projects/README.md), or pitch your own with the [pitch-your-own template](starter-projects/00-pitch-your-own.md).
+Fifteen project cards are ready to go, each with a civic question, a minimum viable demo, stretch goals, data already cached in this repo, potential users, difficulty, and readiness. See the [starter projects](starter-projects/README.md), or pitch your own with the [pitch-your-own card](starter-projects/00-pitch-your-own.md).
 
 1. [Is my assessment fair?](starter-projects/01-is-my-assessment-fair.md) Compare assessed value per square foot across every Oak Park home.
 2. [Where does my tax dollar go?](starter-projects/02-where-does-my-tax-dollar-go.md) Twenty years of levies from six taxing agencies, adjusted for inflation.

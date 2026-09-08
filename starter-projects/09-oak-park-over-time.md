@@ -1,35 +1,30 @@
 # Oak Park over time
 
-**The question:** How has Oak Park changed, population, age, race, income, housing, tenure, over the decades, and how does that compare to Cook County and Illinois?
+**Civic question:** How has Oak Park changed in population, age, race, income, housing, and tenure over the decades, and how does that compare to Cook County and Illinois?
 
-**Why it matters:** Every local argument (schools, taxes, zoning, affordability) rests on a claim about who Oak Park is becoming. The Census actually measures it.
+**Minimum viable demo:**
 
-## The data
+- One fact from the data most residents do not know (already verified: the median Oak Park home was built in 1938, and 59 percent of the housing stock predates 1940, more than double the Illinois share).
+- "Oak Park in 5 charts": three to five indicators over time, each against Cook County or Illinois as the comparison line.
+- Slides count as a demo.
 
-- Cached starter extract in this repo: `data/acs-oak-park-timeseries.csv`, about 35 indicators (population, age, race and ethnicity, income, home value, rent, tenure, education, year built) for Oak Park, Cook County, and Illinois for every ACS 5-year vintage 2009 through 2024, with margins of error. Start here.
-- Latest-year ACS tables for Oak Park via the keyless Census Reporter API (GEOID `16000US1754885`, latest release only):
-  `https://api.censusreporter.org/1.0/data/show/latest?geo_ids=16000US1754885&table_ids=B25034,B25035,B25036`
-  (swap `table_ids`, B01003 population, B19013 income, B25003 tenure, B03002 race/ethnicity)
-- Official Census API for any year 2009 on (needs a free key, see the catalog's Filtering section): `https://api.census.gov/data/2023/acs/acs5?get=B19013_001E&for=place:54885&in=state:17&key=YOUR_KEY`
+**Stretch goals:**
 
-## First win (15 minutes)
+- Census-tract maps: does east Oak Park differ from west?
+- Push back to the 2000 and 2010 decennial censuses for longer arcs.
 
-One fact from the data most residents don't know. Example already verified: the median Oak Park home was built in **1938**, and 59% of the housing stock predates 1940, more than double the Illinois share.
+**Data:**
 
-## The build (by 2:15)
+- [Census Reporter API, latest ACS release, keyless](https://api.censusreporter.org/1.0/data/show/latest?geo_ids=16000US1754885&table_ids=B25034,B25035,B25036) (Oak Park GEOID `16000US1754885`; swap `table_ids`: B01003 population, B19013 income, B25003 tenure, B03002 race and ethnicity)
+- [Official Census API, any year 2009 on, free key required](https://api.census.gov/data/2023/acs/acs5?get=B19013_001E&for=place:54885&in=state:17&key=YOUR_KEY) (see the catalog's Filtering section)
+- Cached in this repo: `data/acs-oak-park-timeseries.csv` (about 35 indicators for Oak Park, Cook County, and Illinois for every ACS 5-year vintage 2009 through 2024, with margins of error, 1,554 rows)
 
-"Oak Park in 5 charts": pick 3–5 indicators and show their trajectory over time, each against Cook County or Illinois as the comparison line. Slides count as a demo.
+**Potential users:** Residents, Plan Commission, CISC, D97 and D200 boards
 
-## Stretch
+**Difficulty:** Beginner
 
-Census-tract maps (does east Oak Park differ from west?), or push back to the 2000/2010 decennial censuses for longer arcs.
+**Readiness:** Ready now, data cached in this repo; the official Census API needs a free key
 
-## No-code roles
+**No-code roles:** Choosing which five facts matter is the project; censusreporter.org renders charts with zero code to screenshot and narrate, and a fact-checker asks where small-sample margins of error might mislead.
 
-- This brief is deliberately story-first: choosing which five facts matter IS the project
-- Census Reporter's website (censusreporter.org) renders charts with zero code, screenshot, arrange, narrate
-- Fact-checker: does the ACS number match lived experience? Where might the survey mislead (small-sample margins of error)?
-
-## Claude tips
-
-Paste a Census Reporter JSON response and ask for a tidy CSV or a chart. Ask "what are the 5 most surprising changes in this table?" to get candidate storylines fast.
+**Limits:** Dollar figures are in each vintage's own dollars (use `data/cpi-annual.csv` to adjust), overlapping 5-year windows are not independent samples, and median year built is bottom-coded at 1939 by the Census.

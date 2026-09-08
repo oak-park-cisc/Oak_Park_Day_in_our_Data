@@ -1,44 +1,42 @@
 # Starter projects
 
-Fifteen ready-to-go project briefs for Day in Our Data. Each is scoped so a team of 4 to 6 can demo something real in about 2.5 hours: a clear question, data already cached in this repo (no APIs required on event day), a 15-minute first win, and roles that need no programming at all.
+Fifteen project cards for Day in Our Data. Each has a civic question, a minimum viable demo, stretch goals, data links with the data already cached in this repo, potential users, difficulty, and readiness. Pick the one that grabs you and sit at its table. Have your own idea? Fill in the [pitch-your-own card](00-pitch-your-own.md) and grab an empty table.
 
-Pick the one that grabs you and sit at its table. Have your own idea? Even better, fill in the [pitch-your-own template](00-pitch-your-own.md), grab an empty table, and recruit.
+A strong project can answer five questions: who is the user, what civic question does it answer, what does the data show, what could happen next, and what are the limitations.
 
 **Money**
 
-| # | Brief | One-liner |
+| # | Project | One-liner |
 |---|---|---|
 | 1 | [Is my assessment fair?](01-is-my-assessment-fair.md) | Compare assessed value per square foot across every Oak Park home |
-| 2 | [Where does my tax dollar go?](02-where-does-my-tax-dollar-go.md) | Twenty years of levies, six taxing agencies, adjusted for inflation |
-| 3 | [Where is business activity changing?](03-where-is-business-activity-changing.md) | Openings and closings by corridor and category from 2,519 Village business licenses, mapped |
+| 2 | [Where does my tax dollar go?](02-where-does-my-tax-dollar-go.md) | Twenty years of levies, eight taxing agencies, adjusted for inflation |
+| 3 | [Where is business activity changing?](03-where-is-business-activity-changing.md) | Openings and closings by corridor and category from 2,519 business licenses |
 
 **Getting around**
 
-| # | Brief | One-liner |
+| # | Project | One-liner |
 |---|---|---|
-| 4 | [Can a kid bike to school safely?](04-can-a-kid-bike-to-school-safely.md) | Map the bike network against school routes and crash records |
-| 5 | [Can I park here right now?](05-can-i-park-here-right-now.md) | Turn 1,016 daytime and 390 overnight curb segments into an address-plus-time answer, and say where the data is silent |
-| 6 | [Which bus stops need help?](06-which-bus-stops-need-help.md) | Rank every stop and station by missing shelter, ridership, and who lives nearby |
-| 7 | [Are the worst alleys getting fixed?](07-are-the-worst-alleys-getting-fixed.md) | Compare every alley's condition rating with the 2025 to 2029 reconstruction plan |
-| 8 | [Build the Oak Park transit dashboard](08-build-the-oak-park-transit-dashboard.md) | Every provider, every stop, what is running now, and who can ride it, on one map |
+| 4 | [Can a kid bike to school safely?](04-can-a-kid-bike-to-school-safely.md) | The bike network against school routes and crash records |
+| 5 | [Can I park here right now?](05-can-i-park-here-right-now.md) | An address-plus-time answer from the Village's curb restriction data |
+| 6 | [Which bus stops need help?](06-which-bus-stops-need-help.md) | Rank every stop by missing shelter, ridership, and who lives nearby |
+| 7 | [Are the worst alleys getting fixed?](07-are-the-worst-alleys-getting-fixed.md) | Alley condition ratings against the 2025 to 2029 reconstruction plan |
+| 8 | [Build the Oak Park transit dashboard](08-build-the-oak-park-transit-dashboard.md) | Every provider, every stop, what is running now, on one map |
 
 **People and places**
 
-| # | Brief | One-liner |
+| # | Project | One-liner |
 |---|---|---|
-| 9 | [Oak Park over time](09-oak-park-over-time.md) | Census data: how the village is changing, vs. county and state |
-| 10 | [How are our schools doing?](10-how-are-our-schools-doing.md) | Illinois Report Card: D97/D200 vs. peers, over time |
-| 11 | [How resilient is our urban forest?](11-how-resilient-is-our-urban-forest.md) | Test 18,800 public trees against the 10-20-30 diversity rule and map the blocks that lean on one genus |
-| 12 | [Build an architecture walking tour](12-build-an-architecture-walking-tour.md) | Turn 4,958 surveyed historic buildings into a tour by architect, style, or street |
+| 9 | [Oak Park over time](09-oak-park-over-time.md) | Census data on how the village is changing, against county and state |
+| 10 | [How are our schools doing?](10-how-are-our-schools-doing.md) | Illinois Report Card for D97 and D200 against peers, over time |
+| 11 | [How resilient is our urban forest?](11-how-resilient-is-our-urban-forest.md) | 18,800 public trees against the 10-20-30 diversity rule |
+| 12 | [Build an architecture walking tour](12-build-an-architecture-walking-tour.md) | 4,958 surveyed historic buildings by architect, style, or street |
 
 **Government and safety**
 
-| # | Brief | One-liner |
+| # | Project | One-liner |
 |---|---|---|
-| 13 | [What do our commissions do?](13-what-do-our-commissions-do.md) | Build the "find your commission" tool that doesn't exist |
-| 14 | [Oak Park crime data explorer](14-oak-park-crime-explorer.md) | What incident data shows about what happens where and when |
-| 15 | [What does ECHO see?](15-what-does-echo-see.md) | Aggregated counts of what the Village's non-police response team handles, paired with a directory of who can take the handoff |
+| 13 | [What do our commissions do?](13-what-do-our-commissions-do.md) | The "find your commission" tool that does not exist yet |
+| 14 | [Oak Park crime data explorer](14-oak-park-crime-explorer.md) | One question the Village's crime dashboard does not answer |
+| 15 | [What does ECHO see?](15-what-does-echo-see.md) | What the Village's non-police response team handles, in aggregate |
 
-Want something not on this list? The [project ideas](../project-ideas.md) file has more challenges with data links, ready for a pitch-your-own table.
-
-Every team should name a **demo owner** at the start, the person responsible for the short show-and-tell during demos at 2:30. The best demos answer four things: the question we asked, what the data said, what we built, and what the Village should do next.
+Every team names a demo owner at the start. Demos at 2:30 answer four things: the question, what the data said, what we built, and what the Village should do next.
