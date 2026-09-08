@@ -4,7 +4,7 @@ This guide provides starter challenges for the **Day in Our Data** civic hackath
 
 Most ideas are scoped so that a small team can produce a meaningful minimum viable demo in approximately **two to three hours**. Teams are welcome to choose one of these challenges, adapt one, combine multiple ideas, or pursue a different civic question.
 
-Eleven directions from this list and the organizer discussions that followed have been developed into [starter-project briefs](starter-projects/README.md) with cached data and a table on event day. Ideas marked **now a starter table** below point to the brief. Every other idea here is a ready-made starting point for a [pitch-your-own](starter-projects/00-pitch-your-own.md) team.
+Fourteen directions from this list and the organizer discussions that followed have been developed into [starter-project briefs](starter-projects/README.md) with cached data and a table on event day. Ideas marked **now a starter table** below point to the brief. Every other idea here is a ready-made starting point for a [pitch-your-own](starter-projects/00-pitch-your-own.md) team.
 
 ## What a Strong Project Should Do
 
@@ -91,6 +91,8 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 ---
 
 ### 3. Can I Park Here Right Now?
+
+**Now a starter table:** see [brief 12](starter-projects/12-can-i-park-here-right-now.md), with the data cached in `data/`.
 
 **Civic question:** Can Oak Park parking rules be made easier to understand at a specific place and time?
 
@@ -379,6 +381,8 @@ The following ideas use public dashboards or sensitive subject areas. They shoul
 
 ### 14. Oak Park Business Pulse
 
+**Now a starter table:** see [brief 13](starter-projects/13-where-is-business-activity-changing.md), with the data cached in `data/`. The dashboard export this idea asked for is cached.
+
 **Civic question:** Where is business activity growing, changing, or declining across Oak Park's commercial areas?
 
 **Minimum viable demo:** Analyze new and canceled licenses by year, business category, and corridor or district.
@@ -399,6 +403,8 @@ The following ideas use public dashboards or sensitive subject areas. They shoul
 ---
 
 ### 15. ECHO Community Needs and Resource Gaps
+
+**Now a starter table:** see [brief 14](starter-projects/14-what-does-echo-see.md), with the data cached in `data/`. The dashboard export this idea asked for is cached (aggregates only).
 
 **Civic question:** What types of community needs are being encountered by the ECHO program, and where might service partnerships or resources be strengthened?
 

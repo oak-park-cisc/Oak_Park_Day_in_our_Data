@@ -1,6 +1,6 @@
 # Starter projects
 
-Eleven ready-to-go project briefs for Day in Our Data. Each is scoped so a team of 4 to 6 can demo something real in about 2.5 hours: a clear question, data already cached in this repo (no APIs required on event day), a 15-minute first win, and roles that need no programming at all.
+Fourteen ready-to-go project briefs for Day in Our Data. Each is scoped so a team of 4 to 6 can demo something real in about 2.5 hours: a clear question, data already cached in this repo (no APIs required on event day), a 15-minute first win, and roles that need no programming at all.
 
 Pick the one that grabs you and sit at its table. Have your own idea? Even better, fill in the [pitch-your-own template](00-pitch-your-own.md), grab an empty table, and recruit.
 
@@ -17,7 +17,10 @@ Pick the one that grabs you and sit at its table. Have your own idea? Even bette
 | 9 | [Are the worst alleys getting fixed?](09-are-the-worst-alleys-getting-fixed.md) | Compare every alley's condition rating with the 2025 to 2029 reconstruction plan |
 | 10 | [Which bus stops need help?](10-which-bus-stops-need-help.md) | Rank every stop and station by missing shelter, ridership, and who lives nearby |
 | 11 | [Build an architecture walking tour](11-build-an-architecture-walking-tour.md) | Turn 4,958 surveyed historic buildings into a tour by architect, style, or street |
+| 12 | [Can I park here right now?](12-can-i-park-here-right-now.md) | Turn 1,016 daytime and 390 overnight curb segments into an address-plus-time answer, and say where the data is silent |
+| 13 | [Where is business activity changing?](13-where-is-business-activity-changing.md) | Openings and closings by corridor and category from 2,519 Village business licenses, mapped |
+| 14 | [What does ECHO see?](14-what-does-echo-see.md) | Aggregated counts of what the Village's non-police response team handles, paired with a directory of who can take the handoff |
 
-These briefs grew out of the repo's [project ideas](../project-ideas.md) list, sixteen challenges with data-readiness labels. Briefs 3, 5, 8, 9, 10, and 11 develop ideas 12, 11, 4, 1, 2, and 5 from that list. The other ten are the best place to start if you want your own table.
+These briefs grew out of the repo's [project ideas](../project-ideas.md) list, sixteen challenges with data-readiness labels. Briefs 3, 5, 8, 9, 10, 11, 12, 13, and 14 develop ideas 12, 11, 4, 1, 2, 5, 3, 14, and 15 from that list. The other seven are the best place to start if you want your own table.
 
 Every team should name a **demo owner** at the start, the person responsible for the short show-and-tell during demos at 2:30. The best demos answer four things: the question we asked, what the data said, what we built, and what the Village should do next.

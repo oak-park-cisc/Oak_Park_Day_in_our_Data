@@ -33,7 +33,7 @@ later CISC meeting.
 
 ## Starter Projects and Your Own Ideas
 
-Organizers have prepared eleven [starter project briefs](starter-projects/README.md),
+Organizers have prepared fourteen [starter project briefs](starter-projects/README.md),
 each with a clear question, data already cached in this repo, a quick first win,
 and roles that need no programming at all.
 

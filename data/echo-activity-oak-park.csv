@@ -1,0 +1,495 @@
+breakdown,month,weekday,time_block,referral_source,service,count
+service_by_month,2025-02,,,,Behavioral Health,4
+service_by_month,2025-02,,,,Domestic Violence,2
+service_by_month,2025-02,,,,Housing,8
+service_by_month,2025-02,,,,Other,3
+service_by_month,2025-02,,,,Senior Services,1
+service_by_month,2025-02,,,,Unhoused Resident,7
+service_by_month,2025-03,,,,Behavioral Health,4
+service_by_month,2025-03,,,,Financial Support,2
+service_by_month,2025-03,,,,Food Services,1
+service_by_month,2025-03,,,,Housing,5
+service_by_month,2025-03,,,,Medical Support,2
+service_by_month,2025-03,,,,Senior Services,24
+service_by_month,2025-03,,,,Unhoused Resident,14
+service_by_month,2025-03,,,,Youth/Family Services,1
+service_by_month,2025-04,,,,Behavioral Health,7
+service_by_month,2025-04,,,,Financial Support,5
+service_by_month,2025-04,,,,Food Services,1
+service_by_month,2025-04,,,,Housing,13
+service_by_month,2025-04,,,,Medical Support,2
+service_by_month,2025-04,,,,Senior Services,23
+service_by_month,2025-04,,,,Unhoused Resident,7
+service_by_month,2025-04,,,,Youth/Family Services,1
+service_by_month,2025-05,,,,Behavioral Health,8
+service_by_month,2025-05,,,,Domestic Violence,1
+service_by_month,2025-05,,,,Housing,11
+service_by_month,2025-05,,,,Medical Support,4
+service_by_month,2025-05,,,,Senior Services,14
+service_by_month,2025-05,,,,Unhoused Resident,4
+service_by_month,2025-05,,,,Youth/Family Services,3
+service_by_month,2025-06,,,,Behavioral Health,18
+service_by_month,2025-06,,,,Domestic Violence,4
+service_by_month,2025-06,,,,Financial Support,3
+service_by_month,2025-06,,,,Food Services,1
+service_by_month,2025-06,,,,Housing,8
+service_by_month,2025-06,,,,Other,1
+service_by_month,2025-06,,,,Senior Services,19
+service_by_month,2025-06,,,,Unhoused Resident,7
+service_by_month,2025-06,,,,Youth/Family Services,13
+service_by_month,2025-07,,,,Behavioral Health,11
+service_by_month,2025-07,,,,Domestic Violence,1
+service_by_month,2025-07,,,,Financial Support,5
+service_by_month,2025-07,,,,Housing,9
+service_by_month,2025-07,,,,Medical Support,1
+service_by_month,2025-07,,,,Senior Services,15
+service_by_month,2025-07,,,,Unhoused Resident,9
+service_by_month,2025-07,,,,Youth/Family Services,2
+service_by_month,2025-08,,,,Behavioral Health,18
+service_by_month,2025-08,,,,Domestic Violence,3
+service_by_month,2025-08,,,,Financial Support,3
+service_by_month,2025-08,,,,Food Services,1
+service_by_month,2025-08,,,,Housing,21
+service_by_month,2025-08,,,,Medical Support,8
+service_by_month,2025-08,,,,Senior Services,17
+service_by_month,2025-08,,,,Unhoused Resident,22
+service_by_month,2025-08,,,,Youth/Family Services,6
+service_by_month,2025-09,,,,Behavioral Health,39
+service_by_month,2025-09,,,,Domestic Violence,10
+service_by_month,2025-09,,,,Financial Support,3
+service_by_month,2025-09,,,,Food Services,4
+service_by_month,2025-09,,,,Housing,30
+service_by_month,2025-09,,,,Medical Support,3
+service_by_month,2025-09,,,,Other,6
+service_by_month,2025-09,,,,Senior Services,33
+service_by_month,2025-09,,,,Unhoused Resident,38
+service_by_month,2025-09,,,,Youth/Family Services,12
+service_by_month,2025-10,,,,Behavioral Health,30
+service_by_month,2025-10,,,,Financial Support,1
+service_by_month,2025-10,,,,Housing,21
+service_by_month,2025-10,,,,Other,2
+service_by_month,2025-10,,,,Senior Services,8
+service_by_month,2025-10,,,,Unhoused Resident,27
+service_by_month,2025-10,,,,Youth/Family Services,4
+service_by_month,2025-11,,,,Behavioral Health,24
+service_by_month,2025-11,,,,Domestic Violence,4
+service_by_month,2025-11,,,,Financial Support,3
+service_by_month,2025-11,,,,Food Services,4
+service_by_month,2025-11,,,,Housing,16
+service_by_month,2025-11,,,,Medical Support,1
+service_by_month,2025-11,,,,Other,3
+service_by_month,2025-11,,,,Senior Services,25
+service_by_month,2025-11,,,,Unhoused Resident,20
+service_by_month,2025-11,,,,Youth/Family Services,5
+service_by_month,2025-12,,,,Behavioral Health,20
+service_by_month,2025-12,,,,Domestic Violence,2
+service_by_month,2025-12,,,,Financial Support,1
+service_by_month,2025-12,,,,Housing,19
+service_by_month,2025-12,,,,Other,2
+service_by_month,2025-12,,,,Senior Services,11
+service_by_month,2025-12,,,,Unhoused Resident,27
+service_by_month,2025-12,,,,Youth/Family Services,8
+service_by_month,2026-01,,,,Behavioral Health,22
+service_by_month,2026-01,,,,Domestic Violence,2
+service_by_month,2026-01,,,,Financial Support,3
+service_by_month,2026-01,,,,Housing,15
+service_by_month,2026-01,,,,Other,3
+service_by_month,2026-01,,,,Senior Services,13
+service_by_month,2026-01,,,,Unhoused Resident,27
+service_by_month,2026-01,,,,Youth/Family Services,4
+service_by_month,2026-02,,,,Behavioral Health,19
+service_by_month,2026-02,,,,Domestic Violence,2
+service_by_month,2026-02,,,,Financial Support,6
+service_by_month,2026-02,,,,Housing,13
+service_by_month,2026-02,,,,Other,1
+service_by_month,2026-02,,,,Senior Services,8
+service_by_month,2026-02,,,,Unhoused Resident,21
+service_by_month,2026-02,,,,Youth/Family Services,2
+service_by_month,2026-03,,,,Behavioral Health,7
+service_by_month,2026-03,,,,Domestic Violence,1
+service_by_month,2026-03,,,,Financial Support,5
+service_by_month,2026-03,,,,Food Services,1
+service_by_month,2026-03,,,,Housing,7
+service_by_month,2026-03,,,,Medical Support,1
+service_by_month,2026-03,,,,Other,3
+service_by_month,2026-03,,,,Senior Services,19
+service_by_month,2026-03,,,,Unhoused Resident,19
+service_by_month,2026-03,,,,Youth/Family Services,4
+service_by_month,2026-04,,,,Behavioral Health,23
+service_by_month,2026-04,,,,Financial Support,3
+service_by_month,2026-04,,,,Housing,9
+service_by_month,2026-04,,,,Medical Support,1
+service_by_month,2026-04,,,,Other,4
+service_by_month,2026-04,,,,Senior Services,15
+service_by_month,2026-04,,,,Unhoused Resident,22
+service_by_month,2026-04,,,,Youth/Family Services,6
+service_by_month,2026-05,,,,Behavioral Health,12
+service_by_month,2026-05,,,,Domestic Violence,2
+service_by_month,2026-05,,,,Financial Support,5
+service_by_month,2026-05,,,,Housing,6
+service_by_month,2026-05,,,,Medical Support,2
+service_by_month,2026-05,,,,Other,22
+service_by_month,2026-05,,,,Senior Services,3
+service_by_month,2026-05,,,,Unhoused Resident,44
+service_by_month,2026-05,,,,Youth/Family Services,7
+service_by_month,2026-06,,,,Behavioral Health,5
+service_by_month,2026-06,,,,Domestic Violence,7
+service_by_month,2026-06,,,,Financial Support,3
+service_by_month,2026-06,,,,Food Services,3
+service_by_month,2026-06,,,,Housing,9
+service_by_month,2026-06,,,,Medical Support,7
+service_by_month,2026-06,,,,Other,15
+service_by_month,2026-06,,,,Senior Services,3
+service_by_month,2026-06,,,,Unhoused Resident,39
+service_by_month,2026-06,,,,Youth/Family Services,6
+service_by_month,2026-07,,,,(blank),11
+service_by_month,2026-07,,,,Behavioral Health,11
+service_by_month,2026-07,,,,Domestic Violence,2
+service_by_month,2026-07,,,,Financial Support,1
+service_by_month,2026-07,,,,Food Services,1
+service_by_month,2026-07,,,,Housing,23
+service_by_month,2026-07,,,,Medical Support,3
+service_by_month,2026-07,,,,Other,9
+service_by_month,2026-07,,,,Senior Services,7
+service_by_month,2026-07,,,,Unhoused Resident,50
+service_by_month,2026-07,,,,Youth/Family Services,3
+service_by_month,2026-08,,,,(blank),9
+service_by_month,2026-08,,,,Behavioral Health,5
+service_by_month,2026-08,,,,Domestic Violence,1
+service_by_month,2026-08,,,,Financial Support,5
+service_by_month,2026-08,,,,Housing,6
+service_by_month,2026-08,,,,Medical Support,2
+service_by_month,2026-08,,,,Other,8
+service_by_month,2026-08,,,,Senior Services,11
+service_by_month,2026-08,,,,Unhoused Resident,25
+service_by_month,2026-08,,,,Youth/Family Services,3
+service_by_month,2026-09,,,,(blank),5
+service_by_month,2026-09,,,,Behavioral Health,1
+service_by_month,2026-09,,,,Housing,1
+service_by_month,2026-09,,,,Medical Support,1
+service_by_month,2026-09,,,,Other,2
+service_by_month,2026-09,,,,Unhoused Resident,7
+referral_by_month,2025-02,,,Business,,1
+referral_by_month,2025-02,,,Community Engagement,,2
+referral_by_month,2025-02,,,Community Partner,,2
+referral_by_month,2025-02,,,Police Department,,5
+referral_by_month,2025-02,,,Resident Contact,,13
+referral_by_month,2025-02,,,Village of Oak Park Departments,,2
+referral_by_month,2025-03,,,Business,,2
+referral_by_month,2025-03,,,Community Engagement,,3
+referral_by_month,2025-03,,,Community Partner,,3
+referral_by_month,2025-03,,,Fire Department,,26
+referral_by_month,2025-03,,,Police Department,,6
+referral_by_month,2025-03,,,Resident Contact,,6
+referral_by_month,2025-03,,,Village of Oak Park Departments,,7
+referral_by_month,2025-04,,,Business,,2
+referral_by_month,2025-04,,,Fire Department,,28
+referral_by_month,2025-04,,,Police Department,,5
+referral_by_month,2025-04,,,Resident Contact,,20
+referral_by_month,2025-04,,,Village of Oak Park Departments,,4
+referral_by_month,2025-05,,,Community Engagement,,2
+referral_by_month,2025-05,,,Community Partner,,2
+referral_by_month,2025-05,,,Fire Department,,12
+referral_by_month,2025-05,,,Police Department,,19
+referral_by_month,2025-05,,,Resident Contact,,8
+referral_by_month,2025-05,,,Village of Oak Park Departments,,2
+referral_by_month,2025-06,,,Community Engagement,,1
+referral_by_month,2025-06,,,Fire Department,,17
+referral_by_month,2025-06,,,Police Department,,37
+referral_by_month,2025-06,,,Resident Contact,,14
+referral_by_month,2025-06,,,Village of Oak Park Departments,,5
+referral_by_month,2025-07,,,Community Engagement,,5
+referral_by_month,2025-07,,,Emergency Housing,,1
+referral_by_month,2025-07,,,Fire Department,,13
+referral_by_month,2025-07,,,Police Department,,11
+referral_by_month,2025-07,,,Resident Contact,,22
+referral_by_month,2025-07,,,Village of Oak Park Departments,,1
+referral_by_month,2025-08,,,Business,,2
+referral_by_month,2025-08,,,Community Engagement,,6
+referral_by_month,2025-08,,,Emergency Housing,,5
+referral_by_month,2025-08,,,Fire Department,,10
+referral_by_month,2025-08,,,Police Department,,42
+referral_by_month,2025-08,,,Resident Contact,,30
+referral_by_month,2025-08,,,Village of Oak Park Departments,,4
+referral_by_month,2025-09,,,Business,,1
+referral_by_month,2025-09,,,Community Engagement,,9
+referral_by_month,2025-09,,,Community Partner,,7
+referral_by_month,2025-09,,,Emergency Housing,,10
+referral_by_month,2025-09,,,Fire Department,,37
+referral_by_month,2025-09,,,Police Department,,76
+referral_by_month,2025-09,,,Resident Contact,,27
+referral_by_month,2025-09,,,Village of Oak Park Departments,,11
+referral_by_month,2025-10,,,Business,,2
+referral_by_month,2025-10,,,Community Engagement,,6
+referral_by_month,2025-10,,,Community Partner,,1
+referral_by_month,2025-10,,,Emergency Housing,,1
+referral_by_month,2025-10,,,Fire Department,,23
+referral_by_month,2025-10,,,Police Department,,32
+referral_by_month,2025-10,,,Resident Contact,,21
+referral_by_month,2025-10,,,Village of Oak Park Departments,,7
+referral_by_month,2025-11,,,Community Engagement,,6
+referral_by_month,2025-11,,,Community Partner,,6
+referral_by_month,2025-11,,,Fire Department,,29
+referral_by_month,2025-11,,,Police Department,,28
+referral_by_month,2025-11,,,Resident Contact,,28
+referral_by_month,2025-11,,,Village of Oak Park Departments,,8
+referral_by_month,2025-12,,,Business,,3
+referral_by_month,2025-12,,,Community Engagement,,6
+referral_by_month,2025-12,,,Community Partner,,5
+referral_by_month,2025-12,,,Fire Department,,17
+referral_by_month,2025-12,,,Police Department,,22
+referral_by_month,2025-12,,,Resident Contact,,27
+referral_by_month,2025-12,,,Village of Oak Park Departments,,10
+referral_by_month,2026-01,,,Community Engagement,,2
+referral_by_month,2026-01,,,Community Partner,,3
+referral_by_month,2026-01,,,Fire Department,,15
+referral_by_month,2026-01,,,Police Department,,34
+referral_by_month,2026-01,,,Resident Contact,,30
+referral_by_month,2026-01,,,Village of Oak Park Departments,,5
+referral_by_month,2026-02,,,Community Engagement,,2
+referral_by_month,2026-02,,,Community Partner,,4
+referral_by_month,2026-02,,,Fire Department,,19
+referral_by_month,2026-02,,,Police Department,,23
+referral_by_month,2026-02,,,Resident Contact,,22
+referral_by_month,2026-02,,,Village of Oak Park Departments,,2
+referral_by_month,2026-03,,,Community Engagement,,4
+referral_by_month,2026-03,,,Community Partner,,3
+referral_by_month,2026-03,,,Fire Department,,10
+referral_by_month,2026-03,,,Police Department,,18
+referral_by_month,2026-03,,,Resident Contact,,20
+referral_by_month,2026-03,,,Village of Oak Park Departments,,12
+referral_by_month,2026-04,,,Business,,2
+referral_by_month,2026-04,,,Community Engagement,,12
+referral_by_month,2026-04,,,Community Partner,,8
+referral_by_month,2026-04,,,Fire Department,,13
+referral_by_month,2026-04,,,Police Department,,21
+referral_by_month,2026-04,,,Resident Contact,,25
+referral_by_month,2026-04,,,Village of Oak Park Departments,,2
+referral_by_month,2026-05,,,Business,,1
+referral_by_month,2026-05,,,Community Engagement,,18
+referral_by_month,2026-05,,,Community Partner,,15
+referral_by_month,2026-05,,,Fire Department,,7
+referral_by_month,2026-05,,,Police Department,,25
+referral_by_month,2026-05,,,Resident Contact,,30
+referral_by_month,2026-05,,,Village of Oak Park Departments,,7
+referral_by_month,2026-06,,,Business,,2
+referral_by_month,2026-06,,,Community Engagement,,25
+referral_by_month,2026-06,,,Community Partner,,13
+referral_by_month,2026-06,,,Fire Department,,1
+referral_by_month,2026-06,,,Police Department,,22
+referral_by_month,2026-06,,,Resident Contact,,29
+referral_by_month,2026-06,,,Village of Oak Park Departments,,5
+referral_by_month,2026-07,,,Community Engagement,,37
+referral_by_month,2026-07,,,Community Partner,,8
+referral_by_month,2026-07,,,Fire Department,,1
+referral_by_month,2026-07,,,Police Department,,16
+referral_by_month,2026-07,,,Resident Contact,,46
+referral_by_month,2026-07,,,Village of Oak Park Departments,,13
+referral_by_month,2026-08,,,Business,,3
+referral_by_month,2026-08,,,Community Engagement,,8
+referral_by_month,2026-08,,,Community Partner,,6
+referral_by_month,2026-08,,,Fire Department,,8
+referral_by_month,2026-08,,,Police Department,,23
+referral_by_month,2026-08,,,Resident Contact,,26
+referral_by_month,2026-08,,,Village of Oak Park Departments,,1
+referral_by_month,2026-09,,,Community Engagement,,6
+referral_by_month,2026-09,,,Community Partner,,1
+referral_by_month,2026-09,,,Police Department,,2
+referral_by_month,2026-09,,,Resident Contact,,6
+referral_by_month,2026-09,,,Village of Oak Park Departments,,2
+service_by_weekday,,Monday,,,(blank),<5
+service_by_weekday,,Monday,,,Behavioral Health,56
+service_by_weekday,,Monday,,,Domestic Violence,11
+service_by_weekday,,Monday,,,Financial Support,16
+service_by_weekday,,Monday,,,Food Services,<5
+service_by_weekday,,Monday,,,Housing,66
+service_by_weekday,,Monday,,,Medical Support,8
+service_by_weekday,,Monday,,,Other,18
+service_by_weekday,,Monday,,,Senior Services,79
+service_by_weekday,,Monday,,,Unhoused Resident,93
+service_by_weekday,,Monday,,,Youth/Family Services,18
+service_by_weekday,,Tuesday,,,(blank),<5
+service_by_weekday,,Tuesday,,,Behavioral Health,51
+service_by_weekday,,Tuesday,,,Domestic Violence,6
+service_by_weekday,,Tuesday,,,Financial Support,9
+service_by_weekday,,Tuesday,,,Food Services,<5
+service_by_weekday,,Tuesday,,,Housing,41
+service_by_weekday,,Tuesday,,,Medical Support,7
+service_by_weekday,,Tuesday,,,Other,24
+service_by_weekday,,Tuesday,,,Senior Services,54
+service_by_weekday,,Tuesday,,,Unhoused Resident,77
+service_by_weekday,,Tuesday,,,Youth/Family Services,11
+service_by_weekday,,Wednesday,,,(blank),7
+service_by_weekday,,Wednesday,,,Behavioral Health,63
+service_by_weekday,,Wednesday,,,Domestic Violence,14
+service_by_weekday,,Wednesday,,,Financial Support,9
+service_by_weekday,,Wednesday,,,Food Services,<5
+service_by_weekday,,Wednesday,,,Housing,66
+service_by_weekday,,Wednesday,,,Medical Support,<5
+service_by_weekday,,Wednesday,,,Other,22
+service_by_weekday,,Wednesday,,,Senior Services,54
+service_by_weekday,,Wednesday,,,Unhoused Resident,121
+service_by_weekday,,Wednesday,,,Youth/Family Services,26
+service_by_weekday,,Thursday,,,(blank),5
+service_by_weekday,,Thursday,,,Behavioral Health,45
+service_by_weekday,,Thursday,,,Domestic Violence,8
+service_by_weekday,,Thursday,,,Financial Support,12
+service_by_weekday,,Thursday,,,Food Services,<5
+service_by_weekday,,Thursday,,,Housing,40
+service_by_weekday,,Thursday,,,Medical Support,<5
+service_by_weekday,,Thursday,,,Other,13
+service_by_weekday,,Thursday,,,Senior Services,42
+service_by_weekday,,Thursday,,,Unhoused Resident,81
+service_by_weekday,,Thursday,,,Youth/Family Services,18
+service_by_weekday,,Friday,,,Behavioral Health,61
+service_by_weekday,,Friday,,,Domestic Violence,<5
+service_by_weekday,,Friday,,,Financial Support,11
+service_by_weekday,,Friday,,,Food Services,<5
+service_by_weekday,,Friday,,,Housing,29
+service_by_weekday,,Friday,,,Medical Support,14
+service_by_weekday,,Friday,,,Other,<5
+service_by_weekday,,Friday,,,Senior Services,33
+service_by_weekday,,Friday,,,Unhoused Resident,55
+service_by_weekday,,Friday,,,Youth/Family Services,17
+service_by_weekday,,Saturday,,,(blank),<5
+service_by_weekday,,Saturday,,,Behavioral Health,<5
+service_by_weekday,,Saturday,,,Domestic Violence,<5
+service_by_weekday,,Saturday,,,Housing,<5
+service_by_weekday,,Saturday,,,Other,<5
+service_by_weekday,,Saturday,,,Senior Services,<5
+service_by_weekday,,Saturday,,,Unhoused Resident,<5
+service_by_weekday,,Sunday,,,(blank),<5
+service_by_weekday,,Sunday,,,Behavioral Health,<5
+service_by_weekday,,Sunday,,,Domestic Violence,<5
+service_by_weekday,,Sunday,,,Housing,<5
+service_by_weekday,,Sunday,,,Senior Services,<5
+service_by_weekday,,Sunday,,,Unhoused Resident,<5
+service_by_time_block,,,0200-0559,,(blank),<5
+service_by_time_block,,,0200-0559,,Behavioral Health,46
+service_by_time_block,,,0200-0559,,Domestic Violence,5
+service_by_time_block,,,0200-0559,,Financial Support,7
+service_by_time_block,,,0200-0559,,Food Services,5
+service_by_time_block,,,0200-0559,,Housing,48
+service_by_time_block,,,0200-0559,,Medical Support,<5
+service_by_time_block,,,0200-0559,,Other,<5
+service_by_time_block,,,0200-0559,,Senior Services,61
+service_by_time_block,,,0200-0559,,Unhoused Resident,62
+service_by_time_block,,,0200-0559,,Youth/Family Services,11
+service_by_time_block,,,0600-0959,,(blank),<5
+service_by_time_block,,,0600-0959,,Behavioral Health,99
+service_by_time_block,,,0600-0959,,Domestic Violence,14
+service_by_time_block,,,0600-0959,,Financial Support,13
+service_by_time_block,,,0600-0959,,Food Services,<5
+service_by_time_block,,,0600-0959,,Housing,71
+service_by_time_block,,,0600-0959,,Medical Support,15
+service_by_time_block,,,0600-0959,,Other,21
+service_by_time_block,,,0600-0959,,Senior Services,80
+service_by_time_block,,,0600-0959,,Unhoused Resident,94
+service_by_time_block,,,0600-0959,,Youth/Family Services,34
+service_by_time_block,,,1000-1359,,(blank),9
+service_by_time_block,,,1000-1359,,Behavioral Health,95
+service_by_time_block,,,1000-1359,,Domestic Violence,16
+service_by_time_block,,,1000-1359,,Financial Support,24
+service_by_time_block,,,1000-1359,,Food Services,7
+service_by_time_block,,,1000-1359,,Housing,102
+service_by_time_block,,,1000-1359,,Medical Support,16
+service_by_time_block,,,1000-1359,,Other,31
+service_by_time_block,,,1000-1359,,Senior Services,90
+service_by_time_block,,,1000-1359,,Unhoused Resident,159
+service_by_time_block,,,1000-1359,,Youth/Family Services,31
+service_by_time_block,,,1400-1759,,(blank),5
+service_by_time_block,,,1400-1759,,Behavioral Health,29
+service_by_time_block,,,1400-1759,,Domestic Violence,<5
+service_by_time_block,,,1400-1759,,Financial Support,8
+service_by_time_block,,,1400-1759,,Food Services,<5
+service_by_time_block,,,1400-1759,,Housing,20
+service_by_time_block,,,1400-1759,,Medical Support,<5
+service_by_time_block,,,1400-1759,,Other,24
+service_by_time_block,,,1400-1759,,Senior Services,24
+service_by_time_block,,,1400-1759,,Unhoused Resident,89
+service_by_time_block,,,1400-1759,,Youth/Family Services,11
+service_by_time_block,,,1800-2159,,Behavioral Health,9
+service_by_time_block,,,1800-2159,,Domestic Violence,<5
+service_by_time_block,,,1800-2159,,Housing,<5
+service_by_time_block,,,1800-2159,,Other,<5
+service_by_time_block,,,1800-2159,,Senior Services,<5
+service_by_time_block,,,1800-2159,,Unhoused Resident,20
+service_by_time_block,,,1800-2159,,Youth/Family Services,<5
+service_by_time_block,,,2200-0159,,(blank),<5
+service_by_time_block,,,2200-0159,,Behavioral Health,10
+service_by_time_block,,,2200-0159,,Domestic Violence,<5
+service_by_time_block,,,2200-0159,,Financial Support,5
+service_by_time_block,,,2200-0159,,Housing,<5
+service_by_time_block,,,2200-0159,,Medical Support,<5
+service_by_time_block,,,2200-0159,,Senior Services,<5
+service_by_time_block,,,2200-0159,,Unhoused Resident,12
+service_by_time_block,,,2200-0159,,Youth/Family Services,<5
+referral_by_service,,,,Business,Behavioral Health,<5
+referral_by_service,,,,Business,Financial Support,<5
+referral_by_service,,,,Business,Housing,<5
+referral_by_service,,,,Business,Other,<5
+referral_by_service,,,,Business,Senior Services,<5
+referral_by_service,,,,Business,Unhoused Resident,11
+referral_by_service,,,,Community Engagement,(blank),10
+referral_by_service,,,,Community Engagement,Behavioral Health,<5
+referral_by_service,,,,Community Engagement,Financial Support,<5
+referral_by_service,,,,Community Engagement,Housing,<5
+referral_by_service,,,,Community Engagement,Medical Support,<5
+referral_by_service,,,,Community Engagement,Other,5
+referral_by_service,,,,Community Engagement,Senior Services,<5
+referral_by_service,,,,Community Engagement,Unhoused Resident,124
+referral_by_service,,,,Community Engagement,Youth/Family Services,<5
+referral_by_service,,,,Community Partner,Behavioral Health,9
+referral_by_service,,,,Community Partner,Financial Support,6
+referral_by_service,,,,Community Partner,Food Services,5
+referral_by_service,,,,Community Partner,Housing,15
+referral_by_service,,,,Community Partner,Medical Support,<5
+referral_by_service,,,,Community Partner,Other,9
+referral_by_service,,,,Community Partner,Senior Services,7
+referral_by_service,,,,Community Partner,Unhoused Resident,30
+referral_by_service,,,,Community Partner,Youth/Family Services,<5
+referral_by_service,,,,Emergency Housing,Financial Support,<5
+referral_by_service,,,,Emergency Housing,Housing,14
+referral_by_service,,,,Emergency Housing,Unhoused Resident,<5
+referral_by_service,,,,Fire Department,(blank),<5
+referral_by_service,,,,Fire Department,Behavioral Health,65
+referral_by_service,,,,Fire Department,Domestic Violence,<5
+referral_by_service,,,,Fire Department,Financial Support,<5
+referral_by_service,,,,Fire Department,Housing,39
+referral_by_service,,,,Fire Department,Medical Support,13
+referral_by_service,,,,Fire Department,Other,<5
+referral_by_service,,,,Fire Department,Senior Services,156
+referral_by_service,,,,Fire Department,Unhoused Resident,<5
+referral_by_service,,,,Fire Department,Youth/Family Services,<5
+referral_by_service,,,,Police Department,(blank),7
+referral_by_service,,,,Police Department,Behavioral Health,159
+referral_by_service,,,,Police Department,Domestic Violence,31
+referral_by_service,,,,Police Department,Financial Support,<5
+referral_by_service,,,,Police Department,Food Services,<5
+referral_by_service,,,,Police Department,Housing,36
+referral_by_service,,,,Police Department,Medical Support,10
+referral_by_service,,,,Police Department,Other,19
+referral_by_service,,,,Police Department,Senior Services,54
+referral_by_service,,,,Police Department,Unhoused Resident,82
+referral_by_service,,,,Police Department,Youth/Family Services,64
+referral_by_service,,,,Resident Contact,(blank),<5
+referral_by_service,,,,Resident Contact,Behavioral Health,38
+referral_by_service,,,,Resident Contact,Domestic Violence,11
+referral_by_service,,,,Resident Contact,Financial Support,34
+referral_by_service,,,,Resident Contact,Food Services,<5
+referral_by_service,,,,Resident Contact,Housing,111
+referral_by_service,,,,Resident Contact,Medical Support,6
+referral_by_service,,,,Resident Contact,Other,42
+referral_by_service,,,,Resident Contact,Senior Services,35
+referral_by_service,,,,Resident Contact,Unhoused Resident,144
+referral_by_service,,,,Resident Contact,Youth/Family Services,17
+referral_by_service,,,,Village of Oak Park Departments,Behavioral Health,9
+referral_by_service,,,,Village of Oak Park Departments,Domestic Violence,<5
+referral_by_service,,,,Village of Oak Park Departments,Financial Support,7
+referral_by_service,,,,Village of Oak Park Departments,Food Services,<5
+referral_by_service,,,,Village of Oak Park Departments,Housing,30
+referral_by_service,,,,Village of Oak Park Departments,Medical Support,<5
+referral_by_service,,,,Village of Oak Park Departments,Other,<5
+referral_by_service,,,,Village of Oak Park Departments,Senior Services,10
+referral_by_service,,,,Village of Oak Park Departments,Unhoused Resident,40
+referral_by_service,,,,Village of Oak Park Departments,Youth/Family Services,<5

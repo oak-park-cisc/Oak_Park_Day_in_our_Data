@@ -23,7 +23,7 @@ Full schedule and ground rules: [event-program.md](event-program.md).
 
 ## Pick a project
 
-Eleven organizer-seeded briefs are ready to go, each with a clear question, data already cached in this repo, a quick first win, and a no-code lane. See the [starter projects index](starter-projects/README.md), or pitch your own with the [pitch-your-own template](starter-projects/00-pitch-your-own.md).
+Fourteen organizer-seeded briefs are ready to go, each with a clear question, data already cached in this repo, a quick first win, and a no-code lane. See the [starter projects index](starter-projects/README.md), or pitch your own with the [pitch-your-own template](starter-projects/00-pitch-your-own.md).
 
 1. [Is my assessment fair?](starter-projects/01-is-my-assessment-fair.md) Compare assessed value per square foot across every Oak Park home.
 2. [Where does my tax dollar go?](starter-projects/02-where-does-my-tax-dollar-go.md) Twenty years of levies from six taxing agencies, adjusted for inflation.
@@ -36,6 +36,9 @@ Eleven organizer-seeded briefs are ready to go, each with a clear question, data
 9. [Are the worst alleys getting fixed?](starter-projects/09-are-the-worst-alleys-getting-fixed.md) Alley condition ratings versus the reconstruction plan.
 10. [Which bus stops need help?](starter-projects/10-which-bus-stops-need-help.md) Shelter, ridership, and who lives nearby, for every stop.
 11. [Build an architecture walking tour](starter-projects/11-build-an-architecture-walking-tour.md) 4,958 surveyed historic buildings by architect, style, or street.
+12. [Can I park here right now?](starter-projects/12-can-i-park-here-right-now.md) An address-plus-time answer from the Village's curb restriction data.
+13. [Where is business activity changing?](starter-projects/13-where-is-business-activity-changing.md) Openings and closings by corridor from 2,519 business licenses.
+14. [What does ECHO see?](starter-projects/14-what-does-echo-see.md) What the Village's non-police response team handles, in aggregate.
 
 ## Data
 

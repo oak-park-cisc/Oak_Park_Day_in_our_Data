@@ -25,6 +25,11 @@ Two things live here: the [Oak Park Civic Data Catalog](open-data-catalog.md), a
 | [social-vulnerability-oak-park.geojson](social-vulnerability-oak-park.geojson) | 10 | 53 | Village Social Vulnerability Index by block group | Village GIS |
 | [historic-buildings-oak-park.csv](historic-buildings-oak-park.csv) | 11 Build an architecture walking tour | 4,958 | Every surveyed historic building with architect, style, year, designation, photo link | Village Historic Building Dataset |
 | [historic-districts-oak-park.geojson](historic-districts-oak-park.geojson) | 11 | 12 | Three historic districts and nine survey areas | Village GIS |
+| [parking-restrictions-oak-park.geojson](parking-restrictions-oak-park.geojson) | 12 Can I park here right now? | 1,532 | Every curb segment, permit zone, lot, and garage in the Village's Parking Restriction Areas layer | Village GIS |
+| [parking-overnight-ban-oak-park.geojson](parking-overnight-ban-oak-park.geojson) | 12 | 431 | Lots and streets where an overnight pass is not valid | Village GIS |
+| [parking-facilities-oak-park.csv](parking-facilities-oak-park.csv) | 12 | 124 | Public lots, garages, EV chargers, car share sites | Village GIS |
+| [business-licenses-oak-park.csv](business-licenses-oak-park.csv) | 13 Where is business activity changing? | 2,519 | Every Village business license with dates, category, district, address, coordinates | Village business license dashboard |
+| [echo-activity-oak-park.csv](echo-activity-oak-park.csv) | 14 What does ECHO see? | 494 | Aggregate counts of ECHO services by month, category, referral source, weekday, hour block, Feb 2025 on | Village ECHO activity dashboard |
 
 Brief 05 (commissions) uses [`../commissions-diod.csv`](../commissions-diod.csv) at the repo root.
 
@@ -52,6 +57,11 @@ python3 data/scripts/fetch_transit_stops_oak_park.py  # stdlib only; downloads ~
 python3 data/scripts/fetch_social_vulnerability_oak_park.py
 python3 data/scripts/fetch_historic_buildings_oak_park.py
 python3 data/scripts/fetch_historic_districts_oak_park.py
+python3 data/scripts/fetch_parking_restrictions_oak_park.py
+python3 data/scripts/fetch_parking_overnight_ban_oak_park.py
+python3 data/scripts/fetch_parking_facilities_oak_park.py
+python3 data/scripts/fetch_business_licenses.py       # stdlib only; reads the current dashboard URL from the Village page
+python3 data/scripts/fetch_echo_activity.py           # stdlib only; issues grouped counts only, never rows
 ```
 
 Sources revise history, so a regenerated file will not always match the committed one row for row. The notes below say where that matters.
@@ -221,3 +231,49 @@ Caveats: one construction year is 917, a source typo for 1917. Listing text is f
 Oak Park's three historic district polygons (Frank Lloyd Wright, Ridgeland-Oak Park, Gunderson) plus its nine historic resource survey areas, 12 features.
 
 Source: VOP MapServer [layer 13](https://utility.arcgis.com/usrsvcs/servers/4cff1aaefa364b57b8c70d5c606f2088/rest/services/VOP/AGOL_VOP_Project/MapServer/13) Historic Districts and layer 155 Historic Survey Areas. Properties as returned by the services plus `layer` (district or survey_area) and `name` (whitespace trimmed). The districts' ESTABLISHED, DESCRIPTION, and STYLE fields are empty in the source, and the survey areas' web links are truncated at 80 characters.
+
+### parking-restrictions-oak-park.geojson
+
+Every feature in the Village's Parking Restriction Areas layer: 1,016 daytime curb segments, 390 overnight permit streets, 25 permit zones, 97 lots, and 4 garages, 1,532 polygons.
+
+Source: Village of Oak Park GIS, VOP MapServer [layer 42](https://utility.arcgis.com/usrsvcs/servers/4cff1aaefa364b57b8c70d5c606f2088/rest/services/VOP/AGOL_VOP_Project/MapServer/42), the single layer behind the Village's Daytime Parking Restrictions, Overnight Parking Restrictions, and Modes of Transportation web maps.
+
+Properties: source fields in snake_case: `production_notes` (which map the feature belongs to), `parking_area_type` (ONSTREET, LOT, ZONE, GARAGE), `parking_area_name`, `classification` (PARKING or NOPARKING), `days_of_enforcement`, `enforcement_times`, `duration_restriction`, the secondary-rule fields, `is_permit_parking`, `permit_name`, `is_school_zone`, `is_tow_away`, `is_ev_charging`, `payment_device`, `payment_type`, `has_accessible_spaces`, `accessible_space_count`, `seasonal_restriction`, `location_description` (the sign text on daytime rows, e.g. "3HR 8A-8P M-F"), `guideline_url`, `max_parking_spaces`, plus derived `restriction_group` (daytime_on_street, overnight_permit_street, permit_zone, lot, garage) and `permit_zone` (Y1 to Y9, Z1 to Z9).
+
+Caveats: the daytime hours live only in `location_description`; `enforcement_times` is blank on almost every daytime row, so the rule has to be parsed from sign text (128 distinct strings). Accessible-space fields, rates, and ordinance references are empty everywhere; capacity appears on 5 rows. About 1,036 of 2,486 addressed blocks have no restriction polygon near their midpoint, which means unrestricted, unmapped, or both. The layer's own note says to follow posted signs. Editor usernames were dropped.
+
+### parking-overnight-ban-oak-park.geojson
+
+The two layers behind the printed Overnight Parking Map and the "No Overnight Passes" map: 104 lot polygons and 327 street lines where an overnight pass is not valid. The overnight ban itself is villagewide, 2:30 to 6 a.m., per the Village's parking guidelines page.
+
+Source: VOP MapServer layers 9 (Overnight Parking Ban Lot) and 10 (Overnight Parking Ban On Street). Properties: `ban_type` (lot or on_street), `source_layer`, `parking_area_type`, `parking_area_name`, `parking_enforcement`, and on street rows `status`, `classification`, `days_of_enforcement`, `enforcement_times`. 188 of the 327 street segments are marked Migrated with rule fields blank; the street layer has no street names.
+
+### parking-facilities-oak-park.csv
+
+One row per public lot, garage, EV charger, and car share site: 124 rows (97 lots, 4 garages, 11 public chargers, 3 Village-vehicle chargers, 9 car share).
+
+Source: VOP MapServer layer 42 filtered to lots and garages, layer 4 (EV charging stations), layer 36 (Village-vehicle chargers), layer 3 (car share sites), and layer 9 for the overnight-map flag. Columns: `facility_type`, `facility_id` (lot number), `name`, `address` (parsed from the location text, 93 of 101 lots and garages), `latitude`, `longitude` (centroid), `ownership`, `maintained`, `permit_types` (Day, Night, 24-hour, Monthly), `is_permit_parking`, `payment_device`, `payment_type`, enforcement fields, `max_parking_spaces`, `has_accessible_spaces`, `accessible_space_count`, `is_commuter_parking`, `is_ev_charging`, `seasonal_restriction`, `on_overnight_ban_map`, `overnight_ban_area_type`, `guideline_url`, `weblink`, `description`, `source_layer`, `source_object_id`.
+
+Caveats: no capacity except 5 District 97 lots; no accessible-space counts; hours and rates only where the enforcement fields carry them (a handful of lots and one garage). A few lots appear twice as separate polygons. The per-lot guideline links point at old Village URLs that no longer resolve.
+
+### business-licenses-oak-park.csv
+
+Every business license record in the Village's CityView system as of September 8, 2026: 2,519 rows (1,426 active, 1,093 inactive) with start and end dates, three levels of category, license classes, home-based, liquor, and mobile flags, Village business district, address, zoning, and coordinates for 2,072 storefront addresses.
+
+Source: Village of Oak Park "Business License - Public" Power BI dashboard, linked from [opendata.oak-park.us/BusinessLicense](https://opendata.oak-park.us/BusinessLicense/). No export button; the script reads the current dashboard URL from the Village page, replays the report's public query API, and joins the license, address, GIS, category, and class tables locally.
+
+Columns: `record_id`, `license_number`, `name`, `doing_business_as`, `license_status`, `issued_status` (Renewed or Not Renewed for the latest license year), `date_start`, `start_year`, `date_end`, `end_year`, `first_issued_date`, `last_issued_date`, `last_issued_expired_date`, `license_entered_date`, `last_issued_entered_date`, `major_category` (Retail, Service, Retail and Service, Other) with code, `general_category` (11 groups) with code, `sub_category` (140 types) with code, `sub_category_group`, `license_classes` (liquor class, food risk category, square-footage class), `home_based`, `liquor`, `mobile`, `business_district` (12), `street_address`, `unit`, `address`, `street` (for corridor grouping), `address_status`, `zoning`, `land_use_code`, `latitude`, `longitude`, `cityview_link`.
+
+Caveats: a license is not a storefront. 262 rows are home-based businesses; their coordinates are deliberately blank, matching the Village's own map (a script flag restores them). 180 rows have no Oak Park address (contractors and outside vendors). The license year runs April 1 to March 31, so `last_issued_date` is a renewal, not an opening, and 361 active licenses have an expired last issue (lapsed, not closed). Closings are recorded only from 2015; use 2017 onward, and treat 2019 (194 starts, 159 ends) as an administrative cleanup. A start date of 1900-01-01 means unknown. Nine Village test records were dropped.
+
+### echo-activity-oak-park.csv
+
+Aggregate counts of services logged by E.C.H.O. (Engaging Community for Healthy Outcomes), the Village's care-coordination and unarmed-response program in Neighborhood Services, February 2025 through September 2026 (September partial): 1,598 services, published as five small tables stacked in long format, 494 rows.
+
+Source: Village of Oak Park "ECHO Activity - Public" Power BI dashboard, linked from [opendata.oak-park.us/EchoActivity](https://opendata.oak-park.us/EchoActivity); program page on [oak-park.us](https://www.oak-park.us/Community/Community-Services/E.C.H.O-Engaging-Community-for-Healthy-Outcomes). The script issues only grouped COUNT queries, the same ones the dashboard's charts issue, so no individual record is ever downloaded.
+
+Columns: `breakdown` (service_by_month, referral_by_month, service_by_weekday, service_by_time_block, referral_by_service), `month`, `weekday`, `time_block` (four-hour block), `referral_source` (Police Department, Resident Contact, Fire Department, Community Engagement, Village departments, Community Partner, Business, Emergency Housing), `service` (Unhoused Resident, Behavioral Health, Senior Services, Housing, Youth/Family Services, Financial Support, Domestic Violence, Medical Support, Food Services, Other, blank), `count` (integer or `<5`). Only the columns that apply to a breakdown are filled.
+
+Privacy: the source has no location, age, name, or note fields, so nothing below Village level exists. The two month-level tables are unsuppressed (the dashboard's own grain). The weekday, hour-block, and referral-by-service tables suppress cells under 5 and apply complementary suppression (73 cells hidden). The dashboard's Dataset button offers a row-level file (timestamp, service, referral source); this repo deliberately does not cache it.
+
+Caveats: a service is one logged contact, not one person, so counts are workload, not caseload. The timestamp is when staff logged the referral: 97 percent fall on weekdays and about a quarter carry a 2 a.m. to 6 a.m. stamp, which does not match a business-hours team, so ask the ECHO team what the field means before reading hour of day. A blank service category appears from July 2026. September 2025 is double its neighbors for an unknown reason. The current month is partial; the report refreshes daily.
