@@ -4,7 +4,7 @@ This guide provides starter challenges for the **Day in Our Data** civic hackath
 
 Most ideas are scoped so that a small team can produce a meaningful minimum viable demo in approximately **two to three hours**. Teams are welcome to choose one of these challenges, adapt one, combine multiple ideas, or pursue a different civic question.
 
-Fourteen directions from this list and the organizer discussions that followed have been developed into [starter-project briefs](starter-projects/README.md) with cached data and a table on event day. Ideas marked **now a starter table** below point to the brief. Every other idea here is a ready-made starting point for a [pitch-your-own](starter-projects/00-pitch-your-own.md) team.
+Fifteen directions from this list and the organizer discussions that followed have been developed into [starter-project briefs](starter-projects/README.md) with cached data and a table on event day. Ideas marked **now a starter table** below point to the brief. Every other idea here is a ready-made starting point for a [pitch-your-own](starter-projects/00-pitch-your-own.md) team.
 
 ## What a Strong Project Should Do
 
@@ -126,7 +126,7 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 4. Oak Park Urban Forest Resilience
 
-**Now a starter table:** see [brief 10](starter-projects/10-how-resilient-is-our-urban-forest.md), with the data cached in `data/`.
+**Now a starter table:** see [brief 11](starter-projects/11-how-resilient-is-our-urban-forest.md), with the data cached in `data/`.
 
 **Civic question:** Where is Oak Park's public tree population diverse and resilient, and where is it overly dependent on a small number of species?
 
@@ -161,7 +161,7 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 5. Oak Park Architecture Explorer and Walking Tour
 
-**Now a starter table:** see [brief 11](starter-projects/11-build-an-architecture-walking-tour.md), with the data cached in `data/`.
+**Now a starter table:** see [brief 12](starter-projects/12-build-an-architecture-walking-tour.md), with the data cached in `data/`.
 
 **Civic question:** How can Oak Park's architectural history be made easier for residents and visitors to explore?
 
@@ -315,7 +315,7 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 11. Commission and Data Matchmaker
 
-**Now a starter table:** see [What do our commissions do?](starter-projects/12-what-do-our-commissions-do.md).
+**Now a starter table:** see [What do our commissions do?](starter-projects/13-what-do-our-commissions-do.md).
 
 **Civic question:** Which Village commission should a resident approach about an issue, and what public data could help frame the discussion?
 
@@ -404,7 +404,7 @@ The following ideas use public dashboards or sensitive subject areas. They shoul
 
 ### 15. ECHO Community Needs and Resource Gaps
 
-**Now a starter table:** see [brief 14](starter-projects/14-what-does-echo-see.md), with the data cached in `data/`. The dashboard export this idea asked for is cached (aggregates only).
+**Now a starter table:** see [brief 15](starter-projects/15-what-does-echo-see.md), with the data cached in `data/`. The dashboard export this idea asked for is cached (aggregates only).
 
 **Civic question:** What types of community needs are being encountered by the ECHO program, and where might service partnerships or resources be strengthened?
 

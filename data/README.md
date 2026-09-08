@@ -8,30 +8,31 @@ Two things live here: the [Oak Park Civic Data Catalog](open-data-catalog.md), a
 | --- | --- | ---: | --- | --- |
 | [assessed-values-oak-park.csv](assessed-values-oak-park.csv) | 01 Is my assessment fair? | 37,468 | Every Oak Park parcel, 2025 and 2026 | Cook County Assessor (Socrata) |
 | [oak-park-levies.csv](oak-park-levies.csv) | 02 Where does my tax dollar go? | 160 | 8 Oak Park taxing agencies, tax years 2006 to 2025 | Cook County Clerk tax extension reports |
-| [cpi-annual.csv](cpi-annual.csv) | 02, 08 | 26 | CPI-U annual averages 2000 to 2025 with 2025-dollar multipliers | FRED CPIAUCSL |
+| [cpi-annual.csv](cpi-annual.csv) | 02, 09 | 26 | CPI-U annual averages 2000 to 2025 with 2025-dollar multipliers | FRED CPIAUCSL |
 | [crashes-oak-park.csv](crashes-oak-park.csv) | 04 Can a kid bike to school safely? | 9,331 | All Oak Park crashes 2019 to 2025 | IDOT annual crash layers |
 | [crashes-bike-ped-oak-park.csv](crashes-bike-ped-oak-park.csv) | 04 | 243 | Bike and pedestrian crashes 2020 to 2024 | IDOT bike/ped crash layer |
 | [crashes-village-oak-park.csv](crashes-village-oak-park.csv) | 04 | 4,640 | Every crash reported to Oak Park Police, Jan 2024 to Aug 2026 | Village traffic crash dashboard |
-| [schools-oak-park.csv](schools-oak-park.csv) | 04, 09 | 21 | Every K-12 school in Oak Park, public and private, with coordinates | ISBE directory, Village GIS, county address points |
+| [schools-oak-park.csv](schools-oak-park.csv) | 04, 10 | 21 | Every K-12 school in Oak Park, public and private, with coordinates | ISBE directory, Village GIS, county address points |
 | [d97-attendance-zones.geojson](d97-attendance-zones.geojson) | 04 | 8 | D97 elementary attendance zone polygons | Village GIS |
-| [acs-oak-park-timeseries.csv](acs-oak-park-timeseries.csv) | 08 Oak Park over time | 1,554 | 35 ACS indicators for Oak Park, Cook County, Illinois, every 5-year vintage 2009 to 2024 | U.S. Census Bureau ACS |
-| [report-card-d97-d200.csv](report-card-d97-d200.csv) | 09 How are our schools doing? | 200 | D97, D200, their schools, 11 comparison districts, and the state, 2018 to 2025 | ISBE Illinois Report Card |
-| [crime-incidents-oak-park.csv](crime-incidents-oak-park.csv) | 13 Oak Park crime data explorer | 13,913 | Every reported offense, January 2022 to August 2026 | Oak Park PD crime dashboard |
-| [trees-oak-park.csv](trees-oak-park.csv) | 10 How resilient is our urban forest? | 18,837 | Every public tree with species, genus, size, and block | Village tree inventory |
-| [streets-oak-park.geojson](streets-oak-park.geojson) | 07, 10 | 3,343 | Street centerlines with address ranges | Village GIS |
+| [acs-oak-park-timeseries.csv](acs-oak-park-timeseries.csv) | 09 Oak Park over time | 1,554 | 35 ACS indicators for Oak Park, Cook County, Illinois, every 5-year vintage 2009 to 2024 | U.S. Census Bureau ACS |
+| [report-card-d97-d200.csv](report-card-d97-d200.csv) | 10 How are our schools doing? | 200 | D97, D200, their schools, 11 comparison districts, and the state, 2018 to 2025 | ISBE Illinois Report Card |
+| [crime-incidents-oak-park.csv](crime-incidents-oak-park.csv) | 14 Oak Park crime data explorer | 13,913 | Every reported offense, January 2022 to August 2026 | Oak Park PD crime dashboard |
+| [trees-oak-park.csv](trees-oak-park.csv) | 11 How resilient is our urban forest? | 18,837 | Every public tree with species, genus, size, and block | Village tree inventory |
+| [streets-oak-park.geojson](streets-oak-park.geojson) | 07, 11 | 3,343 | Street centerlines with address ranges | Village GIS |
 | [alleys-oak-park.csv](alleys-oak-park.csv), [.geojson](alleys-oak-park.geojson) | 07 Are the worst alleys getting fixed? | 640 | Every rated alley segment with 2022-23 and 2024 PCI, reconstruction plan, 2026 CIP | Village alley condition map |
 | [capital-projects-oak-park.geojson](capital-projects-oak-park.geojson) | 07 | 244 | 2026 capital improvement and pavement preservation projects, 12 layers | Village capital improvements maps |
-| [transit-stops-oak-park.csv](transit-stops-oak-park.csv) | 06 Which bus stops need help? | 225 | Every bus stop and rail station in and at the edge of Oak Park, with routes, trips, shelter, ridership, vulnerability | CTA and Pace GTFS, Pace GIS, CMAP, Village GIS |
-| [social-vulnerability-oak-park.geojson](social-vulnerability-oak-park.geojson) | 06 | 53 | Village Social Vulnerability Index by block group | Village GIS |
-| [historic-buildings-oak-park.csv](historic-buildings-oak-park.csv) | 11 Build an architecture walking tour | 4,958 | Every surveyed historic building with architect, style, year, designation, photo link | Village Historic Building Dataset |
-| [historic-districts-oak-park.geojson](historic-districts-oak-park.geojson) | 11 | 12 | Three historic districts and nine survey areas | Village GIS |
+| [transit-stops-oak-park.csv](transit-stops-oak-park.csv) | 06, 08 | 225 | Every bus stop and rail station in and at the edge of Oak Park, with routes, trips, shelter, ridership, vulnerability | CTA and Pace GTFS, Pace GIS, CMAP, Village GIS |
+| [social-vulnerability-oak-park.geojson](social-vulnerability-oak-park.geojson) | 06 |
+| [cta-ridership-oak-park.csv](cta-ridership-oak-park.csv) | 08 Build the Oak Park transit dashboard | 30,359 | Daily entries at the seven Oak Park L stations and monthly averages for seven CTA bus routes, 2015 to June 2026 | City of Chicago data portal (CTA) | 53 | Village Social Vulnerability Index by block group | Village GIS |
+| [historic-buildings-oak-park.csv](historic-buildings-oak-park.csv) | 12 Build an architecture walking tour | 4,958 | Every surveyed historic building with architect, style, year, designation, photo link | Village Historic Building Dataset |
+| [historic-districts-oak-park.geojson](historic-districts-oak-park.geojson) | 12 | 12 | Three historic districts and nine survey areas | Village GIS |
 | [parking-restrictions-oak-park.geojson](parking-restrictions-oak-park.geojson) | 05 Can I park here right now? | 1,532 | Every curb segment, permit zone, lot, and garage in the Village's Parking Restriction Areas layer | Village GIS |
 | [parking-overnight-ban-oak-park.geojson](parking-overnight-ban-oak-park.geojson) | 05 | 431 | Lots and streets where an overnight pass is not valid | Village GIS |
 | [parking-facilities-oak-park.csv](parking-facilities-oak-park.csv) | 05 | 124 | Public lots, garages, EV chargers, car share sites | Village GIS |
 | [business-licenses-oak-park.csv](business-licenses-oak-park.csv) | 03 Where is business activity changing? | 2,519 | Every Village business license with dates, category, district, address, coordinates | Village business license dashboard |
-| [echo-activity-oak-park.csv](echo-activity-oak-park.csv) | 14 What does ECHO see? | 494 | Aggregate counts of ECHO services by month, category, referral source, weekday, hour block, Feb 2025 on | Village ECHO activity dashboard |
+| [echo-activity-oak-park.csv](echo-activity-oak-park.csv) | 15 What does ECHO see? | 494 | Aggregate counts of ECHO services by month, category, referral source, weekday, hour block, Feb 2025 on | Village ECHO activity dashboard |
 
-Brief 12 (commissions) uses [`../commissions-diod.csv`](../commissions-diod.csv) at the repo root.
+Brief 13 (commissions) uses [`../commissions-diod.csv`](../commissions-diod.csv) at the repo root.
 
 ## Regenerating a file
 
@@ -54,6 +55,7 @@ python3 data/scripts/fetch_trees_oak_park.py          # stdlib only; uses street
 python3 data/scripts/fetch_alleys_oak_park.py         # stdlib only
 python3 data/scripts/fetch_capital_projects_oak_park.py
 python3 data/scripts/fetch_transit_stops_oak_park.py  # stdlib only; downloads ~110 MB of GTFS, two to three minutes
+python3 data/scripts/fetch_cta_ridership_oak_park.py  # stdlib only; --since 2001 for the full history
 python3 data/scripts/fetch_social_vulnerability_oak_park.py
 python3 data/scripts/fetch_historic_buildings_oak_park.py
 python3 data/scripts/fetch_historic_districts_oak_park.py
@@ -209,6 +211,16 @@ Sources: [CTA GTFS](https://www.transitchicago.com/downloads/sch_data/google_tra
 Columns: `stop_type`, `agency`, `stop_id`, `stop_code`, `stop_name`, `stop_desc`, `latitude`, `longitude`, `in_oak_park`, `routes`, `route_names`, `weekday_trips`, `wheelchair_boarding` (CTA only), `pace_shelter_2015`, `pace_shelter_type`, `pace_shelter_corner`, `cmap_sheltered_2024`, `cmap_trvi` (1 to 3, higher is more vulnerable to extreme heat), `cmap_trvi_category`, `cmap_mean_svi_norm`, `cmap_mean_no_vehicle_norm`, `cmap_match_m`, `apc_ons`, `apc_offs`, `apc_total`, `apc_routes`, `apc_match_m`, `village_2019_stop`, `village_2019_routes`, `source`.
 
 Caveats: CTA marks every bus stop as wheelchair accessible, so that field only informs the rail rows (Harlem/Lake is the only accessible CTA station in Oak Park). Pace's GTFS has no shelter or accessibility fields and the Village's 2019 layer has them but empty, so shelter comes from Pace's 2015 inventory (6 stops) and CMAP's 2024 layer (14 sheltered of 141); they disagree on two stops. Pace passenger counts cover 52 of 87 in-Village Pace stops and should be read as a ranking. CTA publishes no stop-level ridership. Stops across Harlem, North, and Austin are kept but flagged `in_oak_park` = N. Regenerating picks up the current schedule, so counts will drift.
+
+### cta-ridership-oak-park.csv
+
+CTA ridership for the seven L stations in the transit stops file (daily turnstile entries, 29,393 rows, January 2015 to June 2026) and the seven CTA bus routes with Oak Park stops (monthly day-type averages, 966 rows, same span).
+
+Source: City of Chicago Data Portal, [CTA L Station Entries, Daily Totals](https://data.cityofchicago.org/Transportation/CTA-Ridership-L-Station-Entries-Daily-Totals/5neh-572f) and [CTA Bus Routes, Monthly Day-Type Averages](https://data.cityofchicago.org/Transportation/CTA-Ridership-Bus-Routes-Monthly-Day-Type-Averages/bynn-gwxy). The script pages the Socrata endpoints; the full history back to 2001 is 5 MB, so the default keeps 2015 on (`--since 2001` rebuilds it).
+
+Columns: `series` (rail_station_daily or bus_route_monthly), `id` (CTA station id, which equals `stop_id` in transit-stops-oak-park.csv, or route number), `name`, `line`, `in_oak_park`, `date`, `daytype` (W weekday, A Saturday, U Sunday or holiday), `rides`, `avg_weekday_rides`, `avg_saturday_rides`, `avg_sunday_holiday_rides`, `month_total`.
+
+Caveats: the portal's station names differ from CTA's (Harlem-Lake, Oak Park-Lake, Austin-Forest Park). Austin on the Green Line and Harlem on the Blue Line are just outside the Village. Entries only, no exits. Bus figures are whole-route, not Oak Park stops. The portal updates about monthly. Weekday entries at the five in-Village stations in 2025 were 53 percent of 2019.
 
 ### social-vulnerability-oak-park.geojson
 
