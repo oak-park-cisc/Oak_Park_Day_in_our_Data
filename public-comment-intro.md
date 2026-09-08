@@ -10,8 +10,10 @@ The more ideas we have that are based on real needs, the more successful this ev
 
 The details of the event are included in my handout. If you have any questions or ideas for the hackathon, please contact me directly at: email address.
 
-***Event Details***  
-Day In Our Data  
-Sponsored by the Civic Information Systems Commission  
-Saturday October 3rd, 11-4pm  
-Dole Branch Library
+***Event Details***
+
+- Day In Our Data
+- Sponsored by the Civic Information Systems Commission
+- Saturday, October 3, 2026, 11 a.m. to 3 p.m.
+- Dole Branch Library meeting room, 255 Augusta St., Oak Park
+- Free registration: https://oak-park.us/ciscdata

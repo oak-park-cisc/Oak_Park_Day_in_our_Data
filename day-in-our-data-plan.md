@@ -1,10 +1,19 @@
-Day in our Data Plan
+# Day in Our Data Plan
 
-- Schedule – Early Fall – Manning to plan
+## Confirmed Event Details
 
-  - Veterans room – Manning
+- Saturday, October 3, 2026, 11 a.m. to 3 p.m.
+- Dole Branch Library meeting room, Oak Park Public Library, 255 Augusta St., Oak Park, IL (not the Veterans Room)
+- Registration: https://oak-park.us/ciscdata (free; pizza and snacks provided)
+- Schedule and structure: [event-program.md](event-program.md)
 
-  - Sept 26<sup>th</sup>. 11-4 – maybe oct 3rd
+## Earlier Planning Notes
+
+The schedule and room references below are retained as working history and have
+been superseded by the confirmed details above.
+
+- Original schedule and venue research was assigned to Manning; the final event
+  details are recorded above.
 
   - Pizza
 
@@ -28,4 +37,4 @@ Day in our Data Plan
 
 - Can fly.io sponsor an org with hosting?
 
-- Prizes with demo at end
+- Demos at end. Publish a showcase afterward; participants vote on it after the fact, then send gift cards (Aug 20 decision, clarified Sep 8)
