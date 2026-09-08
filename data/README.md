@@ -17,6 +17,14 @@ Two things live here: the [Oak Park Civic Data Catalog](open-data-catalog.md), a
 | [acs-oak-park-timeseries.csv](acs-oak-park-timeseries.csv) | 04 Oak Park over time | 1,554 | 35 ACS indicators for Oak Park, Cook County, Illinois, every 5-year vintage 2009 to 2024 | U.S. Census Bureau ACS |
 | [report-card-d97-d200.csv](report-card-d97-d200.csv) | 06 How are our schools doing? | 200 | D97, D200, their schools, 11 comparison districts, and the state, 2018 to 2025 | ISBE Illinois Report Card |
 | [crime-incidents-oak-park.csv](crime-incidents-oak-park.csv) | 07 Oak Park crime data explorer | 13,913 | Every reported offense, January 2022 to August 2026 | Oak Park PD crime dashboard |
+| [trees-oak-park.csv](trees-oak-park.csv) | 08 How resilient is our urban forest? | 18,837 | Every public tree with species, genus, size, and block | Village tree inventory |
+| [streets-oak-park.geojson](streets-oak-park.geojson) | 08, 09 | 3,343 | Street centerlines with address ranges | Village GIS |
+| [alleys-oak-park.csv](alleys-oak-park.csv), [.geojson](alleys-oak-park.geojson) | 09 Are the worst alleys getting fixed? | 640 | Every rated alley segment with 2022-23 and 2024 PCI, reconstruction plan, 2026 CIP | Village alley condition map |
+| [capital-projects-oak-park.geojson](capital-projects-oak-park.geojson) | 09 | 244 | 2026 capital improvement and pavement preservation projects, 12 layers | Village capital improvements maps |
+| [transit-stops-oak-park.csv](transit-stops-oak-park.csv) | 10 Which bus stops need help? | 225 | Every bus stop and rail station in and at the edge of Oak Park, with routes, trips, shelter, ridership, vulnerability | CTA and Pace GTFS, Pace GIS, CMAP, Village GIS |
+| [social-vulnerability-oak-park.geojson](social-vulnerability-oak-park.geojson) | 10 | 53 | Village Social Vulnerability Index by block group | Village GIS |
+| [historic-buildings-oak-park.csv](historic-buildings-oak-park.csv) | 11 Build an architecture walking tour | 4,958 | Every surveyed historic building with architect, style, year, designation, photo link | Village Historic Building Dataset |
+| [historic-districts-oak-park.geojson](historic-districts-oak-park.geojson) | 11 | 12 | Three historic districts and nine survey areas | Village GIS |
 
 Brief 05 (commissions) uses [`../commissions-diod.csv`](../commissions-diod.csv) at the repo root.
 
@@ -36,6 +44,14 @@ python3 data/scripts/fetch_d97_attendance_zones.py
 python3 data/scripts/fetch_acs_timeseries.py          # needs requests; CENSUS_API_KEY optional; about 8 minutes
 python3 data/scripts/fetch_report_card_d97_d200.py    # needs requests and openpyxl; downloads ~200 MB of workbooks
 python3 data/scripts/fetch_crime_incidents.py         # stdlib only; update DASHBOARD_URL if the Village republishes
+python3 data/scripts/fetch_streets_oak_park.py        # stdlib only
+python3 data/scripts/fetch_trees_oak_park.py          # stdlib only; uses streets-oak-park.geojson
+python3 data/scripts/fetch_alleys_oak_park.py         # stdlib only
+python3 data/scripts/fetch_capital_projects_oak_park.py
+python3 data/scripts/fetch_transit_stops_oak_park.py  # stdlib only; downloads ~110 MB of GTFS, two to three minutes
+python3 data/scripts/fetch_social_vulnerability_oak_park.py
+python3 data/scripts/fetch_historic_buildings_oak_park.py
+python3 data/scripts/fetch_historic_districts_oak_park.py
 ```
 
 Sources revise history, so a regenerated file will not always match the committed one row for row. The notes below say where that matters.
@@ -141,3 +157,67 @@ Source: Village of Oak Park Police Department "Crime Incident - Public" Power BI
 Columns: `incident_id`, `incident_id_label` (YY-NNNNN), `charge_id` (unique key), `record_id`, `date`, `time`, `occurred_at`, `hour`, `occurred_at_label`, `incident_type` (NIBRS category), `offense_description`, `offense_code`, `offense_description_code`, `offense_group` (A or B), `crime_against` (Person, Property, Society), `ucr_code`, `location` (block or intersection), `block_begin_number`, `block_odd_number`, `post`, `post_label`, `zone` (1 to 8), `zone_label`, `latitude`, `longitude`.
 
 Caveats: one row per offense, not per incident; count distinct `incident_id` for incident counts. Locations are generalized to the block or intersection, and coordinates are geocoded from that, so many rows share a point. Classifications are preliminary and the Village revises history (between February and September 2026, 42 rows were added to earlier months, 7 removed, and 3 re-geocoded), so a regenerated file will not match this one exactly. The dashboard lags the calendar, so treat the current and prior month as partial. Only NIBRS-classified offenses reported to Oak Park police, not all calls for service. A time of 00:00:00 usually means the time is unknown. The dashboard's embed key changed once in 2026; if the script returns 401, update `DASHBOARD_URL` from the Crime Maps page.
+
+### trees-oak-park.csv
+
+Every tree in the Village's public tree inventory, one row per point, with a derived genus and block: 18,837 trees, 137 species, 69 genera, 814 blocks.
+
+Source: Village of Oak Park GIS, [VOP_TreeInventory_PUBLICVIEW](https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/VOP_TreeInventory_PUBLICVIEW/FeatureServer/0) (portal item 792e798104b140c3b8063e86dc09d991). Block comes from the nearest non-alley street centerline in streets-oak-park.geojson.
+
+Columns: `object_id`, `common_name`, `latin_name`, `genus`, `genus_source` (latin, or common_name_lookup for the 358 rows with no Latin name), `dbh_in`, `height_ft` and `spread_ft` (coded in 5 or 10 foot steps), `latitude`, `longitude`, `nearest_street`, `block` (hundred block plus street, e.g. 900 N AUSTIN BLVD), `block_distance_ft`, `global_id`.
+
+Caveats: the source has no condition, age, planting year, or address. Block is a snap to the nearest centerline (mean 23 ft; 44 trees over 100 ft), so corner trees may land on the cross street. Latin names are inconsistent for some species. Villagewide the top species (Norway maple) is 8.8 percent and the top genus (Acer) is 20.5 percent.
+
+### streets-oak-park.geojson
+
+Village street centerlines with address ranges, 3,343 segments and 117 street names, used for block assignment and address lookup in briefs 08 and 09.
+
+Source: Village of Oak Park GIS, [Streets_Centerlines](https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/Streets_Centerlines/FeatureServer/0). Properties: `fid`, `feature_id`, `address_left_from`, `address_left_to`, `address_right_from`, `address_right_to` (-1 when no addresses), `street_name`, `length_ft`. 755 segments are alleys and 856 have no address range.
+
+### alleys-oak-park.csv and alleys-oak-park.geojson
+
+Every rated alley segment with its 2022-2023 and 2024 Pavement Condition Index, joined to the 2025 to 2029 reconstruction plan and the 2026 capital program: 640 segments, 621 distinct alley ids. The GeoJSON has line geometry; the CSV has the same fields plus centroid coordinates.
+
+Source: Village of Oak Park web map "Alley Condition Ratings and Reconstruction Priorities" (portal item 8b9855b623b64b65bd71a5269a287b77), served as VOP MapServer layers [157](https://utility.arcgis.com/usrsvcs/servers/4cff1aaefa364b57b8c70d5c606f2088/rest/services/VOP/AGOL_VOP_Project/MapServer/157) (conditions) and 164 (reconstruction plan), plus the Alley Improvements layer of the [2026 Capital Improvements](https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/2026_CIP_/FeatureServer/5) map.
+
+Columns: `alley_id` (e.g. 178-N), `alley_name`, `section_id`, `pid`, `from_street`, `to_street`, `surface` (PCC concrete, AC asphalt, PP and BR undefined), `width_ft`, `slab_length_ft`, `slab_width_ft`, `construction_date`, `construction_year`, `general_condition`, `pci_2022_2023`, `pci_2024`, `pci_change`, `pci_2024_band` (0-39, 40-59, 60-79, 80-100, the Village map's classes), `scheduled_build_year` (2025 to 2029, blank if not on the plan), `in_2026_cip`, `length_ft`, `object_id`.
+
+Caveats: `construction_year` 1900 (92 rows) means unknown, and construction dates are not maintained. The source layer's description says 2022-2023 while its name says 2024; both PCI fields are kept. 164 segments are rated 39 or below; 51 of those are scheduled or in the 2026 program and 113 are not.
+
+### capital-projects-oak-park.geojson
+
+All twelve operational layers from the Village's two project web maps in one file, tagged by `project_type`: 244 features covering resurfacing, RRFBs, water and sewer, streetscape, alley improvements, sewer lining, proposed greenways, patching, crack fill, microsurfacing, rejuvenator, and proposed alley reconstruction.
+
+Source: [2026 Capital Improvements](https://www.arcgis.com/home/item.html?id=525f3c4a968c4e1f8f3eeeda2f8d6eac) web map layers under `services5.arcgis.com/aymthbPDQOcCnuwg` (2026_CIP_, SewerLining, Proposed_Neighborhood_Greenways, PavementPreservationAGOL_gdb) plus the alley reconstruction plan layer above. Properties on every feature: `project_type`, `program`, `source_layer`, `source_object_id`, `name`, `alley_id`, `build_year`, `length_ft`; other fields kept where the layer has them (street, limits, road class, AADT, 2021 PCI and IRI, treatment years). The resurfacing and sewer lining layers carry no names, and the 2026 layers have no year field beyond the program name.
+
+### transit-stops-oak-park.csv
+
+Every CTA and Pace bus stop and every CTA and Metra rail station in and just across the Oak Park boundary, one row per stop: 225 rows (87 CTA bus, 130 Pace bus, 7 CTA rail, 1 Metra), 147 inside the Village.
+
+Sources: [CTA GTFS](https://www.transitchicago.com/downloads/sch_data/google_transit.zip) and [Pace GTFS](https://www.pacebus.com/gtfs) (August 2026 feed) for stops, routes, and weekday trips; the Village's Modes of Transportation layers (2019 Pace stop snapshot, Metra station) and [Municipal Boundary](https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/Municipal_Boundary/FeatureServer/0); Pace's GIS server for the [2015 shelter inventory](https://maps.pacebus.com/arcgis/rest/services/StrategicServices/Shelters_Posted_Stops/MapServer/0) and [Spring 2026 passenger counts](https://maps.pacebus.com/arcgis/rest/services/StrategicServices/APC/MapServer/0); CMAP's [transit rider vulnerability](https://services5.arcgis.com/LcMXE3TFhi1BSaCY/arcgis/rest/services/TRVI_Data_Data_Hub/FeatureServer) layers (2024). Joins are by Pace stop id where one exists, otherwise nearest point within 10 to 40 m.
+
+Columns: `stop_type`, `agency`, `stop_id`, `stop_code`, `stop_name`, `stop_desc`, `latitude`, `longitude`, `in_oak_park`, `routes`, `route_names`, `weekday_trips`, `wheelchair_boarding` (CTA only), `pace_shelter_2015`, `pace_shelter_type`, `pace_shelter_corner`, `cmap_sheltered_2024`, `cmap_trvi` (1 to 3, higher is more vulnerable to extreme heat), `cmap_trvi_category`, `cmap_mean_svi_norm`, `cmap_mean_no_vehicle_norm`, `cmap_match_m`, `apc_ons`, `apc_offs`, `apc_total`, `apc_routes`, `apc_match_m`, `village_2019_stop`, `village_2019_routes`, `source`.
+
+Caveats: CTA marks every bus stop as wheelchair accessible, so that field only informs the rail rows (Harlem/Lake is the only accessible CTA station in Oak Park). Pace's GTFS has no shelter or accessibility fields and the Village's 2019 layer has them but empty, so shelter comes from Pace's 2015 inventory (6 stops) and CMAP's 2024 layer (14 sheltered of 141); they disagree on two stops. Pace passenger counts cover 52 of 87 in-Village Pace stops and should be read as a ranking. CTA publishes no stop-level ridership. Stops across Harlem, North, and Austin are kept but flagged `in_oak_park` = N. Regenerating picks up the current schedule, so counts will drift.
+
+### social-vulnerability-oak-park.geojson
+
+The Village of Oak Park's Social Vulnerability Index by Census block group, 53 polygons.
+
+Source: Village of Oak Park, [ClimateActionPlan_Service layer 35](https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/ClimateActionPlan_Service/FeatureServer/35), the composite behind the Village's Social Vulnerability map. Properties: `NAME`, `GEOID`, fifteen 1-to-5 indices (poverty, seniors, children under 5, disability, rented building age, race, frontline workers, no vehicle, single parent, rent burden, home cost burden, food stamps, unemployment, language), `Composite_Index` (their sum, 23 to 56), plus added `geoid12` and `tract_block_group`. The Village does not publish the method or vintage; the indices are ranks within Oak Park, not percentages, and the underlying ACS is probably 2014-2019.
+
+### historic-buildings-oak-park.csv
+
+Every surveyed historic resource in the Village's Historic Building Dataset, one row per building: 4,958 rows with coordinates, architect, style, construction date, designation flags, survey rating, photo and survey-form links, and the historic district containing the point.
+
+Source: Village of Oak Park, [Historic Building Dataset](https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/OPHR_FGDB_V3_PUBLIC/FeatureServer/0) (portal item 5a02234ddbed497a809810430a61853a); district assignment by point-in-polygon against VOP MapServer layer 13.
+
+Columns: `objectid`, `address`, `building_historical_name`, `building_current_name`, `architect` (blank for 3,302), `builder`, `developer`, `significant_owner`, `style_primary`, `style_secondary`, `form`, `construction_decade`, `construction_year` (blank for 98), `construction_year_certainty`, `construction_year_source`, `resource_rating` (Contributing 4,473, Non-Contributing 430), `is_individually_eligible`, `local_landmark` (65), `local_listed_district`, `local_listing`, `nr_landmark`, `nr_listed_individually` (8), `nr_listed_district`, `nr_listing`, `eligibility_remarks`, `previous_survey_name`, `historical_summary`, `notes`, `references`, `image_url`, `form_url`, `latitude`, `longitude`, `historic_district` (Frank Lloyd Wright 1,898, Ridgeland-Oak Park 1,607, Gunderson 291, blank 1,162).
+
+Caveats: one construction year is 917, a source typo for 1917. Listing text is free text with inconsistent district spellings. Eight addresses appear twice. 4,380 addresses match `prop_address` in assessed-values-oak-park.csv exactly; the Assessor's `year_built` differs by more than ten years on 419 of them, and the historic file is the researched value. Image and form links depend on the Village's apps.oak-park.us hosting.
+
+### historic-districts-oak-park.geojson
+
+Oak Park's three historic district polygons (Frank Lloyd Wright, Ridgeland-Oak Park, Gunderson) plus its nine historic resource survey areas, 12 features.
+
+Source: VOP MapServer [layer 13](https://utility.arcgis.com/usrsvcs/servers/4cff1aaefa364b57b8c70d5c606f2088/rest/services/VOP/AGOL_VOP_Project/MapServer/13) Historic Districts and layer 155 Historic Survey Areas. Properties as returned by the services plus `layer` (district or survey_area) and `name` (whitespace trimmed). The districts' ESTABLISHED, DESCRIPTION, and STYLE fields are empty in the source, and the survey areas' web links are truncated at 80 characters.

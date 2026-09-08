@@ -23,7 +23,7 @@ Full schedule and ground rules: [event-program.md](event-program.md).
 
 ## Pick a project
 
-Seven organizer-seeded briefs are ready to go, each with a clear question, data already cached in this repo, a quick first win, and a no-code lane. See the [starter projects index](starter-projects/README.md), or pitch your own with the [pitch-your-own template](starter-projects/00-pitch-your-own.md).
+Eleven organizer-seeded briefs are ready to go, each with a clear question, data already cached in this repo, a quick first win, and a no-code lane. See the [starter projects index](starter-projects/README.md), or pitch your own with the [pitch-your-own template](starter-projects/00-pitch-your-own.md).
 
 1. [Is my assessment fair?](starter-projects/01-is-my-assessment-fair.md) Compare assessed value per square foot across every Oak Park home.
 2. [Where does my tax dollar go?](starter-projects/02-where-does-my-tax-dollar-go.md) Twenty years of levies from six taxing agencies, adjusted for inflation.
@@ -32,6 +32,10 @@ Seven organizer-seeded briefs are ready to go, each with a clear question, data 
 5. [What do our commissions do?](starter-projects/05-what-do-our-commissions-do.md) Build the "find your commission" tool that does not exist yet.
 6. [How are our schools doing?](starter-projects/06-how-are-our-schools-doing.md) Illinois Report Card: D97 and D200 versus peers, over time.
 7. [Oak Park crime data explorer](starter-projects/07-oak-park-crime-explorer.md) What incident data shows about what happens where and when.
+8. [How resilient is our urban forest?](starter-projects/08-how-resilient-is-our-urban-forest.md) 18,800 public trees against the 10-20-30 diversity rule.
+9. [Are the worst alleys getting fixed?](starter-projects/09-are-the-worst-alleys-getting-fixed.md) Alley condition ratings versus the reconstruction plan.
+10. [Which bus stops need help?](starter-projects/10-which-bus-stops-need-help.md) Shelter, ridership, and who lives nearby, for every stop.
+11. [Build an architecture walking tour](starter-projects/11-build-an-architecture-walking-tour.md) 4,958 surveyed historic buildings by architect, style, or street.
 
 ## Data
 

@@ -4,7 +4,7 @@ This guide provides starter challenges for the **Day in Our Data** civic hackath
 
 Most ideas are scoped so that a small team can produce a meaningful minimum viable demo in approximately **two to three hours**. Teams are welcome to choose one of these challenges, adapt one, combine multiple ideas, or pursue a different civic question.
 
-Seven directions from this list and the organizer discussions that followed have been developed into [starter-project briefs](starter-projects/README.md) with cached data and a table on event day. Ideas marked **now a starter table** below point to the brief. Every other idea here is a ready-made starting point for a [pitch-your-own](starter-projects/00-pitch-your-own.md) team.
+Eleven directions from this list and the organizer discussions that followed have been developed into [starter-project briefs](starter-projects/README.md) with cached data and a table on event day. Ideas marked **now a starter table** below point to the brief. Every other idea here is a ready-made starting point for a [pitch-your-own](starter-projects/00-pitch-your-own.md) team.
 
 ## What a Strong Project Should Do
 
@@ -27,6 +27,8 @@ A strong Day in Our Data project should be able to answer five questions:
 These projects offer a strong combination of civic relevance, feasible scope, useful data, and variety of technical skills.
 
 ### 1. Alley Repair Reality Check
+
+**Now a starter table:** see [brief 09](starter-projects/09-are-the-worst-alleys-getting-fixed.md), with the data cached in `data/`.
 
 **Civic question:** Are the alleys in the worst condition being prioritized for reconstruction?
 
@@ -57,6 +59,8 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 ---
 
 ### 2. Accessible Transit and Bus Stop Gaps
+
+**Now a starter table:** see [brief 10](starter-projects/10-which-bus-stops-need-help.md), with the data cached in `data/`.
 
 **Civic question:** Which Oak Park bus stops should be prioritized for accessibility or shelter improvements?
 
@@ -120,6 +124,8 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 4. Oak Park Urban Forest Resilience
 
+**Now a starter table:** see [brief 08](starter-projects/08-how-resilient-is-our-urban-forest.md), with the data cached in `data/`.
+
 **Civic question:** Where is Oak Park's public tree population diverse and resilient, and where is it overly dependent on a small number of species?
 
 **Minimum viable demo:**
@@ -152,6 +158,8 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 ---
 
 ### 5. Oak Park Architecture Explorer and Walking Tour
+
+**Now a starter table:** see [brief 11](starter-projects/11-build-an-architecture-walking-tour.md), with the data cached in `data/`.
 
 **Civic question:** How can Oak Park's architectural history be made easier for residents and visitors to explore?
 
