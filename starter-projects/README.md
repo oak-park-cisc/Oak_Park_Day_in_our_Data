@@ -2,7 +2,7 @@
 
 Seven ready-to-go project briefs for Day in Our Data. Each is scoped so a team of 4–6 can demo something real in about 2.5 hours: a clear question, data already cached in this repo (no APIs required on event day), a 15-minute first win, and roles that need no programming at all.
 
-Pick the one that grabs you and sit at its table. Have your own idea? Even better — fill in the [pitch-your-own template](00-pitch-your-own.md), grab an empty table, and recruit.
+Pick the one that grabs you and sit at its table. Have your own idea? Even better, fill in the [pitch-your-own template](00-pitch-your-own.md), grab an empty table, and recruit.
 
 | # | Brief | One-liner |
 |---|---|---|
@@ -14,4 +14,4 @@ Pick the one that grabs you and sit at its table. Have your own idea? Even bette
 | 6 | [How are our schools doing?](06-how-are-our-schools-doing.md) | Illinois Report Card: D97/D200 vs. peers, over time |
 | 7 | [Oak Park crime data explorer](07-oak-park-crime-explorer.md) | What incident data shows about what happens where and when |
 
-Every team should name a **demo owner** at the start — the person responsible for the 2.5-minute show-and-tell at 2:15. The best demos answer four things: the question we asked, what the data said, what we built, and what the Village should do next.
+Every team should name a **demo owner** at the start, the person responsible for the short show-and-tell during demos at 2:30. The best demos answer four things: the question we asked, what the data said, what we built, and what the Village should do next.

@@ -1,0 +1,1555 @@
+geography,geoid,vintage,period,table,variable,label,estimate,margin_of_error,source
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B01002,B01002_001,Median age > Total,38.2,0.7,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B01003,B01003_001,Total,53103,34,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B03002,B03002_001,Total,53103,34,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,35705,1045,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,10918,845,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2494,521,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B03002,B03002_012,Total > Hispanic or Latino,2964,501,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,B15002_001,Total,36664,507,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,B15002_015,Total > Male > Bachelor's degree,4955,438,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,B15002_016,Total > Male > Master's degree,3662,297,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,B15002_017,Total > Male > Professional school degree,1429,224,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,B15002_018,Total > Male > Doctorate degree,1040,180,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,B15002_032,Total > Female > Bachelor's degree,6322,488,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,B15002_033,Total > Female > Master's degree,4248,363,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,B15002_034,Total > Female > Professional school degree,1127,181,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,B15002_035,Total > Female > Doctorate degree,879,200,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B19013,B19013_001,Median household income in the past 12 months (in 2009 inflation-adjusted dollars),72435,4665,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25003,B25003_001,Total,22368,443,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25003,B25003_002,Total > Owner occupied,14078,461,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25003,B25003_003,Total > Renter occupied,8290,464,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_001,Total,24394,488,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_002,Total > Built 2005 or later,214,102,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_003,Total > Built 2000 to 2004,344,108,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_004,Total > Built 1990 to 1999,509,129,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_005,Total > Built 1980 to 1989,731,185,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_006,Total > Built 1970 to 1979,1303,258,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_007,Total > Built 1960 to 1969,1843,251,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_008,Total > Built 1950 to 1959,1500,274,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_009,Total > Built 1940 to 1949,1757,283,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,B25034_010,Total > Built 1939 or earlier,16193,510,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25035,B25035_001,Median year structure built,1939,,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25064,B25064_001,Median gross rent,906,28,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25077,B25077_001,Median value (dollars),388800,12229,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B15002,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15002_015, B15002_016, B15002_017, B15002_018, B15002_032, B15002_033, B15002_034, B15002_035)",23662,897.4,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2009,2005-2009,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),16193,510,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B01002,B01002_001,Median age > Total,34.7,0.1,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B01003,B01003_001,Total,5257001,0,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B03002,B03002_001,Total,5257001,0,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2376862,1138,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1329785,1996,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,295102,1363,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B03002,B03002_012,Total > Hispanic or Latino,1181767,0,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,B15002_001,Total,3455137,0,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,B15002_015,Total > Male > Bachelor's degree,326029,3593,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,B15002_016,Total > Male > Master's degree,137982,2427,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,B15002_017,Total > Male > Professional school degree,55346,1628,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,B15002_018,Total > Male > Doctorate degree,23735,1052,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,B15002_032,Total > Female > Bachelor's degree,358363,4027,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,B15002_033,Total > Female > Master's degree,171617,3099,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,B15002_034,Total > Female > Professional school degree,39560,1282,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,B15002_035,Total > Female > Doctorate degree,18252,996,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B19013,B19013_001,Median household income in the past 12 months (in 2009 inflation-adjusted dollars),53903,302,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25003,B25003_001,Total,1941417,5109,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25003,B25003_002,Total > Owner occupied,1179389,7255,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25003,B25003_003,Total > Renter occupied,762028,5506,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_001,Total,2170750,1639,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_002,Total > Built 2005 or later,36921,1248,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_003,Total > Built 2000 to 2004,90644,2452,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_004,Total > Built 1990 to 1999,123645,1994,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_005,Total > Built 1980 to 1989,149629,2343,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_006,Total > Built 1970 to 1979,268512,3195,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_007,Total > Built 1960 to 1969,286537,3269,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_008,Total > Built 1950 to 1959,344503,3117,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_009,Total > Built 1940 to 1949,191603,2910,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,B25034_010,Total > Built 1939 or earlier,678756,4425,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25035,B25035_001,Median year structure built,1956,1,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25064,B25064_001,Median gross rent,882,3,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25077,B25077_001,Median value (dollars),267200,1049,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B15002,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15002_015, B15002_016, B15002_017, B15002_018, B15002_032, B15002_033, B15002_034, B15002_035)",1130884,7142.3,www2.census.gov summary file
+"Cook County, Illinois",05000US17031,2009,2005-2009,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),678756,4425,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B01002,B01002_001,Median age > Total,35.9,0.1,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B01003,B01003_001,Total,12785043,0,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B03002,B03002_001,Total,12785043,0,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,8330734,2615,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1855912,3687,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,533943,1887,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B03002,B03002_012,Total > Hispanic or Latino,1872619,384,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,B15002_001,Total,8309322,1591,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,B15002_015,Total > Male > Bachelor's degree,749785,5225,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,B15002_016,Total > Male > Master's degree,309112,3398,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,B15002_017,Total > Male > Professional school degree,106202,2236,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,B15002_018,Total > Male > Doctorate degree,55173,1376,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,B15002_032,Total > Female > Bachelor's degree,792815,5535,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,B15002_033,Total > Female > Master's degree,358399,4644,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,B15002_034,Total > Female > Professional school degree,68474,1670,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,B15002_035,Total > Female > Doctorate degree,33138,1378,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B19013,B19013_001,Median household income in the past 12 months (in 2009 inflation-adjusted dollars),55222,192,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25003,B25003_001,Total,4749388,10084,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25003,B25003_002,Total > Owner occupied,3292685,14798,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25003,B25003_003,Total > Renter occupied,1456703,8517,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_001,Total,5234756,1055,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_002,Total > Built 2005 or later,123310,2341,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_003,Total > Built 2000 to 2004,340445,3802,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_004,Total > Built 1990 to 1999,557611,3891,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_005,Total > Built 1980 to 1989,474296,4225,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_006,Total > Built 1970 to 1979,780249,5765,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_007,Total > Built 1960 to 1969,640358,4804,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_008,Total > Built 1950 to 1959,706991,4850,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_009,Total > Built 1940 to 1949,381900,4092,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,B25034_010,Total > Built 1939 or earlier,1229596,6115,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25035,B25035_001,Median year structure built,1965,1,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25064,B25064_001,Median gross rent,813,3,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25077,B25077_001,Median value (dollars),200400,594,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B15002,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15002_015, B15002_016, B15002_017, B15002_018, B15002_032, B15002_033, B15002_034, B15002_035)",2473098,10130.7,www2.census.gov summary file
+Illinois,04000US17,2009,2005-2009,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),1229596,6115,www2.census.gov summary file
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B01002,B01002_001,Median age > Total,38.4,0.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B01003,B01003_001,Total,51426,39,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B03002,B03002_001,Total,51426,39,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,34322,1009,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,10138,910,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2665,466,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B03002,B03002_012,Total > Hispanic or Latino,3166,553,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,B15002_001,Total,35401,543,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,B15002_015,Total > Male > Bachelor's degree,5259,450,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,B15002_016,Total > Male > Master's degree,3585,317,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,B15002_017,Total > Male > Professional school degree,1357,185,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,B15002_018,Total > Male > Doctorate degree,1052,188,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,B15002_032,Total > Female > Bachelor's degree,6160,492,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,B15002_033,Total > Female > Master's degree,4362,337,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,B15002_034,Total > Female > Professional school degree,1075,205,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,B15002_035,Total > Female > Doctorate degree,829,163,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B19013,B19013_001,Median household income in the past 12 months (in 2010 inflation-adjusted dollars),73068,5056,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25003,B25003_001,Total,21938,465,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25003,B25003_002,Total > Owner occupied,13891,453,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25003,B25003_003,Total > Renter occupied,8047,493,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_001,Total,24153,591,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_002,Total > Built 2005 or later,350,142,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_003,Total > Built 2000 to 2004,420,133,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_004,Total > Built 1990 to 1999,473,138,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_005,Total > Built 1980 to 1989,760,187,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_006,Total > Built 1970 to 1979,1346,270,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_007,Total > Built 1960 to 1969,1671,247,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_008,Total > Built 1950 to 1959,1624,304,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_009,Total > Built 1940 to 1949,1769,295,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,B25034_010,Total > Built 1939 or earlier,15740,656,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25064,B25064_001,Median gross rent,910,33,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25077,B25077_001,Median value (dollars),393300,11185,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B15002,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15002_015, B15002_016, B15002_017, B15002_018, B15002_032, B15002_033, B15002_034, B15002_035)",23679,892.6,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2010,2006-2010,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),15740,656,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B01002,B01002_001,Median age > Total,35.1,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B01003,B01003_001,Total,5172848,,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B03002,B03002_001,Total,5172848,,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2294644,905,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1289020,1898,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,313605,1729,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B03002,B03002_012,Total > Hispanic or Latino,1202937,,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,B15002_001,Total,3413901,,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,B15002_015,Total > Male > Bachelor's degree,324024,3479,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,B15002_016,Total > Male > Master's degree,138313,2418,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,B15002_017,Total > Male > Professional school degree,53577,1424,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,B15002_018,Total > Male > Doctorate degree,23530,1032,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,B15002_032,Total > Female > Bachelor's degree,360879,3257,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,B15002_033,Total > Female > Master's degree,173096,2656,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,B15002_034,Total > Female > Professional school degree,39310,1293,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,B15002_035,Total > Female > Doctorate degree,19196,749,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B19013,B19013_001,Median household income in the past 12 months (in 2010 inflation-adjusted dollars),53942,289,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25003,B25003_001,Total,1936481,5069,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25003,B25003_002,Total > Owner occupied,1169991,6835,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25003,B25003_003,Total > Renter occupied,766490,4922,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_001,Total,2173433,1198,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_002,Total > Built 2005 or later,50057,1392,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_003,Total > Built 2000 to 2004,93343,1795,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_004,Total > Built 1990 to 1999,125255,2141,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_005,Total > Built 1980 to 1989,146131,2270,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_006,Total > Built 1970 to 1979,265670,3458,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_007,Total > Built 1960 to 1969,285399,3513,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_008,Total > Built 1950 to 1959,348491,3457,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_009,Total > Built 1940 to 1949,183369,2356,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,B25034_010,Total > Built 1939 or earlier,675718,4007,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25035,B25035_001,Median year structure built,1957,1,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25064,B25064_001,Median gross rent,900,3,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25077,B25077_001,Median value (dollars),265800,986,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B15002,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15002_015, B15002_016, B15002_017, B15002_018, B15002_032, B15002_033, B15002_034, B15002_035)",1131925,6398.3,data.census.gov
+"Cook County, Illinois",05000US17031,2010,2006-2010,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),675718,4007,data.census.gov
+Illinois,04000US17,2010,2006-2010,B01002,B01002_001,Median age > Total,36.2,0.1,data.census.gov
+Illinois,04000US17,2010,2006-2010,B01003,B01003_001,Total,12745359,,data.census.gov
+Illinois,04000US17,2010,2006-2010,B03002,B03002_001,Total,12745359,,data.census.gov
+Illinois,04000US17,2010,2006-2010,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,8202650,1787,data.census.gov
+Illinois,04000US17,2010,2006-2010,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1837744,3229,data.census.gov
+Illinois,04000US17,2010,2006-2010,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,566288,2317,data.census.gov
+Illinois,04000US17,2010,2006-2010,B03002,B03002_012,Total > Hispanic or Latino,1939928,321,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,B15002_001,Total,8345982,1328,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,B15002_015,Total > Male > Bachelor's degree,759077,6063,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,B15002_016,Total > Male > Master's degree,313827,3812,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,B15002_017,Total > Male > Professional school degree,105676,1995,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,B15002_018,Total > Male > Doctorate degree,55693,1487,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,B15002_032,Total > Female > Bachelor's degree,814628,4963,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,B15002_033,Total > Female > Master's degree,373752,4290,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,B15002_034,Total > Female > Professional school degree,69005,1749,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,B15002_035,Total > Female > Doctorate degree,35226,1098,data.census.gov
+Illinois,04000US17,2010,2006-2010,B19013,B19013_001,Median household income in the past 12 months (in 2010 inflation-adjusted dollars),55735,210,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25003,B25003_001,Total,4769951,10573,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25003,B25003_002,Total > Owner occupied,3300691,15022,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25003,B25003_003,Total > Renter occupied,1469260,7825,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_001,Total,5267614,650,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_002,Total > Built 2005 or later,171655,2482,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_003,Total > Built 2000 to 2004,358774,3145,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_004,Total > Built 1990 to 1999,560625,3892,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_005,Total > Built 1980 to 1989,468049,4065,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_006,Total > Built 1970 to 1979,775239,5051,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_007,Total > Built 1960 to 1969,635128,4952,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_008,Total > Built 1950 to 1959,707982,5595,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_009,Total > Built 1940 to 1949,372084,3113,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,B25034_010,Total > Built 1939 or earlier,1218078,5861,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25035,B25035_001,Median year structure built,1965,1,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25064,B25064_001,Median gross rent,834,3,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25077,B25077_001,Median value (dollars),202500,529,data.census.gov
+Illinois,04000US17,2010,2006-2010,B15002,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15002_015, B15002_016, B15002_017, B15002_018, B15002_032, B15002_033, B15002_034, B15002_035)",2526884,10236.3,data.census.gov
+Illinois,04000US17,2010,2006-2010,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),1218078,5861,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B01002,B01002_001,Median age > Total,38.5,1.0,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B01003,B01003_001,Total,51632,40,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B03002,B03002_001,Total,51632,40,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,34244,965,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,10284,819,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2542,502,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B03002,B03002_012,Total > Hispanic or Latino,3274,470,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,B15002_001,Total,35559,532,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,B15002_015,Total > Male > Bachelor's degree,5198,371,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,B15002_016,Total > Male > Master's degree,3608,340,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,B15002_017,Total > Male > Professional school degree,1443,227,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,B15002_018,Total > Male > Doctorate degree,945,174,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,B15002_032,Total > Female > Bachelor's degree,6340,442,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,B15002_033,Total > Female > Master's degree,4475,342,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,B15002_034,Total > Female > Professional school degree,1074,202,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,B15002_035,Total > Female > Doctorate degree,923,189,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B19013,B19013_001,Median household income in the past 12 months (in 2011 inflation-adjusted dollars),74141,3832,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25003,B25003_001,Total,21910,414,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25003,B25003_002,Total > Owner occupied,13817,423,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25003,B25003_003,Total > Renter occupied,8093,435,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_001,Total,24521,532,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_002,Total > Built 2005 or later,414,133,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_003,Total > Built 2000 to 2004,418,130,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_004,Total > Built 1990 to 1999,475,171,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_005,Total > Built 1980 to 1989,762,192,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_006,Total > Built 1970 to 1979,1489,264,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_007,Total > Built 1960 to 1969,1665,249,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_008,Total > Built 1950 to 1959,1670,236,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_009,Total > Built 1940 to 1949,1561,266,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,B25034_010,Total > Built 1939 or earlier,16067,643,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25064,B25064_001,Median gross rent,963,36,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25077,B25077_001,Median value (dollars),381100,11042,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B15002,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15002_015, B15002_016, B15002_017, B15002_018, B15002_032, B15002_033, B15002_034, B15002_035)",24006,850.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2011,2007-2011,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),16067,643,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B01002,B01002_001,Median age > Total,35.2,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B01003,B01003_001,Total,5182969,,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B03002,B03002_001,Total,5182969,,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2284565,985,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1275928,2448,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,318531,1666,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B03002,B03002_012,Total > Hispanic or Latino,1225143,,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,B15002_001,Total,3434122,121,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,B15002_015,Total > Male > Bachelor's degree,330237,3341,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,B15002_016,Total > Male > Master's degree,137838,2657,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,B15002_017,Total > Male > Professional school degree,55822,1518,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,B15002_018,Total > Male > Doctorate degree,24002,1088,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,B15002_032,Total > Female > Bachelor's degree,372358,3758,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,B15002_033,Total > Female > Master's degree,177891,2618,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,B15002_034,Total > Female > Professional school degree,39484,1180,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,B15002_035,Total > Female > Doctorate degree,19562,885,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B19013,B19013_001,Median household income in the past 12 months (in 2011 inflation-adjusted dollars),54598,302,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25003,B25003_001,Total,1934771,5009,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25003,B25003_002,Total > Owner occupied,1156652,6695,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25003,B25003_003,Total > Renter occupied,778119,5201,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_001,Total,2177518,910,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_002,Total > Built 2005 or later,61944,1648,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_003,Total > Built 2000 to 2004,96034,1982,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_004,Total > Built 1990 to 1999,124911,1942,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_005,Total > Built 1980 to 1989,145021,2415,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_006,Total > Built 1970 to 1979,259670,3109,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_007,Total > Built 1960 to 1969,284318,3409,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_008,Total > Built 1950 to 1959,347364,3364,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_009,Total > Built 1940 to 1949,179068,3250,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,B25034_010,Total > Built 1939 or earlier,679188,4979,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25035,B25035_001,Median year structure built,1957,1,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25064,B25064_001,Median gross rent,932,4,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25077,B25077_001,Median value (dollars),256900,1034,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B15002,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15002_015, B15002_016, B15002_017, B15002_018, B15002_032, B15002_033, B15002_034, B15002_035)",1157194,6697.9,data.census.gov
+"Cook County, Illinois",05000US17031,2011,2007-2011,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),679188,4979,data.census.gov
+Illinois,04000US17,2011,2007-2011,B01002,B01002_001,Median age > Total,36.4,0.1,data.census.gov
+Illinois,04000US17,2011,2007-2011,B01003,B01003_001,Total,12790182,,data.census.gov
+Illinois,04000US17,2011,2007-2011,B03002,B03002_001,Total,12790182,,data.census.gov
+Illinois,04000US17,2011,2007-2011,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,8177405,2195,data.census.gov
+Illinois,04000US17,2011,2007-2011,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1835970,3935,data.census.gov
+Illinois,04000US17,2011,2007-2011,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,578508,2085,data.census.gov
+Illinois,04000US17,2011,2007-2011,B03002,B03002_012,Total > Hispanic or Latino,1987211,354,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,B15002_001,Total,8405202,1228,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,B15002_015,Total > Male > Bachelor's degree,769900,5458,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,B15002_016,Total > Male > Master's degree,315755,4200,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,B15002_017,Total > Male > Professional school degree,109261,2227,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,B15002_018,Total > Male > Doctorate degree,55916,1576,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,B15002_032,Total > Female > Bachelor's degree,834736,5808,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,B15002_033,Total > Female > Master's degree,385193,4056,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,B15002_034,Total > Female > Professional school degree,69746,1764,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,B15002_035,Total > Female > Doctorate degree,36149,1294,data.census.gov
+Illinois,04000US17,2011,2007-2011,B19013,B19013_001,Median household income in the past 12 months (in 2011 inflation-adjusted dollars),56576,208,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25003,B25003_001,Total,4773002,11359,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25003,B25003_002,Total > Owner occupied,3279571,15516,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25003,B25003_003,Total > Renter occupied,1493431,8364,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_001,Total,5285389,1162,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_002,Total > Built 2005 or later,210849,2873,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_003,Total > Built 2000 to 2004,360867,3563,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_004,Total > Built 1990 to 1999,558624,4274,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_005,Total > Built 1980 to 1989,465256,3874,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_006,Total > Built 1970 to 1979,767519,4826,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_007,Total > Built 1960 to 1969,631032,4660,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_008,Total > Built 1950 to 1959,705714,5182,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_009,Total > Built 1940 to 1949,365944,3916,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,B25034_010,Total > Built 1939 or earlier,1219584,6749,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25035,B25035_001,Median year structure built,1966,1,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25064,B25064_001,Median gross rent,860,3,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25077,B25077_001,Median value (dollars),198500,533,data.census.gov
+Illinois,04000US17,2011,2007-2011,B15002,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15002_015, B15002_016, B15002_017, B15002_018, B15002_032, B15002_033, B15002_034, B15002_035)",2576656,10480.6,data.census.gov
+Illinois,04000US17,2011,2007-2011,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),1219584,6749,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B01002,B01002_001,Median age > Total,38.5,0.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B01003,B01003_001,Total,51781,51,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B03002,B03002_001,Total,51781,51,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,33615,929,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,10779,864,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2713,494,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B03002,B03002_012,Total > Hispanic or Latino,3174,530,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B15003,B15003_001,Total,35739,510,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B15003,B15003_022,Total > Bachelor's degree,11406,595,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B15003,B15003_023,Total > Master's degree,8048,499,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B15003,B15003_024,Total > Professional school degree,2740,347,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B15003,B15003_025,Total > Doctorate degree,1824,251,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B19013,B19013_001,Median household income in the past 12 months (in 2012 inflation-adjusted dollars),75118,5190,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25003,B25003_001,Total,21750,448,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25003,B25003_002,Total > Owner occupied,13539,385,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25003,B25003_003,Total > Renter occupied,8211,477,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_001,Total,24283,589,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_002,Total > Built 2010 or later,0,27,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_003,Total > Built 2000 to 2009,853,184,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_004,Total > Built 1990 to 1999,483,152,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_005,Total > Built 1980 to 1989,684,176,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_006,Total > Built 1970 to 1979,1556,254,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_007,Total > Built 1960 to 1969,1583,200,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_008,Total > Built 1950 to 1959,1871,291,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_009,Total > Built 1940 to 1949,1678,295,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,B25034_010,Total > Built 1939 or earlier,15575,513,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25064,B25064_001,Median gross rent,988,31,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25077,B25077_001,Median value (dollars),369200,9870,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",24018,886.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2012,2008-2012,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),15575,513,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B01002,B01002_001,Median age > Total,35.3,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B01003,B01003_001,Total,5197677,,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B03002,B03002_001,Total,5197677,,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2277287,806,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1267825,2109,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,325562,1628,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B03002,B03002_012,Total > Hispanic or Latino,1245329,,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B15003,B15003_001,Total,3456817,162,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B15003,B15003_022,Total > Bachelor's degree,715158,5839,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B15003,B15003_023,Total > Master's degree,326956,3696,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B15003,B15003_024,Total > Professional school degree,97071,2047,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B15003,B15003_025,Total > Doctorate degree,45014,1610,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B19013,B19013_001,Median household income in the past 12 months (in 2012 inflation-adjusted dollars),54648,288,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25003,B25003_001,Total,1933670,4848,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25003,B25003_002,Total > Owner occupied,1140135,6776,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25003,B25003_003,Total > Renter occupied,793535,5174,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_001,Total,2178739,643,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_002,Total > Built 2010 or later,2215,419,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_003,Total > Built 2000 to 2009,164926,2570,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_004,Total > Built 1990 to 1999,126004,2142,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_005,Total > Built 1980 to 1989,144575,2560,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_006,Total > Built 1970 to 1979,255051,3011,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_007,Total > Built 1960 to 1969,283786,3512,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_008,Total > Built 1950 to 1959,343363,3925,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_009,Total > Built 1940 to 1949,173176,2795,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,B25034_010,Total > Built 1939 or earlier,685643,4300,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25035,B25035_001,Median year structure built,1957,1,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25064,B25064_001,Median gross rent,950,3,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25077,B25077_001,Median value (dollars),244900,861,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1184199,7384.9,data.census.gov
+"Cook County, Illinois",05000US17031,2012,2008-2012,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),685643,4300,data.census.gov
+Illinois,04000US17,2012,2008-2012,B01002,B01002_001,Median age > Total,36.6,0.1,data.census.gov
+Illinois,04000US17,2012,2008-2012,B01003,B01003_001,Total,12823860,,data.census.gov
+Illinois,04000US17,2012,2008-2012,B03002,B03002_001,Total,12823860,,data.census.gov
+Illinois,04000US17,2012,2008-2012,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,8149479,2282,data.census.gov
+Illinois,04000US17,2012,2008-2012,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1834505,3311,data.census.gov
+Illinois,04000US17,2012,2008-2012,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,590488,2554,data.census.gov
+Illinois,04000US17,2012,2008-2012,B03002,B03002_012,Total > Hispanic or Latino,2027384,386,data.census.gov
+Illinois,04000US17,2012,2008-2012,B15003,B15003_001,Total,8459947,1063,data.census.gov
+Illinois,04000US17,2012,2008-2012,B15003,B15003_022,Total > Bachelor's degree,1632885,9362,data.census.gov
+Illinois,04000US17,2012,2008-2012,B15003,B15003_023,Total > Master's degree,721913,5909,data.census.gov
+Illinois,04000US17,2012,2008-2012,B15003,B15003_024,Total > Professional school degree,179995,2999,data.census.gov
+Illinois,04000US17,2012,2008-2012,B15003,B15003_025,Total > Doctorate degree,94551,2050,data.census.gov
+Illinois,04000US17,2012,2008-2012,B19013,B19013_001,Median household income in the past 12 months (in 2012 inflation-adjusted dollars),56853,213,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25003,B25003_001,Total,4774275,11692,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25003,B25003_002,Total > Owner occupied,3248521,15690,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25003,B25003_003,Total > Renter occupied,1525754,8115,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_001,Total,5293619,1433,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_002,Total > Built 2010 or later,8058,703,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_003,Total > Built 2000 to 2009,585992,4446,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_004,Total > Built 1990 to 1999,564652,4207,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_005,Total > Built 1980 to 1989,467321,3979,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_006,Total > Built 1970 to 1979,757988,4143,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_007,Total > Built 1960 to 1969,631610,4971,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_008,Total > Built 1950 to 1959,701103,5024,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_009,Total > Built 1940 to 1949,357523,3743,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,B25034_010,Total > Built 1939 or earlier,1219372,5619,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25035,B25035_001,Median year structure built,1966,1,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25064,B25064_001,Median gross rent,877,3,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25077,B25077_001,Median value (dollars),190800,519,data.census.gov
+Illinois,04000US17,2012,2008-2012,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",2629344,11651.6,data.census.gov
+Illinois,04000US17,2012,2008-2012,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),1219372,5619,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B01002,B01002_001,Median age > Total,38.7,0.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B01003,B01003_001,Total,51902,37,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B03002,B03002_001,Total,51902,37,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,33585,1059,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,10792,818,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2587,492,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B03002,B03002_012,Total > Hispanic or Latino,3220,539,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B15003,B15003_001,Total,36020,570,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B15003,B15003_022,Total > Bachelor's degree,11032,527,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B15003,B15003_023,Total > Master's degree,8471,443,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B15003,B15003_024,Total > Professional school degree,2872,323,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B15003,B15003_025,Total > Doctorate degree,1730,226,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B19013,B19013_001,Median household income in the past 12 months (in 2013 inflation-adjusted dollars),78802,3613,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25003,B25003_001,Total,21623,443,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25003,B25003_002,Total > Owner occupied,13380,438,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25003,B25003_003,Total > Renter occupied,8243,371,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_001,Total,24001,484,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_002,Total > Built 2010 or later,10,16,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_003,Total > Built 2000 to 2009,844,203,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_004,Total > Built 1990 to 1999,548,171,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_005,Total > Built 1980 to 1989,626,167,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_006,Total > Built 1970 to 1979,1525,243,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_007,Total > Built 1960 to 1969,1534,254,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_008,Total > Built 1950 to 1959,1839,253,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_009,Total > Built 1940 to 1949,1400,220,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,B25034_010,Total > Built 1939 or earlier,15675,508,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25064,B25064_001,Median gross rent,1047,38,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25077,B25077_001,Median value (dollars),358800,8574,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",24105,793.3,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2013,2009-2013,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),15675,508,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B01002,B01002_001,Median age > Total,35.5,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B01003,B01003_001,Total,5212372,,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B03002,B03002_001,Total,5212372,,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2275759,844,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1256346,2050,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,333415,1466,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B03002,B03002_012,Total > Hispanic or Latino,1262156,,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B15003,B15003_001,Total,3484571,75,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B15003,B15003_022,Total > Bachelor's degree,726485,4989,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B15003,B15003_023,Total > Master's degree,337581,4535,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B15003,B15003_024,Total > Professional school degree,98220,1914,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B15003,B15003_025,Total > Doctorate degree,46570,1593,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B19013,B19013_001,Median household income in the past 12 months (in 2013 inflation-adjusted dollars),54548,295,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25003,B25003_001,Total,1933335,5245,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25003,B25003_002,Total > Owner occupied,1127937,6754,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25003,B25003_003,Total > Renter occupied,805398,4960,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_001,Total,2176266,880,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_002,Total > Built 2010 or later,4293,480,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_003,Total > Built 2000 to 2009,169423,2434,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_004,Total > Built 1990 to 1999,128692,2666,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_005,Total > Built 1980 to 1989,145451,2300,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_006,Total > Built 1970 to 1979,256912,3989,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_007,Total > Built 1960 to 1969,280628,3160,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_008,Total > Built 1950 to 1959,344405,3327,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_009,Total > Built 1940 to 1949,165583,2562,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,B25034_010,Total > Built 1939 or earlier,680879,4405,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25035,B25035_001,Median year structure built,1957,1,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25064,B25064_001,Median gross rent,963,3,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25077,B25077_001,Median value (dollars),231200,880,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1208856,7187.3,data.census.gov
+"Cook County, Illinois",05000US17031,2013,2009-2013,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),680879,4405,data.census.gov
+Illinois,04000US17,2013,2009-2013,B01002,B01002_001,Median age > Total,36.8,0.1,data.census.gov
+Illinois,04000US17,2013,2009-2013,B01003,B01003_001,Total,12848554,,data.census.gov
+Illinois,04000US17,2013,2009-2013,B03002,B03002_001,Total,12848554,,data.census.gov
+Illinois,04000US17,2013,2009-2013,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,8126804,2071,data.census.gov
+Illinois,04000US17,2013,2009-2013,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1825101,3574,data.census.gov
+Illinois,04000US17,2013,2009-2013,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,605095,2257,data.census.gov
+Illinois,04000US17,2013,2009-2013,B03002,B03002_012,Total > Hispanic or Latino,2060706,349,data.census.gov
+Illinois,04000US17,2013,2009-2013,B15003,B15003_001,Total,8509739,1186,data.census.gov
+Illinois,04000US17,2013,2009-2013,B15003,B15003_022,Total > Bachelor's degree,1657947,8451,data.census.gov
+Illinois,04000US17,2013,2009-2013,B15003,B15003_023,Total > Master's degree,739404,6814,data.census.gov
+Illinois,04000US17,2013,2009-2013,B15003,B15003_024,Total > Professional school degree,180829,2566,data.census.gov
+Illinois,04000US17,2013,2009-2013,B15003,B15003_025,Total > Doctorate degree,97616,2004,data.census.gov
+Illinois,04000US17,2013,2009-2013,B19013,B19013_001,Median household income in the past 12 months (in 2013 inflation-adjusted dollars),56797,190,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25003,B25003_001,Total,4772723,11056,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25003,B25003_002,Total > Owner occupied,3220038,15145,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25003,B25003_003,Total > Renter occupied,1552685,6626,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_001,Total,5291704,1433,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_002,Total > Built 2010 or later,15718,915,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_003,Total > Built 2000 to 2009,599062,4405,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_004,Total > Built 1990 to 1999,567641,4715,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_005,Total > Built 1980 to 1989,467366,3939,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_006,Total > Built 1970 to 1979,758088,4425,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_007,Total > Built 1960 to 1969,628624,4680,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_008,Total > Built 1950 to 1959,702169,4737,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_009,Total > Built 1940 to 1949,347104,3822,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,B25034_010,Total > Built 1939 or earlier,1205932,5546,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25035,B25035_001,Median year structure built,1966,1,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25064,B25064_001,Median gross rent,890,2,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25077,B25077_001,Median value (dollars),182300,458,data.census.gov
+Illinois,04000US17,2013,2009-2013,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",2675796,11333.6,data.census.gov
+Illinois,04000US17,2013,2009-2013,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),1205932,5546,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B01002,B01002_001,Median age > Total,39.0,0.9,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B01003,B01003_001,Total,51988,60,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B03002,B03002_001,Total,51988,60,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,32855,1172,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,10796,859,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2721,501,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B03002,B03002_012,Total > Hispanic or Latino,3749,632,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B15003,B15003_001,Total,36201,482,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B15003,B15003_022,Total > Bachelor's degree,11107,595,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B15003,B15003_023,Total > Master's degree,8525,576,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B15003,B15003_024,Total > Professional school degree,2850,279,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B15003,B15003_025,Total > Doctorate degree,1792,234,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B19013,B19013_001,Median household income in the past 12 months (in 2014 Inflation-adjusted dollars),78895,4137,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25003,B25003_001,Total,21658,422,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25003,B25003_002,Total > Owner occupied,12926,472,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25003,B25003_003,Total > Renter occupied,8732,386,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_001,Total,23872,465,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_002,Total > Built 2010 or later,18,19,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_003,Total > Built 2000 to 2009,837,186,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_004,Total > Built 1990 to 1999,586,179,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_005,Total > Built 1980 to 1989,495,118,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_006,Total > Built 1970 to 1979,1518,257,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_007,Total > Built 1960 to 1969,1499,261,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_008,Total > Built 1950 to 1959,1922,286,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_009,Total > Built 1940 to 1949,1332,225,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,B25034_010,Total > Built 1939 or earlier,15665,604,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25064,B25064_001,Median gross rent,1021,47,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25077,B25077_001,Median value (dollars),354400,8387,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",24274,904.7,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2014,2010-2014,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),15665,604,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B01002,B01002_001,Median age > Total,35.7,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B01003,B01003_001,Total,5227827,,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B03002,B03002_001,Total,5227827,,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2266635,768,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1248338,2141,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,343048,1493,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B03002,B03002_012,Total > Hispanic or Latino,1281217,,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B15003,B15003_001,Total,3513404,71,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B15003,B15003_022,Total > Bachelor's degree,746058,5423,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B15003,B15003_023,Total > Master's degree,345049,4557,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B15003,B15003_024,Total > Professional school degree,98753,2217,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B15003,B15003_025,Total > Doctorate degree,49092,1563,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B19013,B19013_001,Median household income in the past 12 months (in 2014 Inflation-adjusted dollars),54828,310,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25003,B25003_001,Total,1937060,4842,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25003,B25003_002,Total > Owner occupied,1115461,6760,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25003,B25003_003,Total > Renter occupied,821599,4885,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_001,Total,2177033,765,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_002,Total > Built 2010 or later,7460,531,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_003,Total > Built 2000 to 2009,172024,2533,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_004,Total > Built 1990 to 1999,129865,2317,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_005,Total > Built 1980 to 1989,144850,2249,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_006,Total > Built 1970 to 1979,259614,3171,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_007,Total > Built 1960 to 1969,280941,3380,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_008,Total > Built 1950 to 1959,342593,3172,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_009,Total > Built 1940 to 1949,161112,2650,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,B25034_010,Total > Built 1939 or earlier,678574,4035,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25035,B25035_001,Median year structure built,1957,1,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25064,B25064_001,Median gross rent,976,3,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25077,B25077_001,Median value (dollars),222200,986,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1238952,7585.1,data.census.gov
+"Cook County, Illinois",05000US17031,2014,2010-2014,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),678574,4035,data.census.gov
+Illinois,04000US17,2014,2010-2014,B01002,B01002_001,Median age > Total,37.0,0.1,data.census.gov
+Illinois,04000US17,2014,2010-2014,B01003,B01003_001,Total,12868747,,data.census.gov
+Illinois,04000US17,2014,2010-2014,B03002,B03002_001,Total,12868747,,data.census.gov
+Illinois,04000US17,2014,2010-2014,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,8088630,1797,data.census.gov
+Illinois,04000US17,2014,2010-2014,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1822304,3559,data.census.gov
+Illinois,04000US17,2014,2010-2014,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,622689,2373,data.census.gov
+Illinois,04000US17,2014,2010-2014,B03002,B03002_012,Total > Hispanic or Latino,2095495,334,data.census.gov
+Illinois,04000US17,2014,2010-2014,B15003,B15003_001,Total,8560555,1047,data.census.gov
+Illinois,04000US17,2014,2010-2014,B15003,B15003_022,Total > Bachelor's degree,1688420,8801,data.census.gov
+Illinois,04000US17,2014,2010-2014,B15003,B15003_023,Total > Master's degree,757345,7227,data.census.gov
+Illinois,04000US17,2014,2010-2014,B15003,B15003_024,Total > Professional school degree,181769,2865,data.census.gov
+Illinois,04000US17,2014,2010-2014,B15003,B15003_025,Total > Doctorate degree,102400,2066,data.census.gov
+Illinois,04000US17,2014,2010-2014,B19013,B19013_001,Median household income in the past 12 months (in 2014 Inflation-adjusted dollars),57166,203,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25003,B25003_001,Total,4778633,11513,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25003,B25003_002,Total > Owner occupied,3194707,15979,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25003,B25003_003,Total > Renter occupied,1583926,7482,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_001,Total,5299433,1943,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_002,Total > Built 2010 or later,27258,1166,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_003,Total > Built 2000 to 2009,605369,4353,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_004,Total > Built 1990 to 1999,571276,3882,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_005,Total > Built 1980 to 1989,466769,4116,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_006,Total > Built 1970 to 1979,761766,5215,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_007,Total > Built 1960 to 1969,627790,4957,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_008,Total > Built 1950 to 1959,698218,5058,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_009,Total > Built 1940 to 1949,339178,3423,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,B25034_010,Total > Built 1939 or earlier,1201809,5405,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25035,B25035_001,Median year structure built,1967,1,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25064,B25064_001,Median gross rent,903,2,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25077,B25077_001,Median value (dollars),175700,626,data.census.gov
+Illinois,04000US17,2014,2010-2014,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",2729934,11923.2,data.census.gov
+Illinois,04000US17,2014,2010-2014,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_010),1201809,5405,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B01002,B01002_001,Median age > Total,39.1,0.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B01003,B01003_001,Total,52080,46,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B03002,B03002_001,Total,52080,46,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,33201,873,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,10528,698,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2485,519,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B03002,B03002_012,Total > Hispanic or Latino,3835,604,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B15003,B15003_001,Total,36315,454,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B15003,B15003_022,Total > Bachelor's degree,11116,554,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B15003,B15003_023,Total > Master's degree,8747,525,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B15003,B15003_024,Total > Professional school degree,2848,304,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B15003,B15003_025,Total > Doctorate degree,1922,258,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B19013,B19013_001,Median household income in the past 12 months (in 2015 Inflation-adjusted dollars),80196,3948,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25003,B25003_001,Total,21612,419,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25003,B25003_002,Total > Owner occupied,12809,445,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25003,B25003_003,Total > Renter occupied,8803,387,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_001,Total,23718,461,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_002,Total > Built 2014 or later,10,15,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_003,Total > Built 2010 to 2013,35,26,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_004,Total > Built 2000 to 2009,779,155,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_005,Total > Built 1990 to 1999,679,191,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_006,Total > Built 1980 to 1989,588,179,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_007,Total > Built 1970 to 1979,1487,221,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_008,Total > Built 1960 to 1969,1527,242,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_009,Total > Built 1950 to 1959,1780,233,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_010,Total > Built 1940 to 1949,1113,206,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,B25034_011,Total > Built 1939 or earlier,15720,591,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25064,B25064_001,Median gross rent,1033,44,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25077,B25077_001,Median value (dollars),353100,8961,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",24633,861.1,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2015,2011-2015,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),15720,591,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B01002,B01002_001,Median age > Total,35.9,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B01003,B01003_001,Total,5236393,,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B03002,B03002_001,Total,5236393,,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2256002,816,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1239171,2146,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,352123,1489,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B03002,B03002_012,Total > Hispanic or Latino,1295026,,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B15003,B15003_001,Total,3537179,63,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B15003,B15003_022,Total > Bachelor's degree,759678,5884,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B15003,B15003_023,Total > Master's degree,354849,5103,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B15003,B15003_024,Total > Professional school degree,100497,2245,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B15003,B15003_025,Total > Doctorate degree,50199,1788,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B19013,B19013_001,Median household income in the past 12 months (in 2015 Inflation-adjusted dollars),55251,327,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25003,B25003_001,Total,1942959,4859,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25003,B25003_002,Total > Owner occupied,1107485,6906,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25003,B25003_003,Total > Renter occupied,835474,5134,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_001,Total,2176549,931,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_002,Total > Built 2014 or later,1277,277,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_003,Total > Built 2010 to 2013,10718,636,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_004,Total > Built 2000 to 2009,172209,2291,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_005,Total > Built 1990 to 1999,132839,2151,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_006,Total > Built 1980 to 1989,147735,2245,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_007,Total > Built 1970 to 1979,261630,2956,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_008,Total > Built 1960 to 1969,280994,3312,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_009,Total > Built 1950 to 1959,336277,3373,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_010,Total > Built 1940 to 1949,160697,2607,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,B25034_011,Total > Built 1939 or earlier,672173,4002,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25035,B25035_001,Median year structure built,1958,1,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25064,B25064_001,Median gross rent,980,3,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25077,B25077_001,Median value (dollars),218700,939,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1265223,8300.5,data.census.gov
+"Cook County, Illinois",05000US17031,2015,2011-2015,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),672173,4002,data.census.gov
+Illinois,04000US17,2015,2011-2015,B01002,B01002_001,Median age > Total,37.3,0.2,data.census.gov
+Illinois,04000US17,2015,2011-2015,B01003,B01003_001,Total,12873761,,data.census.gov
+Illinois,04000US17,2015,2011-2015,B03002,B03002_001,Total,12873761,,data.census.gov
+Illinois,04000US17,2015,2011-2015,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,8041878,1771,data.census.gov
+Illinois,04000US17,2015,2011-2015,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1818938,3662,data.census.gov
+Illinois,04000US17,2015,2011-2015,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,641068,2430,data.census.gov
+Illinois,04000US17,2015,2011-2015,B03002,B03002_012,Total > Hispanic or Latino,2122841,425,data.census.gov
+Illinois,04000US17,2015,2011-2015,B15003,B15003_001,Total,8600178,1178,data.census.gov
+Illinois,04000US17,2015,2011-2015,B15003,B15003_022,Total > Bachelor's degree,1711787,10536,data.census.gov
+Illinois,04000US17,2015,2011-2015,B15003,B15003_023,Total > Master's degree,778362,8162,data.census.gov
+Illinois,04000US17,2015,2011-2015,B15003,B15003_024,Total > Professional school degree,183531,2823,data.census.gov
+Illinois,04000US17,2015,2011-2015,B15003,B15003_025,Total > Doctorate degree,104191,2357,data.census.gov
+Illinois,04000US17,2015,2011-2015,B19013,B19013_001,Median household income in the past 12 months (in 2015 Inflation-adjusted dollars),57574,247,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25003,B25003_001,Total,4786388,11295,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25003,B25003_002,Total > Owner occupied,3177705,15848,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25003,B25003_003,Total > Renter occupied,1608683,8148,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_001,Total,5303675,1796,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_002,Total > Built 2014 or later,3140,438,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_003,Total > Built 2010 to 2013,39405,1271,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_004,Total > Built 2000 to 2009,602127,4888,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_005,Total > Built 1990 to 1999,577356,4431,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_006,Total > Built 1980 to 1989,470705,4168,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_007,Total > Built 1970 to 1979,764168,5080,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_008,Total > Built 1960 to 1969,630929,4394,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_009,Total > Built 1950 to 1959,690743,4879,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_010,Total > Built 1940 to 1949,335832,3659,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,B25034_011,Total > Built 1939 or earlier,1189270,5440,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25035,B25035_001,Median year structure built,1967,1,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25064,B25064_001,Median gross rent,907,3,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25077,B25077_001,Median value (dollars),173800,415,data.census.gov
+Illinois,04000US17,2015,2011-2015,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",2777871,13825.7,data.census.gov
+Illinois,04000US17,2015,2011-2015,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1189270,5440,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B01002,B01002_001,Median age > Total,39.1,0.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B01003,B01003_001,Total,51989,38,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B03002,B03002_001,Total,51989,38,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,32302,1001,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,10887,938,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2510,459,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B03002,B03002_012,Total > Hispanic or Latino,3989,548,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B15003,B15003_001,Total,36249,443,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B15003,B15003_022,Total > Bachelor's degree,11001,617,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B15003,B15003_023,Total > Master's degree,8801,527,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B15003,B15003_024,Total > Professional school degree,2977,321,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B15003,B15003_025,Total > Doctorate degree,1859,218,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B19013,B19013_001,Median household income in the past 12 months (in 2016 inflation-adjusted dollars),82826,3133,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25003,B25003_001,Total,21546,379,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25003,B25003_002,Total > Owner occupied,12629,359,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25003,B25003_003,Total > Renter occupied,8917,370,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_001,Total,23261,432,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_002,Total > Built 2014 or later,55,77,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_003,Total > Built 2010 to 2013,44,32,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_004,Total > Built 2000 to 2009,832,160,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_005,Total > Built 1990 to 1999,666,157,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_006,Total > Built 1980 to 1989,555,152,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_007,Total > Built 1970 to 1979,1443,235,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_008,Total > Built 1960 to 1969,1740,273,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_009,Total > Built 1950 to 1959,1821,239,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_010,Total > Built 1940 to 1949,1078,174,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,B25034_011,Total > Built 1939 or earlier,15027,528,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25064,B25064_001,Median gross rent,1050,45,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25077,B25077_001,Median value (dollars),359100,7401,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",24638,899.4,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2016,2012-2016,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),15027,528,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B01002,B01002_001,Median age > Total,36.1,0.2,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B01003,B01003_001,Total,5227575,,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B03002,B03002_001,Total,5227575,,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2241001,836,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1232816,2137,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,355071,1783,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B03002,B03002_012,Total > Hispanic or Latino,1300843,,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B15003,B15003_001,Total,3546688,78,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B15003,B15003_022,Total > Bachelor's degree,775888,5210,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B15003,B15003_023,Total > Master's degree,367264,4209,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B15003,B15003_024,Total > Professional school degree,99785,2357,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B15003,B15003_025,Total > Doctorate degree,50581,1451,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B19013,B19013_001,Median household income in the past 12 months (in 2016 inflation-adjusted dollars),56902,335,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25003,B25003_001,Total,1951606,4222,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25003,B25003_002,Total > Owner occupied,1105168,6772,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25003,B25003_003,Total > Renter occupied,846438,4832,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_001,Total,2177342,725,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_002,Total > Built 2014 or later,3820,458,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_003,Total > Built 2010 to 2013,14163,764,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_004,Total > Built 2000 to 2009,168946,2379,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_005,Total > Built 1990 to 1999,133892,2664,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_006,Total > Built 1980 to 1989,150196,2562,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_007,Total > Built 1970 to 1979,264959,3142,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_008,Total > Built 1960 to 1969,283935,3152,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_009,Total > Built 1950 to 1959,334472,3023,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_010,Total > Built 1940 to 1949,161718,2928,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,B25034_011,Total > Built 1939 or earlier,661241,4261,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25035,B25035_001,Median year structure built,1958,1,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25064,B25064_001,Median gross rent,999,4,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25077,B25077_001,Median value (dollars),219800,992,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1293518,7247.1,data.census.gov
+"Cook County, Illinois",05000US17031,2016,2012-2016,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),661241,4261,data.census.gov
+Illinois,04000US17,2016,2012-2016,B01002,B01002_001,Median age > Total,37.4,0.1,data.census.gov
+Illinois,04000US17,2016,2012-2016,B01003,B01003_001,Total,12851684,,data.census.gov
+Illinois,04000US17,2016,2012-2016,B03002,B03002_001,Total,12851684,,data.census.gov
+Illinois,04000US17,2016,2012-2016,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,7996856,1824,data.census.gov
+Illinois,04000US17,2016,2012-2016,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1810559,3810,data.census.gov
+Illinois,04000US17,2016,2012-2016,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,650929,2612,data.census.gov
+Illinois,04000US17,2016,2012-2016,B03002,B03002_012,Total > Hispanic or Latino,2136474,295,data.census.gov
+Illinois,04000US17,2016,2012-2016,B15003,B15003_001,Total,8618284,936,data.census.gov
+Illinois,04000US17,2016,2012-2016,B15003,B15003_022,Total > Bachelor's degree,1744260,9324,data.census.gov
+Illinois,04000US17,2016,2012-2016,B15003,B15003_023,Total > Master's degree,800474,7850,data.census.gov
+Illinois,04000US17,2016,2012-2016,B15003,B15003_024,Total > Professional school degree,183437,3189,data.census.gov
+Illinois,04000US17,2016,2012-2016,B15003,B15003_025,Total > Doctorate degree,106698,2105,data.census.gov
+Illinois,04000US17,2016,2012-2016,B19013,B19013_001,Median household income in the past 12 months (in 2016 inflation-adjusted dollars),59196,236,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25003,B25003_001,Total,4802124,9992,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25003,B25003_002,Total > Owner occupied,3167081,15008,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25003,B25003_003,Total > Renter occupied,1635043,8087,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_001,Total,5310327,1080,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_002,Total > Built 2014 or later,9939,774,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_003,Total > Built 2010 to 2013,52704,1513,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_004,Total > Built 2000 to 2009,596798,4236,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_005,Total > Built 1990 to 1999,580727,4747,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_006,Total > Built 1980 to 1989,475218,3640,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_007,Total > Built 1970 to 1979,765324,4902,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_008,Total > Built 1960 to 1969,634377,5100,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_009,Total > Built 1950 to 1959,685826,4031,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_010,Total > Built 1940 to 1949,333531,3448,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,B25034_011,Total > Built 1939 or earlier,1175883,6380,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25035,B25035_001,Median year structure built,1967,1,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25064,B25064_001,Median gross rent,925,3,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25077,B25077_001,Median value (dollars),174800,370,data.census.gov
+Illinois,04000US17,2016,2012-2016,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",2834869,12773.4,data.census.gov
+Illinois,04000US17,2016,2012-2016,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1175883,6380,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B01002,B01002_001,Median age -- > Total,39.0,0.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B01003,B01003_001,Total,52229,40,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B03002,B03002_001,Total,52229,40,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,33367,834,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,10122,714,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2318,369,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B03002,B03002_012,Total > Hispanic or Latino,4040,567,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B15003,B15003_001,Total,36456,429,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B15003,B15003_022,Total > Bachelor's degree,11069,560,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B15003,B15003_023,Total > Master's degree,8970,463,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B15003,B15003_024,Total > Professional school degree,3176,281,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B15003,B15003_025,Total > Doctorate degree,1848,298,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B19013,B19013_001,Median household income in the past 12 months (in 2017 inflation-adjusted dollars),87271,3755,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25003,B25003_001,Total,21529,390,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25003,B25003_002,Total > Owner occupied,12537,352,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25003,B25003_003,Total > Renter occupied,8992,326,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_001,Total,23139,482,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_002,Total > Built 2014 or later,92,67,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_003,Total > Built 2010 to 2013,47,32,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_004,Total > Built 2000 to 2009,808,182,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_005,Total > Built 1990 to 1999,775,175,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_006,Total > Built 1980 to 1989,552,136,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_007,Total > Built 1970 to 1979,1471,249,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_008,Total > Built 1960 to 1969,1749,281,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_009,Total > Built 1950 to 1959,1699,247,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_010,Total > Built 1940 to 1949,1051,163,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,B25034_011,Total > Built 1939 or earlier,14895,492,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25064,B25064_001,Median gross rent,1102,38,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25077,B25077_001,Median value (dollars),370400,9516,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",25063,834.1,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2017,2013-2017,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),14895,492,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B01002,B01002_001,Median age -- > Total,36.4,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B01003,B01003_001,Total,5238541,,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B03002,B03002_001,Total,5238541,,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2235598,845,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1226134,1995,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,363084,1695,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B03002,B03002_012,Total > Hispanic or Latino,1312304,,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B15003,B15003_001,Total,3578782,65,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B15003,B15003_022,Total > Bachelor's degree,796547,5396,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B15003,B15003_023,Total > Master's degree,379704,4344,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B15003,B15003_024,Total > Professional school degree,102530,2266,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B15003,B15003_025,Total > Doctorate degree,52175,1654,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B19013,B19013_001,Median household income in the past 12 months (in 2017 inflation-adjusted dollars),59426,380,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25003,B25003_001,Total,1956561,3923,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25003,B25003_002,Total > Owner occupied,1112383,6648,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25003,B25003_003,Total > Renter occupied,844178,4596,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_001,Total,2183987,841,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_002,Total > Built 2014 or later,7911,616,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_003,Total > Built 2010 to 2013,17806,923,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_004,Total > Built 2000 to 2009,165795,2311,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_005,Total > Built 1990 to 1999,139106,1920,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_006,Total > Built 1980 to 1989,151462,2798,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_007,Total > Built 1970 to 1979,266747,3376,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_008,Total > Built 1960 to 1969,282468,3059,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_009,Total > Built 1950 to 1959,337660,3337,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_010,Total > Built 1940 to 1949,167016,2316,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,B25034_011,Total > Built 1939 or earlier,648016,4033,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25035,B25035_001,Median year structure built,1958,1,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25064,B25064_001,Median gross rent,1044,4,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25077,B25077_001,Median value (dollars),227400,975,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1330956,7473.8,data.census.gov
+"Cook County, Illinois",05000US17031,2017,2013-2017,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),648016,4033,data.census.gov
+Illinois,04000US17,2017,2013-2017,B01002,B01002_001,Median age -- > Total,37.7,0.1,data.census.gov
+Illinois,04000US17,2017,2013-2017,B01003,B01003_001,Total,12854526,,data.census.gov
+Illinois,04000US17,2017,2013-2017,B03002,B03002_001,Total,12854526,,data.census.gov
+Illinois,04000US17,2017,2013-2017,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,7955484,1458,data.census.gov
+Illinois,04000US17,2017,2013-2017,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1806398,3175,data.census.gov
+Illinois,04000US17,2017,2013-2017,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,666890,2728,data.census.gov
+Illinois,04000US17,2017,2013-2017,B03002,B03002_012,Total > Hispanic or Latino,2162070,231,data.census.gov
+Illinois,04000US17,2017,2013-2017,B15003,B15003_001,Total,8666079,1108,data.census.gov
+Illinois,04000US17,2017,2013-2017,B15003,B15003_022,Total > Bachelor's degree,1776326,9340,data.census.gov
+Illinois,04000US17,2017,2013-2017,B15003,B15003_023,Total > Master's degree,823826,7411,data.census.gov
+Illinois,04000US17,2017,2013-2017,B15003,B15003_024,Total > Professional school degree,187683,3004,data.census.gov
+Illinois,04000US17,2017,2013-2017,B15003,B15003_025,Total > Doctorate degree,110749,2581,data.census.gov
+Illinois,04000US17,2017,2013-2017,B19013,B19013_001,Median household income in the past 12 months (in 2017 inflation-adjusted dollars),61229,190,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25003,B25003_001,Total,4818452,9284,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25003,B25003_002,Total > Owner occupied,3185142,14651,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25003,B25003_003,Total > Renter occupied,1633310,7940,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_001,Total,5334847,800,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_002,Total > Built 2014 or later,21639,983,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_003,Total > Built 2010 to 2013,63426,1886,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_004,Total > Built 2000 to 2009,593867,4552,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_005,Total > Built 1990 to 1999,585906,3580,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_006,Total > Built 1980 to 1989,476937,4113,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_007,Total > Built 1970 to 1979,770540,5437,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_008,Total > Built 1960 to 1969,631074,4457,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_009,Total > Built 1950 to 1959,689088,4523,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_010,Total > Built 1940 to 1949,337429,3413,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,B25034_011,Total > Built 1939 or earlier,1164941,5972,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25035,B25035_001,Median year structure built,1968,1,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25064,B25064_001,Median gross rent,952,3,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25077,B25077_001,Median value (dollars),179700,492,data.census.gov
+Illinois,04000US17,2017,2013-2017,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",2898584,12563.6,data.census.gov
+Illinois,04000US17,2017,2013-2017,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1164941,5972,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B01002,B01002_001,Median age -- > Total,39.7,0.9,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B01003,B01003_001,Total,52225,42,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B03002,B03002_001,Total,52225,42,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,33206,971,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,9356,621,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,2599,431,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B03002,B03002_012,Total > Hispanic or Latino,4580,673,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B15003,B15003_001,Total,36637,481,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B15003,B15003_022,Total > Bachelor's degree,11279,507,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B15003,B15003_023,Total > Master's degree,8939,469,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B15003,B15003_024,Total > Professional school degree,3251,287,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B15003,B15003_025,Total > Doctorate degree,2051,289,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B19013,B19013_001,Median household income in the past 12 months (in 2018 inflation-adjusted dollars),91945,3579,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25003,B25003_001,Total,21684,365,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25003,B25003_002,Total > Owner occupied,12680,391,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25003,B25003_003,Total > Renter occupied,9004,378,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_001,Total,23380,447,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_002,Total > Built 2014 or later,139,89,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_003,Total > Built 2010 to 2013,55,32,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_004,Total > Built 2000 to 2009,904,202,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_005,Total > Built 1990 to 1999,782,195,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_006,Total > Built 1980 to 1989,570,184,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_007,Total > Built 1970 to 1979,1620,260,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_008,Total > Built 1960 to 1969,1938,256,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_009,Total > Built 1950 to 1959,1757,234,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_010,Total > Built 1940 to 1949,1089,210,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,B25034_011,Total > Built 1939 or earlier,14526,552,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25064,B25064_001,Median gross rent,1147,33,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25077,B25077_001,Median value (dollars),374500,8873,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",25520,801.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2018,2014-2018,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),14526,552,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B01002,B01002_001,Median age -- > Total,36.6,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B01003,B01003_001,Total,5223719,,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B03002,B03002_001,Total,5223719,,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,2217734,830,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1213706,2336,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,372825,2153,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B03002,B03002_012,Total > Hispanic or Latino,1314232,,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B15003,B15003_001,Total,3587029,97,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B15003,B15003_022,Total > Bachelor's degree,811185,6956,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B15003,B15003_023,Total > Master's degree,390991,4922,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B15003,B15003_024,Total > Professional school degree,106016,2502,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B15003,B15003_025,Total > Doctorate degree,53782,1683,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B19013,B19013_001,Median household income in the past 12 months (in 2018 inflation-adjusted dollars),62088,368,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25003,B25003_001,Total,1963070,4298,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25003,B25003_002,Total > Owner occupied,1116759,6464,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25003,B25003_003,Total > Renter occupied,846311,5066,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_001,Total,2188394,934,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_002,Total > Built 2014 or later,13792,808,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_003,Total > Built 2010 to 2013,20783,908,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_004,Total > Built 2000 to 2009,165662,2610,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_005,Total > Built 1990 to 1999,140207,2425,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_006,Total > Built 1980 to 1989,151725,2455,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_007,Total > Built 1970 to 1979,264442,3033,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_008,Total > Built 1960 to 1969,280715,3330,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_009,Total > Built 1950 to 1959,333543,3217,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_010,Total > Built 1940 to 1949,169281,2761,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,B25034_011,Total > Built 1939 or earlier,648244,4181,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25035,B25035_001,Median year structure built,1958,1,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25064,B25064_001,Median gross rent,1091,4,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25077,B25077_001,Median value (dollars),237200,907,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1361974,9039.1,data.census.gov
+"Cook County, Illinois",05000US17031,2018,2014-2018,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),648244,4181,data.census.gov
+Illinois,04000US17,2018,2014-2018,B01002,B01002_001,Median age -- > Total,37.9,0.1,data.census.gov
+Illinois,04000US17,2018,2014-2018,B01003,B01003_001,Total,12821497,,data.census.gov
+Illinois,04000US17,2018,2014-2018,B03002,B03002_001,Total,12821497,,data.census.gov
+Illinois,04000US17,2018,2014-2018,B03002,B03002_003,Total > Not Hispanic or Latino > White alone,7894286,1461,data.census.gov
+Illinois,04000US17,2018,2014-2018,B03002,B03002_004,Total > Not Hispanic or Latino > Black or African American alone,1796057,3855,data.census.gov
+Illinois,04000US17,2018,2014-2018,B03002,B03002_006,Total > Not Hispanic or Latino > Asian alone,685343,2738,data.census.gov
+Illinois,04000US17,2018,2014-2018,B03002,B03002_012,Total > Hispanic or Latino,2174842,292,data.census.gov
+Illinois,04000US17,2018,2014-2018,B15003,B15003_001,Total,8682343,1159,data.census.gov
+Illinois,04000US17,2018,2014-2018,B15003,B15003_022,Total > Bachelor's degree,1801833,11249,data.census.gov
+Illinois,04000US17,2018,2014-2018,B15003,B15003_023,Total > Master's degree,847698,7625,data.census.gov
+Illinois,04000US17,2018,2014-2018,B15003,B15003_024,Total > Professional school degree,194142,3061,data.census.gov
+Illinois,04000US17,2018,2014-2018,B15003,B15003_025,Total > Doctorate degree,114118,2441,data.census.gov
+Illinois,04000US17,2018,2014-2018,B19013,B19013_001,Median household income in the past 12 months (in 2018 inflation-adjusted dollars),63575,187,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25003,B25003_001,Total,4830038,9750,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25003,B25003_002,Total > Owner occupied,3189035,15471,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25003,B25003_003,Total > Renter occupied,1641003,8379,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_001,Total,5347268,727,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_002,Total > Built 2014 or later,38500,1473,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_003,Total > Built 2010 to 2013,72291,1693,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_004,Total > Built 2000 to 2009,592285,4963,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_005,Total > Built 1990 to 1999,588244,4291,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_006,Total > Built 1980 to 1989,478474,4354,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_007,Total > Built 1970 to 1979,772176,5131,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_008,Total > Built 1960 to 1969,624961,5147,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_009,Total > Built 1950 to 1959,681255,4120,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_010,Total > Built 1940 to 1949,336268,3803,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,B25034_011,Total > Built 1939 or earlier,1162814,6153,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25035,B25035_001,Median year structure built,1968,1,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25064,B25064_001,Median gross rent,984,3,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25077,B25077_001,Median value (dollars),187200,530,data.census.gov
+Illinois,04000US17,2018,2014-2018,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",2957791,14142.4,data.census.gov
+Illinois,04000US17,2018,2014-2018,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1162814,6153,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B01002,B01002_001,Median age -- > Total:,39.8,0.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B01003,B01003_001,Total,52233,37,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B03002,B03002_001,Total:,52233,37,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,33027,804,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,9334,636,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,2432,433,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B03002,B03002_012,Total: > Hispanic or Latino:,4662,534,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B15003,B15003_001,Total:,36672,501,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B15003,B15003_022,Total: > Bachelor's degree,11293,558,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B15003,B15003_023,Total: > Master's degree,9284,497,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B15003,B15003_024,Total: > Professional school degree,3069,302,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B15003,B15003_025,Total: > Doctorate degree,2039,306,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B19013,B19013_001,Median household income in the past 12 months (in 2019 inflation-adjusted dollars),94646,3790,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25003,B25003_001,Total:,21603,450,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25003,B25003_002,Total: > Owner occupied,12852,393,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25003,B25003_003,Total: > Renter occupied,8751,421,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_001,Total:,23193,422,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_002,Total: > Built 2014 or later,309,100,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_003,Total: > Built 2010 to 2013,54,33,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_004,Total: > Built 2000 to 2009,967,198,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_005,Total: > Built 1990 to 1999,627,161,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_006,Total: > Built 1980 to 1989,571,147,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_007,Total: > Built 1970 to 1979,1672,277,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_008,Total: > Built 1960 to 1969,2210,281,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_009,Total: > Built 1950 to 1959,1500,199,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_010,Total: > Built 1940 to 1949,1081,211,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,B25034_011,Total: > Built 1939 or earlier,14202,484,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25064,B25064_001,Median gross rent,1175,25,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25077,B25077_001,Median value (dollars),387300,9078,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",25685,862.1,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2019,2015-2019,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),14202,484,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B01002,B01002_001,Median age -- > Total:,36.8,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B01003,B01003_001,Total,5198275,,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B03002,B03002_001,Total:,5198275,,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,2198122,699,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1199175,2132,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,375635,2092,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B03002,B03002_012,Total: > Hispanic or Latino:,1314796,,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B15003,B15003_001,Total:,3587576,93,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B15003,B15003_022,Total: > Bachelor's degree,825673,5858,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B15003,B15003_023,Total: > Master's degree,401423,4671,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B15003,B15003_024,Total: > Professional school degree,110261,2258,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B15003,B15003_025,Total: > Doctorate degree,55158,1981,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B19013,B19013_001,Median household income in the past 12 months (in 2019 inflation-adjusted dollars),64660,348,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25003,B25003_001,Total:,1972108,4335,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25003,B25003_002,Total: > Owner occupied,1122584,7521,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25003,B25003_003,Total: > Renter occupied,849524,6068,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_001,Total:,2193338,835,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_002,Total: > Built 2014 or later,22441,1057,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_003,Total: > Built 2010 to 2013,22538,1198,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_004,Total: > Built 2000 to 2009,166088,2290,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_005,Total: > Built 1990 to 1999,142411,2421,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_006,Total: > Built 1980 to 1989,152818,2528,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_007,Total: > Built 1970 to 1979,269435,2843,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_008,Total: > Built 1960 to 1969,279055,2834,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_009,Total: > Built 1950 to 1959,330740,3213,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_010,Total: > Built 1940 to 1949,169211,2670,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,B25034_011,Total: > Built 1939 or earlier,638601,4408,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25035,B25035_001,Median year structure built,1959,1,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25064,B25064_001,Median gross rent,1123,4,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25077,B25077_001,Median value (dollars),246600,993,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1392515,8072.0,data.census.gov
+"Cook County, Illinois",05000US17031,2019,2015-2019,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),638601,4408,data.census.gov
+Illinois,04000US17,2019,2015-2019,B01002,B01002_001,Median age -- > Total:,38.1,0.1,data.census.gov
+Illinois,04000US17,2019,2015-2019,B01003,B01003_001,Total,12770631,,data.census.gov
+Illinois,04000US17,2019,2015-2019,B03002,B03002_001,Total:,12770631,,data.census.gov
+Illinois,04000US17,2019,2015-2019,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,7829850,1090,data.census.gov
+Illinois,04000US17,2019,2015-2019,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1783708,3753,data.census.gov
+Illinois,04000US17,2019,2015-2019,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,692370,2563,data.census.gov
+Illinois,04000US17,2019,2015-2019,B03002,B03002_012,Total: > Hispanic or Latino:,2186387,231,data.census.gov
+Illinois,04000US17,2019,2015-2019,B15003,B15003_001,Total:,8686299,1166,data.census.gov
+Illinois,04000US17,2019,2015-2019,B15003,B15003_022,Total: > Bachelor's degree,1831438,10318,data.census.gov
+Illinois,04000US17,2019,2015-2019,B15003,B15003_023,Total: > Master's degree,862440,7664,data.census.gov
+Illinois,04000US17,2019,2015-2019,B15003,B15003_024,Total: > Professional school degree,199455,3444,data.census.gov
+Illinois,04000US17,2019,2015-2019,B15003,B15003_025,Total: > Doctorate degree,116692,2472,data.census.gov
+Illinois,04000US17,2019,2015-2019,B19013,B19013_001,Median household income in the past 12 months (in 2019 inflation-adjusted dollars),65886,283,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25003,B25003_001,Total:,4846134,10459,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25003,B25003_002,Total: > Owner occupied,3202715,16823,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25003,B25003_003,Total: > Renter occupied,1643419,10182,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_001,Total:,5360315,586,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_002,Total: > Built 2014 or later,61266,1591,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_003,Total: > Built 2010 to 2013,75804,2101,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_004,Total: > Built 2000 to 2009,588988,4054,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_005,Total: > Built 1990 to 1999,591704,4797,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_006,Total: > Built 1980 to 1989,480266,4759,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_007,Total: > Built 1970 to 1979,779913,4457,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_008,Total: > Built 1960 to 1969,621810,4574,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_009,Total: > Built 1950 to 1959,677437,4977,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_010,Total: > Built 1940 to 1949,334908,3517,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,B25034_011,Total: > Built 1939 or earlier,1148219,6405,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25035,B25035_001,Median year structure built,1968,1,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25064,B25064_001,Median gross rent,1010,4,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25077,B25077_001,Median value (dollars),194500,546,data.census.gov
+Illinois,04000US17,2019,2015-2019,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",3010025,13534.0,data.census.gov
+Illinois,04000US17,2019,2015-2019,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1148219,6405,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B01002,B01002_001,Median age -- > Total:,40.6,1.2,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B01003,B01003_001,Total,52102,39,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B03002,B03002_001,Total:,52102,39,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,32010,868,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,9422,792,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,2564,499,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B03002,B03002_012,Total: > Hispanic or Latino:,4937,622,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B15003,B15003_001,Total:,36527,696,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B15003,B15003_022,Total: > Bachelor's degree,11743,781,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B15003,B15003_023,Total: > Master's degree,9143,609,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B15003,B15003_024,Total: > Professional school degree,3098,384,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B15003,B15003_025,Total: > Doctorate degree,1876,238,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B19013,B19013_001,Median household income in the past 12 months (in 2020 inflation-adjusted dollars),96945,5817,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25003,B25003_001,Total:,21701,541,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25003,B25003_002,Total: > Owner occupied,13055,469,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25003,B25003_003,Total: > Renter occupied,8646,509,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_001,Total:,23155,524,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_002,Total: > Built 2014 or later,522,174,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_003,Total: > Built 2010 to 2013,53,41,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_004,Total: > Built 2000 to 2009,929,185,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_005,Total: > Built 1990 to 1999,545,170,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_006,Total: > Built 1980 to 1989,493,201,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_007,Total: > Built 1970 to 1979,1682,302,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_008,Total: > Built 1960 to 1969,2321,342,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_009,Total: > Built 1950 to 1959,1581,253,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_010,Total: > Built 1940 to 1949,1164,241,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,B25034_011,Total: > Built 1939 or earlier,13865,490,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25064,B25064_001,Median gross rent,1213,38,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25077,B25077_001,Median value (dollars),403200,13589,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",25860,1088.6,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2020,2016-2020,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),13865,490,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B01002,B01002_001,Median age -- > Total:,37.0,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B01003,B01003_001,Total,5169517,,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B03002,B03002_001,Total:,5169517,,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,2168964,1441,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1184373,3338,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,382075,2551,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B03002,B03002_012,Total: > Hispanic or Latino:,1308432,,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B15003,B15003_001,Total:,3584933,119,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B15003,B15003_022,Total: > Bachelor's degree,846361,6159,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B15003,B15003_023,Total: > Master's degree,416246,5402,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B15003,B15003_024,Total: > Professional school degree,113975,3356,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B15003,B15003_025,Total: > Doctorate degree,56837,2236,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B19013,B19013_001,Median household income in the past 12 months (in 2020 inflation-adjusted dollars),67886,571,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25003,B25003_001,Total:,1991474,3683,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25003,B25003_002,Total: > Owner occupied,1139938,7198,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25003,B25003_003,Total: > Renter occupied,851536,6204,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_001,Total:,2198489,756,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_002,Total: > Built 2014 or later,32843,1787,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_003,Total: > Built 2010 to 2013,23548,1266,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_004,Total: > Built 2000 to 2009,164182,3097,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_005,Total: > Built 1990 to 1999,146373,2920,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_006,Total: > Built 1980 to 1989,158316,3445,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_007,Total: > Built 1970 to 1979,272723,4003,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_008,Total: > Built 1960 to 1969,281817,4130,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_009,Total: > Built 1950 to 1959,332495,3786,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_010,Total: > Built 1940 to 1949,164714,3574,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,B25034_011,Total: > Built 1939 or earlier,621478,4872,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25035,B25035_001,Median year structure built,1959,1,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25064,B25064_001,Median gross rent,1160,5,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25077,B25077_001,Median value (dollars),255500,1395,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1433419,9131.1,data.census.gov
+"Cook County, Illinois",05000US17031,2020,2016-2020,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),621478,4872,data.census.gov
+Illinois,04000US17,2020,2016-2020,B01002,B01002_001,Median age -- > Total:,38.3,0.1,data.census.gov
+Illinois,04000US17,2020,2016-2020,B01003,B01003_001,Total,12716164,,data.census.gov
+Illinois,04000US17,2020,2016-2020,B03002,B03002_001,Total:,12716164,,data.census.gov
+Illinois,04000US17,2020,2016-2020,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,7737459,2612,data.census.gov
+Illinois,04000US17,2020,2016-2020,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1766586,4794,data.census.gov
+Illinois,04000US17,2020,2016-2020,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,702457,3345,data.census.gov
+Illinois,04000US17,2020,2016-2020,B03002,B03002_012,Total: > Hispanic or Latino:,2190696,236,data.census.gov
+Illinois,04000US17,2020,2016-2020,B15003,B15003_001,Total:,8686700,1237,data.census.gov
+Illinois,04000US17,2020,2016-2020,B15003,B15003_022,Total: > Bachelor's degree,1875011,11436,data.census.gov
+Illinois,04000US17,2020,2016-2020,B15003,B15003_023,Total: > Master's degree,884787,8588,data.census.gov
+Illinois,04000US17,2020,2016-2020,B15003,B15003_024,Total: > Professional school degree,206155,4081,data.census.gov
+Illinois,04000US17,2020,2016-2020,B15003,B15003_025,Total: > Doctorate degree,119321,3277,data.census.gov
+Illinois,04000US17,2020,2016-2020,B19013,B19013_001,Median household income in the past 12 months (in 2020 inflation-adjusted dollars),68428,267,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25003,B25003_001,Total:,4884061,8585,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25003,B25003_002,Total: > Owner occupied,3237778,15169,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25003,B25003_003,Total: > Renter occupied,1646283,9436,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_001,Total:,5373385,564,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_002,Total: > Built 2014 or later,88931,2673,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_003,Total: > Built 2010 to 2013,79005,2541,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_004,Total: > Built 2000 to 2009,582470,5416,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_005,Total: > Built 1990 to 1999,604683,5751,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_006,Total: > Built 1980 to 1989,488946,4782,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_007,Total: > Built 1970 to 1979,775744,5932,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_008,Total: > Built 1960 to 1969,622943,6089,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_009,Total: > Built 1950 to 1959,678060,5688,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_010,Total: > Built 1940 to 1949,326088,3860,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,B25034_011,Total: > Built 1939 or earlier,1126515,6604,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25035,B25035_001,Median year structure built,1969,1,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25064,B25064_001,Median gross rent,1038,4,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25077,B25077_001,Median value (dollars),202100,886,data.census.gov
+Illinois,04000US17,2020,2016-2020,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",3085274,15229.2,data.census.gov
+Illinois,04000US17,2020,2016-2020,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1126515,6604,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B01002,B01002_001,Median age -- > Total:,39.9,0.9,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B01003,B01003_001,Total,54100,37,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B03002,B03002_001,Total:,54100,37,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,32677,1300,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,9853,989,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,2874,620,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B03002,B03002_012,Total: > Hispanic or Latino:,5342,789,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B15003,B15003_001,Total:,37850,590,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B15003,B15003_022,Total: > Bachelor's degree,12461,755,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B15003,B15003_023,Total: > Master's degree,9797,683,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B15003,B15003_024,Total: > Professional school degree,3065,440,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B15003,B15003_025,Total: > Doctorate degree,1947,272,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B19013,B19013_001,Median household income in the past 12 months (in 2021 inflation-adjusted dollars),98081,2951,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25003,B25003_001,Total:,22793,465,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25003,B25003_002,Total: > Owner occupied,13654,519,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25003,B25003_003,Total: > Renter occupied,9139,546,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_001,Total:,24200,540,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_002,Total: > Built 2020 or later,4,7,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_003,Total: > Built 2010 to 2019,802,192,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_004,Total: > Built 2000 to 2009,796,198,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_005,Total: > Built 1990 to 1999,524,129,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_006,Total: > Built 1980 to 1989,560,193,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_007,Total: > Built 1970 to 1979,1942,365,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_008,Total: > Built 1960 to 1969,2403,326,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_009,Total: > Built 1950 to 1959,1451,227,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_010,Total: > Built 1940 to 1949,1166,258,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,B25034_011,Total: > Built 1939 or earlier,14552,507,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25035,B25035_001,Median year structure built,1939,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25064,B25064_001,Median gross rent,1303,51,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25077,B25077_001,Median value (dollars),409000,13831,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",27270,1142.0,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2021,2017-2021,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),14552,507,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B01002,B01002_001,Median age -- > Total:,37.3,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B01003,B01003_001,Total,5265398,,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B03002,B03002_001,Total:,5265398,,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,2192123,1827,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1192435,2777,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,392743,2485,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B03002,B03002_012,Total: > Hispanic or Latino:,1346949,,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B15003,B15003_001,Total:,3656393,86,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B15003,B15003_022,Total: > Bachelor's degree,869960,6624,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B15003,B15003_023,Total: > Master's degree,439038,6010,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B15003,B15003_024,Total: > Professional school degree,119333,2726,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B15003,B15003_025,Total: > Doctorate degree,61600,1919,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B19013,B19013_001,Median household income in the past 12 months (in 2021 inflation-adjusted dollars),72121,523,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25003,B25003_001,Total:,2044658,3765,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25003,B25003_002,Total: > Owner occupied,1175143,6780,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25003,B25003_003,Total: > Renter occupied,869515,6667,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_001,Total:,2253936,976,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_002,Total: > Built 2020 or later,865,214,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_003,Total: > Built 2010 to 2019,69562,2107,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_004,Total: > Built 2000 to 2009,169466,3577,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_005,Total: > Built 1990 to 1999,148038,2769,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_006,Total: > Built 1980 to 1989,163179,3314,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_007,Total: > Built 1970 to 1979,278170,4111,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_008,Total: > Built 1960 to 1969,283035,4005,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_009,Total: > Built 1950 to 1959,333984,3679,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_010,Total: > Built 1940 to 1949,166667,2910,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,B25034_011,Total: > Built 1939 or earlier,640970,5296,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25035,B25035_001,Median year structure built,1960,1,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25064,B25064_001,Median gross rent,1214,5,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25077,B25077_001,Median value (dollars),266800,1257,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1489931,9545.2,data.census.gov
+"Cook County, Illinois",05000US17031,2021,2017-2021,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),640970,5296,data.census.gov
+Illinois,04000US17,2021,2017-2021,B01002,B01002_001,Median age -- > Total:,38.5,0.2,data.census.gov
+Illinois,04000US17,2021,2017-2021,B01003,B01003_001,Total,12821813,,data.census.gov
+Illinois,04000US17,2021,2017-2021,B03002,B03002_001,Total:,12821813,,data.census.gov
+Illinois,04000US17,2021,2017-2021,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,7721282,2623,data.census.gov
+Illinois,04000US17,2021,2017-2021,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1773138,4809,data.census.gov
+Illinois,04000US17,2021,2017-2021,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,718559,3656,data.census.gov
+Illinois,04000US17,2021,2017-2021,B03002,B03002_012,Total: > Hispanic or Latino:,2250076,213,data.census.gov
+Illinois,04000US17,2021,2017-2021,B15003,B15003_001,Total:,8764878,1138,data.census.gov
+Illinois,04000US17,2021,2017-2021,B15003,B15003_022,Total: > Bachelor's degree,1910757,10750,data.census.gov
+Illinois,04000US17,2021,2017-2021,B15003,B15003_023,Total: > Master's degree,920298,9156,data.census.gov
+Illinois,04000US17,2021,2017-2021,B15003,B15003_024,Total: > Professional school degree,212604,3233,data.census.gov
+Illinois,04000US17,2021,2017-2021,B15003,B15003_025,Total: > Doctorate degree,125910,3030,data.census.gov
+Illinois,04000US17,2021,2017-2021,B19013,B19013_001,Median household income in the past 12 months (in 2021 inflation-adjusted dollars),72563,319,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25003,B25003_001,Total:,4930255,7843,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25003,B25003_002,Total: > Owner occupied,3279322,15174,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25003,B25003_003,Total: > Renter occupied,1650933,10624,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_001,Total:,5412995,995,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_002,Total: > Built 2020 or later,3726,467,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_003,Total: > Built 2010 to 2019,199030,3126,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_004,Total: > Built 2000 to 2009,589438,5076,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_005,Total: > Built 1990 to 1999,600485,5262,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_006,Total: > Built 1980 to 1989,492147,5152,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_007,Total: > Built 1970 to 1979,779081,6261,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_008,Total: > Built 1960 to 1969,620401,6705,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_009,Total: > Built 1950 to 1959,673676,4997,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_010,Total: > Built 1940 to 1949,325189,4249,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,B25034_011,Total: > Built 1939 or earlier,1129822,6809,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25035,B25035_001,Median year structure built,1969,1,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25064,B25064_001,Median gross rent,1097,4,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25077,B25077_001,Median value (dollars),212600,688,data.census.gov
+Illinois,04000US17,2021,2017-2021,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",3169569,14799.6,data.census.gov
+Illinois,04000US17,2021,2017-2021,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1129822,6809,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B01002,B01002_001,Median age -- > Total:,40.3,1.3,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B01003,B01003_001,Total,53834,51,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B03002,B03002_001,Total:,53834,51,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,32324,1191,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,10138,911,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,3071,611,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B03002,B03002_012,Total: > Hispanic or Latino:,4990,711,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B15003,B15003_001,Total:,38006,767,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B15003,B15003_022,Total: > Bachelor's degree,12546,818,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B15003,B15003_023,Total: > Master's degree,9814,816,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B15003,B15003_024,Total: > Professional school degree,2878,466,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B15003,B15003_025,Total: > Doctorate degree,2035,275,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B19013,B19013_001,Median household income in the past 12 months (in 2022 inflation-adjusted dollars),103264,3359,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25003,B25003_001,Total:,23345,585,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25003,B25003_002,Total: > Owner occupied,13894,659,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25003,B25003_003,Total: > Renter occupied,9451,603,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_001,Total:,24708,568,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_002,Total: > Built 2020 or later,22,29,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_003,Total: > Built 2010 to 2019,961,233,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_004,Total: > Built 2000 to 2009,882,228,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_005,Total: > Built 1990 to 1999,525,148,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_006,Total: > Built 1980 to 1989,634,174,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_007,Total: > Built 1970 to 1979,2155,388,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_008,Total: > Built 1960 to 1969,2369,299,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_009,Total: > Built 1950 to 1959,1503,265,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_010,Total: > Built 1940 to 1949,1091,250,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,B25034_011,Total: > Built 1939 or earlier,14566,549,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25035,B25035_001,Median year structure built,1938,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25064,B25064_001,Median gross rent,1409,54,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25077,B25077_001,Median value (dollars),440500,11798,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",27273,1275.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2022,2018-2022,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),14566,549,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B01002,B01002_001,Median age -- > Total:,37.5,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B01003,B01003_001,Total,5225367,,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B03002,B03002_001,Total:,5225367,,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,2148173,2148,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1170790,3170,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,398558,2725,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B03002,B03002_012,Total: > Hispanic or Latino:,1352482,,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B15003,B15003_001,Total:,3639978,97,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B15003,B15003_022,Total: > Bachelor's degree,874091,7199,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B15003,B15003_023,Total: > Master's degree,446799,5281,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B15003,B15003_024,Total: > Professional school degree,118884,2986,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B15003,B15003_025,Total: > Doctorate degree,62940,2148,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B19013,B19013_001,Median household income in the past 12 months (in 2022 inflation-adjusted dollars),78304,571,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25003,B25003_001,Total:,2066248,3899,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25003,B25003_002,Total: > Owner occupied,1188945,7212,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25003,B25003_003,Total: > Renter occupied,877303,6481,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_001,Total:,2261319,575,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_002,Total: > Built 2020 or later,3359,442,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_003,Total: > Built 2010 to 2019,80644,2211,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_004,Total: > Built 2000 to 2009,173833,3765,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_005,Total: > Built 1990 to 1999,144727,3339,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_006,Total: > Built 1980 to 1989,164663,3607,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_007,Total: > Built 1970 to 1979,281969,4944,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_008,Total: > Built 1960 to 1969,286810,3855,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_009,Total: > Built 1950 to 1959,327973,4124,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_010,Total: > Built 1940 to 1949,160787,3444,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,B25034_011,Total: > Built 1939 or earlier,636554,5238,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25035,B25035_001,Median year structure built,1960,1,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25064,B25064_001,Median gross rent,1318,7,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25077,B25077_001,Median value (dollars),293700,1384,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1502714,9656.3,data.census.gov
+"Cook County, Illinois",05000US17031,2022,2018-2022,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),636554,5238,data.census.gov
+Illinois,04000US17,2022,2018-2022,B01002,B01002_001,Median age -- > Total:,38.7,0.1,data.census.gov
+Illinois,04000US17,2022,2018-2022,B01003,B01003_001,Total,12757634,,data.census.gov
+Illinois,04000US17,2022,2018-2022,B03002,B03002_001,Total:,12757634,,data.census.gov
+Illinois,04000US17,2022,2018-2022,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,7601615,3609,data.census.gov
+Illinois,04000US17,2022,2018-2022,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1744151,4802,data.census.gov
+Illinois,04000US17,2022,2018-2022,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,731197,3808,data.census.gov
+Illinois,04000US17,2022,2018-2022,B03002,B03002_012,Total: > Hispanic or Latino:,2275704,252,data.census.gov
+Illinois,04000US17,2022,2018-2022,B15003,B15003_001,Total:,8746416,965,data.census.gov
+Illinois,04000US17,2022,2018-2022,B15003,B15003_022,Total: > Bachelor's degree,1924339,12042,data.census.gov
+Illinois,04000US17,2022,2018-2022,B15003,B15003_023,Total: > Master's degree,938097,8909,data.census.gov
+Illinois,04000US17,2022,2018-2022,B15003,B15003_024,Total: > Professional school degree,214115,3632,data.census.gov
+Illinois,04000US17,2022,2018-2022,B15003,B15003_025,Total: > Doctorate degree,130899,3036,data.census.gov
+Illinois,04000US17,2022,2018-2022,B19013,B19013_001,Median household income in the past 12 months (in 2022 inflation-adjusted dollars),78433,297,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25003,B25003_001,Total:,4968761,7953,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25003,B25003_002,Total: > Owner occupied,3312809,15434,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25003,B25003_003,Total: > Renter occupied,1655952,10762,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_001,Total:,5427357,1016,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_002,Total: > Built 2020 or later,11200,824,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_003,Total: > Built 2010 to 2019,226451,4310,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_004,Total: > Built 2000 to 2009,592086,5503,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_005,Total: > Built 1990 to 1999,591417,5342,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_006,Total: > Built 1980 to 1989,494950,5202,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_007,Total: > Built 1970 to 1979,786037,5786,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_008,Total: > Built 1960 to 1969,626712,5762,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_009,Total: > Built 1950 to 1959,663801,5401,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_010,Total: > Built 1940 to 1949,317571,4360,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,B25034_011,Total: > Built 1939 or earlier,1117132,7041,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25035,B25035_001,Median year structure built,1970,1,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25064,B25064_001,Median gross rent,1179,4,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25077,B25077_001,Median value (dollars),239100,749,data.census.gov
+Illinois,04000US17,2022,2018-2022,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",3207450,15709.5,data.census.gov
+Illinois,04000US17,2022,2018-2022,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1117132,7041,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B01002,B01002_001,Median age -- > Total:,40.6,1.1,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B01003,B01003_001,Total,53315,37,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B03002,B03002_001,Total:,53315,37,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,32592,1226,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,10310,1082,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,2830,623,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B03002,B03002_012,Total: > Hispanic or Latino:,4533,739,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B15003,B15003_001,Total:,37578,690,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B15003,B15003_022,Total: > Bachelor's degree,12737,876,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B15003,B15003_023,Total: > Master's degree,9669,725,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B15003,B15003_024,Total: > Professional school degree,2842,437,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B15003,B15003_025,Total: > Doctorate degree,1989,309,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B19013,B19013_001,Median household income in the past 12 months (in 2023 inflation-adjusted dollars),108026,4131,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25003,B25003_001,Total:,23267,543,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25003,B25003_002,Total: > Owner occupied,14128,599,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25003,B25003_003,Total: > Renter occupied,9139,579,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_001,Total:,24673,594,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_002,Total: > Built 2020 or later,84,72,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_003,Total: > Built 2010 to 2019,1030,240,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_004,Total: > Built 2000 to 2009,937,232,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_005,Total: > Built 1990 to 1999,560,177,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_006,Total: > Built 1980 to 1989,687,179,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_007,Total: > Built 1970 to 1979,1994,374,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_008,Total: > Built 1960 to 1969,2231,351,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_009,Total: > Built 1950 to 1959,1476,289,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_010,Total: > Built 1940 to 1949,1084,250,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,B25034_011,Total: > Built 1939 or earlier,14590,610,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25035,B25035_001,Median year structure built,1938,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25064,B25064_001,Median gross rent,1456,57,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25077,B25077_001,Median value (dollars),456300,13010,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",27237,1256.8,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2023,2019-2023,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),14590,610,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B01002,B01002_001,Median age -- > Total:,37.8,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B01003,B01003_001,Total,5185812,,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B03002,B03002_001,Total:,5185812,,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,2102352,2064,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1148288,3269,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,397936,2680,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B03002,B03002_012,Total: > Hispanic or Latino:,1374034,,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B15003,B15003_001,Total:,3631086,110,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B15003,B15003_022,Total: > Bachelor's degree,884983,6711,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B15003,B15003_023,Total: > Master's degree,455120,6553,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B15003,B15003_024,Total: > Professional school degree,118212,3242,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B15003,B15003_025,Total: > Doctorate degree,64878,2205,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B19013,B19013_001,Median household income in the past 12 months (in 2023 inflation-adjusted dollars),81797,639,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25003,B25003_001,Total:,2084578,3951,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25003,B25003_002,Total: > Owner occupied,1198834,7668,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25003,B25003_003,Total: > Renter occupied,885744,6500,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_001,Total:,2270349,369,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_002,Total: > Built 2020 or later,7617,756,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_003,Total: > Built 2010 to 2019,92794,2919,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_004,Total: > Built 2000 to 2009,174889,4009,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_005,Total: > Built 1990 to 1999,143888,3304,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_006,Total: > Built 1980 to 1989,168009,2926,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_007,Total: > Built 1970 to 1979,280324,3878,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_008,Total: > Built 1960 to 1969,285461,4382,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_009,Total: > Built 1950 to 1959,327665,4648,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_010,Total: > Built 1940 to 1949,155239,3265,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,B25034_011,Total: > Built 1939 or earlier,634463,5450,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25035,B25035_001,Median year structure built,1961,1,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25064,B25064_001,Median gross rent,1381,8,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25077,B25077_001,Median value (dollars),305200,2016,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1523193,10166.2,data.census.gov
+"Cook County, Illinois",05000US17031,2023,2019-2023,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),634463,5450,data.census.gov
+Illinois,04000US17,2023,2019-2023,B01002,B01002_001,Median age -- > Total:,38.9,0.1,data.census.gov
+Illinois,04000US17,2023,2019-2023,B01003,B01003_001,Total,12692653,,data.census.gov
+Illinois,04000US17,2023,2019-2023,B03002,B03002_001,Total:,12692653,,data.census.gov
+Illinois,04000US17,2023,2019-2023,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,7456575,3789,data.census.gov
+Illinois,04000US17,2023,2019-2023,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1719887,6099,data.census.gov
+Illinois,04000US17,2023,2019-2023,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,730106,3168,data.census.gov
+Illinois,04000US17,2023,2019-2023,B03002,B03002_012,Total: > Hispanic or Latino:,2348118,228,data.census.gov
+Illinois,04000US17,2023,2019-2023,B15003,B15003_001,Total:,8738607,1018,data.census.gov
+Illinois,04000US17,2023,2019-2023,B15003,B15003_022,Total: > Bachelor's degree,1949199,10429,data.census.gov
+Illinois,04000US17,2023,2019-2023,B15003,B15003_023,Total: > Master's degree,952141,10230,data.census.gov
+Illinois,04000US17,2023,2019-2023,B15003,B15003_024,Total: > Professional school degree,214504,3827,data.census.gov
+Illinois,04000US17,2023,2019-2023,B15003,B15003_025,Total: > Doctorate degree,133650,3142,data.census.gov
+Illinois,04000US17,2023,2019-2023,B19013,B19013_001,Median household income in the past 12 months (in 2023 inflation-adjusted dollars),81702,363,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25003,B25003_001,Total:,5001904,7673,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25003,B25003_002,Total: > Owner occupied,3343034,15066,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25003,B25003_003,Total: > Renter occupied,1658870,9456,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_001,Total:,5443501,767,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_002,Total: > Built 2020 or later,22557,1207,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_003,Total: > Built 2010 to 2019,251912,4441,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_004,Total: > Built 2000 to 2009,598875,6347,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_005,Total: > Built 1990 to 1999,580226,5474,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_006,Total: > Built 1980 to 1989,498175,5438,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_007,Total: > Built 1970 to 1979,780355,5820,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_008,Total: > Built 1960 to 1969,628236,6549,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_009,Total: > Built 1950 to 1959,660333,5554,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_010,Total: > Built 1940 to 1949,311713,4268,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,B25034_011,Total: > Built 1939 or earlier,1111119,6663,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25035,B25035_001,Median year structure built,1970,1,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25064,B25064_001,Median gross rent,1227,5,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25077,B25077_001,Median value (dollars),250500,863,data.census.gov
+Illinois,04000US17,2023,2019-2023,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",3249494,15425.1,data.census.gov
+Illinois,04000US17,2023,2019-2023,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1111119,6663,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B01002,B01002_001,Median age -- > Total:,40.3,1.0,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B01003,B01003_001,Total,53292,49,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B03002,B03002_001,Total:,53292,49,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,32762,1264,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,9504,878,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,2719,575,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B03002,B03002_012,Total: > Hispanic or Latino:,4973,814,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B15003,B15003_001,Total:,37400,629,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B15003,B15003_022,Total: > Bachelor's degree,12648,913,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B15003,B15003_023,Total: > Master's degree,9592,700,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B15003,B15003_024,Total: > Professional school degree,2852,495,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B15003,B15003_025,Total: > Doctorate degree,2033,295,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B19013,B19013_001,Median household income in the past 12 months (in 2024 inflation-adjusted dollars),110820,3611,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25003,B25003_001,Total:,23387,568,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25003,B25003_002,Total: > Owner occupied,14037,596,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25003,B25003_003,Total: > Renter occupied,9350,659,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_001,Total:,24872,569,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_002,Total: > Built 2020 or later,82,81,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_003,Total: > Built 2010 to 2019,975,233,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_004,Total: > Built 2000 to 2009,1122,271,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_005,Total: > Built 1990 to 1999,549,156,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_006,Total: > Built 1980 to 1989,722,186,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_007,Total: > Built 1970 to 1979,1736,367,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_008,Total: > Built 1960 to 1969,2118,416,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_009,Total: > Built 1950 to 1959,1547,259,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_010,Total: > Built 1940 to 1949,1280,310,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,B25034_011,Total: > Built 1939 or earlier,14741,595,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25035,B25035_001,Median year structure built,1938,,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25064,B25064_001,Median gross rent,1593,81,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25077,B25077_001,Median value (dollars),465500,13551,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",27125,1286.7,data.census.gov
+"Oak Park village, Illinois",16000US1754885,2024,2020-2024,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),14741,595,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B01002,B01002_001,Median age -- > Total:,38.0,0.1,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B01003,B01003_001,Total,5182090,,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B03002,B03002_001,Total:,5182090,,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,2077522,2568,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1130881,3787,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,407859,2751,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B03002,B03002_012,Total: > Hispanic or Latino:,1387163,,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B15003,B15003_001,Total:,3641534,69,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B15003,B15003_022,Total: > Bachelor's degree,900648,7366,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B15003,B15003_023,Total: > Master's degree,467841,7026,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B15003,B15003_024,Total: > Professional school degree,116517,3038,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B15003,B15003_025,Total: > Doctorate degree,70595,2543,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B19013,B19013_001,Median household income in the past 12 months (in 2024 inflation-adjusted dollars),83498,630,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25003,B25003_001,Total:,2100230,3848,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25003,B25003_002,Total: > Owner occupied,1212570,7287,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25003,B25003_003,Total: > Renter occupied,887660,6720,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_001,Total:,2276493,389,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_002,Total: > Built 2020 or later,15047,1346,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_003,Total: > Built 2010 to 2019,99817,2778,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_004,Total: > Built 2000 to 2009,180901,4551,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_005,Total: > Built 1990 to 1999,141698,3218,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_006,Total: > Built 1980 to 1989,171892,3623,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_007,Total: > Built 1970 to 1979,276109,4676,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_008,Total: > Built 1960 to 1969,283708,4470,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_009,Total: > Built 1950 to 1959,324927,4258,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_010,Total: > Built 1940 to 1949,150008,3391,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,B25034_011,Total: > Built 1939 or earlier,632386,5373,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25035,B25035_001,Median year structure built,1961,1,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25064,B25064_001,Median gross rent,1435,7,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25077,B25077_001,Median value (dollars),324500,1460,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",1555601,10923.3,data.census.gov
+"Cook County, Illinois",05000US17031,2024,2020-2024,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),632386,5373,data.census.gov
+Illinois,04000US17,2024,2020-2024,B01002,B01002_001,Median age -- > Total:,39.0,0.1,data.census.gov
+Illinois,04000US17,2024,2020-2024,B01003,B01003_001,Total,12694798,,data.census.gov
+Illinois,04000US17,2024,2020-2024,B03002,B03002_001,Total:,12694798,,data.census.gov
+Illinois,04000US17,2024,2020-2024,B03002,B03002_003,Total: > Not Hispanic or Latino: > White alone,7370665,3871,data.census.gov
+Illinois,04000US17,2024,2020-2024,B03002,B03002_004,Total: > Not Hispanic or Latino: > Black or African American alone,1693169,5997,data.census.gov
+Illinois,04000US17,2024,2020-2024,B03002,B03002_006,Total: > Not Hispanic or Latino: > Asian alone,754004,3408,data.census.gov
+Illinois,04000US17,2024,2020-2024,B03002,B03002_012,Total: > Hispanic or Latino:,2387049,283,data.census.gov
+Illinois,04000US17,2024,2020-2024,B15003,B15003_001,Total:,8767004,1115,data.census.gov
+Illinois,04000US17,2024,2020-2024,B15003,B15003_022,Total: > Bachelor's degree,1981080,11652,data.census.gov
+Illinois,04000US17,2024,2020-2024,B15003,B15003_023,Total: > Master's degree,979091,10069,data.census.gov
+Illinois,04000US17,2024,2020-2024,B15003,B15003_024,Total: > Professional school degree,215303,3587,data.census.gov
+Illinois,04000US17,2024,2020-2024,B15003,B15003_025,Total: > Doctorate degree,142675,3101,data.census.gov
+Illinois,04000US17,2024,2020-2024,B19013,B19013_001,Median household income in the past 12 months (in 2024 inflation-adjusted dollars),83390,362,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25003,B25003_001,Total:,5036449,8009,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25003,B25003_002,Total: > Owner occupied,3378910,14728,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25003,B25003_003,Total: > Renter occupied,1657539,10322,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_001,Total:,5457452,471,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_002,Total: > Built 2020 or later,40260,1652,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_003,Total: > Built 2010 to 2019,270358,3774,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_004,Total: > Built 2000 to 2009,610222,6810,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_005,Total: > Built 1990 to 1999,571085,5217,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_006,Total: > Built 1980 to 1989,501369,5472,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_007,Total: > Built 1970 to 1979,774206,6994,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_008,Total: > Built 1960 to 1969,628280,6517,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_009,Total: > Built 1950 to 1959,651893,5694,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_010,Total: > Built 1940 to 1949,305095,4348,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,B25034_011,Total: > Built 1939 or earlier,1104684,7629,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25035,B25035_001,Median year structure built,1971,2,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25064,B25064_001,Median gross rent,1274,5,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25077,B25077_001,Median value (dollars),263300,797,data.census.gov
+Illinois,04000US17,2024,2020-2024,B15003,DERIVED_BACHELORS_OR_HIGHER_25PLUS,"Population 25 years and over with a bachelor's degree or higher (sum of B15003_022, B15003_023, B15003_024, B15003_025)",3318149,16113.2,data.census.gov
+Illinois,04000US17,2024,2020-2024,B25034,DERIVED_UNITS_BUILT_1939_OR_EARLIER,Housing units built 1939 or earlier (copy of B25034_011),1104684,7629,data.census.gov

@@ -1,20 +1,20 @@
 # Oak Park over time
 
-**The question:** How has Oak Park changed — population, age, race, income, housing, tenure — over the decades, and how does that compare to Cook County and Illinois?
+**The question:** How has Oak Park changed, population, age, race, income, housing, tenure, over the decades, and how does that compare to Cook County and Illinois?
 
 **Why it matters:** Every local argument (schools, taxes, zoning, affordability) rests on a claim about who Oak Park is becoming. The Census actually measures it.
 
 ## The data
 
-- Census ACS tables for Oak Park via the keyless Census Reporter API (GEOID `16000US1754885`):
+- Cached starter extract in this repo: `data/acs-oak-park-timeseries.csv`, about 35 indicators (population, age, race and ethnicity, income, home value, rent, tenure, education, year built) for Oak Park, Cook County, and Illinois for every ACS 5-year vintage 2009 through 2024, with margins of error. Start here.
+- Latest-year ACS tables for Oak Park via the keyless Census Reporter API (GEOID `16000US1754885`, latest release only):
   `https://api.censusreporter.org/1.0/data/show/latest?geo_ids=16000US1754885&table_ids=B25034,B25035,B25036`
-  (swap `table_ids` — B01003 population, B19013 income, B25003 tenure, B03002 race/ethnicity)
-- Official Census API for historical years: `https://api.census.gov/data/2023/acs/acs5?get=B19013_001E&for=place:54885&in=state:17`
-- Cached starter extract in repo: `data/acs-oak-park-timeseries.csv` (key indicators, multiple ACS vintages)
+  (swap `table_ids`, B01003 population, B19013 income, B25003 tenure, B03002 race/ethnicity)
+- Official Census API for any year 2009 on (needs a free key, see the catalog's Filtering section): `https://api.census.gov/data/2023/acs/acs5?get=B19013_001E&for=place:54885&in=state:17&key=YOUR_KEY`
 
 ## First win (15 minutes)
 
-One fact from the data most residents don't know. Example already verified: the median Oak Park home was built in **1938**, and 59% of the housing stock predates 1940 — more than double the Illinois share.
+One fact from the data most residents don't know. Example already verified: the median Oak Park home was built in **1938**, and 59% of the housing stock predates 1940, more than double the Illinois share.
 
 ## The build (by 2:15)
 
@@ -27,7 +27,7 @@ Census-tract maps (does east Oak Park differ from west?), or push back to the 20
 ## No-code roles
 
 - This brief is deliberately story-first: choosing which five facts matter IS the project
-- Census Reporter's website (censusreporter.org) renders charts with zero code — screenshot, arrange, narrate
+- Census Reporter's website (censusreporter.org) renders charts with zero code, screenshot, arrange, narrate
 - Fact-checker: does the ACS number match lived experience? Where might the survey mislead (small-sample margins of error)?
 
 ## Claude tips

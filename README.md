@@ -35,7 +35,7 @@ Seven organizer-seeded briefs are ready to go, each with a clear question, data 
 
 ## Data
 
-The [Oak Park Civic Data Catalog](data/open-data-catalog.md) lists 45 Village, Cook County, regional, and federal data sources by category, with links and notes on format. The [commissions dataset](commissions-diod.csv) covers every Oak Park citizen commission: what it does, where and when it meets, and where to learn more.
+The [Oak Park Civic Data Catalog](data/open-data-catalog.md) lists more than 70 Village, Cook County, state, regional, and federal data sources by category, with links, format notes, and the filters that narrow each source to Oak Park. The [commissions dataset](commissions-diod.csv) covers every Oak Park citizen commission: what it does, where and when it meets, and where to learn more.
 
 ## For organizers and commissioners
 

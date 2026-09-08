@@ -1,6 +1,6 @@
 # Where does my tax dollar go?
 
-**The question:** Of a dollar of Oak Park property taxes, how much goes to the schools, the Village, the library, the parks, the township — and how has that split changed over 20 years?
+**The question:** Of a dollar of Oak Park property taxes, how much goes to the schools, the Village, the library, the parks, the township, and how has that split changed over 20 years?
 
 **Why it matters:** "My taxes are too high" is Oak Park's most durable argument. Almost nobody can say where the money actually goes, or whether the growth outpaces inflation.
 
@@ -26,9 +26,9 @@ Add ACS median household income as a "can residents keep up?" line, or compute t
 ## No-code roles
 
 - This project is mostly storytelling: turn the chart into three sentences a neighbor would repeat
-- Spreadsheet pivot tables get the entire MVP done — no programming required
+- Spreadsheet pivot tables get the entire MVP done: no programming required
 - Fact-check: do the numbers match your actual tax bill's breakdown?
 
 ## Claude tips
 
-Paste the levy CSV and ask for the chart. Ask: "adjust these annual dollar series to 2025 dollars using this CPI table" — it's one prompt.
+Paste the levy CSV and ask for the chart. Ask: "adjust these annual dollar series to 2025 dollars using this CPI table", it's one prompt.

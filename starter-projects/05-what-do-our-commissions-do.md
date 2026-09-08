@@ -6,8 +6,8 @@
 
 ## The data
 
-- `commissions-diod.csv` — right here in this repo: every commission with description, meeting schedule, and links
-- Granicus meeting video archive (agendas, minutes, recordings) — linked per commission from the Village site
+- `commissions-diod.csv`, right here in this repo: every commission with description, meeting schedule, and links
+- Granicus meeting video archive (agendas, minutes, recordings): linked per commission from the Village site
 - Village board/commission pages on oak-park.us
 
 ## First win (15 minutes)
@@ -20,7 +20,7 @@ A "find your commission" mini-site or quiz: pick your interests (housing, enviro
 
 ## Stretch
 
-Use Claude to summarize a few recent meeting agendas/minutes per commission into "what they've actually worked on this year" — this is the best LLM showcase in the room.
+Use Claude to summarize a few recent meeting agendas/minutes per commission into "what they've actually worked on this year", this is the best LLM showcase in the room.
 
 ## No-code roles
 

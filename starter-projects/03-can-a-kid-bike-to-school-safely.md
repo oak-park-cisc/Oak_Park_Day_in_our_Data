@@ -1,15 +1,19 @@
 # Can a kid bike to school safely?
 
-**The question:** How well do Oak Park's bike facilities connect kids' homes to their schools — and what do crash records say about the gaps?
+**The question:** How well do Oak Park's bike facilities connect kids' homes to their schools, and what do crash records say about the gaps?
 
 **Why it matters:** Hundreds of Oak Park kids bike or walk to school daily. Whether the network actually serves those trips is checkable with public data.
 
 ## The data
 
-- Village of Oak Park GIS layers (bikeways and more, ArcGIS query endpoints used by existing local projects):
-  `https://utility.arcgis.com/usrsvcs/servers/4cff1aaefa364b57b8c70d5c606f2088/rest/services/VOP/AGOL_VOP_Project/MapServer/13/query` (and layer 159)
-- Village traffic crash data — refreshed nightly on the Village open data portal (exact dataset link listed in `data/README.md`; cached extract: `data/crashes-oak-park.csv`)
-- School locations: `data/schools-oak-park.csv` (D97 + D200 + private, cached in repo)
+- Bike facilities: the Village's Oak Park Bikeways (July 2025) layer, 85 segments with short-, mid-, and long-term phasing flags. GeoJSON:
+  `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/Oak_Park_Bikeways_July_2025/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson`
+  Confirm with the Village which segments are built versus planned; the layer has no built/planned field. Planned work is also in Village GIS layers 38 (Bike Boulevard Projects) and 161 (Bike Improvements).
+- Crashes: IDOT's annual statewide crash points, filtered to Oak Park (`CityName='OAK PARK'`), about 1,100 to 1,550 crashes a year, with severity, injuries, collision type, lighting, weather, and lat/lon. The bike and pedestrian subset (243 Oak Park records, 2020 to 2024) is the one to overlay first.
+  Cached: `data/crashes-oak-park.csv` (2019 to 2025) and `data/crashes-bike-ped-oak-park.csv`. Live: `https://gis-idot.opendata.arcgis.com/` (see the catalog for query URLs).
+  There is no incident-level crash dataset on the Village open data portal.
+- Schools: `data/schools-oak-park.csv`, built from the Village's D97 school footprints, with OPRF and private schools added by hand. D97 attendance zones: `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/Elementary_Attendance_Zones/FeatureServer/0`
+- Safe Routes to School and traffic calming, also Village layers: `SafeRoutesWebMapLayer_gdb`, `SafeRoutesToSchoolCrowdSourcing` (resident-reported hazards), `Oak_Park_Traffic_Calming_Features`, and `Proposed_Neighborhood_Greenways`, all under `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/`. Append `/0/query?where=1%3D1&outFields=*&f=geojson`.
 
 ## First win (15 minutes)
 
