@@ -2,8 +2,6 @@
 
 **The question:** Oak Park's parkways hold about 18,800 Village-maintained trees. Where is that forest diverse enough to shrug off the next pest or disease, and which blocks are leaning on one genus?
 
-**Builds on:** project idea 4, [Oak Park Urban Forest Resilience](../project-ideas.md#4-oak-park-urban-forest-resilience).
-
 **Why it matters:** Dutch elm disease took the elms; emerald ash borer took the ash (128 are left, under 1% of the inventory). The standard test foresters use is the 10-20-30 rule: no more than 10% one species, 20% one genus, 30% one family. Oak Park's public trees sit at 8.8% for the top species (Norway maple) and 20.5% for the top genus (maple), right at the line villagewide, and the picture block by block is much more uneven. Where the Village plants next, and what, is exactly what the Forestry division and the Environment and Energy Commission decide.
 
 ## The data

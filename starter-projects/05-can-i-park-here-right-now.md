@@ -2,8 +2,6 @@
 
 **The question:** Give someone an Oak Park address, a day, and a time, and tell them in plain language whether they can park there, for how long, with what permit or pass, and where the nearest lot, garage, and EV charger are.
 
-**Builds on:** project idea 3, [Can I Park Here Right Now?](../project-ideas.md#3-can-i-park-here-right-now)
-
 **Why it matters:** Oak Park bans parking on every street from 2:30 to 6 a.m., every night, unless you hold a zone permit or buy an overnight pass, and the daytime rules change block by block: 3-hour limits, 2-hour limits, no parking 8 to 10 a.m. weekdays, resident-permit-only, school loading zones. The Village publishes these rules as a PDF map, a handful of web pages, 17 zone maps, and the signs themselves. Nobody has put them behind a single "type your address" box. The Village's own GIS holds 1,016 daytime restriction segments and 390 overnight-permit segments, so the pieces exist. This is an informational prototype, not a legal determination; the sign on the pole always wins, and the demo should say so on screen.
 
 ## The data

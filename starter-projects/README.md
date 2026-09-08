@@ -39,6 +39,6 @@ Pick the one that grabs you and sit at its table. Have your own idea? Even bette
 | 14 | [Oak Park crime data explorer](14-oak-park-crime-explorer.md) | What incident data shows about what happens where and when |
 | 15 | [What does ECHO see?](15-what-does-echo-see.md) | Aggregated counts of what the Village's non-police response team handles, paired with a directory of who can take the handoff |
 
-These briefs grew out of the repo's [project ideas](../project-ideas.md) list, sixteen challenges with data-readiness labels. Briefs 3, 4, 5, 6, 7, 11, 12, 13, and 15 develop ideas 14, 12, 3, 2, 1, 4, 5, 11, and 15 from that list. The other seven are the best place to start if you want your own table.
+Want something not on this list? The [project ideas](../project-ideas.md) file has more challenges with data links, ready for a pitch-your-own table.
 
 Every team should name a **demo owner** at the start, the person responsible for the short show-and-tell during demos at 2:30. The best demos answer four things: the question we asked, what the data said, what we built, and what the Village should do next.

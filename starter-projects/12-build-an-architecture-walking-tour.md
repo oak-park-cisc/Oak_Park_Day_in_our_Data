@@ -2,8 +2,6 @@
 
 **The question:** Oak Park has 4,958 surveyed historic buildings on file, with architect, style, date, photo, and a survey form for nearly every one. Can we turn that list into a walking tour a visitor or a fourth-grade class could actually follow, by architect, by style, or by street?
 
-**Builds on:** project idea 5, [Oak Park Architecture Explorer and Walking Tour](../project-ideas.md#5-oak-park-architecture-explorer-and-walking-tour).
-
 **Why it matters:** The tours people can buy stop at Frank Lloyd Wright's 25 buildings. The Village's dataset has 225 by Frank O. DeMoney, 113 each by E. E. Roberts and Ernest Braucher, 756 Queen Annes, and a documented 1853 house, and almost nobody outside the Historic Preservation Commission has seen it as anything but a map layer.
 
 ## The data

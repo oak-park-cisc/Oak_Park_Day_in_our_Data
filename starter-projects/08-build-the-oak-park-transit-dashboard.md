@@ -49,7 +49,7 @@ A single web page, Leaflet plus `fetch`, that loads `transit-stops-oak-park.csv`
 ## Stretch
 
 - Ridership trends: from `cta-ridership-oak-park.csv`, plot weekday entries by station 2015 to 2026 and the five-station recovery curve since 2020; rerun the script with `--since 2001` for the full arc. Put Metra's four survey points and Pace's stop counts on the same page, with the caveats.
-- Transit and zoning: project idea 9, the [Transit and Zoning Opportunity Explorer](../project-ideas.md#9-transit-and-zoning-opportunity-explorer), draws walking-distance buffers around the stations and summarizes zoning inside them. This dashboard is the base map that idea needs.
+- Transit and zoning: what exists and what is permitted within a quarter mile of each station (see the [Transit and Zoning Opportunity Explorer](../project-ideas.md#9-transit-and-zoning-opportunity-explorer) prompt), draws walking-distance buffers around the stations and summarizes zoning inside them. This dashboard is the base map that idea needs.
 - A printable "how to get to X without a car" guide: pick five destinations (the hospital, the Main Library, a school, the Farmers' Market, Ogilvie) and generate one page each from the schedule data, with the accessible option called out.
 - Service-change diffing: keep this month's Pace and CTA GTFS and rerun the table in a month to see what the overhaul changed.
 

@@ -2,8 +2,6 @@
 
 **The question:** Which of Oak Park's bus stops and train stations should be first in line for a shelter, a bench, or an accessibility fix, given who rides there and who lives nearby?
 
-**Builds on:** project idea 2, [Accessible Transit and Bus Stop Gaps](../project-ideas.md#2-accessible-transit-and-bus-stop-gaps).
-
 **Why it matters:** 141 bus stops sit inside the Village and 14 of them have a shelter. Four of the five CTA stations in Oak Park (Oak Park and Austin on the Blue Line, Oak Park and Ridgeland on the Green Line) have no wheelchair boarding in CTA's own schedule feed; Harlem/Lake is the exception. The Village's bus stop layer is a 2019 snapshot whose shelter and ADA fields are empty on every stop, so a ranked list is something the Disability Access, Aging in Communities, and Transportation Commissions do not have today.
 
 ## The data

@@ -2,8 +2,6 @@
 
 **The question:** Oak Park rates every alley on a 0 to 100 Pavement Condition Index and publishes a five-year reconstruction plan. Are the alleys in the worst shape the ones on the list?
 
-**Builds on:** project idea 1, [Alley Repair Reality Check](../project-ideas.md#1-alley-repair-reality-check).
-
 **Why it matters:** Alleys are where residents meet Public Works: garbage pickup, garage access, flooding. A quarter of the Village's 640 rated alley segments scored 39 or below in 2024, the lowest band on the Village's own map, and only about a third of those are in the 2025 to 2029 plan. Whether the rest are next, or stuck, is a fair question for the Transportation Commission and for anyone who lives on one.
 
 ## The data

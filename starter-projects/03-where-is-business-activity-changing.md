@@ -2,8 +2,6 @@
 
 **The question:** Where is business activity growing, changing, or declining across Oak Park's commercial corridors, and in what kinds of business?
 
-**Builds on:** project idea 14, [Oak Park Business Pulse](../project-ideas.md#14-oak-park-business-pulse).
-
 **Why it matters:** Every business that operates in Oak Park holds a Village license, and the license record carries the two dates that matter, when the business started and when it closed. The Village's dashboard shows 1,426 active licenses and a five-year monthly matrix of starts and ends, but it cannot answer "is Madison Street coming back," "what replaced the shops that closed on Lake Street in 2024," or "which corridor keeps losing restaurants." From 2017 through August 2026 the Village recorded 1,344 business starts and 1,032 closings; 2021 and 2024 were the only years closings beat starts. Economic development staff, the business district associations, the Plan Commission, and anyone deciding whether to open a shop on Roosevelt argue about corridor health from anecdotes. This table settles some of those arguments.
 
 ## The data

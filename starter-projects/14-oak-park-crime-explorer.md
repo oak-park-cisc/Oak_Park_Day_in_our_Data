@@ -4,7 +4,7 @@
 
 **Why it matters:** Crime perception drives more local decisions than almost any dataset, and it usually runs on Nextdoor anecdotes. The Village publishes the real numbers; almost nobody explores them.
 
-**Framing:** the Village already has a crime dashboard, so don't rebuild it. Pick one clearly defined question it doesn't answer (the [project ideas](../project-ideas.md#ideas-to-reframe-rather-than-duplicate) list has guidance on this). Avoid predictive policing and anything that stigmatizes a neighborhood; block-level points are approximate by design.
+**Framing:** the Village already has a crime dashboard, so don't rebuild it. Pick one clearly defined question it doesn't answer. Avoid predictive policing and anything that stigmatizes a neighborhood; block-level points are approximate by design.
 
 ## The data
 

@@ -24,7 +24,7 @@ One sentence. Who would change their mind, decision, or vote because of the answ
 > We'll use: ____________________________________________
 
 Suggestions:
-- Browse the [project ideas](../project-ideas.md) list first: sixteen challenges with data links and readiness labels, most marked ready now
+- Browse the [project ideas](../project-ideas.md) file: more challenges with data links and readiness labels
 - Start with the repo's `data/` folder and the [data catalog](../data/open-data-catalog.md): assessments, levies, crashes, crime, Census, schools are already cached
 - The Cook County open data portal (datacatalog.cookcountyil.gov) covers property, courts, health, elections and more
 - No dataset? A PDF, a webpage table, or 20 minutes of manual counting IS data, some of the best civic projects start with "we typed it in"
