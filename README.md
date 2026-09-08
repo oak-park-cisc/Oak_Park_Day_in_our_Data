@@ -39,7 +39,7 @@ The [Oak Park Civic Data Catalog](data/open-data-catalog.md) lists more than 70 
 
 ## More project ideas
 
-- [Project ideas](project-ideas.md): sixteen more challenge prompts with data-readiness labels
+- [Project ideas](project-ideas.md): the sixteen-challenge idea list the briefs grew from, with data links and readiness labels. Most are ready to run as a pitch-your-own table.
 
 ## Contributing
 

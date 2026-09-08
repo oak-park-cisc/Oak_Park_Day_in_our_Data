@@ -1,8 +1,10 @@
-# Day in Our Data — Project Ideas
+# Day in Our Data: Project Ideas
 
 This guide provides starter challenges for the **Day in Our Data** civic hackathon. The projects are designed to help residents explore Oak Park data and turn it into useful analyses, maps, stories, and tools.
 
 Most ideas are scoped so that a small team can produce a meaningful minimum viable demo in approximately **two to three hours**. Teams are welcome to choose one of these challenges, adapt one, combine multiple ideas, or pursue a different civic question.
+
+Seven directions from this list and the organizer discussions that followed have been developed into [starter-project briefs](starter-projects/README.md) with cached data and a table on event day. Ideas marked **now a starter table** below point to the brief. Every other idea here is a ready-made starting point for a [pitch-your-own](starter-projects/00-pitch-your-own.md) team.
 
 ## What a Strong Project Should Do
 
@@ -303,6 +305,8 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 ### 11. Commission and Data Matchmaker
 
+**Now a starter table:** see [What do our commissions do?](starter-projects/05-what-do-our-commissions-do.md) (brief 05).
+
 **Civic question:** Which Village commission should a resident approach about an issue, and what public data could help frame the discussion?
 
 **Minimum viable demo:** Let a resident describe an issue and return the most relevant commission, its purpose, meeting schedule, link, and related portal resources.
@@ -325,6 +329,8 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 The following ideas use public dashboards or sensitive subject areas. They should only be offered if organizers provide a documented, appropriately reviewed data extract.
 
 ### 12. Vision Zero Coverage Gap Finder
+
+**Now a starter table:** the school-route version is [Can a kid bike to school safely?](starter-projects/03-can-a-kid-bike-to-school-safely.md) (brief 03). The crash data is prepared: `data/crashes-oak-park.csv` (IDOT, 2019 to 2025) and `data/crashes-bike-ped-oak-park.csv`.
 
 **Civic question:** Are recent serious-crash locations being addressed by planned or completed safety improvements?
 

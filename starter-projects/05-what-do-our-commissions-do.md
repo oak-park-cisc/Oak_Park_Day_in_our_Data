@@ -2,6 +2,8 @@
 
 **The question:** Oak Park has dozens of citizen commissions. What does each one actually do, how often do they meet, and how would a resident find the one that matches their interests?
 
+**Builds on:** project idea 11, [Commission and Data Matchmaker](../project-ideas.md#11-commission-and-data-matchmaker).
+
 **Why it matters:** Commissions are the front door to local government (this event is run by one), and most residents can't name three. A "find your commission" tool is genuinely missing.
 
 ## The data

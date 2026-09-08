@@ -2,6 +2,8 @@
 
 **The question:** How well do Oak Park's bike facilities connect kids' homes to their schools, and what do crash records say about the gaps?
 
+**Builds on:** project idea 12, [Vision Zero Coverage Gap Finder](../project-ideas.md#12-vision-zero-coverage-gap-finder), narrowed to school routes.
+
 **Why it matters:** Hundreds of Oak Park kids bike or walk to school daily. Whether the network actually serves those trips is checkable with public data.
 
 ## The data
