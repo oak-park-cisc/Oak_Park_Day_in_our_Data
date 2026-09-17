@@ -32,9 +32,10 @@ this machine and only totals are written to the CSV:
 
 The month-by-category tables are published as they come back. In the three
 finer cross-tabs (weekday, time block, referral source, each by category),
-any cell with fewer than 5 services is written as "<5", and where a single
-suppressed cell could be recovered from a row or column total, the next
-smallest cell in that row or column is suppressed too. The dashboard shows
+positive cells below 5 and complementary cells are written as "suppressed".
+The marker is not a numeric range: complementary cells can be 5 or greater.
+The routine adds a second hidden cell to rows/columns with only one; it is
+not a formal guarantee against reconstruction across all published tables. The dashboard shows
 no geography (no address, block, beat or zone), so none is cached.
 
 The script does what the dashboard's own JavaScript does:
@@ -99,7 +100,7 @@ DATE_HIERARCHY = "Date Hierarchy"
 
 # Cells below this many services are suppressed in the finer cross-tabs.
 SMALL_CELL = 5
-SUPPRESSED = "<5"
+SUPPRESSED = "suppressed"
 
 MONTHS = {
     "January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6,
@@ -392,7 +393,7 @@ def suppress(cells):
     cells: dict (row_key, col_key) -> count. Return dict of the same keys ->
     count or SUPPRESSED. Primary suppression hides counts of 1 to 4.
     Complementary suppression: if a row or column has exactly one hidden
-    cell, its total (which is public elsewhere) would reveal it, so hide the
+    cell, a known total could reveal it, so hide the
     next smallest cell in that row or column too, and repeat until stable.
     """
     hidden = {k for k, n in cells.items() if 0 < n < SMALL_CELL}

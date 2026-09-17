@@ -26,13 +26,13 @@ Full schedule and ground rules: [event-program.md](event-program.md).
 Fifteen project cards are ready to go, each with a civic question, a minimum viable demo, stretch goals, data already cached in this repo, potential users, difficulty, and readiness. See the [starter projects](starter-projects/README.md), or pitch your own with the [pitch-your-own card](starter-projects/00-pitch-your-own.md).
 
 1. [Is my assessment fair?](starter-projects/01-is-my-assessment-fair.md) Compare assessed value per square foot across every Oak Park home.
-2. [Where does my tax dollar go?](starter-projects/02-where-does-my-tax-dollar-go.md) Twenty years of levies from six taxing agencies, adjusted for inflation.
+2. [Where does my tax dollar go?](starter-projects/02-where-does-my-tax-dollar-go.md) Twenty years of tax extensions for eight selected local agencies and funds, adjusted for inflation.
 3. [Where is business activity changing?](starter-projects/03-where-is-business-activity-changing.md) Openings and closings by corridor from 2,519 business licenses.
 4. [Can a kid bike to school safely?](starter-projects/04-can-a-kid-bike-to-school-safely.md) Map the bike network against school routes and crash records.
 5. [Can I park here right now?](starter-projects/05-can-i-park-here-right-now.md) An address-plus-time answer from the Village's curb restriction data.
 6. [Which bus stops need help?](starter-projects/06-which-bus-stops-need-help.md) Shelter, ridership, and who lives nearby, for every stop.
 7. [Are the worst alleys getting fixed?](starter-projects/07-are-the-worst-alleys-getting-fixed.md) Alley condition ratings versus the reconstruction plan.
-8. [Build the Oak Park transit dashboard](starter-projects/08-build-the-oak-park-transit-dashboard.md) CTA, Pace, Metra, paratransit, and the Township buses on one live map.
+8. [Build the Oak Park transit dashboard](starter-projects/08-build-the-oak-park-transit-dashboard.md) A stop-and-route map plus a guide to CTA, Pace, Metra, paratransit, and Township rides.
 9. [Oak Park over time](starter-projects/09-oak-park-over-time.md) Census data on how the village is changing, compared with county and state.
 10. [How are our schools doing?](starter-projects/10-how-are-our-schools-doing.md) Illinois Report Card: D97 and D200 versus peers, over time.
 11. [How resilient is our urban forest?](starter-projects/11-how-resilient-is-our-urban-forest.md) 18,800 public trees against the 10-20-30 diversity rule.
@@ -43,7 +43,7 @@ Fifteen project cards are ready to go, each with a civic question, a minimum via
 
 ## Data
 
-The [Oak Park Civic Data Catalog](data/open-data-catalog.md) lists more than 70 Village, Cook County, state, regional, and federal data sources by category, with links, format notes, and the filters that narrow each source to Oak Park. The [commissions dataset](commissions-diod.csv) covers every Oak Park citizen commission: what it does, where and when it meets, and where to learn more.
+The [Oak Park Civic Data Catalog](data/open-data-catalog.md) lists more than 70 Village, Cook County, state, regional, and federal data sources by category, with links, format notes, and the filters that narrow each source to Oak Park. The [commissions dataset](commissions-diod.csv) covers all 18 Oak Park citizen boards and commissions: their purpose, recurring schedules, published upcoming meetings, and source/application links, checked September 17, 2026.
 
 ## More project ideas
 

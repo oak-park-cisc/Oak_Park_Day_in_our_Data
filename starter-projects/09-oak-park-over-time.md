@@ -4,7 +4,7 @@
 
 **Minimum viable demo:**
 
-- One fact from the data most residents do not know (already verified: the median Oak Park home was built in 1938, and 59 percent of the housing stock predates 1940, more than double the Illinois share).
+- One fact from the data most residents do not know (in the 2020–2024 ACS, 59.3 percent of Oak Park housing units predate 1940, compared with 20.2 percent statewide; the median construction year is reported as 1939 or earlier).
 - "Oak Park in 5 charts": three to five indicators over time, each against Cook County or Illinois as the comparison line.
 - Slides count as a demo.
 
@@ -27,4 +27,4 @@
 
 **No-code roles:** Choosing which five facts matter is the project; censusreporter.org renders charts with zero code to screenshot and narrate, and a fact-checker asks where small-sample margins of error might mislead.
 
-**Limits:** Dollar figures are in each vintage's own dollars (use [cpi-annual.csv](../data/cpi-annual.csv) to adjust), overlapping 5-year windows are not independent samples, and median year built is bottom-coded at 1939 by the Census.
+**Limits:** Dollar figures are in each vintage's own dollars (use [cpi-annual.csv](../data/cpi-annual.csv) to adjust), overlapping 5-year windows are not independent samples, and the median construction year is a bound, not an exact year: `estimate_annotation` = `1939-` means "1939 or earlier," with `estimate` left blank. Do not plot that bound as 1938 or a precise 1939 date.

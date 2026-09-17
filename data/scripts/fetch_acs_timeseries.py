@@ -157,18 +157,18 @@ def pre1940_variable(vintage):
 # Source 1: official Census Data API (needs CENSUS_API_KEY)
 # ---------------------------------------------------------------------------
 def fetch_api(vintage, table, var_ids, geo):
-    """Return {variable_id: (estimate, moe)} for one geography via api.census.gov."""
+    """Return {variable_id: (estimate, moe, estimate_annotation, moe_annotation)} for one geography via api.census.gov."""
     _, _, for_clause, in_clause, _ = geo
     if var_ids is None:
         var_ids = sorted(table_labels(vintage, table).keys())
-    fields = ["NAME"] + [v + s for v in var_ids for s in ("E", "M")]
+    fields = ["NAME"] + [v + s for v in var_ids for s in ("E", "M", "EA", "MA")]
     params = {"get": ",".join(fields), "for": for_clause, "key": API_KEY}
     if in_clause:
         params["in"] = in_clause
     data = get(f"https://api.census.gov/data/{vintage}/acs/acs5", params=params)
     header, row = data[0], data[1]
     rec = dict(zip(header, row))
-    return {v: (rec.get(v + "E"), rec.get(v + "M")) for v in var_ids}
+    return {v: (rec.get(v + "E"), rec.get(v + "M"), rec.get(v + "EA"), rec.get(v + "MA")) for v in var_ids}
 
 
 # ---------------------------------------------------------------------------
@@ -186,7 +186,7 @@ def fetch_datacensus(vintage, table, var_ids, geo):
     if var_ids is None:
         var_ids = sorted({h[:-1] for h in header if h.startswith(table + "_") and h.endswith("E")
                           and not h.endswith("EA")})
-    return {v: (rec.get(v + "E"), rec.get(v + "M")) for v in var_ids}
+    return {v: (rec.get(v + "E"), rec.get(v + "M"), rec.get(v + "EA"), rec.get(v + "MA")) for v in var_ids}
 
 
 # ---------------------------------------------------------------------------
@@ -263,7 +263,7 @@ def fetch_ftp2009(vintage, table, var_ids, geo):
         idx = start - 1 + (line - 1)       # start position is 1-based within the record
         est = data["e"][logrec][idx] if logrec in data["e"] else ""
         moe = data["m"][logrec][idx] if logrec in data["m"] else ""
-        result[v] = (est, moe)
+        result[v] = (est, moe, "", "")
     return result
 
 
@@ -277,8 +277,17 @@ def clean(val, var=None):
     # B25035 (median year built) is bottom-coded: the Census reports "1939-"
     # (or 0 in the 2018-2021 releases) when the median is 1939 or earlier.
     if var == "B25035_001" and s in ("1939-", "0"):
-        return "1939"
+        return ""
     return s
+
+
+def normalized_estimate(value, annotation, variable):
+    """Keep bounds out of the numeric estimate so they cannot look like exact years."""
+    annotation = str(annotation or "").strip()
+    raw = str(value if value is not None else "").strip()
+    if variable == "B25035_001" and (annotation == "1939-" or raw in ("1939-", "0", "1938", "1939")):
+        return "", "1939-"
+    return clean(value, variable), annotation
 
 
 def fnum(s):
@@ -315,16 +324,18 @@ def main():
                 try:
                     values.update(fetcher(vintage, table, var_ids, geo))
                 except Exception as e:
-                    print(f"  ERROR {vintage} {table} {gname}: {e}", file=sys.stderr)
+                    raise RuntimeError(f"Failed {vintage} {table} {gname}; output not replaced") from e
                 time.sleep(0.15)
 
-            for var, (est, moe) in sorted(values.items()):
+            for var, (est, moe, est_annotation, moe_annotation) in sorted(values.items()):
                 table = var.split("_")[0]
                 labels = table_labels(vintage, table)
+                estimate, annotation = normalized_estimate(est, est_annotation, var)
                 out_rows.append({
                     "geography": gname, "geoid": geoid, "vintage": vintage, "period": period,
                     "table": table, "variable": var, "label": labels.get(var, ""),
-                    "estimate": clean(est, var), "margin_of_error": clean(moe), "source": source,
+                    "estimate": estimate, "margin_of_error": clean(moe),
+                    "estimate_annotation": annotation, "margin_of_error_annotation": moe_annotation or "", "source": source,
                 })
 
             # Derived: bachelor's degree or higher, population 25+
@@ -352,9 +363,9 @@ def main():
                 })
 
     fields = ["geography", "geoid", "vintage", "period", "table", "variable", "label",
-              "estimate", "margin_of_error", "source"]
+              "estimate", "margin_of_error", "estimate_annotation", "margin_of_error_annotation", "source"]
     with open(OUT_PATH, "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=fields)
+        w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
         w.writeheader()
         w.writerows(out_rows)
     print(f"wrote {len(out_rows)} rows to {OUT_PATH}")

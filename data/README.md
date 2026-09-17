@@ -1,6 +1,6 @@
 # Data
 
-Two things live here: the [Oak Park Civic Data Catalog](open-data-catalog.md), a categorized list of Village, Cook County, state, regional, and federal data sources with links and Oak Park filters, and the cached datasets below, which are the ones the [starter projects](../starter-projects/README.md) use. The cached files exist so teams can work on event day without depending on live APIs. Every file was pulled from a primary public source on September 8, 2026 by a script in [`scripts/`](scripts/), and can be regenerated with that script.
+Two things live here: the [Oak Park Civic Data Catalog](open-data-catalog.md), a categorized list of Village, Cook County, state, regional, and federal data sources with links and Oak Park filters, and the cached datasets below, which are the ones the [starter projects](../starter-projects/README.md) use. The cached files exist so teams can work on event day without depending on live APIs. The original extracts were pulled from primary public sources on September 8, 2026. The bike/school-safety layers and commissions directory were fetched on September 17, 2026; the ACS annotation and ECHO suppression-marker corrections preserve the original snapshot values except where explicitly noted below. Scripts in [`scripts/`](scripts/) regenerate their associated extracts.
 
 ## Cached datasets
 
@@ -22,8 +22,8 @@ Two things live here: the [Oak Park Civic Data Catalog](open-data-catalog.md), a
 | [alleys-oak-park.csv](alleys-oak-park.csv), [.geojson](alleys-oak-park.geojson) | 07 Are the worst alleys getting fixed? | 640 | Every rated alley segment with 2022-23 and 2024 PCI, reconstruction plan, 2026 CIP | Village alley condition map |
 | [capital-projects-oak-park.geojson](capital-projects-oak-park.geojson) | 07 | 244 | 2026 capital improvement and pavement preservation projects, 12 layers | Village capital improvements maps |
 | [transit-stops-oak-park.csv](transit-stops-oak-park.csv) | 06, 08 | 225 | Every bus stop and rail station in and at the edge of Oak Park, with routes, trips, shelter, ridership, vulnerability | CTA and Pace GTFS, Pace GIS, CMAP, Village GIS |
-| [social-vulnerability-oak-park.geojson](social-vulnerability-oak-park.geojson) | 06 |
-| [cta-ridership-oak-park.csv](cta-ridership-oak-park.csv) | 08 Build the Oak Park transit dashboard | 30,359 | Daily entries at the seven Oak Park L stations and monthly averages for seven CTA bus routes, 2015 to June 2026 | City of Chicago data portal (CTA) | 53 | Village Social Vulnerability Index by block group | Village GIS |
+| [social-vulnerability-oak-park.geojson](social-vulnerability-oak-park.geojson) | 06 | 53 | Village Social Vulnerability Index by block group | Village GIS |
+| [cta-ridership-oak-park.csv](cta-ridership-oak-park.csv) | 08 Build the Oak Park transit dashboard | 30,359 | Daily entries at the seven Oak Park L stations and monthly averages for seven CTA bus routes, 2015 to June 2026 | City of Chicago data portal (CTA) |
 | [historic-buildings-oak-park.csv](historic-buildings-oak-park.csv) | 12 Build an architecture walking tour | 4,958 | Every surveyed historic building with architect, style, year, designation, photo link | Village Historic Building Dataset |
 | [historic-districts-oak-park.geojson](historic-districts-oak-park.geojson) | 12 | 12 | Three historic districts and nine survey areas | Village GIS |
 | [parking-restrictions-oak-park.geojson](parking-restrictions-oak-park.geojson) | 05 Can I park here right now? | 1,532 | Every curb segment, permit zone, lot, and garage in the Village's Parking Restriction Areas layer | Village GIS |
@@ -31,6 +31,10 @@ Two things live here: the [Oak Park Civic Data Catalog](open-data-catalog.md), a
 | [parking-facilities-oak-park.csv](parking-facilities-oak-park.csv) | 05 | 124 | Public lots, garages, EV chargers, car share sites | Village GIS |
 | [business-licenses-oak-park.csv](business-licenses-oak-park.csv) | 03 Where is business activity changing? | 2,519 | Every Village business license with dates, category, district, address, coordinates | Village business license dashboard |
 | [echo-activity-oak-park.csv](echo-activity-oak-park.csv) | 15 What does ECHO see? | 494 | Aggregate counts of ECHO services by month, category, referral source, weekday, hour block, Feb 2025 on | Village ECHO activity dashboard |
+| [bikeways-oak-park.geojson](bikeways-oak-park.geojson) | 04, 08 | 85 | July 2025 planning network; fetched September 17, 2026 | Village GIS |
+| [safe-school-routes-oak-park.geojson](safe-school-routes-oak-park.geojson) | 04 | 1,826 | School-route features; fetched September 17, 2026 | Village GIS |
+| [school-route-hazards-oak-park.geojson](school-route-hazards-oak-park.geojson) | 04 | 890 | Resident-report counts by street segment; fetched September 17, 2026 | Village GIS |
+| [traffic-calming-oak-park.geojson](traffic-calming-oak-park.geojson) | 04 | 292 | Traffic-calming features; fetched September 17, 2026 | Village GIS |
 
 Brief 13 (commissions) uses [`../commissions-diod.csv`](../commissions-diod.csv) at the repo root.
 
@@ -47,6 +51,8 @@ python3 data/scripts/fetch_crashes_bike_ped_oak_park.py
 python3 data/scripts/fetch_crashes_village.py         # stdlib only
 python3 data/scripts/fetch_schools_oak_park.py
 python3 data/scripts/fetch_d97_attendance_zones.py
+python3 data/scripts/fetch_bike_safety_layers.py      # four GeoJSON files
+python3 data/scripts/fetch_commissions.py             # root commissions-diod.csv
 python3 data/scripts/fetch_acs_timeseries.py          # needs requests; CENSUS_API_KEY optional; about 8 minutes
 python3 data/scripts/fetch_report_card_d97_d200.py    # needs requests and openpyxl; downloads ~200 MB of workbooks
 python3 data/scripts/fetch_crime_incidents.py         # stdlib only; update DASHBOARD_URL if the Village republishes
@@ -86,7 +92,7 @@ Tax extension, levy, rate, and EAV for each of the eight taxing agencies specifi
 
 Source: Cook County Clerk, [Tax Extension and Rates](https://www.cookcountyclerkil.gov/property-taxes/tax-extension-and-rates). The script calls the POST-only report API (`getreportdata`, `viewreport`) and parses the PDFs with its own text extractor. Agencies: 020180000 Township, 020180002 Township General Assistance, 020180004 Township Mental Health Board, 030920000 Village, 030920001 Library, 040580000 District 97, 042020000 District 200, 050760000 Park District.
 
-Columns: `tax_year` (billed the following calendar year), `agency_id`, `agency_code`, `agency_name`, `agency_label`, `agency_type`, `eav`, `total_levy` (the report's AGENCY GRAND TOTAL), `final_rate` (per 100 dollars of EAV), `extension` (amount billed), `oak_park_eav_share` (1.0 except District 200, where it is Oak Park EAV over district EAV), `oak_park_extension` (extension times share; sum this column for the Oak Park total), `report_format` (legacy 2006 to 2023, modern 2024 on), `source_pdf`, `note`.
+Columns: `tax_year` (billed the following calendar year), `agency_id`, `agency_code`, `agency_name`, `agency_label`, `agency_type`, `eav`, `total_levy` (the report's AGENCY GRAND TOTAL), `final_rate` (per 100 dollars of EAV), `extension` (amount billed), `oak_park_eav_share` (1.0 except District 200, where it is Oak Park EAV over district EAV), `oak_park_extension` (extension times share; sum this column for the selected local-agency subtotal), `report_format` (legacy 2006 to 2023, modern 2024 on), `source_pdf`, `note`.
 
 Caveats: District 200 also serves River Forest, so its `eav`, `total_levy`, and `extension` are the full district and `oak_park_extension` is prorated by EAV share (72 to 76 percent); the rate is not prorated. All 152 rows that overlap an independent 2006 to 2024 check match to the cent. Tax year 2026 is not yet published. From 2024 the Clerk folds the Library into the Village report and the two Township funds into the Township report; those rows come from fund-section totals (see `note`). Extension is what was billed, not collected. Countywide agencies (Cook County, Forest Preserve, Water Reclamation, Triton College, mosquito abatement) are not included.
 
@@ -146,9 +152,9 @@ Key American Community Survey 5-year indicators for Oak Park village, Cook Count
 
 Source: U.S. Census Bureau ACS 5-year detailed tables B01003, B01002, B19013, B25077, B25064, B25003, B03002, B25034, B25035, B15003 (B15002 before 2012). The script uses the official [Census API](https://api.census.gov/data/2024/acs/acs5) when `CENSUS_API_KEY` is set (free key at [api.census.gov/data/key_signup.html](https://api.census.gov/data/key_signup.html)); without a key it reads the same tables from the data.census.gov table endpoint (2010 to 2024) and the [2005-2009 Summary File](https://www2.census.gov/programs-surveys/acs/summary_file/2009/). Geographies: place 54885 in state 17, county 17031, state 17.
 
-Columns: `geography`, `geoid` (16000US1754885, 05000US17031, 04000US17), `vintage` (last year of the 5-year period), `period`, `table`, `variable`, `label`, `estimate`, `margin_of_error` (90 percent), `source`. Variables: total population, median age, median household income, median home value, median gross rent, occupied units by tenure, race and ethnicity (total, white non-Hispanic, Black non-Hispanic, Asian non-Hispanic, Hispanic), median year built, all year-built categories, population 25 and over by degree, plus two derived rows: `DERIVED_BACHELORS_OR_HIGHER_25PLUS` and `DERIVED_UNITS_BUILT_1939_OR_EARLIER`.
+Columns: `geography`, `geoid` (16000US1754885, 05000US17031, 04000US17), `vintage` (last year of the 5-year period), `period`, `table`, `variable`, `label`, `estimate`, `margin_of_error` (90 percent), `estimate_annotation`, `margin_of_error_annotation`, `source`. Variables: total population, median age, median household income, median home value, median gross rent, occupied units by tenure, race and ethnicity (total, white non-Hispanic, Black non-Hispanic, Asian non-Hispanic, Hispanic), median year built, all year-built categories, population 25 and over by degree, plus two derived rows: `DERIVED_BACHELORS_OR_HIGHER_25PLUS` and `DERIVED_UNITS_BUILT_1939_OR_EARLIER`.
 
-Caveats: dollar figures are in each vintage's own dollars; use cpi-annual.csv to adjust. Overlapping 5-year windows are not independent samples. Use the derived rows for pre-1940 housing and bachelor's-or-higher, because the underlying line numbers change between vintages. Median year built is bottom-coded at 1939 by the Census; Oak Park sits at that bottom code through 2021 and reads 1938 from 2022 on. Spot checks match Census Reporter and data.census.gov.
+Caveats: dollar figures are in each vintage's own dollars; use cpi-annual.csv to adjust. Overlapping 5-year windows are not independent samples. Use the derived rows for pre-1940 housing and bachelor's-or-higher, because the underlying line numbers change between vintages. Median year built is bottom-coded: `estimate_annotation` = `1939-` means "1939 or earlier," and `estimate` is blank for these rows so a chart cannot mistake the bound for an exact year. The raw 1938 value in recent releases carries this annotation; it is not a measured 1938 median. On September 17, the 16 Oak Park median-year rows in the cached snapshot were labeled with this bound. Other existing rows have blank annotation fields because annotations were not retained in the original extract; a full regeneration now requests E/M/EA/MA fields and preserves annotations. Source-fetch failures abort regeneration without replacing the cached file.
 
 ### report-card-d97-d200.csv
 
@@ -284,8 +290,25 @@ Aggregate counts of services logged by E.C.H.O. (Engaging Community for Healthy 
 
 Source: Village of Oak Park "ECHO Activity - Public" Power BI dashboard, linked from [opendata.oak-park.us/EchoActivity](https://opendata.oak-park.us/EchoActivity); program page on [oak-park.us](https://www.oak-park.us/Community/Community-Services/E.C.H.O-Engaging-Community-for-Healthy-Outcomes). The script issues only grouped COUNT queries, the same ones the dashboard's charts issue, so no individual record is ever downloaded.
 
-Columns: `breakdown` (service_by_month, referral_by_month, service_by_weekday, service_by_time_block, referral_by_service), `month`, `weekday`, `time_block` (four-hour block), `referral_source` (Police Department, Resident Contact, Fire Department, Community Engagement, Village departments, Community Partner, Business, Emergency Housing), `service` (Unhoused Resident, Behavioral Health, Senior Services, Housing, Youth/Family Services, Financial Support, Domestic Violence, Medical Support, Food Services, Other, blank), `count` (integer or `<5`). Only the columns that apply to a breakdown are filled.
+Columns: `breakdown` (service_by_month, referral_by_month, service_by_weekday, service_by_time_block, referral_by_service), `month`, `weekday`, `time_block` (four-hour block), `referral_source` (Police Department, Resident Contact, Fire Department, Community Engagement, Village departments, Community Partner, Business, Emergency Housing), `service` (Unhoused Resident, Behavioral Health, Senior Services, Housing, Youth/Family Services, Financial Support, Domestic Violence, Medical Support, Food Services, Other, blank), `count` (integer or `suppressed`). Only the columns that apply to a breakdown are filled.
 
-Privacy: the source has no location, age, name, or note fields, so nothing below Village level exists. The two month-level tables are unsuppressed (the dashboard's own grain). The weekday, hour-block, and referral-by-service tables suppress cells under 5 and apply complementary suppression (73 cells hidden). The dashboard's Dataset button offers a row-level file (timestamp, service, referral source); this repo deliberately does not cache it.
+Privacy: the source has no location, age, name, or note fields, so nothing below Village level exists. The two month-level tables are unsuppressed (the dashboard's own grain). The weekday, hour-block, and referral-by-service tables suppress positive cells under 5 and apply complementary suppression (73 cells marked `suppressed`). Complementary cells can be 5 or greater, so the marker is not a numeric bound. Monthly tables contain public counts of 1–4. Treat hidden cells as unavailable, not zero; never add the five breakdowns together. This rule is not a formal guarantee against reconstruction across all tables. On September 17, the previous misleading `<5` markers were replaced; numerical counts were unchanged. The dashboard's Dataset button offers a row-level file (timestamp, service, referral source); this repo deliberately does not cache it.
 
 Caveats: a service is one logged contact, not one person, so counts are workload, not caseload. The timestamp is when staff logged the referral: 97 percent fall on weekdays and about a quarter carry a 2 a.m. to 6 a.m. stamp, which does not match a business-hours team, so ask the ECHO team what the field means before reading hour of day. A blank service category appears from July 2026. September 2025 is double its neighbors for an unknown reason. The current month is partial; the report refreshes daily.
+
+### Bike and school-safety GeoJSONs
+
+Fetched September 17, 2026 by [fetch_bike_safety_layers.py](scripts/fetch_bike_safety_layers.py). Each file retains the source properties and WGS84 geometry; the script pages results, verifies source counts and unique object IDs, and refuses missing geometry. The four layer URLs under `https://services5.arcgis.com/aymthbPDQOcCnuwg/arcgis/rest/services/` are:
+
+| File | Source layer | Scope |
+|---|---|---|
+| bikeways-oak-park.geojson | `Oak_Park_Bikeways_July_2025/FeatureServer/0` | Planning network with phase flags; not a verified built-facility inventory. |
+| safe-school-routes-oak-park.geojson | `SafeRoutesWebMapLayer_gdb/FeatureServer/0` | Published school-route features; mapping a route does not certify its safety. |
+| school-route-hazards-oak-park.geojson | `SafeRoutesToSchoolCrowdSourcing/FeatureServer/0` | Street segments with aggregated resident-report counts (`Count_`); not individual reports, verified hazards, or crash events. |
+| traffic-calming-oak-park.geojson | `Oak_Park_Traffic_Calming_Features/FeatureServer/0` | Published traffic-calming features; inspect source attributes rather than inferring installation dates. |
+
+### commissions-diod.csv (repository root)
+
+All 18 citizen boards and commissions in the Village's [official Granicus directory](https://oak-park.granicus.com/boards/w/d6ac89421af6f1dd), excluding the elected Board of Trustees. Refreshed September 17, 2026 by [fetch_commissions.py](scripts/fetch_commissions.py). This adds Civic Information Systems, Fire and Police Commissioners, and Liquor Control Review Board to the former 15-row file and refreshes all descriptions/schedules from the same source.
+
+Columns: `Commission`, `Description`, `Schedule` (including recurring location if published), `Next Meeting 1`, `Next Meeting 2`, `Next Meeting 3`, `Meeting Status`, `URL`, `Apply URL`, `Checked At` (America/Chicago timestamp), `Directory URL`. Meeting entries retain the published date, time, title and location. They are not generated from recurrence rules. Blank cells mean no corresponding future meeting was published in the board page at retrieval, not that the body will never meet. Follow `URL` and the Village calendar for updates or cancellations. The refresh replaces the file only after every listed citizen body has been read successfully.

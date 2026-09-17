@@ -1,19 +1,20 @@
 # Build the Oak Park transit dashboard
 
-**Civic question:** Can one page show every way to get around Oak Park without a car, across every provider, with what is running right now?
+**Civic question:** Can one page help a resident understand Oak Park's transit stops, routes, and transportation providers?
 
 **Minimum viable demo:**
 
-- A provider table, one row each for CTA rail, CTA bus, Pace bus, Metra, Pace ADA paratransit, and Township transportation: what runs in Oak Park, weekday span, peak frequency, wheelchair access, real-time feed and key, published ridership.
-- A Leaflet page that loads `transit-stops-oak-park.csv`, draws every stop colored by provider over the bikeways layer, and opens a panel with routes, span, headway, and access flag on click.
-- Next arrivals in that panel from whichever real-time feed serves the stop, through a small proxy that adds the key and CORS header.
-- A "who can ride this" filter (everyone, seniors 60 and over, ADA certified) and an elevator-outage layer that turns a station red.
+- A static map using `transit-stops-oak-park.csv`, colored by provider, with stop names, routes, and recorded accessibility information. Show unknown values explicitly.
+- A short provider guide linking CTA rail/bus, Pace bus, Metra, Pace ADA paratransit, and Township transportation to their official rider-information pages below. A map and a six-row guide are a complete demo.
+- Optionally show the cached bikeways layer as planning context, clearly labeled as not a verified inventory of built facilities.
 
 **Stretch goals:**
 
-- Ridership trends from `cta-ridership-oak-park.csv`: weekday entries by station 2015 to 2026 and the recovery curve since 2020, with Metra's four survey points and Pace's stop counts alongside.
-- Transit and zoning: quarter-mile buffers around each station with zoning summarized inside (see [Transit and Zoning Opportunity Explorer](../project-ideas.md#9-transit-and-zoning-opportunity-explorer)).
-- A printable "how to get to X without a car" guide for five destinations, or GTFS diffing to see what the Pace overhaul changed.
+- Add live arrivals for one provider only after organizers have obtained credentials, tested a proxy, and prepared a cached response for outages. Live feeds are not required for the MVP.
+- Add service span/headway from a prepared GTFS extract, or elevator alerts from CTA's feed. Neither is in the cached stops file.
+- Research eligibility for paratransit and Township rides against current provider pages before adding a "who can ride" filter.
+- Chart station ridership using `cta-ridership-oak-park.csv`; bus ridership is whole-route, not local-stop ridership.
+- Explore transit and zoning with additional zoning polygons (see [Transit and Zoning Opportunity Explorer](../project-ideas.md#9-transit-and-zoning-opportunity-explorer)), or make a printable guide for a few destinations.
 
 **Data:**
 
@@ -26,7 +27,7 @@
 - Pace accessibility: [riders with disabilities](https://www.pacebus.com/riders-disabilities), [ADA Paratransit](https://www.pacebus.com/ada), [West Suburban Cook reservation line](https://www.pacebus.com/directory/paratransit-reservation-line-west-suburban-cook-county), [Taxi Access Program](https://www.pacebus.com/tap), [Cook County Dial-a-Ride](https://www.pacebus.com/dial-ride-services-cook-county) and [Pace On Demand](https://www.pacebus.com/ondemand) (neither covers Oak Park)
 - Pace ridership: stop-level counts in the cached stops file; route history at [RTAMS, Pace ridership by route](https://www.rtams.org/ridership/pace/routes)
 - Metra schedule: [developers page](https://metra.com/developers), GTFS zip at `https://schedules.metrarail.com/gtfs/schedule.zip` (no key, under 1 MB; `https://schedules.metrarail.com/gtfs/published.txt` shows the change date; station `stop_id` is `OAKPARK`)
-- Metra real time: GTFS-realtime `alerts`, `positions`, `tripupdates` at `https://gtfspublic.metrarr.com/gtfs/public/…` with an `api_token` ([API page](https://metra.com/metra-gtfs-api), free key via the developers page after the [license](https://metra.com/gtfs-realtime-api-key-request-license-agreement)); Protocol Buffers, must be proxied
+- Metra real time: GTFS-realtime `alerts`, `positions`, and `tripupdates` (obtain current endpoint URLs from the API documentation) with an `api_token` ([API page](https://metra.com/metra-gtfs-api), free key via the developers page after the [license](https://metra.com/gtfs-realtime-api-key-request-license-agreement)); Protocol Buffers, must be proxied
 - Metra accessibility and ridership: [Oak Park station page](https://metra.com/train-lines/stations/oak-park), [Accessibility at Metra](https://metra.com/accessibility), [monthly reports by line](https://metra.com/ridership-and-on-time-performance), [fall 2018 boarding count](https://metra.com/document/2018summaryresultsreportfinalpdf), [RTAMS, Metra ridership by station](https://www.rtams.org/ridership/metra/stations)
 - Oak Park Township: [Senior Services page](https://oakparktownship.org/senior-services/) (curb-to-curb lift-equipped rides for residents 60 and over and adults with a disability, (708) 383-4806, taxi coupon books; no schedule, hours, or ridership published); Village [Transportation page](https://www.oak-park.us/Services-Parking/Transportation) lists no Village-run shuttle
 - Bikes and other: Divvy has no Oak Park stations (GBFS `https://gbfs.divvybikes.com/gbfs/gbfs.json` points to `https://gbfs.lyft.com/gbfs/1.1/chi/en/station_information.json`, zero stations inside the Village box; [contract ended January 2018](https://chi.streetsblog.org/2018/01/17/for-whom-the-bike-bell-tolls-oak-park-votes-to-kill-its-divvy-program)); Amtrak nearest is [La Grange Road](https://www.amtrak.com/stations/lag); Pace [I-290 and I-88 express study](https://www.pacebus.com/I-290-I-88-study) has no route yet
@@ -35,12 +36,14 @@
 - Cached in this repo: [cta-ridership-oak-park.csv](../data/cta-ridership-oak-park.csv) (daily rail station entries since 2015 and monthly bus route averages for the Oak Park routes, through June 2026, 30,359 rows; `python3 data/scripts/fetch_cta_ridership_oak_park.py --since 2001` for the full history)
 - Cached in this repo: [social-vulnerability-oak-park.geojson](../data/social-vulnerability-oak-park.geojson) (53 block groups scored 1 to 5 on `Senior_Index`, `Disability_Index`, `LackOfVehicle_Index` and twelve more; see brief 06)
 
+- Cached in this repo: [bikeways-oak-park.geojson](../data/bikeways-oak-park.geojson) (85 planning-network segments; phase flags do not verify built status)
+
 **Potential users:** Village staff asked for this; Transportation Commission, riders, seniors and ADA-certified residents, Township Senior Services
 
-**Difficulty:** Advanced
+**Difficulty:** Intermediate for the static demo; advanced for live feeds
 
-**Readiness:** Data cached in this repo; CTA Bus Tracker, Train Tracker, and Metra real-time feeds need free API keys, so apply a day or two before the event
+**Readiness:** Ready now for the static stop/route map and provider guide. Live-arrival extensions require organizer preparation: working API credentials, a tested proxy, and a cached fallback before the event.
 
 **No-code roles:** Own the provider table and check every cell against the provider's page, survey five riders at the Green Line or Metra platform, call the Township to write up what its program does and does not publish, and own the demo.
 
-**Limits:** Pace has no real-time API, and its undocumented Bus Tracker JSON could change; Metra publishes no ridership per station newer than 2018; the Township publishes no schedule, hours, or ridership; keyed feeds cannot be called from a public page without a proxy.
+**Limits:** The stops file is a snapshot, not a live schedule. `weekday_trips` uses September 9, 2026 and is not a headway or Saturday service estimate. No span/headway, provider eligibility, live arrivals, or elevator status is cached. Pace accessibility is unknown in this file; do not treat a blank as inaccessible. The undocumented Pace interface may change; protect keyed feeds with a server-side proxy and check current provider documentation before enabling extensions.

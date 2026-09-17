@@ -9,7 +9,7 @@ A strong project can answer five questions: who is the user, what civic question
 | # | Project | One-liner |
 |---|---|---|
 | 1 | [Is my assessment fair?](01-is-my-assessment-fair.md) | Compare assessed value per square foot across every Oak Park home |
-| 2 | [Where does my tax dollar go?](02-where-does-my-tax-dollar-go.md) | Twenty years of levies, eight taxing agencies, adjusted for inflation |
+| 2 | [Where does my tax dollar go?](02-where-does-my-tax-dollar-go.md) | Twenty years of tax extensions for eight selected local agencies and funds, adjusted for inflation |
 | 3 | [Where is business activity changing?](03-where-is-business-activity-changing.md) | Openings and closings by corridor and category from 2,519 business licenses |
 
 **Getting around**
@@ -20,7 +20,7 @@ A strong project can answer five questions: who is the user, what civic question
 | 5 | [Can I park here right now?](05-can-i-park-here-right-now.md) | An address-plus-time answer from the Village's curb restriction data |
 | 6 | [Which bus stops need help?](06-which-bus-stops-need-help.md) | Rank every stop by missing shelter, ridership, and who lives nearby |
 | 7 | [Are the worst alleys getting fixed?](07-are-the-worst-alleys-getting-fixed.md) | Alley condition ratings against the 2025 to 2029 reconstruction plan |
-| 8 | [Build the Oak Park transit dashboard](08-build-the-oak-park-transit-dashboard.md) | Every provider, every stop, what is running now, on one map |
+| 8 | [Build the Oak Park transit dashboard](08-build-the-oak-park-transit-dashboard.md) | A cached stop-and-route map and a guide to transportation providers |
 
 **People and places**
 

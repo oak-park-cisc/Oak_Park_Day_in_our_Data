@@ -319,7 +319,7 @@ These projects offer a strong combination of civic relevance, feasible scope, us
 
 **Civic question:** Which Village commission should a resident approach about an issue, and what public data could help frame the discussion?
 
-**Minimum viable demo:** Let a resident describe an issue and return the most relevant commission, its purpose, meeting schedule, link, and related portal resources.
+**Minimum viable demo:** Let a resident describe an issue and return the most relevant commission, its purpose, published schedule/upcoming meetings, application link, and related portal resources. The directory covers all 18 citizen bodies and was refreshed September 17, 2026; blank future dates mean not published at retrieval, so link to the source instead of inventing a date.
 
 **Stretch goal:** Add an event calendar, reminders, a guided question builder, or an AI-assisted search that cites its sources.
 
@@ -348,7 +348,7 @@ The following ideas use public dashboards or sensitive subject areas. They shoul
 
 **Data needed:**
 
-- An organizer-provided CSV or GeoJSON export from the [Traffic Crash Dashboard](https://opendata.oak-park.us/TrafficCrash)
+- The cached [Village crash CSV](data/crashes-village-oak-park.csv), [bike network](data/bikeways-oak-park.geojson), [school routes](data/safe-school-routes-oak-park.geojson), and [traffic-calming features](data/traffic-calming-oak-park.geojson)
 - Capital improvement and transportation layers
 - Recreation and school locations
 
@@ -356,7 +356,7 @@ The following ideas use public dashboards or sensitive subject areas. They shoul
 
 **Difficulty:** Advanced
 
-**Readiness:** Organizer preparation required
+**Readiness:** Ready now for the one-school demo in brief 04; wider analysis is a stretch
 
 ---
 
@@ -412,14 +412,14 @@ The following ideas use public dashboards or sensitive subject areas. They shoul
 
 **Data needed:**
 
-- An organizer-approved, deidentified aggregate export from the [ECHO Activity Dashboard](https://opendata.oak-park.us/EchoActivity)
+- The cached [ECHO aggregate extract](data/echo-activity-oak-park.csv); monthly public counts are unsuppressed, while finer tables use the nonnumeric `suppressed` marker
 - A reviewed list of relevant public services and community resources
 
 **Potential users:** Board of Health, Aging in Communities Commission, Community Relations Commission, ECHO team
 
 **Difficulty:** Intermediate
 
-**Readiness:** Approval and aggregation required
+**Readiness:** Aggregate data is cached for analysis; public outputs require the ECHO/Board of Health review described in brief 15
 
 ---
 

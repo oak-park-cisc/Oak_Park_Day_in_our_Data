@@ -4,10 +4,12 @@
 
 **Minimum viable demo:**
 
-- Visualize deidentified, aggregated ECHO service categories and trends: a stacked monthly chart by category, plus the referral-source, weekday, and time-block cuts the CSV already holds.
+- Visualize deidentified, aggregated ECHO service categories and trends: a monthly chart by category, keeping the partial September 2026 separate from complete months. Select `breakdown` = `service_by_month`; other breakdowns describe the same services and must not be added to it.
 - Compare them with a public directory of community resources: one row per top category with the public or nonprofit services in Oak Park that match it, what they offer, hours, and how to reach them.
 
 **Stretch goals:**
+
+- Explore referral-source and weekday breakdowns, treating `suppressed` as unavailable, not zero. Defer time-block interpretation until the ECHO team confirms the logging timestamp and time zone.
 
 - Put ECHO next to monthly crime counts by NIBRS category from [crime-incidents-oak-park.csv](../data/crime-incidents-oak-park.csv).
 - Ask what the September 2025 spike was by reading the Village Board packets from that fall.
@@ -29,4 +31,4 @@
 
 **No-code roles:** Resource directory researchers who read the Village, Township, library, and agency pages and fill in the right-hand table (this is most of the project), a plain-language writer for the category labels and the findings, and someone who has used or worked in these services to say which handoffs actually work and which have waitlists.
 
-**Limits:** Aggregates only: the CSV holds counts, cells under 5 are written `<5` with a second cell suppressed where one could be recovered from a total, and the source has no address, block, beat, zone, age, or notes fields, so nothing can be mapped, nothing should be estimated about an individual, and the dashboard's row-level download should not be pulled for this project. A service is one logged contact, not one person, and 97 percent of referrals land on weekdays, which is the team's schedule, not the community's need; results go to the Board of Health and the ECHO team (echo@oak-park.us) for review before public posting.
+**Limits:** Aggregates only: the CSV holds counts, the two monthly tables retain the public dashboard counts, including counts of 1–4. In the weekday, time-block, and referral-by-service tables, small and complementary cells are marked `suppressed`; complementary cells may be 5 or greater. Never interpret the marker as a range or estimate a hidden cell. The suppression rule is not a guarantee against reconstruction across published tables, and the source has no address, block, beat, zone, age, or notes fields, so nothing can be mapped, nothing should be estimated about an individual, and the dashboard's row-level download should not be pulled for this project. A service is one logged contact, not one person, and 97 percent of referrals land on weekdays, which is the team's schedule, not the community's need; results go to the Board of Health and the ECHO team (echo@oak-park.us) for review before public posting.
