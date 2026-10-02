@@ -7,7 +7,7 @@ Oak Park residents are invited to Day in Our Data, a one day civic hackathon spo
 ## When, where, register
 
 - **When:** Saturday, October 3, 2026, 11 a.m. to 3 p.m.
-- **Where:** Meeting room, Dole Branch Library, Oak Park Public Library, 255 Augusta St., Oak Park, IL
+- **Where:** Meeting room, [Dole Branch Library, Oak Park Public Library, 255 Augusta St., Oak Park, IL](https://www.google.com/maps/search/?api=1&query=Dole+Branch+Library%2C+255+Augusta+St%2C+Oak+Park%2C+IL)
 - **Register:** https://oak-park.us/ciscdata (free; pizza and snacks provided)
 
 ## How the day works
