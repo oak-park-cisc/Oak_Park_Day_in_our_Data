@@ -23,7 +23,7 @@ Full schedule and ground rules: [event-program.md](event-program.md).
 
 ## Getting started
 
-[Cathy's getting-started guide](https://oakparkciscdiod.netlify.app/start) covers what to bring, choosing your tools, setting up your workspace, and entering your project.
+[Getting-started guide](https://oakparkciscdiod.netlify.app/start) covers what to bring, choosing your tools, setting up your workspace, and entering your project.
 
 ## Pick a project
 
