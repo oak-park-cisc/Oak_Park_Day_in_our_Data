@@ -21,9 +21,15 @@ You do not need to finish an app in four hours. A map, a chart, a cleaned datase
 
 Full schedule and ground rules: [event-program.md](event-program.md).
 
+## Getting started
+
+[Cathy's getting-started guide](https://oakparkciscdiod.netlify.app/start) covers what to bring, choosing your tools, setting up your workspace, and entering your project.
+
 ## Pick a project
 
 Fifteen project cards are ready to go, each with a civic question, a minimum viable demo, stretch goals, data already cached in this repo, potential users, difficulty, and readiness. See the [starter projects](starter-projects/README.md), or pitch your own with the [pitch-your-own card](starter-projects/00-pitch-your-own.md).
+
+For inspiration, explore [Oak Park Pulse](https://oakparkpulse.com/index.html), a sample project that turns local public data into useful visual stories.
 
 1. [Is my assessment fair?](starter-projects/01-is-my-assessment-fair.md) Compare assessed value per square foot across every Oak Park home.
 2. [Where does my tax dollar go?](starter-projects/02-where-does-my-tax-dollar-go.md) Twenty years of tax extensions for eight selected local agencies and funds, adjusted for inflation.
