@@ -23,7 +23,7 @@ Full schedule and ground rules: [event-program.md](event-program.md).
 
 ## Getting started
 
-[Event workspace (Civic Spark)](https://day-in-our-data.fly.dev) is where you can build your project in your browser, with starter projects ready to use.
+The [Event workspace (Civic Spark)](https://day-in-our-data.fly.dev) is optional and requires no installation. You work in your browser, with starter projects ready to use and everything running in a remote virtual environment. Participants can also work locally on their own laptops using their preferred tools.
 
 [Getting-started guide](https://oakparkciscdiod.netlify.app/start) covers what to bring, choosing your tools, setting up your workspace, and entering your project.
 
