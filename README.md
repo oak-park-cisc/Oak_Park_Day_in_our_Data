@@ -4,6 +4,10 @@
 
 Oak Park residents are invited to Day in Our Data, a one day civic hackathon sponsored by the Village of Oak Park's Civic Information Systems Commission (CISC). Participants will explore Village data, working in teams to create useful tools, websites, maps and visualizations. Potential projects include mapping safe biking routes to schools, finding patterns in crime data, or visualizing changes in Oak Park housing affordability. The event is for anyone interested in local government, technology, data, or community problem solving. Coding is optional: every starter project has work for people who never touch a keyboard.
 
+## Projects from the day
+
+Try the apps teams built: **[oak-park-cisc.github.io/Oak_Park_Day_in_our_Data](https://oak-park-cisc.github.io/Oak_Park_Day_in_our_Data/)**
+
 ## When, where, register
 
 - **When:** Saturday, October 3, 2026, 11 a.m. to 3 p.m.
