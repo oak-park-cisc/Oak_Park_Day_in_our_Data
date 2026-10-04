@@ -1,8 +1,8 @@
 # Day in Our Data 2026 projects
 
-Code for the apps teams built at Day in Our Data. **Try them:** https://oak-park-cisc.github.io/Oak_Park_Day_in_our_Data/
+Archived code and links for the apps teams built at Day in Our Data. **Try them:** https://oak-park-cisc.github.io/Oak_Park_Day_in_our_Data/
 
-| Project | Team | Code |
+| Project | Team | Code or demo |
 |---|---|---|
 | Lorax | Lorax team | [projects/lorax](lorax) |
 | Lorax — alison's version | alison b | [projects/lorax-alison](lorax-alison) |
@@ -14,8 +14,11 @@ Code for the apps teams built at Day in Our Data. **Try them:** https://oak-park
 | What ECHO Sees | Team ECHO | [projects/what-does-echo-see](what-does-echo-see) · [team repo](https://github.com/nikolai-laba/what-does-echo-see) |
 | Party in a Box | Team PARTY | [projects/party-in-a-box](party-in-a-box) |
 | Oak Park Safe Routes | Team Shadowbat | [projects/oak-park-safe-routes](oak-park-safe-routes) · [team repo](https://github.com/Shawdowbat/OakParkCrimeWebApp) |
+| Oak Park Architecture Walks | | [Claude artifact](https://claude.ai/artifact/Njn9DEGuYTsabA76HMtQUT) · [project notes](oak-park-architecture-walks) |
 
-Each project folder holds the team's latest work at the end of the day, including changes that were not yet shared, without installed dependencies or build output.
+The archived code includes each team's latest work at the end of the day, including changes that were not yet shared, without installed dependencies or build output.
+
+Oak Park Architecture Walks is linked as a hosted Claude artifact. Its source code is not available in this archive.
 
 ## Published site
 
