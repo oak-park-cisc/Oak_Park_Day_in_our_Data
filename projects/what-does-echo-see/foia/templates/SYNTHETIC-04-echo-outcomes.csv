@@ -1,0 +1,13 @@
+synthetic,month,referrals_received,services_logged,median_days_to_first_contact,referred_again_within_90d,connected_to_service
+yes,2025-01,60,80,2,suppressed,40
+yes,2025-02,61,82,2,7,41
+yes,2025-03,62,84,2,8,42
+yes,2025-04,63,86,2,suppressed,43
+yes,2025-05,64,88,2,6,44
+yes,2025-06,65,90,2,7,45
+yes,2025-07,66,92,2,suppressed,46
+yes,2025-08,67,94,2,9,47
+yes,2025-09,68,96,2,6,48
+yes,2025-10,69,98,2,suppressed,49
+yes,2025-11,70,100,2,8,50
+yes,2025-12,71,102,2,9,51

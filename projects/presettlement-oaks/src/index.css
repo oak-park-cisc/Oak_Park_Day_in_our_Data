@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+	--color-surface: #fcfcfb;
+	--color-ink: #0b0b0b;
+	--color-ink-2: #52514e;
+	--color-line: #e2e1dc;
+	--color-hover: #efeee9;
+	--color-accent: #1c5cab;
+	--color-accent-strong: #104281;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-surface: #1a1a19;
+		--color-ink: #ffffff;
+		--color-ink-2: #c3c2b7;
+		--color-line: #3a3a37;
+		--color-hover: #2a2a28;
+		--color-accent: #256abf;
+		--color-accent-strong: #2a78d6;
+	}
+}
+
+html,
+body,
+#root {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	background: var(--color-surface);
+	color: var(--color-ink);
+}
+
+.link {
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.link {
+		color: #86b6ef;
+	}
+}
+
+/* Markers: a 44px touch target with a ringed dot inside. */
+.oak-marker {
+	display: grid;
+	place-items: center;
+	background: none;
+	border: 0;
+}
+
+.oak-marker:focus-visible {
+	outline: 3px solid var(--color-accent);
+	outline-offset: -6px;
+	border-radius: 50%;
+}
+
+.oak-dot {
+	display: block;
+	border-radius: 50%;
+	box-shadow:
+		0 0 0 2px #fff,
+		0 1px 4px rgb(0 0 0 / 0.45);
+}
+
+/* Gold ring: likely present at settlement (1833). */
+.oak-dot.is-present {
+	box-shadow:
+		0 0 0 2px #fff,
+		0 0 0 5px #d99a06,
+		0 0 0 6px rgb(0 0 0 / 0.55);
+}
+
+.oak-dot.is-present.is-selected {
+	box-shadow:
+		0 0 0 2px #fff,
+		0 0 0 5px #d99a06,
+		0 0 0 8px #0b0b0b;
+}
+
+.oak-dot.is-selected:not(.is-present) {
+	box-shadow:
+		0 0 0 3px #fff,
+		0 0 0 5px #0b0b0b;
+}
+
+/* Popups follow the system theme. */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+	background: var(--color-surface);
+	color: var(--color-ink);
+}
+
+.leaflet-popup-content {
+	margin: 14px 16px;
+	font-size: 15px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+	width: 36px;
+	height: 36px;
+	font-size: 24px;
+	line-height: 32px;
+	color: var(--color-ink-2);
+}
+
+.leaflet-container {
+	font: inherit;
+}

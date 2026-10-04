@@ -1,0 +1,9 @@
+synthetic,month,calls_transferred_to_988,returned_to_911_or_dispatched
+yes,2026-01,10,suppressed
+yes,2026-02,13,suppressed
+yes,2026-03,16,suppressed
+yes,2026-04,19,6
+yes,2026-05,22,7
+yes,2026-06,25,7
+yes,2026-07,28,8
+yes,2026-08,31,8

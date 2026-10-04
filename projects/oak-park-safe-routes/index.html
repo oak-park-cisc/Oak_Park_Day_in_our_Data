@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Oak Park Safe Routes</title>
+  <meta name="description" content="Plan safer walking routes for kids in Oak Park, IL. Routes steer around high-crime blocks and busy streets, using reported crime incidents.">
+  <meta name="theme-color" content="#7e22ce">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="static/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="static/icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Safe Routes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <img class="app-logo" src="static/icons/favicon.svg" alt="" width="36" height="36">
+    <div>
+      <h1>Oak Park Safe Routes</h1>
+      <p class="subtitle">Crime-aware walking routes for kids</p>
+    </div>
+  </header>
+
+  <main>
+    <div id="load-error" class="load-error" role="alert" hidden></div>
+
+    <details id="filters-panel" class="card">
+      <summary>
+        <span class="filters-title">Map filters</span>
+        <span class="filters-summary" id="filters-summary">Last 10 years · All crimes</span>
+      </summary>
+      <div id="filters">
+        <label class="years-filter">
+          <span>Time frame: <strong id="years-value">Last 10 years</strong></span>
+          <input type="range" id="years-filter" min="1" max="10" step="1" value="10"
+                 list="years-ticks" aria-describedby="years-span">
+          <datalist id="years-ticks">
+            <option value="1"></option><option value="2"></option><option value="3"></option>
+            <option value="4"></option><option value="5"></option><option value="6"></option>
+            <option value="7"></option><option value="8"></option><option value="9"></option>
+            <option value="10"></option>
+          </datalist>
+          <span class="years-span" id="years-span"></span>
+        </label>
+        <label>
+          Year
+          <select id="period-filter">
+            <option value="">Any</option>
+          </select>
+        </label>
+        <label>
+          From
+          <input type="date" id="start-date">
+        </label>
+        <label>
+          To
+          <input type="date" id="end-date">
+        </label>
+        <label>
+          Crime against
+          <select id="category-filter">
+            <option value="">All categories</option>
+          </select>
+        </label>
+        <label>
+          Incident type
+          <select id="type-filter">
+            <option value="">All types</option>
+          </select>
+        </label>
+        <button id="reset-filters" type="button">Reset</button>
+      </div>
+    </details>
+
+    <section class="card planner-card" aria-label="Safe route planner and crime map">
+      <div class="map-layout">
+        <div id="route-panel">
+          <h2 id="route-title">Plan a safe walking route</h2>
+          <p class="panel-hint">Steers around high-crime blocks and busy streets. Type an address or school, or tap 📍 to pick a spot on the map.</p>
+          <form id="route-form" autocomplete="off">
+            <div class="route-inputs">
+              <div class="route-field">
+                <span class="route-badge-pin start" aria-hidden="true">A</span>
+                <label class="visually-hidden" for="route-from">Starting point</label>
+                <input id="route-from" type="text" list="place-list" placeholder="Starting point"
+                       enterkeyhint="next" autocapitalize="words" spellcheck="false">
+                <button type="button" class="pick-button" data-pick="start"
+                        aria-label="Pick the starting point on the map" title="Pick on the map">📍</button>
+              </div>
+              <div class="route-field">
+                <span class="route-badge-pin end" aria-hidden="true">B</span>
+                <label class="visually-hidden" for="route-to">Destination</label>
+                <input id="route-to" type="text" list="place-list" placeholder="Destination, e.g. a school"
+                       enterkeyhint="go" autocapitalize="words" spellcheck="false">
+                <button type="button" class="pick-button" data-pick="end"
+                        aria-label="Pick the destination on the map" title="Pick on the map">📍</button>
+              </div>
+              <button type="button" id="route-swap" class="icon-button"
+                      title="Swap start and destination" aria-label="Swap start and destination">⇅</button>
+            </div>
+            <button type="button" id="route-locate" class="link-button">◎ Use my current location as the start</button>
+            <div class="route-actions">
+              <button type="submit" class="primary-button">Find safe routes</button>
+              <button type="button" id="route-clear" class="secondary-button">Clear</button>
+            </div>
+          </form>
+          <datalist id="place-list"></datalist>
+          <div id="route-status" role="status" aria-live="polite"></div>
+        </div>
+
+        <div id="map" role="region" aria-label="Crime map"></div>
+        <div id="map-legend" aria-label="Map legend"></div>
+
+        <div id="route-output">
+          <div id="route-results"></div>
+          <p class="panel-footnote">Routes weigh incidents reported <span id="route-window">in the selected time frame</span> (the same ones coloring the streets) and favor quiet residential streets. ETAs assume a child's pace: 2.7 mph walking, 8 mph cycling.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" aria-label="Summary">
+      <div class="tile">
+        <div class="tile-label">Incidents</div>
+        <div class="tile-value" id="stat-total">–</div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">Blocks with incidents</div>
+        <div class="tile-value" id="stat-locations">–</div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">Most common type</div>
+        <div class="tile-value tile-value-text" id="stat-top-type">–</div>
+        <div class="tile-note" id="stat-top-type-count"></div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">Busiest block</div>
+        <div class="tile-value tile-value-text" id="stat-busiest">–</div>
+        <div class="tile-note" id="stat-busiest-count"></div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="table-title">
+      <div class="card-header">
+        <div>
+          <h2 id="table-title">Busiest blocks</h2>
+          <p class="card-subtitle">The 25 blocks with the most incidents for the current filters.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="locations-table">
+          <thead>
+            <tr>
+              <th>Block</th>
+              <th class="hide-sm">Zone</th>
+              <th class="num">Incidents</th>
+              <th>Danger (pts/yr)</th>
+              <th class="hide-sm">Most common type</th>
+              <th class="hide-sm">Latest</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p><strong>Use your own judgment.</strong> The map shows reported incidents only, so a green street is not a guarantee of safety, and routes are suggestions, not official safe-route designations. In an emergency, call 911.</p>
+    <p>Crime data: reported incidents in Oak Park, IL, <span id="data-span">loading…</span>. Street and place data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="static/js/safe-routes-core.js"></script>
+  <script src="static/js/api.js"></script>
+  <script src="static/js/landmarks.js"></script>
+  <script src="static/js/map.js"></script>
+  <script src="static/js/routing.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+</html>

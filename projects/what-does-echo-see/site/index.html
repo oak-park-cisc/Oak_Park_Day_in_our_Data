@@ -1,0 +1,1410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What ECHO Sees</title>
+<meta name="description" content="Aggregate counts of services logged by Oak Park's E.C.H.O. program, February 2025 to September 2026, by kind of need. Draft for Board of Health and ECHO team review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --surface: #f5f7f6;
+  --surface-raised: #ffffff;
+  --ink: #15201d;
+  --ink-2: #4a5753;
+  --ink-3: #6b7773;
+  --rule: #dde3e0;
+  --grid: #e7ecea;
+  --data: #2a78d6;
+  --data-soft: #cde2fb;
+  --note: #8a5a00;
+  --note-bg: #fdf4e1;
+  --link: #1c5cab;
+  --focus: #2a78d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --surface: #161b1a;
+    --surface-raised: #1e2422;
+    --ink: #f1f4f3;
+    --ink-2: #b9c3bf;
+    --ink-3: #8e9a96;
+    --rule: #303836;
+    --grid: #262d2b;
+    --data: #3987e5;
+    --data-soft: #184f95;
+    --note: #f0c36b;
+    --note-bg: #2c2516;
+    --link: #86b6ef;
+    --focus: #86b6ef;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #161b1a;
+  --surface-raised: #1e2422;
+  --ink: #f1f4f3;
+  --ink-2: #b9c3bf;
+  --ink-3: #8e9a96;
+  --rule: #303836;
+  --grid: #262d2b;
+  --data: #3987e5;
+  --data-soft: #184f95;
+  --note: #f0c36b;
+  --note-bg: #2c2516;
+  --link: #86b6ef;
+  --focus: #86b6ef;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: "Public Sans", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  font-variant-numeric: tabular-nums;
+}
+a { color: var(--link); text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+.draft {
+  background: var(--note-bg);
+  color: var(--note);
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.draft p { margin: 0; }
+
+header.intro { padding: 40px 0 8px; }
+h1 {
+  font-size: clamp(34px, 6vw, 56px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+.lede { max-width: 66ch; color: var(--ink-2); margin: 0 0 12px; font-size: 18px; }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+/* Hero chart */
+.hero { margin: 28px 0 8px; }
+.hero-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 28px;
+  margin-bottom: 6px;
+}
+.hero-total { font-size: 44px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+.hero-total small { display: block; font-size: 15px; font-weight: 500; color: var(--ink-2); letter-spacing: 0; margin-top: 6px; }
+.hero-facts { display: flex; flex-wrap: wrap; gap: 4px 28px; color: var(--ink-2); font-size: 15px; }
+.hero-facts b { color: var(--ink); font-weight: 700; }
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; width: 100%; overflow: visible; }
+.axis text, .tick { fill: var(--ink-3); font-size: 12px; }
+.gridline { stroke: var(--grid); stroke-width: 1; }
+.baseline { stroke: var(--ink-3); stroke-width: 1; }
+.bar { fill: var(--data); }
+.bar.partial { fill: url(#hatch); stroke: var(--data); stroke-width: 1.5; }
+.bar.dim { opacity: .35; }
+.hit { fill: transparent; cursor: default; }
+.hit:focus { outline: none; }
+.annot-line { stroke: var(--ink-2); stroke-width: 1; }
+.annot { fill: var(--ink-2); font-size: 12.5px; }
+.annot b { font-weight: 700; }
+.legend-key { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; color: var(--ink-2); margin-top: 6px; }
+.swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -1px; margin-right: 6px; }
+.swatch.solid { background: var(--data); }
+.swatch.hatched { border: 1.5px solid var(--data); background: repeating-linear-gradient(135deg, var(--data) 0 1.5px, transparent 1.5px 4px); }
+
+.tooltip {
+  position: absolute; pointer-events: none; z-index: 5;
+  background: var(--surface-raised); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  padding: 8px 10px; font-size: 13.5px; line-height: 1.4;
+  min-width: 170px; max-width: 240px;
+  opacity: 0; transition: opacity .08s;
+}
+.tooltip.on { opacity: 1; }
+.tooltip .tt-h { font-weight: 700; margin-bottom: 4px; }
+.tooltip .tt-row { display: flex; justify-content: space-between; gap: 12px; color: var(--ink-2); }
+.tooltip .tt-row span:last-child { color: var(--ink); }
+.tooltip .tt-note { color: var(--note); margin-top: 4px; }
+
+/* Caveats strip */
+.reading {
+  display: grid; gap: 16px 32px; margin: 36px 0 8px; padding: 20px 0;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+}
+@media (min-width: 720px) { .reading { grid-template-columns: repeat(3, 1fr); } }
+.reading h2 { font-size: 15px; font-weight: 700; margin: 0 0 4px; }
+.reading p { margin: 0; font-size: 15px; color: var(--ink-2); }
+
+/* Category grid */
+section.needs { margin: 48px 0 0; }
+.section-h { font-size: clamp(26px, 3.6vw, 34px); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 8px; line-height: 1.15; }
+.section-sub { color: var(--ink-2); max-width: 66ch; margin: 0 0 24px; }
+.grid { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 640px) and (max-width: 999px) { .panel:last-child:nth-child(odd) { grid-column: span 2; } }
+@media (min-width: 1000px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  .panel:last-child:nth-child(3n+2) { grid-column: span 2; }
+  .panel:last-child:nth-child(3n+1) { grid-column: span 3; }
+}
+.panel { background: var(--surface-raised); padding: 18px 18px 20px; display: flex; flex-direction: column; min-width: 0; }
+.panel h3 { font-size: 19px; font-weight: 700; margin: 0; line-height: 1.25; }
+.panel .total { display: flex; align-items: baseline; gap: 10px; margin: 2px 0 2px; }
+.panel .total .n { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; }
+.panel .total .share { color: var(--ink-3); font-size: 14px; }
+.panel .def { color: var(--ink-2); font-size: 14.5px; margin: 4px 0 10px; }
+.panel .spark { position: relative; margin: 2px 0 4px; }
+.spark-line { fill: none; stroke: var(--data); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.spark-area { fill: var(--data-soft); opacity: .45; }
+.spark-dot { fill: var(--data); }
+.spark-partial { fill: var(--surface-raised); stroke: var(--data); stroke-width: 1.5; }
+.spark-focus { fill: var(--data); stroke: var(--surface-raised); stroke-width: 2; }
+.spark-cross { stroke: var(--ink-3); stroke-width: 1; }
+.yoy { font-size: 14px; color: var(--ink-2); margin: 2px 0 0; }
+.yoy b { color: var(--ink); }
+.flag { font-size: 13.5px; color: var(--note); background: var(--note-bg); border-radius: 6px; padding: 6px 8px; margin: 10px 0 0; }
+.who { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.who h4 { font-size: 14px; font-weight: 700; margin: 0 0 8px; }
+.who ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.who li { font-size: 14px; line-height: 1.45; min-width: 0; overflow-wrap: anywhere; }
+.who ul:not(.open) li.extra { display: none; }
+.who .prog { font-weight: 600; }
+.who .prov { color: var(--ink-3); font-size: 13px; }
+.who .offer { margin: 3px 0 4px; }
+.who .who-more { margin: 10px 0 0; font-size: 13.5px; color: var(--ink-3); }
+.who .more {
+  margin-top: 12px; font: inherit; font-size: 14px; font-weight: 600; color: var(--link);
+  background: none; border: 1px solid var(--rule); border-radius: 6px; padding: 5px 10px; cursor: pointer;
+}
+.who .more:hover { border-color: var(--link); }
+.who .empty { font-size: 14px; color: var(--ink-3); margin: 0; }
+
+/* Table view */
+details.table-view { margin: 32px 0 0; }
+details.table-view summary { cursor: pointer; font-weight: 600; color: var(--link); }
+.table-scroll { overflow-x: auto; margin-top: 12px; border: 1px solid var(--rule); border-radius: 8px; }
+table { border-collapse: collapse; font-size: 13.5px; width: max-content; min-width: 100%; }
+th, td { padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--surface-raised); }
+thead th { background: var(--surface-raised); font-weight: 600; color: var(--ink-2); }
+tbody td { background: var(--surface); }
+tbody td:first-child { font-weight: 600; }
+tr.sum td { font-weight: 700; }
+.partial-col { color: var(--ink-3); font-style: italic; }
+
+footer { margin: 56px 0 0; padding: 28px 0 48px; border-top: 1px solid var(--rule); color: var(--ink-2); font-size: 14.5px; }
+footer h2 { font-size: 15px; color: var(--ink); margin: 0 0 6px; }
+footer ul { margin: 0 0 18px; padding-left: 18px; max-width: 80ch; }
+footer li { margin-bottom: 4px; }
+footer p { margin: 0 0 8px; max-width: 80ch; }
+
+/* Tabs */
+.tabs { position: sticky; top: 0; z-index: 10; background: var(--surface); border-bottom: 1px solid var(--rule); }
+.tabs .wrap { display: flex; gap: 4px; overflow-x: auto; }
+.tab {
+  appearance: none; background: none; border: 0; border-bottom: 3px solid transparent;
+  padding: 12px 12px 10px; font: inherit; font-size: 15.5px; font-weight: 600; color: var(--ink-2);
+  cursor: pointer; white-space: nowrap;
+}
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--data); }
+[role="tabpanel"][hidden] { display: none; }
+
+/* Referral source tab */
+.src-bars, .mix ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.src-bars { margin: 18px 0 6px; max-width: 760px; gap: 8px; }
+.brow { display: grid; grid-template-columns: minmax(0, 11.5em) 1fr 3.2em; align-items: center; gap: 10px; font-size: 14.5px; }
+.src-bars .brow { grid-template-columns: minmax(0, 17em) 1fr 3.6em; font-size: 15px; }
+.brow .lbl { color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.brow .track { height: 12px; }
+.src-bars .brow .track { height: 18px; }
+.brow .fill { display: block; height: 100%; min-width: 2px; background: var(--data); border-radius: 0 4px 4px 0; }
+.brow .v { text-align: right; font-weight: 700; }
+.brow.hidden-cell .v { font-weight: 500; color: var(--ink-3); font-size: 13px; }
+.mix { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.mix h4 { font-size: 14px; font-weight: 700; margin: 0 0 8px; }
+.hidden-note { font-size: 13.5px; color: var(--ink-3); margin: 8px 0 0; }
+.cell-hidden { color: var(--ink-3); font-style: italic; }
+
+/* Find help tab */
+.help-urgent { max-width: 72ch; font-size: 15px; margin: 4px 0 18px; }
+.help-urgent b, .help-urgent a { color: inherit; }
+.finder { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: flex-end; margin: 0 0 8px; }
+.finder .field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.finder .field.grow { flex: 1 1 280px; }
+.finder label { font-size: 13.5px; font-weight: 600; color: var(--ink-2); }
+.finder input, .finder select {
+  font: inherit; font-size: 16px; color: var(--ink); background: var(--surface-raised);
+  border: 1px solid var(--rule); border-radius: 8px; padding: 9px 12px; min-height: 44px; width: 100%;
+}
+.finder select { min-width: 13em; }
+.finder input:focus-visible, .finder select:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }
+.help-count { font-size: 14px; color: var(--ink-2); margin: 4px 0 14px; }
+.rcards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.rcard { background: var(--surface-raised); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 6px; min-width: 0; overflow-wrap: anywhere; font-size: 14.5px; }
+.rcard .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.rcard .chip { font-size: 12px; font-weight: 600; color: var(--ink-2); background: var(--surface); border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; }
+.rcard h3 { font-size: 17px; line-height: 1.3; margin: 2px 0 0; }
+.rcard h3 a { text-decoration: none; }
+.rcard { scroll-margin-top: 64px; }
+.rcard:focus { outline: none; }
+.rcard.flash { animation: card-flash 2.4s ease-out; }
+@keyframes card-flash { 0%, 40% { box-shadow: 0 0 0 3px var(--focus); } 100% { box-shadow: 0 0 0 3px transparent; } }
+@media (prefers-reduced-motion: reduce) { .rcard.flash { animation: none; box-shadow: 0 0 0 3px var(--focus); } }
+.rcard h3 a.anchor { color: var(--ink-3); font-weight: 500; padding: 0 2px; opacity: .55; white-space: nowrap; }
+.rcard:hover h3 a.anchor, .rcard h3 a.anchor:focus-visible { opacity: 1; }
+.rcard h3 a.anchor[data-copied]::after { content: " link copied"; font-size: 12px; color: var(--ink-2); }
+.rcard h3 a:hover { text-decoration: underline; }
+.rcard .prov { color: var(--ink-3); font-size: 13.5px; margin: -4px 0 0; }
+.rcard .offer { margin: 0; }
+.rcard .when { margin: 0; padding: 8px 10px; background: var(--surface); border-radius: 6px; }
+.rcard .when b { display: block; font-size: 12.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-3); margin-bottom: 2px; }
+.rcard dl { display: grid; grid-template-columns: 4.6em 1fr; gap: 1px 8px; margin: 0; color: var(--ink-2); font-size: 13.5px; }
+.rcard dt { color: var(--ink-3); }
+.rcard dd { margin: 0; min-width: 0; }
+.rcard dd span { display: block; }
+.rcard a[href^="tel:"] { white-space: nowrap; }
+.rcard .site { margin: 2px 0 0; font-size: 14px; font-weight: 600; }
+.rcard details { font-size: 13.5px; color: var(--ink-2); margin-top: auto; padding-top: 4px; }
+.rcard details summary { cursor: pointer; color: var(--link); font-weight: 600; width: max-content; }
+.rcard details[open] summary { margin-bottom: 6px; }
+.rcard .checked { margin: 6px 0 0; font-size: 12.5px; color: var(--ink-3); }
+.rcard .notes { margin: 0; }
+.rcard dl dd:first-of-type a[href^="tel:"] { font-weight: 600; }
+.help-empty { padding: 24px 0; color: var(--ink-2); }
+.linklike { font: inherit; color: var(--link); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+
+/* Community context tab */
+.ctx-callout { max-width: 72ch; font-size: 15px; margin: 4px 0 8px; }
+.ctx-callout b { color: inherit; }
+.swatch.marker { width: 0; height: 14px; border-left: 2px dashed var(--ink-2); border-radius: 0; margin-right: 8px; }
+.echo-start { stroke: var(--ink-2); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.calls { display: grid; gap: 8px 40px; }
+@media (min-width: 820px) { .calls { grid-template-columns: 1fr 1fr; } }
+.calls .src-bars { margin-top: 8px; }
+.calls .src-bars .brow { grid-template-columns: minmax(0, 13.5em) 1fr 4.4em; }
+td .chg { display: block; font-size: 11.5px; color: var(--ink-3); }
+
+/* Day and time tab */
+.sub-h { font-size: 19px; font-weight: 700; margin: 28px 0 4px; }
+.brow .hidden-tag { font-weight: 500; color: var(--ink-3); font-size: 12.5px; margin-left: 6px; white-space: nowrap; }
+#wd-bars .brow .v { text-align: left; }
+td.heat { position: relative; }
+td.heat.hi { color: #fff; }
+.brow .pct { font-weight: 500; color: var(--ink-2); }
+td.heat .cell-pct { display: block; font-size: 11.5px; opacity: .8; }
+td .row-note { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-3); }
+#wd-bars .brow { grid-template-columns: minmax(0, 8em) 1fr 11em; }
+
+.error { background: var(--note-bg); color: var(--note); padding: 14px 16px; border-radius: 8px; margin: 24px 0; }
+.error code { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .tooltip { transition: none; } }
+</style>
+</head>
+<body>
+<div class="draft"><div class="wrap"><p>Draft prototype from the Day in Our Data hackathon, October 3, 2026. For review by the Oak Park Board of Health and the ECHO team. Not an official Village product.</p></div></div>
+
+<nav class="tabs" aria-label="Views">
+  <div class="wrap" role="tablist">
+    <button class="tab" role="tab" id="tab-services" aria-controls="view-services" aria-selected="true" data-hash="services">By kind of need</button>
+    <button class="tab" role="tab" id="tab-referrals" aria-controls="view-referrals" aria-selected="false" tabindex="-1" data-hash="referrals">By referral source</button>
+    <button class="tab" role="tab" id="tab-weekday" aria-controls="view-weekday" aria-selected="false" tabindex="-1" data-hash="weekday">By weekday</button>
+    <button class="tab" role="tab" id="tab-help" aria-controls="view-help" aria-selected="false" tabindex="-1" data-hash="help">Find help</button>
+    <button class="tab" role="tab" id="tab-context" aria-controls="view-context" aria-selected="false" tabindex="-1" data-hash="context">Community context</button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="intro">
+    <h1>What ECHO sees</h1>
+    <p class="lede">E.C.H.O. (Engaging Community for Healthy Outcomes) is the Village of Oak Park's care-coordination program. A program manager and two care coordinators follow up after police, fire, or Village contact, take walk-ins and calls, and connect residents to services. The team works <strong>Monday to Friday</strong> and does not respond to mental health crises.</p>
+    <p class="lede">Each count below is <strong>one logged service, not one person</strong>. Someone helped three times counts three times, so read these numbers as the team's workload, not how many residents it reached.</p>
+  </header>
+
+  <div id="error" class="error" hidden></div>
+
+  <div id="view-services" role="tabpanel" aria-labelledby="tab-services" tabindex="0">
+  <section class="hero" aria-labelledby="hero-label">
+    <div class="hero-head">
+      <div class="hero-total" id="hero-total">&nbsp;<small id="hero-label">services logged</small></div>
+      <div class="hero-facts" id="hero-facts"></div>
+    </div>
+    <div class="chart" id="monthly"></div>
+    <div class="legend-key" aria-hidden="true">
+      <span><span class="swatch solid"></span>Services in a complete month</span>
+      <span><span class="swatch hatched"></span>Partial month, still being logged</span>
+    </div>
+  </section>
+
+  <section class="reading" aria-label="How to read these numbers">
+    <div>
+      <h2>Services, not referrals</h2>
+      <p>The dashboard counts 874 services for 2025, while the Village Board was told about 702 referrals. One referral may produce more than one logged service; the ECHO team has not yet said.</p>
+    </div>
+    <div>
+      <h2>September 2025 was likely a one-time batch</h2>
+      <p>It is about double the months around it, and nearly all of the extra came from Police and Fire referrals. Residents' own contacts and reported crime stayed flat, and October fell straight back. Our best guess is a one-time batch of Police and Fire follow-ups, or a catch-up in logging them, rather than a rise in need. The ECHO team has not confirmed this.</p>
+    </div>
+    <div>
+      <h2>The categories shifted in 2026</h2>
+      <p>"Other" jumps in May 2026 and an uncategorized group appears in July 2026, possibly from changes to the intake form. Compare 2026 category counts with care.</p>
+    </div>
+  </section>
+
+  <section class="needs" aria-labelledby="needs-h">
+    <h2 class="section-h" id="needs-h">What people needed help with</h2>
+    <p class="section-sub">Each panel is one service category, on the same scale so they can be compared. The year-over-year line compares March through August, the latest six complete months, with the same months in 2025. Below each trend are local services that match it.</p>
+    <div class="grid" id="grid"></div>
+
+    <details class="table-view">
+      <summary>Show all monthly counts as a table</summary>
+      <div class="table-scroll" id="table"></div>
+    </details>
+  </section>
+  </div>
+
+  <div id="view-referrals" role="tabpanel" aria-labelledby="tab-referrals" tabindex="0" hidden>
+  <section class="hero" aria-labelledby="ref-h">
+    <h2 class="section-h" id="ref-h">Who connected people to ECHO</h2>
+    <p class="section-sub">Every service is logged with the source that brought the resident to ECHO. These are the same services as the other tab, sorted by where they came from instead of what they were for. They are counts of services, not referrals: one referral may lead to more than one service.</p>
+    <ul class="src-bars" id="src-bars" aria-label="Services by referral source, all months"></ul>
+  </section>
+
+  <section class="reading" aria-label="How to read the referral sources">
+    <div>
+      <h2>Police and Fire drove the September 2025 spike</h2>
+      <p>Police (76) and Fire (37) roughly doubled that month while resident contacts stayed flat. Whether it reflects a real rise, a batch of follow-ups, or catch-up data entry is an open question for the ECHO team.</p>
+    </div>
+    <div>
+      <h2>Community Engagement is ECHO itself</h2>
+      <p>It is the team's own outreach, such as street outreach and district cleanings, not an outside referrer. That is why most of it is Unhoused Resident work.</p>
+    </div>
+    <div>
+      <h2>Some cells are hidden for privacy</h2>
+      <p>In the breakdown of what each source sent, small counts and the cells that would reveal them are hidden. Hidden means unavailable. It is not zero or "under 5," and nothing here estimates it.</p>
+    </div>
+  </section>
+
+  <section class="needs" aria-labelledby="src-h">
+    <h2 class="section-h" id="src-h">Each referral source, month by month</h2>
+    <p class="section-sub">Each panel is one referral source. The trend lines share one scale so sources can be compared. Below each trend is what those services were for, from the dashboard's all-time table of referral source by kind of need, which has no months. The 911 call type behind a Police or Fire referral is not in ECHO's data.</p>
+    <div class="grid" id="src-grid"></div>
+
+    <details class="table-view">
+      <summary>Show monthly counts by referral source as a table</summary>
+      <div class="table-scroll" id="src-table"></div>
+    </details>
+    <details class="table-view">
+      <summary>Show referral source by kind of need as a table</summary>
+      <div class="table-scroll" id="mix-table"></div>
+    </details>
+  </section>
+  </div>
+
+  <div id="view-weekday" role="tabpanel" aria-labelledby="tab-weekday" tabindex="0" hidden>
+  <section class="hero" aria-labelledby="wd-h">
+    <h2 class="section-h" id="wd-h">Which weekday services were logged</h2>
+    <p class="section-sub">ECHO works Monday to Friday, so these counts show the team's schedule, not when people needed help. They come from the dashboard's all-time table of weekday by kind of need, which has no months. Small cells, and the cells that would reveal them, are hidden for privacy. So each bar adds up only the cells that are shown and says how many are hidden, and each percentage is a share of the shown services, not of every service.</p>
+    <ul class="src-bars" id="wd-bars" aria-label="Services by weekday, shown cells only, with share of shown services"></ul>
+    <h3 class="sub-h">Weekday by kind of need</h3>
+    <p class="section-sub">Each cell shows the count and, below it, that day's share of the kind of need's shown services. Darker cells hold more services. "hidden" means withheld for privacy, not zero.</p>
+    <div class="table-scroll" id="wd-table"></div>
+  </section>
+  </div>
+
+  <div id="view-help" role="tabpanel" aria-labelledby="tab-help" tabindex="0" hidden>
+  <section class="hero" aria-labelledby="help-h">
+    <h2 class="section-h" id="help-h">Find local help</h2>
+    <p class="section-sub">Public and nonprofit services that match the kinds of need ECHO sees. Search by need, place or organization, or pick a category. Details come from each provider's own pages, on the date shown on each card. Call to confirm before you go.</p>
+    <p class="flag help-urgent"><b>In an emergency, call 911.</b> For a mental health crisis, call or text <a href="tel:988">988</a>, or call Thrive's 24/7 crisis team at <a href="tel:7083837500,1">708-383-7500, option 1</a>.</p>
+    <form class="finder" role="search" onsubmit="return false">
+      <div class="field grow">
+        <label for="help-q">Search</label>
+        <input type="search" id="help-q" placeholder="Try food, rent, seniors, Spanish, 24/7" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="help-cat">Kind of need</label>
+        <select id="help-cat"><option value="">All kinds of need</option></select>
+      </div>
+    </form>
+    <p class="help-count" id="help-count" role="status" aria-live="polite"></p>
+    <div class="rcards" id="help-cards"></div>
+    <div class="help-empty" id="help-empty" hidden>
+      <p>No services match. Try a shorter search, or <button type="button" class="linklike" id="help-clear">clear the filters</button>.</p>
+    </div>
+  </section>
+  </div>
+
+  <div id="view-context" role="tabpanel" aria-labelledby="tab-context" tabindex="0" hidden>
+  <section class="hero" aria-labelledby="ctx-h">
+    <h2 class="section-h" id="ctx-h">Crime and calls for service in Oak Park</h2>
+    <p class="flag ctx-callout"><b>This tab is not ECHO data.</b> It shows reported crime and police and fire calls for the whole Village, as background for ECHO's work. These trends say nothing about whether ECHO caused any change: the decline began before ECHO started, most of it is property crime, which ECHO doesn't work on, and ECHO's records have no locations to compare against.</p>
+    <h3 class="sub-h">Reported crime incidents per month</h3>
+    <p class="section-sub">Distinct incidents reported to Oak Park police, January 2022 to August 2026, from the Police Department's public crime dashboard. Reported crimes only, not all calls to police.</p>
+    <div class="chart" id="crime-monthly"></div>
+    <div class="legend-key" aria-hidden="true">
+      <span><span class="swatch solid"></span>Reported incidents in a month</span>
+      <span><span class="swatch marker"></span>ECHO begins, February 2025</span>
+    </div>
+    <h3 class="sub-h">The same 12 months, year by year</h3>
+    <p class="section-sub">March to February each year, so every window covers the same seasons. The change is against the window before.</p>
+    <div class="table-scroll" id="crime-table"></div>
+  </section>
+
+  <section class="needs" aria-labelledby="calls-h">
+    <h2 class="section-h" id="calls-h">Calls for service per year</h2>
+    <p class="section-sub">All dispatched police and fire calls, from the Village Board's June 2026 Phase 2 presentation. Police calls were already falling before ECHO started; fire calls rose. Each list has its own scale.</p>
+    <div class="calls">
+      <div><h3 class="sub-h">Police</h3><ul class="src-bars" id="calls-police" aria-label="Police calls for service per year"></ul></div>
+      <div><h3 class="sub-h">Fire</h3><ul class="src-bars" id="calls-fire" aria-label="Fire calls for service per year"></ul></div>
+    </div>
+  </section>
+  </div>
+
+  <footer>
+    <h2>Limits of this data</h2>
+    <ul>
+      <li>Counts only. The source has no names, ages, addresses, or notes, so nothing here can be mapped or traced to a person.</li>
+      <li>"By kind of need" uses the dashboard's month-by-service table. "By referral source" uses its month-by-referral-source table and its referral-source-by-service table. "By weekday" uses its weekday-by-service table. These tables count the same services in different ways, so they are never added together.</li>
+      <li>The team works weekdays, so the timing of these counts reflects its schedule, not when needs arise.</li>
+      <li>Category labels have no official definitions. The descriptions here are pieced together from Village Board presentations and may not match how staff assign categories.</li>
+      <li>"Community context" shows reported crimes and calls for service for the whole Village. The decline in both began before ECHO, and crime is a weak measure of ECHO's mostly non-criminal work, so the tab draws no conclusions about ECHO's effect.</li>
+    </ul>
+    <h2>Sources</h2>
+    <p>ECHO counts: Village of Oak Park <a href="https://opendata.oak-park.us/EchoActivity">ECHO Activity dashboard</a>, cached for Day in Our Data on September 17, 2026, February 2025 through part of September 2026. Program details: the Village's <a href="https://www.oak-park.us/Community/Community-Services/E.C.H.O-Engaging-Community-for-Healthy-Outcomes">E.C.H.O. page</a> and Board presentations listed in the team's data key. Questions or corrections: the ECHO team at <a href="mailto:echo@oak-park.us">echo@oak-park.us</a>.</p>
+    <p>Crime: Oak Park Police Department "Crime Incident - Public" dashboard, linked from the Village's <a href="https://www.oak-park.us/Public-Safety/Police-Department/Reports-Maps/Crime-Maps">Crime Maps</a> page, cached January 2022 to September 1, 2026 and summarized to monthly counts. Calls for service: <a href="https://oak-park.legistar1.com/oak-park/attachments/21db010a-41cb-410a-9828-9ce4a0ef9fc7.pptx">Alternative Response Phase 2 presentation</a>, June 2026, slide 3.</p>
+    <p>Local services come from the team's resource directory, checked against each provider's published page on the date shown in the data.</p>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const ECHO_CSV = '../data/echo-activity-oak-park.csv';
+  const RESOURCE_CSV = '../resources/resource-directory.csv';
+  const CRIME_CSV = '../data/crime-monthly-oak-park.csv';
+  const CALLS_CSV = '../data/calls-for-service-totals.csv';
+  const UNCATEGORIZED = 'Not categorized';
+
+  // One-line definitions and flags, from docs/echo-data-key.md.
+  const CATEGORY_INFO = {
+    'Unhoused Resident': { def: 'Street outreach, care kits, emergency shelter navigation, and encampment work with Public Works.' },
+    'Behavioral Health': { def: 'Connections to mental health care and substance use treatment.',
+      flag: 'Open question: did the January 2026 start of 911-to-988 transfers lower these counts?' },
+    'Senior Services': { def: 'Wellness checks, help after falls, and dementia support, often with Township caregiver services.' },
+    'Housing': { def: 'Rental and housing help for people who are still housed. Counted separately from homelessness.' },
+    'Youth/Family Services': { def: 'Truancy support, youth behavior and family disputes, and the Township Youth Engagement Program.' },
+    'Other': { def: 'Not defined by the Village.',
+      flag: 'Jumps in May 2026, possibly from a change to the intake form. Unconfirmed.' },
+    'Financial Support': { def: 'Help with bills, utilities, and insurance.' },
+    'Domestic Violence': { def: 'Connections to domestic violence services.' },
+    'Medical Support': { def: 'Help getting medical and dental care.' },
+    'Food Services': { def: 'Food assistance.' },
+    [UNCATEGORIZED]: { def: 'Services logged with no category, first seen in July 2026.',
+      flag: 'Likely a form or data entry change. Some of these probably belong to other categories, so 2026 category counts may run low.' },
+  };
+  // Categories with no lookup in the resource directory.
+  const NO_DIRECTORY = new Set(['Other', UNCATEGORIZED]);
+
+  const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const MONTH_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const ym = m => { const [y, mo] = m.split('-').map(Number); return { y, mo }; };
+  const shortLabel = m => { const { y, mo } = ym(m); return `${MONTH_ABBR[mo - 1]} ${y}`; };
+  const longLabel = m => { const { y, mo } = ym(m); return `${MONTH_FULL[mo - 1]} ${y}`; };
+  const fmt = n => n.toLocaleString('en-US');
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const SVG = 'http://www.w3.org/2000/svg';
+  const el = (tag, attrs = {}, parent) => {
+    const n = document.createElementNS(SVG, tag);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    if (parent) parent.appendChild(n);
+    return n;
+  };
+
+  // RFC 4180 CSV: quoted fields, embedded commas, quotes, and newlines.
+  function parseCSV(text) {
+    const rows = []; let row = [], field = '', q = false;
+    text = text.replace(/^﻿/, '');
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) {
+        if (c === '"') { if (text[i + 1] === '"') { field += '"'; i++; } else q = false; }
+        else field += c;
+      } else if (c === '"') q = true;
+      else if (c === ',') { row.push(field); field = ''; }
+      else if (c === '\n' || c === '\r') {
+        if (c === '\r' && text[i + 1] === '\n') i++;
+        row.push(field); rows.push(row); row = []; field = '';
+      } else field += c;
+    }
+    if (field !== '' || row.length) { row.push(field); rows.push(row); }
+    const header = rows.shift() || [];
+    return rows.filter(r => r.some(v => v.trim() !== ''))
+      .map(r => Object.fromEntries(header.map((h, i) => [h.trim(), (r[i] ?? '').trim()])));
+  }
+
+  // A count is a number, or null when unavailable ("suppressed"). Never zero-fill a suppressed cell.
+  const parseCount = v => (/^\d+$/.test(v) ? Number(v) : null);
+
+  function buildModel(rows) {
+    const monthly = rows.filter(r => r.breakdown === 'service_by_month');
+    const months = [...new Set(monthly.map(r => r.month))].sort();
+    // The last month in the snapshot is still being logged.
+    const partialMonth = months[months.length - 1];
+    const byCat = new Map();
+    const totals = new Map(months.map(m => [m, 0]));
+    let unavailable = 0;
+    for (const r of monthly) {
+      const cat = (!r.service || r.service === '(blank)') ? UNCATEGORIZED : r.service;
+      const n = parseCount(r.count);
+      if (n === null) { unavailable++; continue; }
+      if (!byCat.has(cat)) byCat.set(cat, new Map());
+      byCat.get(cat).set(r.month, n);
+      totals.set(r.month, totals.get(r.month) + n);
+    }
+    const cats = [...byCat.entries()].map(([name, series]) => {
+      const total = [...series.values()].reduce((a, b) => a + b, 0);
+      const first = months.find(m => series.has(m));
+      return { name, series, total, first };
+    }).sort((a, b) => {
+      // Real categories by size; Other and uncategorized last.
+      const rank = c => (c.name === UNCATEGORIZED ? 2 : c.name === 'Other' ? 1 : 0);
+      return rank(a) - rank(b) || b.total - a.total;
+    });
+    const grand = [...totals.values()].reduce((a, b) => a + b, 0);
+    return { months, partialMonth, cats, totals, grand, unavailable };
+  }
+
+  // Same-months comparison: the latest six complete months against the same months a year earlier.
+  function yearOverYear(model) {
+    const complete = model.months.filter(m => m !== model.partialMonth);
+    const recent = complete.slice(-6);
+    const prior = recent.map(m => { const { y, mo } = ym(m); return `${y - 1}-${String(mo).padStart(2, '0')}`; });
+    if (!prior.every(m => model.months.includes(m))) return null;
+    return { recent, prior };
+  }
+
+  // ---------- Tooltip ----------
+  function makeTooltip(container) {
+    const tip = document.createElement('div');
+    tip.className = 'tooltip'; tip.setAttribute('role', 'status');
+    container.appendChild(tip);
+    return {
+      show(html, x, y) {
+        tip.innerHTML = html; tip.classList.add('on');
+        const cw = container.clientWidth, tw = tip.offsetWidth, th = tip.offsetHeight;
+        let left = x + 14; if (left + tw > cw) left = x - tw - 14; if (left < 0) left = Math.max(0, Math.min(cw - tw, x - tw / 2));
+        let top = y - th - 10; if (top < -40) top = y + 16;
+        tip.style.left = left + 'px'; tip.style.top = top + 'px';
+      },
+      hide() { tip.classList.remove('on'); },
+    };
+  }
+
+  // ---------- Hero: monthly totals ----------
+  function niceMax(v, step) { return Math.ceil(v / step) * step; }
+
+  function drawMonthly(model) {
+    const box = document.getElementById('monthly');
+    box.innerHTML = '';
+    const W = box.clientWidth;
+    const narrow = W < 560;
+    const H = narrow ? 260 : 330;
+    const m = { l: 36, r: 6, t: 46, b: 44 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const max = niceMax(Math.max(...model.totals.values()), 50);
+    const n = model.months.length;
+    const band = iw / n, bw = Math.max(6, Math.min(34, band * 0.64));
+    const x = i => m.l + band * i + (band - bw) / 2;
+    const y = v => m.t + ih - (v / max) * ih;
+
+    const svg = el('svg', { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img',
+      'aria-label': `Bar chart of ECHO services per month, ${shortLabel(model.months[0])} to ${shortLabel(model.partialMonth)}. Full numbers are in the table view below.` }, box);
+    const defs = el('defs', {}, svg);
+    const pat = el('pattern', { id: 'hatch', patternUnits: 'userSpaceOnUse', width: 5, height: 5, patternTransform: 'rotate(45)' }, defs);
+    el('rect', { width: 1.6, height: 5, fill: 'var(--data)' }, pat);
+
+    const axis = el('g', { class: 'axis' }, svg);
+    for (let v = 0; v <= max; v += 50) {
+      el('line', { class: v === 0 ? 'baseline' : 'gridline', x1: m.l, x2: W - m.r, y1: y(v), y2: y(v) }, axis);
+      const t = el('text', { x: m.l - 8, y: y(v) + 4, 'text-anchor': 'end' }, axis); t.textContent = v;
+    }
+    const every = narrow ? 3 : 1;
+    model.months.forEach((mo, i) => {
+      const { y: yr, mo: mon } = ym(mo);
+      const cx = x(i) + bw / 2;
+      if ((i % every === 0 && model.months.length - 1 - i >= every) || mo === model.partialMonth) {
+        const t = el('text', { x: cx, y: H - m.b + 18, 'text-anchor': 'middle' }, axis);
+        t.textContent = narrow ? MONTH_ABBR[mon - 1][0] + MONTH_ABBR[mon - 1].slice(1, 3) : MONTH_ABBR[mon - 1];
+      }
+      if (i === 0 || mon === 1) {
+        const t = el('text', { x: x(i), y: H - m.b + 36, 'text-anchor': 'start', style: 'font-weight:600' }, axis);
+        t.textContent = yr;
+      }
+    });
+
+    const bars = [];
+    model.months.forEach((mo, i) => {
+      const v = model.totals.get(mo), h = Math.max(0, y(0) - y(v)), r = Math.min(4, bw / 2, h);
+      const x0 = x(i), y0 = y(v);
+      // Rounded data end, square at the baseline.
+      const d = `M${x0},${y(0)} V${y0 + r} Q${x0},${y0} ${x0 + r},${y0} H${x0 + bw - r} Q${x0 + bw},${y0} ${x0 + bw},${y0 + r} V${y(0)} Z`;
+      bars.push(el('path', { d, class: 'bar' + (mo === model.partialMonth ? ' partial' : '') }, svg));
+    });
+
+    // Annotations: the September 2025 peak and the partial month.
+    const peakMonth = model.months.filter(mo => mo !== model.partialMonth)
+      .reduce((a, b) => (model.totals.get(b) > model.totals.get(a) ? b : a));
+    const pi = model.months.indexOf(peakMonth);
+    const px = x(pi) + bw / 2, py = y(model.totals.get(peakMonth));
+    el('line', { class: 'annot-line', x1: px, x2: px, y1: py - 6, y2: m.t - 18 }, svg);
+    const peakLabel = el('text', { class: 'annot', x: px + 6, y: m.t - 22, 'text-anchor': pi > n / 2 ? 'end' : 'start' }, svg);
+    peakLabel.innerHTML = `<tspan font-weight="700">${shortLabel(peakMonth)}: ${fmt(model.totals.get(peakMonth))}</tspan><tspan> ${narrow ? 'likely a batch' : '· about double its neighbors, likely a one-time batch (unconfirmed)'}</tspan>`;
+    if (pi > n / 2) peakLabel.setAttribute('x', px - 6);
+
+    const li = n - 1, lx = x(li) + bw / 2, lv = model.totals.get(model.partialMonth);
+    // The legend explains the hatching, so the label only needs the count.
+    const lt = el('text', { class: 'annot', x: lx, y: y(lv) - 7, 'text-anchor': 'middle' }, svg);
+    lt.textContent = fmt(lv);
+
+    // Hover / focus layer: whole-column hit targets.
+    const tip = makeTooltip(box);
+    model.months.forEach((mo, i) => {
+      const hit = el('rect', { class: 'hit', x: m.l + band * i, y: m.t, width: band, height: ih, tabindex: 0,
+        'aria-label': `${longLabel(mo)}: ${model.totals.get(mo)} services${mo === model.partialMonth ? ', partial month' : ''}` }, svg);
+      const show = () => {
+        bars.forEach((b, j) => b.classList.toggle('dim', j !== i));
+        const top = model.cats.map(c => [c.name, c.series.get(mo) || 0]).filter(([, v]) => v > 0)
+          .sort((a, b) => b[1] - a[1]).slice(0, 4);
+        let html = `<div class="tt-h">${longLabel(mo)}: ${fmt(model.totals.get(mo))} services</div>`;
+        html += top.map(([k, v]) => `<div class="tt-row"><span>${esc(k)}</span><span>${v}</span></div>`).join('');
+        if (mo === model.partialMonth) html += `<div class="tt-note">Partial month, still being logged.</div>`;
+        if (mo === peakMonth) html += `<div class="tt-note">Likely a one-time batch of Police and Fire follow-ups or catch-up logging. Unconfirmed.</div>`;
+        tip.show(html, x(i) + bw / 2, y(model.totals.get(mo)));
+      };
+      const hide = () => { bars.forEach(b => b.classList.remove('dim')); tip.hide(); };
+      hit.addEventListener('pointerenter', show); hit.addEventListener('pointerleave', hide);
+      hit.addEventListener('focus', show); hit.addEventListener('blur', hide);
+    });
+  }
+
+  // ---------- Small multiples ----------
+  function drawSpark(container, cat, model, max) {
+    container.innerHTML = '';
+    const W = container.clientWidth, H = 96;
+    const m = { l: 26, r: 8, t: 8, b: 20 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const months = model.months, n = months.length;
+    const x = i => m.l + (iw * i) / (n - 1);
+    const y = v => m.t + ih - (v / max) * ih;
+    const svg = el('svg', { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img',
+      'aria-label': `${cat.name}: monthly services. Values are in the table view.` }, container);
+    const axis = el('g', { class: 'axis' }, svg);
+    [0, max].forEach(v => {
+      el('line', { class: v === 0 ? 'baseline' : 'gridline', x1: m.l, x2: W - m.r, y1: y(v), y2: y(v) }, axis);
+      const t = el('text', { x: m.l - 6, y: y(v) + 4, 'text-anchor': 'end' }, axis); t.textContent = v;
+    });
+    const firstYear = ym(months[0]).y;
+    months.forEach((mo, i) => {
+      const { y: yr, mo: mon } = ym(mo);
+      if (i === 0 || mon === 1) {
+        const t = el('text', { x: x(i), y: H - 4, 'text-anchor': i === 0 ? 'start' : 'middle' }, axis);
+        t.textContent = i === 0 ? `${MONTH_ABBR[mon - 1]} ${String(firstYear).slice(2)}` : `Jan ${String(yr).slice(2)}`;
+      }
+    });
+    const lastI = n - 1;
+    const t = el('text', { x: x(lastI), y: H - 4, 'text-anchor': 'end' }, axis);
+    t.textContent = `${MONTH_ABBR[ym(months[lastI]).mo - 1]} ${String(ym(months[lastI]).y).slice(2)}`;
+
+    // The line covers complete months from the category's first appearance; missing months are zero services.
+    const startI = months.indexOf(cat.first);
+    const pts = [];
+    for (let i = startI; i < lastI; i++) pts.push([x(i), y(cat.series.get(months[i]) || 0)]);
+    if (pts.length > 1) {
+      const area = `M${pts[0][0]},${y(0)} ` + pts.map(p => `L${p[0]},${p[1]}`).join(' ') + ` L${pts[pts.length - 1][0]},${y(0)} Z`;
+      el('path', { class: 'spark-area', d: area }, svg);
+      el('path', { class: 'spark-line', d: 'M' + pts.map(p => p.join(',')).join(' L') }, svg);
+    } else if (pts.length === 1) {
+      el('circle', { class: 'spark-dot', cx: pts[0][0], cy: pts[0][1], r: 3 }, svg);
+    }
+    // Partial month: a hollow point, not joined to the line.
+    el('circle', { class: 'spark-partial', cx: x(lastI), cy: y(cat.series.get(months[lastI]) || 0), r: 4 }, svg);
+
+    const cross = el('line', { class: 'spark-cross', y1: m.t, y2: y(0), visibility: 'hidden' }, svg);
+    const dot = el('circle', { class: 'spark-focus', r: 4.5, visibility: 'hidden' }, svg);
+    const tip = makeTooltip(container);
+    const hit = el('rect', { class: 'hit', x: m.l, y: 0, width: iw, height: H }, svg);
+    const onMove = e => {
+      const r = svg.getBoundingClientRect();
+      const i = Math.max(startI, Math.min(lastI, Math.round(((e.clientX - r.left - m.l) / iw) * (n - 1))));
+      const mo = months[i], v = cat.series.get(mo) || 0;
+      cross.setAttribute('x1', x(i)); cross.setAttribute('x2', x(i)); cross.setAttribute('visibility', 'visible');
+      dot.setAttribute('cx', x(i)); dot.setAttribute('cy', y(v)); dot.setAttribute('visibility', 'visible');
+      tip.show(`<div class="tt-h">${longLabel(mo)}</div><div class="tt-row"><span>${esc(cat.name)}</span><span>${v}</span></div>` +
+        (mo === model.partialMonth ? '<div class="tt-note">Partial month.</div>' : ''), x(i), y(v));
+    };
+    hit.addEventListener('pointermove', onMove);
+    hit.addEventListener('pointerleave', () => { cross.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); tip.hide(); });
+  }
+
+  // ---------- Resource directory ----------
+  const SHOWN_PER_CATEGORY = 3;
+  const URL_RE = /https?:\/\/[^\s;,)]+[^\s;,).]/g;
+  const PHONE_RE = /(?:1-)?\(?\b\d{3}\)?[-.\s]\d{3}-\d{4}\b(?:\s*(?:x|ext\.?)\s*\d+)?/g;
+  const EMAIL_RE = /[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g;
+  const domain = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return 'link'; } };
+
+  // Escape a field, then turn phone numbers, emails, and inline URLs into links.
+  function linkify(text) {
+    const tokens = [];
+    const hold = html => `\u0000${tokens.push(html) - 1}\u0000`;
+    let t = String(text)
+      .replace(URL_RE, u => hold(`<a href="${esc(u)}">${esc(domain(u))}</a>`))
+      .replace(EMAIL_RE, e => hold(`<a href="mailto:${esc(e)}">${esc(e)}</a>`))
+      .replace(PHONE_RE, ph => {
+        const ext = ph.match(/(?:x|ext\.?)\s*(\d+)$/);
+        const digits = ph.replace(/(?:x|ext\.?)\s*\d+$/, '').replace(/\D/g, '');
+        return hold(`<a href="tel:${digits}${ext ? ',' + ext[1] : ''}">${esc(ph)}</a>`);
+      });
+    return esc(t).replace(/\u0000(\d+)\u0000/g, (_, i) => tokens[i]);
+  }
+  // The directory's wording for unpublished details, shortened for display.
+  const tidy = v => v.trim().replace(/^Not published online;?\s*confirm:?\s*/i, 'Not published; confirm at ');
+
+  // Standalone web addresses are dropped from contact lines: the title already links to the source page.
+  const reachParts = r => (r.how_to_reach || '').split(';').map(x => x.trim())
+    .filter(x => x && !/^https?:\/\/\S+$/.test(x));
+  const dlist = rows => {
+    rows = rows.filter(([, v]) => v);
+    return rows.length ? '<dl>' + rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('') + '</dl>' : '';
+  };
+  // Always-visible lines drop a trailing "confirm: <phone>"; the phone is already in the Contact line.
+  const brief = v => v.trim()
+    .replace(/^Not published online;?\s*confirm:?\s*.*$/i, 'Not published online')
+    .replace(/[;,]?\s*confirm:?\s*(?:at\s*)?(?:1-)?\(?\d{3}\)?[-.\s]\d{3}-\d{4}(?:\s*(?:x|ext\.?)\s*\d+)?\s*$/i, '');
+
+  // Brief entry: service link, provider, and what it offers. Contact, hours, eligibility and
+  // cost live on the Find help tab's cards.
+  function resourceItem(r, extra) {
+    const title = r.program || r.provider;
+    const head = r.source_url ? `<a class="prog" href="${esc(r.source_url)}">${esc(title)}</a>` : `<span class="prog">${esc(title)}</span>`;
+    const prov = r.program && r.provider ? `<div class="prov">${esc(r.provider)}</div>` : '';
+    return `<li${extra ? ' class="extra"' : ''}>${head}${prov}${r.what_they_offer ? `<p class="offer">${linkify(r.what_they_offer)}</p>` : ''}</li>`;
+  }
+
+  function resourceList(cat, resources) {
+    if (NO_DIRECTORY.has(cat.name)) return '';
+    let body;
+    if (resources === null) {
+      body = '<p class="empty">Resource directory in progress.</p>';
+    } else {
+      const list = resources.filter(r => r.echo_category === cat.name);
+      if (!list.length) body = '<p class="empty">No matching services listed yet.</p>';
+      else {
+        body = '<ul>' + list.map((r, i) => resourceItem(r, i >= SHOWN_PER_CATEGORY)).join('') + '</ul>';
+        if (list.length > SHOWN_PER_CATEGORY)
+          body += `<button type="button" class="more" aria-expanded="false" data-all="Show all ${list.length}">Show all ${list.length}</button>`;
+      }
+    }
+    const pointer = resources && resources.some(r => r.echo_category === cat.name)
+      ? '<p class="who-more">Contact details, hours, and costs are in <a href="#help">Find help</a>.</p>' : '';
+    return `<div class="who"><h4>Who can help</h4>${body}${pointer}</div>`;
+  }
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.who .more');
+    if (!btn) return;
+    const ul = btn.previousElementSibling;
+    const open = ul.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Show fewer' : btn.dataset.all;
+    if (!open) btn.closest('.who').scrollIntoView({ block: 'nearest' });
+  });
+
+  function drawGrid(model, resources) {
+    const grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    const yoy = yearOverYear(model);
+    const max = niceMax(Math.max(...model.cats.flatMap(c => [...c.series.values()])), 10);
+    const sparks = [];
+    for (const cat of model.cats) {
+      const info = CATEGORY_INFO[cat.name] || { def: 'No definition available.' };
+      const share = Math.round((cat.total / model.grand) * 100);
+      let yoyHtml = '';
+      if (yoy && cat.name !== UNCATEGORIZED) {
+        const sum = ms => ms.reduce((a, mo) => a + (cat.series.get(mo) || 0), 0);
+        const a = sum(yoy.prior), b = sum(yoy.recent);
+        const span = `${MONTH_ABBR[ym(yoy.recent[0]).mo - 1]}–${MONTH_ABBR[ym(yoy.recent[5]).mo - 1]}`;
+        yoyHtml = `<p class="yoy">${span}: <b>${a}</b> in ${ym(yoy.prior[0]).y}, <b>${b}</b> in ${ym(yoy.recent[0]).y}</p>`;
+      }
+      const panel = document.createElement('article');
+      panel.className = 'panel';
+      panel.innerHTML = `
+        <h3>${esc(cat.name)}</h3>
+        <div class="total"><span class="n">${fmt(cat.total)}</span><span class="share">${share < 1 ? '<1' : share}% of all services</span></div>
+        <p class="def">${esc(info.def)}</p>
+        <div class="spark"></div>
+        ${yoyHtml}
+        ${info.flag ? `<p class="flag">${esc(info.flag)}</p>` : ''}
+        ${resourceList(cat, resources)}`;
+      grid.appendChild(panel);
+      sparks.push([panel.querySelector('.spark'), cat]);
+    }
+    const render = () => sparks.forEach(([box, cat]) => drawSpark(box, cat, model, max));
+    render();
+    return render;
+  }
+
+  function drawTable(model) {
+    const months = model.months;
+    let h = '<table><thead><tr><th scope="col">Category</th>';
+    h += months.map(mo => `<th scope="col"${mo === model.partialMonth ? ' class="partial-col"' : ''}>${shortLabel(mo)}${mo === model.partialMonth ? ' (partial)' : ''}</th>`).join('');
+    h += '<th scope="col">Total</th></tr></thead><tbody>';
+    for (const c of model.cats) {
+      h += `<tr><td>${esc(c.name)}</td>` + months.map(mo => `<td${mo === model.partialMonth ? ' class="partial-col"' : ''}>${c.series.get(mo) ?? (months.indexOf(mo) < months.indexOf(c.first) ? '' : 0)}</td>`).join('') + `<td>${fmt(c.total)}</td></tr>`;
+    }
+    h += '<tr class="sum"><td>All services</td>' + months.map(mo => `<td${mo === model.partialMonth ? ' class="partial-col"' : ''}>${model.totals.get(mo)}</td>`).join('') + `<td>${fmt(model.grand)}</td></tr>`;
+    h += '</tbody></table>';
+    document.getElementById('table').innerHTML = h;
+  }
+
+  function drawHeader(model) {
+    const complete = model.months.filter(mo => mo !== model.partialMonth);
+    const top4 = model.cats.filter(c => c.name !== 'Other' && c.name !== UNCATEGORIZED).slice(0, 4);
+    const topShare = Math.round(top4.reduce((a, c) => a + c.total, 0) / model.grand * 100);
+    document.getElementById('hero-total').innerHTML =
+      `${fmt(model.grand)}<small id="hero-label">services logged, ${shortLabel(model.months[0])} to ${shortLabel(model.partialMonth)}</small>`;
+    document.getElementById('hero-facts').innerHTML = `
+      <span><b>${complete.length}</b> complete months</span>
+      <span><b>${Math.round(complete.reduce((a, mo) => a + model.totals.get(mo), 0) / complete.length)}</b> services in an average month</span>
+      <span><b>${topShare}%</b> fall in four categories: ${top4.map(c => esc(c.name.toLowerCase())).join(', ').replace(/, ([^,]*)$/, ', and $1')}</span>`;
+  }
+
+  // ---------- Referral sources ----------
+  // One-line definitions and flags, from docs/echo-data-key.md.
+  const SOURCE_INFO = {
+    'Police Department': { def: 'Follow-up after a police call for service.',
+      flag: 'Police referrals roughly doubled in September 2025 (76), driving most of that month\'s spike. Cause unknown.' },
+    'Fire Department': { def: 'Follow-up after a fire or EMS call.',
+      flag: 'Fire referrals also jumped in September 2025 (37). Cause unknown.' },
+    'Resident Contact': { def: 'Residents calling or walking into Village Hall, for themselves or someone else.' },
+    'Community Engagement': { def: 'ECHO\'s own outreach: street outreach, district cleanings, business district support. Not an outside referrer.' },
+    'Village of Oak Park Departments': { def: 'Referrals from other Village departments.' },
+    'Community Partner': { def: 'Nonprofits, and possibly schools (unconfirmed).' },
+    'Business': { def: 'Referrals from local businesses.' },
+    'Emergency Housing': { def: 'Not defined by the Village.',
+      flag: 'Appears only from July to October 2025, the months around the new emergency shelter. Unconfirmed.' },
+  };
+  const catName = s => ((!s || s === '(blank)') ? UNCATEGORIZED : s);
+
+  function buildReferralModel(rows, model) {
+    const series = new Map();
+    for (const r of rows.filter(r => r.breakdown === 'referral_by_month')) {
+      const n = parseCount(r.count);
+      if (n === null) continue;
+      if (!series.has(r.referral_source)) series.set(r.referral_source, new Map());
+      series.get(r.referral_source).set(r.month, n);
+    }
+    // All-time mix of kinds of need per source. Hidden (suppressed) cells stay null: never estimated.
+    const mix = new Map();
+    for (const r of rows.filter(r => r.breakdown === 'referral_by_service')) {
+      if (!mix.has(r.referral_source)) mix.set(r.referral_source, []);
+      mix.get(r.referral_source).push({ service: catName(r.service), n: parseCount(r.count) });
+    }
+    const sources = [...series.entries()].map(([name, s]) => ({
+      name, series: s,
+      total: [...s.values()].reduce((a, b) => a + b, 0),
+      first: model.months.find(m => s.has(m)),
+      mix: (mix.get(name) || []).sort((a, b) => (b.n ?? -1) - (a.n ?? -1) || a.service.localeCompare(b.service)),
+    })).sort((a, b) => b.total - a.total);
+    const grand = sources.reduce((a, s) => a + s.total, 0);
+    const mixMax = Math.max(1, ...sources.flatMap(s => s.mix.map(c => c.n ?? 0)));
+    return { sources, grand, mixMax };
+  }
+
+  const barRow = (label, n, max, hiddenText) => n === null
+    ? `<li class="brow hidden-cell"><span class="lbl" title="${esc(label)}">${esc(label)}</span><span class="track"></span><span class="v">${hiddenText}</span></li>`
+    : `<li class="brow"><span class="lbl" title="${esc(label)}">${esc(label)}</span><span class="track"><span class="fill" style="width:${(n / max) * 100}%"></span></span><span class="v">${fmt(n)}</span></li>`;
+
+  function drawSourceBars(ref) {
+    const max = ref.sources[0].total;
+    document.getElementById('src-bars').innerHTML = ref.sources.map(s => barRow(s.name, s.total, max)).join('');
+  }
+
+  function drawSourceGrid(ref, model) {
+    const grid = document.getElementById('src-grid');
+    grid.innerHTML = '';
+    const max = niceMax(Math.max(...ref.sources.flatMap(s => [...s.series.values()])), 10);
+    const sparks = [];
+    for (const src of ref.sources) {
+      const info = SOURCE_INFO[src.name] || { def: 'No definition available.' };
+      const share = Math.round((src.total / ref.grand) * 100);
+      const shown = src.mix.filter(c => c.n !== null);
+      const hidden = src.mix.filter(c => c.n === null).map(c => c.service);
+      const mixHtml = src.mix.length ? `
+        <div class="mix"><h4>What these services were for (all months)</h4>
+          <ul>${shown.map(c => barRow(c.service, c.n, ref.mixMax)).join('')}</ul>
+          ${hidden.length ? `<p class="hidden-note">Hidden for privacy: ${hidden.map(esc).join(', ')}.</p>` : ''}
+        </div>` : '';
+      const panel = document.createElement('article');
+      panel.className = 'panel';
+      panel.innerHTML = `
+        <h3>${esc(src.name)}</h3>
+        <div class="total"><span class="n">${fmt(src.total)}</span><span class="share">${share < 1 ? '<1' : share}% of all services</span></div>
+        <p class="def">${esc(info.def)}</p>
+        <div class="spark"></div>
+        ${info.flag ? `<p class="flag">${esc(info.flag)}</p>` : ''}
+        ${mixHtml}`;
+      grid.appendChild(panel);
+      sparks.push([panel.querySelector('.spark'), src]);
+    }
+    const render = () => sparks.forEach(([box, src]) => drawSpark(box, src, model, max));
+    render();
+    return render;
+  }
+
+  function drawSourceTable(ref, model) {
+    const months = model.months, pc = mo => (mo === model.partialMonth ? ' class="partial-col"' : '');
+    let h = '<table><thead><tr><th scope="col">Referral source</th>';
+    h += months.map(mo => `<th scope="col"${pc(mo)}>${shortLabel(mo)}${mo === model.partialMonth ? ' (partial)' : ''}</th>`).join('');
+    h += '<th scope="col">Total</th></tr></thead><tbody>';
+    for (const s of ref.sources) {
+      h += `<tr><td>${esc(s.name)}</td>` + months.map(mo => `<td${pc(mo)}>${s.series.get(mo) ?? (months.indexOf(mo) < months.indexOf(s.first) ? '' : 0)}</td>`).join('') + `<td>${fmt(s.total)}</td></tr>`;
+    }
+    h += '<tr class="sum"><td>All services</td>' + months.map(mo => `<td${pc(mo)}>${ref.sources.reduce((a, s) => a + (s.series.get(mo) || 0), 0)}</td>`).join('') + `<td>${fmt(ref.grand)}</td></tr>`;
+    document.getElementById('src-table').innerHTML = h + '</tbody></table>';
+  }
+
+  function drawMixTable(ref, model) {
+    // Columns follow the other tab's category order. No row or column totals: hidden cells would make them misleading.
+    const cols = model.cats.map(c => c.name).filter(n => ref.sources.some(s => s.mix.some(c => c.service === n)));
+    let h = '<table><thead><tr><th scope="col">Referral source</th>' + cols.map(c => `<th scope="col">${esc(c)}</th>`).join('') + '</tr></thead><tbody>';
+    for (const s of ref.sources) {
+      h += `<tr><td>${esc(s.name)}</td>` + cols.map(c => {
+        const cell = s.mix.find(x => x.service === c);
+        if (!cell) return '<td>–</td>';
+        return cell.n === null ? '<td class="cell-hidden">hidden</td>' : `<td>${fmt(cell.n)}</td>`;
+      }).join('') + '</tr>';
+    }
+    h += '</tbody></table>';
+    document.getElementById('mix-table').innerHTML = h +
+      '<p class="hidden-note" style="padding:8px 10px;margin:0">All months combined. "hidden" = withheld for privacy, not zero. "–" = none in the dashboard\'s table.</p>';
+  }
+
+  // ---------- Weekday ----------
+  const WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+  // Cross-tab of one breakdown by kind of need. Hidden (suppressed) cells stay null: never estimated or back-solved.
+  function crossTab(rows, breakdown, key, order) {
+    const cells = new Map();
+    const keys = [];
+    for (const r of rows.filter(r => r.breakdown === breakdown)) {
+      if (!keys.includes(r[key])) keys.push(r[key]);
+      cells.set(`${r[key]}|${catName(r.service)}`, parseCount(r.count));
+    }
+    return { keys: order ? order.filter(k => keys.includes(k)) : keys, cells };
+  }
+
+  // Percentages are shares of SHOWN cells only. Hidden cells are never estimated, so a share's
+  // denominator is the sum of what is shown, and the page says so.
+  const pct = (n, d) => (d ? `${Math.round((n / d) * 100)}%` : '');
+
+  function drawWeekday(rows, model) {
+    const wd = crossTab(rows, 'service_by_weekday', 'weekday', WEEKDAYS);
+    const cats = model.cats.map(c => c.name).filter(c => wd.keys.some(d => wd.cells.has(`${d}|${c}`)));
+    const cell = (day, cat) => wd.cells.get(`${day}|${cat}`);
+
+    // Weekday bars: sum of shown cells, its share of all shown cells, and how many cells are hidden. Not full totals.
+    const sums = wd.keys.map(day => {
+      const vals = cats.map(c => cell(day, c)).filter(v => v !== undefined);
+      return { day, shown: vals.filter(v => v !== null).reduce((x, y) => x + y, 0),
+        hidden: vals.filter(v => v === null).length, any: vals.some(v => v !== null) };
+    });
+    const allShown = sums.reduce((x, s) => x + s.shown, 0);
+    const max = Math.max(1, ...sums.map(s => s.shown));
+    document.getElementById('wd-bars').innerHTML = sums.map(s => {
+      const tag = s.hidden ? `<span class="hidden-tag">+${s.hidden} hidden</span>` : '';
+      return s.any
+        ? `<li class="brow"><span class="lbl">${s.day}</span><span class="track"><span class="fill" style="width:${(s.shown / max) * 100}%"></span></span><span class="v">${fmt(s.shown)} <span class="pct">${pct(s.shown, allShown)}</span>${tag}</span></li>`
+        : `<li class="brow hidden-cell"><span class="lbl">${s.day}</span><span class="track"></span><span class="v">all hidden</span></li>`;
+    }).join('');
+
+    // Shaded table, one hue, light to dark. Each cell: count, then the day's share of that row's shown services.
+    // No row or column totals: hidden cells would make them misleading.
+    const cellMax = Math.max(1, ...[...wd.cells.values()].filter(v => v !== null));
+    let h = `<table><thead><tr><th scope="col">Kind of need</th>${wd.keys.map(d => `<th scope="col">${d.slice(0, 3)}</th>`).join('')}</tr></thead><tbody>`;
+    for (const c of cats) {
+      const rowShown = wd.keys.reduce((x, d) => x + (cell(d, c) ?? 0), 0);
+      // Say how many of the row's cells are hidden, so a share built on a few shown days is visible as such.
+      const rowHidden = wd.keys.filter(d => cell(d, c) === null).length;
+      const anyShown = wd.keys.some(d => typeof cell(d, c) === 'number');
+      const note = !rowHidden ? '' : `<span class="row-note">${anyShown ? `${rowHidden} hidden; shares of shown days only` : 'all hidden'}</span>`;
+      h += `<tr><td>${esc(c)}${note}</td>` + wd.keys.map(d => {
+        const v = cell(d, c);
+        if (v === undefined) return '<td>–</td>';
+        if (v === null) return '<td class="cell-hidden">hidden</td>';
+        const p = Math.round(8 + (v / cellMax) * 72);
+        return `<td class="heat${p >= 72 ? ' hi' : ''}" style="background:color-mix(in srgb, var(--data) ${p}%, transparent)">${fmt(v)}<span class="cell-pct">${pct(v, rowShown)}</span></td>`;
+      }).join('') + '</tr>';
+    }
+    document.getElementById('wd-table').innerHTML = h + '</tbody></table>' +
+      '<p class="hidden-note" style="padding:8px 10px;margin:0">All months combined. Percent = that day\'s share of the row\'s shown services. "hidden" = withheld for privacy, not zero. "–" = none in the dashboard\'s table.</p>';
+  }
+
+  // ---------- Find help: searchable directory ----------
+  // One card per service: rows repeated across categories are merged, keeping every category.
+  function buildServices(resources) {
+    const byKey = new Map();
+    for (const r of resources) {
+      const key = `${r.provider}|${r.program}`;
+      if (!byKey.has(key)) byKey.set(key, { r, cats: [] });
+      if (!byKey.get(key).cats.includes(r.echo_category)) byKey.get(key).cats.push(r.echo_category);
+    }
+    const used = new Set();
+    return [...byKey.values()].map(s => {
+      let id = 'svc-' + slug(`${s.r.provider} ${s.r.program}`), n = 2;
+      while (used.has(id)) id = `${id.replace(/-\d+$/, '')}-${n++}`;
+      used.add(id);
+      return { ...s, id };
+    }).map(s => ({ ...s,
+      text: [s.r.provider, s.r.program, s.r.what_they_offer, s.r.when_to_use, s.r.who_is_eligible, s.r.cost,
+        s.r.hours, s.r.how_to_reach, s.r.notes, ...s.cats].join(' ').toLowerCase() }));
+  }
+
+  // Stable card ids from provider and program, so other pages can link to #svc-….
+  const SERVICE_PREFIX = '#svc-';
+  const slug = t => t.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 90).replace(/-+$/, '');
+  let revealService = () => {};
+
+  function resourceCard(s) {
+    const r = s.r, title = r.program || r.provider;
+    // The provider's own web address from the contact details, else the page the details came from.
+    const site = ((r.how_to_reach || '').match(URL_RE) || [])[0] || r.source_url;
+    const head = site ? `<a href="${esc(site)}">${esc(title)}</a>` : esc(title);
+    // Contact (phone, address, email) and hours stay visible for a quick response; only notes are folded.
+    const summary = dlist([
+      ['Contact', reachParts(r).map(x => `<span>${linkify(x)}</span>`).join('')],
+      ['Hours', r.hours && linkify(tidy(r.hours))],
+      ['For', r.who_is_eligible && linkify(brief(r.who_is_eligible))],
+      ['Cost', r.cost && linkify(brief(r.cost))],
+    ]);
+    const checked = r.checked_on ? `<p class="checked">Details checked ${esc(r.checked_on)}</p>` : '';
+    return `<article class="rcard" id="${s.id}" tabindex="-1">
+      <div class="chips">${s.cats.map(c => `<span class="chip">${esc(c)}</span>`).join('')}</div>
+      <h3>${head} <a class="anchor" href="#${s.id}" aria-label="Link to ${esc(title)}" title="Copy link to this service">#</a></h3>
+      ${r.program && r.provider ? `<p class="prov">${esc(r.provider)}</p>` : ''}
+      ${r.what_they_offer ? `<p class="offer">${linkify(r.what_they_offer)}</p>` : ''}
+      ${r.when_to_use ? `<p class="when"><b>When to use it</b>${linkify(r.when_to_use)}</p>` : ''}
+      ${summary}
+      ${site ? `<p class="site"><a href="${esc(site)}">${/\.pdf(?:$|[?#])/i.test(site) ? `View listing (${esc(domain(site))}, PDF)` : `Visit ${esc(domain(site))}`}</a></p>` : ''}
+      ${r.notes ? `<details><summary>Notes</summary><p class="notes">${linkify(r.notes)}</p>${checked}</details>` : checked}
+    </article>`;
+  }
+
+  // Everyday words the directory phrases differently. Each search word matches any of its alternatives.
+  const SYNONYMS = [
+    ['senior', 'seniors', 'elderly', 'older', 'aging', '60+'],
+    ['kid', 'kids', 'child', 'children', 'youth', 'teen', 'teens'],
+    ['homeless', 'homelessness', 'unhoused', 'shelter'],
+    ['money', 'cash', 'financial', 'bills'],
+    ['doctor', 'medical', 'clinic', 'dental', 'dentist'],
+    ['counseling', 'counselling', 'therapy', 'mental health'],
+    ['addiction', 'substance', 'drugs', 'alcohol', 'overdose'],
+    ['abuse', 'violence', 'domestic'],
+  ];
+  // Match at the start of a word, so "rent" finds rent but not parent.
+  const wordStart = t => new RegExp('(^|[^a-z0-9])' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  function searchAlternatives(word) {
+    const stem = word.length > 4 && word.endsWith('s') ? word.slice(0, -1) : word;
+    const group = SYNONYMS.find(g => g.includes(word) || g.includes(stem));
+    return [...new Set([word, stem, ...(group || [])])];
+  }
+
+  function setupFinder(resources, model) {
+    const cards = document.getElementById('help-cards');
+    if (!resources) { cards.innerHTML = '<p class="empty">The resource directory could not be loaded.</p>'; return; }
+    const services = buildServices(resources);
+    const q = document.getElementById('help-q'), sel = document.getElementById('help-cat');
+    const count = document.getElementById('help-count'), empty = document.getElementById('help-empty');
+    // Categories in the order the first tab uses, limited to those with services.
+    const cats = model.cats.map(c => c.name).filter(n => services.some(s => s.cats.includes(n)));
+    sel.innerHTML += cats.map(c => `<option value="${esc(c)}">${esc(c)} (${services.filter(s => s.cats.includes(c)).length})</option>`).join('');
+    const render = () => {
+      const terms = q.value.toLowerCase().split(/\s+/).filter(Boolean).map(searchAlternatives);
+      const cat = sel.value;
+      const list = services.filter(s => (!cat || s.cats.includes(cat)) && terms.every(alts => alts.some(t => wordStart(t).test(s.text))));
+      cards.innerHTML = list.map(resourceCard).join('');
+      empty.hidden = list.length > 0;
+      count.textContent = `${list.length} of ${services.length} services` + (cat ? ` for ${cat}` : '') + (terms.length ? ` matching "${q.value.trim()}"` : '');
+    };
+    // Show, scroll to and highlight a card, clearing filters that would hide it.
+    revealService = id => {
+      if (!services.some(s => s.id === id)) return;
+      if (!document.getElementById(id)) { q.value = ''; sel.value = ''; render(); }
+      const el = document.getElementById(id);
+      el.scrollIntoView({ block: 'start' });
+      el.focus({ preventScroll: true });
+      el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+    };
+    // The # link also copies the full address, for pasting into other pages.
+    cards.addEventListener('click', e => {
+      const a = e.target.closest('a.anchor');
+      if (!a) return;
+      const url = location.href.split('#')[0] + a.getAttribute('href');
+      try { navigator.clipboard.writeText(url).then(() => { a.dataset.copied = ''; setTimeout(() => delete a.dataset.copied, 1500); }, () => {}); } catch {}
+    });
+    q.addEventListener('input', render);
+    sel.addEventListener('change', render);
+    document.getElementById('help-clear').addEventListener('click', () => { q.value = ''; sel.value = ''; render(); q.focus(); });
+    render();
+  }
+
+  // ---------- Community context (not ECHO data) ----------
+  const ECHO_START = '2025-02';
+  const CRIME_CATS = ['All', 'Person', 'Property', 'Society'];
+
+  // data/crime-monthly-oak-park.csv, written by scripts/crime_monthly.py: complete months only.
+  function buildCrimeModel(rows) {
+    const by = new Map(CRIME_CATS.map(c => [c, new Map()]));
+    for (const r of rows) {
+      const n = parseCount(r.incidents);
+      if (n !== null && by.has(r.crime_against)) by.get(r.crime_against).set(r.month, n);
+    }
+    const months = [...by.get('All').keys()].sort();
+    return { months, by };
+  }
+
+  function drawCrimeMonthly(crime) {
+    const box = document.getElementById('crime-monthly');
+    box.innerHTML = '';
+    const W = box.clientWidth, narrow = W < 560;
+    const H = narrow ? 230 : 280;
+    const m = { l: 36, r: 6, t: 30, b: 40 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const all = crime.by.get('All');
+    const max = niceMax(Math.max(...all.values()), 100);
+    const n = crime.months.length, band = iw / n, bw = Math.max(2, band * 0.7);
+    const x = i => m.l + band * i + (band - bw) / 2;
+    const y = v => m.t + ih - (v / max) * ih;
+    const svg = el('svg', { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img',
+      'aria-label': `Bar chart of reported crime incidents per month in Oak Park, ${shortLabel(crime.months[0])} to ${shortLabel(crime.months[n - 1])}, with ECHO's February 2025 start marked. Window totals are in the table below.` }, box);
+    const axis = el('g', { class: 'axis' }, svg);
+    for (let v = 0; v <= max; v += 100) {
+      el('line', { class: v === 0 ? 'baseline' : 'gridline', x1: m.l, x2: W - m.r, y1: y(v), y2: y(v) }, axis);
+      const t = el('text', { x: m.l - 8, y: y(v) + 4, 'text-anchor': 'end' }, axis); t.textContent = v;
+    }
+    crime.months.forEach((mo, i) => {
+      const { y: yr, mo: mon } = ym(mo);
+      if (mon === 1) {
+        const t = el('text', { x: x(i), y: H - m.b + 18, 'text-anchor': 'start', style: 'font-weight:600' }, axis);
+        t.textContent = yr;
+      } else if (!narrow && mon === 7) {
+        const t = el('text', { x: x(i) + bw / 2, y: H - m.b + 18, 'text-anchor': 'middle' }, axis);
+        t.textContent = 'Jul';
+      }
+    });
+    const bars = crime.months.map((mo, i) => {
+      const v = all.get(mo), x0 = x(i), y0 = y(v), r = Math.min(3, bw / 2, y(0) - y0);
+      const d = `M${x0},${y(0)} V${y0 + r} Q${x0},${y0} ${x0 + r},${y0} H${x0 + bw - r} Q${x0 + bw},${y0} ${x0 + bw},${y0 + r} V${y(0)} Z`;
+      return el('path', { d, class: 'bar' }, svg);
+    });
+    // ECHO start marker, between January and February 2025.
+    const si = crime.months.indexOf(ECHO_START);
+    if (si > 0) {
+      const sx = m.l + band * si;
+      el('line', { class: 'echo-start', x1: sx, x2: sx, y1: m.t - 14, y2: y(0) }, svg);
+      const t = el('text', { class: 'annot', x: sx + 5, y: m.t - 18, 'text-anchor': 'start' }, svg);
+      t.textContent = 'ECHO begins';
+    }
+    const tip = makeTooltip(box);
+    crime.months.forEach((mo, i) => {
+      const hit = el('rect', { class: 'hit', x: m.l + band * i, y: m.t, width: band, height: ih, tabindex: 0,
+        'aria-label': `${longLabel(mo)}: ${all.get(mo)} reported incidents` }, svg);
+      const show = () => {
+        bars.forEach((b, j) => b.classList.toggle('dim', j !== i));
+        const rows = CRIME_CATS.slice(1).map(c => `<div class="tt-row"><span>Against ${c.toLowerCase()}</span><span>${crime.by.get(c).get(mo) ?? 0}</span></div>`).join('');
+        tip.show(`<div class="tt-h">${longLabel(mo)}: ${fmt(all.get(mo))} incidents</div>${rows}` +
+          '<div class="tt-note">An incident can involve more than one category.</div>', x(i) + bw / 2, y(all.get(mo)));
+      };
+      const hide = () => { bars.forEach(b => b.classList.remove('dim')); tip.hide(); };
+      hit.addEventListener('pointerenter', show); hit.addEventListener('pointerleave', hide);
+      hit.addEventListener('focus', show); hit.addEventListener('blur', hide);
+    });
+  }
+
+  // Same 12 months (March to February) each year, so every window covers the same seasons.
+  function drawCrimeTable(crime) {
+    const windows = [];
+    for (let y = 2022; ; y++) {
+      const ms = crime.months.filter(mo => mo >= `${y}-03` && mo <= `${y + 1}-02`);
+      if (ms.length < 12) break;
+      windows.push({ label: `Mar ${y} – Feb ${y + 1}`, start: `${y}-03`, ms });
+    }
+    const sum = (w, c) => w.ms.reduce((a, mo) => a + (crime.by.get(c).get(mo) || 0), 0);
+    let h = '<table><thead><tr><th scope="col">12 months</th>' + CRIME_CATS.map(c => `<th scope="col">${c === 'All' ? 'All incidents' : 'Against ' + c.toLowerCase()}</th>`).join('') + '</tr></thead><tbody>';
+    windows.forEach((w, i) => {
+      const echo = w.start > ECHO_START;
+      h += `<tr><td>${w.label}${echo ? '<span class="row-note">ECHO\'s first full year</span>' : ''}</td>` + CRIME_CATS.map(c => {
+        const v = sum(w, c);
+        if (!i) return `<td>${fmt(v)}</td>`;
+        const prev = sum(windows[i - 1], c), p = ((v - prev) / prev) * 100;
+        return `<td>${fmt(v)}<span class="chg">${p > 0 ? '+' : ''}${p.toFixed(1)}%</span></td>`;
+      }).join('') + '</tr>';
+    });
+    document.getElementById('crime-table').innerHTML = h + '</tbody></table>' +
+      '<p class="hidden-note" style="padding:8px 10px;margin:0">An incident counts in every category it involves, so the categories add up to more than all incidents. ECHO began in February 2025, the last month of the Mar 2024 – Feb 2025 window.</p>';
+  }
+
+  function drawCalls(rows) {
+    const list = (id, col) => {
+      const vals = rows.map(r => ({ year: r.year, n: parseCount(r[col]) })).filter(r => r.n !== null);
+      const max = Math.max(...vals.map(r => r.n));
+      document.getElementById(id).innerHTML = vals.map(r => barRow(r.year === '2025' ? '2025 · ECHO\'s first year' : r.year, r.n, max)).join('');
+    };
+    list('calls-police', 'police_calls');
+    list('calls-fire', 'fire_calls');
+  }
+
+  // ---------- Tabs ----------
+  function setupTabs(onShow) {
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    // A card link (#svc-…) belongs to the Find help tab.
+    const tabFor = h => tabs.find(t => '#' + t.dataset.hash === h)
+      || (h.startsWith(SERVICE_PREFIX) ? tabs.find(t => t.dataset.hash === 'help') : null);
+    const select = (tab, focus, keepHash) => {
+      tabs.forEach(t => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) tab.focus();
+      if (!keepHash) history.replaceState(null, '', '#' + tab.dataset.hash);
+      onShow(tab.dataset.hash);
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(t));
+      t.addEventListener('keydown', e => {
+        const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+        if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); }
+        if (e.key === 'Home') { e.preventDefault(); select(tabs[0], true); }
+        if (e.key === 'End') { e.preventDefault(); select(tabs[tabs.length - 1], true); }
+      });
+    });
+    const card = () => location.hash.startsWith(SERVICE_PREFIX) && revealService(location.hash.slice(1));
+    const start = tabFor(location.hash);
+    select(start || tabs[0], false, !!start);
+    card();
+    window.addEventListener('hashchange', () => {
+      const t = tabFor(location.hash);
+      if (t && t.getAttribute('aria-selected') !== 'true') select(t, false, true);
+      card();
+    });
+  }
+
+  // scripts/build_standalone.py embeds the CSVs here so the exported copy opens from disk.
+  async function loadText(url) {
+    const embedded = window.EMBEDDED_CSV;
+    if (embedded) {
+      if (url in embedded) return embedded[url];
+      throw new Error(`${url} was not included in this copy`);
+    }
+    const res = await fetch(url, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`${url} returned ${res.status}`);
+    return res.text();
+  }
+
+  async function main() {
+    let rows;
+    try {
+      rows = parseCSV(await loadText(ECHO_CSV));
+    } catch (e) {
+      const err = document.getElementById('error');
+      err.hidden = false;
+      err.innerHTML = location.protocol === 'file:'
+        ? 'This page reads its data from the repo, so it has to be served. From the repo folder, run <code>python3 -m http.server</code> and open <code>http://localhost:8000/site/</code>.'
+        : `The ECHO data file could not be loaded (${esc(e.message)}). Check that <code>data/echo-activity-oak-park.csv</code> is next to the <code>site</code> folder.`;
+      return;
+    }
+    let resources = null;
+    try {
+      resources = parseCSV(await loadText(RESOURCE_CSV));
+      const known = new Set(Object.keys(CATEGORY_INFO));
+      const unmatched = resources.filter(r => !known.has(r.echo_category));
+      if (unmatched.length) console.warn('Resource rows with an unrecognized echo_category:', unmatched.map(r => `${r.provider} (${r.echo_category})`));
+    } catch { resources = null; }
+    // Context data is optional: a failure only affects the Community context tab.
+    let crime = null;
+    try { crime = buildCrimeModel(parseCSV(await loadText(CRIME_CSV))); } catch { crime = null; }
+    let calls = null;
+    try { calls = parseCSV(await loadText(CALLS_CSV)); } catch { calls = null; }
+
+    const model = buildModel(rows);
+    if (model.unavailable) console.warn(`${model.unavailable} monthly cells were not numbers and were left out.`);
+    const ref = buildReferralModel(rows, model);
+    drawHeader(model);
+    drawTable(model);
+    drawSourceBars(ref);
+    drawSourceTable(ref, model);
+    drawMixTable(ref, model);
+    drawWeekday(rows, model);
+    setupFinder(resources, model);
+    if (crime) drawCrimeTable(crime);
+    else document.getElementById('crime-monthly').innerHTML = '<p class="empty">The crime summary could not be loaded. Run <code>python3 scripts/crime_monthly.py</code> from the repo folder.</p>';
+    if (calls) drawCalls(calls);
+
+    // SVG charts need a visible container to measure, so each tab draws when first shown and on resize.
+    const views = {
+      services: { box: 'monthly', w: -1,
+        init() { drawMonthly(model); this.redraw = drawGrid(model, resources); },
+        resize() { drawMonthly(model); this.redraw(); } },
+      referrals: { box: 'src-grid', w: -1,
+        init() { this.redraw = drawSourceGrid(ref, model); },
+        resize() { this.redraw(); } },
+      // HTML only, drawn once above; nothing to measure.
+      weekday: { box: 'wd-bars', w: -1, init() { this.redraw = () => {}; }, resize() {} },
+      help: { box: 'help-cards', w: -1, init() { this.redraw = () => {}; }, resize() {} },
+      context: { box: 'crime-monthly', w: -1,
+        init() { this.redraw = crime ? () => drawCrimeMonthly(crime) : () => {}; this.redraw(); },
+        resize() { this.redraw(); } },
+    };
+    let current = null;
+    const show = key => {
+      current = views[key];
+      const w = document.getElementById(current.box).clientWidth;
+      if (!current.redraw) current.init(); else if (w !== current.w) current.resize();
+      current.w = w;
+    };
+    setupTabs(show);
+
+    let raf = 0;
+    new ResizeObserver(() => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        if (!current || !current.redraw) return;
+        const w = document.getElementById(current.box).clientWidth;
+        if (w === current.w) return;
+        current.w = w; current.resize();
+      });
+    }).observe(document.body);
+  }
+  main();
+})();
+</script>
+</body>
+</html>

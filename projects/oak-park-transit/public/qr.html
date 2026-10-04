@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oak Park Transit: scan to open</title>
+    <style>
+      :root { color-scheme: light; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #f4f2ec;
+        color: #1a1d22;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        text-align: center;
+      }
+      main { padding: 24px; }
+      h1 { margin: 0 0 8px; font-size: clamp(1.75rem, 4vw, 3rem); letter-spacing: -0.02em; }
+      p { margin: 0 0 24px; font-size: clamp(1rem, 2vw, 1.5rem); color: #5b616b; }
+      img {
+        width: min(70vh, 80vw);
+        height: auto;
+        padding: 16px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 1px 2px rgba(20, 24, 31, 0.06), 0 8px 28px rgba(20, 24, 31, 0.12);
+      }
+      a { display: block; margin-top: 20px; font-size: clamp(1rem, 2vw, 1.4rem); color: #1d4e89; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Oak Park Transit</h1>
+      <p>Scan to see live buses and trains on your phone</p>
+      <img src="qr.svg" alt="QR code linking to captainchemist.github.io/oak-park-transit-tracker" />
+      <a href="./">captainchemist.github.io/oak-park-transit-tracker</a>
+    </main>
+  </body>
+</html>

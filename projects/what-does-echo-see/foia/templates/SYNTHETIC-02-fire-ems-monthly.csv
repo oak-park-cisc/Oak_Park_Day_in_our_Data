@@ -1,0 +1,73 @@
+synthetic,month,incident_type,transported,responses
+yes,2025-01,Lift assist / fall,yes,30
+yes,2025-01,Lift assist / fall,no,30
+yes,2025-01,Psychiatric / behavioral,yes,6
+yes,2025-01,Psychiatric / behavioral,no,6
+yes,2025-01,Overdose / poisoning,yes,suppressed
+yes,2025-01,Overdose / poisoning,no,3
+yes,2025-02,Lift assist / fall,yes,31
+yes,2025-02,Lift assist / fall,no,29
+yes,2025-02,Psychiatric / behavioral,yes,7
+yes,2025-02,Psychiatric / behavioral,no,5
+yes,2025-02,Overdose / poisoning,yes,suppressed
+yes,2025-02,Overdose / poisoning,no,2
+yes,2025-03,Lift assist / fall,yes,32
+yes,2025-03,Lift assist / fall,no,28
+yes,2025-03,Psychiatric / behavioral,yes,8
+yes,2025-03,Psychiatric / behavioral,no,4
+yes,2025-03,Overdose / poisoning,yes,5
+yes,2025-03,Overdose / poisoning,no,1
+yes,2025-04,Lift assist / fall,yes,30
+yes,2025-04,Lift assist / fall,no,30
+yes,2025-04,Psychiatric / behavioral,yes,6
+yes,2025-04,Psychiatric / behavioral,no,6
+yes,2025-04,Overdose / poisoning,yes,suppressed
+yes,2025-04,Overdose / poisoning,no,3
+yes,2025-05,Lift assist / fall,yes,31
+yes,2025-05,Lift assist / fall,no,29
+yes,2025-05,Psychiatric / behavioral,yes,7
+yes,2025-05,Psychiatric / behavioral,no,5
+yes,2025-05,Overdose / poisoning,yes,suppressed
+yes,2025-05,Overdose / poisoning,no,2
+yes,2025-06,Lift assist / fall,yes,32
+yes,2025-06,Lift assist / fall,no,28
+yes,2025-06,Psychiatric / behavioral,yes,8
+yes,2025-06,Psychiatric / behavioral,no,4
+yes,2025-06,Overdose / poisoning,yes,5
+yes,2025-06,Overdose / poisoning,no,1
+yes,2025-07,Lift assist / fall,yes,30
+yes,2025-07,Lift assist / fall,no,30
+yes,2025-07,Psychiatric / behavioral,yes,6
+yes,2025-07,Psychiatric / behavioral,no,6
+yes,2025-07,Overdose / poisoning,yes,suppressed
+yes,2025-07,Overdose / poisoning,no,3
+yes,2025-08,Lift assist / fall,yes,31
+yes,2025-08,Lift assist / fall,no,29
+yes,2025-08,Psychiatric / behavioral,yes,7
+yes,2025-08,Psychiatric / behavioral,no,5
+yes,2025-08,Overdose / poisoning,yes,suppressed
+yes,2025-08,Overdose / poisoning,no,2
+yes,2025-09,Lift assist / fall,yes,32
+yes,2025-09,Lift assist / fall,no,28
+yes,2025-09,Psychiatric / behavioral,yes,8
+yes,2025-09,Psychiatric / behavioral,no,4
+yes,2025-09,Overdose / poisoning,yes,5
+yes,2025-09,Overdose / poisoning,no,1
+yes,2025-10,Lift assist / fall,yes,30
+yes,2025-10,Lift assist / fall,no,30
+yes,2025-10,Psychiatric / behavioral,yes,6
+yes,2025-10,Psychiatric / behavioral,no,6
+yes,2025-10,Overdose / poisoning,yes,suppressed
+yes,2025-10,Overdose / poisoning,no,3
+yes,2025-11,Lift assist / fall,yes,31
+yes,2025-11,Lift assist / fall,no,29
+yes,2025-11,Psychiatric / behavioral,yes,7
+yes,2025-11,Psychiatric / behavioral,no,5
+yes,2025-11,Overdose / poisoning,yes,suppressed
+yes,2025-11,Overdose / poisoning,no,2
+yes,2025-12,Lift assist / fall,yes,32
+yes,2025-12,Lift assist / fall,no,28
+yes,2025-12,Psychiatric / behavioral,yes,8
+yes,2025-12,Psychiatric / behavioral,no,4
+yes,2025-12,Overdose / poisoning,yes,5
+yes,2025-12,Overdose / poisoning,no,1

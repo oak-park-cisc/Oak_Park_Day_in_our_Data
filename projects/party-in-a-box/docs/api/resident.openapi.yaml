@@ -1,0 +1,863 @@
+openapi: 3.1.0
+info:
+  title: Party in a Box — Resident API
+  version: 0.1.0
+  summary: Public and resident (organizer) endpoints behind the Resident screens.
+  description: |
+    Contract for the Resident screens on the Party in a Box Screens canvas
+    (Info, New event, Petition, My events) and the public petition sign page.
+    Derived from `docs/backend-spec.md` §2, §3.1–3.2, §4 and §7. Vendor and Village
+    endpoints are out of scope for this file.
+
+    Conventions (spec §3):
+    - Dates are local `YYYY-MM-DD` strings in America/Chicago (never UTC timestamps).
+      Timestamps are RFC 3339 UTC.
+    - Every mutation accepts an `Idempotency-Key` header.
+    - Errors use the `Error` shape: `{code, message, reasons[]}`.
+    - The browser may preview rule results with the shared `rules` library, but the
+      server's results are authoritative.
+
+    Privacy (spec §7): public petition responses never include signer names. Only the
+    organizer of a request sees its signer list. No endpoint here exposes another
+    resident's contact details.
+servers:
+  - url: https://api.example.org/v1
+    description: Placeholder until hosting is chosen
+tags:
+  - name: Public
+    description: No account needed.
+  - name: Requests
+    description: Organizer's block party requests (owner only).
+  - name: Petition
+    description: Petition link, signatures and the submit gate.
+  - name: Messages
+    description: Threads with the Village and with vendors.
+
+paths:
+  /rules:
+    get:
+      tags: [Public]
+      operationId: getRules
+      security: []
+      summary: Block party rules for a year
+      description: Used by Info and New event. `confirmed_by_village` is false until Public Works confirms that year's rules.
+      parameters:
+        - name: year
+          in: query
+          required: false
+          schema: { type: integer, example: 2027 }
+      responses:
+        '200':
+          description: Rules
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Rules' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /blocks/lookup:
+    get:
+      tags: [Public]
+      operationId: lookupBlock
+      security: []
+      summary: Find the block for an address (findBlock)
+      description: New event, "Check block". Ineligible blocks include the nearest eligible block.
+      parameters:
+        - name: address
+          in: query
+          required: true
+          schema: { type: string, maxLength: 120, example: 1100 S Cuyler Ave }
+      responses:
+        '200':
+          description: Block found
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [block, number]
+                properties:
+                  block: { $ref: '#/components/schemas/BlockSummary' }
+                  number: { type: integer, example: 1100 }
+        '404':
+          description: Address not found in Oak Park
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+              example: { code: not_found, message: "We couldn't find that address in Oak Park.", reasons: [] }
+
+  /blocks/{blockId}:
+    get:
+      tags: [Public]
+      operationId: getBlock
+      security: []
+      summary: Block packet with geometry
+      parameters:
+        - $ref: '#/components/parameters/BlockId'
+      responses:
+        '200':
+          description: Block
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Block' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /checks/dates:
+    post:
+      tags: [Public]
+      operationId: checkDates
+      security: []
+      summary: Live date checks for New event
+      description: Petition due date, season check and the block's yearly count. The same logic runs client-side for instant feedback.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [block_id, date_start, date_end]
+              properties:
+                block_id: { $ref: '#/components/schemas/BlockIdValue' }
+                date_start: { $ref: '#/components/schemas/LocalDate' }
+                date_end: { $ref: '#/components/schemas/LocalDate' }
+      responses:
+        '200':
+          description: Check results
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/DateChecks' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /petitions/{token}:
+    get:
+      tags: [Public, Petition]
+      operationId: getPetition
+      security: []
+      summary: What neighbors see on the petition page
+      description: No signer names or contact details are ever returned here.
+      parameters:
+        - $ref: '#/components/parameters/PetitionToken'
+      responses:
+        '200':
+          description: Petition
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/PublicPetition' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '410':
+          description: Petition closed (request submitted, withdrawn, rejected or cancelled)
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+
+  /petitions/{token}/signatures:
+    post:
+      tags: [Public, Petition]
+      operationId: signPetition
+      security: []
+      summary: Sign a petition (no account)
+      description: |
+        Counts only if the house number is on the block (spec §4.2). A second signature
+        from the same address is stored as `duplicate_address` and not counted again.
+      parameters:
+        - $ref: '#/components/parameters/PetitionToken'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, house_number, consent, captcha]
+              properties:
+                name: { type: string, minLength: 1, maxLength: 80 }
+                house_number: { type: string, pattern: '^[0-9]{1,5}( ?1/2)?$', example: '1105' }
+                email: { type: string, format: email, description: Optional in MVP; used for verification in Phase 2. }
+                consent: { type: boolean, const: true }
+                captcha: { type: string, description: Captcha token. }
+      responses:
+        '201':
+          description: Signature recorded
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [state, distinct_count, needed]
+                properties:
+                  state: { $ref: '#/components/schemas/SignatureState' }
+                  distinct_count: { type: integer, example: 10 }
+                  needed: { type: integer, example: 10 }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '410':
+          description: Petition closed
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+        '429': { $ref: '#/components/responses/RateLimited' }
+
+  /requests:
+    post:
+      tags: [Requests]
+      operationId: createRequest
+      summary: Create a draft request (New event, "Save draft")
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RequestInput' }
+      responses:
+        '201':
+          description: Draft created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Request' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '422':
+          description: Block not eligible, dates out of season, or the block already has 2 events that year
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+              example: { code: block_ineligible, message: This block can't be closed., reasons: ["East/west street: the Village doesn't close these."] }
+
+  /requests/{requestId}:
+    get:
+      tags: [Requests]
+      operationId: getRequest
+      summary: One request (Petition screen header, My events card)
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: Request
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RequestCard' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      tags: [Requests]
+      operationId: updateRequest
+      summary: Edit a request (draft or collecting only)
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RequestPatch' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Request' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /requests/{requestId}/petition:
+    post:
+      tags: [Petition]
+      operationId: startPetition
+      summary: Start collecting signatures (New event → Petition)
+      description: Moves the request from `draft` to `collecting` and returns the share link. Calling it again returns the same link.
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Petition link
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [petition_url, petition_due, status]
+                properties:
+                  petition_url: { type: string, format: uri, example: 'https://dsvs12.github.io/block-party-in-a-box/#/petition/3f9c2a7e5b1d4c8a9e0f6b2d7a1c4e8f' }
+                  petition_due: { $ref: '#/components/schemas/LocalDate' }
+                  status: { $ref: '#/components/schemas/RequestStatus' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+
+  /requests/{requestId}/signatures:
+    get:
+      tags: [Petition]
+      operationId: listSignatures
+      summary: Signer list for the organizer (Petition, "Who has signed")
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: Signatures
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [distinct_count, needed, petition_due, signatures]
+                properties:
+                  distinct_count: { type: integer, example: 9 }
+                  needed: { type: integer, example: 10 }
+                  petition_due: { $ref: '#/components/schemas/LocalDate' }
+                  signatures:
+                    type: array
+                    items: { $ref: '#/components/schemas/SignatureRow' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /requests/{requestId}/signatures/{signatureId}/strike:
+    post:
+      tags: [Petition]
+      operationId: strikeSignature
+      summary: Organizer removes an obvious junk signature (audit-logged)
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - name: signatureId
+          in: path
+          required: true
+          schema: { type: string }
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason: { type: string, maxLength: 200 }
+      responses:
+        '200':
+          description: Struck
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SignatureRow' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /requests/{requestId}/submit:
+    post:
+      tags: [Petition]
+      operationId: submitRequest
+      summary: Submit to Public Works (Petition, "Submit permit request")
+      description: Allowed only from `collecting`, with at least 10 distinct addresses on the block and before the petition due date. Sets `submitted_at`, which fixes first-come order.
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Submitted
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Request' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422':
+          description: Gate failed
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+              example: { code: submit_blocked, message: "Can't submit yet.", reasons: ['Needs 1 more address (9 of 10).'] }
+
+  /requests/{requestId}/withdraw:
+    post:
+      tags: [Requests]
+      operationId: withdrawRequest
+      summary: Withdraw before a decision (draft, collecting or submitted)
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Withdrawn
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Request' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409':
+          description: Already decided; use a change request to cancel an approved event
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+
+  /requests/{requestId}/change-requests:
+    post:
+      tags: [Requests]
+      operationId: createChangeRequest
+      summary: Ask Public Works to reschedule or cancel an approved event (My events)
+      description: The request's status and date don't change until a reviewer resolves it. Only one open change request at a time.
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ChangeRequestInput' }
+      responses:
+        '201':
+          description: Change request filed
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ChangeRequest' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /me/requests:
+    get:
+      tags: [Requests]
+      operationId: listMyRequests
+      summary: My events cards with stepper and matched vendors
+      security: [{ residentAuth: [] }]
+      responses:
+        '200':
+          description: Cards, newest first
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [requests]
+                properties:
+                  requests:
+                    type: array
+                    items: { $ref: '#/components/schemas/RequestCard' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+
+  /threads/{threadId}/messages:
+    get:
+      tags: [Messages]
+      operationId: listMessages
+      summary: Messages in a thread the caller belongs to
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/ThreadId'
+      responses:
+        '200':
+          description: Messages, oldest first
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [thread, messages]
+                properties:
+                  thread: { $ref: '#/components/schemas/Thread' }
+                  messages:
+                    type: array
+                    items: { $ref: '#/components/schemas/Message' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    post:
+      tags: [Messages]
+      operationId: postMessage
+      summary: Send a message
+      security: [{ residentAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/ThreadId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [body]
+              properties:
+                body: { type: string, minLength: 1, maxLength: 2000 }
+      responses:
+        '201':
+          description: Sent
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Message' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+components:
+  securitySchemes:
+    residentAuth:
+      type: http
+      scheme: bearer
+      description: Session token from passwordless email sign-in (magic link). Issued by the auth provider; not part of this contract.
+
+  parameters:
+    BlockId:
+      name: blockId
+      in: path
+      required: true
+      description: URL-encoded block id, e.g. `S%20CUYLER%20AVE%7C1100`.
+      schema: { $ref: '#/components/schemas/BlockIdValue' }
+    RequestId:
+      name: requestId
+      in: path
+      required: true
+      schema: { type: string, example: r_01J9Z6Q2K8 }
+    ThreadId:
+      name: threadId
+      in: path
+      required: true
+      schema: { type: string }
+    PetitionToken:
+      name: token
+      in: path
+      required: true
+      description: Unguessable 128-bit token (32 hex characters).
+      schema: { type: string, pattern: '^[0-9a-f]{32}$' }
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: false
+      schema: { type: string, maxLength: 64 }
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: The request's `version`; a stale version returns 409.
+      schema: { type: string }
+
+  responses:
+    Unauthorized:
+      description: Not signed in
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Forbidden:
+      description: Not the organizer of this request (or not in this thread)
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Conflict:
+      description: Wrong status for this action, an open change request already exists, or a stale `If-Match` version
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Unprocessable:
+      description: Validation or rule check failed; `reasons` lists each one
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    RateLimited:
+      description: Too many requests
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+  schemas:
+    Error:
+      type: object
+      required: [code, message, reasons]
+      properties:
+        code: { type: string, example: submit_blocked }
+        message: { type: string }
+        reasons:
+          type: array
+          items: { type: string }
+
+    LocalDate:
+      type: string
+      format: date
+      description: Local date in America/Chicago, `YYYY-MM-DD`.
+      example: '2027-06-12'
+
+    BlockIdValue:
+      type: string
+      description: '`<street name>|<hundred>`'
+      example: S CUYLER AVE|1100
+
+    Rules:
+      type: object
+      required: [rules_year, confirmed_by_village, season, hours, petition_min_addresses, petition_lead_days, max_events_per_block_per_year, max_events_per_weekend, contact, checklist]
+      properties:
+        rules_year: { type: integer, example: 2026 }
+        confirmed_by_village: { type: boolean }
+        source_url: { type: string, format: uri }
+        season:
+          type: object
+          properties:
+            start_mmdd: { type: string, example: '04-04' }
+            end_mmdd: { type: string, example: '10-31' }
+        hours:
+          type: object
+          properties:
+            start: { type: string, example: '09:00' }
+            end: { type: string, example: '23:00' }
+        petition_min_addresses: { type: integer, example: 10 }
+        petition_lead_days: { type: integer, example: 14 }
+        max_events_per_block_per_year: { type: integer, example: 2 }
+        max_events_per_weekend: { type: integer, example: 30 }
+        contact:
+          type: object
+          properties:
+            email: { type: string, format: email }
+            phone: { type: string }
+        checklist:
+          type: array
+          items: { type: string }
+
+    BlockSummary:
+      type: object
+      required: [id, label, eligible, zip]
+      properties:
+        id: { $ref: '#/components/schemas/BlockIdValue' }
+        label: { type: string, example: 1100 S Cuyler Ave }
+        eligible: { type: boolean }
+        reason: { type: string, description: Empty when eligible. }
+        nearest_eligible:
+          oneOf:
+            - type: 'null'
+            - type: object
+              required: [id, label, meters]
+              properties:
+                id: { $ref: '#/components/schemas/BlockIdValue' }
+                label: { type: string, example: 1100 S Cuyler Ave }
+                meters: { type: integer, example: 54 }
+        zip: { type: ['string', 'null'], example: '60304', description: 'Null until the block data has zip codes (backend-spec §5).' }
+        tree_count: { type: integer, example: 55 }
+        big_tree_count: { type: integer, example: 18 }
+        parking:
+          type: array
+          items: { type: string }
+        overnight_ban: { type: boolean }
+
+    Block:
+      allOf:
+        - $ref: '#/components/schemas/BlockSummary'
+        - type: object
+          properties:
+            centroid:
+              type: array
+              description: '[lat, lon]'
+              items: { type: number }
+              minItems: 2
+              maxItems: 2
+            lines:
+              type: array
+              description: Lines of [lat, lon] points.
+              items:
+                type: array
+                items:
+                  type: array
+                  items: { type: number }
+            data_version: { type: string }
+
+    DateChecks:
+      type: object
+      required: [petition_due, due_passed, season, block_year_count, max_per_block_per_year]
+      properties:
+        petition_due: { $ref: '#/components/schemas/LocalDate' }
+        due_passed: { type: boolean }
+        season:
+          type: object
+          required: [ok, problems]
+          properties:
+            ok: { type: boolean }
+            problems:
+              type: array
+              items: { type: string }
+              example: ['2027-11-02 is outside the Apr 4–Oct 31 season']
+        block_year_count: { type: integer, example: 0 }
+        max_per_block_per_year: { type: integer, example: 2 }
+
+    Services:
+      type: object
+      required: [barricades, green_kit]
+      properties:
+        barricades: { type: boolean }
+        green_kit: { type: boolean }
+
+    RequestInput:
+      type: object
+      required: [block_id, date_start, date_end, guests, services]
+      properties:
+        block_id: { $ref: '#/components/schemas/BlockIdValue' }
+        date_start: { $ref: '#/components/schemas/LocalDate' }
+        date_end: { $ref: '#/components/schemas/LocalDate' }
+        guests: { type: integer, minimum: 1, maximum: 2000 }
+        services: { $ref: '#/components/schemas/Services' }
+
+    RequestPatch:
+      type: object
+      minProperties: 1
+      properties:
+        date_start: { $ref: '#/components/schemas/LocalDate' }
+        date_end: { $ref: '#/components/schemas/LocalDate' }
+        guests: { type: integer, minimum: 1, maximum: 2000 }
+        services: { $ref: '#/components/schemas/Services' }
+
+    RequestStatus:
+      type: string
+      enum: [draft, collecting, submitted, approved, rejected, withdrawn, cancelled, completed]
+
+    Request:
+      type: object
+      required: [id, block_id, block_label, kind, date_start, date_end, guests, services, status, version, created_at]
+      properties:
+        id: { type: string }
+        block_id: { $ref: '#/components/schemas/BlockIdValue' }
+        block_label: { type: string, example: 1100 S Cuyler Ave }
+        kind: { type: string, const: party }
+        date_start: { $ref: '#/components/schemas/LocalDate' }
+        date_end: { $ref: '#/components/schemas/LocalDate' }
+        guests: { type: integer }
+        services: { $ref: '#/components/schemas/Services' }
+        status: { $ref: '#/components/schemas/RequestStatus' }
+        petition_due: { $ref: '#/components/schemas/LocalDate' }
+        petition_url: { type: string, format: uri, description: Present from `collecting` on. }
+        approved_date: { oneOf: [{ type: 'null' }, { $ref: '#/components/schemas/LocalDate' }] }
+        barricade_date: { oneOf: [{ type: 'null' }, { $ref: '#/components/schemas/LocalDate' }], description: Derived; the day before the approved date. }
+        reject_reason: { type: ['string', 'null'] }
+        submitted_at: { type: ['string', 'null'], format: date-time }
+        decided_at: { type: ['string', 'null'], format: date-time }
+        rules_year: { type: integer }
+        version: { type: string, description: Optimistic-lock version for `If-Match`. }
+        created_at: { type: string, format: date-time }
+
+    Stepper:
+      type: object
+      description: My events progress (spec §2.2).
+      required: [permit_filled, petition, submitted, reviewed, approved, vendor_matches]
+      properties:
+        permit_filled: { type: boolean }
+        petition: { type: boolean, description: '≥ 10 distinct addresses or an attested paper petition.' }
+        submitted: { type: boolean }
+        reviewed: { type: boolean }
+        approved: { type: boolean }
+        vendor_matches: { type: boolean, description: At least one vendor accepted. }
+
+    VendorOnRequest:
+      type: object
+      required: [name, service, price_usd, state]
+      properties:
+        name: { type: string, example: Sample Ice Cream Co. }
+        service: { type: string, example: ice_cream }
+        includes: { type: string }
+        max_guests: { type: integer }
+        price_usd: { type: integer, example: 300 }
+        state: { type: string, enum: [Coming, Waiting for vendor] }
+        thread_id: { type: ['string', 'null'], description: Organizer↔vendor thread once the vendor accepts. }
+
+    RequestCard:
+      allOf:
+        - $ref: '#/components/schemas/Request'
+        - type: object
+          required: [stepper, distinct_count, block_year_used, vendors]
+          properties:
+            stepper: { $ref: '#/components/schemas/Stepper' }
+            distinct_count: { type: integer, example: 10 }
+            block_year_used: { type: integer, description: 'Events on this block in the event year, including this one.', example: 1 }
+            village_thread_id: { type: string }
+            open_change_request: { oneOf: [{ type: 'null' }, { $ref: '#/components/schemas/ChangeRequest' }] }
+            vendors:
+              type: array
+              description: Only after approval. Declined, withdrawn and void matches are hidden.
+              items: { $ref: '#/components/schemas/VendorOnRequest' }
+
+    PublicPetition:
+      type: object
+      required: [block_label, date_start, date_end, hours, organizer_display_name, distinct_count, needed, open]
+      properties:
+        block_label: { type: string, example: 1100 S Cuyler Ave }
+        date_start: { $ref: '#/components/schemas/LocalDate' }
+        date_end: { $ref: '#/components/schemas/LocalDate' }
+        hours: { type: string, example: 9 a.m. – 11 p.m. }
+        barricades: { type: boolean }
+        organizer_display_name: { type: string, example: Sample Organizer }
+        distinct_count: { type: integer, example: 9 }
+        needed: { type: integer, example: 10 }
+        open: { type: boolean }
+
+    SignatureState:
+      type: string
+      enum: [counted, duplicate_address, off_block, struck]
+
+    SignatureRow:
+      type: object
+      description: Organizer view only.
+      required: [id, name, address, signed_at, counts, state]
+      properties:
+        id: { type: string }
+        name: { type: string, example: Sample Neighbor 1 }
+        address: { type: string, example: 1101 S Cuyler Ave }
+        signed_at: { type: string, format: date-time }
+        counts: { type: boolean }
+        state: { $ref: '#/components/schemas/SignatureState' }
+
+    ChangeRequestInput:
+      type: object
+      required: [type, message]
+      properties:
+        type: { type: string, enum: [reschedule, cancel] }
+        proposed_start: { $ref: '#/components/schemas/LocalDate' }
+        proposed_end: { $ref: '#/components/schemas/LocalDate' }
+        message: { type: string, minLength: 1, maxLength: 1000 }
+      description: '`proposed_start` and `proposed_end` are required when `type` is `reschedule`.'
+      if:
+        properties: { type: { const: reschedule } }
+      then:
+        required: [proposed_start, proposed_end]
+
+    ChangeRequest:
+      type: object
+      required: [id, request_id, type, status, message, created_at]
+      properties:
+        id: { type: string }
+        request_id: { type: string }
+        type: { type: string, enum: [reschedule, cancel] }
+        proposed_start: { $ref: '#/components/schemas/LocalDate' }
+        proposed_end: { $ref: '#/components/schemas/LocalDate' }
+        message: { type: string }
+        status: { type: string, enum: [open, accepted, declined] }
+        new_date: { oneOf: [{ type: 'null' }, { $ref: '#/components/schemas/LocalDate' }] }
+        created_at: { type: string, format: date-time }
+        resolved_at: { type: ['string', 'null'], format: date-time }
+
+    Thread:
+      type: object
+      required: [id, kind, request_id]
+      properties:
+        id: { type: string }
+        kind: { type: string, enum: [request, job], description: '`request` = organizer↔Village; `job` = organizer↔vendor.' }
+        request_id: { type: string }
+        match_id: { type: ['string', 'null'] }
+
+    Message:
+      type: object
+      required: [id, thread_id, author_role, body, created_at]
+      properties:
+        id: { type: string }
+        thread_id: { type: string }
+        author_role: { type: string, enum: [resident, vendor, village] }
+        author_display_name: { type: string }
+        body: { type: string }
+        created_at: { type: string, format: date-time }

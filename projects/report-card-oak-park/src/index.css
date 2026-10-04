@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--color-page: #f9f9f7;
+	--color-card: #fcfcfb;
+	--color-ink: #0b0b0b;
+	--color-ink-2: #52514e;
+	--color-muted: #6f6e69;
+	--color-line: #e1e0d9;
+	--color-accent: #256abf;
+	--color-page-dark: #0d0d0d;
+	--color-card-dark: #1a1a19;
+	--color-ink-dark: #ffffff;
+	--color-ink-2-dark: #c3c2b7;
+	--color-muted-dark: #9b9a93;
+	--color-line-dark: #2c2c2a;
+	--color-accent-dark: #3987e5;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+	:focus-visible {
+		outline-color: var(--color-accent-dark);
+	}
+}
+
+/* Manual reduce-motion switch: kill all transitions and animations app-wide.
+   The !important flags are intentional; noImportantStyles is disabled in biome.json. */
+.force-reduced-motion *,
+.force-reduced-motion *::before,
+.force-reduced-motion *::after {
+	animation: none !important;
+	transition: none !important;
+	scroll-behavior: auto !important;
+}
+
+body {
+	@apply bg-page text-ink antialiased dark:bg-page-dark dark:text-ink-dark;
+	min-height: 100dvh;
+}
+
+.tabular {
+	font-variant-numeric: tabular-nums;
+}
+
+/* Recharts focus outline on the svg wrapper is noisy; keep focus rings on our own controls. */
+.recharts-wrapper:focus,
+.recharts-surface:focus {
+	outline: none;
+}
+
+.scrollbar-none {
+	scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+	display: none;
+}
+
+/* Keyboard focus ring for scrollable table regions. */
+section[tabindex]:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
+}
+
+/* Prairie-style leaded-glass band, a nod to Frank Lloyd Wright's Oak Park. */
+.prairie-band {
+	height: 8px;
+	border-radius: 9999px;
+	background-image:
+		repeating-linear-gradient(
+			90deg,
+			var(--color-accent) 0 28px,
+			transparent 28px 44px,
+			var(--color-accent) 44px 60px,
+			transparent 60px 96px,
+			var(--color-accent) 96px 104px,
+			transparent 104px 128px
+		),
+		repeating-linear-gradient(90deg, transparent 0 12px, var(--color-accent) 12px 18px, transparent 18px 72px);
+	background-blend-mode: normal;
+	opacity: 0.5;
+}
+
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(6px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.fade-up {
+	animation: fade-up 0.35s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fade-up {
+		animation: none;
+	}
+}

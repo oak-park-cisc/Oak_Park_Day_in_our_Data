@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+:root {
+	color-scheme: light dark;
+	font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.leaflet-container {
+	font-family: inherit;
+}
+
+.leaflet-tooltip.zone-label {
+	background: rgb(255 255 255 / 0.9);
+	border: 0;
+	box-shadow: none;
+	padding: 1px 5px;
+	font-weight: 600;
+	color: #0b0b0b;
+}
+.leaflet-tooltip.zone-label::before {
+	display: none;
+}
+
+.near-mode .leaflet-container {
+	cursor: crosshair;
+}

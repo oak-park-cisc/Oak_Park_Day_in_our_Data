@@ -1,0 +1,37 @@
+{
+  "checkedOn": "2026-10-03",
+  "note": "No 2026 fare increases: the state transit law (effective June 1, 2026) bars fare hikes for its first year.",
+  "fares": {
+    "CTA:bus": {
+      "fare": "$2.25",
+      "payWith": "Ventra or contactless card/phone",
+      "cash": "$2.50 cash, no transfers",
+      "reduced": "$1.10 reduced fare, $0.75 students",
+      "transfers": "Up to 2 more rides within 2 hours free with Ventra or contactless",
+      "source": "https://www.transitchicago.com/fares/"
+    },
+    "CTA:train": {
+      "fare": "$2.50",
+      "payWith": "Ventra or contactless card/phone",
+      "reduced": "$1.25 reduced fare, $0.75 students",
+      "transfers": "Up to 2 more rides within 2 hours free with Ventra or contactless",
+      "source": "https://www.transitchicago.com/fares/"
+    },
+    "Pace:bus": {
+      "fare": "$2.00",
+      "payWith": "Ventra or contactless card/phone",
+      "cash": "$2.25 cash, no transfers",
+      "reduced": "$1.00 reduced fare ($1.10 cash)",
+      "transfers": "Up to 2 free transfers within 2 hours with Ventra",
+      "free": "Children under 7 (up to two per paying adult) and ADA paratransit-certified riders ride free",
+      "source": "https://www.pacebus.com/fares"
+    },
+    "Metra:train": {
+      "fare": "$3.75",
+      "payWith": "one-way from Oak Park (Zone 2) to downtown or other Zone 1–2 stations; Ventra app or ticket",
+      "pass": "$7.50 Day Pass",
+      "reduced": "Reduced fares for seniors, students and riders with disabilities: see Metra",
+      "source": "https://www.metra.com/tickets-and-fares"
+    }
+  }
+}

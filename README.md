@@ -8,6 +8,8 @@ Oak Park residents are invited to Day in Our Data, a one day civic hackathon spo
 
 Try the apps teams built: **[oak-park-cisc.github.io/Oak_Park_Day_in_our_Data](https://oak-park-cisc.github.io/Oak_Park_Day_in_our_Data/)**
 
+Their code is in [projects/](projects/).
+
 ## When, where, register
 
 - **When:** Saturday, October 3, 2026, 11 a.m. to 3 p.m.

@@ -1,0 +1,475 @@
+openapi: 3.1.0
+info:
+  title: Party in a Box — Vendor API
+  version: 0.1.0
+  summary: Vendor endpoints behind the Vendor screens (Home, Matched jobs, My jobs).
+  description: |
+    Contract for the Vendor screens on the Party in a Box Screens canvas.
+    Derived from `docs/backend-spec.md` §2.1, §2.3, §3.3, §4.6 and §7. Resident,
+    public and Village endpoints are out of scope for this file.
+
+    Conventions (spec §3):
+    - Dates are local `YYYY-MM-DD` strings in America/Chicago (never UTC timestamps).
+      Timestamps are RFC 3339 UTC.
+    - Every mutation accepts an `Idempotency-Key` header.
+    - Errors use the `Error` shape: `{code, message, reasons[]}`.
+    - Vendor accounts are created by the city. Mutations require the account status
+      to be `approved`; otherwise they return 403.
+
+    Privacy (spec §7): vendors never see the organizer's email or phone, or any house
+    number. A job shows the block label (street and hundred block) and zip only. The
+    organizer's display name appears only on accepted jobs.
+servers:
+  - url: https://api.example.org/v1
+    description: Placeholder until hosting is chosen
+tags:
+  - name: Account
+    description: Vendor account and standing offer.
+  - name: Matches
+    description: Proposed jobs matched to the offer (Matched jobs screen).
+  - name: Jobs
+    description: Accepted jobs (My jobs screen).
+  - name: Messages
+    description: Job threads with the organizer.
+
+paths:
+  /vendor/me:
+    get:
+      tags: [Account]
+      operationId: getVendorMe
+      summary: Account and approval status (Home, "Account approved by the city")
+      security: [{ vendorAuth: [] }]
+      responses:
+        '200':
+          description: Vendor account
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/VendorMe' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+
+  /vendor/offer:
+    get:
+      tags: [Account]
+      operationId: getVendorOffer
+      summary: Standing offer (Home)
+      security: [{ vendorAuth: [] }]
+      responses:
+        '200':
+          description: Offer
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Offer' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    put:
+      tags: [Account]
+      operationId: putVendorOffer
+      summary: Save the standing offer (Home)
+      description: Saving triggers re-matching against approved requests (spec §4.6). Allowed only when the account status is `approved`; otherwise 403.
+      security: [{ vendorAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/OfferInput' }
+      responses:
+        '200':
+          description: Offer saved
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Offer' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /vendor/summary:
+    get:
+      tags: [Account]
+      operationId: getVendorSummary
+      summary: '"Right now" counts (Home)'
+      security: [{ vendorAuth: [] }]
+      responses:
+        '200':
+          description: Counts
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [matched_open, accepted]
+                properties:
+                  matched_open: { type: integer, description: Proposed matches awaiting a decision., example: 3 }
+                  accepted: { type: integer, description: Accepted jobs., example: 2 }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+
+  /vendor/matches:
+    get:
+      tags: [Matches]
+      operationId: listVendorMatches
+      summary: Matched jobs (Matched jobs screen)
+      description: |
+        Matches for the caller's offer, ordered by date then the request's submission time.
+        No house numbers and no organizer name or contact details are returned; only the
+        block label and zip. Proposed matches on a day where the vendor is already full are hidden
+        and return when a slot frees.
+      security: [{ vendorAuth: [] }]
+      parameters:
+        - name: state
+          in: query
+          required: false
+          schema: { type: string, enum: [proposed, accepted, declined], default: proposed }
+      responses:
+        '200':
+          description: Matches
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [matches]
+                properties:
+                  matches:
+                    type: array
+                    items: { $ref: '#/components/schemas/MatchForVendor' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /vendor/matches/{matchId}/accept:
+    post:
+      tags: [Matches]
+      operationId: acceptMatch
+      summary: Accept a proposed match
+      description: Re-checks jobs per day, service already filled and fit under a lock on (vendor, date). Opens the job thread with the organizer.
+      security: [{ vendorAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/MatchId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Match, now `accepted`
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MatchForVendor' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/MatchConflict' }
+
+  /vendor/matches/{matchId}/decline:
+    post:
+      tags: [Matches]
+      operationId: declineMatch
+      summary: Decline a proposed match
+      description: Declined matches are hidden from the organizer. Frees capacity for other matches.
+      security: [{ vendorAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/MatchId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Match, now `declined`
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MatchForVendor' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/MatchConflict' }
+
+  /vendor/matches/{matchId}/undo:
+    post:
+      tags: [Matches]
+      operationId: undoMatchDecision
+      summary: Undo an accept or decline
+      description: Returns the match to `proposed`. Allowed only before the event date and while the match still fits; otherwise 409.
+      security: [{ vendorAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/MatchId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Match, back to `proposed`
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MatchForVendor' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/MatchConflict' }
+
+  /vendor/jobs:
+    get:
+      tags: [Jobs]
+      operationId: listVendorJobs
+      summary: Accepted jobs (My jobs)
+      description: Adds the job thread, the organizer's display name (never email or phone) and the curb-lane reminder.
+      security: [{ vendorAuth: [] }]
+      responses:
+        '200':
+          description: Accepted jobs, soonest first
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [jobs]
+                properties:
+                  jobs:
+                    type: array
+                    items: { $ref: '#/components/schemas/Job' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+
+  /vendor/jobs/{matchId}/withdraw:
+    post:
+      tags: [Jobs]
+      operationId: withdrawJob
+      summary: Withdraw from an accepted job (My jobs)
+      description: Sets the match to `withdrawn`, notifies the organizer and frees capacity for other matches.
+      security: [{ vendorAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/MatchId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [reason]
+              properties:
+                reason: { type: string, minLength: 1, maxLength: 500, example: Truck is in the shop that week. }
+      responses:
+        '200':
+          description: Match, now `withdrawn`
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MatchForVendor' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /threads/{threadId}/messages:
+    get:
+      tags: [Messages]
+      operationId: listMessages
+      summary: Messages in a job thread the vendor belongs to
+      description: Only `job` threads the caller belongs to; Village threads are not available to vendors.
+      security: [{ vendorAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/ThreadId'
+      responses:
+        '200':
+          description: Messages, oldest first
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [thread, messages]
+                properties:
+                  thread: { $ref: '#/components/schemas/Thread' }
+                  messages:
+                    type: array
+                    items: { $ref: '#/components/schemas/Message' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    post:
+      tags: [Messages]
+      operationId: postMessage
+      summary: Send a message
+      security: [{ vendorAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/ThreadId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [body]
+              properties:
+                body: { type: string, minLength: 1, maxLength: 2000 }
+      responses:
+        '201':
+          description: Sent
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Message' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+components:
+  securitySchemes:
+    vendorAuth:
+      type: http
+      scheme: bearer
+      description: Session token from a magic-link invite; vendor accounts are created by the city.
+
+  parameters:
+    MatchId:
+      name: matchId
+      in: path
+      required: true
+      schema: { type: string, example: m_01J9Z7B3X1 }
+    ThreadId:
+      name: threadId
+      in: path
+      required: true
+      schema: { type: string }
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: false
+      schema: { type: string, maxLength: 64 }
+
+  responses:
+    Unauthorized:
+      description: Not signed in
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Forbidden:
+      description: Account is not approved, the match or thread is not the caller's, or the caller is not in this thread
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Conflict:
+      description: Wrong match state for this action
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    MatchConflict:
+      description: The match can't be decided right now; `code` is `jobs_per_day_full`, `service_filled` or `no_longer_fits`
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+          example: { code: jobs_per_day_full, message: "You're already at your limit for that day.", reasons: ['2 of 2 jobs accepted on 2027-06-12.'] }
+    Unprocessable:
+      description: Validation failed; `reasons` lists each one
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+  schemas:
+    Error:
+      type: object
+      required: [code, message, reasons]
+      properties:
+        code: { type: string, example: jobs_per_day_full }
+        message: { type: string }
+        reasons:
+          type: array
+          items: { type: string }
+
+    LocalDate:
+      type: string
+      format: date
+      description: Local date in America/Chicago, `YYYY-MM-DD`.
+      example: '2027-06-12'
+
+    VendorMe:
+      type: object
+      required: [business_name, status, approved_at]
+      properties:
+        business_name: { type: string, example: Sample Ice Cream Co. }
+        status: { type: string, enum: [invited, approved, suspended] }
+        approved_at: { type: ['string', 'null'], format: date-time }
+
+    Service:
+      type: string
+      enum: [ice_cream, food_truck, bounce_house, face_painting, music_dj, other]
+
+    DayClass:
+      type: string
+      enum: [weekday, saturday, sunday]
+
+    OfferInput:
+      type: object
+      required: [service, price_usd, max_guests, jobs_per_day, includes, days, zips, active]
+      properties:
+        service: { $ref: '#/components/schemas/Service' }
+        price_usd: { type: integer, minimum: 0, example: 300 }
+        max_guests: { type: integer, minimum: 1, example: 150 }
+        jobs_per_day: { type: integer, minimum: 1, example: 2 }
+        includes: { type: string, maxLength: 300, example: 'Two flavors, cones and napkins' }
+        days:
+          type: array
+          uniqueItems: true
+          items: { $ref: '#/components/schemas/DayClass' }
+          example: [saturday, sunday]
+        zips:
+          type: array
+          uniqueItems: true
+          items: { type: string, enum: ['60301', '60302', '60304'] }
+          example: ['60304']
+        active: { type: boolean, description: 'Inactive offers get no new matches.' }
+
+    Offer:
+      allOf:
+        - $ref: '#/components/schemas/OfferInput'
+        - type: object
+          required: [updated_at]
+          properties:
+            updated_at: { type: string, format: date-time }
+
+    MatchState:
+      type: string
+      enum: [proposed, accepted, declined, withdrawn, void]
+
+    MatchForVendor:
+      type: object
+      description: A job as the vendor sees it. Block label and zip only; no house number and no organizer name or contact details.
+      required: [match_id, block_label, zip, date, hours, guests, price_usd, why, needs_reconfirm, state]
+      properties:
+        match_id: { type: string, example: m_01J9Z7B3X1 }
+        block_label: { type: string, example: 1100 S Cuyler Ave }
+        zip: { type: ['string', 'null'], example: '60304', description: 'Null until the block data has zip codes (backend-spec §5).' }
+        date: { $ref: '#/components/schemas/LocalDate' }
+        hours: { type: string, example: 9 a.m. – 11 p.m. }
+        guests: { type: integer, example: 120 }
+        price_usd: { type: integer, description: Price snapshot taken when the match was made., example: 300 }
+        why:
+          type: array
+          items: { type: string }
+          example: ['Available on Saturdays', '120 guests is within your 150', '60304 is in your area']
+        needs_reconfirm: { type: boolean, description: True when the event was rescheduled and the vendor must accept again. }
+        state: { $ref: '#/components/schemas/MatchState' }
+
+    Job:
+      allOf:
+        - $ref: '#/components/schemas/MatchForVendor'
+        - type: object
+          required: [thread_id, organizer_display_name, reminder]
+          properties:
+            thread_id: { type: string, description: Job thread with the organizer. }
+            organizer_display_name: { type: string, description: Display name only; shown after accept., example: Sample Organizer }
+            reminder: { type: string, example: Keep your setup in the curb parking lane; nothing strung across the street. }
+
+    Thread:
+      type: object
+      required: [id, kind, request_id]
+      properties:
+        id: { type: string }
+        kind: { type: string, enum: [request, job], description: '`request` = organizer↔Village; `job` = organizer↔vendor. Vendors only see `job`.' }
+        request_id: { type: string }
+        match_id: { type: ['string', 'null'] }
+
+    Message:
+      type: object
+      required: [id, thread_id, author_role, body, created_at]
+      properties:
+        id: { type: string }
+        thread_id: { type: string }
+        author_role: { type: string, enum: [resident, vendor, village] }
+        author_display_name: { type: string }
+        body: { type: string }
+        created_at: { type: string, format: date-time }

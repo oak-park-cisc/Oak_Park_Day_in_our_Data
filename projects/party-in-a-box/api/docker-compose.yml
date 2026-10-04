@@ -1,0 +1,21 @@
+# Dev only: the password is not a secret. Host port 5433 avoids clashing with a local Postgres.
+services:
+  db:
+    image: docker.io/library/postgres:16-alpine
+    container_name: partyinabox-db
+    environment:
+      POSTGRES_USER: party
+      POSTGRES_PASSWORD: party
+      POSTGRES_DB: partyinabox
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U party -d partyinabox"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+volumes:
+  pgdata:

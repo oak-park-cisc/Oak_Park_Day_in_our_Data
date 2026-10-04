@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Call Data Prototype</title>
+<meta name="description" content="Prototype charts for requested call data, drawn from synthetic templates. Invented numbers, not real Oak Park data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --surface: #f5f7f6; --surface-raised: #ffffff; --ink: #15201d; --ink-2: #4a5753; --ink-3: #6b7773;
+  --rule: #dde3e0; --data: #2a78d6; --banner: #b42318; --banner-ink: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --surface: #161b1a; --surface-raised: #1e2422; --ink: #f1f4f3; --ink-2: #b9c3bf; --ink-3: #8e9a96;
+    --rule: #303836; --data: #3987e5; --banner: #c4321f; --banner-ink: #ffffff;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #161b1a; --surface-raised: #1e2422; --ink: #f1f4f3; --ink-2: #b9c3bf; --ink-3: #8e9a96;
+  --rule: #303836; --data: #3987e5; --banner: #c4321f; --banner-ink: #ffffff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: "Public Sans", system-ui, sans-serif; font-size: 16px; line-height: 1.5; font-variant-numeric: tabular-nums; }
+.banner { position: sticky; top: 0; z-index: 5; background: var(--banner); color: var(--banner-ink); padding: 10px 16px; font-weight: 700; text-align: center; letter-spacing: .02em; }
+.banner span { font-weight: 500; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px 48px; }
+h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 800; letter-spacing: -0.02em; margin: 28px 0 8px; }
+.lede { color: var(--ink-2); max-width: 68ch; }
+.grid { display: grid; gap: 16px; margin-top: 20px; }
+@media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } }
+.card { background: var(--surface-raised); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; min-width: 0; }
+.card h2 { font-size: 16px; margin: 0 0 2px; }
+.card .src { font-size: 13px; color: var(--ink-3); margin: 0 0 10px; }
+.cols { display: flex; align-items: flex-end; gap: 3px; height: 120px; border-bottom: 1px solid var(--ink-3); }
+.col { flex: 1; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
+.col .bar { background: var(--data); border-radius: 3px 3px 0 0; min-height: 1px; }
+.col.hidden .bar { background: none; border: 1px dashed var(--ink-3); border-bottom: 0; height: 100%; opacity: .5; }
+.axis { display: flex; gap: 3px; font-size: 11px; color: var(--ink-3); margin-top: 4px; }
+.axis span { flex: 1; text-align: center; min-width: 0; overflow: hidden; }
+.note { font-size: 13px; color: var(--ink-2); margin: 8px 0 0; }
+.sub { font-size: 13px; font-weight: 600; margin: 12px 0 4px; color: var(--ink-2); }
+.error { color: var(--banner); }
+</style>
+</head>
+<body>
+<div class="banner" role="note">SYNTHETIC DATA <span>· invented numbers to test layouts · not real Oak Park data</span></div>
+<main class="wrap">
+  <h1>Call data prototype</h1>
+  <p class="lede">These charts show what the team could build if the draft FOIA and data requests in this folder are answered. Every number comes from the synthetic templates in <code>foia/templates/</code>, which show the format requested. None of it describes real calls, real people or ECHO's real work. Dashed columns are cells the agency would hide for privacy (counts of 1 to 4): they are shown as unavailable, never estimated.</p>
+  <div class="grid" id="grid"></div>
+</main>
+<script>
+(() => {
+  const FILES = {
+    police: './templates/SYNTHETIC-01-police-cad-monthly.csv',
+    repeat: './templates/SYNTHETIC-01b-police-repeat-locations.csv',
+    fire: './templates/SYNTHETIC-02-fire-ems-monthly.csv',
+    t988: './templates/SYNTHETIC-03-911-988-transfers.csv',
+    echo: './templates/SYNTHETIC-04-echo-outcomes.csv',
+  };
+  const MON = ['J','F','M','A','M','J','J','A','S','O','N','D'];
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const num = v => (/^\d+$/.test(v) ? Number(v) : null);
+
+  function parseCSV(text) {
+    const [head, ...lines] = text.trim().split(/\r?\n/);
+    const cols = head.split(',');
+    return lines.map(l => Object.fromEntries(l.split(',').map((v, i) => [cols[i], v])));
+  }
+
+  // One small column chart. values: [{month, n}] where n is a number or null (hidden).
+  function card(title, source, values, note) {
+    const max = Math.max(1, ...values.map(v => v.n ?? 0));
+    const cols = values.map(v => v.n === null
+      ? `<div class="col hidden" title="${esc(v.month)}: hidden for privacy"><div class="bar"></div></div>`
+      : `<div class="col" title="${esc(v.month)}: ${v.n}"><div class="bar" style="height:${(v.n / max) * 100}%"></div></div>`).join('');
+    const axis = values.map(v => `<span>${MON[Number(v.month.slice(5)) - 1]}</span>`).join('');
+    return `<section class="card"><h2>${esc(title)}</h2><p class="src">${esc(source)} · max ${max}</p>
+      <div class="cols" role="img" aria-label="${esc(title)}, synthetic values">${cols}</div><div class="axis">${axis}</div>
+      ${note ? `<p class="note">${esc(note)}</p>` : ''}</section>`;
+  }
+
+  const series = (rows, month, value, filter = () => true) =>
+    [...new Set(rows.map(r => r[month]))].sort().map(mo => {
+      const vals = rows.filter(r => r[month] === mo && filter(r)).map(r => num(r[value]));
+      return { month: mo, n: vals.some(v => v === null) ? null : vals.reduce((a, b) => a + b, 0) };
+    });
+
+  async function main() {
+    const data = {};
+    try {
+      for (const [k, url] of Object.entries(FILES)) {
+        const res = await fetch(url, { cache: 'no-cache' });
+        if (!res.ok) throw new Error(`${url} returned ${res.status}`);
+        data[k] = parseCSV(await res.text());
+        // Refuse anything not flagged synthetic: this page must never show real data.
+        if (!data[k].every(r => r.synthetic === 'yes')) throw new Error(`${url} has rows not flagged synthetic`);
+      }
+    } catch (e) {
+      document.getElementById('grid').innerHTML = `<p class="error">${esc(e.message)}. Serve the repo folder with <code>python3 -m http.server</code> and open <code>/foia/prototype-calls.html</code>.</p>`;
+      return;
+    }
+    const callTypes = [...new Set(data.police.map(r => r.call_type))];
+    const html = [
+      ...callTypes.map(t => card(`Police: ${t}`, '01 · calls handled by police', series(data.police, 'month', 'calls', r => r.call_type === t && r.disposition === 'Handled by police'))),
+      card('Police calls referred to ECHO', '01 · disposition "Referred to ECHO", all types', series(data.police, 'month', 'calls', r => r.disposition === 'Referred to ECHO'),
+        'Would show whether police are routing more calls to ECHO over time.'),
+      card('Locations with 3+ calls in 90 days', '01b · counts of locations only, no addresses', series(data.repeat, 'month', 'locations_3plus_calls_90d'),
+        'A falling line would be consistent with fewer repeat calls, but would not prove ECHO caused it.'),
+      card('Fire/EMS lift assists and falls', '02 · all responses, transported or not', series(data.fire, 'month', 'responses', r => r.incident_type === 'Lift assist / fall')),
+      card('911 calls transferred to 988', '03 · WestCom, 2026', series(data.t988, 'month', 'calls_transferred_to_988')),
+      card('ECHO referrals received', '04 · ECHO team', series(data.echo, 'month', 'referrals_received'),
+        'Next to services logged, this would settle whether one referral can produce several services.'),
+      card('ECHO services logged', '04 · ECHO team', series(data.echo, 'month', 'services_logged')),
+    ];
+    document.getElementById('grid').innerHTML = html.join('');
+  }
+  main();
+})();
+</script>
+</body>
+</html>

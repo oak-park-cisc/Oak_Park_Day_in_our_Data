@@ -1,0 +1,96 @@
+[
+  {
+    "body": "Village Board",
+    "fullName": "Village of Oak Park Board of Trustees",
+    "url": "https://www.oak-park.us",
+    "facts": [
+      "Uses the Village Manager form of government: the board sets policy and hires a professional manager",
+      "Made up of an elected Village President and six trustees",
+      "Elected officials serve four-year staggered terms",
+      "Municipal elections are held in April of odd-numbered years"
+    ],
+    "factSources": [
+      "https://www.oak-park.us/Government/Leadership/Village-Board"
+    ]
+  },
+  {
+    "body": "District 97 Board",
+    "fullName": "Oak Park Elementary School District 97 Board of Education",
+    "url": "https://www.op97.org",
+    "facts": [
+      "Oversees 10 schools: 8 elementary and 2 middle schools",
+      "Middle schools are Brooks and Julian",
+      "The board has seven members elected to four-year terms"
+    ],
+    "factSources": [
+      "https://www.op97.org",
+      "https://www.op97.org/boe/meet-the-board"
+    ]
+  },
+  {
+    "body": "District 200 Board",
+    "fullName": "Oak Park and River Forest High School District 200 Board of Education",
+    "url": "https://www.oprfhs.org",
+    "facts": [
+      "Governs Oak Park and River Forest High School, serving both villages",
+      "Comprises seven members elected by the community",
+      "Adopts, enforces, and monitors district policies",
+      "Earned the Illinois Association of School Boards 2025 Governance Recognition"
+    ],
+    "factSources": [
+      "https://www.oprfhs.org/about/board-of-education"
+    ]
+  },
+  {
+    "body": "Park District Board",
+    "fullName": "Park District of Oak Park Board of Park Commissioners",
+    "url": "https://pdop.org",
+    "facts": [
+      "Five elected commissioners oversee the Park District, which dates to 1912",
+      "Manages 18 parks totaling 84 acres, including Austin Gardens and Scoville Park",
+      "Runs two outdoor pools, Rehm and Ridgeland Common, and the Paul Hruby Ice Arena",
+      "Operates three historic properties: Cheney Mansion, Pleasant Home, and the Oak Park Conservatory",
+      "Offers nearly 8,000 recreation programs and special events each year"
+    ],
+    "factSources": [
+      "https://pdop.org/about/",
+      "https://pdop.org/about/parkboard/"
+    ]
+  },
+  {
+    "body": "Library Board",
+    "fullName": "Oak Park Public Library Board of Library Trustees",
+    "url": "https://www.oppl.org",
+    "facts": [
+      "Seven elected trustees govern the library",
+      "The library has three locations: the Main Library, Dole Branch, and Maze Branch",
+      "Celebrated 120 years as a public library in 2023",
+      "Regular board meetings are open to the public, usually on the fourth Wednesday of each month"
+    ],
+    "factSources": [
+      "https://www.oppl.org/about/board-of-trustees/",
+      "https://www.oppl.org/about/",
+      "https://www.oppl.org/about/locations-hours/"
+    ]
+  },
+  {
+    "body": "Township",
+    "fullName": "Oak Park Township",
+    "url": "https://oakparktownship.org",
+    "facts": [
+      "Governed by a Township Supervisor and four Trustees elected at large",
+      "A Township Clerk and Assessor are elected at the same time as the board",
+      "Assessor Services helps residents with questions about assessments and property tax bills",
+      "Offers senior, youth and family services, plus General Assistance for eligible residents",
+      "Its Community Mental Health Board helps plan and fund local mental health services"
+    ],
+    "factSources": [
+      "https://oakparktownship.org/board-agendas-finances/",
+      "https://oakparktownship.org/assessor-services/",
+      "https://oakparktownship.org/senior-services/",
+      "https://oakparktownship.org/youth-and-family-services/",
+      "https://oakparktownship.org/general-assistance/",
+      "https://oakparktownship.org/community-mental-health/"
+    ]
+  }
+]

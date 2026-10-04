@@ -1,0 +1,29 @@
+call_group,call_type,calls_2025,suggested_echo_category,match_confidence,note
+Call Type 1 (mental health),Crisis Intervention,197,Behavioral Health,high,"Village plans Thrive, not ECHO, as responder; ECHO does follow-up"
+Call Type 1 (mental health),Involuntary Committal,3,Behavioral Health,high,Thrive response; deck says ECHO may support family afterward
+Call Type 1 (mental health),Mental Health,10,Behavioral Health,high,
+Call Type 1 (mental health),Psychiatric Abnormal Suicide,112,Behavioral Health,high,
+Call Type 1 (mental health),Suicide,19,Behavioral Health,high,
+Call Type 2 (domestic/abuse),Assault or Sexual Assault,8,Domestic Violence,medium,
+Call Type 2 (domestic/abuse),Child Abuse Neglect,5,Youth/Family Services,medium,
+Call Type 2 (domestic/abuse),Domestic Disturbance,613,Domestic Violence,medium,Not every domestic disturbance is domestic violence
+Call Type 2 (domestic/abuse),Harassment,44,Other,low,
+Community Response,Remove Unwanted,1753,Unhoused Resident,low,Removing an unwanted person from a premises; may or may not involve housing status
+Community Response,Welfare Check,1680,Senior Services,low,Welfare checks span all ages and needs
+Community Response,Vagrant,454,Unhoused Resident,high,
+Community Response,Unconscious Fainting,294,Medical Support,medium,Could also be Senior Services (falls)
+Community Response,Panhandler,292,Unhoused Resident,medium,ECHO ran a panhandling campaign under Community Engagement
+Community Response,Person Down,264,Medical Support,medium,Could also be Senior Services (falls) or Unhoused Resident
+Community Response,Missing Juvenile/Runaway,95,Youth/Family Services,high,
+Community Response,Identity Theft,77,Financial Support,low,
+Community Response,Child Custody Dispute,70,Youth/Family Services,high,
+Community Response,Missing Adult,65,Senior Services,medium,Board example: resident with dementia reported missing
+Community Response,Solicitor Complaint,56,Other,low,Door-to-door soliciting complaints
+Community Response,Missing Returned,30,Other,low,
+Community Response,Juvenile Investigation,28,Youth/Family Services,medium,
+Community Response,Lost Child,19,Youth/Family Services,high,
+Community Response,Notification,17,Other,low,
+Community Response,Confused Person,16,Senior Services,medium,
+Community Response,Illegal Consumption by a Minor,2,Youth/Family Services,medium,
+Community Response,Curfew Violation,1,Youth/Family Services,high,
+Community Response,Truancy,1,Youth/Family Services,high,Village lists truancy support among ECHO services

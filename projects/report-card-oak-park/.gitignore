@@ -1,0 +1,8 @@
+.env
+.env.*
+node_modules/
+.DS_Store
+*.log
+data/raw/
+dist/
+screenshots/

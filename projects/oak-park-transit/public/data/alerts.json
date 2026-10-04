@@ -1,0 +1,182 @@
+{
+ "fetchedAt": "2026-10-03T16:54:17+00:00",
+ "source": "https://www.transitchicago.com/api/1.0/alerts.aspx?activeonly=true&outputType=JSON",
+ "alerts": [
+  {
+   "id": "110324",
+   "agency": "CTA",
+   "headline": "Temporary Reroute",
+   "impact": "Planned Reroute",
+   "description": "EB #66 buses will operate via Chicago, Milwaukee, Grand, Orleans, and Chicago. WB buses will operate via Chicago, Wells, Grand, Milwaukee and Chicago. ",
+   "start": "2025-09-29T09:00:00",
+   "end": null,
+   "major": false,
+   "accessibility": false,
+   "routes": [
+    "66"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=110324"
+  },
+  {
+   "id": "112148",
+   "agency": "CTA",
+   "headline": "State/Lake Elevated Station Temporary Closure",
+   "impact": "Special Note",
+   "description": "Effective, now, the State/Lake Loop Elevated station is closed for reconstruction into 2029. Please use adjacent stations at Clark/Lake or Washington/Wabash.",
+   "start": "2026-01-05",
+   "end": null,
+   "major": false,
+   "accessibility": false,
+   "routes": [
+    "G"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=112148"
+  },
+  {
+   "id": "114955",
+   "agency": "CTA",
+   "headline": "Temporary Reroute",
+   "impact": "Planned Reroute",
+   "description": "EB #70 buses will operate via Division, Wells, Oak, and Dearborn. WB buses will operate via Clark, Oak, Wells, and Division.",
+   "start": "2026-10-03T07:30:00",
+   "end": "2026-10-03T17:00:00",
+   "major": false,
+   "accessibility": false,
+   "routes": [
+    "70"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=114955"
+  },
+  {
+   "id": "116637",
+   "agency": "CTA",
+   "headline": "Temporary Schedule Change",
+   "impact": "Service Change",
+   "description": "A slightly modified schedule for the Blue Line O\u2019Hare branch will be in effect during\r\nnon-rush hours and weekends, due to construction.\r\n",
+   "start": "2026-08-10",
+   "end": "2026-10-09",
+   "major": false,
+   "accessibility": false,
+   "routes": [
+    "Blue"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=116637"
+  },
+  {
+   "id": "116833",
+   "agency": "CTA",
+   "headline": "Temporary Reroute",
+   "impact": "Planned Reroute",
+   "description": "#91 buses will operate in both directions via Austin, Belmont, Central, Fulleron and Austin.",
+   "start": "2026-08-12T06:00:00",
+   "end": null,
+   "major": false,
+   "accessibility": false,
+   "routes": [
+    "91"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=116833"
+  },
+  {
+   "id": "117200",
+   "agency": "CTA",
+   "headline": "Temporary Reroute",
+   "impact": "Planned Reroute",
+   "description": "#70 buses will operate in both directions via Division, Homan, Grand, Augusta, Sacramento and Division. ",
+   "start": "2026-08-31T14:30:00",
+   "end": null,
+   "major": false,
+   "accessibility": false,
+   "routes": [
+    "70"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=117200"
+  },
+  {
+   "id": "117370",
+   "agency": "CTA",
+   "headline": "63rd-bound Trains Bypass 43rd Station",
+   "impact": "Planned Work w/Station(s) Bypassed",
+   "description": "Ashland/63rd- and Cottage Grove-bound trains will not stop at the 43rd Green Line station.",
+   "start": "2026-09-28T04:00:00",
+   "end": "2026-10-16T04:00:00",
+   "major": false,
+   "accessibility": false,
+   "routes": [
+    "G"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=117370"
+  },
+  {
+   "id": "117686",
+   "agency": "CTA",
+   "headline": "No Orange Line Loop service; Bus substitution between Loop and south stations",
+   "impact": "Planned Work",
+   "description": "No Green Line service bw Loop and 35th-B'ville-IIT, trains run in two sections; no Orange Line service bw Loop and Halsted, trains run bw Midway and Halsted.",
+   "start": "2026-10-03T04:00:00",
+   "end": "2026-10-04T02:00:00",
+   "major": false,
+   "accessibility": false,
+   "routes": [
+    "G"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=117686"
+  },
+  {
+   "id": "117882",
+   "agency": "CTA",
+   "headline": "Elevator at Cumberland Temporarily Out-of-Service",
+   "impact": "Elevator Status",
+   "description": "The elevator to/from street at the south pedestrian bridge to Cumberland (Blue Line) is temporarily out-of-service.",
+   "start": "2026-10-03T08:37:00",
+   "end": null,
+   "major": false,
+   "accessibility": true,
+   "routes": [
+    "Blue"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=117882"
+  },
+  {
+   "id": "117883",
+   "agency": "CTA",
+   "headline": "Elevator at Roosevelt Temporarily Out-of-Service",
+   "impact": "Elevator Status",
+   "description": "The elevator to/from State Street at Roosevelt (Red, Orange and Green Lines) is temporarily out-of-service.",
+   "start": "2026-10-03T10:18:00",
+   "end": null,
+   "major": false,
+   "accessibility": true,
+   "routes": [
+    "G"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=117883"
+  },
+  {
+   "id": "117887",
+   "agency": "CTA",
+   "headline": "Green and Pink Line Service Experiencing Delays Due to Raised Bridge",
+   "impact": "Minor Delays",
+   "description": "Green and Pink Line service is experiencing delays due to a raised bridge at the Chicago River, downtown.",
+   "start": "2026-10-03T11:38:00",
+   "end": null,
+   "major": false,
+   "accessibility": false,
+   "routes": [
+    "G"
+   ],
+   "stationIds": [],
+   "url": "http://www.transitchicago.com/travel_information/alert_detail.aspx?AlertId=117887"
+  }
+ ]
+}

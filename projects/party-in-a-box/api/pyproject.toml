@@ -1,0 +1,26 @@
+[project]
+name = "party-in-a-box-api"
+version = "0.1.0"
+description = "Party in a Box backend API"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]",
+    "sqlalchemy>=2.0",
+    "pydantic>=2.7",
+    "python-multipart",
+    "httpx",
+    "python-dotenv",
+    "psycopg[binary]>=3.2",
+    "alembic>=1.13",
+]
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

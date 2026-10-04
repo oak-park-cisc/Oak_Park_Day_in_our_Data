@@ -1,0 +1,1022 @@
+openapi: 3.1.0
+info:
+  title: Party in a Box — Village Reviewer API
+  version: 0.1.0
+  summary: Village reviewer endpoints (queue, approve, Today, Traffic planner, vendors) and the AI proxy.
+  description: |
+    Contract for the Village screens on the Party in a Box Screens canvas
+    (Requests, Today, Traffic planner) plus vendor administration, the weekend cap
+    dashboard and the CSV hand-off. Derived from `docs/backend-spec.md` §2, §3.4, §4,
+    §6 and §7. Public, resident and vendor endpoints are out of scope for this file.
+
+    Conventions (spec §3):
+    - Dates are local `YYYY-MM-DD` strings in America/Chicago (never UTC timestamps).
+      Timestamps are RFC 3339 UTC.
+    - Every mutation accepts an `Idempotency-Key` header.
+    - Errors use the `Error` shape: `{code, message, reasons[]}`.
+    - The server's rule results are authoritative; the `rules` library runs the same logic.
+
+    Traffic scores (spec §4.5): 0–100, levels `low` below 25, `medium` 25–49, `high` 50 and
+    above. Scores are rule-based and always carry reasons. They never express delay or minutes.
+
+    Approvals (spec §4.3): approve takes the request `version` in `If-Match` and can return 409
+    (`cap_reached`, `block_year_max`, `stale_version`). Priority is `submitted_at`, so the queue
+    is oldest first.
+
+    Privacy (spec §7): reviewers see everything for a request. Only reviewers can call these
+    endpoints. The AI proxy never receives names, emails, house numbers or organizer data.
+servers:
+  - url: https://api.example.org/v1
+    description: Placeholder until hosting is chosen
+tags:
+  - name: Requests
+    description: Review queue, request detail, approve, reject, change requests and paper petitions.
+  - name: Day
+    description: Today view of approved closures.
+  - name: Planner
+    description: Traffic planner what-if (never persisted).
+  - name: AI
+    description: AI explanation proxy (explains computed scores only).
+  - name: Vendors
+    description: Vendor accounts, invites and suspension.
+  - name: Weekends
+    description: Weekend cap dashboard.
+  - name: Export
+    description: Hand-off for keying into VillageView.
+  - name: Messages
+    description: Threads with organizers.
+
+paths:
+  /village/requests:
+    get:
+      tags: [Requests]
+      operationId: listVillageRequests
+      summary: Review queue, oldest first (Requests)
+      description: Sorted by `submitted_at` ascending (first come, first served). `facets` are counts across all statuses, ignoring the `status` filter.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - name: status
+          in: query
+          required: false
+          description: Filter by status. Omit for all submitted-or-later requests.
+          schema: { $ref: '#/components/schemas/RequestStatus' }
+        - name: sort
+          in: query
+          required: false
+          schema: { type: string, enum: [submitted_at], default: submitted_at }
+      responses:
+        '200':
+          description: Queue
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, facets]
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/QueueItem' }
+                  facets: { $ref: '#/components/schemas/QueueFacets' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+
+  /village/requests/{requestId}:
+    get:
+      tags: [Requests]
+      operationId: getVillageRequest
+      summary: Request detail with candidates, scores and impact map
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: Request detail
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RequestDetail' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /village/requests/{requestId}/approve:
+    post:
+      tags: [Requests]
+      operationId: approveRequest
+      summary: Approve on a candidate date
+      description: |
+        Re-runs `canApprove` inside the transaction (spec §4.1, §4.3). `If-Match` carries the
+        request `version` from the detail view. A 409 means the cap, the block's yearly limit
+        or the version changed since the reviewer looked; reload the detail and decide again.
+        A 422 lists every failed gate in `reasons`.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [date]
+              properties:
+                date: { $ref: '#/components/schemas/LocalDate' }
+              description: '`date` must be one of the request''s candidate dates.'
+      responses:
+        '200':
+          description: Approved
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Request' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409':
+          description: Weekend cap reached, block already at its yearly maximum, or stale `If-Match` version
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+              examples:
+                cap_reached:
+                  value: { code: cap_reached, message: This weekend is full., reasons: ['Weekend is at 30 of 30.'] }
+                block_year_max:
+                  value: { code: block_year_max, message: This block already has 2 events this year., reasons: [] }
+                stale_version:
+                  value: { code: stale_version, message: This request changed. Reload and try again., reasons: [] }
+        '422':
+          description: One or more approve gates failed; `reasons` lists each one
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Error' }
+              example: { code: approve_blocked, message: "Can't approve yet.", reasons: ['Petition has 4 of 10 addresses'] }
+
+  /village/requests/{requestId}/reject:
+    post:
+      tags: [Requests]
+      operationId: rejectRequest
+      summary: Reject with a reason
+      description: The reason is shown to the organizer. Frees any weekend slot the request held.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/IfMatch'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [reason]
+              properties:
+                reason: { type: string, minLength: 1, maxLength: 1000 }
+      responses:
+        '200':
+          description: Rejected
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Request' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /village/change-requests/{changeRequestId}/resolve:
+    post:
+      tags: [Requests]
+      operationId: resolveChangeRequest
+      summary: Accept or decline a reschedule or cancel
+      description: |
+        Accepting a reschedule re-runs the approve gates on `new_date` (cap, block-year limit,
+        season, same-block conflicts) and returns 409 or 422 if they fail. Accepting a cancel
+        voids vendor matches. Declining leaves the request as it was.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - name: changeRequestId
+          in: path
+          required: true
+          schema: { type: string }
+        - $ref: '#/components/parameters/IfMatch'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [decision]
+              properties:
+                decision: { type: string, enum: [accept, decline] }
+                new_date: { $ref: '#/components/schemas/LocalDate' }
+                message: { type: string, maxLength: 1000, description: Optional note to the organizer. }
+              description: '`new_date` is required when accepting a reschedule.'
+      responses:
+        '200':
+          description: Resolved
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ChangeRequest' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /village/requests/{requestId}/paper-petition:
+    post:
+      tags: [Requests]
+      operationId: attestPaperPetition
+      summary: Attest a paper petition
+      description: Records the reviewer's attestation that a paper petition has enough addresses. The attested count replaces the online count for the approve gate. Audit-logged.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [address_count]
+              properties:
+                address_count: { type: integer, minimum: 0, maximum: 500 }
+                file: { type: string, format: binary, description: Optional scan or photo of the paper petition. }
+      responses:
+        '200':
+          description: Attested
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [distinct_count, attested_by, attested_at]
+                properties:
+                  distinct_count: { type: integer, example: 12 }
+                  attested_by: { type: string, example: Sample Reviewer }
+                  attested_at: { type: string, format: date-time }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /village/day:
+    get:
+      tags: [Day]
+      operationId: getVillageDay
+      summary: Today view
+      description: Approved closures on one date with their level, a short reason and vendors.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - name: date
+          in: query
+          required: true
+          schema: { $ref: '#/components/schemas/LocalDate' }
+      responses:
+        '200':
+          description: Day
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/DayView' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /village/whatif:
+    post:
+      tags: [Planner]
+      operationId: runWhatIf
+      summary: Traffic planner what-if
+      description: |
+        NEVER persisted. Scores the given closures for a date using the same rules as the
+        detail view. Suggestions are rule-based (spec §4.1 `suggest`); `apply` carries the
+        change the planner would make to its own state if the reviewer clicks it.
+        `weekend_count` is null on weekdays.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [date, closures]
+              properties:
+                date: { $ref: '#/components/schemas/LocalDate' }
+                closures:
+                  type: array
+                  items: { $ref: '#/components/schemas/BlockIdValue' }
+                treat_as_weekday: { type: boolean, description: Score a Saturday as if it were a weekday (school points apply). }
+      responses:
+        '200':
+          description: What-if result
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WhatIfResult' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /ai/explain:
+    post:
+      tags: [AI]
+      operationId: explainTraffic
+      summary: AI summary and answer for the Traffic planner (proxy)
+      description: |
+        Spec §6. Inputs are computed scores only (closure labels, scores, reasons, weekend
+        count, suggestions, tips); no PII, names, emails, house numbers or organizer data.
+        Closures come from the planner's map state, never parsed from the question.
+
+        Output is validated before it is returned: no "delay" or minutes, no approve or
+        reject advice, no numbers that are not in the input, valid JSON, within word limits,
+        under 8 seconds. If validation fails or the model is unavailable, the response falls
+        back to the templated summary (`source: template`).
+
+        It never writes data or changes scores. Rate limit: 20 requests per minute per user
+        (429), plus a daily spend cap.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AiExplainInput' }
+      responses:
+        '200':
+          description: Explanation
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AiExplainOutput' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+        '429': { $ref: '#/components/responses/RateLimited' }
+
+  /village/vendors:
+    get:
+      tags: [Vendors]
+      operationId: listVendors
+      summary: Vendor accounts
+      security: [{ reviewerAuth: [] }]
+      responses:
+        '200':
+          description: Vendors
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [vendors]
+                properties:
+                  vendors:
+                    type: array
+                    items: { $ref: '#/components/schemas/VendorAccount' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+    post:
+      tags: [Vendors]
+      operationId: inviteVendor
+      summary: Create a vendor account and email an invite
+      description: Creates the account with status `invited` and emails a sign-in invite to `contact_email`.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [business_name, contact_email]
+              properties:
+                business_name: { type: string, minLength: 1, maxLength: 120, example: Sample Ice Cream Co. }
+                contact_email: { type: string, format: email }
+      responses:
+        '201':
+          description: Created and invited
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/VendorAccount' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /village/vendors/{vendorId}:
+    patch:
+      tags: [Vendors]
+      operationId: updateVendorStatus
+      summary: Approve or suspend a vendor
+      description: |
+        Suspending a vendor voids its proposed matches. Accepted matches are kept but alert
+        the organizer and the reviewer so they can sort it out.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - name: vendorId
+          in: path
+          required: true
+          schema: { type: string }
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [status]
+              properties:
+                status: { type: string, enum: [approved, suspended] }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/VendorAccount' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /village/weekends:
+    get:
+      tags: [Weekends]
+      operationId: listWeekends
+      summary: Weekend cap dashboard (Requests date picker)
+      description: One row per Saturday in the range, with approved and pending counts against the cap.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - name: from
+          in: query
+          required: true
+          schema: { $ref: '#/components/schemas/LocalDate' }
+        - name: to
+          in: query
+          required: true
+          schema: { $ref: '#/components/schemas/LocalDate' }
+      responses:
+        '200':
+          description: Weekends
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/WeekendRow' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+  /village/export/requests.csv:
+    get:
+      tags: [Export]
+      operationId: exportRequestsCsv
+      summary: CSV hand-off for keying into VillageView
+      security: [{ reviewerAuth: [] }]
+      responses:
+        '200':
+          description: CSV, one row per request
+          content:
+            text/csv:
+              schema: { type: string }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+
+  /threads/{threadId}/messages:
+    get:
+      tags: [Messages]
+      operationId: listThreadMessages
+      summary: Messages in a request thread
+      description: Reviewers can read `request` threads (organizer and Village).
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/ThreadId'
+      responses:
+        '200':
+          description: Messages, oldest first
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [thread, messages]
+                properties:
+                  thread: { $ref: '#/components/schemas/Thread' }
+                  messages:
+                    type: array
+                    items: { $ref: '#/components/schemas/Message' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    post:
+      tags: [Messages]
+      operationId: postThreadMessage
+      summary: Send a message as the Village
+      description: Reviewers can post in `request` threads.
+      security: [{ reviewerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/ThreadId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [body]
+              properties:
+                body: { type: string, minLength: 1, maxLength: 2000 }
+      responses:
+        '201':
+          description: Sent
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Message' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+
+components:
+  securitySchemes:
+    reviewerAuth:
+      type: http
+      scheme: bearer
+      description: Allowlisted Village staff. Magic link plus TOTP in MVP; Village SSO later. Issued by the auth provider; not part of this contract.
+
+  parameters:
+    RequestId:
+      name: requestId
+      in: path
+      required: true
+      schema: { type: string, example: r_01J9Z6Q2K8 }
+    ThreadId:
+      name: threadId
+      in: path
+      required: true
+      schema: { type: string }
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: false
+      schema: { type: string, maxLength: 64 }
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: The request's `version`; a stale version returns 409 `stale_version`.
+      schema: { type: string }
+
+  responses:
+    Unauthorized:
+      description: Not signed in
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Forbidden:
+      description: Not an allowlisted reviewer
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Conflict:
+      description: Wrong status for this action, or a stale `If-Match` version
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Unprocessable:
+      description: Validation or rule check failed; `reasons` lists each one
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    RateLimited:
+      description: Too many requests
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+  schemas:
+    Error:
+      type: object
+      required: [code, message, reasons]
+      properties:
+        code: { type: string, example: approve_blocked }
+        message: { type: string }
+        reasons:
+          type: array
+          items: { type: string }
+
+    LocalDate:
+      type: string
+      format: date
+      description: Local date in America/Chicago, `YYYY-MM-DD`.
+      example: '2027-06-12'
+
+    LatLon:
+      type: array
+      description: '[lat, lon]'
+      minItems: 2
+      maxItems: 2
+      items: { type: number }
+      example: [40.1105, -75.0321]
+
+    BlockLines:
+      type: array
+      description: Street polylines for the block, each a list of [lat, lon] points.
+      items:
+        type: array
+        items: { $ref: '#/components/schemas/LatLon' }
+
+    BlockIdValue:
+      type: string
+      description: '`<street name>|<hundred>`'
+      example: S CUYLER AVE|1100
+
+    RequestStatus:
+      type: string
+      enum: [draft, collecting, submitted, approved, rejected, withdrawn, cancelled, completed]
+
+    Services:
+      type: object
+      required: [barricades, green_kit]
+      properties:
+        barricades: { type: boolean }
+        green_kit: { type: boolean }
+
+    Level:
+      type: string
+      enum: [low, medium, high]
+      description: 'Traffic level: low below 25, medium 25–49, high 50 and above.'
+
+    TrafficScore:
+      type: object
+      description: Rule-based; never delay or minutes.
+      required: [score, level, reasons]
+      properties:
+        score: { type: integer, minimum: 0, maximum: 100, example: 35 }
+        level: { $ref: '#/components/schemas/Level' }
+        reasons:
+          type: array
+          items: { $ref: '#/components/schemas/ScoreReason' }
+
+    ScoreReason:
+      type: object
+      required: [pts, text, rule_id]
+      properties:
+        pts: { type: integer, description: Points added; may be 0 for informational reasons., example: 15 }
+        text: { type: string, example: 1 bus stop on the block }
+        rule_id: { type: string, example: bus_stop }
+
+    Request:
+      type: object
+      required: [id, block_id, block_label, kind, date_start, date_end, guests, services, status, version, created_at]
+      properties:
+        id: { type: string }
+        block_id: { $ref: '#/components/schemas/BlockIdValue' }
+        block_label: { type: string, example: 1100 S Cuyler Ave }
+        kind: { type: string, const: party }
+        date_start: { $ref: '#/components/schemas/LocalDate' }
+        date_end: { $ref: '#/components/schemas/LocalDate' }
+        guests: { type: integer }
+        services: { $ref: '#/components/schemas/Services' }
+        status: { $ref: '#/components/schemas/RequestStatus' }
+        petition_due: { $ref: '#/components/schemas/LocalDate' }
+        approved_date: { oneOf: [{ type: 'null' }, { $ref: '#/components/schemas/LocalDate' }] }
+        barricade_date: { oneOf: [{ type: 'null' }, { $ref: '#/components/schemas/LocalDate' }], description: Derived; the day before the approved date. }
+        reject_reason: { type: ['string', 'null'] }
+        submitted_at: { type: ['string', 'null'], format: date-time }
+        decided_at: { type: ['string', 'null'], format: date-time }
+        rules_year: { type: integer }
+        version: { type: string, description: Optimistic-lock version for `If-Match`. }
+        created_at: { type: string, format: date-time }
+
+    QueueItem:
+      type: object
+      required: [id, block_id, block_label, range_label, date_start, date_end, status, distinct_count, needed, level, submitted_at]
+      properties:
+        id: { type: string }
+        block_id: { $ref: '#/components/schemas/BlockIdValue' }
+        block_label: { type: string, example: 1100 S Cuyler Ave }
+        range_label: { type: string, example: Jun 12–13 }
+        date_start: { $ref: '#/components/schemas/LocalDate' }
+        date_end: { $ref: '#/components/schemas/LocalDate' }
+        status: { $ref: '#/components/schemas/RequestStatus' }
+        distinct_count: { type: integer, example: 10 }
+        needed: { type: integer, example: 10 }
+        level: { $ref: '#/components/schemas/Level' }
+        submitted_at: { type: ['string', 'null'], format: date-time }
+
+    QueueFacets:
+      type: object
+      required: [all, needs_review, approved, rejected]
+      properties:
+        all: { type: integer }
+        needs_review: { type: integer }
+        approved: { type: integer }
+        rejected: { type: integer }
+
+    CanApprove:
+      type: object
+      required: [ok, reasons]
+      properties:
+        ok: { type: boolean }
+        reasons:
+          type: array
+          items: { type: string }
+          example: ['Petition has 4 of 10 addresses']
+
+    Candidate:
+      type: object
+      required: [date, weekend_approved, weekend_pending, cap, score, older_pending_competing, can_approve]
+      properties:
+        date: { $ref: '#/components/schemas/LocalDate' }
+        weekend_approved: { type: integer, example: 12 }
+        weekend_pending: { type: integer, example: 3 }
+        cap: { type: integer, example: 30 }
+        score: { $ref: '#/components/schemas/TrafficScore' }
+        older_pending_competing: { type: boolean, description: 'Warning only: approving this date would leave fewer free slots than older submitted requests that can only use this weekend.' }
+        can_approve: { $ref: '#/components/schemas/CanApprove', description: 'Approve gate evaluated for this candidate date. The top-level `can_approve` equals the first candidate''s.' }
+
+    ImpactMap:
+      type: object
+      required: [this, others_same_weekend, bus_stops, schools]
+      properties:
+        this:
+          type: object
+          required: [block_id, level]
+          properties:
+            block_id: { $ref: '#/components/schemas/BlockIdValue' }
+            level: { $ref: '#/components/schemas/Level' }
+        others_same_weekend:
+          type: array
+          items:
+            type: object
+            required: [block_id, block_label, status]
+            properties:
+              block_id: { $ref: '#/components/schemas/BlockIdValue' }
+              block_label: { type: string }
+              status: { $ref: '#/components/schemas/RequestStatus' }
+        bus_stops:
+          type: array
+          items:
+            type: object
+            required: [stop_id, lat, lon, weekday_trips]
+            properties:
+              stop_id: { type: string }
+              lat: { type: number }
+              lon: { type: number }
+              weekday_trips: { type: integer, example: 140 }
+        schools:
+          type: array
+          items:
+            type: object
+            required: [name, lat, lon]
+            properties:
+              name: { type: string }
+              lat: { type: number }
+              lon: { type: number }
+
+    VendorOnRequestDetail:
+      type: object
+      required: [name, service, price_usd, state]
+      properties:
+        name: { type: string, example: Sample Ice Cream Co. }
+        service: { type: string, example: ice_cream }
+        price_usd: { type: integer, example: 300 }
+        state: { type: string, enum: [Coming, Waiting for vendor, Matches (sees it after approval)] }
+
+    RequestDetail:
+      type: object
+      required: [id, block_id, block_label, date_start, date_end, guests, services, status, approved_date, submitted_at, version, organizer_display_name, distinct_count, can_approve, candidates, impact_map, vendors, thread_id, change_requests]
+      properties:
+        id: { type: string }
+        block_id: { $ref: '#/components/schemas/BlockIdValue' }
+        block_label: { type: string, example: 1100 S Cuyler Ave }
+        date_start: { $ref: '#/components/schemas/LocalDate' }
+        date_end: { $ref: '#/components/schemas/LocalDate' }
+        guests: { type: integer }
+        services: { $ref: '#/components/schemas/Services' }
+        status: { $ref: '#/components/schemas/RequestStatus' }
+        approved_date: { oneOf: [{ type: 'null' }, { $ref: '#/components/schemas/LocalDate' }] }
+        submitted_at: { type: ['string', 'null'], format: date-time }
+        version: { type: string, description: Optimistic-lock version; send in `If-Match` on approve. }
+        organizer_display_name: { type: string, example: Sample Organizer }
+        distinct_count: { type: integer, example: 10 }
+        can_approve: { $ref: '#/components/schemas/CanApprove' }
+        candidates:
+          type: array
+          items: { $ref: '#/components/schemas/Candidate' }
+        impact_map: { $ref: '#/components/schemas/ImpactMap' }
+        vendors:
+          type: array
+          items: { $ref: '#/components/schemas/VendorOnRequestDetail' }
+        thread_id: { type: string }
+        change_requests:
+          type: array
+          items: { $ref: '#/components/schemas/ChangeRequest' }
+
+    ChangeRequest:
+      type: object
+      required: [id, request_id, type, status, message, created_at]
+      properties:
+        id: { type: string }
+        request_id: { type: string }
+        type: { type: string, enum: [reschedule, cancel] }
+        proposed_start: { $ref: '#/components/schemas/LocalDate' }
+        proposed_end: { $ref: '#/components/schemas/LocalDate' }
+        message: { type: string }
+        status: { type: string, enum: [open, accepted, declined] }
+        new_date: { oneOf: [{ type: 'null' }, { $ref: '#/components/schemas/LocalDate' }] }
+        created_at: { type: string, format: date-time }
+        resolved_at: { type: ['string', 'null'], format: date-time }
+
+    DayView:
+      type: object
+      required: [date, parties, totals]
+      properties:
+        date: { $ref: '#/components/schemas/LocalDate' }
+        parties:
+          type: array
+          items:
+            type: object
+            required: [request_id, block_id, centroid, lines, block_label, guests, level, why, barricade_date, vendors]
+            properties:
+              request_id: { type: string }
+              block_id: { $ref: '#/components/schemas/BlockIdValue' }
+              centroid: { $ref: '#/components/schemas/LatLon' }
+              lines: { $ref: '#/components/schemas/BlockLines' }
+              block_label: { type: string }
+              guests: { type: integer }
+              level: { $ref: '#/components/schemas/Level' }
+              why: { type: string, example: 1 bus stop on the block }
+              barricade_date: { $ref: '#/components/schemas/LocalDate' }
+              vendors:
+                type: array
+                items: { type: string }
+        totals:
+          type: object
+          required: [count, by_level, bus_stops_closed, vendors]
+          properties:
+            count: { type: integer }
+            by_level:
+              type: object
+              required: [low, medium, high]
+              properties:
+                low: { type: integer }
+                medium: { type: integer }
+                high: { type: integer }
+            bus_stops_closed: { type: integer }
+            vendors: { type: integer }
+
+    WhatIfResult:
+      type: object
+      required: [per_block, worst, weekend_count, suggestions, tips]
+      properties:
+        per_block:
+          type: array
+          items:
+            type: object
+            required: [block_id, block_label, centroid, lines, score]
+            properties:
+              block_id: { $ref: '#/components/schemas/BlockIdValue' }
+              block_label: { type: string }
+              centroid: { $ref: '#/components/schemas/LatLon' }
+              lines: { $ref: '#/components/schemas/BlockLines' }
+              score: { $ref: '#/components/schemas/TrafficScore' }
+        worst:
+          oneOf:
+            - type: 'null'
+            - $ref: '#/components/schemas/TrafficScore'
+        weekend_count:
+          description: Null on weekdays.
+          oneOf:
+            - type: 'null'
+            - type: object
+              required: [count, cap]
+              properties:
+                count: { type: integer, example: 28 }
+                cap: { type: integer, example: 30 }
+        suggestions:
+          type: array
+          items:
+            type: object
+            required: [kind, text, apply]
+            properties:
+              kind: { type: string, enum: [other_saturday, weekday_to_saturday] }
+              text: { type: string }
+              apply:
+                type: object
+                description: Planner state change for this suggestion, for example the new `date`.
+                additionalProperties: true
+                example: { date: '2027-06-19' }
+        tips:
+          type: array
+          items: { type: string }
+
+    AiExplainInput:
+      type: object
+      description: Computed data only. No names, emails, house numbers or organizer data.
+      required: [question, date, is_weekday, closures, weekend, suggestions, tips]
+      properties:
+        question: { type: string, maxLength: 300, description: Untrusted free text. }
+        date:
+          allOf: [{ $ref: '#/components/schemas/LocalDate' }]
+          maxLength: 200
+        is_weekday: { type: boolean }
+        closures:
+          type: array
+          maxItems: 50
+          items:
+            type: object
+            required: [label, score, level, reasons]
+            properties:
+              label: { type: string, maxLength: 200 }
+              score: { type: integer, minimum: 0, maximum: 100 }
+              level: { type: string, enum: [low, medium, high] }
+              reasons:
+                type: array
+                maxItems: 20
+                items:
+                  type: object
+                  required: [pts, text]
+                  properties:
+                    pts: { type: integer }
+                    text: { type: string, maxLength: 200 }
+        weekend:
+          oneOf:
+            - type: 'null'
+            - type: object
+              required: [count, cap]
+              properties:
+                count: { type: integer, minimum: 0, maximum: 1000 }
+                cap: { type: integer, minimum: 0, maximum: 1000 }
+        suggestions:
+          type: array
+          maxItems: 20
+          items:
+            type: object
+            required: [text]
+            properties:
+              text: { type: string, maxLength: 200 }
+        tips:
+          type: array
+          maxItems: 20
+          items: { type: string, maxLength: 200 }
+
+    AiExplainOutput:
+      type: object
+      required: [summary, answer, referenced_suggestions, source, label]
+      properties:
+        summary: { type: string, description: 'At most 120 words.' }
+        answer: { type: string, description: 'At most 80 words.' }
+        referenced_suggestions:
+          type: array
+          description: Indexes into the input `suggestions`.
+          items: { type: integer, minimum: 0 }
+        source: { type: string, enum: [ai, template] }
+        label: { type: string, enum: ['AI-written', 'Templated summary (AI unavailable)'] }
+
+    VendorAccount:
+      type: object
+      required: [id, business_name, contact_email, status]
+      properties:
+        id: { type: string }
+        business_name: { type: string }
+        contact_email: { type: string, format: email }
+        status: { type: string, enum: [invited, approved, suspended] }
+        approved_at: { type: ['string', 'null'], format: date-time }
+        offer_summary: { type: string, description: 'Short summary of the vendor''s current offer, if any.' }
+
+    WeekendRow:
+      type: object
+      required: [weekend_key, approved, pending, cap]
+      properties:
+        weekend_key: { $ref: '#/components/schemas/LocalDate' }
+        approved: { type: integer, example: 12 }
+        pending: { type: integer, example: 3 }
+        cap: { type: integer, example: 30 }
+
+    Thread:
+      type: object
+      required: [id, kind, request_id]
+      properties:
+        id: { type: string }
+        kind: { type: string, enum: [request, job], description: '`request` = organizer↔Village; `job` = organizer↔vendor.' }
+        request_id: { type: string }
+        match_id: { type: ['string', 'null'] }
+
+    Message:
+      type: object
+      required: [id, thread_id, author_role, body, created_at]
+      properties:
+        id: { type: string }
+        thread_id: { type: string }
+        author_role: { type: string, enum: [resident, vendor, village] }
+        author_display_name: { type: string }
+        body: { type: string }
+        created_at: { type: string, format: date-time }

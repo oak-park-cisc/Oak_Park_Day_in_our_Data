@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env
+node_modules/
+tsconfig.tsbuildinfo
+api/dev.db
+api/test.db
+api/.venv/
+api/.env
+!api/.env.example
+.playwright-mcp/
