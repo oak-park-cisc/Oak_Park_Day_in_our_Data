@@ -1,0 +1,1412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What ECHO Sees</title>
+<meta name="description" content="Aggregate counts of services logged by Oak Park's E.C.H.O. program, February 2025 to September 2026, by kind of need. Draft for Board of Health and ECHO team review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --surface: #f5f7f6;
+  --surface-raised: #ffffff;
+  --ink: #15201d;
+  --ink-2: #4a5753;
+  --ink-3: #6b7773;
+  --rule: #dde3e0;
+  --grid: #e7ecea;
+  --data: #2a78d6;
+  --data-soft: #cde2fb;
+  --note: #8a5a00;
+  --note-bg: #fdf4e1;
+  --link: #1c5cab;
+  --focus: #2a78d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --surface: #161b1a;
+    --surface-raised: #1e2422;
+    --ink: #f1f4f3;
+    --ink-2: #b9c3bf;
+    --ink-3: #8e9a96;
+    --rule: #303836;
+    --grid: #262d2b;
+    --data: #3987e5;
+    --data-soft: #184f95;
+    --note: #f0c36b;
+    --note-bg: #2c2516;
+    --link: #86b6ef;
+    --focus: #86b6ef;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #161b1a;
+  --surface-raised: #1e2422;
+  --ink: #f1f4f3;
+  --ink-2: #b9c3bf;
+  --ink-3: #8e9a96;
+  --rule: #303836;
+  --grid: #262d2b;
+  --data: #3987e5;
+  --data-soft: #184f95;
+  --note: #f0c36b;
+  --note-bg: #2c2516;
+  --link: #86b6ef;
+  --focus: #86b6ef;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: "Public Sans", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  font-variant-numeric: tabular-nums;
+}
+a { color: var(--link); text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+.draft {
+  background: var(--note-bg);
+  color: var(--note);
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.draft p { margin: 0; }
+
+header.intro { padding: 40px 0 8px; }
+h1 {
+  font-size: clamp(34px, 6vw, 56px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+.lede { max-width: 66ch; color: var(--ink-2); margin: 0 0 12px; font-size: 18px; }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+/* Hero chart */
+.hero { margin: 28px 0 8px; }
+.hero-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 28px;
+  margin-bottom: 6px;
+}
+.hero-total { font-size: 44px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+.hero-total small { display: block; font-size: 15px; font-weight: 500; color: var(--ink-2); letter-spacing: 0; margin-top: 6px; }
+.hero-facts { display: flex; flex-wrap: wrap; gap: 4px 28px; color: var(--ink-2); font-size: 15px; }
+.hero-facts b { color: var(--ink); font-weight: 700; }
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; width: 100%; overflow: visible; }
+.axis text, .tick { fill: var(--ink-3); font-size: 12px; }
+.gridline { stroke: var(--grid); stroke-width: 1; }
+.baseline { stroke: var(--ink-3); stroke-width: 1; }
+.bar { fill: var(--data); }
+.bar.partial { fill: url(#hatch); stroke: var(--data); stroke-width: 1.5; }
+.bar.dim { opacity: .35; }
+.hit { fill: transparent; cursor: default; }
+.hit:focus { outline: none; }
+.annot-line { stroke: var(--ink-2); stroke-width: 1; }
+.annot { fill: var(--ink-2); font-size: 12.5px; }
+.annot b { font-weight: 700; }
+.legend-key { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; color: var(--ink-2); margin-top: 6px; }
+.swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -1px; margin-right: 6px; }
+.swatch.solid { background: var(--data); }
+.swatch.hatched { border: 1.5px solid var(--data); background: repeating-linear-gradient(135deg, var(--data) 0 1.5px, transparent 1.5px 4px); }
+
+.tooltip {
+  position: absolute; pointer-events: none; z-index: 5;
+  background: var(--surface-raised); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  padding: 8px 10px; font-size: 13.5px; line-height: 1.4;
+  min-width: 170px; max-width: 240px;
+  opacity: 0; transition: opacity .08s;
+}
+.tooltip.on { opacity: 1; }
+.tooltip .tt-h { font-weight: 700; margin-bottom: 4px; }
+.tooltip .tt-row { display: flex; justify-content: space-between; gap: 12px; color: var(--ink-2); }
+.tooltip .tt-row span:last-child { color: var(--ink); }
+.tooltip .tt-note { color: var(--note); margin-top: 4px; }
+
+/* Caveats strip */
+.reading {
+  display: grid; gap: 16px 32px; margin: 36px 0 8px; padding: 20px 0;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+}
+@media (min-width: 720px) { .reading { grid-template-columns: repeat(3, 1fr); } }
+.reading h2 { font-size: 15px; font-weight: 700; margin: 0 0 4px; }
+.reading p { margin: 0; font-size: 15px; color: var(--ink-2); }
+
+/* Category grid */
+section.needs { margin: 48px 0 0; }
+.section-h { font-size: clamp(26px, 3.6vw, 34px); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 8px; line-height: 1.15; }
+.section-sub { color: var(--ink-2); max-width: 66ch; margin: 0 0 24px; }
+.grid { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 640px) and (max-width: 999px) { .panel:last-child:nth-child(odd) { grid-column: span 2; } }
+@media (min-width: 1000px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  .panel:last-child:nth-child(3n+2) { grid-column: span 2; }
+  .panel:last-child:nth-child(3n+1) { grid-column: span 3; }
+}
+.panel { background: var(--surface-raised); padding: 18px 18px 20px; display: flex; flex-direction: column; min-width: 0; }
+.panel h3 { font-size: 19px; font-weight: 700; margin: 0; line-height: 1.25; }
+.panel .total { display: flex; align-items: baseline; gap: 10px; margin: 2px 0 2px; }
+.panel .total .n { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; }
+.panel .total .share { color: var(--ink-3); font-size: 14px; }
+.panel .def { color: var(--ink-2); font-size: 14.5px; margin: 4px 0 10px; }
+.panel .spark { position: relative; margin: 2px 0 4px; }
+.spark-line { fill: none; stroke: var(--data); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.spark-area { fill: var(--data-soft); opacity: .45; }
+.spark-dot { fill: var(--data); }
+.spark-partial { fill: var(--surface-raised); stroke: var(--data); stroke-width: 1.5; }
+.spark-focus { fill: var(--data); stroke: var(--surface-raised); stroke-width: 2; }
+.spark-cross { stroke: var(--ink-3); stroke-width: 1; }
+.yoy { font-size: 14px; color: var(--ink-2); margin: 2px 0 0; }
+.yoy b { color: var(--ink); }
+.flag { font-size: 13.5px; color: var(--note); background: var(--note-bg); border-radius: 6px; padding: 6px 8px; margin: 10px 0 0; }
+.who { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.who h4 { font-size: 14px; font-weight: 700; margin: 0 0 8px; }
+.who ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.who li { font-size: 14px; line-height: 1.45; min-width: 0; overflow-wrap: anywhere; }
+.who ul:not(.open) li.extra { display: none; }
+.who .prog { font-weight: 600; }
+.who .prov { color: var(--ink-3); font-size: 13px; }
+.who .offer { margin: 3px 0 4px; }
+.who .who-more { margin: 10px 0 0; font-size: 13.5px; color: var(--ink-3); }
+.who .more {
+  margin-top: 12px; font: inherit; font-size: 14px; font-weight: 600; color: var(--link);
+  background: none; border: 1px solid var(--rule); border-radius: 6px; padding: 5px 10px; cursor: pointer;
+}
+.who .more:hover { border-color: var(--link); }
+.who .empty { font-size: 14px; color: var(--ink-3); margin: 0; }
+
+/* Table view */
+details.table-view { margin: 32px 0 0; }
+details.table-view summary { cursor: pointer; font-weight: 600; color: var(--link); }
+.table-scroll { overflow-x: auto; margin-top: 12px; border: 1px solid var(--rule); border-radius: 8px; }
+table { border-collapse: collapse; font-size: 13.5px; width: max-content; min-width: 100%; }
+th, td { padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--surface-raised); }
+thead th { background: var(--surface-raised); font-weight: 600; color: var(--ink-2); }
+tbody td { background: var(--surface); }
+tbody td:first-child { font-weight: 600; }
+tr.sum td { font-weight: 700; }
+.partial-col { color: var(--ink-3); font-style: italic; }
+
+footer { margin: 56px 0 0; padding: 28px 0 48px; border-top: 1px solid var(--rule); color: var(--ink-2); font-size: 14.5px; }
+footer h2 { font-size: 15px; color: var(--ink); margin: 0 0 6px; }
+footer ul { margin: 0 0 18px; padding-left: 18px; max-width: 80ch; }
+footer li { margin-bottom: 4px; }
+footer p { margin: 0 0 8px; max-width: 80ch; }
+
+/* Tabs */
+.tabs { position: sticky; top: 0; z-index: 10; background: var(--surface); border-bottom: 1px solid var(--rule); }
+.tabs .wrap { display: flex; gap: 4px; overflow-x: auto; }
+.tab {
+  appearance: none; background: none; border: 0; border-bottom: 3px solid transparent;
+  padding: 12px 12px 10px; font: inherit; font-size: 15.5px; font-weight: 600; color: var(--ink-2);
+  cursor: pointer; white-space: nowrap;
+}
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--data); }
+[role="tabpanel"][hidden] { display: none; }
+
+/* Referral source tab */
+.src-bars, .mix ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.src-bars { margin: 18px 0 6px; max-width: 760px; gap: 8px; }
+.brow { display: grid; grid-template-columns: minmax(0, 11.5em) 1fr 3.2em; align-items: center; gap: 10px; font-size: 14.5px; }
+.src-bars .brow { grid-template-columns: minmax(0, 17em) 1fr 3.6em; font-size: 15px; }
+.brow .lbl { color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.brow .track { height: 12px; }
+.src-bars .brow .track { height: 18px; }
+.brow .fill { display: block; height: 100%; min-width: 2px; background: var(--data); border-radius: 0 4px 4px 0; }
+.brow .v { text-align: right; font-weight: 700; }
+.brow.hidden-cell .v { font-weight: 500; color: var(--ink-3); font-size: 13px; }
+.mix { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.mix h4 { font-size: 14px; font-weight: 700; margin: 0 0 8px; }
+.hidden-note { font-size: 13.5px; color: var(--ink-3); margin: 8px 0 0; }
+.cell-hidden { color: var(--ink-3); font-style: italic; }
+
+/* Find help tab */
+.help-urgent { max-width: 72ch; font-size: 15px; margin: 4px 0 18px; }
+.help-urgent b, .help-urgent a { color: inherit; }
+.finder { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: flex-end; margin: 0 0 8px; }
+.finder .field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.finder .field.grow { flex: 1 1 280px; }
+.finder label { font-size: 13.5px; font-weight: 600; color: var(--ink-2); }
+.finder input, .finder select {
+  font: inherit; font-size: 16px; color: var(--ink); background: var(--surface-raised);
+  border: 1px solid var(--rule); border-radius: 8px; padding: 9px 12px; min-height: 44px; width: 100%;
+}
+.finder select { min-width: 13em; }
+.finder input:focus-visible, .finder select:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }
+.help-count { font-size: 14px; color: var(--ink-2); margin: 4px 0 14px; }
+.rcards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.rcard { background: var(--surface-raised); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 6px; min-width: 0; overflow-wrap: anywhere; font-size: 14.5px; }
+.rcard .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.rcard .chip { font-size: 12px; font-weight: 600; color: var(--ink-2); background: var(--surface); border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; }
+.rcard h3 { font-size: 17px; line-height: 1.3; margin: 2px 0 0; }
+.rcard h3 a { text-decoration: none; }
+.rcard { scroll-margin-top: 64px; }
+.rcard:focus { outline: none; }
+.rcard.flash { animation: card-flash 2.4s ease-out; }
+@keyframes card-flash { 0%, 40% { box-shadow: 0 0 0 3px var(--focus); } 100% { box-shadow: 0 0 0 3px transparent; } }
+@media (prefers-reduced-motion: reduce) { .rcard.flash { animation: none; box-shadow: 0 0 0 3px var(--focus); } }
+.rcard h3 a.anchor { color: var(--ink-3); font-weight: 500; padding: 0 2px; opacity: .55; white-space: nowrap; }
+.rcard:hover h3 a.anchor, .rcard h3 a.anchor:focus-visible { opacity: 1; }
+.rcard h3 a.anchor[data-copied]::after { content: " link copied"; font-size: 12px; color: var(--ink-2); }
+.rcard h3 a:hover { text-decoration: underline; }
+.rcard .prov { color: var(--ink-3); font-size: 13.5px; margin: -4px 0 0; }
+.rcard .offer { margin: 0; }
+.rcard .when { margin: 0; padding: 8px 10px; background: var(--surface); border-radius: 6px; }
+.rcard .when b { display: block; font-size: 12.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-3); margin-bottom: 2px; }
+.rcard dl { display: grid; grid-template-columns: 4.6em 1fr; gap: 1px 8px; margin: 0; color: var(--ink-2); font-size: 13.5px; }
+.rcard dt { color: var(--ink-3); }
+.rcard dd { margin: 0; min-width: 0; }
+.rcard dd span { display: block; }
+.rcard a[href^="tel:"] { white-space: nowrap; }
+.rcard .site { margin: 2px 0 0; font-size: 14px; font-weight: 600; }
+.rcard details { font-size: 13.5px; color: var(--ink-2); margin-top: auto; padding-top: 4px; }
+.rcard details summary { cursor: pointer; color: var(--link); font-weight: 600; width: max-content; }
+.rcard details[open] summary { margin-bottom: 6px; }
+.rcard .checked { margin: 6px 0 0; font-size: 12.5px; color: var(--ink-3); }
+.rcard .notes { margin: 0; }
+.rcard dl dd:first-of-type a[href^="tel:"] { font-weight: 600; }
+.help-empty { padding: 24px 0; color: var(--ink-2); }
+.linklike { font: inherit; color: var(--link); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+
+/* Community context tab */
+.ctx-callout { max-width: 72ch; font-size: 15px; margin: 4px 0 8px; }
+.ctx-callout b { color: inherit; }
+.swatch.marker { width: 0; height: 14px; border-left: 2px dashed var(--ink-2); border-radius: 0; margin-right: 8px; }
+.echo-start { stroke: var(--ink-2); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.calls { display: grid; gap: 8px 40px; }
+@media (min-width: 820px) { .calls { grid-template-columns: 1fr 1fr; } }
+.calls .src-bars { margin-top: 8px; }
+.calls .src-bars .brow { grid-template-columns: minmax(0, 13.5em) 1fr 4.4em; }
+td .chg { display: block; font-size: 11.5px; color: var(--ink-3); }
+
+/* Day and time tab */
+.sub-h { font-size: 19px; font-weight: 700; margin: 28px 0 4px; }
+.brow .hidden-tag { font-weight: 500; color: var(--ink-3); font-size: 12.5px; margin-left: 6px; white-space: nowrap; }
+#wd-bars .brow .v { text-align: left; }
+td.heat { position: relative; }
+td.heat.hi { color: #fff; }
+.brow .pct { font-weight: 500; color: var(--ink-2); }
+td.heat .cell-pct { display: block; font-size: 11.5px; opacity: .8; }
+td .row-note { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-3); }
+#wd-bars .brow { grid-template-columns: minmax(0, 8em) 1fr 11em; }
+
+.error { background: var(--note-bg); color: var(--note); padding: 14px 16px; border-radius: 8px; margin: 24px 0; }
+.error code { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .tooltip { transition: none; } }
+</style>
+</head>
+<body>
+<div class="draft"><div class="wrap"><p>Draft prototype from the Day in Our Data hackathon, October 3, 2026. For review by the Oak Park Board of Health and the ECHO team. Not an official Village product.</p></div></div>
+
+<nav class="tabs" aria-label="Views">
+  <div class="wrap" role="tablist">
+    <button class="tab" role="tab" id="tab-services" aria-controls="view-services" aria-selected="true" data-hash="services">By kind of need</button>
+    <button class="tab" role="tab" id="tab-referrals" aria-controls="view-referrals" aria-selected="false" tabindex="-1" data-hash="referrals">By referral source</button>
+    <button class="tab" role="tab" id="tab-weekday" aria-controls="view-weekday" aria-selected="false" tabindex="-1" data-hash="weekday">By weekday</button>
+    <button class="tab" role="tab" id="tab-help" aria-controls="view-help" aria-selected="false" tabindex="-1" data-hash="help">Find help</button>
+    <button class="tab" role="tab" id="tab-context" aria-controls="view-context" aria-selected="false" tabindex="-1" data-hash="context">Community context</button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="intro">
+    <h1>What ECHO sees</h1>
+    <p class="lede">E.C.H.O. (Engaging Community for Healthy Outcomes) is the Village of Oak Park's care-coordination program. A program manager and two care coordinators follow up after police, fire, or Village contact, take walk-ins and calls, and connect residents to services. The team works <strong>Monday to Friday</strong> and does not respond to mental health crises.</p>
+    <p class="lede">Each count below is <strong>one logged service, not one person</strong>. Someone helped three times counts three times, so read these numbers as the team's workload, not how many residents it reached.</p>
+  </header>
+
+  <div id="error" class="error" hidden></div>
+
+  <div id="view-services" role="tabpanel" aria-labelledby="tab-services" tabindex="0">
+  <section class="hero" aria-labelledby="hero-label">
+    <div class="hero-head">
+      <div class="hero-total" id="hero-total">&nbsp;<small id="hero-label">services logged</small></div>
+      <div class="hero-facts" id="hero-facts"></div>
+    </div>
+    <div class="chart" id="monthly"></div>
+    <div class="legend-key" aria-hidden="true">
+      <span><span class="swatch solid"></span>Services in a complete month</span>
+      <span><span class="swatch hatched"></span>Partial month, still being logged</span>
+    </div>
+  </section>
+
+  <section class="reading" aria-label="How to read these numbers">
+    <div>
+      <h2>Services, not referrals</h2>
+      <p>The dashboard counts 874 services for 2025, while the Village Board was told about 702 referrals. One referral may produce more than one logged service; the ECHO team has not yet said.</p>
+    </div>
+    <div>
+      <h2>September 2025 was likely a one-time batch</h2>
+      <p>It is about double the months around it, and nearly all of the extra came from Police and Fire referrals. Residents' own contacts and reported crime stayed flat, and October fell straight back. Our best guess is a one-time batch of Police and Fire follow-ups, or a catch-up in logging them, rather than a rise in need. The ECHO team has not confirmed this.</p>
+    </div>
+    <div>
+      <h2>The categories shifted in 2026</h2>
+      <p>"Other" jumps in May 2026 and an uncategorized group appears in July 2026, possibly from changes to the intake form. Compare 2026 category counts with care.</p>
+    </div>
+  </section>
+
+  <section class="needs" aria-labelledby="needs-h">
+    <h2 class="section-h" id="needs-h">What people needed help with</h2>
+    <p class="section-sub">Each panel is one service category, on the same scale so they can be compared. The year-over-year line compares March through August, the latest six complete months, with the same months in 2025. Below each trend are local services that match it.</p>
+    <div class="grid" id="grid"></div>
+
+    <details class="table-view">
+      <summary>Show all monthly counts as a table</summary>
+      <div class="table-scroll" id="table"></div>
+    </details>
+  </section>
+  </div>
+
+  <div id="view-referrals" role="tabpanel" aria-labelledby="tab-referrals" tabindex="0" hidden>
+  <section class="hero" aria-labelledby="ref-h">
+    <h2 class="section-h" id="ref-h">Who connected people to ECHO</h2>
+    <p class="section-sub">Every service is logged with the source that brought the resident to ECHO. These are the same services as the other tab, sorted by where they came from instead of what they were for. They are counts of services, not referrals: one referral may lead to more than one service.</p>
+    <ul class="src-bars" id="src-bars" aria-label="Services by referral source, all months"></ul>
+  </section>
+
+  <section class="reading" aria-label="How to read the referral sources">
+    <div>
+      <h2>Police and Fire drove the September 2025 spike</h2>
+      <p>Police (76) and Fire (37) roughly doubled that month while resident contacts stayed flat. Whether it reflects a real rise, a batch of follow-ups, or catch-up data entry is an open question for the ECHO team.</p>
+    </div>
+    <div>
+      <h2>Community Engagement is ECHO itself</h2>
+      <p>It is the team's own outreach, such as street outreach and district cleanings, not an outside referrer. That is why most of it is Unhoused Resident work.</p>
+    </div>
+    <div>
+      <h2>Some cells are hidden for privacy</h2>
+      <p>In the breakdown of what each source sent, small counts and the cells that would reveal them are hidden. Hidden means unavailable. It is not zero or "under 5," and nothing here estimates it.</p>
+    </div>
+  </section>
+
+  <section class="needs" aria-labelledby="src-h">
+    <h2 class="section-h" id="src-h">Each referral source, month by month</h2>
+    <p class="section-sub">Each panel is one referral source. The trend lines share one scale so sources can be compared. Below each trend is what those services were for, from the dashboard's all-time table of referral source by kind of need, which has no months. The 911 call type behind a Police or Fire referral is not in ECHO's data.</p>
+    <div class="grid" id="src-grid"></div>
+
+    <details class="table-view">
+      <summary>Show monthly counts by referral source as a table</summary>
+      <div class="table-scroll" id="src-table"></div>
+    </details>
+    <details class="table-view">
+      <summary>Show referral source by kind of need as a table</summary>
+      <div class="table-scroll" id="mix-table"></div>
+    </details>
+  </section>
+  </div>
+
+  <div id="view-weekday" role="tabpanel" aria-labelledby="tab-weekday" tabindex="0" hidden>
+  <section class="hero" aria-labelledby="wd-h">
+    <h2 class="section-h" id="wd-h">Which weekday services were logged</h2>
+    <p class="section-sub">ECHO works Monday to Friday, so these counts show the team's schedule, not when people needed help. They come from the dashboard's all-time table of weekday by kind of need, which has no months. Small cells, and the cells that would reveal them, are hidden for privacy. So each bar adds up only the cells that are shown and says how many are hidden, and each percentage is a share of the shown services, not of every service.</p>
+    <ul class="src-bars" id="wd-bars" aria-label="Services by weekday, shown cells only, with share of shown services"></ul>
+    <h3 class="sub-h">Weekday by kind of need</h3>
+    <p class="section-sub">Each cell shows the count and, below it, that day's share of the kind of need's shown services. Darker cells hold more services. "hidden" means withheld for privacy, not zero.</p>
+    <div class="table-scroll" id="wd-table"></div>
+  </section>
+  </div>
+
+  <div id="view-help" role="tabpanel" aria-labelledby="tab-help" tabindex="0" hidden>
+  <section class="hero" aria-labelledby="help-h">
+    <h2 class="section-h" id="help-h">Find local help</h2>
+    <p class="section-sub">Public and nonprofit services that match the kinds of need ECHO sees. Search by need, place or organization, or pick a category. Details come from each provider's own pages, on the date shown on each card. Call to confirm before you go.</p>
+    <p class="flag help-urgent"><b>In an emergency, call 911.</b> For a mental health crisis, call or text <a href="tel:988">988</a>, or call Thrive's 24/7 crisis team at <a href="tel:7083837500,1">708-383-7500, option 1</a>.</p>
+    <form class="finder" role="search" onsubmit="return false">
+      <div class="field grow">
+        <label for="help-q">Search</label>
+        <input type="search" id="help-q" placeholder="Try food, rent, seniors, Spanish, 24/7" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="help-cat">Kind of need</label>
+        <select id="help-cat"><option value="">All kinds of need</option></select>
+      </div>
+    </form>
+    <p class="help-count" id="help-count" role="status" aria-live="polite"></p>
+    <div class="rcards" id="help-cards"></div>
+    <div class="help-empty" id="help-empty" hidden>
+      <p>No services match. Try a shorter search, or <button type="button" class="linklike" id="help-clear">clear the filters</button>.</p>
+    </div>
+  </section>
+  </div>
+
+  <div id="view-context" role="tabpanel" aria-labelledby="tab-context" tabindex="0" hidden>
+  <section class="hero" aria-labelledby="ctx-h">
+    <h2 class="section-h" id="ctx-h">Crime and calls for service in Oak Park</h2>
+    <p class="flag ctx-callout"><b>This tab is not ECHO data.</b> It shows reported crime and police and fire calls for the whole Village, as background for ECHO's work. These trends say nothing about whether ECHO caused any change: the decline began before ECHO started, most of it is property crime, which ECHO doesn't work on, and ECHO's records have no locations to compare against.</p>
+    <h3 class="sub-h">Reported crime incidents per month</h3>
+    <p class="section-sub">Distinct incidents reported to Oak Park police, January 2022 to August 2026, from the Police Department's public crime dashboard. Reported crimes only, not all calls to police.</p>
+    <div class="chart" id="crime-monthly"></div>
+    <div class="legend-key" aria-hidden="true">
+      <span><span class="swatch solid"></span>Reported incidents in a month</span>
+      <span><span class="swatch marker"></span>ECHO begins, February 2025</span>
+    </div>
+    <h3 class="sub-h">The same 12 months, year by year</h3>
+    <p class="section-sub">March to February each year, so every window covers the same seasons. The change is against the window before.</p>
+    <div class="table-scroll" id="crime-table"></div>
+  </section>
+
+  <section class="needs" aria-labelledby="calls-h">
+    <h2 class="section-h" id="calls-h">Calls for service per year</h2>
+    <p class="section-sub">All dispatched police and fire calls, from the Village Board's June 2026 Phase 2 presentation. Police calls were already falling before ECHO started; fire calls rose. Each list has its own scale.</p>
+    <div class="calls">
+      <div><h3 class="sub-h">Police</h3><ul class="src-bars" id="calls-police" aria-label="Police calls for service per year"></ul></div>
+      <div><h3 class="sub-h">Fire</h3><ul class="src-bars" id="calls-fire" aria-label="Fire calls for service per year"></ul></div>
+    </div>
+  </section>
+  </div>
+
+  <footer>
+    <h2>Limits of this data</h2>
+    <ul>
+      <li>Counts only. The source has no names, ages, addresses, or notes, so nothing here can be mapped or traced to a person.</li>
+      <li>"By kind of need" uses the dashboard's month-by-service table. "By referral source" uses its month-by-referral-source table and its referral-source-by-service table. "By weekday" uses its weekday-by-service table. These tables count the same services in different ways, so they are never added together.</li>
+      <li>The team works weekdays, so the timing of these counts reflects its schedule, not when needs arise.</li>
+      <li>Category labels have no official definitions. The descriptions here are pieced together from Village Board presentations and may not match how staff assign categories.</li>
+      <li>"Community context" shows reported crimes and calls for service for the whole Village. The decline in both began before ECHO, and crime is a weak measure of ECHO's mostly non-criminal work, so the tab draws no conclusions about ECHO's effect.</li>
+    </ul>
+    <h2>Sources</h2>
+    <p>ECHO counts: Village of Oak Park <a href="https://opendata.oak-park.us/EchoActivity">ECHO Activity dashboard</a>, cached for Day in Our Data on September 17, 2026, February 2025 through part of September 2026. Program details: the Village's <a href="https://www.oak-park.us/Community/Community-Services/E.C.H.O-Engaging-Community-for-Healthy-Outcomes">E.C.H.O. page</a> and Board presentations listed in the team's data key. Questions or corrections: the ECHO team at <a href="mailto:echo@oak-park.us">echo@oak-park.us</a>.</p>
+    <p>Crime: Oak Park Police Department "Crime Incident - Public" dashboard, linked from the Village's <a href="https://www.oak-park.us/Public-Safety/Police-Department/Reports-Maps/Crime-Maps">Crime Maps</a> page, cached January 2022 to September 1, 2026 and summarized to monthly counts. Calls for service: <a href="https://oak-park.legistar1.com/oak-park/attachments/21db010a-41cb-410a-9828-9ce4a0ef9fc7.pptx">Alternative Response Phase 2 presentation</a>, June 2026, slide 3.</p>
+    <p>Local services come from the team's resource directory, checked against each provider's published page on the date shown in the data.</p>
+  </footer>
+</main>
+
+<!-- Standalone copy built 2026-10-03 14:25 CDT by scripts/build_standalone.py -->
+<script>window.EMBEDDED_CSV = {"../data/echo-activity-oak-park.csv": "breakdown,month,weekday,time_block,referral_source,service,count\nservice_by_month,2025-02,,,,Behavioral Health,4\nservice_by_month,2025-02,,,,Domestic Violence,2\nservice_by_month,2025-02,,,,Housing,8\nservice_by_month,2025-02,,,,Other,3\nservice_by_month,2025-02,,,,Senior Services,1\nservice_by_month,2025-02,,,,Unhoused Resident,7\nservice_by_month,2025-03,,,,Behavioral Health,4\nservice_by_month,2025-03,,,,Financial Support,2\nservice_by_month,2025-03,,,,Food Services,1\nservice_by_month,2025-03,,,,Housing,5\nservice_by_month,2025-03,,,,Medical Support,2\nservice_by_month,2025-03,,,,Senior Services,24\nservice_by_month,2025-03,,,,Unhoused Resident,14\nservice_by_month,2025-03,,,,Youth/Family Services,1\nservice_by_month,2025-04,,,,Behavioral Health,7\nservice_by_month,2025-04,,,,Financial Support,5\nservice_by_month,2025-04,,,,Food Services,1\nservice_by_month,2025-04,,,,Housing,13\nservice_by_month,2025-04,,,,Medical Support,2\nservice_by_month,2025-04,,,,Senior Services,23\nservice_by_month,2025-04,,,,Unhoused Resident,7\nservice_by_month,2025-04,,,,Youth/Family Services,1\nservice_by_month,2025-05,,,,Behavioral Health,8\nservice_by_month,2025-05,,,,Domestic Violence,1\nservice_by_month,2025-05,,,,Housing,11\nservice_by_month,2025-05,,,,Medical Support,4\nservice_by_month,2025-05,,,,Senior Services,14\nservice_by_month,2025-05,,,,Unhoused Resident,4\nservice_by_month,2025-05,,,,Youth/Family Services,3\nservice_by_month,2025-06,,,,Behavioral Health,18\nservice_by_month,2025-06,,,,Domestic Violence,4\nservice_by_month,2025-06,,,,Financial Support,3\nservice_by_month,2025-06,,,,Food Services,1\nservice_by_month,2025-06,,,,Housing,8\nservice_by_month,2025-06,,,,Other,1\nservice_by_month,2025-06,,,,Senior Services,19\nservice_by_month,2025-06,,,,Unhoused Resident,7\nservice_by_month,2025-06,,,,Youth/Family Services,13\nservice_by_month,2025-07,,,,Behavioral Health,11\nservice_by_month,2025-07,,,,Domestic Violence,1\nservice_by_month,2025-07,,,,Financial Support,5\nservice_by_month,2025-07,,,,Housing,9\nservice_by_month,2025-07,,,,Medical Support,1\nservice_by_month,2025-07,,,,Senior Services,15\nservice_by_month,2025-07,,,,Unhoused Resident,9\nservice_by_month,2025-07,,,,Youth/Family Services,2\nservice_by_month,2025-08,,,,Behavioral Health,18\nservice_by_month,2025-08,,,,Domestic Violence,3\nservice_by_month,2025-08,,,,Financial Support,3\nservice_by_month,2025-08,,,,Food Services,1\nservice_by_month,2025-08,,,,Housing,21\nservice_by_month,2025-08,,,,Medical Support,8\nservice_by_month,2025-08,,,,Senior Services,17\nservice_by_month,2025-08,,,,Unhoused Resident,22\nservice_by_month,2025-08,,,,Youth/Family Services,6\nservice_by_month,2025-09,,,,Behavioral Health,39\nservice_by_month,2025-09,,,,Domestic Violence,10\nservice_by_month,2025-09,,,,Financial Support,3\nservice_by_month,2025-09,,,,Food Services,4\nservice_by_month,2025-09,,,,Housing,30\nservice_by_month,2025-09,,,,Medical Support,3\nservice_by_month,2025-09,,,,Other,6\nservice_by_month,2025-09,,,,Senior Services,33\nservice_by_month,2025-09,,,,Unhoused Resident,38\nservice_by_month,2025-09,,,,Youth/Family Services,12\nservice_by_month,2025-10,,,,Behavioral Health,30\nservice_by_month,2025-10,,,,Financial Support,1\nservice_by_month,2025-10,,,,Housing,21\nservice_by_month,2025-10,,,,Other,2\nservice_by_month,2025-10,,,,Senior Services,8\nservice_by_month,2025-10,,,,Unhoused Resident,27\nservice_by_month,2025-10,,,,Youth/Family Services,4\nservice_by_month,2025-11,,,,Behavioral Health,24\nservice_by_month,2025-11,,,,Domestic Violence,4\nservice_by_month,2025-11,,,,Financial Support,3\nservice_by_month,2025-11,,,,Food Services,4\nservice_by_month,2025-11,,,,Housing,16\nservice_by_month,2025-11,,,,Medical Support,1\nservice_by_month,2025-11,,,,Other,3\nservice_by_month,2025-11,,,,Senior Services,25\nservice_by_month,2025-11,,,,Unhoused Resident,20\nservice_by_month,2025-11,,,,Youth/Family Services,5\nservice_by_month,2025-12,,,,Behavioral Health,20\nservice_by_month,2025-12,,,,Domestic Violence,2\nservice_by_month,2025-12,,,,Financial Support,1\nservice_by_month,2025-12,,,,Housing,19\nservice_by_month,2025-12,,,,Other,2\nservice_by_month,2025-12,,,,Senior Services,11\nservice_by_month,2025-12,,,,Unhoused Resident,27\nservice_by_month,2025-12,,,,Youth/Family Services,8\nservice_by_month,2026-01,,,,Behavioral Health,22\nservice_by_month,2026-01,,,,Domestic Violence,2\nservice_by_month,2026-01,,,,Financial Support,3\nservice_by_month,2026-01,,,,Housing,15\nservice_by_month,2026-01,,,,Other,3\nservice_by_month,2026-01,,,,Senior Services,13\nservice_by_month,2026-01,,,,Unhoused Resident,27\nservice_by_month,2026-01,,,,Youth/Family Services,4\nservice_by_month,2026-02,,,,Behavioral Health,19\nservice_by_month,2026-02,,,,Domestic Violence,2\nservice_by_month,2026-02,,,,Financial Support,6\nservice_by_month,2026-02,,,,Housing,13\nservice_by_month,2026-02,,,,Other,1\nservice_by_month,2026-02,,,,Senior Services,8\nservice_by_month,2026-02,,,,Unhoused Resident,21\nservice_by_month,2026-02,,,,Youth/Family Services,2\nservice_by_month,2026-03,,,,Behavioral Health,7\nservice_by_month,2026-03,,,,Domestic Violence,1\nservice_by_month,2026-03,,,,Financial Support,5\nservice_by_month,2026-03,,,,Food Services,1\nservice_by_month,2026-03,,,,Housing,7\nservice_by_month,2026-03,,,,Medical Support,1\nservice_by_month,2026-03,,,,Other,3\nservice_by_month,2026-03,,,,Senior Services,19\nservice_by_month,2026-03,,,,Unhoused Resident,19\nservice_by_month,2026-03,,,,Youth/Family Services,4\nservice_by_month,2026-04,,,,Behavioral Health,23\nservice_by_month,2026-04,,,,Financial Support,3\nservice_by_month,2026-04,,,,Housing,9\nservice_by_month,2026-04,,,,Medical Support,1\nservice_by_month,2026-04,,,,Other,4\nservice_by_month,2026-04,,,,Senior Services,15\nservice_by_month,2026-04,,,,Unhoused Resident,22\nservice_by_month,2026-04,,,,Youth/Family Services,6\nservice_by_month,2026-05,,,,Behavioral Health,12\nservice_by_month,2026-05,,,,Domestic Violence,2\nservice_by_month,2026-05,,,,Financial Support,5\nservice_by_month,2026-05,,,,Housing,6\nservice_by_month,2026-05,,,,Medical Support,2\nservice_by_month,2026-05,,,,Other,22\nservice_by_month,2026-05,,,,Senior Services,3\nservice_by_month,2026-05,,,,Unhoused Resident,44\nservice_by_month,2026-05,,,,Youth/Family Services,7\nservice_by_month,2026-06,,,,Behavioral Health,5\nservice_by_month,2026-06,,,,Domestic Violence,7\nservice_by_month,2026-06,,,,Financial Support,3\nservice_by_month,2026-06,,,,Food Services,3\nservice_by_month,2026-06,,,,Housing,9\nservice_by_month,2026-06,,,,Medical Support,7\nservice_by_month,2026-06,,,,Other,15\nservice_by_month,2026-06,,,,Senior Services,3\nservice_by_month,2026-06,,,,Unhoused Resident,39\nservice_by_month,2026-06,,,,Youth/Family Services,6\nservice_by_month,2026-07,,,,(blank),11\nservice_by_month,2026-07,,,,Behavioral Health,11\nservice_by_month,2026-07,,,,Domestic Violence,2\nservice_by_month,2026-07,,,,Financial Support,1\nservice_by_month,2026-07,,,,Food Services,1\nservice_by_month,2026-07,,,,Housing,23\nservice_by_month,2026-07,,,,Medical Support,3\nservice_by_month,2026-07,,,,Other,9\nservice_by_month,2026-07,,,,Senior Services,7\nservice_by_month,2026-07,,,,Unhoused Resident,50\nservice_by_month,2026-07,,,,Youth/Family Services,3\nservice_by_month,2026-08,,,,(blank),9\nservice_by_month,2026-08,,,,Behavioral Health,5\nservice_by_month,2026-08,,,,Domestic Violence,1\nservice_by_month,2026-08,,,,Financial Support,5\nservice_by_month,2026-08,,,,Housing,6\nservice_by_month,2026-08,,,,Medical Support,2\nservice_by_month,2026-08,,,,Other,8\nservice_by_month,2026-08,,,,Senior Services,11\nservice_by_month,2026-08,,,,Unhoused Resident,25\nservice_by_month,2026-08,,,,Youth/Family Services,3\nservice_by_month,2026-09,,,,(blank),5\nservice_by_month,2026-09,,,,Behavioral Health,1\nservice_by_month,2026-09,,,,Housing,1\nservice_by_month,2026-09,,,,Medical Support,1\nservice_by_month,2026-09,,,,Other,2\nservice_by_month,2026-09,,,,Unhoused Resident,7\nreferral_by_month,2025-02,,,Business,,1\nreferral_by_month,2025-02,,,Community Engagement,,2\nreferral_by_month,2025-02,,,Community Partner,,2\nreferral_by_month,2025-02,,,Police Department,,5\nreferral_by_month,2025-02,,,Resident Contact,,13\nreferral_by_month,2025-02,,,Village of Oak Park Departments,,2\nreferral_by_month,2025-03,,,Business,,2\nreferral_by_month,2025-03,,,Community Engagement,,3\nreferral_by_month,2025-03,,,Community Partner,,3\nreferral_by_month,2025-03,,,Fire Department,,26\nreferral_by_month,2025-03,,,Police Department,,6\nreferral_by_month,2025-03,,,Resident Contact,,6\nreferral_by_month,2025-03,,,Village of Oak Park Departments,,7\nreferral_by_month,2025-04,,,Business,,2\nreferral_by_month,2025-04,,,Fire Department,,28\nreferral_by_month,2025-04,,,Police Department,,5\nreferral_by_month,2025-04,,,Resident Contact,,20\nreferral_by_month,2025-04,,,Village of Oak Park Departments,,4\nreferral_by_month,2025-05,,,Community Engagement,,2\nreferral_by_month,2025-05,,,Community Partner,,2\nreferral_by_month,2025-05,,,Fire Department,,12\nreferral_by_month,2025-05,,,Police Department,,19\nreferral_by_month,2025-05,,,Resident Contact,,8\nreferral_by_month,2025-05,,,Village of Oak Park Departments,,2\nreferral_by_month,2025-06,,,Community Engagement,,1\nreferral_by_month,2025-06,,,Fire Department,,17\nreferral_by_month,2025-06,,,Police Department,,37\nreferral_by_month,2025-06,,,Resident Contact,,14\nreferral_by_month,2025-06,,,Village of Oak Park Departments,,5\nreferral_by_month,2025-07,,,Community Engagement,,5\nreferral_by_month,2025-07,,,Emergency Housing,,1\nreferral_by_month,2025-07,,,Fire Department,,13\nreferral_by_month,2025-07,,,Police Department,,11\nreferral_by_month,2025-07,,,Resident Contact,,22\nreferral_by_month,2025-07,,,Village of Oak Park Departments,,1\nreferral_by_month,2025-08,,,Business,,2\nreferral_by_month,2025-08,,,Community Engagement,,6\nreferral_by_month,2025-08,,,Emergency Housing,,5\nreferral_by_month,2025-08,,,Fire Department,,10\nreferral_by_month,2025-08,,,Police Department,,42\nreferral_by_month,2025-08,,,Resident Contact,,30\nreferral_by_month,2025-08,,,Village of Oak Park Departments,,4\nreferral_by_month,2025-09,,,Business,,1\nreferral_by_month,2025-09,,,Community Engagement,,9\nreferral_by_month,2025-09,,,Community Partner,,7\nreferral_by_month,2025-09,,,Emergency Housing,,10\nreferral_by_month,2025-09,,,Fire Department,,37\nreferral_by_month,2025-09,,,Police Department,,76\nreferral_by_month,2025-09,,,Resident Contact,,27\nreferral_by_month,2025-09,,,Village of Oak Park Departments,,11\nreferral_by_month,2025-10,,,Business,,2\nreferral_by_month,2025-10,,,Community Engagement,,6\nreferral_by_month,2025-10,,,Community Partner,,1\nreferral_by_month,2025-10,,,Emergency Housing,,1\nreferral_by_month,2025-10,,,Fire Department,,23\nreferral_by_month,2025-10,,,Police Department,,32\nreferral_by_month,2025-10,,,Resident Contact,,21\nreferral_by_month,2025-10,,,Village of Oak Park Departments,,7\nreferral_by_month,2025-11,,,Community Engagement,,6\nreferral_by_month,2025-11,,,Community Partner,,6\nreferral_by_month,2025-11,,,Fire Department,,29\nreferral_by_month,2025-11,,,Police Department,,28\nreferral_by_month,2025-11,,,Resident Contact,,28\nreferral_by_month,2025-11,,,Village of Oak Park Departments,,8\nreferral_by_month,2025-12,,,Business,,3\nreferral_by_month,2025-12,,,Community Engagement,,6\nreferral_by_month,2025-12,,,Community Partner,,5\nreferral_by_month,2025-12,,,Fire Department,,17\nreferral_by_month,2025-12,,,Police Department,,22\nreferral_by_month,2025-12,,,Resident Contact,,27\nreferral_by_month,2025-12,,,Village of Oak Park Departments,,10\nreferral_by_month,2026-01,,,Community Engagement,,2\nreferral_by_month,2026-01,,,Community Partner,,3\nreferral_by_month,2026-01,,,Fire Department,,15\nreferral_by_month,2026-01,,,Police Department,,34\nreferral_by_month,2026-01,,,Resident Contact,,30\nreferral_by_month,2026-01,,,Village of Oak Park Departments,,5\nreferral_by_month,2026-02,,,Community Engagement,,2\nreferral_by_month,2026-02,,,Community Partner,,4\nreferral_by_month,2026-02,,,Fire Department,,19\nreferral_by_month,2026-02,,,Police Department,,23\nreferral_by_month,2026-02,,,Resident Contact,,22\nreferral_by_month,2026-02,,,Village of Oak Park Departments,,2\nreferral_by_month,2026-03,,,Community Engagement,,4\nreferral_by_month,2026-03,,,Community Partner,,3\nreferral_by_month,2026-03,,,Fire Department,,10\nreferral_by_month,2026-03,,,Police Department,,18\nreferral_by_month,2026-03,,,Resident Contact,,20\nreferral_by_month,2026-03,,,Village of Oak Park Departments,,12\nreferral_by_month,2026-04,,,Business,,2\nreferral_by_month,2026-04,,,Community Engagement,,12\nreferral_by_month,2026-04,,,Community Partner,,8\nreferral_by_month,2026-04,,,Fire Department,,13\nreferral_by_month,2026-04,,,Police Department,,21\nreferral_by_month,2026-04,,,Resident Contact,,25\nreferral_by_month,2026-04,,,Village of Oak Park Departments,,2\nreferral_by_month,2026-05,,,Business,,1\nreferral_by_month,2026-05,,,Community Engagement,,18\nreferral_by_month,2026-05,,,Community Partner,,15\nreferral_by_month,2026-05,,,Fire Department,,7\nreferral_by_month,2026-05,,,Police Department,,25\nreferral_by_month,2026-05,,,Resident Contact,,30\nreferral_by_month,2026-05,,,Village of Oak Park Departments,,7\nreferral_by_month,2026-06,,,Business,,2\nreferral_by_month,2026-06,,,Community Engagement,,25\nreferral_by_month,2026-06,,,Community Partner,,13\nreferral_by_month,2026-06,,,Fire Department,,1\nreferral_by_month,2026-06,,,Police Department,,22\nreferral_by_month,2026-06,,,Resident Contact,,29\nreferral_by_month,2026-06,,,Village of Oak Park Departments,,5\nreferral_by_month,2026-07,,,Community Engagement,,37\nreferral_by_month,2026-07,,,Community Partner,,8\nreferral_by_month,2026-07,,,Fire Department,,1\nreferral_by_month,2026-07,,,Police Department,,16\nreferral_by_month,2026-07,,,Resident Contact,,46\nreferral_by_month,2026-07,,,Village of Oak Park Departments,,13\nreferral_by_month,2026-08,,,Business,,3\nreferral_by_month,2026-08,,,Community Engagement,,8\nreferral_by_month,2026-08,,,Community Partner,,6\nreferral_by_month,2026-08,,,Fire Department,,8\nreferral_by_month,2026-08,,,Police Department,,23\nreferral_by_month,2026-08,,,Resident Contact,,26\nreferral_by_month,2026-08,,,Village of Oak Park Departments,,1\nreferral_by_month,2026-09,,,Community Engagement,,6\nreferral_by_month,2026-09,,,Community Partner,,1\nreferral_by_month,2026-09,,,Police Department,,2\nreferral_by_month,2026-09,,,Resident Contact,,6\nreferral_by_month,2026-09,,,Village of Oak Park Departments,,2\nservice_by_weekday,,Monday,,,(blank),suppressed\nservice_by_weekday,,Monday,,,Behavioral Health,56\nservice_by_weekday,,Monday,,,Domestic Violence,11\nservice_by_weekday,,Monday,,,Financial Support,16\nservice_by_weekday,,Monday,,,Food Services,suppressed\nservice_by_weekday,,Monday,,,Housing,66\nservice_by_weekday,,Monday,,,Medical Support,8\nservice_by_weekday,,Monday,,,Other,18\nservice_by_weekday,,Monday,,,Senior Services,79\nservice_by_weekday,,Monday,,,Unhoused Resident,93\nservice_by_weekday,,Monday,,,Youth/Family Services,18\nservice_by_weekday,,Tuesday,,,(blank),suppressed\nservice_by_weekday,,Tuesday,,,Behavioral Health,51\nservice_by_weekday,,Tuesday,,,Domestic Violence,6\nservice_by_weekday,,Tuesday,,,Financial Support,9\nservice_by_weekday,,Tuesday,,,Food Services,suppressed\nservice_by_weekday,,Tuesday,,,Housing,41\nservice_by_weekday,,Tuesday,,,Medical Support,7\nservice_by_weekday,,Tuesday,,,Other,24\nservice_by_weekday,,Tuesday,,,Senior Services,54\nservice_by_weekday,,Tuesday,,,Unhoused Resident,77\nservice_by_weekday,,Tuesday,,,Youth/Family Services,11\nservice_by_weekday,,Wednesday,,,(blank),7\nservice_by_weekday,,Wednesday,,,Behavioral Health,63\nservice_by_weekday,,Wednesday,,,Domestic Violence,14\nservice_by_weekday,,Wednesday,,,Financial Support,9\nservice_by_weekday,,Wednesday,,,Food Services,suppressed\nservice_by_weekday,,Wednesday,,,Housing,66\nservice_by_weekday,,Wednesday,,,Medical Support,suppressed\nservice_by_weekday,,Wednesday,,,Other,22\nservice_by_weekday,,Wednesday,,,Senior Services,54\nservice_by_weekday,,Wednesday,,,Unhoused Resident,121\nservice_by_weekday,,Wednesday,,,Youth/Family Services,26\nservice_by_weekday,,Thursday,,,(blank),5\nservice_by_weekday,,Thursday,,,Behavioral Health,45\nservice_by_weekday,,Thursday,,,Domestic Violence,8\nservice_by_weekday,,Thursday,,,Financial Support,12\nservice_by_weekday,,Thursday,,,Food Services,suppressed\nservice_by_weekday,,Thursday,,,Housing,40\nservice_by_weekday,,Thursday,,,Medical Support,suppressed\nservice_by_weekday,,Thursday,,,Other,13\nservice_by_weekday,,Thursday,,,Senior Services,42\nservice_by_weekday,,Thursday,,,Unhoused Resident,81\nservice_by_weekday,,Thursday,,,Youth/Family Services,18\nservice_by_weekday,,Friday,,,Behavioral Health,61\nservice_by_weekday,,Friday,,,Domestic Violence,suppressed\nservice_by_weekday,,Friday,,,Financial Support,11\nservice_by_weekday,,Friday,,,Food Services,suppressed\nservice_by_weekday,,Friday,,,Housing,29\nservice_by_weekday,,Friday,,,Medical Support,14\nservice_by_weekday,,Friday,,,Other,suppressed\nservice_by_weekday,,Friday,,,Senior Services,33\nservice_by_weekday,,Friday,,,Unhoused Resident,55\nservice_by_weekday,,Friday,,,Youth/Family Services,17\nservice_by_weekday,,Saturday,,,(blank),suppressed\nservice_by_weekday,,Saturday,,,Behavioral Health,suppressed\nservice_by_weekday,,Saturday,,,Domestic Violence,suppressed\nservice_by_weekday,,Saturday,,,Housing,suppressed\nservice_by_weekday,,Saturday,,,Other,suppressed\nservice_by_weekday,,Saturday,,,Senior Services,suppressed\nservice_by_weekday,,Saturday,,,Unhoused Resident,suppressed\nservice_by_weekday,,Sunday,,,(blank),suppressed\nservice_by_weekday,,Sunday,,,Behavioral Health,suppressed\nservice_by_weekday,,Sunday,,,Domestic Violence,suppressed\nservice_by_weekday,,Sunday,,,Housing,suppressed\nservice_by_weekday,,Sunday,,,Senior Services,suppressed\nservice_by_weekday,,Sunday,,,Unhoused Resident,suppressed\nservice_by_time_block,,,0200-0559,,(blank),suppressed\nservice_by_time_block,,,0200-0559,,Behavioral Health,46\nservice_by_time_block,,,0200-0559,,Domestic Violence,5\nservice_by_time_block,,,0200-0559,,Financial Support,7\nservice_by_time_block,,,0200-0559,,Food Services,5\nservice_by_time_block,,,0200-0559,,Housing,48\nservice_by_time_block,,,0200-0559,,Medical Support,suppressed\nservice_by_time_block,,,0200-0559,,Other,suppressed\nservice_by_time_block,,,0200-0559,,Senior Services,61\nservice_by_time_block,,,0200-0559,,Unhoused Resident,62\nservice_by_time_block,,,0200-0559,,Youth/Family Services,11\nservice_by_time_block,,,0600-0959,,(blank),suppressed\nservice_by_time_block,,,0600-0959,,Behavioral Health,99\nservice_by_time_block,,,0600-0959,,Domestic Violence,14\nservice_by_time_block,,,0600-0959,,Financial Support,13\nservice_by_time_block,,,0600-0959,,Food Services,suppressed\nservice_by_time_block,,,0600-0959,,Housing,71\nservice_by_time_block,,,0600-0959,,Medical Support,15\nservice_by_time_block,,,0600-0959,,Other,21\nservice_by_time_block,,,0600-0959,,Senior Services,80\nservice_by_time_block,,,0600-0959,,Unhoused Resident,94\nservice_by_time_block,,,0600-0959,,Youth/Family Services,34\nservice_by_time_block,,,1000-1359,,(blank),9\nservice_by_time_block,,,1000-1359,,Behavioral Health,95\nservice_by_time_block,,,1000-1359,,Domestic Violence,16\nservice_by_time_block,,,1000-1359,,Financial Support,24\nservice_by_time_block,,,1000-1359,,Food Services,7\nservice_by_time_block,,,1000-1359,,Housing,102\nservice_by_time_block,,,1000-1359,,Medical Support,16\nservice_by_time_block,,,1000-1359,,Other,31\nservice_by_time_block,,,1000-1359,,Senior Services,90\nservice_by_time_block,,,1000-1359,,Unhoused Resident,159\nservice_by_time_block,,,1000-1359,,Youth/Family Services,31\nservice_by_time_block,,,1400-1759,,(blank),5\nservice_by_time_block,,,1400-1759,,Behavioral Health,29\nservice_by_time_block,,,1400-1759,,Domestic Violence,suppressed\nservice_by_time_block,,,1400-1759,,Financial Support,8\nservice_by_time_block,,,1400-1759,,Food Services,suppressed\nservice_by_time_block,,,1400-1759,,Housing,20\nservice_by_time_block,,,1400-1759,,Medical Support,suppressed\nservice_by_time_block,,,1400-1759,,Other,24\nservice_by_time_block,,,1400-1759,,Senior Services,24\nservice_by_time_block,,,1400-1759,,Unhoused Resident,89\nservice_by_time_block,,,1400-1759,,Youth/Family Services,11\nservice_by_time_block,,,1800-2159,,Behavioral Health,9\nservice_by_time_block,,,1800-2159,,Domestic Violence,suppressed\nservice_by_time_block,,,1800-2159,,Housing,suppressed\nservice_by_time_block,,,1800-2159,,Other,suppressed\nservice_by_time_block,,,1800-2159,,Senior Services,suppressed\nservice_by_time_block,,,1800-2159,,Unhoused Resident,20\nservice_by_time_block,,,1800-2159,,Youth/Family Services,suppressed\nservice_by_time_block,,,2200-0159,,(blank),suppressed\nservice_by_time_block,,,2200-0159,,Behavioral Health,10\nservice_by_time_block,,,2200-0159,,Domestic Violence,suppressed\nservice_by_time_block,,,2200-0159,,Financial Support,5\nservice_by_time_block,,,2200-0159,,Housing,suppressed\nservice_by_time_block,,,2200-0159,,Medical Support,suppressed\nservice_by_time_block,,,2200-0159,,Senior Services,suppressed\nservice_by_time_block,,,2200-0159,,Unhoused Resident,12\nservice_by_time_block,,,2200-0159,,Youth/Family Services,suppressed\nreferral_by_service,,,,Business,Behavioral Health,suppressed\nreferral_by_service,,,,Business,Financial Support,suppressed\nreferral_by_service,,,,Business,Housing,suppressed\nreferral_by_service,,,,Business,Other,suppressed\nreferral_by_service,,,,Business,Senior Services,suppressed\nreferral_by_service,,,,Business,Unhoused Resident,11\nreferral_by_service,,,,Community Engagement,(blank),10\nreferral_by_service,,,,Community Engagement,Behavioral Health,suppressed\nreferral_by_service,,,,Community Engagement,Financial Support,suppressed\nreferral_by_service,,,,Community Engagement,Housing,suppressed\nreferral_by_service,,,,Community Engagement,Medical Support,suppressed\nreferral_by_service,,,,Community Engagement,Other,5\nreferral_by_service,,,,Community Engagement,Senior Services,suppressed\nreferral_by_service,,,,Community Engagement,Unhoused Resident,124\nreferral_by_service,,,,Community Engagement,Youth/Family Services,suppressed\nreferral_by_service,,,,Community Partner,Behavioral Health,9\nreferral_by_service,,,,Community Partner,Financial Support,6\nreferral_by_service,,,,Community Partner,Food Services,5\nreferral_by_service,,,,Community Partner,Housing,15\nreferral_by_service,,,,Community Partner,Medical Support,suppressed\nreferral_by_service,,,,Community Partner,Other,9\nreferral_by_service,,,,Community Partner,Senior Services,7\nreferral_by_service,,,,Community Partner,Unhoused Resident,30\nreferral_by_service,,,,Community Partner,Youth/Family Services,suppressed\nreferral_by_service,,,,Emergency Housing,Financial Support,suppressed\nreferral_by_service,,,,Emergency Housing,Housing,14\nreferral_by_service,,,,Emergency Housing,Unhoused Resident,suppressed\nreferral_by_service,,,,Fire Department,(blank),suppressed\nreferral_by_service,,,,Fire Department,Behavioral Health,65\nreferral_by_service,,,,Fire Department,Domestic Violence,suppressed\nreferral_by_service,,,,Fire Department,Financial Support,suppressed\nreferral_by_service,,,,Fire Department,Housing,39\nreferral_by_service,,,,Fire Department,Medical Support,13\nreferral_by_service,,,,Fire Department,Other,suppressed\nreferral_by_service,,,,Fire Department,Senior Services,156\nreferral_by_service,,,,Fire Department,Unhoused Resident,suppressed\nreferral_by_service,,,,Fire Department,Youth/Family Services,suppressed\nreferral_by_service,,,,Police Department,(blank),7\nreferral_by_service,,,,Police Department,Behavioral Health,159\nreferral_by_service,,,,Police Department,Domestic Violence,31\nreferral_by_service,,,,Police Department,Financial Support,suppressed\nreferral_by_service,,,,Police Department,Food Services,suppressed\nreferral_by_service,,,,Police Department,Housing,36\nreferral_by_service,,,,Police Department,Medical Support,10\nreferral_by_service,,,,Police Department,Other,19\nreferral_by_service,,,,Police Department,Senior Services,54\nreferral_by_service,,,,Police Department,Unhoused Resident,82\nreferral_by_service,,,,Police Department,Youth/Family Services,64\nreferral_by_service,,,,Resident Contact,(blank),suppressed\nreferral_by_service,,,,Resident Contact,Behavioral Health,38\nreferral_by_service,,,,Resident Contact,Domestic Violence,11\nreferral_by_service,,,,Resident Contact,Financial Support,34\nreferral_by_service,,,,Resident Contact,Food Services,suppressed\nreferral_by_service,,,,Resident Contact,Housing,111\nreferral_by_service,,,,Resident Contact,Medical Support,6\nreferral_by_service,,,,Resident Contact,Other,42\nreferral_by_service,,,,Resident Contact,Senior Services,35\nreferral_by_service,,,,Resident Contact,Unhoused Resident,144\nreferral_by_service,,,,Resident Contact,Youth/Family Services,17\nreferral_by_service,,,,Village of Oak Park Departments,Behavioral Health,9\nreferral_by_service,,,,Village of Oak Park Departments,Domestic Violence,suppressed\nreferral_by_service,,,,Village of Oak Park Departments,Financial Support,7\nreferral_by_service,,,,Village of Oak Park Departments,Food Services,suppressed\nreferral_by_service,,,,Village of Oak Park Departments,Housing,30\nreferral_by_service,,,,Village of Oak Park Departments,Medical Support,suppressed\nreferral_by_service,,,,Village of Oak Park Departments,Other,suppressed\nreferral_by_service,,,,Village of Oak Park Departments,Senior Services,10\nreferral_by_service,,,,Village of Oak Park Departments,Unhoused Resident,40\nreferral_by_service,,,,Village of Oak Park Departments,Youth/Family Services,suppressed\n", "../resources/resource-directory.csv": "echo_category,provider,program,what_they_offer,when_to_use,who_is_eligible,hours,how_to_reach,cost,source_url,checked_on,notes\nUnhoused Resident,Village of Oak Park,E.C.H.O. care coordination and street outreach,\"Village care coordinators connect residents, including people experiencing homelessness, to shelter, food, health and other services.\",\"When an Oak Park resident needs help finding services (shelter, food, health and more) on a weekday and it is not a crisis.\",\"Oak Park residents; referral from Police or Fire, walk-in at Village Hall, or direct contact\",Mon-Fri 8:30 a.m.-5:00 p.m.,\"708-358-5640; echo@oak-park.us; Village Hall, 123 Madison St., Oak Park; https://www.oak-park.us/Community/Community-Services/E.C.H.O-Engaging-Community-for-Healthy-Outcomes\",Not published online; confirm: 708-358-5640,https://www.oak-park.us/Community/Community-Services/E.C.H.O-Engaging-Community-for-Healthy-Outcomes,2026-10-03,Not a crisis service. Phone confirmed by team on 2026-10-03.\nUnhoused Resident,Housing Forward,Anderson Emergency Shelter,Overnight emergency shelter in Oak Park.,\"When someone needs a bed tonight; arrange it through the Support Center or Street Outreach, since walk-ins are not accepted.\",\"People experiencing homelessness; no walk-ins, intake through the Support Center or Street Outreach team\",Every day 7:00 p.m.-8:00 a.m.,\"112 S. Humphrey Ave., Oak Park (intake via Support Center or 877-426-6515); https://www.housingforward.org/services/respond\",Not published online; confirm: 877-426-6515,https://www.oak-park.us/files/assets/oakpark/v/2/neighborhood-services/streetoutreachcards_oct-1.pdf,2026-10-03,From the Street Outreach Card on the Village Resources for the Unhoused page. Shelter space is not guaranteed.\nUnhoused Resident,Housing Forward,Suburban Cook County Call Center (Entry Point),\"Central phone line for anyone homeless or about to lose housing in suburban Cook County, including shelter referrals.\",\"First call when someone is homeless or about to lose housing in suburban Cook County; after hours, use the 708-338-1724 x6 line.\",People in suburban Cook County who are homeless or at risk of homelessness,\"Mon-Fri 8:30 a.m.-4:30 p.m.; after hours 708-338-1724 x6 (Mon-Fri 4:30 p.m.-8:30 a.m., Sat-Sun 24 hours)\",877-426-6515; https://myentrypoint.org/; https://www.housingforward.org/find-help,Not published online; confirm: 877-426-6515,https://www.housingforward.org/find-help,2026-10-03,\"Shelter referrals are by appointment only; \"\"access to shelter is not guaranteed\"\" (Entry Point).\"\nUnhoused Resident,Housing Forward,Support Center (walk-in),\"Drop-in center with showers, laundry, a mailing address, clothing, bag lunches, ID help and bilingual staff.\",\"When someone experiencing homelessness needs a shower, laundry, clothes, a meal, a mailing address or ID help during the day.\",Not published online; confirm: 708-338-1724,\"Mon, Tue, Thu, Fri 9:00 a.m.-3:00 p.m.; Wed 9:00 a.m.-12:00 p.m.\",\"1851 S. 9th Ave., Maywood (enter on Lexington); 708-338-1724; https://www.housingforward.org/find-help\",Not published online; confirm: 708-338-1724,https://www.housingforward.org/find-help,2026-10-03,\"In Maywood, not Oak Park; transportation may be a barrier.\"\nUnhoused Resident,Housing Forward,Street Outreach,A mobile outreach team finds people living outside and links them to case management and housing.,When you know someone living outside who may want help; email the outreach team.,People who are unsheltered in West Suburban Cook County,Mon-Fri (clock hours not published),Email outreachteam@housingforward.org to report someone who may need help; https://www.housingforward.org/services/respond,Not published online; confirm: 708-338-1724,https://www.housingforward.org/services/respond,2026-10-03,No phone published for outreach requests; email only.\nUnhoused Resident,National Runaway Safeline,Homeless youth / runaway hotline,Hotline for young people who have run away or are homeless.,When a young person has run away or is homeless and needs someone to talk to.,Young people who have run away or are homeless,Not published online; confirm: 1-800-786-2929,1-800-RUNAWAY (1-800-786-2929); listed on the Village Street Outreach Card: https://www.oak-park.us/files/assets/oakpark/v/2/neighborhood-services/streetoutreachcards_oct-1.pdf,Not published online; confirm: 1-800-786-2929,https://www.oak-park.us/files/assets/oakpark/v/2/neighborhood-services/streetoutreachcards_oct-1.pdf,2026-10-03,Listed on the Village Street Outreach Card. Also listed under Youth/Family Services.\nHousing,Housing Forward,Homelessness prevention (Emergency Financial Assistance),\"Help with rent, utilities and other needs to avoid eviction.\",When someone is behind on rent or utilities and at risk of eviction; start with the county call center.,People in suburban Cook County at risk of losing their housing; income rules not published online; confirm: 877-426-6515,Call center Mon-Fri 8:30 a.m.-4:30 p.m.,877-426-6515 (Entry Point); https://www.housingforward.org/services/prevent; https://myentrypoint.org/,Not published online; confirm: 877-426-6515,https://www.housingforward.org/services/prevent,2026-10-03,\nHousing,Oak Park Township,Flexible Rental Assistance Program (FRAP),\"Pays rent or mortgage, security deposits, move-in costs or utility bills directly to the landlord or provider.\",\"When an Oak Park household faces a housing emergency: unpaid rent or mortgage, a deposit or move-in costs, or utility bills. Call for an appointment.\",\"Oak Park residents or those recently displaced, with a housing emergency, who meet income guidelines (income figures not published; confirm 708-383-8005)\",Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8005 (appointment required, no walk-ins); 105 S. Oak Park Ave., Oak Park; https://oakparktownship.org/frap/\",Assistance paid on your behalf; no fee published,https://oakparktownship.org/frap/,2026-10-03,The FRAP page is not linked from the General Assistance page.\nHousing,Village of Oak Park,Foreclosure prevention counseling,\"Phone counseling for homeowners early in mortgage trouble, through a state (IHDA) hotline.\",\"When a homeowner is starting to fall behind on the mortgage, before foreclosure.\",Homeowners in early stages of mortgage difficulty,Not published online; confirm: 1-888-995-4673,\"1-888-995-HOPE; Village 708-358-5410, housing@oak-park.us; https://www.oak-park.us/Community/Housing\",Not published online; confirm: 1-888-995-4673,https://www.oak-park.us/Community/Housing,2026-10-03,The hotline is toll-free; the page does not say whether counseling is free.\nHousing,Oak Park Township,Senior Housing Assistance,\"Housing counseling, help staying in your home, and relocation help for older adults.\",When an older adult or adult with a disability needs help staying in their home or finding a new one.,Adults 60+ and adults 18-59 with disabilities,Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8060; seniors@oakparktownship.org; Senior Services Center, 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/senior-services/#aging_disability\",No one is denied for inability to pay; a suggested contribution may apply (Township Senior Services overview),https://oakparktownship.org/senior-services/,2026-10-03,\nHousing,North West Housing Partnership (via Oak Park Township),Home Repair Program,Affordable minor home repairs for older adults.,When an older homeowner needs minor repairs they can't afford or do themselves.,Oak Park and River Forest residents 60+ (web page also includes adults 18-59 with disabilities; flyer says 60+ only),Booking Mon-Fri 9:00 a.m.-5:00 p.m.; repairs by appointment,847-969-0561; https://oakparktownship.org/download/senior-services-home-repair-flyer/,\"Free below $18,000 income; $20/hr ($18,000-$33,000), $30/hr ($33,000+), $40/hr ($45,000+)\",https://oakparktownship.org/download/senior-services-home-repair-flyer/,2026-10-03,Age rule differs between the web page and the flyer.\nHousing,Oak Park Township,Chicago Furniture Bank referral,\"Gently used, donated furniture for residents moving into a new home.\",When someone moving into a new home has no furniture.,Not published online; confirm: 708-383-8005,Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8005 (appointment required, no walk-ins); 105 S. Oak Park Ave., Oak Park; https://oakparktownship.org/general-assistance/#chicago_furniture_bank\",Not published online; confirm: 708-383-8005,https://oakparktownship.org/general-assistance/,2026-10-03,\nHousing,Oak Park Public Library,Social Services team,\"Short-term case management and referrals for mental health, housing, jobs, health care, immigration, domestic violence and more.\",\"When anyone at the library needs help finding housing, benefits, jobs, health care or mental health support and doesn't know where to start.\",Anyone,\"Library hours (Main Library Mon-Thu 9:00 a.m.-9:00 p.m., Fri 9:00 a.m.-6:00 p.m., Sat 9:00 a.m.-5:00 p.m., Sun 12:00-5:00 p.m.); staff hours not published, confirm 708-697-6910\",\"708-697-6910; Main Library, 834 Lake St.; also Dole and Maze branches; https://www.oppl.org/use-your-library/social-services/\",Not published online; confirm: 708-697-6910,https://www.oppl.org/use-your-library/social-services/,2026-10-03,Eligibility confirmed by team on 2026-10-03. Also listed under Behavioral Health and Financial Support.\nBehavioral Health,Thrive Counseling Center,24/7 Crisis Team,\"Crisis support by phone or in person, including mobile response, at any hour.\",\"When someone is in a mental health crisis, at any hour; call 708-383-7500, option 1. Call 911 if anyone is in immediate danger.\",\"Phone support for anyone; in-person response for residents of Oak Park, River Forest and Forest Park\",24/7/365,\"708-383-7500, option 1; https://thrivecc.org/24/7-crisis-team\",Not published online; confirm: 708-383-7500,https://thrivecc.org/24/7-crisis-team,2026-10-03,\"Under the Village Phase 2 plan, Thrive takes mental health crisis calls; E.C.H.O. does follow-up.\"\nBehavioral Health,988 Suicide and Crisis Lifeline,988,\"Free, confidential crisis support by call or text.\",\"When someone is thinking about suicide or in emotional distress and needs to talk to someone now, by call or text.\",Anyone,24/7/365,Call or text 988; https://988lifeline.org/,Free,https://oakparktownship.org/wp-content/uploads/2026/05/Resource-Guide_May_2026.pdf,2026-10-03,\nBehavioral Health,NAMI Metro Suburban,Oak Park Living Room,\"A calm, home-like place to go instead of the ER when mental health symptoms rise, staffed by recovery specialists.\",\"When an adult's mental health symptoms are rising but it is not a medical emergency: a calm alternative to the ER, open daily from noon to 8.\",Adults 18+,Daily 12:00-8:00 p.m.,\"708-524-2582; 816 Harrison St., Oak Park, IL 60304; walk in or call ahead; https://namimetsub.org/our-adult-programs/the-living-room/\",Free,https://namimetsub.org/our-adult-programs/the-living-room/,2026-10-03,\"Police, fire and ER can refer; self-referral welcome.\"\nBehavioral Health,NAMI Metro Suburban,Drop-In Center,\"Peer-run center with recovery groups, social activities and job programs for people living with mental illness.\",\"When an adult living with mental illness wants peer support, social connection or help with work.\",Adults 18+ living with a mental health condition,Mon-Fri 1:00-7:00 p.m.; Sat-Sun 2:00-6:00 p.m.,\"708-524-2582; 814 Harrison St., Oak Park, IL 60304; https://namimetsub.org/our-adult-programs/the-drop-in-center/\",Free (NAMI adult programs page),https://namimetsub.org/our-adult-programs/the-drop-in-center/,2026-10-03,Whether membership or registration is needed is not published; confirm 708-524-2582.\nBehavioral Health,Thrive Counseling Center,\"Counseling, psychiatry and case management\",\"Individual, family and group therapy, medication management, a trauma clinic and help finding other resources.\",\"When someone needs ongoing therapy, medication management or trauma care, including uninsured Oak Park residents.\",\"Adults, youth, couples and families\",Mon-Thu 9:00 a.m.-8:00 p.m.; Fri 9:00 a.m.-5:00 p.m.; Sat 9:00 a.m.-2:00 p.m.,\"708-383-7500 (insurance questions ext. 2); access@thrivecc.org; 120 S. Marion St., Oak Park; https://thrivecc.org/\",\"Most Medicaid, most Medicare and many BCBS plans; sliding scale for uninsured with financial hardship; free for uninsured Oak Park residents\",https://thrivecc.org/faqs,2026-10-03,Does not accept every plan (for example Humana Gold Plus Medicare).\nBehavioral Health,Way Back Inn,Substance use and gambling treatment,\"Residential treatment for adults and outpatient groups for adults and teens, plus a family group open to Oak Park residents.\",\"When an adult or teen needs treatment for substance use or gambling, or a family member wants support.\",Adults 18+; outpatient youth ages 13-17; 2.5 residential beds reserved for Oak Park residents (CMHB),\"Outpatient groups Tue and Thu 6:00-9:00 p.m., Sat 10:00 a.m.-1:00 p.m.; intake hours not published\",\"708-345-8422 or 866-993-6503; 412 S. Wesley Ave., Oak Park (Township guide); https://waybackinn.org/home-2/our-services/\",\"First 90 days of extended residential care free for new clients; free consultation; other costs and insurance not published, confirm 708-345-8422\",https://waybackinn.org/home-2/our-services/,2026-10-03,Reserved Oak Park beds may fill; ask about a waitlist. Website gives no street address.\nBehavioral Health,Live4Lali,Harm reduction outreach and peer support,\"Harm reduction outreach with naloxone, safer-use supplies, basic needs and referrals to treatment.\",\"When someone who uses drugs needs naloxone, safer-use supplies or a low-pressure path to treatment.\",Anyone affected by substance use; mail-order supplies prioritize Illinois residents,Office hours Mon 10:00 a.m.-3:00 p.m. (Arlington Heights office); appointments by email request; Oak Park outreach on Wednesdays (see notes),844-LV4-LALI (844-584-5254); outreach call or text 224-297-4393; https://live4lali.org/our-programs/harmreductionoutreach/,Free and confidential (supplies),https://live4lali.org/,2026-10-03,Wednesday Oak Park times conflict: homepage says 11:00 a.m.-1:00 p.m. at 412 Wesley Ave.; outreach page says 12:00-3:00 p.m. at the Harlem/South Blvd Green Line station. Confirm 224-297-4393.\nBehavioral Health,Ascension Illinois,\"Behavioral health (Center for Mental Health, Melrose Park)\",\"Mental health care for children, teens and adults, including CMHB-funded care for uninsured Oak Park residents and youth.\",\"When a child, teen or adult needs mental health care, especially uninsured Oak Park residents and youth.\",\"Children, teens and adults; CMHB programs for uninsured Oak Park residents and Oak Park youth 6-18\",Not published online; confirm: https://healthcare.ascension.org/locations/illinois,Search Ascension Illinois locations and services: https://healthcare.ascension.org/locations/illinois,Not published online; confirm: https://healthcare.ascension.org/locations/illinois,https://healthcare.ascension.org/locations/illinois,2026-10-03,Melrose Park center page (1414 Main St.) lists intake 708-410-0615 and 24/7 crisis 708-681-4357: https://healthcare.ascension.org/locations/illinois/ilchi/melrose-park-ascension-illinois-center-for-mental-health\nBehavioral Health,Community Mental Health Board of Oak Park Township,Behavioral Health Resource Guide and directories,Funds local programs and publishes the resource guides this directory draws on.,\"When you need a fuller list of local mental health, substance use and disability services.\",Oak Park residents,Township office Mon-Fri 9:00 a.m.-5:00 p.m. (board office hours not published),\"708-358-8855; 229 Madison St., 2nd Floor, Oak Park; https://oakparktownship.org/community-mental-health/\",Free,https://oakparktownship.org/community-mental-health/,2026-10-03,\"Funder and directory, not a direct service.\"\nBehavioral Health,Oak Park Public Library,Social Services team,\"Short-term case management and referrals for mental health, housing, jobs, health care, immigration, domestic violence and more.\",\"When anyone at the library needs help finding housing, benefits, jobs, health care or mental health support and doesn't know where to start.\",Anyone,\"Library hours (Main Library Mon-Thu 9:00 a.m.-9:00 p.m., Fri 9:00 a.m.-6:00 p.m., Sat 9:00 a.m.-5:00 p.m., Sun 12:00-5:00 p.m.); staff hours not published, confirm 708-697-6910\",\"708-697-6910; Main Library, 834 Lake St.; also Dole and Maze branches; https://www.oppl.org/use-your-library/social-services/\",Not published online; confirm: 708-697-6910,https://www.oppl.org/use-your-library/social-services/,2026-10-03,Eligibility confirmed by team on 2026-10-03. Also listed under Housing and Financial Support.\nBehavioral Health,Oak Park Township,Thriving in Aging Program (TAP),\"One-on-one mental health support for older adults facing stress, depression, grief, isolation or memory concerns.\",\"When an Oak Park resident 60+ is struggling with stress, depression, grief, loneliness or memory concerns.\",Oak Park residents 60+,Flexible scheduling,\"708-383-8060; seniors@oakparktownship.org; Senior Services Center, 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/senior-services/#care_coordination\",Free,https://oakparktownship.org/senior-services/,2026-10-03,Also listed under Senior Services.\nSenior Services,Oak Park Township,Aging and Disability Resource Center,\"Information and help connecting older adults, caregivers and people with disabilities to services.\",\"First stop when an older adult, a person with a disability or a caregiver needs help but isn't sure which service fits.\",\"Adults 60+, adults 18-59 with disabilities, caregivers and family members\",Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8060; seniors@oakparktownship.org; Senior Services Center, 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/senior-services/#aging_disability\",No one is denied for inability to pay; a suggested contribution may apply (Township Senior Services overview),https://oakparktownship.org/senior-services/,2026-10-03,\nSenior Services,Oak Park Township,Care Coordination & Case Management,Assessments and coordination of in-home and community services for older adults.,When an older adult needs in-home or community services arranged to keep living independently.,Oak Park and River Forest residents 60+,Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8060; seniors@oakparktownship.org; Senior Services Center, 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/senior-services/#care_coordination\",No one is denied for inability to pay; a suggested contribution may apply (Township Senior Services overview),https://oakparktownship.org/senior-services/,2026-10-03,\nSenior Services,Oak Park Township,Thriving in Aging Program (TAP),\"One-on-one mental health support for older adults facing stress, depression, grief, isolation or memory concerns.\",\"When an Oak Park resident 60+ is struggling with stress, depression, grief, loneliness or memory concerns.\",Oak Park residents 60+,Flexible scheduling,\"708-383-8060; seniors@oakparktownship.org; Senior Services Center, 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/senior-services/#care_coordination\",Free,https://oakparktownship.org/senior-services/,2026-10-03,Also listed under Behavioral Health.\nSenior Services,Oak Park Township,Adult Protective Services,\"Investigates and responds to abuse, neglect or exploitation of older adults and adults with disabilities.\",\"When you suspect abuse, neglect or financial exploitation of an older adult or an adult with a disability; the state hotline takes reports 24/7.\",\"Oak Park and River Forest residents 60+, and adults 18-59 with disabilities\",Township line Mon-Fri 9:00 a.m.-5:00 p.m.; state hotline 24/7,708-383-8060; Illinois Dept. on Aging 1-866-800-1409 (24/7); https://oakparktownship.org/senior-services/#safety_protective,Not published online; confirm: 708-383-8060,https://oakparktownship.org/senior-services/,2026-10-03,Also listed under Domestic Violence.\nSenior Services,Oak Park Township,Caregiver Resource Center and Memory Cafe,\"Counseling, training and support groups for family caregivers, plus a monthly social hour for people with memory loss.\",\"When a family caregiver is overwhelmed, or someone with memory loss and their caregiver want social connection.\",Family caregivers of older adults; people with memory concerns and their caregivers,Mon-Fri 9:00 a.m.-5:00 p.m.; support group twice monthly 10:00 a.m.-12:00 p.m.; Memory Cafe third Tuesday 2:00-4:00 p.m.,\"708-383-8060; seniors@oakparktownship.org; Senior Services Center, 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/senior-services/#caregiver_support\",No one is denied for inability to pay; a suggested contribution may apply (Township Senior Services overview),https://oakparktownship.org/senior-services/,2026-10-03,\nSenior Services,Oak Park Township,GUIDE Comprehensive Dementia Care,\"Dementia care, caregiver support and up to $2,563 a year in respite care through Medicare.\",When someone on Medicare is living with dementia and their caregiver needs support or respite.,\"Medicare beneficiaries living with dementia, and their caregivers\",Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8060; seniors@oakparktownship.org; Senior Services Center, 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/guide-comprehensive-dementia-care/\",No cost to eligible Medicare beneficiaries,https://oakparktownship.org/guide-comprehensive-dementia-care/,2026-10-03,\nSenior Services,Oak Park Township,Senior & Disability Services Transportation,Curbside shuttle with wheelchair lifts for medical appointments and local trips; discounted taxi coupons.,When an older adult or adult with a disability needs a ride to a medical appointment or local errand; book at least a day ahead.,\"Oak Park and River Forest residents 60+, and adults 18+ with disabilities\",Book 24 hours to one week ahead,708-383-4806; taxi coupons 708-383-8005; https://oakparktownship.org/senior-services/#transportation,Suggested donation $1 per ride; taxi coupon books $6 for $10 of rides,https://oakparktownship.org/senior-services/,2026-10-03,\nYouth/Family Services,Oak Park Township Youth & Family Services,Youth Engagement Program,\"Free counseling, groups and mentoring for young people dealing with anxiety, depression, crisis, trauma or gang involvement.\",\"When a child or teen is dealing with anxiety, depression, trauma, a crisis or gang involvement; use the referral form.\",Ages 6-18 (residency rule not published; confirm 708-445-2727),Program hours not published; Township office Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-445-2727; youth@oakparktownship.org; 105 S. Oak Park Ave., Oak Park; referral form: https://oakparktownship.org/wp-content/uploads/2025/08/Youth-Engagement-Program-Referral-form-2025.pdf\",Free,https://oakparktownship.org/youth-and-family-services/,2026-10-03,Referral form in English and Spanish.\nYouth/Family Services,Oak Park Township Youth & Family Services,Community Justice Program,\"Restorative circles, peer mediation, classes and free substance use counseling for teens and families.\",\"When a high school student needs restorative support, mediation or free substance use counseling.\",Oak Park and River Forest high school youth,Program hours not published; Township office Mon-Fri 9:00 a.m.-5:00 p.m.,708-445-2727 x2120; referral form: https://oakparktownship.org/wp-content/uploads/2025/08/Youth-Substance-Counseling-Referral-Form-Oak-Park-Township.pdf; https://oakparktownship.org/youth-and-family-services/,Free,https://oakparktownship.org/youth-and-family-services/,2026-10-03,\nYouth/Family Services,Oak Park Township Youth & Family Services,Financial Assistance Scholarships (FAS),Helps pay registration fees for activities a family cannot afford.,When a family can't afford a child's activity fees; a referring agency applies at least two weeks before the program starts.,\"Family lives in, or child attends school in, Oak Park (ages 6-17) or River Forest (ages 5-17); income at or below 185% of poverty (e.g., $51,338 for a family of 4)\",Program hours not published; Township office Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-445-2727; youth@oakparktownship.org; 105 S. Oak Park Ave., Oak Park; application: https://oakparktownship.org/wp-content/uploads/2026/04/FAS-Application-FY27.pdf\",Up to $300 per child and $600 per family a year; family pays part (about one third recommended),https://oakparktownship.org/wp-content/uploads/2026/04/FAS-Application-FY27.pdf,2026-10-03,A referring agency submits the form at least 2 weeks before the program starts. Also listed under Financial Support.\nYouth/Family Services,New Moms,Family Support (Oak Park center),\"Home visiting, parent coaching and support groups for young parents.\",\"When a young or expecting parent wants home visits, parenting coaching or a support group.\",Parents 24 and under; families with children 0-3 get home-visiting priority; prenatal group open to everyone,9:00 a.m.-5:00 p.m. (from a 2019 FAQ; confirm 773-252-3253),\"773-252-3253; 206 Chicago Ave., Oak Park; enroll: https://newmoms.org/intake-form/; https://newmoms.org/family-support/\",Not published online; confirm: 773-252-3253,https://newmoms.org/family-support/,2026-10-03,\"Phone confirmed by team on 2026-10-03; it is the Chicago headquarters line. Oak Park housing is through Coordinated Entry (877-426-6515), not direct application.\"\nYouth/Family Services,Smart Love Family Services,It Takes a Village (ITAV),\"Free groups for parents and youth of color, plus free parent seminars.\",When parents or youth of color want free groups or parenting seminars. Call first: the schedule may be out of date.,Parents and youth of color; youth group ages 6-18,Parent groups not currently offered; posted youth group schedule appears out of date (confirm 773-665-8052 x4),\"773-665-8052 x4; intake@smartlovefamily.org; 1010 Lake St., Suite 500, Oak Park; https://www.smartlovefamily.org/fsp\",Free,https://www.smartlovefamily.org/fsp,2026-10-03,Potentially out of date: parent groups not currently offered and the posted youth schedule is from an earlier year. Call 773-665-8052 x4 to confirm before referring. Register through the intake form on the page; a clinician follows up.\nYouth/Family Services,YEMBA,Mentorship Empowerment Program (M.E.P.),\"Free after-school mentoring at Brooks and Julian middle schools, plus summer programs.\",When a Brooks or Julian middle school student would benefit from free after-school mentoring.,Grades 6-8 (M.E.P.); summer program for rising 6th and 9th graders,After school (days and times not published; confirm 708-719-6700); summer 2027 applications open spring 2027,\"708-719-6700; yemba@yemba-inc.org; 218 Lake St., Oak Park; https://www.yemba-inc.org/programs-2025\",Free (M.E.P.); rising 9th graders receive stipends,https://www.yemba-inc.org/programs-2025,2026-10-03,Use the www address; the bare domain has a certificate error.\nYouth/Family Services,Hephzibah Children's Association,After-school and summer program with social work support,After-school care and summer camp with social workers who help children with behavior and relationships.,\"When a working or studying parent needs after-school or summer care for a K-5 child, with social work support.\",Grades K-5 at District 97 schools (current openings Irving and Lincoln); guardian must be working or in school/training,Summer camp Mon-Fri 9:00 a.m.-5:00 p.m.; after-school times not published (late fee after 6:00 p.m.),\"708-649-7093 (after-school); 1144 Lake St., Oak Park; https://www.hephzibahhome.org/after-school-summer-camp/\",\"Sliding scale by income: 2026-27 full time $1,638 to $4,671 a year, plus $100 enrollment fee\",https://www.hephzibahhome.org/after-school-summer-camp/,2026-10-03,\"Main phone differs: website 708-649-7140, Township guide 708-649-7100. Family services are by DCFS referral only.\"\nYouth/Family Services,National Runaway Safeline,Homeless youth / runaway hotline,Hotline for young people who have run away or are homeless.,When a young person has run away or is homeless and needs someone to talk to.,Young people who have run away or are homeless,Not published online; confirm: 1-800-786-2929,1-800-RUNAWAY (1-800-786-2929); listed on the Village Street Outreach Card: https://www.oak-park.us/files/assets/oakpark/v/2/neighborhood-services/streetoutreachcards_oct-1.pdf,Not published online; confirm: 1-800-786-2929,https://www.oak-park.us/files/assets/oakpark/v/2/neighborhood-services/streetoutreachcards_oct-1.pdf,2026-10-03,Listed on the Village Street Outreach Card. Also listed under Unhoused Resident.\nFinancial Support,Oak Park Township,General Assistance,Monthly payments to help adults meet basic needs.,When an Oak Park adult has no income and doesn't qualify for other government aid.,Oak Park residents 18+; not custodial parent of a minor; US citizen or qualified immigrant; income and asset limits; not eligible for other government aid; seeking work or applying for SSI/SSDI,Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8005 (appointment required, no walk-ins); 105 S. Oak Park Ave., Oak Park; intake@oakparktownship.org; https://oakparktownship.org/general-assistance/#general_assistance_qualifications\",Cash benefit; no fee,https://oakparktownship.org/general-assistance/,2026-10-03,Income dollar limits not published; confirm 708-383-8005.\nFinancial Support,Oak Park Township,Emergency Assistance,\"One-time help (up to $1,600) with an emergency such as past-due rent, utilities or a shut-off notice.\",\"When an Oak Park household faces a one-time emergency such as past-due rent, a utility shut-off or overdue bills.\",\"Oak Park residents; once per program year (Apr-Mar); under $5,000 in cash or bank; income limits (e.g., $6,500 per 30 days for a household of 4); not receiving or applying for GA, SSI or TANF\",Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8005 (appointment required, no walk-ins); 105 S. Oak Park Ave., Oak Park; https://oakparktownship.org/download/2024-emergency-assistance-flyer/\",Assistance paid on your behalf; no fee,https://oakparktownship.org/download/2024-emergency-assistance-flyer/,2026-10-03,Flyer uses 2024 poverty guidelines and may be out of date; confirm limits with 708-383-8005.\nFinancial Support,Oak Park Township (with CEDA),\"Energy assistance (LIHEAP, emergency furnace, weatherization)\",\"Help with gas and electric bills, emergency furnace repair and weatherization.\",When a household can't pay gas or electric bills or the furnace has failed.,\"Income limits (e.g., $62,400 a year for a household of 4); no SSN or ITIN needed\",\"Mon-Fri 9:00 a.m.-5:00 p.m.; 2025-26 season ran Oct 1, 2025-Aug 15, 2026 (2026-27 dates not yet published)\",708-383-8005 (appointment); https://oakparktownship.org/wp-content/uploads/2025/09/Energy-Services-Flyer-2025_RV.pdf,Assistance paid on your behalf; no fee,https://oakparktownship.org/wp-content/uploads/2025/09/Energy-Services-Flyer-2025_RV.pdf,2026-10-03,\"Flyer is for the 2025-26 season. Nicor Sharing applications may go through Prevail, 848 Lake St., 708-386-1946.\"\nFinancial Support,Oak Park Township,Senior benefits assistance and SHIP Medicare counseling,\"Help applying for Medicare, Medicaid, SNAP and Ride Free Transit, and one-on-one Medicare plan counseling.\",When an older adult needs help applying for benefits or choosing a Medicare plan.,Adults 60+ and Medicare beneficiaries,Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8060; seniors@oakparktownship.org; Senior Services Center, 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/senior-services/#aging_disability\",SHIP counseling free; benefits help: No one is denied for inability to pay; a suggested contribution may apply (Township Senior Services overview),https://oakparktownship.org/senior-services/,2026-10-03,\nFinancial Support,Oak Park Township,Money Management Program,Help with paying bills and managing finances for older adults.,When an older adult is struggling to keep up with bills and finances.,Older adults who have trouble managing money; income and asset limits (figures not published),Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-383-8060; seniors@oakparktownship.org; Senior Services Center, 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/download/money-management-program-brochure/\",Not published online; confirm: 708-383-8060,https://oakparktownship.org/senior-services/,2026-10-03,\nFinancial Support,Oak Park Public Library,Social Services team,\"Short-term case management and referrals for mental health, housing, jobs, health care, immigration, domestic violence and more.\",\"When anyone at the library needs help finding housing, benefits, jobs, health care or mental health support and doesn't know where to start.\",Anyone,\"Library hours (Main Library Mon-Thu 9:00 a.m.-9:00 p.m., Fri 9:00 a.m.-6:00 p.m., Sat 9:00 a.m.-5:00 p.m., Sun 12:00-5:00 p.m.); staff hours not published, confirm 708-697-6910\",\"708-697-6910; Main Library, 834 Lake St.; also Dole and Maze branches; https://www.oppl.org/use-your-library/social-services/\",Not published online; confirm: 708-697-6910,https://www.oppl.org/use-your-library/social-services/,2026-10-03,Eligibility confirmed by team on 2026-10-03. Also listed under Behavioral Health and Housing.\nFinancial Support,Oak Park Township Youth & Family Services,Financial Assistance Scholarships (FAS),Helps pay registration fees for activities a family cannot afford.,When a family can't afford a child's activity fees; a referring agency applies at least two weeks before the program starts.,\"Family lives in, or child attends school in, Oak Park (ages 6-17) or River Forest (ages 5-17); income at or below 185% of poverty (e.g., $51,338 for a family of 4)\",Program hours not published; Township office Mon-Fri 9:00 a.m.-5:00 p.m.,\"708-445-2727; youth@oakparktownship.org; 105 S. Oak Park Ave., Oak Park; application: https://oakparktownship.org/wp-content/uploads/2026/04/FAS-Application-FY27.pdf\",Up to $300 per child and $600 per family a year; family pays part (about one third recommended),https://oakparktownship.org/wp-content/uploads/2026/04/FAS-Application-FY27.pdf,2026-10-03,A referring agency submits the form at least 2 weeks before the program starts. Also listed under Youth/Family Services.\nFinancial Support,Beyond Hunger,Benefits help (SNAP),Help applying for SNAP and other public benefits.,\"When someone needs help applying for SNAP or other public benefits, wherever they live.\",Anyone; you do not need to live in the service area,Phone Tue-Fri 9:00 a.m.-5:00 p.m.; drop-in times not published (appointments available),708-386-1324 x1106 (Spanish x2119); 708-406-7295; benefits@gobeyondhunger.org; https://www.gobeyondhunger.org/programs/benefits-services,Not published online; confirm: 708-386-1324 x1106,https://www.gobeyondhunger.org/programs/benefits-services,2026-10-03,Bring Illinois photo ID. Also listed under Food Services.\nDomestic Violence,Sarah's Inn,\"Crisis line, advocacy and counseling\",\"Crisis support, safety planning, shelter help, counseling and court advocacy for survivors and their children, in English and Spanish.\",When someone is experiencing domestic violence; they need to call the 24-hour line themselves to start.,Anyone who identifies as having experienced domestic violence; no proof required,Crisis and text lines 24/7; office hours not published,\"Hotline 708-386-4225; text 708-669-6149; office 708-386-3305; 1547 Circle Ave., Forest Park; https://sarahsinn.org/find-help\",Free and confidential,https://sarahsinn.org/find-help/what-we-do,2026-10-03,Survivors must call the crisis line themselves to start; referrals from others are not accepted. Address from the Township Resource Guide; Forest Park borders Oak Park.\nDomestic Violence,Sarah's Inn,Together Strong (prevention),\"School-based healthy-relationship education for teens, educators and parents.\",\"When a school or group wants healthy-relationship education for teens, educators or parents.\",\"Adolescents, educators and parents (schools appear to request it; confirm)\",Not published online; confirm: 708-386-3305 x1027,708-386-3305 x1027; chidoril@sarahsinn.org; https://sarahsinn.org/find-help/what-we-do,Not published online; confirm: 708-386-3305,https://sarahsinn.org/find-help/what-we-do,2026-10-03,\nDomestic Violence,Illinois Domestic Violence Hotline,Statewide hotline,Statewide domestic violence hotline.,\"When someone experiencing domestic violence needs help, anywhere in Illinois.\",Not published online; confirm: 877-863-6338,Not published online; confirm: 877-863-6338,877-863-6338; listed on the Village Street Outreach Card: https://www.oak-park.us/files/assets/oakpark/v/2/neighborhood-services/streetoutreachcards_oct-1.pdf,Not published online; confirm: 877-863-6338,https://www.oak-park.us/files/assets/oakpark/v/2/neighborhood-services/streetoutreachcards_oct-1.pdf,2026-10-03,Listed on the Village Street Outreach Card.\nDomestic Violence,Pillars Community Health,24-hour domestic violence and sexual assault lines,Confidential 24-hour hotlines and services for domestic violence and sexual assault.,When someone has experienced domestic violence or sexual assault and needs confidential help at any hour.,Anyone,24 hours,DV 708-485-5254; sexual assault 708-482-9600; https://pillarscommunityhealth.org/services/domestic-and-sexual-violence-services/domestic-violence-services/,Free,https://pillarscommunityhealth.org/services/domestic-and-sexual-violence-services/domestic-violence-services/,2026-10-03,\nDomestic Violence,Oak Park Township,Adult Protective Services,\"Investigates and responds to abuse, neglect or exploitation of older adults and adults with disabilities.\",\"When you suspect abuse, neglect or financial exploitation of an older adult or an adult with a disability; the state hotline takes reports 24/7.\",\"Oak Park and River Forest residents 60+, and adults 18-59 with disabilities\",Township line Mon-Fri 9:00 a.m.-5:00 p.m.; state hotline 24/7,708-383-8060; Illinois Dept. on Aging 1-866-800-1409 (24/7); https://oakparktownship.org/senior-services/#safety_protective,Not published online; confirm: 708-383-8060,https://oakparktownship.org/senior-services/,2026-10-03,Also listed under Senior Services.\nMedical Support,Infant Welfare Society Children's Clinic,\"Medical, dental and behavioral health for children\",\"Pediatric medical, dental and behavioral health care, with social workers who help with other needs.\",\"When a child or young adult under 21 needs a doctor, dentist or counselor, with or without insurance.\",\"Infants, children and young adults up to 21; all welcome regardless of insurance or ability to pay\",\"Mon 9:00 a.m.-5:00 p.m.; Tue 11:00 a.m.-7:00 p.m. dental, 3:00-7:00 p.m. medical; Wed-Fri 9:00 a.m.-5:00 p.m.; first Saturday 9:00 a.m.-12:00 p.m. (closed Saturdays June-August)\",\"708-848-0528; 28 Madison St., Oak Park; https://childrenscliniciws.org/hours-and-location\",\"Medicaid/AllKids and some private insurance; sliding scale for uninsured, visits from $30\",https://childrenscliniciws.org/payment-options,2026-10-03,\nMedical Support,Pillars Community Health,Community health center,\"Primary medical, dental and behavioral health care.\",\"When someone needs a regular doctor, dentist or behavioral health care and has limited or no insurance.\",\"All patients, regardless of insurance status or age\",Hours vary by location; after hours call 708-745-5277,\"708-745-5277 (708-PILLARS); health center 321 N. La Grange Rd., La Grange Park; behavioral health 6918 Windsor Ave. and 6415 Stanley Ave., Berwyn; https://pillarscommunityhealth.org/about-us/locations/\",Some services on a sliding scale; no one turned away for inability to pay,https://pillarscommunityhealth.org/about-us/payment-and-insurance/,2026-10-03,\"Also runs a 24-hour mental health crisis line, 708-627-4747.\"\nMedical Support,Alivio Medical Center,Community health center (Berwyn),\"Family medicine, pediatrics, dental, behavioral health, walk-in immediate care, pharmacy and lab.\",\"When someone needs primary care, dental care or walk-in immediate care and has limited or no insurance.\",No one denied for inability to pay,\"Mon, Tue, Thu, Fri 8:30 a.m.-5:30 p.m.; Wed 1:00-8:00 p.m.; every other Sat 8:30 a.m.-3:00 p.m. Walk-in care Mon-Fri 9:00 a.m.-1:00 p.m. and 2:00-6:00 p.m., Sat 9:00 a.m.-1:00 p.m.\",\"773-254-1400; 6447 W. Cermak Rd., Berwyn; https://alivio.org/locations/berwyn/\",\"Medicaid, Medicare, private and Marketplace insurance; sliding scale by family size and income; small fee at visit\",https://alivio.org/payment/,2026-10-03,\nFood Services,Beyond Hunger,Food pantry grocery pickup,Groceries each month for anyone in need; no proof of income needed.,When a household needs groceries; no proof of income is required.,\"Illinois residents, priority to Oak Park, River Forest, Forest Park and nearby ZIP codes\",Wed 3:30-5:30 p.m.; Sat 9:00 a.m.-12:00 p.m.,\"708-386-1324 x1114; 848 Lake St. (lower level, First United Church), Oak Park; https://www.gobeyondhunger.org/get-food\",Not stated online (no proof of income required); confirm 708-386-1324,https://www.gobeyondhunger.org/get-food,2026-10-03,Bring a cart or large suitcase; first visit needs a registration form.\nFood Services,Beyond Hunger,Benefits help (SNAP),Help applying for SNAP and other public benefits.,\"When someone needs help applying for SNAP or other public benefits, wherever they live.\",Anyone; you do not need to live in the service area,Phone Tue-Fri 9:00 a.m.-5:00 p.m.; drop-in times not published (appointments available),708-386-1324 x1106 (Spanish x2119); 708-406-7295; benefits@gobeyondhunger.org; https://www.gobeyondhunger.org/programs/benefits-services,Not published online; confirm: 708-386-1324 x1106,https://www.gobeyondhunger.org/programs/benefits-services,2026-10-03,Bring Illinois photo ID. Also listed under Financial Support.\nFood Services,Beyond Hunger,Home delivery,\"Monthly grocery delivery, ordered by phone, for people who cannot get to the pantry.\",When someone homebound or disabled can't get to the pantry and needs groceries delivered.,\"Homebound or disabled residents of Oak Park, River Forest or Austin who cannot visit or send someone\",Monthly; delivery days not published,Oak Park residents sign up through Township Senior Services 708-383-8060; program 708-512-5010; https://www.gobeyondhunger.org/programs/home-delivery,Not published online; confirm: 708-512-5010,https://www.gobeyondhunger.org/programs/home-delivery,2026-10-03,\nFood Services,Oak Park Township,Home Delivered Meals,\"Meals delivered to homebound older adults, with a friendly check-in.\",When an older adult who is homebound can't easily cook or shop.,\"Homebound residents 60+, regardless of income; in-home assessment required\",Mon-Fri 9:00 a.m.-5:00 p.m.,708-383-8060; hdmreferrals@oakparktownship.org; https://oakparktownship.org/senior-services/#food_nutrition,Not published online; confirm: 708-383-8060,https://oakparktownship.org/senior-services/,2026-10-03,\nFood Services,Oak Park Township,Dine-In Lunch Program,Daily lunch with company and activities; no reservation needed.,When an older adult would benefit from a low-cost hot lunch and company on weekdays.,Ages 60+ (guests under 60 pay the guest fee),Mon-Fri 11:00 a.m.-1:00 p.m.,\"708-383-8060 or nutrition hotline 708-725-9129; 130 S. Oak Park Ave., Oak Park; https://oakparktownship.org/senior-services/#food_nutrition\",Suggested donation $1.50 (60+); $8.50 guest fee (under 60),https://oakparktownship.org/senior-services/,2026-10-03,\n", "../data/crime-monthly-oak-park.csv": "month,crime_against,incidents\n2022-01,All,167\n2022-01,Person,38\n2022-01,Property,123\n2022-01,Society,6\n2022-02,All,159\n2022-02,Person,44\n2022-02,Property,111\n2022-02,Society,5\n2022-03,All,211\n2022-03,Person,48\n2022-03,Property,160\n2022-03,Society,5\n2022-04,All,227\n2022-04,Person,38\n2022-04,Property,184\n2022-04,Society,5\n2022-05,All,259\n2022-05,Person,55\n2022-05,Property,201\n2022-05,Society,9\n2022-06,All,282\n2022-06,Person,51\n2022-06,Property,233\n2022-06,Society,2\n2022-07,All,327\n2022-07,Person,47\n2022-07,Property,280\n2022-07,Society,4\n2022-08,All,277\n2022-08,Person,63\n2022-08,Property,218\n2022-08,Society,4\n2022-09,All,294\n2022-09,Person,45\n2022-09,Property,248\n2022-09,Society,3\n2022-10,All,302\n2022-10,Person,43\n2022-10,Property,260\n2022-10,Society,4\n2022-11,All,252\n2022-11,Person,39\n2022-11,Property,210\n2022-11,Society,5\n2022-12,All,242\n2022-12,Person,39\n2022-12,Property,202\n2022-12,Society,4\n2023-01,All,246\n2023-01,Person,41\n2023-01,Property,204\n2023-01,Society,5\n2023-02,All,196\n2023-02,Person,51\n2023-02,Property,144\n2023-02,Society,1\n2023-03,All,226\n2023-03,Person,50\n2023-03,Property,171\n2023-03,Society,5\n2023-04,All,259\n2023-04,Person,43\n2023-04,Property,215\n2023-04,Society,5\n2023-05,All,264\n2023-05,Person,53\n2023-05,Property,209\n2023-05,Society,4\n2023-06,All,265\n2023-06,Person,48\n2023-06,Property,214\n2023-06,Society,10\n2023-07,All,272\n2023-07,Person,41\n2023-07,Property,229\n2023-07,Society,4\n2023-08,All,301\n2023-08,Person,44\n2023-08,Property,257\n2023-08,Society,3\n2023-09,All,289\n2023-09,Person,57\n2023-09,Property,235\n2023-09,Society,3\n2023-10,All,255\n2023-10,Person,33\n2023-10,Property,222\n2023-10,Society,4\n2023-11,All,251\n2023-11,Person,37\n2023-11,Property,213\n2023-11,Society,4\n2023-12,All,257\n2023-12,Person,30\n2023-12,Property,229\n2023-12,Society,2\n2024-01,All,194\n2024-01,Person,33\n2024-01,Property,160\n2024-01,Society,2\n2024-02,All,218\n2024-02,Person,35\n2024-02,Property,180\n2024-02,Society,7\n2024-03,All,219\n2024-03,Person,52\n2024-03,Property,170\n2024-03,Society,9\n2024-04,All,241\n2024-04,Person,50\n2024-04,Property,188\n2024-04,Society,6\n2024-05,All,245\n2024-05,Person,38\n2024-05,Property,211\n2024-05,Society,3\n2024-06,All,267\n2024-06,Person,35\n2024-06,Property,231\n2024-06,Society,6\n2024-07,All,307\n2024-07,Person,48\n2024-07,Property,265\n2024-07,Society,5\n2024-08,All,299\n2024-08,Person,55\n2024-08,Property,246\n2024-08,Society,4\n2024-09,All,302\n2024-09,Person,54\n2024-09,Property,249\n2024-09,Society,3\n2024-10,All,327\n2024-10,Person,57\n2024-10,Property,274\n2024-10,Society,3\n2024-11,All,222\n2024-11,Person,46\n2024-11,Property,168\n2024-11,Society,9\n2024-12,All,205\n2024-12,Person,29\n2024-12,Property,170\n2024-12,Society,6\n2025-01,All,174\n2025-01,Person,37\n2025-01,Property,138\n2025-01,Society,3\n2025-02,All,160\n2025-02,Person,45\n2025-02,Property,116\n2025-02,Society,4\n2025-03,All,196\n2025-03,Person,40\n2025-03,Property,149\n2025-03,Society,10\n2025-04,All,208\n2025-04,Person,42\n2025-04,Property,164\n2025-04,Society,5\n2025-05,All,252\n2025-05,Person,57\n2025-05,Property,196\n2025-05,Society,3\n2025-06,All,233\n2025-06,Person,45\n2025-06,Property,186\n2025-06,Society,4\n2025-07,All,295\n2025-07,Person,51\n2025-07,Property,245\n2025-07,Society,3\n2025-08,All,272\n2025-08,Person,49\n2025-08,Property,218\n2025-08,Society,8\n2025-09,All,254\n2025-09,Person,61\n2025-09,Property,196\n2025-09,Society,3\n2025-10,All,227\n2025-10,Person,47\n2025-10,Property,179\n2025-10,Society,4\n2025-11,All,199\n2025-11,Person,38\n2025-11,Property,160\n2025-11,Society,2\n2025-12,All,216\n2025-12,Person,39\n2025-12,Property,179\n2025-12,Society,1\n2026-01,All,206\n2026-01,Person,32\n2026-01,Property,170\n2026-01,Society,7\n2026-02,All,150\n2026-02,Person,32\n2026-02,Property,117\n2026-02,Society,5\n2026-03,All,162\n2026-03,Person,42\n2026-03,Property,120\n2026-03,Society,6\n2026-04,All,211\n2026-04,Person,54\n2026-04,Property,157\n2026-04,Society,4\n2026-05,All,239\n2026-05,Person,49\n2026-05,Property,191\n2026-05,Society,2\n2026-06,All,241\n2026-06,Person,41\n2026-06,Property,201\n2026-06,Society,3\n2026-07,All,256\n2026-07,Person,45\n2026-07,Property,212\n2026-07,Society,4\n2026-08,All,221\n2026-08,Person,47\n2026-08,Property,168\n2026-08,Society,8\n", "../data/calls-for-service-totals.csv": "year,police_calls,fire_calls\n2022,46869,8594\n2023,43931,8629\n2024,41605,8925\n2025,37369,9474\n"};</script>
+<script>
+(() => {
+  const ECHO_CSV = '../data/echo-activity-oak-park.csv';
+  const RESOURCE_CSV = '../resources/resource-directory.csv';
+  const CRIME_CSV = '../data/crime-monthly-oak-park.csv';
+  const CALLS_CSV = '../data/calls-for-service-totals.csv';
+  const UNCATEGORIZED = 'Not categorized';
+
+  // One-line definitions and flags, from docs/echo-data-key.md.
+  const CATEGORY_INFO = {
+    'Unhoused Resident': { def: 'Street outreach, care kits, emergency shelter navigation, and encampment work with Public Works.' },
+    'Behavioral Health': { def: 'Connections to mental health care and substance use treatment.',
+      flag: 'Open question: did the January 2026 start of 911-to-988 transfers lower these counts?' },
+    'Senior Services': { def: 'Wellness checks, help after falls, and dementia support, often with Township caregiver services.' },
+    'Housing': { def: 'Rental and housing help for people who are still housed. Counted separately from homelessness.' },
+    'Youth/Family Services': { def: 'Truancy support, youth behavior and family disputes, and the Township Youth Engagement Program.' },
+    'Other': { def: 'Not defined by the Village.',
+      flag: 'Jumps in May 2026, possibly from a change to the intake form. Unconfirmed.' },
+    'Financial Support': { def: 'Help with bills, utilities, and insurance.' },
+    'Domestic Violence': { def: 'Connections to domestic violence services.' },
+    'Medical Support': { def: 'Help getting medical and dental care.' },
+    'Food Services': { def: 'Food assistance.' },
+    [UNCATEGORIZED]: { def: 'Services logged with no category, first seen in July 2026.',
+      flag: 'Likely a form or data entry change. Some of these probably belong to other categories, so 2026 category counts may run low.' },
+  };
+  // Categories with no lookup in the resource directory.
+  const NO_DIRECTORY = new Set(['Other', UNCATEGORIZED]);
+
+  const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const MONTH_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const ym = m => { const [y, mo] = m.split('-').map(Number); return { y, mo }; };
+  const shortLabel = m => { const { y, mo } = ym(m); return `${MONTH_ABBR[mo - 1]} ${y}`; };
+  const longLabel = m => { const { y, mo } = ym(m); return `${MONTH_FULL[mo - 1]} ${y}`; };
+  const fmt = n => n.toLocaleString('en-US');
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const SVG = 'http://www.w3.org/2000/svg';
+  const el = (tag, attrs = {}, parent) => {
+    const n = document.createElementNS(SVG, tag);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    if (parent) parent.appendChild(n);
+    return n;
+  };
+
+  // RFC 4180 CSV: quoted fields, embedded commas, quotes, and newlines.
+  function parseCSV(text) {
+    const rows = []; let row = [], field = '', q = false;
+    text = text.replace(/^﻿/, '');
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) {
+        if (c === '"') { if (text[i + 1] === '"') { field += '"'; i++; } else q = false; }
+        else field += c;
+      } else if (c === '"') q = true;
+      else if (c === ',') { row.push(field); field = ''; }
+      else if (c === '\n' || c === '\r') {
+        if (c === '\r' && text[i + 1] === '\n') i++;
+        row.push(field); rows.push(row); row = []; field = '';
+      } else field += c;
+    }
+    if (field !== '' || row.length) { row.push(field); rows.push(row); }
+    const header = rows.shift() || [];
+    return rows.filter(r => r.some(v => v.trim() !== ''))
+      .map(r => Object.fromEntries(header.map((h, i) => [h.trim(), (r[i] ?? '').trim()])));
+  }
+
+  // A count is a number, or null when unavailable ("suppressed"). Never zero-fill a suppressed cell.
+  const parseCount = v => (/^\d+$/.test(v) ? Number(v) : null);
+
+  function buildModel(rows) {
+    const monthly = rows.filter(r => r.breakdown === 'service_by_month');
+    const months = [...new Set(monthly.map(r => r.month))].sort();
+    // The last month in the snapshot is still being logged.
+    const partialMonth = months[months.length - 1];
+    const byCat = new Map();
+    const totals = new Map(months.map(m => [m, 0]));
+    let unavailable = 0;
+    for (const r of monthly) {
+      const cat = (!r.service || r.service === '(blank)') ? UNCATEGORIZED : r.service;
+      const n = parseCount(r.count);
+      if (n === null) { unavailable++; continue; }
+      if (!byCat.has(cat)) byCat.set(cat, new Map());
+      byCat.get(cat).set(r.month, n);
+      totals.set(r.month, totals.get(r.month) + n);
+    }
+    const cats = [...byCat.entries()].map(([name, series]) => {
+      const total = [...series.values()].reduce((a, b) => a + b, 0);
+      const first = months.find(m => series.has(m));
+      return { name, series, total, first };
+    }).sort((a, b) => {
+      // Real categories by size; Other and uncategorized last.
+      const rank = c => (c.name === UNCATEGORIZED ? 2 : c.name === 'Other' ? 1 : 0);
+      return rank(a) - rank(b) || b.total - a.total;
+    });
+    const grand = [...totals.values()].reduce((a, b) => a + b, 0);
+    return { months, partialMonth, cats, totals, grand, unavailable };
+  }
+
+  // Same-months comparison: the latest six complete months against the same months a year earlier.
+  function yearOverYear(model) {
+    const complete = model.months.filter(m => m !== model.partialMonth);
+    const recent = complete.slice(-6);
+    const prior = recent.map(m => { const { y, mo } = ym(m); return `${y - 1}-${String(mo).padStart(2, '0')}`; });
+    if (!prior.every(m => model.months.includes(m))) return null;
+    return { recent, prior };
+  }
+
+  // ---------- Tooltip ----------
+  function makeTooltip(container) {
+    const tip = document.createElement('div');
+    tip.className = 'tooltip'; tip.setAttribute('role', 'status');
+    container.appendChild(tip);
+    return {
+      show(html, x, y) {
+        tip.innerHTML = html; tip.classList.add('on');
+        const cw = container.clientWidth, tw = tip.offsetWidth, th = tip.offsetHeight;
+        let left = x + 14; if (left + tw > cw) left = x - tw - 14; if (left < 0) left = Math.max(0, Math.min(cw - tw, x - tw / 2));
+        let top = y - th - 10; if (top < -40) top = y + 16;
+        tip.style.left = left + 'px'; tip.style.top = top + 'px';
+      },
+      hide() { tip.classList.remove('on'); },
+    };
+  }
+
+  // ---------- Hero: monthly totals ----------
+  function niceMax(v, step) { return Math.ceil(v / step) * step; }
+
+  function drawMonthly(model) {
+    const box = document.getElementById('monthly');
+    box.innerHTML = '';
+    const W = box.clientWidth;
+    const narrow = W < 560;
+    const H = narrow ? 260 : 330;
+    const m = { l: 36, r: 6, t: 46, b: 44 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const max = niceMax(Math.max(...model.totals.values()), 50);
+    const n = model.months.length;
+    const band = iw / n, bw = Math.max(6, Math.min(34, band * 0.64));
+    const x = i => m.l + band * i + (band - bw) / 2;
+    const y = v => m.t + ih - (v / max) * ih;
+
+    const svg = el('svg', { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img',
+      'aria-label': `Bar chart of ECHO services per month, ${shortLabel(model.months[0])} to ${shortLabel(model.partialMonth)}. Full numbers are in the table view below.` }, box);
+    const defs = el('defs', {}, svg);
+    const pat = el('pattern', { id: 'hatch', patternUnits: 'userSpaceOnUse', width: 5, height: 5, patternTransform: 'rotate(45)' }, defs);
+    el('rect', { width: 1.6, height: 5, fill: 'var(--data)' }, pat);
+
+    const axis = el('g', { class: 'axis' }, svg);
+    for (let v = 0; v <= max; v += 50) {
+      el('line', { class: v === 0 ? 'baseline' : 'gridline', x1: m.l, x2: W - m.r, y1: y(v), y2: y(v) }, axis);
+      const t = el('text', { x: m.l - 8, y: y(v) + 4, 'text-anchor': 'end' }, axis); t.textContent = v;
+    }
+    const every = narrow ? 3 : 1;
+    model.months.forEach((mo, i) => {
+      const { y: yr, mo: mon } = ym(mo);
+      const cx = x(i) + bw / 2;
+      if ((i % every === 0 && model.months.length - 1 - i >= every) || mo === model.partialMonth) {
+        const t = el('text', { x: cx, y: H - m.b + 18, 'text-anchor': 'middle' }, axis);
+        t.textContent = narrow ? MONTH_ABBR[mon - 1][0] + MONTH_ABBR[mon - 1].slice(1, 3) : MONTH_ABBR[mon - 1];
+      }
+      if (i === 0 || mon === 1) {
+        const t = el('text', { x: x(i), y: H - m.b + 36, 'text-anchor': 'start', style: 'font-weight:600' }, axis);
+        t.textContent = yr;
+      }
+    });
+
+    const bars = [];
+    model.months.forEach((mo, i) => {
+      const v = model.totals.get(mo), h = Math.max(0, y(0) - y(v)), r = Math.min(4, bw / 2, h);
+      const x0 = x(i), y0 = y(v);
+      // Rounded data end, square at the baseline.
+      const d = `M${x0},${y(0)} V${y0 + r} Q${x0},${y0} ${x0 + r},${y0} H${x0 + bw - r} Q${x0 + bw},${y0} ${x0 + bw},${y0 + r} V${y(0)} Z`;
+      bars.push(el('path', { d, class: 'bar' + (mo === model.partialMonth ? ' partial' : '') }, svg));
+    });
+
+    // Annotations: the September 2025 peak and the partial month.
+    const peakMonth = model.months.filter(mo => mo !== model.partialMonth)
+      .reduce((a, b) => (model.totals.get(b) > model.totals.get(a) ? b : a));
+    const pi = model.months.indexOf(peakMonth);
+    const px = x(pi) + bw / 2, py = y(model.totals.get(peakMonth));
+    el('line', { class: 'annot-line', x1: px, x2: px, y1: py - 6, y2: m.t - 18 }, svg);
+    const peakLabel = el('text', { class: 'annot', x: px + 6, y: m.t - 22, 'text-anchor': pi > n / 2 ? 'end' : 'start' }, svg);
+    peakLabel.innerHTML = `<tspan font-weight="700">${shortLabel(peakMonth)}: ${fmt(model.totals.get(peakMonth))}</tspan><tspan> ${narrow ? 'likely a batch' : '· about double its neighbors, likely a one-time batch (unconfirmed)'}</tspan>`;
+    if (pi > n / 2) peakLabel.setAttribute('x', px - 6);
+
+    const li = n - 1, lx = x(li) + bw / 2, lv = model.totals.get(model.partialMonth);
+    // The legend explains the hatching, so the label only needs the count.
+    const lt = el('text', { class: 'annot', x: lx, y: y(lv) - 7, 'text-anchor': 'middle' }, svg);
+    lt.textContent = fmt(lv);
+
+    // Hover / focus layer: whole-column hit targets.
+    const tip = makeTooltip(box);
+    model.months.forEach((mo, i) => {
+      const hit = el('rect', { class: 'hit', x: m.l + band * i, y: m.t, width: band, height: ih, tabindex: 0,
+        'aria-label': `${longLabel(mo)}: ${model.totals.get(mo)} services${mo === model.partialMonth ? ', partial month' : ''}` }, svg);
+      const show = () => {
+        bars.forEach((b, j) => b.classList.toggle('dim', j !== i));
+        const top = model.cats.map(c => [c.name, c.series.get(mo) || 0]).filter(([, v]) => v > 0)
+          .sort((a, b) => b[1] - a[1]).slice(0, 4);
+        let html = `<div class="tt-h">${longLabel(mo)}: ${fmt(model.totals.get(mo))} services</div>`;
+        html += top.map(([k, v]) => `<div class="tt-row"><span>${esc(k)}</span><span>${v}</span></div>`).join('');
+        if (mo === model.partialMonth) html += `<div class="tt-note">Partial month, still being logged.</div>`;
+        if (mo === peakMonth) html += `<div class="tt-note">Likely a one-time batch of Police and Fire follow-ups or catch-up logging. Unconfirmed.</div>`;
+        tip.show(html, x(i) + bw / 2, y(model.totals.get(mo)));
+      };
+      const hide = () => { bars.forEach(b => b.classList.remove('dim')); tip.hide(); };
+      hit.addEventListener('pointerenter', show); hit.addEventListener('pointerleave', hide);
+      hit.addEventListener('focus', show); hit.addEventListener('blur', hide);
+    });
+  }
+
+  // ---------- Small multiples ----------
+  function drawSpark(container, cat, model, max) {
+    container.innerHTML = '';
+    const W = container.clientWidth, H = 96;
+    const m = { l: 26, r: 8, t: 8, b: 20 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const months = model.months, n = months.length;
+    const x = i => m.l + (iw * i) / (n - 1);
+    const y = v => m.t + ih - (v / max) * ih;
+    const svg = el('svg', { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img',
+      'aria-label': `${cat.name}: monthly services. Values are in the table view.` }, container);
+    const axis = el('g', { class: 'axis' }, svg);
+    [0, max].forEach(v => {
+      el('line', { class: v === 0 ? 'baseline' : 'gridline', x1: m.l, x2: W - m.r, y1: y(v), y2: y(v) }, axis);
+      const t = el('text', { x: m.l - 6, y: y(v) + 4, 'text-anchor': 'end' }, axis); t.textContent = v;
+    });
+    const firstYear = ym(months[0]).y;
+    months.forEach((mo, i) => {
+      const { y: yr, mo: mon } = ym(mo);
+      if (i === 0 || mon === 1) {
+        const t = el('text', { x: x(i), y: H - 4, 'text-anchor': i === 0 ? 'start' : 'middle' }, axis);
+        t.textContent = i === 0 ? `${MONTH_ABBR[mon - 1]} ${String(firstYear).slice(2)}` : `Jan ${String(yr).slice(2)}`;
+      }
+    });
+    const lastI = n - 1;
+    const t = el('text', { x: x(lastI), y: H - 4, 'text-anchor': 'end' }, axis);
+    t.textContent = `${MONTH_ABBR[ym(months[lastI]).mo - 1]} ${String(ym(months[lastI]).y).slice(2)}`;
+
+    // The line covers complete months from the category's first appearance; missing months are zero services.
+    const startI = months.indexOf(cat.first);
+    const pts = [];
+    for (let i = startI; i < lastI; i++) pts.push([x(i), y(cat.series.get(months[i]) || 0)]);
+    if (pts.length > 1) {
+      const area = `M${pts[0][0]},${y(0)} ` + pts.map(p => `L${p[0]},${p[1]}`).join(' ') + ` L${pts[pts.length - 1][0]},${y(0)} Z`;
+      el('path', { class: 'spark-area', d: area }, svg);
+      el('path', { class: 'spark-line', d: 'M' + pts.map(p => p.join(',')).join(' L') }, svg);
+    } else if (pts.length === 1) {
+      el('circle', { class: 'spark-dot', cx: pts[0][0], cy: pts[0][1], r: 3 }, svg);
+    }
+    // Partial month: a hollow point, not joined to the line.
+    el('circle', { class: 'spark-partial', cx: x(lastI), cy: y(cat.series.get(months[lastI]) || 0), r: 4 }, svg);
+
+    const cross = el('line', { class: 'spark-cross', y1: m.t, y2: y(0), visibility: 'hidden' }, svg);
+    const dot = el('circle', { class: 'spark-focus', r: 4.5, visibility: 'hidden' }, svg);
+    const tip = makeTooltip(container);
+    const hit = el('rect', { class: 'hit', x: m.l, y: 0, width: iw, height: H }, svg);
+    const onMove = e => {
+      const r = svg.getBoundingClientRect();
+      const i = Math.max(startI, Math.min(lastI, Math.round(((e.clientX - r.left - m.l) / iw) * (n - 1))));
+      const mo = months[i], v = cat.series.get(mo) || 0;
+      cross.setAttribute('x1', x(i)); cross.setAttribute('x2', x(i)); cross.setAttribute('visibility', 'visible');
+      dot.setAttribute('cx', x(i)); dot.setAttribute('cy', y(v)); dot.setAttribute('visibility', 'visible');
+      tip.show(`<div class="tt-h">${longLabel(mo)}</div><div class="tt-row"><span>${esc(cat.name)}</span><span>${v}</span></div>` +
+        (mo === model.partialMonth ? '<div class="tt-note">Partial month.</div>' : ''), x(i), y(v));
+    };
+    hit.addEventListener('pointermove', onMove);
+    hit.addEventListener('pointerleave', () => { cross.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); tip.hide(); });
+  }
+
+  // ---------- Resource directory ----------
+  const SHOWN_PER_CATEGORY = 3;
+  const URL_RE = /https?:\/\/[^\s;,)]+[^\s;,).]/g;
+  const PHONE_RE = /(?:1-)?\(?\b\d{3}\)?[-.\s]\d{3}-\d{4}\b(?:\s*(?:x|ext\.?)\s*\d+)?/g;
+  const EMAIL_RE = /[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g;
+  const domain = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return 'link'; } };
+
+  // Escape a field, then turn phone numbers, emails, and inline URLs into links.
+  function linkify(text) {
+    const tokens = [];
+    const hold = html => `\u0000${tokens.push(html) - 1}\u0000`;
+    let t = String(text)
+      .replace(URL_RE, u => hold(`<a href="${esc(u)}">${esc(domain(u))}</a>`))
+      .replace(EMAIL_RE, e => hold(`<a href="mailto:${esc(e)}">${esc(e)}</a>`))
+      .replace(PHONE_RE, ph => {
+        const ext = ph.match(/(?:x|ext\.?)\s*(\d+)$/);
+        const digits = ph.replace(/(?:x|ext\.?)\s*\d+$/, '').replace(/\D/g, '');
+        return hold(`<a href="tel:${digits}${ext ? ',' + ext[1] : ''}">${esc(ph)}</a>`);
+      });
+    return esc(t).replace(/\u0000(\d+)\u0000/g, (_, i) => tokens[i]);
+  }
+  // The directory's wording for unpublished details, shortened for display.
+  const tidy = v => v.trim().replace(/^Not published online;?\s*confirm:?\s*/i, 'Not published; confirm at ');
+
+  // Standalone web addresses are dropped from contact lines: the title already links to the source page.
+  const reachParts = r => (r.how_to_reach || '').split(';').map(x => x.trim())
+    .filter(x => x && !/^https?:\/\/\S+$/.test(x));
+  const dlist = rows => {
+    rows = rows.filter(([, v]) => v);
+    return rows.length ? '<dl>' + rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('') + '</dl>' : '';
+  };
+  // Always-visible lines drop a trailing "confirm: <phone>"; the phone is already in the Contact line.
+  const brief = v => v.trim()
+    .replace(/^Not published online;?\s*confirm:?\s*.*$/i, 'Not published online')
+    .replace(/[;,]?\s*confirm:?\s*(?:at\s*)?(?:1-)?\(?\d{3}\)?[-.\s]\d{3}-\d{4}(?:\s*(?:x|ext\.?)\s*\d+)?\s*$/i, '');
+
+  // Brief entry: service link, provider, and what it offers. Contact, hours, eligibility and
+  // cost live on the Find help tab's cards.
+  function resourceItem(r, extra) {
+    const title = r.program || r.provider;
+    const head = r.source_url ? `<a class="prog" href="${esc(r.source_url)}">${esc(title)}</a>` : `<span class="prog">${esc(title)}</span>`;
+    const prov = r.program && r.provider ? `<div class="prov">${esc(r.provider)}</div>` : '';
+    return `<li${extra ? ' class="extra"' : ''}>${head}${prov}${r.what_they_offer ? `<p class="offer">${linkify(r.what_they_offer)}</p>` : ''}</li>`;
+  }
+
+  function resourceList(cat, resources) {
+    if (NO_DIRECTORY.has(cat.name)) return '';
+    let body;
+    if (resources === null) {
+      body = '<p class="empty">Resource directory in progress.</p>';
+    } else {
+      const list = resources.filter(r => r.echo_category === cat.name);
+      if (!list.length) body = '<p class="empty">No matching services listed yet.</p>';
+      else {
+        body = '<ul>' + list.map((r, i) => resourceItem(r, i >= SHOWN_PER_CATEGORY)).join('') + '</ul>';
+        if (list.length > SHOWN_PER_CATEGORY)
+          body += `<button type="button" class="more" aria-expanded="false" data-all="Show all ${list.length}">Show all ${list.length}</button>`;
+      }
+    }
+    const pointer = resources && resources.some(r => r.echo_category === cat.name)
+      ? '<p class="who-more">Contact details, hours, and costs are in <a href="#help">Find help</a>.</p>' : '';
+    return `<div class="who"><h4>Who can help</h4>${body}${pointer}</div>`;
+  }
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.who .more');
+    if (!btn) return;
+    const ul = btn.previousElementSibling;
+    const open = ul.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Show fewer' : btn.dataset.all;
+    if (!open) btn.closest('.who').scrollIntoView({ block: 'nearest' });
+  });
+
+  function drawGrid(model, resources) {
+    const grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    const yoy = yearOverYear(model);
+    const max = niceMax(Math.max(...model.cats.flatMap(c => [...c.series.values()])), 10);
+    const sparks = [];
+    for (const cat of model.cats) {
+      const info = CATEGORY_INFO[cat.name] || { def: 'No definition available.' };
+      const share = Math.round((cat.total / model.grand) * 100);
+      let yoyHtml = '';
+      if (yoy && cat.name !== UNCATEGORIZED) {
+        const sum = ms => ms.reduce((a, mo) => a + (cat.series.get(mo) || 0), 0);
+        const a = sum(yoy.prior), b = sum(yoy.recent);
+        const span = `${MONTH_ABBR[ym(yoy.recent[0]).mo - 1]}–${MONTH_ABBR[ym(yoy.recent[5]).mo - 1]}`;
+        yoyHtml = `<p class="yoy">${span}: <b>${a}</b> in ${ym(yoy.prior[0]).y}, <b>${b}</b> in ${ym(yoy.recent[0]).y}</p>`;
+      }
+      const panel = document.createElement('article');
+      panel.className = 'panel';
+      panel.innerHTML = `
+        <h3>${esc(cat.name)}</h3>
+        <div class="total"><span class="n">${fmt(cat.total)}</span><span class="share">${share < 1 ? '<1' : share}% of all services</span></div>
+        <p class="def">${esc(info.def)}</p>
+        <div class="spark"></div>
+        ${yoyHtml}
+        ${info.flag ? `<p class="flag">${esc(info.flag)}</p>` : ''}
+        ${resourceList(cat, resources)}`;
+      grid.appendChild(panel);
+      sparks.push([panel.querySelector('.spark'), cat]);
+    }
+    const render = () => sparks.forEach(([box, cat]) => drawSpark(box, cat, model, max));
+    render();
+    return render;
+  }
+
+  function drawTable(model) {
+    const months = model.months;
+    let h = '<table><thead><tr><th scope="col">Category</th>';
+    h += months.map(mo => `<th scope="col"${mo === model.partialMonth ? ' class="partial-col"' : ''}>${shortLabel(mo)}${mo === model.partialMonth ? ' (partial)' : ''}</th>`).join('');
+    h += '<th scope="col">Total</th></tr></thead><tbody>';
+    for (const c of model.cats) {
+      h += `<tr><td>${esc(c.name)}</td>` + months.map(mo => `<td${mo === model.partialMonth ? ' class="partial-col"' : ''}>${c.series.get(mo) ?? (months.indexOf(mo) < months.indexOf(c.first) ? '' : 0)}</td>`).join('') + `<td>${fmt(c.total)}</td></tr>`;
+    }
+    h += '<tr class="sum"><td>All services</td>' + months.map(mo => `<td${mo === model.partialMonth ? ' class="partial-col"' : ''}>${model.totals.get(mo)}</td>`).join('') + `<td>${fmt(model.grand)}</td></tr>`;
+    h += '</tbody></table>';
+    document.getElementById('table').innerHTML = h;
+  }
+
+  function drawHeader(model) {
+    const complete = model.months.filter(mo => mo !== model.partialMonth);
+    const top4 = model.cats.filter(c => c.name !== 'Other' && c.name !== UNCATEGORIZED).slice(0, 4);
+    const topShare = Math.round(top4.reduce((a, c) => a + c.total, 0) / model.grand * 100);
+    document.getElementById('hero-total').innerHTML =
+      `${fmt(model.grand)}<small id="hero-label">services logged, ${shortLabel(model.months[0])} to ${shortLabel(model.partialMonth)}</small>`;
+    document.getElementById('hero-facts').innerHTML = `
+      <span><b>${complete.length}</b> complete months</span>
+      <span><b>${Math.round(complete.reduce((a, mo) => a + model.totals.get(mo), 0) / complete.length)}</b> services in an average month</span>
+      <span><b>${topShare}%</b> fall in four categories: ${top4.map(c => esc(c.name.toLowerCase())).join(', ').replace(/, ([^,]*)$/, ', and $1')}</span>`;
+  }
+
+  // ---------- Referral sources ----------
+  // One-line definitions and flags, from docs/echo-data-key.md.
+  const SOURCE_INFO = {
+    'Police Department': { def: 'Follow-up after a police call for service.',
+      flag: 'Police referrals roughly doubled in September 2025 (76), driving most of that month\'s spike. Cause unknown.' },
+    'Fire Department': { def: 'Follow-up after a fire or EMS call.',
+      flag: 'Fire referrals also jumped in September 2025 (37). Cause unknown.' },
+    'Resident Contact': { def: 'Residents calling or walking into Village Hall, for themselves or someone else.' },
+    'Community Engagement': { def: 'ECHO\'s own outreach: street outreach, district cleanings, business district support. Not an outside referrer.' },
+    'Village of Oak Park Departments': { def: 'Referrals from other Village departments.' },
+    'Community Partner': { def: 'Nonprofits, and possibly schools (unconfirmed).' },
+    'Business': { def: 'Referrals from local businesses.' },
+    'Emergency Housing': { def: 'Not defined by the Village.',
+      flag: 'Appears only from July to October 2025, the months around the new emergency shelter. Unconfirmed.' },
+  };
+  const catName = s => ((!s || s === '(blank)') ? UNCATEGORIZED : s);
+
+  function buildReferralModel(rows, model) {
+    const series = new Map();
+    for (const r of rows.filter(r => r.breakdown === 'referral_by_month')) {
+      const n = parseCount(r.count);
+      if (n === null) continue;
+      if (!series.has(r.referral_source)) series.set(r.referral_source, new Map());
+      series.get(r.referral_source).set(r.month, n);
+    }
+    // All-time mix of kinds of need per source. Hidden (suppressed) cells stay null: never estimated.
+    const mix = new Map();
+    for (const r of rows.filter(r => r.breakdown === 'referral_by_service')) {
+      if (!mix.has(r.referral_source)) mix.set(r.referral_source, []);
+      mix.get(r.referral_source).push({ service: catName(r.service), n: parseCount(r.count) });
+    }
+    const sources = [...series.entries()].map(([name, s]) => ({
+      name, series: s,
+      total: [...s.values()].reduce((a, b) => a + b, 0),
+      first: model.months.find(m => s.has(m)),
+      mix: (mix.get(name) || []).sort((a, b) => (b.n ?? -1) - (a.n ?? -1) || a.service.localeCompare(b.service)),
+    })).sort((a, b) => b.total - a.total);
+    const grand = sources.reduce((a, s) => a + s.total, 0);
+    const mixMax = Math.max(1, ...sources.flatMap(s => s.mix.map(c => c.n ?? 0)));
+    return { sources, grand, mixMax };
+  }
+
+  const barRow = (label, n, max, hiddenText) => n === null
+    ? `<li class="brow hidden-cell"><span class="lbl" title="${esc(label)}">${esc(label)}</span><span class="track"></span><span class="v">${hiddenText}</span></li>`
+    : `<li class="brow"><span class="lbl" title="${esc(label)}">${esc(label)}</span><span class="track"><span class="fill" style="width:${(n / max) * 100}%"></span></span><span class="v">${fmt(n)}</span></li>`;
+
+  function drawSourceBars(ref) {
+    const max = ref.sources[0].total;
+    document.getElementById('src-bars').innerHTML = ref.sources.map(s => barRow(s.name, s.total, max)).join('');
+  }
+
+  function drawSourceGrid(ref, model) {
+    const grid = document.getElementById('src-grid');
+    grid.innerHTML = '';
+    const max = niceMax(Math.max(...ref.sources.flatMap(s => [...s.series.values()])), 10);
+    const sparks = [];
+    for (const src of ref.sources) {
+      const info = SOURCE_INFO[src.name] || { def: 'No definition available.' };
+      const share = Math.round((src.total / ref.grand) * 100);
+      const shown = src.mix.filter(c => c.n !== null);
+      const hidden = src.mix.filter(c => c.n === null).map(c => c.service);
+      const mixHtml = src.mix.length ? `
+        <div class="mix"><h4>What these services were for (all months)</h4>
+          <ul>${shown.map(c => barRow(c.service, c.n, ref.mixMax)).join('')}</ul>
+          ${hidden.length ? `<p class="hidden-note">Hidden for privacy: ${hidden.map(esc).join(', ')}.</p>` : ''}
+        </div>` : '';
+      const panel = document.createElement('article');
+      panel.className = 'panel';
+      panel.innerHTML = `
+        <h3>${esc(src.name)}</h3>
+        <div class="total"><span class="n">${fmt(src.total)}</span><span class="share">${share < 1 ? '<1' : share}% of all services</span></div>
+        <p class="def">${esc(info.def)}</p>
+        <div class="spark"></div>
+        ${info.flag ? `<p class="flag">${esc(info.flag)}</p>` : ''}
+        ${mixHtml}`;
+      grid.appendChild(panel);
+      sparks.push([panel.querySelector('.spark'), src]);
+    }
+    const render = () => sparks.forEach(([box, src]) => drawSpark(box, src, model, max));
+    render();
+    return render;
+  }
+
+  function drawSourceTable(ref, model) {
+    const months = model.months, pc = mo => (mo === model.partialMonth ? ' class="partial-col"' : '');
+    let h = '<table><thead><tr><th scope="col">Referral source</th>';
+    h += months.map(mo => `<th scope="col"${pc(mo)}>${shortLabel(mo)}${mo === model.partialMonth ? ' (partial)' : ''}</th>`).join('');
+    h += '<th scope="col">Total</th></tr></thead><tbody>';
+    for (const s of ref.sources) {
+      h += `<tr><td>${esc(s.name)}</td>` + months.map(mo => `<td${pc(mo)}>${s.series.get(mo) ?? (months.indexOf(mo) < months.indexOf(s.first) ? '' : 0)}</td>`).join('') + `<td>${fmt(s.total)}</td></tr>`;
+    }
+    h += '<tr class="sum"><td>All services</td>' + months.map(mo => `<td${pc(mo)}>${ref.sources.reduce((a, s) => a + (s.series.get(mo) || 0), 0)}</td>`).join('') + `<td>${fmt(ref.grand)}</td></tr>`;
+    document.getElementById('src-table').innerHTML = h + '</tbody></table>';
+  }
+
+  function drawMixTable(ref, model) {
+    // Columns follow the other tab's category order. No row or column totals: hidden cells would make them misleading.
+    const cols = model.cats.map(c => c.name).filter(n => ref.sources.some(s => s.mix.some(c => c.service === n)));
+    let h = '<table><thead><tr><th scope="col">Referral source</th>' + cols.map(c => `<th scope="col">${esc(c)}</th>`).join('') + '</tr></thead><tbody>';
+    for (const s of ref.sources) {
+      h += `<tr><td>${esc(s.name)}</td>` + cols.map(c => {
+        const cell = s.mix.find(x => x.service === c);
+        if (!cell) return '<td>–</td>';
+        return cell.n === null ? '<td class="cell-hidden">hidden</td>' : `<td>${fmt(cell.n)}</td>`;
+      }).join('') + '</tr>';
+    }
+    h += '</tbody></table>';
+    document.getElementById('mix-table').innerHTML = h +
+      '<p class="hidden-note" style="padding:8px 10px;margin:0">All months combined. "hidden" = withheld for privacy, not zero. "–" = none in the dashboard\'s table.</p>';
+  }
+
+  // ---------- Weekday ----------
+  const WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+  // Cross-tab of one breakdown by kind of need. Hidden (suppressed) cells stay null: never estimated or back-solved.
+  function crossTab(rows, breakdown, key, order) {
+    const cells = new Map();
+    const keys = [];
+    for (const r of rows.filter(r => r.breakdown === breakdown)) {
+      if (!keys.includes(r[key])) keys.push(r[key]);
+      cells.set(`${r[key]}|${catName(r.service)}`, parseCount(r.count));
+    }
+    return { keys: order ? order.filter(k => keys.includes(k)) : keys, cells };
+  }
+
+  // Percentages are shares of SHOWN cells only. Hidden cells are never estimated, so a share's
+  // denominator is the sum of what is shown, and the page says so.
+  const pct = (n, d) => (d ? `${Math.round((n / d) * 100)}%` : '');
+
+  function drawWeekday(rows, model) {
+    const wd = crossTab(rows, 'service_by_weekday', 'weekday', WEEKDAYS);
+    const cats = model.cats.map(c => c.name).filter(c => wd.keys.some(d => wd.cells.has(`${d}|${c}`)));
+    const cell = (day, cat) => wd.cells.get(`${day}|${cat}`);
+
+    // Weekday bars: sum of shown cells, its share of all shown cells, and how many cells are hidden. Not full totals.
+    const sums = wd.keys.map(day => {
+      const vals = cats.map(c => cell(day, c)).filter(v => v !== undefined);
+      return { day, shown: vals.filter(v => v !== null).reduce((x, y) => x + y, 0),
+        hidden: vals.filter(v => v === null).length, any: vals.some(v => v !== null) };
+    });
+    const allShown = sums.reduce((x, s) => x + s.shown, 0);
+    const max = Math.max(1, ...sums.map(s => s.shown));
+    document.getElementById('wd-bars').innerHTML = sums.map(s => {
+      const tag = s.hidden ? `<span class="hidden-tag">+${s.hidden} hidden</span>` : '';
+      return s.any
+        ? `<li class="brow"><span class="lbl">${s.day}</span><span class="track"><span class="fill" style="width:${(s.shown / max) * 100}%"></span></span><span class="v">${fmt(s.shown)} <span class="pct">${pct(s.shown, allShown)}</span>${tag}</span></li>`
+        : `<li class="brow hidden-cell"><span class="lbl">${s.day}</span><span class="track"></span><span class="v">all hidden</span></li>`;
+    }).join('');
+
+    // Shaded table, one hue, light to dark. Each cell: count, then the day's share of that row's shown services.
+    // No row or column totals: hidden cells would make them misleading.
+    const cellMax = Math.max(1, ...[...wd.cells.values()].filter(v => v !== null));
+    let h = `<table><thead><tr><th scope="col">Kind of need</th>${wd.keys.map(d => `<th scope="col">${d.slice(0, 3)}</th>`).join('')}</tr></thead><tbody>`;
+    for (const c of cats) {
+      const rowShown = wd.keys.reduce((x, d) => x + (cell(d, c) ?? 0), 0);
+      // Say how many of the row's cells are hidden, so a share built on a few shown days is visible as such.
+      const rowHidden = wd.keys.filter(d => cell(d, c) === null).length;
+      const anyShown = wd.keys.some(d => typeof cell(d, c) === 'number');
+      const note = !rowHidden ? '' : `<span class="row-note">${anyShown ? `${rowHidden} hidden; shares of shown days only` : 'all hidden'}</span>`;
+      h += `<tr><td>${esc(c)}${note}</td>` + wd.keys.map(d => {
+        const v = cell(d, c);
+        if (v === undefined) return '<td>–</td>';
+        if (v === null) return '<td class="cell-hidden">hidden</td>';
+        const p = Math.round(8 + (v / cellMax) * 72);
+        return `<td class="heat${p >= 72 ? ' hi' : ''}" style="background:color-mix(in srgb, var(--data) ${p}%, transparent)">${fmt(v)}<span class="cell-pct">${pct(v, rowShown)}</span></td>`;
+      }).join('') + '</tr>';
+    }
+    document.getElementById('wd-table').innerHTML = h + '</tbody></table>' +
+      '<p class="hidden-note" style="padding:8px 10px;margin:0">All months combined. Percent = that day\'s share of the row\'s shown services. "hidden" = withheld for privacy, not zero. "–" = none in the dashboard\'s table.</p>';
+  }
+
+  // ---------- Find help: searchable directory ----------
+  // One card per service: rows repeated across categories are merged, keeping every category.
+  function buildServices(resources) {
+    const byKey = new Map();
+    for (const r of resources) {
+      const key = `${r.provider}|${r.program}`;
+      if (!byKey.has(key)) byKey.set(key, { r, cats: [] });
+      if (!byKey.get(key).cats.includes(r.echo_category)) byKey.get(key).cats.push(r.echo_category);
+    }
+    const used = new Set();
+    return [...byKey.values()].map(s => {
+      let id = 'svc-' + slug(`${s.r.provider} ${s.r.program}`), n = 2;
+      while (used.has(id)) id = `${id.replace(/-\d+$/, '')}-${n++}`;
+      used.add(id);
+      return { ...s, id };
+    }).map(s => ({ ...s,
+      text: [s.r.provider, s.r.program, s.r.what_they_offer, s.r.when_to_use, s.r.who_is_eligible, s.r.cost,
+        s.r.hours, s.r.how_to_reach, s.r.notes, ...s.cats].join(' ').toLowerCase() }));
+  }
+
+  // Stable card ids from provider and program, so other pages can link to #svc-….
+  const SERVICE_PREFIX = '#svc-';
+  const slug = t => t.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 90).replace(/-+$/, '');
+  let revealService = () => {};
+
+  function resourceCard(s) {
+    const r = s.r, title = r.program || r.provider;
+    // The provider's own web address from the contact details, else the page the details came from.
+    const site = ((r.how_to_reach || '').match(URL_RE) || [])[0] || r.source_url;
+    const head = site ? `<a href="${esc(site)}">${esc(title)}</a>` : esc(title);
+    // Contact (phone, address, email) and hours stay visible for a quick response; only notes are folded.
+    const summary = dlist([
+      ['Contact', reachParts(r).map(x => `<span>${linkify(x)}</span>`).join('')],
+      ['Hours', r.hours && linkify(tidy(r.hours))],
+      ['For', r.who_is_eligible && linkify(brief(r.who_is_eligible))],
+      ['Cost', r.cost && linkify(brief(r.cost))],
+    ]);
+    const checked = r.checked_on ? `<p class="checked">Details checked ${esc(r.checked_on)}</p>` : '';
+    return `<article class="rcard" id="${s.id}" tabindex="-1">
+      <div class="chips">${s.cats.map(c => `<span class="chip">${esc(c)}</span>`).join('')}</div>
+      <h3>${head} <a class="anchor" href="#${s.id}" aria-label="Link to ${esc(title)}" title="Copy link to this service">#</a></h3>
+      ${r.program && r.provider ? `<p class="prov">${esc(r.provider)}</p>` : ''}
+      ${r.what_they_offer ? `<p class="offer">${linkify(r.what_they_offer)}</p>` : ''}
+      ${r.when_to_use ? `<p class="when"><b>When to use it</b>${linkify(r.when_to_use)}</p>` : ''}
+      ${summary}
+      ${site ? `<p class="site"><a href="${esc(site)}">${/\.pdf(?:$|[?#])/i.test(site) ? `View listing (${esc(domain(site))}, PDF)` : `Visit ${esc(domain(site))}`}</a></p>` : ''}
+      ${r.notes ? `<details><summary>Notes</summary><p class="notes">${linkify(r.notes)}</p>${checked}</details>` : checked}
+    </article>`;
+  }
+
+  // Everyday words the directory phrases differently. Each search word matches any of its alternatives.
+  const SYNONYMS = [
+    ['senior', 'seniors', 'elderly', 'older', 'aging', '60+'],
+    ['kid', 'kids', 'child', 'children', 'youth', 'teen', 'teens'],
+    ['homeless', 'homelessness', 'unhoused', 'shelter'],
+    ['money', 'cash', 'financial', 'bills'],
+    ['doctor', 'medical', 'clinic', 'dental', 'dentist'],
+    ['counseling', 'counselling', 'therapy', 'mental health'],
+    ['addiction', 'substance', 'drugs', 'alcohol', 'overdose'],
+    ['abuse', 'violence', 'domestic'],
+  ];
+  // Match at the start of a word, so "rent" finds rent but not parent.
+  const wordStart = t => new RegExp('(^|[^a-z0-9])' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  function searchAlternatives(word) {
+    const stem = word.length > 4 && word.endsWith('s') ? word.slice(0, -1) : word;
+    const group = SYNONYMS.find(g => g.includes(word) || g.includes(stem));
+    return [...new Set([word, stem, ...(group || [])])];
+  }
+
+  function setupFinder(resources, model) {
+    const cards = document.getElementById('help-cards');
+    if (!resources) { cards.innerHTML = '<p class="empty">The resource directory could not be loaded.</p>'; return; }
+    const services = buildServices(resources);
+    const q = document.getElementById('help-q'), sel = document.getElementById('help-cat');
+    const count = document.getElementById('help-count'), empty = document.getElementById('help-empty');
+    // Categories in the order the first tab uses, limited to those with services.
+    const cats = model.cats.map(c => c.name).filter(n => services.some(s => s.cats.includes(n)));
+    sel.innerHTML += cats.map(c => `<option value="${esc(c)}">${esc(c)} (${services.filter(s => s.cats.includes(c)).length})</option>`).join('');
+    const render = () => {
+      const terms = q.value.toLowerCase().split(/\s+/).filter(Boolean).map(searchAlternatives);
+      const cat = sel.value;
+      const list = services.filter(s => (!cat || s.cats.includes(cat)) && terms.every(alts => alts.some(t => wordStart(t).test(s.text))));
+      cards.innerHTML = list.map(resourceCard).join('');
+      empty.hidden = list.length > 0;
+      count.textContent = `${list.length} of ${services.length} services` + (cat ? ` for ${cat}` : '') + (terms.length ? ` matching "${q.value.trim()}"` : '');
+    };
+    // Show, scroll to and highlight a card, clearing filters that would hide it.
+    revealService = id => {
+      if (!services.some(s => s.id === id)) return;
+      if (!document.getElementById(id)) { q.value = ''; sel.value = ''; render(); }
+      const el = document.getElementById(id);
+      el.scrollIntoView({ block: 'start' });
+      el.focus({ preventScroll: true });
+      el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+    };
+    // The # link also copies the full address, for pasting into other pages.
+    cards.addEventListener('click', e => {
+      const a = e.target.closest('a.anchor');
+      if (!a) return;
+      const url = location.href.split('#')[0] + a.getAttribute('href');
+      try { navigator.clipboard.writeText(url).then(() => { a.dataset.copied = ''; setTimeout(() => delete a.dataset.copied, 1500); }, () => {}); } catch {}
+    });
+    q.addEventListener('input', render);
+    sel.addEventListener('change', render);
+    document.getElementById('help-clear').addEventListener('click', () => { q.value = ''; sel.value = ''; render(); q.focus(); });
+    render();
+  }
+
+  // ---------- Community context (not ECHO data) ----------
+  const ECHO_START = '2025-02';
+  const CRIME_CATS = ['All', 'Person', 'Property', 'Society'];
+
+  // data/crime-monthly-oak-park.csv, written by scripts/crime_monthly.py: complete months only.
+  function buildCrimeModel(rows) {
+    const by = new Map(CRIME_CATS.map(c => [c, new Map()]));
+    for (const r of rows) {
+      const n = parseCount(r.incidents);
+      if (n !== null && by.has(r.crime_against)) by.get(r.crime_against).set(r.month, n);
+    }
+    const months = [...by.get('All').keys()].sort();
+    return { months, by };
+  }
+
+  function drawCrimeMonthly(crime) {
+    const box = document.getElementById('crime-monthly');
+    box.innerHTML = '';
+    const W = box.clientWidth, narrow = W < 560;
+    const H = narrow ? 230 : 280;
+    const m = { l: 36, r: 6, t: 30, b: 40 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const all = crime.by.get('All');
+    const max = niceMax(Math.max(...all.values()), 100);
+    const n = crime.months.length, band = iw / n, bw = Math.max(2, band * 0.7);
+    const x = i => m.l + band * i + (band - bw) / 2;
+    const y = v => m.t + ih - (v / max) * ih;
+    const svg = el('svg', { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img',
+      'aria-label': `Bar chart of reported crime incidents per month in Oak Park, ${shortLabel(crime.months[0])} to ${shortLabel(crime.months[n - 1])}, with ECHO's February 2025 start marked. Window totals are in the table below.` }, box);
+    const axis = el('g', { class: 'axis' }, svg);
+    for (let v = 0; v <= max; v += 100) {
+      el('line', { class: v === 0 ? 'baseline' : 'gridline', x1: m.l, x2: W - m.r, y1: y(v), y2: y(v) }, axis);
+      const t = el('text', { x: m.l - 8, y: y(v) + 4, 'text-anchor': 'end' }, axis); t.textContent = v;
+    }
+    crime.months.forEach((mo, i) => {
+      const { y: yr, mo: mon } = ym(mo);
+      if (mon === 1) {
+        const t = el('text', { x: x(i), y: H - m.b + 18, 'text-anchor': 'start', style: 'font-weight:600' }, axis);
+        t.textContent = yr;
+      } else if (!narrow && mon === 7) {
+        const t = el('text', { x: x(i) + bw / 2, y: H - m.b + 18, 'text-anchor': 'middle' }, axis);
+        t.textContent = 'Jul';
+      }
+    });
+    const bars = crime.months.map((mo, i) => {
+      const v = all.get(mo), x0 = x(i), y0 = y(v), r = Math.min(3, bw / 2, y(0) - y0);
+      const d = `M${x0},${y(0)} V${y0 + r} Q${x0},${y0} ${x0 + r},${y0} H${x0 + bw - r} Q${x0 + bw},${y0} ${x0 + bw},${y0 + r} V${y(0)} Z`;
+      return el('path', { d, class: 'bar' }, svg);
+    });
+    // ECHO start marker, between January and February 2025.
+    const si = crime.months.indexOf(ECHO_START);
+    if (si > 0) {
+      const sx = m.l + band * si;
+      el('line', { class: 'echo-start', x1: sx, x2: sx, y1: m.t - 14, y2: y(0) }, svg);
+      const t = el('text', { class: 'annot', x: sx + 5, y: m.t - 18, 'text-anchor': 'start' }, svg);
+      t.textContent = 'ECHO begins';
+    }
+    const tip = makeTooltip(box);
+    crime.months.forEach((mo, i) => {
+      const hit = el('rect', { class: 'hit', x: m.l + band * i, y: m.t, width: band, height: ih, tabindex: 0,
+        'aria-label': `${longLabel(mo)}: ${all.get(mo)} reported incidents` }, svg);
+      const show = () => {
+        bars.forEach((b, j) => b.classList.toggle('dim', j !== i));
+        const rows = CRIME_CATS.slice(1).map(c => `<div class="tt-row"><span>Against ${c.toLowerCase()}</span><span>${crime.by.get(c).get(mo) ?? 0}</span></div>`).join('');
+        tip.show(`<div class="tt-h">${longLabel(mo)}: ${fmt(all.get(mo))} incidents</div>${rows}` +
+          '<div class="tt-note">An incident can involve more than one category.</div>', x(i) + bw / 2, y(all.get(mo)));
+      };
+      const hide = () => { bars.forEach(b => b.classList.remove('dim')); tip.hide(); };
+      hit.addEventListener('pointerenter', show); hit.addEventListener('pointerleave', hide);
+      hit.addEventListener('focus', show); hit.addEventListener('blur', hide);
+    });
+  }
+
+  // Same 12 months (March to February) each year, so every window covers the same seasons.
+  function drawCrimeTable(crime) {
+    const windows = [];
+    for (let y = 2022; ; y++) {
+      const ms = crime.months.filter(mo => mo >= `${y}-03` && mo <= `${y + 1}-02`);
+      if (ms.length < 12) break;
+      windows.push({ label: `Mar ${y} – Feb ${y + 1}`, start: `${y}-03`, ms });
+    }
+    const sum = (w, c) => w.ms.reduce((a, mo) => a + (crime.by.get(c).get(mo) || 0), 0);
+    let h = '<table><thead><tr><th scope="col">12 months</th>' + CRIME_CATS.map(c => `<th scope="col">${c === 'All' ? 'All incidents' : 'Against ' + c.toLowerCase()}</th>`).join('') + '</tr></thead><tbody>';
+    windows.forEach((w, i) => {
+      const echo = w.start > ECHO_START;
+      h += `<tr><td>${w.label}${echo ? '<span class="row-note">ECHO\'s first full year</span>' : ''}</td>` + CRIME_CATS.map(c => {
+        const v = sum(w, c);
+        if (!i) return `<td>${fmt(v)}</td>`;
+        const prev = sum(windows[i - 1], c), p = ((v - prev) / prev) * 100;
+        return `<td>${fmt(v)}<span class="chg">${p > 0 ? '+' : ''}${p.toFixed(1)}%</span></td>`;
+      }).join('') + '</tr>';
+    });
+    document.getElementById('crime-table').innerHTML = h + '</tbody></table>' +
+      '<p class="hidden-note" style="padding:8px 10px;margin:0">An incident counts in every category it involves, so the categories add up to more than all incidents. ECHO began in February 2025, the last month of the Mar 2024 – Feb 2025 window.</p>';
+  }
+
+  function drawCalls(rows) {
+    const list = (id, col) => {
+      const vals = rows.map(r => ({ year: r.year, n: parseCount(r[col]) })).filter(r => r.n !== null);
+      const max = Math.max(...vals.map(r => r.n));
+      document.getElementById(id).innerHTML = vals.map(r => barRow(r.year === '2025' ? '2025 · ECHO\'s first year' : r.year, r.n, max)).join('');
+    };
+    list('calls-police', 'police_calls');
+    list('calls-fire', 'fire_calls');
+  }
+
+  // ---------- Tabs ----------
+  function setupTabs(onShow) {
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    // A card link (#svc-…) belongs to the Find help tab.
+    const tabFor = h => tabs.find(t => '#' + t.dataset.hash === h)
+      || (h.startsWith(SERVICE_PREFIX) ? tabs.find(t => t.dataset.hash === 'help') : null);
+    const select = (tab, focus, keepHash) => {
+      tabs.forEach(t => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) tab.focus();
+      if (!keepHash) history.replaceState(null, '', '#' + tab.dataset.hash);
+      onShow(tab.dataset.hash);
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(t));
+      t.addEventListener('keydown', e => {
+        const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+        if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); }
+        if (e.key === 'Home') { e.preventDefault(); select(tabs[0], true); }
+        if (e.key === 'End') { e.preventDefault(); select(tabs[tabs.length - 1], true); }
+      });
+    });
+    const card = () => location.hash.startsWith(SERVICE_PREFIX) && revealService(location.hash.slice(1));
+    const start = tabFor(location.hash);
+    select(start || tabs[0], false, !!start);
+    card();
+    window.addEventListener('hashchange', () => {
+      const t = tabFor(location.hash);
+      if (t && t.getAttribute('aria-selected') !== 'true') select(t, false, true);
+      card();
+    });
+  }
+
+  // scripts/build_standalone.py embeds the CSVs here so the exported copy opens from disk.
+  async function loadText(url) {
+    const embedded = window.EMBEDDED_CSV;
+    if (embedded) {
+      if (url in embedded) return embedded[url];
+      throw new Error(`${url} was not included in this copy`);
+    }
+    const res = await fetch(url, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`${url} returned ${res.status}`);
+    return res.text();
+  }
+
+  async function main() {
+    let rows;
+    try {
+      rows = parseCSV(await loadText(ECHO_CSV));
+    } catch (e) {
+      const err = document.getElementById('error');
+      err.hidden = false;
+      err.innerHTML = location.protocol === 'file:'
+        ? 'This page reads its data from the repo, so it has to be served. From the repo folder, run <code>python3 -m http.server</code> and open <code>http://localhost:8000/site/</code>.'
+        : `The ECHO data file could not be loaded (${esc(e.message)}). Check that <code>data/echo-activity-oak-park.csv</code> is next to the <code>site</code> folder.`;
+      return;
+    }
+    let resources = null;
+    try {
+      resources = parseCSV(await loadText(RESOURCE_CSV));
+      const known = new Set(Object.keys(CATEGORY_INFO));
+      const unmatched = resources.filter(r => !known.has(r.echo_category));
+      if (unmatched.length) console.warn('Resource rows with an unrecognized echo_category:', unmatched.map(r => `${r.provider} (${r.echo_category})`));
+    } catch { resources = null; }
+    // Context data is optional: a failure only affects the Community context tab.
+    let crime = null;
+    try { crime = buildCrimeModel(parseCSV(await loadText(CRIME_CSV))); } catch { crime = null; }
+    let calls = null;
+    try { calls = parseCSV(await loadText(CALLS_CSV)); } catch { calls = null; }
+
+    const model = buildModel(rows);
+    if (model.unavailable) console.warn(`${model.unavailable} monthly cells were not numbers and were left out.`);
+    const ref = buildReferralModel(rows, model);
+    drawHeader(model);
+    drawTable(model);
+    drawSourceBars(ref);
+    drawSourceTable(ref, model);
+    drawMixTable(ref, model);
+    drawWeekday(rows, model);
+    setupFinder(resources, model);
+    if (crime) drawCrimeTable(crime);
+    else document.getElementById('crime-monthly').innerHTML = '<p class="empty">The crime summary could not be loaded. Run <code>python3 scripts/crime_monthly.py</code> from the repo folder.</p>';
+    if (calls) drawCalls(calls);
+
+    // SVG charts need a visible container to measure, so each tab draws when first shown and on resize.
+    const views = {
+      services: { box: 'monthly', w: -1,
+        init() { drawMonthly(model); this.redraw = drawGrid(model, resources); },
+        resize() { drawMonthly(model); this.redraw(); } },
+      referrals: { box: 'src-grid', w: -1,
+        init() { this.redraw = drawSourceGrid(ref, model); },
+        resize() { this.redraw(); } },
+      // HTML only, drawn once above; nothing to measure.
+      weekday: { box: 'wd-bars', w: -1, init() { this.redraw = () => {}; }, resize() {} },
+      help: { box: 'help-cards', w: -1, init() { this.redraw = () => {}; }, resize() {} },
+      context: { box: 'crime-monthly', w: -1,
+        init() { this.redraw = crime ? () => drawCrimeMonthly(crime) : () => {}; this.redraw(); },
+        resize() { this.redraw(); } },
+    };
+    let current = null;
+    const show = key => {
+      current = views[key];
+      const w = document.getElementById(current.box).clientWidth;
+      if (!current.redraw) current.init(); else if (w !== current.w) current.resize();
+      current.w = w;
+    };
+    setupTabs(show);
+
+    let raf = 0;
+    new ResizeObserver(() => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        if (!current || !current.redraw) return;
+        const w = document.getElementById(current.box).clientWidth;
+        if (w === current.w) return;
+        current.w = w; current.resize();
+      });
+    }).observe(document.body);
+  }
+  main();
+})();
+</script>
+</body>
+</html>

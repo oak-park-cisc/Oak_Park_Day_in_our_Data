@@ -1,0 +1,9 @@
+zone,trees,species_count,genus_count,top_species,top_species_latin,top_species_share,top_genus,top_genus_common,top_genus_share,shannon,simpson,median_dbh_in,median_height_ft,median_spread_ft,canopy_sqft,canopy_covered_sqft,blocks,blocks_10plus_trees,blocks_genus_30pct_plus,share_blocks_genus_30pct_plus,median_block_simpson,canopy_sqft_per_street_ft,area_sqft,canopy_cover_pct
+Mann,2891,137,54,MAPLE-NORWAY,Acer platanoides,0.085,Acer,MAPLE,0.216,3.916,0.968,13,30,20,1950949,1888436,113,109,30,0.275,0.922,24.2,19349430,9.8
+Hatch,1813,109,46,HACKBERRY,Celtis occidentalis,0.092,Acer,MAPLE,0.197,3.84,0.967,12,30,20,857223,839700,75,71,12,0.169,0.922,17.1,10373690,8.1
+Whittier,1886,124,47,MAPLE-NORWAY,Acer platanoides,0.091,Acer,MAPLE,0.224,3.813,0.965,14,30,30,1437887,1382512,76,75,19,0.253,0.924,29.2,12423934,11.1
+Holmes,2455,127,51,MAPLE-NORWAY,Acer platanoides,0.095,Acer,MAPLE,0.202,3.805,0.964,15,40,30,1951263,1880528,136,112,44,0.393,0.903,22.3,22329124,8.4
+Beye,2309,126,51,MAPLE-NORWAY,Acer platanoides,0.117,Acer,MAPLE,0.223,3.835,0.963,15,40,30,2222736,2117408,105,96,24,0.25,0.91,33.7,16987836,12.5
+Lincoln,2805,150,57,MAPLE-NORWAY,Acer platanoides,0.09,Acer,MAPLE,0.202,3.939,0.967,15,40,30,2380954,2245740,121,105,28,0.267,0.916,28.9,19734073,11.4
+Irving,1974,142,55,MAPLE-NORWAY,Acer platanoides,0.094,Acer,MAPLE,0.208,3.915,0.966,14,40,30,1607828,1507208,83,63,12,0.19,0.925,27.5,13343986,11.3
+Longfellow,2701,143,54,HACKBERRY,Celtis occidentalis,0.072,Acer,MAPLE,0.173,3.932,0.969,14,40,30,2227055,2118940,105,98,20,0.204,0.925,30.3,16095886,13.2

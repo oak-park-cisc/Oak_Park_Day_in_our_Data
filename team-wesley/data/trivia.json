@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "q01",
+    "q": "Was Pleasant Home (217 Home Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, George W. Maher",
+      "No, E.E. Roberts",
+      "No, Charles E. White Jr."
+    ],
+    "answer": 1,
+    "explain": "Pleasant Home, the John Farson House, was designed by Prairie School architect George W. Maher and completed in 1897.",
+    "placeId": "pleasant-home",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Pleasant_Home",
+    "topic": "architecture"
+  },
+  {
+    "id": "q02",
+    "q": "Was Cheney Mansion (220 N Euclid Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, George W. Maher",
+      "No, Charles E. White Jr.",
+      "No, John S. Van Bergen"
+    ],
+    "answer": 2,
+    "explain": "Cheney Mansion was designed in 1913 by Charles E. White Jr., a student of Wright. It is not a Wright building.",
+    "placeId": "cheney-mansion",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/cheney-mansion/",
+    "topic": "architecture"
+  },
+  {
+    "id": "q03",
+    "q": "Was the Edwin H. Cheney House (520 N East Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, Charles E. White Jr.",
+      "No, Tallmadge & Watson",
+      "No, E.E. Roberts"
+    ],
+    "answer": 0,
+    "explain": "Yes. Don't mix it up with Cheney Mansion: Wright designed the 1903 Cheney House for Mamah Borthwick and Edwin Cheney.",
+    "placeId": "cheney-house",
+    "sourceUrl": "https://flwright.org/explore/cheney-house",
+    "topic": "architecture"
+  },
+  {
+    "id": "q04",
+    "q": "Was Scoville Square (119-137 N Oak Park Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, E.E. Roberts",
+      "No, George W. Maher",
+      "No, Harry Weese"
+    ],
+    "answer": 1,
+    "explain": "Scoville Square, originally the Masonic Temple Building (1906-09), was designed by Eben Ezra Roberts.",
+    "placeId": "scoville-square",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Scoville_Square",
+    "topic": "architecture"
+  },
+  {
+    "id": "q05",
+    "q": "Was the Charles E. Matthews House (432 N Kenilworth Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, Tallmadge & Watson",
+      "No, George W. Maher",
+      "No, Nimmons & Fellows"
+    ],
+    "answer": 1,
+    "explain": "It is a 1909 Prairie School house by Tallmadge & Watson, per the Village of Oak Park landmarks list.",
+    "placeId": "matthews-house",
+    "sourceUrl": "https://www.oak-park.us/files/assets/oakpark/v/1/historic-preservation/resources/oak-park-historic-landmarks-updated-through-february-2025.pdf",
+    "topic": "architecture"
+  },
+  {
+    "id": "q06",
+    "q": "Was the Vernon W. Skiff House (633 N East Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, Spencer and Powers",
+      "No, Nimmons & Fellows",
+      "No, E.E. Roberts"
+    ],
+    "answer": 2,
+    "explain": "It is a 1909 Prairie School house by Nimmons & Fellows. Wright's William E. Martin House is across the street at 636.",
+    "placeId": "skiff-house",
+    "sourceUrl": "https://www.oak-park.us/files/assets/oakpark/v/1/historic-preservation/resources/oak-park-historic-landmarks-updated-through-february-2025.pdf",
+    "topic": "architecture"
+  },
+  {
+    "id": "q07",
+    "q": "Was the Arthur Heurtley House (318 Forest Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, George W. Maher",
+      "No, Tallmadge & Watson",
+      "No, John S. Van Bergen"
+    ],
+    "answer": 0,
+    "explain": "Yes. Wright designed it in 1902 for banker Arthur Heurtley and his wife Grace.",
+    "placeId": "heurtley-house",
+    "sourceUrl": "https://flwright.org/explore/arthur-heurtley-house",
+    "topic": "architecture"
+  },
+  {
+    "id": "q08",
+    "q": "Was the Chester Flitcraft House (845 Chicago Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, John S. Van Bergen",
+      "No, E.E. Roberts",
+      "No, Charles E. White Jr."
+    ],
+    "answer": 1,
+    "explain": "It is a c. 1914 Prairie School house by John S. Van Bergen, one block east of the Wright Home and Studio on Chicago Ave.",
+    "placeId": "flitcraft-house",
+    "sourceUrl": "https://www.oak-park.us/files/assets/oakpark/v/1/historic-preservation/resources/oak-park-historic-landmarks-updated-through-february-2025.pdf",
+    "topic": "architecture"
+  },
+  {
+    "id": "q09",
+    "q": "Was the Edward and Caroline McCready House (231 N Euclid Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, Spencer and Powers",
+      "No, Tallmadge & Watson",
+      "No, George W. Maher"
+    ],
+    "answer": 1,
+    "explain": "It is a 1907 Prairie School house by Spencer and Powers. Wright's George Furbeck House is on the same block at 223.",
+    "placeId": "mccready-house",
+    "sourceUrl": "https://www.oak-park.us/files/assets/oakpark/v/1/historic-preservation/resources/oak-park-historic-landmarks-updated-through-february-2025.pdf",
+    "topic": "architecture"
+  },
+  {
+    "id": "q10",
+    "q": "Was the Oscar B. Balch House (611 N Kenilworth Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, E.E. Roberts",
+      "No, John S. Van Bergen",
+      "No, Tallmadge & Watson"
+    ],
+    "answer": 0,
+    "explain": "Yes. Wright designed it in 1911 for decorator Oscar B. Balch.",
+    "placeId": "balch-house",
+    "sourceUrl": "https://flwright.org/explore/balch-house",
+    "topic": "architecture"
+  },
+  {
+    "id": "q11",
+    "q": "Was the Ernest Hemingway Birthplace (339 N Oak Park Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, Wesley A. Arnold",
+      "No, George W. Maher",
+      "No, E.E. Roberts"
+    ],
+    "answer": 1,
+    "explain": "The 1890 Queen Anne house was designed by Wesley A. Arnold, according to the Village landmarks list.",
+    "placeId": "hemingway-birthplace",
+    "sourceUrl": "https://www.oak-park.us/files/assets/oakpark/v/1/historic-preservation/resources/oak-park-historic-landmarks-updated-through-february-2025.pdf",
+    "topic": "architecture"
+  },
+  {
+    "id": "q12",
+    "q": "Was the First Methodist Episcopal Church (324 N Oak Park Ave) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, Tallmadge & Watson",
+      "No, Harry Weese",
+      "No, Patton and Miller"
+    ],
+    "answer": 1,
+    "explain": "The 1923 Gothic Revival church was designed by Tallmadge & Watson.",
+    "placeId": "first-methodist",
+    "sourceUrl": "https://www.oak-park.us/files/assets/oakpark/v/1/historic-preservation/resources/oak-park-historic-landmarks-updated-through-february-2025.pdf",
+    "topic": "architecture"
+  },
+  {
+    "id": "q13",
+    "q": "Was Oak Park Village Hall (123 Madison St) designed by Frank Lloyd Wright?",
+    "choices": [
+      "Yes, Frank Lloyd Wright",
+      "No, Harry Weese",
+      "No, E.E. Roberts",
+      "No, George W. Maher"
+    ],
+    "answer": 1,
+    "explain": "The Modernist Village Hall was designed by Harry Weese and built in 1975.",
+    "placeId": "village-hall",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oak_Park_Village_Hall",
+    "topic": "architecture"
+  },
+  {
+    "id": "q14",
+    "q": "Which Oak Park building by Frank Lloyd Wright is part of a UNESCO World Heritage inscription?",
+    "choices": [
+      "Unity Temple",
+      "Cheney Mansion",
+      "Scoville Square",
+      "Pleasant Home"
+    ],
+    "answer": 0,
+    "explain": "Unity Temple (1905-08) is one of eight Wright sites in \"The 20th-Century Architecture of Frank Lloyd Wright\" inscription.",
+    "placeId": "unity-temple",
+    "sourceUrl": "https://flwright.org/about/unesco",
+    "topic": "architecture"
+  },
+  {
+    "id": "q15",
+    "q": "What material forms the exterior of Unity Temple, left uncovered by plaster, brick, or stone?",
+    "choices": [
+      "Roman brick",
+      "Limestone",
+      "Wood shingles",
+      "Concrete"
+    ],
+    "answer": 3,
+    "explain": "Wright built Unity Temple as a monolithic cube of concrete and left the concrete exposed.",
+    "placeId": "unity-temple",
+    "sourceUrl": "https://flwright.org/explore/unity-temple-0",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q16",
+    "q": "In what year did Frank Lloyd Wright build his Oak Park home?",
+    "choices": [
+      "1901",
+      "1889",
+      "1909",
+      "1879"
+    ],
+    "answer": 1,
+    "explain": "Wright built his home in 1889 and added the Studio along Chicago Avenue in 1897.",
+    "placeId": "flw-home-studio",
+    "sourceUrl": "https://flwright.org/explore/frank-lloyd-wright-home",
+    "topic": "architecture"
+  },
+  {
+    "id": "q17",
+    "q": "The Home and Studio has been restored to how it looked in which year?",
+    "choices": [
+      "1897",
+      "1959",
+      "1889",
+      "1909"
+    ],
+    "answer": 3,
+    "explain": "The Frank Lloyd Wright Trust restored the Home and Studio to its 1909 appearance between 1974 and 1987.",
+    "placeId": "flw-home-studio",
+    "sourceUrl": "https://flwright.org/explore/oak-park-studio-frank-lloyd-wright",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q18",
+    "q": "Which Oak Park house did Wright call the 'progenitor of Fallingwater'?",
+    "choices": [
+      "Walter Gale House",
+      "Laura Gale House",
+      "Frank W. Thomas House",
+      "Peter A. Beachy House"
+    ],
+    "answer": 1,
+    "explain": "Its cantilevered balconies and roofs led Wright to call the 1909 Laura Gale House the progenitor of Fallingwater.",
+    "placeId": "laura-gale-house",
+    "sourceUrl": "https://flwright.org/explore/laura-gale-house",
+    "topic": "architecture"
+  },
+  {
+    "id": "q19",
+    "q": "Which house was the first of Wright's mature Prairie-style homes built in Oak Park?",
+    "choices": [
+      "George Furbeck House",
+      "Nathan G. Moore House",
+      "Frank W. Thomas House",
+      "Thomas Gale House"
+    ],
+    "answer": 2,
+    "explain": "The Frank W. Thomas House (1901) was the first mature Prairie-style residence by Wright in Oak Park.",
+    "placeId": "thomas-house",
+    "sourceUrl": "https://flwright.org/explore/frank-thomas-house",
+    "topic": "architecture"
+  },
+  {
+    "id": "q20",
+    "q": "The Nathan G. Moore House was rebuilt after a fire. Who redesigned its upper stories in 1923?",
+    "choices": [
+      "Frank Lloyd Wright",
+      "George W. Maher",
+      "John S. Van Bergen",
+      "E.E. Roberts"
+    ],
+    "answer": 0,
+    "explain": "Fire destroyed the second and third stories in 1922, and Wright redesigned them in 1923.",
+    "placeId": "moore-house",
+    "sourceUrl": "https://flwright.org/explore/nathan-g-moore-house",
+    "topic": "architecture"
+  },
+  {
+    "id": "q21",
+    "q": "Wright designed the Thomas Gale House on his own while working for which firm? These are his 'bootleg' houses.",
+    "choices": [
+      "Tallmadge & Watson",
+      "Patton and Miller",
+      "Adler and Sullivan",
+      "Burnham and Root"
+    ],
+    "answer": 2,
+    "explain": "The Thomas and Laura Gale House is one of the 'bootleg' designs Wright made independently while employed by Adler and Sullivan.",
+    "placeId": "thomas-gale-house",
+    "sourceUrl": "https://flwright.org/explore/thomas-gale-house",
+    "topic": "architecture"
+  },
+  {
+    "id": "q22",
+    "q": "What shape are the two turrets beside the entrance of the George Furbeck House?",
+    "choices": [
+      "Triangular",
+      "Octagonal",
+      "Square",
+      "Round"
+    ],
+    "answer": 1,
+    "explain": "Two large octagonal turrets flank the entrance, which leads to an octagonal living room.",
+    "placeId": "george-furbeck-house",
+    "sourceUrl": "https://flwright.org/explore/george-furbeck-house",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q23",
+    "q": "Wright and sculptor Richard Bock designed a fountain that now stands as a replica in which park?",
+    "choices": [
+      "Taylor Park",
+      "Field Park",
+      "Rehm Park",
+      "Scoville Park"
+    ],
+    "answer": 3,
+    "explain": "The original Scoville Park (Horse Show) Fountain deteriorated and was demolished; a replica was installed in 1969.",
+    "placeId": "scoville-park",
+    "sourceUrl": "https://flwright.org/explore/scoville-park-fountain",
+    "topic": "architecture"
+  },
+  {
+    "id": "q24",
+    "q": "What happened to the Hills-DeCaro House during a 1976 restoration?",
+    "choices": [
+      "It was split into apartments",
+      "It was moved to River Forest",
+      "Its roof was replaced with glass",
+      "A fire burned much of it"
+    ],
+    "answer": 3,
+    "explain": "The house caught fire during a 1976 restoration and much of the first floor burned; it was later rebuilt.",
+    "placeId": "hills-decaro-house",
+    "sourceUrl": "https://flwright.org/explore/hills-house",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q25",
+    "q": "On what date was Ernest Hemingway born at 339 N Oak Park Ave?",
+    "choices": [
+      "July 4, 1901",
+      "July 21, 1906",
+      "June 21, 1899",
+      "July 21, 1899"
+    ],
+    "answer": 3,
+    "explain": "Hemingway was born July 21, 1899, in the Queen Anne home of his grandparents Ernest and Caroline Hall.",
+    "placeId": "hemingway-birthplace",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Birthplace_of_Ernest_Hemingway",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q26",
+    "q": "Which architect designed the Hemingway family's 1906 home at 600 N Kenilworth Ave?",
+    "choices": [
+      "Frank Lloyd Wright",
+      "George W. Maher",
+      "Henry G. Fiddelke",
+      "Wesley A. Arnold"
+    ],
+    "answer": 2,
+    "explain": "Henry Fiddelke designed it in 1906 for Dr. Clarence and Grace Hemingway. Ernest lived there from 1906 to 1918.",
+    "placeId": "hemingway-boyhood-home",
+    "sourceUrl": "https://www.oakpark.com/2015/08/04/boyhood-home-gets-a-new-lease-on-life/",
+    "topic": "architecture"
+  },
+  {
+    "id": "q27",
+    "q": "Which park was the first parcel of land bought by the Park District of Oak Park?",
+    "choices": [
+      "Austin Gardens",
+      "Rehm Park",
+      "Scoville Park",
+      "Taylor Park"
+    ],
+    "answer": 2,
+    "explain": "Scoville Park was bought in 1912 and was the first parcel the Park District acquired.",
+    "placeId": "scoville-park",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/scoville-park/",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q28",
+    "q": "What is the focal point of Scoville Park?",
+    "choices": [
+      "The Rehm Park Trains",
+      "The WWI 'Peace Triumphant' Monument",
+      "An ice arena",
+      "A Frank Lloyd Wright house"
+    ],
+    "answer": 1,
+    "explain": "The World War I 'Peace Triumphant' Monument was unveiled on November 11, 1925.",
+    "placeId": "scoville-park",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/scoville-park/",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q29",
+    "q": "Whose memorial bust stands near the War Memorial in Scoville Park?",
+    "choices": [
+      "Gwendolyn Brooks",
+      "Frank Lloyd Wright",
+      "Percy Julian",
+      "Ernest Hemingway"
+    ],
+    "answer": 2,
+    "explain": "The Percy Julian Memorial Bust was unveiled in 2003 to honor the chemist and longtime Oak Park resident.",
+    "placeId": "scoville-park",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/scoville-park/",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q30",
+    "q": "Which park is home to the hand-operated 'Rehm Park Trains'?",
+    "choices": [
+      "Mills Park",
+      "Field Park",
+      "Taylor Park",
+      "Rehm Park"
+    ],
+    "answer": 3,
+    "explain": "Free hand-operated trains run on a track inside the Rehm Park playground, which was originally called 'South Park.'",
+    "placeId": "rehm-park",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/rehm-park-pool/",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q31",
+    "q": "Which park is sometimes called 'The Secret Garden'?",
+    "choices": [
+      "Field Park",
+      "Scoville Park",
+      "Mills Park",
+      "Austin Gardens"
+    ],
+    "answer": 3,
+    "explain": "Austin Gardens sits in a quiet neighborhood just north of Lake Street.",
+    "placeId": "austin-gardens",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/austin-gardens/",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q32",
+    "q": "Taylor Park was originally called what?",
+    "choices": [
+      "South Park",
+      "Kettlestrings Grove",
+      "Village Green",
+      "North Park"
+    ],
+    "answer": 3,
+    "explain": "Taylor Park was first called North Park and was renamed for Henry A. Taylor, first president of the Park Board.",
+    "placeId": "taylor-park",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/taylor-park/",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q33",
+    "q": "Field Park is named after which children's author?",
+    "choices": [
+      "Eugene Field",
+      "Marshall Field",
+      "Henry W. Longfellow",
+      "Edgar Rice Burroughs"
+    ],
+    "answer": 0,
+    "explain": "The park was acquired in 1916 and named for children's author Eugene Field.",
+    "placeId": "field-park",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/field-park/",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q34",
+    "q": "Which famous landscape architect originally designed Scoville, Rehm, and Taylor parks?",
+    "choices": [
+      "Frederick Law Olmsted",
+      "Walter Burley Griffin",
+      "Charles E. White Jr.",
+      "Jens Jensen"
+    ],
+    "answer": 3,
+    "explain": "Park District histories credit Jens Jensen with the original designs of Scoville, Rehm, and Taylor parks.",
+    "placeId": "taylor-park",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/taylor-park/",
+    "topic": "architecture"
+  },
+  {
+    "id": "q35",
+    "q": "Mills Park is named after Herbert S. Mills. Whom did he buy the property from in 1910?",
+    "choices": [
+      "The Hemingway family",
+      "The Village of Oak Park",
+      "Frank Lloyd Wright",
+      "John Farson's widow"
+    ],
+    "answer": 3,
+    "explain": "Herbert S. Mills bought it from John Farson's widow in 1910. The Park District acquired it in 1939.",
+    "placeId": "mills-park",
+    "sourceUrl": "https://pdop.org/parks-facilities/location/mills-park-pleasant-home/",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q36",
+    "q": "In what year was the Oak Park Conservatory built?",
+    "choices": [
+      "1889",
+      "1929",
+      "1912",
+      "1975"
+    ],
+    "answer": 1,
+    "explain": "The Conservatory at 615 Garfield St was built in 1929 by Foley Greenhouse Manufacturing.",
+    "placeId": "conservatory",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oak_Park_Conservatory",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q37",
+    "q": "Before it was renamed for chemist Percy Julian, what was Julian Middle School called?",
+    "choices": [
+      "Horace Mann Middle School",
+      "Nathaniel Hawthorne Middle School",
+      "Ralph Waldo Emerson Middle School",
+      "Washington Irving Middle School"
+    ],
+    "answer": 1,
+    "explain": "Percy Julian Middle School used to be Nathaniel Hawthorne Middle School.",
+    "placeId": null,
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oak_Park,_Illinois",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q38",
+    "q": "Oak Park's early settlers Joseph and Betty Kettlestrings emigrated from where?",
+    "choices": [
+      "Yorkshire, England",
+      "County Cork, Ireland",
+      "Skåne, Sweden",
+      "Bavaria, Germany"
+    ],
+    "answer": 0,
+    "explain": "The Kettlestrings, immigrants from Yorkshire, England, staked out a farm in 1835. Locals once called the area Kettlestrings Grove.",
+    "placeId": null,
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oak_Park,_Illinois",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q39",
+    "q": "In what year did the Village of Oak Park pass a fair housing ordinance?",
+    "choices": [
+      "1968",
+      "2003",
+      "1948",
+      "1975"
+    ],
+    "answer": 0,
+    "explain": "Oak Park passed a fair housing ordinance in 1968.",
+    "placeId": null,
+    "sourceUrl": "https://en.wikipedia.org/wiki/Oak_Park,_Illinois",
+    "topic": "landmarks"
+  },
+  {
+    "id": "q40",
+    "q": "On what date did the current Oak Park Main Library open to the public?",
+    "choices": [
+      "November 11, 1925",
+      "June 11, 2016",
+      "October 5, 2003",
+      "July 21, 1999"
+    ],
+    "answer": 2,
+    "explain": "The Main Library at 834 Lake Street opened on October 5, 2003.",
+    "placeId": "main-library",
+    "sourceUrl": "https://www.oppl.org/about/history/main-library-history/",
+    "topic": "landmarks"
+  },
+  {
+    "id": "t01",
+    "q": "Ray Kroc was born in Oak Park in 1902. Which company did he build into a global giant?",
+    "choices": [
+      "Burger King",
+      "McDonald's",
+      "White Castle",
+      "Kentucky Fried Chicken"
+    ],
+    "answer": 1,
+    "explain": "Ray Kroc was born in Oak Park on Oct. 5, 1902, and built McDonald's into a worldwide fast-food chain.",
+    "placeId": null,
+    "sourceUrl": "https://en.wikipedia.org/wiki/Ray_Kroc",
+    "topic": "people"
+  },
+  {
+    "id": "t02",
+    "q": "Which 'Golden Girls' star was born at Oak Park's West Suburban Hospital in 1922?",
+    "choices": [
+      "Bea Arthur",
+      "Rue McClanahan",
+      "Estelle Getty",
+      "Betty White"
+    ],
+    "answer": 3,
+    "explain": "Betty White was born Jan. 17, 1922, at West Suburban Hospital in Oak Park. Her family moved to Los Angeles when she was a toddler.",
+    "placeId": null,
+    "sourceUrl": "https://www.oakpark.com/2022/01/04/betty-white-born-in-oak-park-a-century-ago-dies-at-99/",
+    "topic": "people"
+  },
+  {
+    "id": "t03",
+    "q": "Oak Park-born author Carol Shields won a Pulitzer Prize for which novel?",
+    "choices": [
+      "The Stone Diaries",
+      "The Shipping News",
+      "Lonesome Dove",
+      "Beloved"
+    ],
+    "answer": 0,
+    "explain": "Carol Shields, born in Oak Park in 1935, won the Pulitzer Prize for The Stone Diaries. She moved to Canada in 1957.",
+    "placeId": null,
+    "sourceUrl": "https://carolshieldsprizeforfiction.com/aboutcarolshields",
+    "topic": "people"
+  },
+  {
+    "id": "t04",
+    "q": "Doris Humphrey, born in Oak Park in 1895, became a pioneer of what art form?",
+    "choices": [
+      "Opera",
+      "Modern dance",
+      "Silent film",
+      "Jazz piano"
+    ],
+    "answer": 1,
+    "explain": "Doris Humphrey, born in Oak Park on Oct. 17, 1895, was a pioneer of 20th-century modern dance, known for 'fall and recovery.'",
+    "placeId": null,
+    "sourceUrl": "https://www.ebsco.com/research-starters/dance/doris-humphrey",
+    "topic": "people"
+  },
+  {
+    "id": "t05",
+    "q": "Edgar Rice Burroughs lived at 414 Augusta St. from 1914 to 1917. Which famous character did he create?",
+    "choices": [
+      "Zorro",
+      "Conan",
+      "Tarzan",
+      "Buck Rogers"
+    ],
+    "answer": 2,
+    "explain": "Tarzan author Edgar Rice Burroughs lived at 414 Augusta St. from 1914 to 1917 and wrote more Tarzan books there.",
+    "placeId": null,
+    "sourceUrl": "https://www.oakpark.com/2017/11/28/tarzan-authors-home-gets-landmark-nod/",
+    "topic": "people"
+  },
+  {
+    "id": "t06",
+    "q": "After graduating from Oak Park's high school in 1917, Ernest Hemingway became a reporter for which newspaper?",
+    "choices": [
+      "Chicago Tribune",
+      "Kansas City Star",
+      "Toronto Star",
+      "Oak Leaves"
+    ],
+    "answer": 1,
+    "explain": "Hemingway graduated from OPRF in 1917 and went to report for The Kansas City Star.",
+    "placeId": null,
+    "sourceUrl": "https://www.hemingwaybirthplace.com/hemingway-and-oak-park",
+    "topic": "people"
+  },
+  {
+    "id": "t07",
+    "q": "Before comedy stardom, Oak Park-born Bob Newhart worked by day in Chicago as what?",
+    "choices": [
+      "A lawyer",
+      "A dentist",
+      "A mail carrier",
+      "An accountant"
+    ],
+    "answer": 3,
+    "explain": "Bob Newhart was born in Oak Park in 1929. He worked as an accountant in Chicago by day and did comedy by night before making it big.",
+    "placeId": null,
+    "sourceUrl": "https://abc7chicago.com/post/bob-newhart-dies-94-longtime-publicist-says-legend/15068896/",
+    "topic": "people"
+  },
+  {
+    "id": "t08",
+    "q": "Chemist Percy Julian moved to Oak Park in 1950. He made useful medical compounds from which plant?",
+    "choices": [
+      "Soybean",
+      "Corn",
+      "Cotton",
+      "Peanut"
+    ],
+    "answer": 0,
+    "explain": "Dr. Percy Julian made compounds from soybeans to treat arthritis, glaucoma and allergies. He held more than 130 patents.",
+    "placeId": null,
+    "sourceUrl": "https://oprfmuseum.org/people/percy-julian",
+    "topic": "people"
+  },
+  {
+    "id": "t09",
+    "q": "In 1902 Oak Park became its own village by separating from which township?",
+    "choices": [
+      "Proviso",
+      "Lyons",
+      "Cicero",
+      "Riverside"
+    ],
+    "answer": 2,
+    "explain": "Oak Park was incorporated as a village on Jan. 25, 1902, and separated from Cicero Township.",
+    "placeId": null,
+    "sourceUrl": "https://www.oak-park.us/Government/Information-and-Resources/About-the-Village",
+    "topic": "history"
+  },
+  {
+    "id": "t10",
+    "q": "The settlement was first called Kettlestrings Grove. What was its next name, before Oak Park?",
+    "choices": [
+      "Oak Ridge",
+      "Oak Lawn",
+      "Prairie Grove",
+      "Elm Ridge"
+    ],
+    "answer": 0,
+    "explain": "The area was first called Kettlestrings Grove and then Oak Ridge, after a ridge of dry land full of oak trees. Later it became Oak Park.",
+    "placeId": null,
+    "sourceUrl": "https://www.oakpark.com/2007/09/11/before-oak-park-there-was-kettlestrings-grove/",
+    "topic": "history"
+  },
+  {
+    "id": "t11",
+    "q": "Oak Park was 'dry' for nearly a century. When liquor sales began in 1973, who got the first liquor license?",
+    "choices": [
+      "The Lake Theatre",
+      "Ascension Catholic Church",
+      "Oak Park Country Club",
+      "Village Hall"
+    ],
+    "answer": 1,
+    "explain": "Oak Park approved liquor sales in 1973. The first license went to Ascension Catholic Church for its social events.",
+    "placeId": null,
+    "sourceUrl": "https://www.oakpark.com/2014/12/23/oak-park-explores-allowing-taverns-41-years-after-first-approving-liquor-sales/",
+    "topic": "history"
+  },
+  {
+    "id": "t12",
+    "q": "In 1976 Oak Park won which national honor?",
+    "choices": [
+      "All-America City",
+      "Tree City of the Year",
+      "Great American Main Street",
+      "Best Small Town in America"
+    ],
+    "answer": 0,
+    "explain": "Oak Park was named an All-America City in 1976.",
+    "placeId": null,
+    "sourceUrl": "https://oprfmuseum.org/brief-history-oak-park",
+    "topic": "history"
+  },
+  {
+    "id": "t13",
+    "q": "In 1932, Oak Park voters approved something that had not been allowed before. What was it?",
+    "choices": [
+      "Women voting",
+      "Streetcars on Lake St.",
+      "Sunday movie showings",
+      "Daylight saving time"
+    ],
+    "answer": 2,
+    "explain": "In 1932, a local vote approved showing movies on Sundays in Oak Park.",
+    "placeId": null,
+    "sourceUrl": "https://oprfmuseum.org/brief-history-oak-park",
+    "topic": "history"
+  },
+  {
+    "id": "t14",
+    "q": "In Oak Park's government, which top official is appointed rather than elected?",
+    "choices": [
+      "Village President",
+      "Village Clerk",
+      "Village Trustee",
+      "Village Manager"
+    ],
+    "answer": 3,
+    "explain": "Voters elect the Village President, six Trustees and the Village Clerk. The Village Manager is appointed.",
+    "placeId": "village-hall",
+    "sourceUrl": "https://www.oak-park.us/Government/Information-and-Resources/About-the-Village",
+    "topic": "history"
+  },
+  {
+    "id": "t15",
+    "q": "Which station is the western end of the CTA Green Line, at Oak Park's western edge?",
+    "choices": [
+      "Ridgeland",
+      "Harlem/Lake",
+      "Forest Park",
+      "Austin"
+    ],
+    "answer": 1,
+    "explain": "Harlem/Lake is the Green Line's western terminal. It sits next to Metra's Oak Park station.",
+    "placeId": null,
+    "sourceUrl": "https://www.transitchicago.com/greenline/",
+    "topic": "transport"
+  },
+  {
+    "id": "t16",
+    "q": "Which Metra commuter line serves Oak Park?",
+    "choices": [
+      "Union Pacific West",
+      "BNSF",
+      "Milwaukee District West",
+      "Union Pacific Northwest"
+    ],
+    "answer": 0,
+    "explain": "Oak Park is served by one Metra line, the Union Pacific West Line. It also has two CTA 'L' lines, the Blue and the Green.",
+    "placeId": null,
+    "sourceUrl": "https://www.oak-park.us/Government/Information-and-Resources/About-the-Village",
+    "topic": "transport"
+  },
+  {
+    "id": "t17",
+    "q": "Before it was renamed in 1964, the Eisenhower Expressway (I-290) was called the what?",
+    "choices": [
+      "Madison Street Expressway",
+      "Lake Shore Expressway",
+      "Congress Expressway",
+      "Harlem Expressway"
+    ],
+    "answer": 2,
+    "explain": "On Jan. 10, 1964, the Chicago City Council renamed the Congress Expressway for President Dwight D. Eisenhower.",
+    "placeId": null,
+    "sourceUrl": "https://interactive.wbez.org/curiouscity/eisenhower/",
+    "topic": "transport"
+  },
+  {
+    "id": "t18",
+    "q": "Oak Park's home ZIP codes run from 60301 to 60304. Which nearby ZIP code is NOT one of Oak Park's?",
+    "choices": [
+      "60302",
+      "60304",
+      "60301",
+      "60305"
+    ],
+    "answer": 3,
+    "explain": "Oak Park's ZIP codes are 60301 to 60304. 60305 belongs to neighboring River Forest.",
+    "placeId": null,
+    "sourceUrl": "https://www.zip-codes.com/city/il-oak-park.asp",
+    "topic": "transport"
+  },
+  {
+    "id": "t19",
+    "q": "About how big is the Village of Oak Park?",
+    "choices": [
+      "1.2 square miles",
+      "4.7 square miles",
+      "12 square miles",
+      "25 square miles"
+    ],
+    "answer": 1,
+    "explain": "The Village of Oak Park covers 4.7 square miles.",
+    "placeId": null,
+    "sourceUrl": "https://www.oak-park.us/Government/Information-and-Resources/About-the-Village",
+    "topic": "transport"
+  },
+  {
+    "id": "t20",
+    "q": "According to the Village, about how far is Oak Park from downtown Chicago?",
+    "choices": [
+      "About 3 miles",
+      "About 20 miles",
+      "About 9 miles",
+      "About 30 miles"
+    ],
+    "answer": 2,
+    "explain": "The Village says Oak Park is 9 miles from downtown Chicago, 10 miles from O'Hare and 8 miles from Midway.",
+    "placeId": null,
+    "sourceUrl": "https://www.oak-park.us/Government/Information-and-Resources/About-the-Village",
+    "topic": "transport"
+  },
+  {
+    "id": "t21",
+    "q": "OPRF's student newspaper, which Ernest Hemingway wrote for, is called what?",
+    "choices": [
+      "The Trapeze",
+      "The Huskie Herald",
+      "The Oak Leaf",
+      "The Lantern"
+    ],
+    "answer": 0,
+    "explain": "The Trapeze was founded in 1912. Hemingway was an early reporter for it from 1913 to 1917.",
+    "placeId": null,
+    "sourceUrl": "https://www.oakpark.com/2023/09/29/a-history-of-news-the-trapeze/",
+    "topic": "schools"
+  },
+  {
+    "id": "t22",
+    "q": "Which OPRF graduate (Class of 1975) is the voice of Homer Simpson?",
+    "choices": [
+      "Hank Azaria",
+      "Harry Shearer",
+      "Dan Castellaneta",
+      "Nancy Cartwright"
+    ],
+    "answer": 2,
+    "explain": "Dan Castellaneta, OPRF Class of 1975, performed with Second City and is the voice of Homer Simpson.",
+    "placeId": null,
+    "sourceUrl": "https://www.oprfhs.org/activities/tradition-of-excellence/past-award-recipients",
+    "topic": "schools"
+  },
+  {
+    "id": "t23",
+    "q": "Walter Burley Griffin, OPRF Class of 1896, won the plan for which nation's new capital city?",
+    "choices": [
+      "New Zealand",
+      "Australia",
+      "Canada",
+      "Brazil"
+    ],
+    "answer": 1,
+    "explain": "Architect Walter Burley Griffin (OPRF 1896) won the commission to plan Canberra, Australia's new capital.",
+    "placeId": null,
+    "sourceUrl": "https://www.oprfhs.org/activities/tradition-of-excellence/past-award-recipients",
+    "topic": "schools"
+  },
+  {
+    "id": "t24",
+    "q": "Before 2002, Gwendolyn Brooks Middle School was a junior high named for which writer?",
+    "choices": [
+      "Ralph Waldo Emerson",
+      "Nathaniel Hawthorne",
+      "Mark Twain",
+      "Walt Whitman"
+    ],
+    "answer": 0,
+    "explain": "Emerson Junior High became Gwendolyn Brooks Middle School in Sept. 2002, when a new building opened and 6th grade was added.",
+    "placeId": null,
+    "sourceUrl": "https://www.op97.org/brooks/history",
+    "topic": "schools"
+  },
+  {
+    "id": "t25",
+    "q": "Hatch Elementary is named for William H. Hatch. Who was he?",
+    "choices": [
+      "A Civil War general",
+      "A village president",
+      "The district's superintendent",
+      "A local poet"
+    ],
+    "answer": 2,
+    "explain": "William H. Hatch was the district superintendent from 1882 to 1917. Hatch School opened in 1922.",
+    "placeId": null,
+    "sourceUrl": "https://www.op97.org/about/history",
+    "topic": "schools"
+  },
+  {
+    "id": "t26",
+    "q": "The library's Maze Branch is named for Adele H. Maze. Who was she?",
+    "choices": [
+      "A school principal",
+      "The branch's longtime librarian",
+      "A village trustee",
+      "An architect"
+    ],
+    "answer": 1,
+    "explain": "Adele H. Maze served south Oak Park as a librarian from 1918 to 1957. The South Branch was renamed for her in 1957.",
+    "placeId": null,
+    "sourceUrl": "https://www.oppl.org/about/history/maze-branch-library-history/",
+    "topic": "schools"
+  },
+  {
+    "id": "t27",
+    "q": "The Dole Branch Library is at 255 Augusta St. Who gave that building to the village in 1939?",
+    "choices": [
+      "James Scoville",
+      "Henry Austin",
+      "Mr. and Mrs. Andrew Dole",
+      "Herbert Mills"
+    ],
+    "answer": 2,
+    "explain": "In 1939 Mr. and Mrs. Andrew Dole gave the building at Augusta and Cuyler to the village. The branch moved in and took their name in 1940.",
+    "placeId": null,
+    "sourceUrl": "https://www.oppl.org/about/history/dole-branch-library-history/",
+    "topic": "schools"
+  },
+  {
+    "id": "t28",
+    "q": "Oak Park Festival Theatre (founded 1975) performs outdoors each summer in which park?",
+    "choices": [
+      "Austin Gardens",
+      "Taylor Park",
+      "Field Park",
+      "Rehm Park"
+    ],
+    "answer": 0,
+    "explain": "Founded in 1975, Oak Park Festival Theatre is the Midwest's oldest professional outdoor classical theater. It plays in Austin Gardens.",
+    "placeId": "austin-gardens",
+    "sourceUrl": "https://oakparkfestival.com/project/about-us/",
+    "topic": "culture"
+  },
+  {
+    "id": "t29",
+    "q": "Since 1978, the Oak Park Farmers' Market has been held each Saturday in which parking lot?",
+    "choices": [
+      "Village Hall",
+      "Pilgrim Congregational Church",
+      "OPRF High School",
+      "The Main Library"
+    ],
+    "answer": 1,
+    "explain": "The market began in 1976 on North Boulevard. Since 1978 it has been held in the Pilgrim Congregational Church lot at 460 Lake St.",
+    "placeId": null,
+    "sourceUrl": "https://www.oak-park.us/News-articles/Oak-Park-Farmers-Market-celebrating-50th-season",
+    "topic": "culture"
+  },
+  {
+    "id": "t30",
+    "q": "'A Day in Our Village' is held on the first Sunday of June in which park?",
+    "choices": [
+      "Mills Park",
+      "Ridgeland Common",
+      "Scoville Park",
+      "Taylor Park"
+    ],
+    "answer": 2,
+    "explain": "A Day in Our Village fills Scoville Park, at Lake St. and Oak Park Ave., on the first Sunday in June.",
+    "placeId": "scoville-park",
+    "sourceUrl": "https://www.oak-park.us/Community/Events-and-Activities/A-Day-in-Our-Village",
+    "topic": "culture"
+  },
+  {
+    "id": "t31",
+    "q": "In what year did the Art Deco Lake Theatre on Lake Street open?",
+    "choices": [
+      "1916",
+      "1926",
+      "1946",
+      "1936"
+    ],
+    "answer": 3,
+    "explain": "The Lake Theatre opened in April 1936 with 'The Ghost Goes West.' Thomas W. Lamb's firm designed it.",
+    "placeId": "lake-street",
+    "sourceUrl": "https://oprfmuseum.org/this-month-in-history/lake-theatre-opens-much-fanfare-leather",
+    "topic": "culture"
+  },
+  {
+    "id": "t32",
+    "q": "Since 1937 the Oak Park Art League (founded 1921) has been based in what kind of building?",
+    "choices": [
+      "A former carriage house",
+      "A former church",
+      "A former train depot",
+      "A former bank"
+    ],
+    "answer": 0,
+    "explain": "Since 1937, the Oak Park Art League has been in a carriage house at 720 Chicago Ave. designed by E.E. Roberts.",
+    "placeId": null,
+    "sourceUrl": "https://www.oakpark.com/2021/03/29/treasure-of-oak-park-art-league-beats-covid-celebrates-its-100th/",
+    "topic": "culture"
+  },
+  {
+    "id": "t33",
+    "q": "The Oak Park River Forest Museum at 129 Lake St. is in a building first used as what?",
+    "choices": [
+      "A post office",
+      "A firehouse",
+      "A schoolhouse",
+      "A train station"
+    ],
+    "answer": 1,
+    "explain": "The museum opened in 2017 in Cicero Fire House No. 2, built in 1898. The building is older than the village itself.",
+    "placeId": null,
+    "sourceUrl": "https://www.oakpark.com/2017/09/12/a-new-museum-200-years-in-the-telling/",
+    "topic": "culture"
+  },
+  {
+    "id": "t34",
+    "q": "Oak Park's yearly Juneteenth celebration opens with a flag-raising ceremony at which location?",
+    "choices": [
+      "Scoville Park",
+      "OPRF High School",
+      "Village Hall",
+      "The Conservatory"
+    ],
+    "answer": 2,
+    "explain": "The Village's Juneteenth celebration opens with a flag-raising at Village Hall. The Board voted in 2020 to observe the holiday every June 19.",
+    "placeId": "village-hall",
+    "sourceUrl": "https://www.oak-park.us/Community/Events-and-Activities/Juneteenth-Celebration",
+    "topic": "culture"
+  },
+  {
+    "id": "t35",
+    "q": "In 2015, Oak Park became Illinois' first municipal what?",
+    "choices": [
+      "Bird sanctuary",
+      "Dark-sky community",
+      "Arboretum",
+      "Pollinator preserve"
+    ],
+    "answer": 2,
+    "explain": "In 2015 Oak Park became Illinois' first municipal arboretum and the nation's fourth.",
+    "placeId": null,
+    "sourceUrl": "https://pdop.org/about/sustainability/",
+    "topic": "nature"
+  },
+  {
+    "id": "t36",
+    "q": "Oak Park's oldest known heritage oak, about 280 years old, is which kind of oak?",
+    "choices": [
+      "Bur oak",
+      "Pin oak",
+      "Red oak",
+      "Swamp oak"
+    ],
+    "answer": 0,
+    "explain": "About 170 heritage oaks remain locally. The oldest known is a bur oak, about 280 years old, on private property.",
+    "placeId": null,
+    "sourceUrl": "https://www.oakpark.com/2014/08/12/the-old-growth-oaks-we-hold-so-dear/",
+    "topic": "nature"
+  },
+  {
+    "id": "t37",
+    "q": "Oak Park has been named a 'Tree City USA' for decades. Which group gives this award?",
+    "choices": [
+      "Sierra Club",
+      "National Park Service",
+      "Morton Arboretum",
+      "Arbor Day Foundation"
+    ],
+    "answer": 3,
+    "explain": "The Arbor Day Foundation named Oak Park a 2023 Tree City USA. It was the village's 40th year with the honor.",
+    "placeId": null,
+    "sourceUrl": "https://content.govdelivery.com/accounts/ILOAKPARK/bulletins/398e91c",
+    "topic": "nature"
+  },
+  {
+    "id": "t38",
+    "q": "Which of these is NOT one of the Oak Park Conservatory's three showrooms?",
+    "choices": [
+      "Mediterranean Room",
+      "Tropical Room",
+      "Alpine Room",
+      "Desert Room"
+    ],
+    "answer": 2,
+    "explain": "The Conservatory has three showrooms, the Mediterranean, Tropical and Desert rooms, with more than 3,000 plants in all.",
+    "placeId": "conservatory",
+    "sourceUrl": "https://oakparkconservatory.org/tours/",
+    "topic": "nature"
+  },
+  {
+    "id": "t39",
+    "q": "In 1970 the Conservatory almost came down. What was proposed to replace it?",
+    "choices": [
+      "A parking lot",
+      "A swimming pool",
+      "A fire station",
+      "An apartment tower"
+    ],
+    "answer": 0,
+    "explain": "In 1970 the Conservatory was nearly torn down for a parking lot for the new Rehm Park pool. Elsie Jacobsen's citizens' committee saved it.",
+    "placeId": "conservatory",
+    "sourceUrl": "https://oprfmuseum.org/this-month-in-history/oak-park-conservatory-faces-wrecking-ball",
+    "topic": "nature"
+  },
+  {
+    "id": "t40",
+    "q": "About how many plants does the Oak Park Conservatory hold?",
+    "choices": [
+      "About 300",
+      "More than 3,000",
+      "About 30,000",
+      "More than 300,000"
+    ],
+    "answer": 1,
+    "explain": "The Conservatory's botanical collection has more than 3,000 plants from six continents.",
+    "placeId": "conservatory",
+    "sourceUrl": "https://oakparkconservatory.org/tours/",
+    "topic": "nature"
+  }
+]

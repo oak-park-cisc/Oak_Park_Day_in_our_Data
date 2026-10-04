@@ -1,0 +1,815 @@
+block,street,zone,trees,species_count,genus_count,top_species,top_species_latin,top_species_share,top_genus,top_genus_common,top_genus_share,shannon,simpson,median_dbh_in,median_height_ft,median_spread_ft,canopy_sqft,canopy_covered_sqft,low_count,species_over_10pct,genus_over_20pct,genus_30pct_plus,street_length_ft,on_map
+0 ADAMS ST,ADAMS ST,Longfellow,25,21,14,LILAC-SHRUB,Syringia spp,0.12,Acer,MAPLE,0.2,2.976,0.944,9,30,20,13705,13568,false,true,false,false,606,true
+0 AUGUSTA ST,AUGUSTA ST,Whittier,29,18,12,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.172,Gymnocladus,KENTUCKY COFFEETREE,0.172,2.737,0.923,14,30,20,12350,12216,false,true,false,false,829,true
+0 BERKSHIRE ST,BERKSHIRE ST,Hatch,20,14,12,MAPLE-NORWAY,Acer platanoides,0.15,Acer,MAPLE,0.2,2.554,0.915,18.5,30,30,11369,11288,false,true,false,false,666,true
+0 CHICAGO AVE,CHICAGO AVE,Beye,31,14,11,PEAR-CALLERY,Pyrus calleryana,0.29,Pyrus,PEAR,0.29,2.254,0.851,15,20,20,12213,12016,false,true,true,false,882,true
+0 DIVISION ST,DIVISION ST,Hatch,22,14,9,MAPLE-NORWAY,Acer platanoides,0.136,Acer,MAPLE,0.273,2.516,0.909,12,30,20,7108,7092,false,true,true,false,662,true
+0 ELIZABETH CT,ELIZABETH CT,Holmes,7,7,5,MAPLE-RED,Acer rubrum,0.143,Acer,MAPLE,0.286,1.946,0.857,20,40,30,6990,6968,true,false,false,false,489,true
+0 ERIE ST,ERIE ST,Beye,7,5,4,MAPLE-NORWAY,Acer platanoides,0.286,Acer,MAPLE,0.429,1.55,0.776,20,40,40,10603,9932,true,false,false,false,220,true
+0 FILLMORE ST,FILLMORE ST,Irving,19,16,10,MAPLE-NORWAY,Acer platanoides,0.158,Acer,MAPLE,0.263,2.698,0.925,15,40,20,12782,12812,false,true,true,false,619,true
+0 FLOURNOY ST,FLOURNOY ST,Irving,7,2,2,HACKBERRY,Celtis occidentalis,0.714,Celtis,HACKBERRY,0.714,0.598,0.408,11,20,20,3142,3132,true,false,false,false,303,true
+0 GARFIELD ST,GARFIELD ST,Irving,17,11,11,HACKBERRY,Celtis occidentalis,0.235,Celtis,HACKBERRY,0.235,2.232,0.872,18,30,30,10878,10620,false,true,true,false,670,true
+0 GREENFIELD ST,GREENFIELD ST,Hatch,22,17,12,MAPLE-NORWAY,Acer platanoides,0.182,Acer,MAPLE,0.227,2.713,0.921,10.5,25,20,9798,9804,false,true,true,false,710,true
+0 HARRISON ST,HARRISON ST,Irving,20,11,9,LINDEN-LITTLELEAF,Tilia cordata,0.3,Tilia,LINDEN,0.35,2.129,0.845,15,35,25,14844,13604,false,true,true,true,663,true
+0 HARVARD ST,HARVARD ST,Irving,20,17,9,MAPLE-NORWAY,Acer platanoides,0.15,Acer,MAPLE,0.25,2.762,0.93,11.5,30,20,11192,11036,false,true,true,false,669,true
+0 IOWA ST,IOWA ST,Whittier,30,15,11,MAPLE-NORWAY,Acer platanoides,0.133,Acer,MAPLE,0.2,2.563,0.913,12.5,30,20,14981,14820,false,true,false,false,836,true
+0 JACKSON BLVD,JACKSON BLVD,Longfellow,35,13,12,GINKGO,Ginkgo biloba,0.2,Ginkgo,GINKGO,0.2,2.304,0.88,12,30,20,18673,17680,false,true,false,false,1167,true
+0 LAKE ST,LAKE ST,Beye,35,15,10,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.2,Gymnocladus,KENTUCKY COFFEETREE,0.2,2.552,0.908,10,30,20,19301,19200,false,true,false,false,885,true
+0 LE MOYNE PKWY,LE MOYNE PKWY,Hatch,58,31,20,APPLE-CRAB SPP,Malus spp,0.138,Quercus,OAK,0.172,3.143,0.939,7,15,10,14530,14120,false,true,false,false,1336,true
+0 MADISON ST,MADISON ST,Longfellow,27,8,7,HONEYLOCUST,Gleditsia triacanthos,0.593,Gleditsia,HONEYLOCUST,0.593,1.428,0.62,15,30,20,14176,13760,false,true,true,true,891,true
+0 N AUSTIN BLVD,N AUSTIN BLVD,Longfellow,10,8,8,CATALPA,Catalpa speciosa,0.2,Catalpa,CATALPA,0.2,2.025,0.86,10,30,20,3947,3924,false,true,false,false,736,true
+0 NORTH BLVD,NORTH BLVD,Beye,4,2,1,ASPEN,Populus spp,0.75,Populus,ASPEN,1,0.562,0.375,6,20,20,1414,1064,true,false,false,false,440,true
+0 ONTARIO ST,ONTARIO ST,Beye,27,18,11,HACKBERRY,Celtis occidentalis,0.148,Acer,MAPLE,0.333,2.763,0.927,13,30,30,26782,25836,false,true,true,true,883,true
+0 PLEASANT ST,PLEASANT ST,Beye,38,22,14,HAWTHORN-SPP,Crataegus spp,0.158,Crataegus,HAWTHORN,0.211,2.874,0.928,9.5,30,25,29610,27932,false,true,true,false,832,true
+0 RANDOLPH ST,RANDOLPH ST,Beye,31,20,14,HACKBERRY,Celtis occidentalis,0.129,Acer,MAPLE,0.258,2.819,0.928,13,40,20,33183,30696,false,true,true,false,674,true
+0 S AUSTIN BLVD,S AUSTIN BLVD,Longfellow,8,5,5,HONEYLOCUST,Gleditsia triacanthos,0.375,Gleditsia,HONEYLOCUST,0.375,1.494,0.75,15,40,30,7775,6968,true,false,false,false,439,true
+0 SOUTH BLVD,SOUTH BLVD,Beye,13,8,7,SERVICEBERRY-SPP,Amelanchier spp,0.231,Amelanchier,SERVICEBERRY,0.231,1.951,0.84,22,50,40,15433,15248,false,true,true,false,882,true
+0 SUPERIOR ST,SUPERIOR ST,Beye,35,18,14,GINKGO,Ginkgo biloba,0.143,Acer,MAPLE,0.171,2.726,0.924,13,30,30,23267,22312,false,true,false,false,886,true
+0 THOMAS ST,THOMAS ST,Whittier,21,17,10,CATALPA,Catalpa speciosa,0.143,Acer,MAPLE,0.19,2.756,0.93,10,20,10,12272,12148,false,true,false,false,664,true
+0 VAN BUREN ST,VAN BUREN ST,Irving,24,20,15,HAWTHORN-SPP,Crataegus spp,0.167,Crataegus,HAWTHORN,0.167,2.889,0.934,7,20,10,10269,10148,false,true,false,false,623,true
+0 WASHINGTON BLVD,WASHINGTON BLVD,Beye,43,25,15,MAPLE-NORWAY,Acer platanoides,0.093,Acer,MAPLE,0.209,3.112,0.951,9,30,30,29825,28496,false,false,true,false,888,true
+100 ADAMS ST,ADAMS ST,Longfellow,28,15,9,OAK-ENGLISH,Quercus robur,0.143,Quercus,OAK,0.357,2.552,0.911,10,20,20,13587,13544,false,true,true,true,667,true
+100 AUGUSTA ST,AUGUSTA ST,Whittier,18,15,11,LONDON PLANETREE,Platanus x acerifolia,0.167,Aesculus,HORSECHESTNUT,0.167,2.63,0.92,11,30,20,7638,7628,false,true,false,false,497,true
+100 BERKSHIRE ST,BERKSHIRE ST,Hatch,24,18,12,MAPLE-RED,Acer rubrum,0.125,Acer,MAPLE,0.25,2.81,0.934,7,20,10,7010,7004,false,true,true,false,664,true
+100 BISHOP QUARTER LN,BISHOP QUARTER LN,Holmes,7,3,3,VIBURNUM,Viburnum spp,0.571,Viburnum,VIBURNUM,0.571,0.956,0.571,7,10,10,491,484,true,false,false,false,610,true
+100 CHICAGO AVE,CHICAGO AVE,Whittier,14,9,8,MAPLE-NORWAY,Acer platanoides,0.214,Acer,MAPLE,0.286,2.107,0.867,14,30,20,8482,8456,false,true,true,false,442,true
+100 CLINTON AVE,CLINTON AVE,Holmes,20,16,10,MAPLE-NORWAY,Acer platanoides,0.15,Acer,MAPLE,0.3,2.692,0.925,17.5,30,30,14294,14296,false,true,true,true,509,true
+100 DIVISION ST,DIVISION ST,Hatch,22,18,11,LINDEN-AMERICAN,Tilia americana,0.136,Acer,MAPLE,0.273,2.815,0.934,13,30,20,9739,9728,false,true,true,false,665,true
+100 ERIE ST,ERIE ST,Beye,18,13,9,MAPLE-SILVER,Acer saccharinum,0.222,Acer,MAPLE,0.389,2.428,0.895,16,50,30,16493,15440,false,true,true,true,443,true
+100 FILLMORE ST,FILLMORE ST,Irving,26,16,9,SYCAMORE,Platanus occidentalis,0.192,Acer,MAPLE,0.308,2.588,0.908,16,40,30,19733,18696,false,true,true,true,669,true
+100 FLOURNOY ST,FLOURNOY ST,Irving,8,3,3,HACKBERRY,Celtis occidentalis,0.75,Celtis,HACKBERRY,0.75,0.736,0.406,10,20,20,1983,2004,true,false,false,false,497,true
+100 FOREST AVE,FOREST AVE,Holmes,17,9,8,HONEYLOCUST,Gleditsia triacanthos,0.353,Gleditsia,HONEYLOCUST,0.353,1.925,0.81,15,40,20,13175,12328,false,true,true,true,1269,true
+100 GARFIELD ST,GARFIELD ST,Irving,3,1,1,MAPLE-HEDGE,Acer campestre,1,Acer,MAPLE,1,0,0,11,20,20,942,944,true,false,false,false,677,true
+100 GREENFIELD ST,GREENFIELD ST,Hatch,17,13,9,HACKBERRY,Celtis occidentalis,0.294,Celtis,HACKBERRY,0.294,2.36,0.872,13,30,20,9032,9044,false,true,true,false,621,true
+100 HARRISON ST,HARRISON ST,Irving,31,14,11,OAK-RED,Quercus rubra,0.194,Acer,MAPLE,0.194,2.416,0.893,20,50,30,27293,24972,false,true,false,false,669,true
+100 HARVARD ST,HARVARD ST,Irving,22,15,10,HONEYLOCUST,Gleditsia triacanthos,0.136,Quercus,OAK,0.227,2.579,0.913,14,30,25,12606,12576,false,true,true,false,669,true
+100 HOME AVE,HOME AVE,Holmes,20,13,9,MAPLE-FREEMAN,Acer x freemanii 'Jeffersred',0.15,Acer,MAPLE,0.25,2.458,0.905,11,30,20,11349,11264,false,true,true,false,511,true
+100 IOWA ST,IOWA ST,Whittier,14,13,9,BALDCYPRESS,Taxodium distichum,0.143,Quercus,OAK,0.214,2.54,0.918,12,30,20,6224,6220,false,true,true,false,442,true
+100 JACKSON BLVD,JACKSON BLVD,Longfellow,32,18,13,HONEYLOCUST,Gleditsia triacanthos,0.188,Gleditsia,HONEYLOCUST,0.188,2.68,0.914,13.5,30,20,16906,16036,false,true,false,false,1335,true
+100 LAKE ST,LAKE ST,Beye,12,10,10,HACKBERRY,Celtis occidentalis,0.25,Celtis,HACKBERRY,0.25,2.21,0.875,14.5,25,40,11172,10984,false,true,true,false,444,true
+100 LE MOYNE PKWY,LE MOYNE PKWY,Hatch,57,28,23,AMERICAN REDBUD,Cercis canadensis,0.088,Acer,MAPLE,0.14,3.189,0.953,11,20,20,21657,20124,false,false,false,false,1421,true
+100 LINDEN AVE,LINDEN AVE,Holmes,13,9,5,MAPLE-NORWAY,Acer platanoides,0.308,Acer,MAPLE,0.385,2.032,0.84,10,30,30,10387,10392,false,true,true,true,627,true
+100 MADISON ST,MADISON ST,Longfellow,10,4,2,OAK-SWAMP WHITE,Quercus bicolor,0.5,Quercus,OAK,0.9,1.168,0.64,8.5,30,20,3142,3172,false,true,true,true,666,true
+100 N AUSTIN BLVD,N AUSTIN BLVD,Beye,21,13,12,HAWTHORN-SPP,Crataegus spp,0.19,Crataegus,HAWTHORN,0.19,2.425,0.898,13,40,30,18889,18440,false,true,false,false,738,true
+100 N CUYLER AVE,N CUYLER AVE,Beye,29,17,12,MAPLE-NORWAY,Acer platanoides,0.414,Acer,MAPLE,0.517,2.291,0.806,16,40,30,28687,27640,false,true,true,true,1069,true
+100 N EAST AVE,N EAST AVE,Holmes,12,6,5,LINDEN-AMERICAN,Tilia americana,0.5,Tilia,LINDEN,0.5,1.474,0.694,18,35,30,9307,9292,false,true,true,true,395,true
+100 N ELMWOOD AVE,N ELMWOOD AVE,Beye,29,20,12,MAPLE-NORWAY,Acer platanoides,0.172,Acer,MAPLE,0.276,2.765,0.916,16,40,40,41135,37940,false,true,true,false,713,true
+100 N EUCLID AVE,N EUCLID AVE,Holmes,37,21,13,PEAR-CALLERY,Pyrus calleryana,0.243,Acer,MAPLE,0.243,2.633,0.887,10,30,20,23464,22520,false,true,true,false,1057,true
+100 N GROVE AVE,N GROVE AVE,Holmes,6,5,4,BEECH-EUROPEAN,Fagus sylvatica,0.333,Acer,MAPLE,0.333,1.561,0.778,7,20,10,825,832,true,false,false,false,234,true
+100 N HARVEY AVE,N HARVEY AVE,Beye,38,21,14,MAPLE-NORWAY,Acer platanoides,0.158,Acer,MAPLE,0.342,2.801,0.922,14,30,30,33556,32584,false,true,true,true,1145,true
+100 N HUMPHREY AVE,N HUMPHREY AVE,Beye,35,21,14,GINKGO,Ginkgo biloba,0.114,Acer,MAPLE,0.171,2.877,0.934,19,40,40,41980,39612,false,true,false,false,1071,true
+100 N KENILWORTH AVE,N KENILWORTH AVE,Holmes,30,21,16,ELM-AMERICAN,Ulmus americana,0.167,Ulmus,ELM,0.267,2.884,0.931,11.5,30,20,27136,25820,false,true,true,false,1075,true
+100 N LOMBARD AVE,N LOMBARD AVE,Beye,37,20,14,MAPLE-NORWAY,Acer platanoides,0.216,Acer,MAPLE,0.297,2.682,0.904,14,30,30,35441,34116,false,true,true,false,1090,true
+100 N MAPLE AVE,N MAPLE AVE,Holmes,9,2,2,OAK-ENGLISH,Quercus robur,0.556,Quercus,OAK,0.556,0.687,0.494,5,20,5,648,660,true,false,false,false,536,true
+100 N MARION ST,N MARION ST,Holmes,26,6,5,PEAR-CALLERY,Pyrus calleryana,0.308,Pyrus,PEAR,0.308,1.636,0.787,12,30,20,8561,8332,false,true,true,true,1238,true
+100 N OAK PARK AVE,N OAK PARK AVE,Holmes,8,7,7,ELM-AMERICAN,Ulmus americana,0.25,Ulmus,ELM,0.25,1.906,0.844,16.5,45,25,7540,7540,true,false,false,false,1055,true
+100 N RIDGELAND AVE,N RIDGELAND AVE,Beye,26,16,12,MAPLE-NORWAY,Acer platanoides,0.192,Acer,MAPLE,0.231,2.588,0.908,13.5,40,40,27764,26256,false,true,true,false,1050,true
+100 N SCOVILLE AVE,N SCOVILLE AVE,Beye,23,18,12,HONEYLOCUST,Gleditsia triacanthos,0.13,Acer,MAPLE,0.174,2.789,0.93,18,40,40,25388,25304,false,true,false,false,1050,true
+100 N TAYLOR AVE,N TAYLOR AVE,Beye,32,20,13,MAPLE-NORWAY,Acer platanoides,0.156,Acer,MAPLE,0.25,2.835,0.93,19,40,30,33399,32668,false,true,true,false,848,true
+100 ONTARIO ST,ONTARIO ST,Beye,12,12,10,MAPLE-NORWAY,Acer platanoides,0.083,Acer,MAPLE,0.167,2.485,0.917,13.5,40,35,14059,13824,false,false,false,false,443,true
+100 PERCY JULIAN SQ,PERCY JULIAN SQ,Holmes,1,1,1,HONEYLOCUST,Gleditsia triacanthos,1,Gleditsia,HONEYLOCUST,1,0,0,16,40,30,707,708,true,false,false,false,161,true
+100 PLEASANT ST,PLEASANT ST,Beye,17,11,8,BALDCYPRESS,Taxodium distichum,0.235,Acer,MAPLE,0.294,2.232,0.872,19,50,30,16022,15344,false,true,true,false,443,true
+100 RANDOLPH ST,RANDOLPH ST,Beye,14,13,11,LONDON PLANETREE,Platanus x acerifolia,0.143,Acer,MAPLE,0.214,2.54,0.918,12,40,30,13430,13412,false,true,true,false,443,true
+100 S AUSTIN BLVD,S AUSTIN BLVD,Longfellow,11,8,7,HACKBERRY,Celtis occidentalis,0.182,Ulmus,ELM,0.364,2.02,0.86,6,30,10,8620,8596,false,true,true,true,490,true
+100 S CUYLER AVE,S CUYLER AVE,Beye,27,13,9,MAPLE-NORWAY,Acer platanoides,0.185,Acer,MAPLE,0.222,2.382,0.892,18,50,40,35814,33776,false,true,true,false,629,true
+100 S EAST AVE,S EAST AVE,Beye,26,16,10,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.308,2.598,0.911,19,40,30,19753,19684,false,true,true,true,661,true
+100 S ELMWOOD AVE,S ELMWOOD AVE,Beye,24,16,10,MAPLE-NORWAY,Acer platanoides,0.167,Acer,MAPLE,0.208,2.636,0.917,19,50,30,26704,26720,false,true,true,false,646,true
+100 S EUCLID AVE,S EUCLID AVE,Holmes,30,20,14,MAPLE-NORWAY,Acer platanoides,0.233,Acer,MAPLE,0.4,2.762,0.911,14,30,25,16827,16692,false,true,true,true,671,true
+100 S GROVE AVE,S GROVE AVE,Holmes,27,18,11,HACKBERRY,Celtis occidentalis,0.148,Acer,MAPLE,0.222,2.744,0.925,19,40,30,24583,24108,false,true,true,false,627,true
+100 S HARVEY AVE,S HARVEY AVE,Beye,25,20,16,HACKBERRY,Celtis occidentalis,0.12,Acer,MAPLE,0.12,2.921,0.941,18,40,30,23640,23296,false,true,false,false,647,true
+100 S HUMPHREY AVE,S HUMPHREY AVE,Beye,26,17,11,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.269,2.705,0.923,19,50,40,31750,31288,false,true,true,false,624,true
+100 S KENILWORTH AVE,S KENILWORTH AVE,Holmes,23,12,11,MAPLE-NORWAY,Acer platanoides,0.174,Acer,MAPLE,0.304,2.306,0.885,16,40,30,17986,17372,false,true,true,true,628,true
+100 S LOMBARD AVE,S LOMBARD AVE,Beye,49,24,17,HAWTHORN-SPP,Crataegus spp,0.102,Acer,MAPLE,0.204,2.988,0.941,8,20,20,29610,27752,false,true,true,false,432,true
+100 S MAPLE AVE,S MAPLE AVE,Holmes,11,9,7,GINKGO,Ginkgo biloba,0.182,Quercus,OAK,0.273,2.146,0.876,13,30,20,7147,7112,false,true,true,false,312,true
+100 S MARION ST,S MARION ST,Holmes,12,5,5,ELM-HYBRID,Ulmus x spp,0.417,Ulmus,ELM,0.417,1.468,0.736,8,20,15,2690,2708,false,true,true,true,468,true
+100 S OAK PARK AVE,S OAK PARK AVE,Holmes,3,1,1,BALDCYPRESS,Taxodium distichum,1,Taxodium,BALDCYPRESS,1,0,0,19,40,20,942,936,true,false,false,false,675,true
+100 S RIDGELAND AVE,S RIDGELAND AVE,Beye,24,17,11,MAPLE-NORWAY,Acer platanoides,0.125,Acer,MAPLE,0.292,2.73,0.927,12.5,35,30,19537,18880,false,true,true,false,637,true
+100 S SCOVILLE AVE,S SCOVILLE AVE,Beye,29,20,14,LINDEN-LITTLELEAF,Tilia cordata,0.138,Tilia,LINDEN,0.207,2.871,0.935,20,40,30,24288,23280,false,true,true,false,660,true
+100 S TAYLOR AVE,S TAYLOR AVE,Beye,28,21,11,MAPLE-NORWAY,Acer platanoides,0.143,Acer,MAPLE,0.214,2.917,0.936,13,40,30,26566,25764,false,true,true,false,643,true
+100 SOUTH BLVD,SOUTH BLVD,Beye,19,7,7,SERVICEBERRY-SPP,Amelanchier spp,0.263,Amelanchier,SERVICEBERRY,0.263,1.837,0.825,16,30,30,10996,10912,false,true,true,false,444,true
+100 SUPERIOR ST,SUPERIOR ST,Beye,16,12,9,MAPLE-NORWAY,Acer platanoides,0.188,Acer,MAPLE,0.25,2.393,0.898,17,45,30,16199,15804,false,true,true,false,443,true
+100 THOMAS ST,THOMAS ST,Whittier,23,17,14,MAPLE-NORWAY,Acer platanoides,0.087,Acer,MAPLE,0.174,2.774,0.934,15,30,20,16670,16608,false,false,false,false,661,true
+100 VAN BUREN ST,VAN BUREN ST,Longfellow,22,14,12,MAPLE-NORWAY,Acer platanoides,0.182,Acer,MAPLE,0.227,2.461,0.897,18,40,40,22855,22472,false,true,true,false,667,true
+100 WASHINGTON BLVD,WASHINGTON BLVD,Beye,17,12,7,HACKBERRY,Celtis occidentalis,0.353,Celtis,HACKBERRY,0.412,2.201,0.837,19,50,40,18869,18376,false,true,true,true,455,true
+100 WESLEY AVE,WESLEY AVE,Holmes,28,17,13,MAPLE-NORWAY,Acer platanoides,0.214,Acer,MAPLE,0.25,2.583,0.901,18.5,40,30,22227,21764,false,true,true,false,663,true
+200 ADAMS ST,ADAMS ST,Longfellow,23,17,11,MAPLE-SILVER,Acer saccharinum,0.13,Acer,MAPLE,0.304,2.728,0.926,18,50,40,30100,29456,false,true,true,true,668,true
+200 AUGUSTA ST,AUGUSTA ST,Whittier,26,18,16,MAPLE-NORWAY,Acer platanoides,0.115,Acer,MAPLE,0.115,2.811,0.935,8.5,20,10,7481,7500,false,true,false,false,887,true
+200 BERKSHIRE ST,BERKSHIRE ST,Hatch,21,16,11,MAPLE-SILVER,Acer saccharinum,0.095,Acer,MAPLE,0.238,2.714,0.93,12,30,20,7815,7828,false,false,true,false,699,true
+200 CHICAGO AVE,CHICAGO AVE,Whittier,27,14,12,HACKBERRY,Celtis occidentalis,0.333,Celtis,HACKBERRY,0.333,2.287,0.848,14,30,30,22364,21692,false,true,true,true,885,true
+200 CLINTON AVE,CLINTON AVE,Holmes,26,15,9,MAPLE-NORWAY,Acer platanoides,0.192,Acer,MAPLE,0.346,2.502,0.899,20,40,35,27803,26944,false,true,true,true,759,true
+200 DIVISION ST,DIVISION ST,Hatch,36,21,14,HACKBERRY,Celtis occidentalis,0.194,Celtis,HACKBERRY,0.222,2.815,0.921,12,30,20,16454,16344,false,true,true,false,994,true
+200 ERIE ST,ERIE ST,Beye,29,21,12,MAPLE-NORWAY,Acer platanoides,0.103,Acer,MAPLE,0.241,2.949,0.942,12,30,30,28078,27404,false,true,true,false,885,true
+200 FILLMORE ST,FILLMORE ST,Irving,25,15,10,GINKGO,Ginkgo biloba,0.16,Acer,MAPLE,0.32,2.546,0.909,18,40,30,18496,18276,false,true,true,true,669,true
+200 FLOURNOY ST,FLOURNOY ST,Longfellow,25,12,12,HONEYLOCUST,Gleditsia triacanthos,0.2,Gleditsia,HONEYLOCUST,0.2,2.301,0.883,9,20,20,18928,16264,false,true,false,false,685,true
+200 FOREST AVE,FOREST AVE,Holmes,19,17,12,MAPLE-SUGAR,Acer saccharum,0.105,Quercus,OAK,0.211,2.799,0.936,11,40,30,15021,14236,false,true,true,false,695,true
+200 GARFIELD ST,GARFIELD ST,Irving,2,2,2,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.5,Gymnocladus,KENTUCKY COFFEETREE,0.5,0.693,0.5,11,20,20,628,632,true,false,false,false,670,true
+200 GREENFIELD ST,GREENFIELD ST,Hatch,13,9,8,MAPLE-NORWAY,Acer platanoides,0.308,Acer,MAPLE,0.308,2.032,0.84,9,20,10,2985,2992,false,true,true,true,492,true
+200 HARRISON ST,HARRISON ST,Longfellow,18,7,5,HONEYLOCUST,Gleditsia triacanthos,0.389,Gleditsia,HONEYLOCUST,0.389,1.719,0.778,14,40,30,13587,12896,false,true,true,true,668,true
+200 HARVARD ST,HARVARD ST,Irving,24,18,13,OAK-BURR,Quercus macrocarpa,0.125,Acer,MAPLE,0.25,2.788,0.931,15.5,30,30,13352,13216,false,true,true,false,668,true
+200 HOME AVE,HOME AVE,Holmes,27,14,10,LINDEN-AMERICAN,Tilia americana,0.185,Tilia,LINDEN,0.296,2.446,0.897,18,50,30,23680,22664,false,true,true,false,767,true
+200 IOWA ST,IOWA ST,Whittier,34,21,14,APPLE-CRAB SPP,Malus spp,0.147,Acer,MAPLE,0.206,2.892,0.934,8.5,15,10,10740,10776,false,true,true,false,885,true
+200 JACKSON BLVD,JACKSON BLVD,Longfellow,24,12,9,LINDEN-LITTLELEAF,Tilia cordata,0.25,Tilia,LINDEN,0.333,2.222,0.861,17,50,35,21618,20252,false,true,true,true,1006,true
+200 LAKE ST,LAKE ST,Beye,9,9,8,MAPLE-NORWAY,Acer platanoides,0.111,Ulmus,ELM,0.222,2.197,0.889,16,30,20,7147,7140,true,false,false,false,886,true
+200 LE MOYNE PKWY,LE MOYNE PKWY,Hatch,38,22,15,APPLE-CRAB SPP,Malus spp,0.263,Malus,APPLE,0.263,2.726,0.896,9,10,20,15158,14840,false,true,true,false,1047,true
+200 LINDEN AVE,LINDEN AVE,Holmes,9,7,5,MAPLE-SUGAR,Acer saccharum,0.222,Acer,MAPLE,0.333,1.889,0.84,18,40,40,13587,12820,true,false,false,false,494,true
+200 MADISON ST,MADISON ST,Longfellow,29,18,10,BALDCYPRESS,Taxodium distichum,0.103,Quercus,OAK,0.241,2.805,0.935,6,20,10,9464,9528,false,true,true,false,889,true
+200 MARION CT,MARION CT,Holmes,1,1,1,OAK-BURR,Quercus macrocarpa,1,Quercus,OAK,1,0,0,41,60,70,3848,3892,true,false,false,false,465,true
+200 N AUSTIN BLVD,N AUSTIN BLVD,Beye,14,11,11,HACKBERRY,Celtis occidentalis,0.214,Celtis,HACKBERRY,0.214,2.305,0.888,10,25,20,10623,10632,false,true,true,false,528,true
+200 N CUYLER AVE,N CUYLER AVE,Beye,20,14,10,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.25,2.511,0.905,12.5,20,30,16808,16296,false,true,true,false,495,true
+200 N ELMWOOD AVE,N ELMWOOD AVE,Beye,21,14,9,MAPLE-NORWAY,Acer platanoides,0.238,Acer,MAPLE,0.286,2.438,0.889,17,50,30,21697,20944,false,true,true,false,495,true
+200 N EUCLID AVE,N EUCLID AVE,Holmes,18,15,11,HACKBERRY,Celtis occidentalis,0.167,Celtis,HACKBERRY,0.167,2.63,0.92,16.5,30,30,12409,11916,false,true,false,false,495,true
+200 N GROVE AVE,N GROVE AVE,Holmes,14,10,9,MAPLE-NORWAY,Acer platanoides,0.286,Acer,MAPLE,0.357,2.144,0.857,16.5,35,30,9857,9792,false,true,true,true,406,true
+200 N HARVEY AVE,N HARVEY AVE,Beye,18,12,8,TULIPTREE,Liriodendron tulipifera,0.167,Acer,MAPLE,0.333,2.399,0.901,16,45,30,16847,16628,false,true,true,true,495,true
+200 N KENILWORTH AVE,N KENILWORTH AVE,Holmes,25,17,13,MAPLE-NORWAY,Acer platanoides,0.12,Acer,MAPLE,0.28,2.712,0.925,15,40,30,19792,19312,false,true,true,false,662,true
+200 N LOMBARD AVE,N LOMBARD AVE,Beye,21,15,11,MAPLE-NORWAY,Acer platanoides,0.19,Acer,MAPLE,0.381,2.582,0.912,17,40,40,24053,22640,false,true,true,true,496,true
+200 N MARION ST,N MARION ST,Holmes,6,5,5,ELM-HYBRID,Ulmus 'Frontier',0.333,Ulmus,ELM,0.333,1.561,0.778,16,30,25,3613,3584,true,false,false,false,467,true
+200 N OAK PARK AVE,N OAK PARK AVE,Holmes,14,9,9,ELM-AMERICAN,Ulmus americana,0.286,Ulmus,ELM,0.286,2.008,0.837,14,35,25,12547,12056,false,true,true,false,493,true
+200 N RIDGELAND AVE,N RIDGELAND AVE,Beye,17,12,9,MAPLE-NORWAY,Acer platanoides,0.176,Acer,MAPLE,0.294,2.364,0.893,19,40,30,19223,19008,false,true,true,false,495,true
+200 N SCOVILLE AVE,N SCOVILLE AVE,Beye,15,9,7,HACKBERRY,Celtis occidentalis,0.267,Acer,MAPLE,0.333,2.026,0.844,19,50,50,21382,21300,false,true,true,true,495,true
+200 N TAYLOR AVE,N TAYLOR AVE,Beye,20,11,10,HACKBERRY,Celtis occidentalis,0.25,Celtis,HACKBERRY,0.25,2.221,0.87,19,40,35,26586,25452,false,true,true,false,496,true
+200 ONTARIO ST,ONTARIO ST,Beye,29,23,15,SYCAMORE,Platanus occidentalis,0.138,Platanus,LONDON PLANETREE,0.172,3.033,0.944,12,30,30,30552,28524,false,true,false,false,886,true
+200 PLEASANT ST,PLEASANT ST,Beye,34,26,17,MAPLE-NORWAY,Acer platanoides,0.088,Quercus,OAK,0.176,3.169,0.953,18.5,50,35,36914,35688,false,false,false,false,888,true
+200 RANDOLPH ST,RANDOLPH ST,Beye,61,31,18,MAPLE-NORWAY,Acer platanoides,0.148,Acer,MAPLE,0.23,3.162,0.943,14,40,30,60652,55628,false,true,true,false,1355,true
+200 S AUSTIN BLVD,S AUSTIN BLVD,Longfellow,8,6,6,BUCKEYE-OHIO,Aesculus glabra,0.25,Aesculus,HORSECHESTNUT,0.25,1.733,0.813,13,30,20,6912,6544,true,false,false,false,409,true
+200 S CUYLER AVE,S CUYLER AVE,Beye,29,19,11,LINDEN-LITTLELEAF,Tilia cordata,0.172,Acer,MAPLE,0.207,2.803,0.927,17,50,40,36992,33676,false,true,true,false,624,true
+200 S EAST AVE,S EAST AVE,Beye,30,18,13,HACKBERRY,Celtis occidentalis,0.133,Tilia,LINDEN,0.2,2.737,0.924,17,40,30,24485,23732,false,true,false,false,646,true
+200 S ELMWOOD AVE,S ELMWOOD AVE,Beye,25,17,11,MAPLE-NORWAY,Acer platanoides,0.16,Acer,MAPLE,0.2,2.699,0.922,17,40,30,17436,17040,false,true,false,false,646,true
+200 S EUCLID AVE,S EUCLID AVE,Holmes,29,21,14,LINDEN-AMERICAN,Tilia americana,0.138,Tilia,LINDEN,0.207,2.919,0.937,16,30,30,20872,20732,false,true,true,false,642,true
+200 S GROVE AVE,S GROVE AVE,Holmes,26,17,10,MAPLE-NORWAY,Acer platanoides,0.231,Acer,MAPLE,0.308,2.611,0.902,20.5,40,30,24190,23112,false,true,true,true,634,true
+200 S HARVEY AVE,S HARVEY AVE,Beye,25,10,7,HAWTHORN-SPP,Crataegus spp,0.28,Acer,MAPLE,0.44,2.033,0.838,13,40,30,22777,20636,false,true,true,true,428,true
+200 S HUMPHREY AVE,S HUMPHREY AVE,Beye,19,13,9,MAPLE-NORWAY,Acer platanoides,0.158,Acer,MAPLE,0.263,2.479,0.909,22,50,40,28667,26292,false,true,true,false,481,true
+200 S KENILWORTH AVE,S KENILWORTH AVE,Holmes,25,16,9,MAPLE-NORWAY,Acer platanoides,0.16,Acer,MAPLE,0.24,2.609,0.912,19,40,40,24485,21996,false,true,true,false,756,true
+200 S LOMBARD AVE,S LOMBARD AVE,Beye,19,13,11,MAPLE-NORWAY,Acer platanoides,0.158,Acer,MAPLE,0.368,2.452,0.903,23,60,40,25093,24236,false,true,true,true,548,true
+200 S MAPLE AVE,S MAPLE AVE,Holmes,34,21,15,ELM-HYBRID,Ulmus x spp,0.118,Acer,MAPLE,0.206,2.894,0.936,11.5,30,25,16984,16952,false,true,true,false,795,true
+200 S MARION ST,S MARION ST,Holmes,11,6,3,OAK-SWAMP WHITE,Quercus bicolor,0.455,Quercus,OAK,0.818,1.54,0.727,7,20,10,746,756,false,true,true,true,892,true
+200 S OAK PARK AVE,S OAK PARK AVE,Holmes,19,12,7,OAK-SWAMP WHITE,Quercus bicolor,0.263,Quercus,OAK,0.421,2.302,0.875,16,40,20,12134,12140,false,true,true,true,636,true
+200 S RIDGELAND AVE,S RIDGELAND AVE,Beye,26,14,10,MAPLE-NORWAY,Acer platanoides,0.192,Acer,MAPLE,0.192,2.482,0.902,18,40,35,30159,28080,false,true,false,false,641,true
+200 S SCOVILLE AVE,S SCOVILLE AVE,Beye,31,21,14,MAPLE-NORWAY,Acer platanoides,0.097,Ulmus,ELM,0.194,2.919,0.939,15,40,30,24877,23928,false,false,false,false,645,true
+200 S TAYLOR AVE,S TAYLOR AVE,Beye,20,16,10,MAPLE-NORWAY,Acer platanoides,0.1,Quercus,OAK,0.25,2.718,0.93,13,35,30,23444,22236,false,false,true,false,480,true
+200 SOUTH BLVD,SOUTH BLVD,Beye,33,15,13,HONEYLOCUST,Gleditsia triacanthos,0.182,Acer,MAPLE,0.182,2.475,0.898,12,40,20,23798,23548,false,true,false,false,883,true
+200 SUPERIOR ST,SUPERIOR ST,Beye,30,21,12,LINDEN-LITTLELEAF,Tilia cordata,0.1,Acer,MAPLE,0.2,2.968,0.944,14.5,40,30,34047,31844,false,false,false,false,885,true
+200 THOMAS ST,THOMAS ST,Whittier,23,17,11,MAPLE-NORWAY,Acer platanoides,0.217,Acer,MAPLE,0.348,2.665,0.911,18,30,30,15099,14320,false,true,true,true,662,true
+200 VAN BUREN ST,VAN BUREN ST,Longfellow,24,19,13,HACKBERRY,Celtis occidentalis,0.208,Quercus,OAK,0.25,2.785,0.92,12,40,30,20754,20168,false,true,true,false,668,true
+200 WASHINGTON BLVD,WASHINGTON BLVD,Beye,28,18,11,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.25,Gymnocladus,KENTUCKY COFFEETREE,0.25,2.648,0.901,13,40,30,25408,24132,false,true,true,false,904,true
+200 WESLEY AVE,WESLEY AVE,Holmes,27,20,15,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.222,2.878,0.936,19,50,30,29452,28184,false,true,true,false,647,true
+300 ADAMS ST,ADAMS ST,Longfellow,25,18,15,MAPLE-NORWAY,Acer platanoides,0.12,Acer,MAPLE,0.16,2.789,0.931,11,30,20,21520,20556,false,true,false,false,669,true
+300 AUGUSTA ST,AUGUSTA ST,Whittier,13,9,7,BIRCH-RIVER,Betula nigra,0.231,Betula,BIRCH,0.231,2.098,0.864,14,40,30,9444,9416,false,true,true,false,442,true
+300 BERKSHIRE ST,BERKSHIRE ST,Hatch,10,8,7,MAPLE-RED,Acer rubrum,0.2,Acer,MAPLE,0.3,2.025,0.86,9.5,30,20,2827,2820,false,true,true,true,355,true
+300 CHICAGO AVE,CHICAGO AVE,Whittier,10,8,8,HACKBERRY,Celtis occidentalis,0.2,Celtis,HACKBERRY,0.2,2.025,0.86,8,20,10,2337,2344,false,true,false,false,441,true
+300 CLINTON AVE,CLINTON AVE,Holmes,28,21,15,MAPLE-NORWAY,Acer platanoides,0.107,Acer,MAPLE,0.214,2.967,0.944,14.5,40,30,25820,24676,false,true,true,false,674,true
+300 ELIZABETH TRL,ELIZABETH TRL,Holmes,1,1,1,LINDEN-AMERICAN,Tilia americana,1,Tilia,LINDEN,1,0,0,25,50,40,1257,1264,true,false,false,false,177,true
+300 ERIE ST,ERIE ST,Beye,14,12,8,HORSECHESTNUT,Aesculus hippocastanum,0.143,Quercus,OAK,0.214,2.441,0.908,10.5,40,30,11270,11024,false,true,true,false,443,true
+300 FILLMORE ST,FILLMORE ST,Irving,19,16,13,MAPLE-NORWAY,Acer platanoides,0.158,Acer,MAPLE,0.211,2.698,0.925,15,30,20,16454,16064,false,true,true,false,670,true
+300 FOREST AVE,FOREST AVE,Holmes,14,13,9,LINDEN-AMERICAN,Tilia americana,0.143,Quercus,OAK,0.214,2.54,0.918,22,40,35,21127,19012,false,true,true,false,434,true
+300 GARFIELD ST,GARFIELD ST,Irving,11,5,5,APPLE-CRAB SPP,Malus spp,0.455,Malus,APPLE,0.455,1.367,0.694,11,10,20,3142,3080,false,true,true,true,691,true
+300 GREENFIELD ST,GREENFIELD ST,Hatch,8,7,7,HONEYLOCUST,Gleditsia triacanthos,0.25,Gleditsia,HONEYLOCUST,0.25,1.906,0.844,9.5,15,10,3436,3428,true,false,false,false,342,true
+300 HARRISON ST,HARRISON ST,Longfellow,15,10,8,HONEYLOCUST,Gleditsia triacanthos,0.267,Gleditsia,HONEYLOCUST,0.267,2.119,0.853,16,50,30,16356,16300,false,true,true,false,670,true
+300 HARVARD ST,HARVARD ST,Irving,24,14,11,HACKBERRY,Celtis occidentalis,0.125,Tilia,LINDEN,0.208,2.557,0.917,16.5,30,30,16631,16572,false,true,true,false,669,true
+300 HOME AVE,HOME AVE,Holmes,27,20,12,HONEYLOCUST,Gleditsia triacanthos,0.111,Acer,MAPLE,0.185,2.917,0.941,22,50,40,30218,27924,false,true,false,false,670,true
+300 IOWA ST,IOWA ST,Whittier,13,10,8,MAPLE-RED,Acer rubrum,0.154,Acer,MAPLE,0.231,2.245,0.888,10,30,30,11644,11608,false,true,true,false,442,true
+300 JACKSON BLVD,JACKSON BLVD,Longfellow,15,9,8,HACKBERRY,Celtis occidentalis,0.267,Celtis,HACKBERRY,0.267,1.969,0.827,18,30,30,14687,14300,false,true,true,false,670,true
+300 LAKE ST,LAKE ST,Beye,13,9,9,GINKGO,Ginkgo biloba,0.231,Ginkgo,GINKGO,0.231,2.098,0.864,9,30,20,6205,6200,false,true,true,false,447,true
+300 LE MOYNE PKWY,LE MOYNE PKWY,Hatch,14,12,10,HACKBERRY,Celtis occidentalis,0.143,Acer,MAPLE,0.143,2.441,0.908,8,20,15,5301,5288,false,true,false,false,376,true
+300 LINDEN AVE,LINDEN AVE,Holmes,21,16,11,MAPLE-NORWAY,Acer platanoides,0.19,Acer,MAPLE,0.381,2.648,0.916,17,40,30,23169,21036,false,true,true,true,502,true
+300 MADISON ST,MADISON ST,Longfellow,12,5,4,HONEYLOCUST,Gleditsia triacanthos,0.5,Gleditsia,HONEYLOCUST,0.5,1.314,0.667,14.5,30,30,7795,7736,false,true,true,true,668,true
+300 N AUSTIN BLVD,N AUSTIN BLVD,Beye,9,9,8,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.222,2.197,0.889,13,40,30,9052,9032,true,false,false,false,733,true
+300 N CUYLER AVE,N CUYLER AVE,Beye,22,17,10,MAPLE-NORWAY,Acer platanoides,0.182,Acer,MAPLE,0.409,2.713,0.921,14,40,30,17534,16104,false,true,true,true,501,true
+300 N EAST AVE,N EAST AVE,Holmes,21,15,14,MAPLE-NORWAY,Acer platanoides,0.238,Acer,MAPLE,0.238,2.504,0.893,19,50,40,24897,23368,false,true,true,false,503,true
+300 N ELMWOOD AVE,N ELMWOOD AVE,Beye,21,14,12,MAPLE-SILVER,Acer saccharinum,0.143,Acer,MAPLE,0.19,2.558,0.916,26,60,40,28510,25956,false,true,false,false,502,true
+300 N EUCLID AVE,N EUCLID AVE,Holmes,17,10,7,MAPLE-NORWAY,Acer platanoides,0.412,Acer,MAPLE,0.529,1.95,0.789,20,40,40,15021,14592,false,true,true,true,502,true
+300 N GROVE AVE,N GROVE AVE,Holmes,24,17,8,MAPLE-NORWAY,Acer platanoides,0.167,Acer,MAPLE,0.292,2.672,0.917,22,50,40,31828,30780,false,true,true,false,642,true
+300 N HARVEY AVE,N HARVEY AVE,Beye,20,17,12,LINDEN-AMERICAN,Tilia americana,0.15,Tilia,LINDEN,0.2,2.762,0.93,14.5,30,25,15355,15384,false,true,false,false,501,true
+300 N HUMPHREY AVE,N HUMPHREY AVE,Beye,10,8,6,MAPLE-RED,Acer rubrum,0.2,Acer,MAPLE,0.4,2.025,0.86,13,40,35,8738,8496,false,true,true,true,255,true
+300 N KENILWORTH AVE,N KENILWORTH AVE,Holmes,15,11,9,OAK-WHITE,Quercus alba,0.2,Quercus,OAK,0.333,2.303,0.889,20,40,30,14451,13732,false,true,true,true,629,true
+300 N LOMBARD AVE,N LOMBARD AVE,Beye,23,15,11,MAPLE-NORWAY,Acer platanoides,0.217,Acer,MAPLE,0.304,2.545,0.904,14,30,30,18005,17872,false,true,true,true,501,true
+300 N MAPLE AVE,N MAPLE AVE,Holmes,16,12,8,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.188,Acer,MAPLE,0.25,2.393,0.898,15,40,30,12409,12096,false,true,true,false,438,true
+300 N MARION ST,N MARION ST,Holmes,10,9,6,LINDEN-AMERICAN,Tilia americana,0.2,Acer,MAPLE,0.3,2.164,0.88,17.5,45,30,8011,7928,false,true,true,true,439,true
+300 N OAK PARK AVE,N OAK PARK AVE,Holmes,13,9,7,MAPLE-NORWAY,Acer platanoides,0.231,Acer,MAPLE,0.385,2.098,0.864,20,40,30,12174,12176,false,true,true,true,534,true
+300 N RIDGELAND AVE,N RIDGELAND AVE,Beye,18,13,10,HACKBERRY,Celtis occidentalis,0.167,Acer,MAPLE,0.222,2.476,0.907,15,40,35,18614,18280,false,true,true,false,502,true
+300 N SCOVILLE AVE,N SCOVILLE AVE,Beye,20,16,12,MAPLE-NORWAY,Acer platanoides,0.15,Acer,MAPLE,0.2,2.692,0.925,18.5,50,40,22482,22100,false,true,false,false,502,true
+300 N TAYLOR AVE,N TAYLOR AVE,Beye,24,16,8,MAPLE-NORWAY,Acer platanoides,0.208,Acer,MAPLE,0.5,2.59,0.906,19,50,40,24387,22664,false,true,true,true,502,true
+300 ONTARIO ST,ONTARIO ST,Beye,15,12,9,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.267,2.396,0.898,17,40,40,14451,14376,false,true,true,false,442,true
+300 PLEASANT ST,PLEASANT ST,Beye,13,11,8,MAPLE-RED,Acer rubrum,0.154,Acer,MAPLE,0.231,2.352,0.899,11,40,30,12507,12320,false,true,true,false,445,true
+300 RANDOLPH ST,RANDOLPH ST,Beye,14,10,9,MAPLE-NORWAY,Acer platanoides,0.357,Acer,MAPLE,0.357,2.064,0.827,15.5,45,30,11467,11412,false,true,true,true,448,true
+300 S AUSTIN BLVD,S AUSTIN BLVD,Longfellow,14,8,7,GINKGO,Ginkgo biloba,0.357,Ginkgo,GINKGO,0.357,1.866,0.806,15.5,35,20,10407,10432,false,true,true,true,695,true
+300 S CUYLER AVE,S CUYLER AVE,Beye,27,23,15,MAPLE-NORWAY,Acer platanoides,0.074,Acer,MAPLE,0.148,3.09,0.952,16,50,40,33635,32272,false,false,false,false,649,true
+300 S EAST AVE,S EAST AVE,Beye,24,16,8,MAPLE-NORWAY,Acer platanoides,0.167,Acer,MAPLE,0.375,2.636,0.917,15,40,30,20008,19524,false,true,true,true,625,true
+300 S ELMWOOD AVE,S ELMWOOD AVE,Beye,24,13,7,MAPLE-NORWAY,Acer platanoides,0.208,Acer,MAPLE,0.25,2.395,0.892,23,60,40,33615,32312,false,true,true,false,626,true
+300 S EUCLID AVE,S EUCLID AVE,Holmes,24,14,8,MAPLE-RED,Acer rubrum,0.167,Acer,MAPLE,0.375,2.485,0.903,19,50,40,23346,23136,false,true,true,true,631,true
+300 S GROVE AVE,S GROVE AVE,Holmes,27,17,11,ELM-AMERICAN,Ulmus americana,0.148,Quercus,OAK,0.222,2.712,0.925,18,40,40,28647,26968,false,true,true,false,665,true
+300 S HARVEY AVE,S HARVEY AVE,Beye,32,16,9,HACKBERRY,Celtis occidentalis,0.25,Celtis,HACKBERRY,0.25,2.461,0.883,19,50,40,44709,41068,false,true,true,false,798,true
+300 S HUMPHREY AVE,S HUMPHREY AVE,Beye,34,22,15,HACKBERRY,Celtis occidentalis,0.147,Acer,MAPLE,0.176,2.948,0.938,11.5,30,25,29158,27680,false,true,false,false,694,true
+300 S KENILWORTH AVE,S KENILWORTH AVE,Holmes,26,16,13,HACKBERRY,Celtis occidentalis,0.115,Acer,MAPLE,0.115,2.644,0.92,16.5,35,25,23955,21920,false,true,false,false,670,true
+300 S LOMBARD AVE,S LOMBARD AVE,Beye,30,19,12,MAPLE-NORWAY,Acer platanoides,0.1,Acer,MAPLE,0.167,2.823,0.933,11,30,20,22718,21624,false,false,false,false,680,true
+300 S MAPLE AVE,S MAPLE AVE,Holmes,25,18,12,MAPLE-NORWAY,Acer platanoides,0.16,Acer,MAPLE,0.24,2.754,0.925,16,40,30,20774,20764,false,true,true,false,665,true
+300 S OAK PARK AVE,S OAK PARK AVE,Holmes,19,11,9,GINKGO,Ginkgo biloba,0.211,Acer,MAPLE,0.263,2.288,0.886,20,50,30,16474,16056,false,true,true,false,610,true
+300 S RIDGELAND AVE,S RIDGELAND AVE,Beye,26,15,9,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.269,2.578,0.914,17.5,50,40,33890,30308,false,true,true,false,631,true
+300 S SCOVILLE AVE,S SCOVILLE AVE,Beye,29,18,12,HAWTHORN-SPP,Crataegus laevigata,0.207,Crataegus,HAWTHORN,0.207,2.692,0.913,14,40,30,23150,21792,false,true,true,false,582,true
+300 S TAYLOR AVE,S TAYLOR AVE,Beye,29,20,15,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.138,Gymnocladus,KENTUCKY COFFEETREE,0.138,2.871,0.935,19,50,40,33163,32028,false,true,false,false,650,true
+300 SOUTH BLVD,SOUTH BLVD,Beye,6,2,2,HONEYLOCUST,Gleditsia triacanthos,0.833,Gleditsia,HONEYLOCUST,0.833,0.451,0.278,15.5,35,30,4555,4260,true,false,false,false,450,true
+300 SUPERIOR ST,SUPERIOR ST,Whittier,15,12,9,MAPLE-NORWAY,Acer platanoides,0.133,Acer,MAPLE,0.267,2.431,0.907,16,40,30,12056,12076,false,true,true,false,442,true
+300 THOMAS ST,THOMAS ST,Whittier,22,19,10,HACKBERRY,Celtis occidentalis,0.182,Ulmus,ELM,0.227,2.839,0.93,9.5,30,20,10701,10628,false,true,true,false,670,true
+300 VAN BUREN ST,VAN BUREN ST,Longfellow,23,19,17,LILAC-TREE,Syringia reticulata 'Ivory Silk',0.13,Syringia,LILAC,0.13,2.872,0.938,16,50,30,22070,21096,false,true,false,false,670,true
+300 WASHINGTON BLVD,WASHINGTON BLVD,Beye,12,10,9,GINKGO,Ginkgo biloba,0.167,Ulmus,ELM,0.25,2.254,0.889,12.5,30,25,8580,8368,false,true,true,false,446,true
+300 WESLEY AVE,WESLEY AVE,Holmes,22,16,12,MAPLE-NORWAY,Acer platanoides,0.136,Acer,MAPLE,0.273,2.665,0.921,14.5,35,30,16454,16440,false,true,true,false,625,true
+300 WISCONSIN AVE,WISCONSIN AVE,Holmes,26,20,12,LINDEN-LITTLELEAF,Tilia cordata,0.115,Acer,MAPLE,0.192,2.918,0.941,17,40,25,22168,20684,false,true,false,false,664,true
+400 ADAMS ST,ADAMS ST,Longfellow,25,18,11,MAPLE-NORWAY,Acer platanoides,0.12,Acer,MAPLE,0.24,2.789,0.931,15,50,30,22561,21760,false,true,true,false,670,true
+400 AUGUSTA ST,AUGUSTA ST,Whittier,31,19,11,MAPLE-NORWAY,Acer platanoides,0.129,Acer,MAPLE,0.226,2.791,0.928,17,40,30,30532,28924,false,true,true,false,888,true
+400 BERKSHIRE ST,BERKSHIRE ST,Hatch,17,14,10,HACKBERRY,Celtis occidentalis,0.118,Acer,MAPLE,0.176,2.589,0.92,9,20,20,7658,7648,false,true,false,false,804,true
+400 CHICAGO AVE,CHICAGO AVE,Whittier,24,15,10,HACKBERRY,Celtis occidentalis,0.208,Quercus,OAK,0.25,2.532,0.903,17,40,30,22070,21436,false,true,true,false,887,true
+400 CLINTON AVE,CLINTON AVE,Lincoln,31,18,12,HAWTHORN-SPP,Crataegus spp,0.323,Crataegus,HAWTHORN,0.323,2.495,0.864,10,30,20,14314,14064,false,true,true,true,616,true
+400 DIVISION ST,DIVISION ST,Hatch,28,17,12,HACKBERRY,Celtis occidentalis,0.25,Celtis,HACKBERRY,0.25,2.561,0.893,12,30,20,16160,16056,false,true,true,false,953,true
+400 ERIE ST,ERIE ST,Beye,31,18,12,MAPLE-NORWAY,Acer platanoides,0.226,Acer,MAPLE,0.323,2.665,0.907,20,50,40,36698,32864,false,true,true,true,887,true
+400 FILLMORE ST,FILLMORE ST,Irving,23,18,12,ELM-HYBRID,Ulmus spp,0.13,Acer,MAPLE,0.217,2.811,0.934,8,30,20,12822,12804,false,true,true,false,668,true
+400 FOREST AVE,FOREST AVE,Holmes,14,9,8,MAPLE-NORWAY,Acer platanoides,0.214,Acer,MAPLE,0.286,2.107,0.867,14.5,40,30,9700,9580,false,true,true,false,435,true
+400 GARFIELD ST,GARFIELD ST,Irving,2,1,1,AMERICAN REDBUD,AMERICAN REDBUD,1,Cercis,AMERICAN REDBUD,1,0,0,2,10,5,39,40,true,false,false,false,697,true
+400 GREENFIELD ST,GREENFIELD ST,Hatch,37,22,14,MAPLE-NORWAY,Acer platanoides,0.135,Acer,MAPLE,0.324,2.862,0.928,11,30,20,14824,14456,false,true,true,true,1033,true
+400 HARRISON ST,HARRISON ST,Longfellow,23,13,9,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.217,Acer,MAPLE,0.391,2.341,0.881,14,40,30,16592,15912,false,true,true,true,671,true
+400 HARVARD ST,HARVARD ST,Irving,19,15,9,MAPLE-NORWAY,Acer platanoides,0.105,Acer,MAPLE,0.158,2.653,0.925,17,60,40,25565,23884,false,true,false,false,668,true
+400 HOME AVE,HOME AVE,Lincoln,25,15,10,MAPLE-NORWAY,Acer platanoides,0.16,Acer,MAPLE,0.32,2.588,0.915,13,40,20,19105,18440,false,true,true,true,659,true
+400 IOWA ST,IOWA ST,Whittier,38,24,13,HACKBERRY,Celtis occidentalis,0.132,Acer,MAPLE,0.316,3.011,0.94,11,35,25,27567,25936,false,true,true,true,888,true
+400 JACKSON BLVD,JACKSON BLVD,Longfellow,24,17,10,LINDEN-AMERICAN,Tilia americana,0.167,Acer,MAPLE,0.208,2.716,0.924,14,40,30,18948,18508,false,true,true,false,670,true
+400 LAKE ST,LAKE ST,Beye,23,15,12,HACKBERRY,Celtis occidentalis,0.174,Celtis,HACKBERRY,0.174,2.57,0.911,11,30,30,16827,16748,false,true,false,false,890,true
+400 LE MOYNE PKWY,LE MOYNE PKWY,Hatch,25,14,10,HACKBERRY,Celtis occidentalis,0.2,Celtis,HACKBERRY,0.2,2.488,0.902,10,30,20,7854,7844,false,true,false,false,709,true
+400 LENOX ST,LENOX ST,Hatch,33,20,12,HACKBERRY,Celtis occidentalis,0.152,Acer,MAPLE,0.242,2.801,0.926,16,30,30,21324,21120,false,true,true,false,899,true
+400 LINDEN AVE,LINDEN AVE,Holmes,19,15,12,MAPLE-NORWAY,Acer platanoides,0.211,Acer,MAPLE,0.316,2.58,0.909,17,40,20,10328,10188,false,true,true,true,538,true
+400 MADISON ST,MADISON ST,Longfellow,27,14,12,HONEYLOCUST,Gleditsia triacanthos,0.37,Gleditsia,HONEYLOCUST,0.37,2.218,0.826,16,30,30,16061,16072,false,true,true,true,890,true
+400 N AUSTIN BLVD,N AUSTIN BLVD,Beye,18,9,8,HONEYLOCUST,Gleditsia triacanthos,0.278,Gleditsia,HONEYLOCUST,0.278,2,0.84,11.5,30,25,10976,10700,false,true,true,false,1065,true
+400 N CUYLER AVE,N CUYLER AVE,Whittier,22,16,9,MAPLE-NORWAY,Acer platanoides,0.182,Acer,MAPLE,0.409,2.65,0.917,10,30,25,16493,16016,false,true,true,true,538,true
+400 N EAST AVE,N EAST AVE,Whittier,20,13,9,MAPLE-NORWAY,Acer platanoides,0.3,Acer,MAPLE,0.35,2.32,0.865,22,55,40,32908,30408,false,true,true,true,538,true
+400 N ELMWOOD AVE,N ELMWOOD AVE,Whittier,20,16,9,MAPLE-NORWAY,Acer platanoides,0.15,Acer,MAPLE,0.4,2.692,0.925,18.5,50,40,29452,27572,false,true,true,true,538,true
+400 N EUCLID AVE,N EUCLID AVE,Holmes,18,11,10,MAPLE-RED,Acer rubrum,0.444,Acer,MAPLE,0.444,1.966,0.772,17,40,30,13744,13620,false,true,true,true,538,true
+400 N GROVE AVE,N GROVE AVE,Holmes,18,15,11,LINDEN-AMERICAN,Tilia americana,0.111,Tilia,LINDEN,0.222,2.659,0.926,19.5,50,40,21363,20336,false,true,true,false,516,true
+400 N HARLEM AVE,N HARLEM AVE,Holmes,12,2,2,LINDEN-LITTLELEAF,Tilia cordata,0.667,Tilia,LINDEN,0.667,0.637,0.444,6,20,10,766,780,false,true,true,true,1334,true
+400 N HARVEY AVE,N HARVEY AVE,Whittier,21,13,9,HACKBERRY,Celtis occidentalis,0.19,Acer,MAPLE,0.238,2.425,0.898,17,40,40,21834,21408,false,true,true,false,539,true
+400 N HUMPHREY AVE,N HUMPHREY AVE,Beye,21,14,11,MAPLE-NORWAY,Acer platanoides,0.19,Acer,MAPLE,0.286,2.491,0.902,19,45,40,23012,22720,false,true,true,false,536,true
+400 N KENILWORTH AVE,N KENILWORTH AVE,Holmes,19,13,9,OAK-BURR,Quercus macrocarpa,0.158,Acer,MAPLE,0.263,2.452,0.903,22,50,40,31494,28384,false,true,true,false,494,true
+400 N LOMBARD AVE,N LOMBARD AVE,Whittier,21,15,12,MAPLE-NORWAY,Acer platanoides,0.238,Acer,MAPLE,0.238,2.529,0.898,17,40,40,24995,24288,false,true,true,false,539,true
+400 N MAPLE AVE,N MAPLE AVE,Holmes,12,10,6,MAPLE-NORWAY,Acer platanoides,0.167,Acer,MAPLE,0.25,2.254,0.889,16,35,35,13273,12720,false,true,true,false,436,true
+400 N MARION ST,N MARION ST,Holmes,10,7,7,HACKBERRY,Celtis occidentalis,0.2,Celtis,HACKBERRY,0.2,1.887,0.84,11,30,20,5596,5596,false,true,false,false,434,true
+400 N OAK PARK AVE,N OAK PARK AVE,Holmes,11,11,9,MAPLE-NORWAY,Acer platanoides,0.091,Quercus,OAK,0.182,2.398,0.909,16,30,30,7147,7160,false,false,false,false,506,true
+400 N RIDGELAND AVE,N RIDGELAND AVE,Whittier,13,12,9,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.154,2.458,0.911,7,30,20,8738,8736,false,true,false,false,538,true
+400 N SCOVILLE AVE,N SCOVILLE AVE,Whittier,21,14,8,MAPLE-NORWAY,Acer platanoides,0.19,Acer,MAPLE,0.381,2.516,0.907,16,50,30,20911,20616,false,true,true,true,538,true
+400 N TAYLOR AVE,N TAYLOR AVE,Whittier,23,13,9,MAPLE-NORWAY,Acer platanoides,0.174,Acer,MAPLE,0.217,2.404,0.896,18,40,40,25290,24272,false,true,true,false,539,true
+400 ONTARIO ST,ONTARIO ST,Beye,29,19,11,MAPLE-NORWAY,Acer platanoides,0.138,Acer,MAPLE,0.345,2.787,0.927,13,30,30,25192,24588,false,true,true,true,888,true
+400 PLEASANT ST,PLEASANT ST,Beye,29,18,15,HACKBERRY,Celtis occidentalis,0.172,Celtis,HACKBERRY,0.172,2.737,0.923,18,40,30,31161,30056,false,true,false,false,888,true
+400 RANDOLPH ST,RANDOLPH ST,Beye,34,22,12,HACKBERRY,Celtis occidentalis,0.147,Acer,MAPLE,0.294,2.933,0.936,23.5,50,40,43943,39940,false,true,true,false,887,true
+400 S AUSTIN BLVD,S AUSTIN BLVD,Irving,5,5,5,CATALPA,Catalpa speciosa,0.2,Catalpa,CATALPA,0.2,1.609,0.8,8,20,10,805,796,true,false,false,false,325,true
+400 S CUYLER AVE,S CUYLER AVE,Longfellow,9,7,7,GINKGO,Ginkgo biloba,0.222,Ginkgo,GINKGO,0.222,1.889,0.84,16,40,30,8325,8256,true,false,false,false,381,true
+400 S EAST AVE,S EAST AVE,Longfellow,11,9,8,HACKBERRY,Celtis occidentalis,0.182,Celtis,HACKBERRY,0.182,2.146,0.876,16,40,20,6519,6552,false,true,false,false,651,true
+400 S ELMWOOD AVE,S ELMWOOD AVE,Longfellow,21,14,8,LINDEN-LITTLELEAF,Tilia cordata,0.143,Ulmus,ELM,0.286,2.558,0.916,18,50,40,23483,21620,false,true,true,false,411,true
+400 S EUCLID AVE,S EUCLID AVE,Lincoln,22,14,13,APPLE-CRAB SPP,APPLE-CRAB SPP,0.182,Malus,APPLE,0.182,2.476,0.901,5.5,15,10,14392,14272,false,true,false,false,652,true
+400 S GROVE AVE,S GROVE AVE,Lincoln,27,15,10,HONEYLOCUST,Gleditsia triacanthos,0.259,Gleditsia,HONEYLOCUST,0.259,2.371,0.87,17,50,30,30532,28520,false,true,true,false,673,true
+400 S HARLEM AVE,S HARLEM AVE,Lincoln,3,1,1,SERVICEBERRY-SPP,Amelanchier spp,1,Amelanchier,SERVICEBERRY,1,0,0,8,10,10,236,240,true,false,false,false,501,true
+400 S HARVEY AVE,S HARVEY AVE,Longfellow,25,19,12,HACKBERRY,Celtis occidentalis,0.12,Acer,MAPLE,0.24,2.844,0.934,19,50,30,23405,22656,false,true,true,false,652,true
+400 S HUMPHREY AVE,S HUMPHREY AVE,Longfellow,30,19,15,HAWTHORN-SPP,Crataegus laevigata,0.133,Crataegus,HAWTHORN,0.2,2.829,0.933,12,35,30,21343,20332,false,true,false,false,678,true
+400 S KENILWORTH AVE,S KENILWORTH AVE,Lincoln,23,18,13,MAPLE-NORWAY,Acer platanoides,0.087,Ulmus,ELM,0.174,2.834,0.938,16,50,30,19203,19004,false,false,false,false,666,true
+400 S LOMBARD AVE,S LOMBARD AVE,Longfellow,22,14,10,ELM-AMERICAN,Ulmus americana,0.182,Ulmus,ELM,0.318,2.5,0.905,16.5,50,30,21775,19784,false,true,true,true,694,true
+400 S MAPLE AVE,S MAPLE AVE,Lincoln,25,12,11,MAPLE-NORWAY,Acer platanoides,0.24,Acer,MAPLE,0.24,2.282,0.877,18,30,30,20970,20692,false,true,true,false,654,true
+400 S RIDGELAND AVE,S RIDGELAND AVE,Longfellow,18,10,10,CATALPA,Catalpa speciosa,0.222,Catalpa,CATALPA,0.222,2.168,0.87,9,30,20,11172,11140,false,true,true,false,652,true
+400 S SCOVILLE AVE,S SCOVILLE AVE,Longfellow,20,13,11,HONEYLOCUST,Gleditsia triacanthos,0.15,Quercus,OAK,0.2,2.432,0.9,15,40,30,23503,21848,false,true,false,false,651,true
+400 S TAYLOR AVE,S TAYLOR AVE,Longfellow,30,25,16,ELM-HYBRID,Ulmus 'Homestead',0.1,Acer,MAPLE,0.167,3.153,0.953,14,40,30,25663,25036,false,false,false,false,736,true
+400 SOUTH BLVD,SOUTH BLVD,Beye,24,12,11,HONEYLOCUST,Gleditsia triacanthos,0.333,Gleditsia,HONEYLOCUST,0.333,2.174,0.84,15,30,20,11860,11744,false,true,true,true,888,true
+400 SUPERIOR ST,SUPERIOR ST,Beye,28,19,14,MAPLE-NORWAY,Acer platanoides,0.071,Acer,MAPLE,0.214,2.887,0.941,15,40,30,32044,30168,false,false,true,false,887,true
+400 THOMAS ST,THOMAS ST,Whittier,32,25,16,OAK-PIN,Quercus palustris,0.094,Acer,MAPLE,0.281,3.13,0.951,13.5,40,30,31907,28960,false,false,true,false,885,true
+400 VAN BUREN ST,VAN BUREN ST,Longfellow,24,21,12,HACKBERRY,Celtis occidentalis,0.083,Quercus,OAK,0.25,3.005,0.948,11.5,40,30,17848,17588,false,false,true,false,671,true
+400 WASHINGTON BLVD,WASHINGTON BLVD,Longfellow,31,18,14,GINKGO,Ginkgo biloba,0.161,Acer,MAPLE,0.161,2.682,0.916,15,50,40,34891,34076,false,true,false,false,888,true
+400 WESLEY AVE,WESLEY AVE,Longfellow,17,14,8,MAPLE-NORWAY,Acer platanoides,0.118,Acer,MAPLE,0.294,2.589,0.92,19,50,30,17691,17472,false,true,true,false,652,true
+400 WISCONSIN AVE,WISCONSIN AVE,Lincoln,19,15,11,MAPLE-NORWAY,Acer platanoides,0.158,Acer,MAPLE,0.316,2.625,0.92,15,40,30,13843,13816,false,true,true,true,659,true
+500 ADAMS ST,ADAMS ST,Longfellow,25,12,8,ELM-AMERICAN,Ulmus americana,0.2,Acer,MAPLE,0.32,2.301,0.883,17,40,30,24760,23656,false,true,true,true,664,true
+500 AUGUSTA ST,AUGUSTA ST,Whittier,13,13,9,MAPLE-NORWAY,Acer platanoides,0.077,Quercus,OAK,0.231,2.565,0.923,12,50,40,16827,16332,false,false,true,false,443,true
+500 BELLEFORTE AVE,BELLEFORTE AVE,Holmes,28,15,7,MAPLE-NORWAY,Acer platanoides,0.179,Acer,MAPLE,0.393,2.46,0.893,20.5,40,35,37621,34312,false,true,true,true,694,true
+500 BERKSHIRE ST,BERKSHIRE ST,Hatch,27,19,12,LONDON PLANETREE,Platanus x acerifolia,0.111,Ulmus,ELM,0.222,2.866,0.938,10,30,20,13941,13944,false,true,true,false,795,true
+500 CARPENTER AVE,CARPENTER AVE,Lincoln,21,19,9,MAPLE-SILVER,Acer saccharinum,0.095,Acer,MAPLE,0.381,2.912,0.943,6,20,10,9621,9056,false,false,true,true,519,true
+500 CHICAGO AVE,CHICAGO AVE,Whittier,15,11,8,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.267,2.269,0.88,12,30,20,11212,11220,false,true,true,false,447,true
+500 CLARENCE AVE,CLARENCE AVE,Longfellow,28,21,15,HACKBERRY,Celtis occidentalis,0.107,Acer,MAPLE,0.143,2.948,0.941,10.5,20,20,18692,17652,false,true,false,false,665,true
+500 CLINTON AVE,CLINTON AVE,Lincoln,19,14,12,HACKBERRY,Celtis occidentalis,0.105,Quercus,OAK,0.263,2.58,0.92,19,50,30,18967,17784,false,true,true,false,519,true
+500 DIVISION ST,DIVISION ST,Hatch,14,13,12,HACKBERRY,Celtis occidentalis,0.143,Acer,MAPLE,0.143,2.54,0.918,9.5,30,20,6696,6712,false,true,false,false,442,true
+500 ERIE ST,ERIE ST,Beye,13,9,8,MAPLE-NORWAY,Acer platanoides,0.231,Acer,MAPLE,0.308,2.098,0.864,15,40,30,12743,12664,false,true,true,true,447,true
+500 FAIR OAKS AVE,FAIR OAKS AVE,Whittier,27,18,12,HACKBERRY,Celtis occidentalis,0.185,Quercus,OAK,0.222,2.741,0.922,18,50,40,43275,39036,false,true,true,false,667,true
+500 FILLMORE ST,FILLMORE ST,Irving,22,19,16,LINDEN-LITTLELEAF,Tilia cordata,0.136,Tilia,LINDEN,0.182,2.878,0.938,10.5,30,20,13489,13304,false,true,false,false,668,true
+500 FOREST AVE,FOREST AVE,Holmes,28,19,15,MAPLE-NORWAY,Acer platanoides,0.107,Acer,MAPLE,0.143,2.831,0.934,17,40,30,21304,21204,false,true,false,false,676,true
+500 GREENFIELD ST,GREENFIELD ST,Hatch,26,18,12,MAPLE-RED,Acer rubrum,0.115,Acer,MAPLE,0.308,2.791,0.932,13,30,20,12547,12484,false,true,true,true,788,true
+500 GUNDERSON AVE,GUNDERSON AVE,Longfellow,32,24,14,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.125,Acer,MAPLE,0.188,3.059,0.945,13.5,40,30,21638,21432,false,true,false,false,665,true
+500 HARRISON ST,HARRISON ST,Longfellow,21,14,11,MAPLE-NORWAY,Acer platanoides,0.286,Acer,MAPLE,0.333,2.401,0.875,10,30,20,8934,8800,false,true,true,true,664,true
+500 HARVARD ST,HARVARD ST,Irving,23,16,12,MAPLE-SUGAR,Acer saccharum,0.13,Acer,MAPLE,0.261,2.645,0.919,17,50,30,23366,22912,false,true,true,false,668,true
+500 HIGHLAND AVE,HIGHLAND AVE,Longfellow,24,18,12,HACKBERRY,Celtis occidentalis,0.125,Quercus,OAK,0.208,2.788,0.931,14,40,30,19360,19140,false,true,true,false,676,true
+500 HOME AVE,HOME AVE,Lincoln,20,17,12,MAPLE-NORWAY,Acer platanoides,0.1,Quercus,OAK,0.2,2.788,0.935,14.5,40,25,16140,15556,false,false,false,false,520,true
+500 IOWA ST,IOWA ST,Whittier,18,11,9,HACKBERRY,Celtis occidentalis,0.222,Ulmus,ELM,0.278,2.197,0.864,20,55,35,20735,19416,false,true,true,false,444,true
+500 JACKSON BLVD,JACKSON BLVD,Longfellow,24,16,9,ELM-SIBERIAN,Ulmus pumila,0.125,Ulmus,ELM,0.292,2.694,0.927,13.5,40,30,19615,19336,false,true,true,false,664,true
+500 LAKE ST,LAKE ST,Beye,11,6,6,HONEYLOCUST,Gleditsia triacanthos,0.364,Gleditsia,HONEYLOCUST,0.364,1.642,0.777,15,30,20,7069,7092,false,true,true,true,444,true
+500 LE MOYNE PKWY,LE MOYNE PKWY,Hatch,28,16,9,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.179,Acer,MAPLE,0.179,2.593,0.911,11,30,20,9601,9476,false,true,false,false,781,true
+500 LINDEN AVE,LINDEN AVE,Holmes,24,15,11,LINDEN-AMERICAN,Tilia americana,0.208,Tilia,LINDEN,0.292,2.532,0.903,19,40,30,25309,24016,false,true,true,false,669,true
+500 LYMAN AVE,LYMAN AVE,Longfellow,30,20,15,HACKBERRY,Celtis occidentalis,0.133,Acer,MAPLE,0.2,2.893,0.938,10.5,30,20,22403,22136,false,true,false,false,673,true
+500 MADISON ST,MADISON ST,Longfellow,9,9,8,MAPLE-MIYABEI,Acer miyabei 'Morton',0.111,Quercus,OAK,0.222,2.197,0.889,5,20,10,5223,5236,true,false,false,false,663,true
+500 N AUSTIN BLVD,N AUSTIN BLVD,Beye,3,1,1,HONEYLOCUST,Gleditsia triacanthos,1,Gleditsia,HONEYLOCUST,1,0,0,20,50,50,5184,5168,true,false,false,false,869,true
+500 N CUYLER AVE,N CUYLER AVE,Whittier,28,20,13,MAPLE-RED,Acer rubrum,0.143,Acer,MAPLE,0.321,2.849,0.931,14.5,35,30,19596,19044,false,true,true,true,665,true
+500 N EAST AVE,N EAST AVE,Whittier,29,12,7,MAPLE-NORWAY,Acer platanoides,0.448,Acer,MAPLE,0.517,1.96,0.766,17,50,30,32692,31184,false,true,true,true,668,true
+500 N ELMWOOD AVE,N ELMWOOD AVE,Whittier,27,21,14,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.259,2.968,0.944,14,40,40,26527,26224,false,true,true,false,666,true
+500 N EUCLID AVE,N EUCLID AVE,Holmes,24,13,7,MAPLE-NORWAY,Acer platanoides,0.208,Acer,MAPLE,0.417,2.359,0.885,20,40,40,23837,22632,false,true,true,true,670,true
+500 N GROVE AVE,N GROVE AVE,Holmes,25,17,10,MAPLE-NORWAY,Acer platanoides,0.12,Quercus,OAK,0.32,2.733,0.928,19,30,30,21520,20416,false,true,true,true,661,true
+500 N HARVEY AVE,N HARVEY AVE,Whittier,23,16,10,MAPLE-NORWAY,Acer platanoides,0.087,Acer,MAPLE,0.304,2.714,0.93,18,40,30,19517,19236,false,false,true,true,665,true
+500 N HUMPHREY AVE,N HUMPHREY AVE,Whittier,29,21,12,OAK-SWAMP WHITE,Quercus bicolor,0.138,Quercus,OAK,0.31,2.919,0.937,7,20,10,11290,10872,false,true,true,true,736,true
+500 N KENILWORTH AVE,N KENILWORTH AVE,Holmes,12,10,8,MAPLE-NORWAY,Acer platanoides,0.167,Acer,MAPLE,0.25,2.254,0.889,18,35,30,10289,10236,false,true,true,false,429,true
+500 N LOMBARD AVE,N LOMBARD AVE,Whittier,27,21,13,LINDEN-LITTLELEAF,Tilia cordata,0.148,Tilia,LINDEN,0.222,2.936,0.938,11,20,10,11408,11444,false,true,true,false,664,true
+500 N MARION ST,N MARION ST,Holmes,20,15,11,MAPLE-NORWAY,Acer platanoides,0.15,Acer,MAPLE,0.3,2.597,0.915,16.5,40,30,18457,18276,false,true,true,true,720,true
+500 N OAK PARK AVE,N OAK PARK AVE,Holmes,18,14,9,HACKBERRY,Celtis occidentalis,0.167,Acer,MAPLE,0.222,2.553,0.914,15,40,30,20204,19736,false,true,true,false,667,true
+500 N RIDGELAND AVE,N RIDGELAND AVE,Whittier,22,19,11,LINDEN-LITTLELEAF,Tilia cordata,0.136,Acer,MAPLE,0.227,2.878,0.938,13,40,30,19498,19124,false,true,true,false,665,true
+500 N TAYLOR AVE,N TAYLOR AVE,Whittier,27,22,15,MAPLE-NORWAY,Acer platanoides,0.074,Acer,MAPLE,0.185,3.039,0.949,12,20,20,11742,11736,false,false,false,false,664,true
+500 PLEASANT ST,PLEASANT ST,Beye,15,11,7,MAPLE-NORWAY,Acer platanoides,0.267,Acer,MAPLE,0.4,2.246,0.871,20,40,30,15551,15296,false,true,true,true,446,true
+500 RANDOLPH ST,RANDOLPH ST,Beye,15,13,10,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.267,2.488,0.907,14,30,20,10367,10424,false,true,true,false,447,true
+500 S AUSTIN BLVD,S AUSTIN BLVD,Irving,4,4,4,APPLE-CRAB SPP,APPLE-CRAB SPP,0.25,Malus,APPLE,0.25,1.386,0.75,12,50,30,1492,1488,true,false,false,false,308,true
+500 S CUYLER AVE,S CUYLER AVE,Longfellow,25,19,15,MAPLE-NORWAY,Acer platanoides,0.08,Acer,MAPLE,0.12,2.886,0.941,13,40,30,20303,18912,false,false,false,false,678,true
+500 S EAST AVE,S EAST AVE,Longfellow,30,22,18,ELM-AMERICAN,Ulmus americana,0.167,Ulmus,ELM,0.2,2.948,0.936,15.5,40,30,25074,23952,false,true,false,false,665,true
+500 S ELMWOOD AVE,S ELMWOOD AVE,Longfellow,23,19,15,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.13,Ulmus,ELM,0.217,2.872,0.938,12,40,30,14844,14644,false,true,true,false,666,true
+500 S EUCLID AVE,S EUCLID AVE,Lincoln,23,18,10,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.13,Acer,MAPLE,0.261,2.811,0.934,12,30,20,14844,14588,false,true,true,false,664,true
+500 S GROVE AVE,S GROVE AVE,Lincoln,24,15,9,HONEYLOCUST,Gleditsia triacanthos,0.292,Gleditsia,HONEYLOCUST,0.292,2.379,0.865,14.5,35,30,27921,25032,false,true,true,false,668,true
+500 S HARVEY AVE,S HARVEY AVE,Longfellow,25,17,11,MAPLE-NORWAY,Acer platanoides,0.12,Acer,MAPLE,0.2,2.733,0.928,19,50,40,23582,22644,false,true,false,false,675,true
+500 S HUMPHREY AVE,S HUMPHREY AVE,Longfellow,25,18,14,MAPLE-NORWAY,Acer platanoides,0.12,Acer,MAPLE,0.2,2.789,0.931,17,40,30,18732,18664,false,true,false,false,674,true
+500 S KENILWORTH AVE,S KENILWORTH AVE,Lincoln,24,16,10,EASTERN REDCEDAR,Juniperus virginiana,0.208,Quercus,OAK,0.292,2.59,0.906,17,40,30,19340,18908,false,true,true,false,444,true
+500 S LOMBARD AVE,S LOMBARD AVE,Longfellow,46,24,17,LONDON PLANETREE,Platanus x acerifolia,0.152,Quercus,OAK,0.174,2.913,0.93,12,30,20,21166,19488,false,true,false,false,680,true
+500 S MAPLE AVE,S MAPLE AVE,Lincoln,9,5,5,GINKGO,Ginkgo biloba,0.444,Ginkgo,GINKGO,0.444,1.427,0.716,6,20,10,1237,1248,true,false,false,false,526,true
+500 S OAK PARK AVE,S OAK PARK AVE,Lincoln,21,13,11,HACKBERRY,Celtis occidentalis,0.143,Celtis,HACKBERRY,0.143,2.442,0.902,17,40,30,20303,19084,false,true,false,false,667,true
+500 S RIDGELAND AVE,S RIDGELAND AVE,Longfellow,18,14,9,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.278,2.582,0.92,18,60,35,20342,19568,false,true,true,false,674,true
+500 S SCOVILLE AVE,S SCOVILLE AVE,Longfellow,28,17,11,MAPLE-NORWAY,Acer platanoides,0.179,Acer,MAPLE,0.25,2.68,0.918,16.5,50,30,24249,22428,false,true,true,false,666,true
+500 S TAYLOR AVE,S TAYLOR AVE,Longfellow,46,21,13,LINDEN-AMERICAN,Tilia americana,0.261,Tilia,LINDEN,0.283,2.59,0.884,10.5,25,20,18045,17436,false,true,true,false,677,true
+500 SOUTH BLVD,SOUTH BLVD,Beye,15,6,5,HONEYLOCUST,Gleditsia triacanthos,0.4,Gleditsia,HONEYLOCUST,0.4,1.552,0.747,13,30,20,6951,6960,false,true,true,true,446,true
+500 SUPERIOR ST,SUPERIOR ST,Whittier,17,11,7,HACKBERRY,Celtis occidentalis,0.235,Acer,MAPLE,0.471,2.232,0.872,17,50,40,18378,17192,false,true,true,true,447,true
+500 THOMAS ST,THOMAS ST,Whittier,18,15,11,BALDCYPRESS,Taxodium distichum,0.167,Acer,MAPLE,0.167,2.63,0.92,9.5,30,25,12331,12140,false,true,false,false,443,true
+500 VAN BUREN ST,VAN BUREN ST,Longfellow,22,18,10,GINKGO,Ginkgo biloba,0.091,Quercus,OAK,0.273,2.839,0.938,20,50,40,27509,26320,false,false,true,false,664,true
+500 WASHINGTON BLVD,WASHINGTON BLVD,Beye,16,14,9,OAK-RED,Quercus rubra,0.125,Acer,MAPLE,0.25,2.599,0.922,13.5,35,20,9660,9352,false,true,true,false,446,true
+500 WENONAH AVE,WENONAH AVE,Lincoln,20,16,12,MAPLE-RED,Acer rubrum,0.15,Acer,MAPLE,0.3,2.692,0.925,8.5,25,20,12665,11672,false,true,true,true,520,true
+500 WESLEY AVE,WESLEY AVE,Lincoln,27,15,10,LINDEN-AMERICAN,Tilia americana,0.222,Tilia,LINDEN,0.222,2.499,0.897,16,30,20,19713,19380,false,true,true,false,665,true
+500 WISCONSIN AVE,WISCONSIN AVE,Lincoln,2,2,2,GINKGO,Ginkgo biloba,0.5,Ginkgo,GINKGO,0.5,0.693,0.5,6.5,20,7.5,98,104,true,false,false,false,584,true
+500 WOODBINE AVE,WOODBINE AVE,Holmes,26,20,12,MAPLE-NORWAY,Acer platanoides,0.115,Acer,MAPLE,0.269,2.918,0.941,18.5,40,40,30081,28572,false,true,true,false,659,true
+600 ADAMS ST,ADAMS ST,Longfellow,25,18,13,HACKBERRY,Celtis occidentalis,0.2,Celtis,HACKBERRY,0.2,2.731,0.918,19,40,30,24485,23972,false,true,false,false,666,true
+600 AUGUSTA ST,AUGUSTA ST,Mann,23,15,11,MAPLE-NORWAY,Acer platanoides,0.13,Acer,MAPLE,0.217,2.585,0.915,14,30,20,14216,14184,false,true,true,false,665,true
+600 BELLEFORTE AVE,BELLEFORTE AVE,Mann,25,18,11,MAPLE-NORWAY,Acer platanoides,0.12,Acer,MAPLE,0.28,2.789,0.931,17,40,30,17338,17224,false,true,true,false,638,true
+600 BERKSHIRE ST,BERKSHIRE ST,Mann,22,20,12,MAPLE-NORWAY,Acer platanoides,0.091,Acer,MAPLE,0.182,2.965,0.946,11,25,20,8031,8036,false,false,false,false,662,true
+600 CARPENTER AVE,CARPENTER AVE,Lincoln,21,15,11,BALDCYPRESS,Taxodium distichum,0.143,Acer,MAPLE,0.19,2.599,0.916,19,50,30,17907,16688,false,true,false,false,517,true
+600 CHICAGO AVE,CHICAGO AVE,Holmes,24,12,9,MAPLE-NORWAY,Acer platanoides,0.208,Acer,MAPLE,0.208,2.276,0.875,13.5,40,30,18398,18228,false,true,true,false,839,true
+600 CLARENCE AVE,CLARENCE AVE,Longfellow,34,21,14,HACKBERRY,Celtis occidentalis,0.118,Acer,MAPLE,0.265,2.899,0.936,15,30,30,25879,24860,false,true,true,false,665,true
+600 CLINTON AVE,CLINTON AVE,Lincoln,23,14,11,ELM-AMERICAN,Ulmus americana,0.348,Ulmus,ELM,0.348,2.292,0.843,17,50,40,26664,23860,false,true,true,true,516,true
+600 DIVISION ST,DIVISION ST,Mann,23,14,11,HACKBERRY,Celtis occidentalis,0.174,Acer,MAPLE,0.174,2.533,0.911,14,30,20,12154,12192,false,true,false,false,663,true
+600 ERIE ST,ERIE ST,Holmes,30,16,11,MAPLE-NORWAY,Acer platanoides,0.233,Acer,MAPLE,0.3,2.494,0.889,18.5,40,30,26409,26084,false,true,true,true,840,true
+600 FAIR OAKS AVE,FAIR OAKS AVE,Whittier,28,19,11,MAPLE-NORWAY,Acer platanoides,0.107,Acer,MAPLE,0.286,2.849,0.936,18.5,50,40,45082,41148,false,true,true,false,664,true
+600 FILLMORE ST,FILLMORE ST,Irving,23,14,13,LINDEN-LITTLELEAF,Tilia cordata,0.174,Acer,MAPLE,0.174,2.465,0.9,14,50,30,20990,20488,false,true,false,false,668,true
+600 FOREST AVE,FOREST AVE,Mann,27,20,14,MAPLE-MIYABEI,Acer miyabei 'Morton',0.074,Acer,MAPLE,0.185,2.936,0.944,13,30,30,19340,19000,false,false,false,false,660,true
+600 GREENFIELD ST,GREENFIELD ST,Mann,22,13,10,LINDEN-AMERICAN,Tilia americana,0.227,Tilia,LINDEN,0.364,2.386,0.888,14.5,30,25,12017,12032,false,true,true,true,660,true
+600 GUNDERSON AVE,GUNDERSON AVE,Longfellow,31,21,15,HONEYLOCUST,Gleditsia triacanthos,0.097,Quercus,OAK,0.258,2.936,0.941,11,40,30,24171,22636,false,false,true,false,666,true
+600 HARRISON ST,HARRISON ST,Longfellow,17,8,7,HACKBERRY,Celtis occidentalis,0.471,Celtis,HACKBERRY,0.471,1.661,0.727,9,20,10,5321,5320,false,true,true,true,667,true
+600 HARVARD ST,HARVARD ST,Irving,19,13,9,ELM-AMERICAN,Ulmus americana,0.211,Ulmus,ELM,0.263,2.406,0.892,18,50,40,18496,17228,false,true,true,false,668,true
+600 HIGHLAND AVE,HIGHLAND AVE,Longfellow,31,25,20,TULIPTREE,Liriodendron tulipifera,0.129,Acer,MAPLE,0.129,3.104,0.947,10,30,20,21166,20272,false,true,false,false,654,true
+600 HOME AVE,HOME AVE,Lincoln,22,15,9,ELM-AMERICAN,Ulmus americana,0.273,Acer,MAPLE,0.273,2.476,0.884,20.5,55,40,25643,24152,false,true,true,false,517,true
+600 IOWA ST,IOWA ST,Mann,29,11,7,LINDEN-AMERICAN,Tilia americana,0.276,Tilia,LINDEN,0.379,2.1,0.844,19,50,40,35736,34392,false,true,true,true,837,true
+600 JACKSON BLVD,JACKSON BLVD,Longfellow,23,16,11,MAPLE-NORWAY,Acer platanoides,0.174,Acer,MAPLE,0.261,2.653,0.919,12,30,20,9896,9892,false,true,true,false,666,true
+600 LAKE ST,LAKE ST,Holmes,24,9,9,HONEYLOCUST,Gleditsia triacanthos,0.292,Gleditsia,HONEYLOCUST,0.292,1.848,0.799,13.5,35,30,17475,17496,false,true,true,false,846,true
+600 LE MOYNE PKWY,LE MOYNE PKWY,Mann,23,14,9,MAPLE-NORWAY,Acer platanoides,0.13,Acer,MAPLE,0.261,2.548,0.915,9,30,20,8659,8660,false,true,true,false,660,true
+600 LEXINGTON ST,LEXINGTON ST,Irving,23,17,13,MAPLE-NORWAY,Acer platanoides,0.217,Acer,MAPLE,0.304,2.642,0.907,18,50,30,21382,20536,false,true,true,true,668,true
+600 LINDEN AVE,LINDEN AVE,Mann,28,16,9,LINDEN-AMERICAN,Tilia americana,0.25,Tilia,LINDEN,0.286,2.459,0.88,19,40,35,31278,28236,false,true,true,false,664,true
+600 LYMAN AVE,LYMAN AVE,Longfellow,27,22,15,HACKBERRY,Celtis occidentalis,0.111,Acer,MAPLE,0.222,3.02,0.947,11,30,30,27116,25192,false,true,true,false,667,true
+600 MADISON ST,MADISON ST,Longfellow,37,14,10,HONEYLOCUST,Gleditsia triacanthos,0.216,Gleditsia,HONEYLOCUST,0.297,2.377,0.887,3,10,5,4222,4156,false,true,true,false,888,true
+600 N AUSTIN BLVD,N AUSTIN BLVD,Beye,5,5,4,MAPLE-MIYABEI,Acer miyabei 'Morton',0.2,Acer,MAPLE,0.4,1.609,0.8,11,20,20,1826,1820,true,false,false,false,467,true
+600 N CUYLER AVE,N CUYLER AVE,Whittier,28,20,14,HACKBERRY,Celtis occidentalis,0.143,Acer,MAPLE,0.214,2.887,0.936,8,20,10,10132,9640,false,true,true,false,665,true
+600 N EAST AVE,N EAST AVE,Whittier,24,16,13,MAPLE-NORWAY,Acer platanoides,0.125,Acer,MAPLE,0.25,2.672,0.924,12.5,40,35,26488,25256,false,true,true,false,665,true
+600 N ELMWOOD AVE,N ELMWOOD AVE,Whittier,27,20,12,MAPLE-RED,Acer rubrum,0.111,Acer,MAPLE,0.259,2.917,0.941,14,40,40,31357,29308,false,true,true,false,665,true
+600 N EUCLID AVE,N EUCLID AVE,Mann,30,15,10,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.333,2.453,0.893,21,40,40,35284,31108,false,true,true,true,664,true
+600 N GROVE AVE,N GROVE AVE,Mann,30,20,11,MAPLE-NORWAY,Acer platanoides,0.133,Acer,MAPLE,0.333,2.875,0.936,16,40,30,29040,28092,false,true,true,true,673,true
+600 N HARVEY AVE,N HARVEY AVE,Whittier,28,16,10,HACKBERRY,Celtis occidentalis,0.179,Acer,MAPLE,0.179,2.63,0.916,14,30,25,22129,21340,false,true,false,false,665,true
+600 N HUMPHREY AVE,N HUMPHREY AVE,Whittier,27,14,12,MAPLE-NORWAY,Acer platanoides,0.148,Acer,MAPLE,0.185,2.487,0.905,17,40,30,16533,16492,false,true,false,false,662,true
+600 N KENILWORTH AVE,N KENILWORTH AVE,Mann,26,17,12,HACKBERRY,Celtis occidentalis,0.192,Acer,MAPLE,0.231,2.629,0.908,13,30,30,17770,17288,false,true,true,false,664,true
+600 N LOMBARD AVE,N LOMBARD AVE,Whittier,27,18,12,HACKBERRY,Celtis occidentalis,0.148,Quercus,OAK,0.259,2.782,0.93,14,30,20,12311,12356,false,true,true,false,664,true
+600 N MARION ST,N MARION ST,Mann,24,18,12,MAPLE-RED,Acer rubrum,0.125,Quercus,OAK,0.208,2.81,0.934,14,30,30,17671,17496,false,true,true,false,581,true
+600 N OAK PARK AVE,N OAK PARK AVE,Mann,17,14,10,HONEYLOCUST,Gleditsia triacanthos,0.176,Acer,MAPLE,0.176,2.558,0.913,20,40,40,21049,20844,false,true,false,false,668,true
+600 N RIDGELAND AVE,N RIDGELAND AVE,Whittier,27,14,9,MAPLE-SILVER,Acer saccharinum,0.148,Acer,MAPLE,0.407,2.487,0.905,20,50,40,35048,33032,false,true,true,true,665,true
+600 N TAYLOR AVE,N TAYLOR AVE,Whittier,31,21,12,LINDEN-AMERICAN,Tilia americana,0.161,Acer,MAPLE,0.258,2.844,0.926,14,30,20,17848,17648,false,true,true,false,664,true
+600 NORTH BLVD,NORTH BLVD,Holmes,1,1,1,LINDEN-LITTLELEAF,Tilia cordata,1,Tilia,LINDEN,1,0,0,23,40,40,1257,1264,true,false,false,false,849,true
+600 ONTARIO ST,ONTARIO ST,Holmes,14,12,10,OAK-ENGLISH,Quercus robur,0.143,Acer,MAPLE,0.214,2.441,0.908,13.5,40,30,11329,10976,false,true,true,false,417,true
+600 PLEASANT ST,PLEASANT ST,Holmes,25,17,10,SYCAMORE,Platanus occidentalis,0.2,Acer,MAPLE,0.32,2.654,0.912,20,40,30,18280,17724,false,true,true,true,889,true
+600 RANDOLPH ST,RANDOLPH ST,Holmes,31,20,14,MAPLE-NORWAY,Acer platanoides,0.161,Acer,MAPLE,0.29,2.781,0.92,19,40,30,33929,32736,false,true,true,false,888,true
+600 S CUYLER AVE,S CUYLER AVE,Longfellow,27,17,14,HACKBERRY,Celtis occidentalis,0.185,Celtis,HACKBERRY,0.185,2.638,0.911,14,50,30,27214,26464,false,true,false,false,655,true
+600 S EAST AVE,S EAST AVE,Longfellow,33,18,11,ELM-AMERICAN,Ulmus americana,0.333,Ulmus,ELM,0.394,2.445,0.854,22,50,40,35598,32388,false,true,true,true,665,true
+600 S ELMWOOD AVE,S ELMWOOD AVE,Longfellow,29,20,12,GINKGO,Ginkgo biloba,0.138,Acer,MAPLE,0.172,2.853,0.932,17,50,40,31612,28692,false,true,false,false,664,true
+600 S EUCLID AVE,S EUCLID AVE,Lincoln,34,27,17,GINKGO,Ginkgo biloba,0.088,Acer,MAPLE,0.176,3.21,0.955,12.5,35,30,24269,21344,false,false,false,false,666,true
+600 S GROVE AVE,S GROVE AVE,Lincoln,31,20,13,MAPLE-NORWAY,Acer platanoides,0.129,Acer,MAPLE,0.355,2.847,0.932,14,40,30,23071,21816,false,true,true,true,837,true
+600 S HARVEY AVE,S HARVEY AVE,Longfellow,32,24,17,MAPLE-NORWAY,Acer platanoides,0.125,Acer,MAPLE,0.344,3.059,0.945,13,40,30,25093,24696,false,true,true,true,654,true
+600 S HUMPHREY AVE,S HUMPHREY AVE,Longfellow,26,15,10,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.192,2.512,0.902,18,50,45,39054,36128,false,true,false,false,667,true
+600 S KENILWORTH AVE,S KENILWORTH AVE,Lincoln,23,14,9,MAPLE-NORWAY,Acer platanoides,0.217,Acer,MAPLE,0.261,2.439,0.892,18,50,30,19498,19056,false,true,true,false,516,true
+600 S LOMBARD AVE,S LOMBARD AVE,Longfellow,28,22,17,LINDEN-AMERICAN,Tilia americana,0.107,Acer,MAPLE,0.179,2.998,0.944,16,40,30,33733,31564,false,true,false,false,667,true
+600 S MAPLE AVE,S MAPLE AVE,Lincoln,16,14,10,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.125,Ulmus,ELM,0.25,2.599,0.922,8.5,30,20,11781,11592,false,true,true,false,578,true
+600 S OAK PARK AVE,S OAK PARK AVE,Lincoln,18,14,11,ELM-AMERICAN,Ulmus americana,0.167,Ulmus,ELM,0.222,2.553,0.914,15,35,25,11938,11844,false,true,true,false,665,true
+600 S RIDGELAND AVE,S RIDGELAND AVE,Longfellow,23,17,11,ELM-HYBRID,Ulmus 'Homestead',0.13,Ulmus,ELM,0.261,2.751,0.93,14,30,30,18555,17892,false,true,true,false,656,true
+600 S SCOVILLE AVE,S SCOVILLE AVE,Longfellow,32,23,12,ELM-AMERICAN,Ulmus americana,0.188,Acer,MAPLE,0.281,2.956,0.932,13.5,50,40,34813,32376,false,true,true,false,665,true
+600 S TAYLOR AVE,S TAYLOR AVE,Longfellow,30,24,19,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.1,Acer,MAPLE,0.133,3.106,0.951,15,40,30,17141,16960,false,false,false,false,667,true
+600 SOUTH BLVD,SOUTH BLVD,Holmes,31,18,12,HONEYLOCUST,Gleditsia triacanthos,0.194,Acer,MAPLE,0.194,2.64,0.907,14,30,20,15531,14960,false,true,false,false,881,true
+600 SUPERIOR ST,SUPERIOR ST,Holmes,30,18,13,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.233,2.673,0.911,14.5,40,20,24308,23564,false,true,true,false,840,true
+600 THOMAS ST,THOMAS ST,Mann,21,18,13,OAK-CHINKQUAPIN,Quercus muehlenbergii,0.095,Quercus,OAK,0.19,2.846,0.939,21,40,40,21932,21828,false,false,false,false,665,true
+600 VAN BUREN ST,VAN BUREN ST,Longfellow,21,17,12,BUCKEYE-OHIO,Aesculus glabra,0.143,Acer,MAPLE,0.286,2.756,0.93,14,30,30,13764,13732,false,true,true,false,666,true
+600 WASHINGTON BLVD,WASHINGTON BLVD,Holmes,29,20,13,HONEYLOCUST,Gleditsia triacanthos,0.172,Quercus,OAK,0.207,2.833,0.927,15,40,30,20754,20108,false,true,true,false,889,true
+600 WENONAH AVE,WENONAH AVE,Lincoln,21,13,11,GINKGO,Ginkgo biloba,0.19,Ginkgo,GINKGO,0.19,2.425,0.898,20,50,40,25624,24704,false,true,false,false,516,true
+600 WESLEY AVE,WESLEY AVE,Longfellow,28,16,12,MAPLE-NORWAY,Acer platanoides,0.214,Acer,MAPLE,0.214,2.583,0.906,16.5,40,30,21284,20752,false,true,true,false,666,true
+600 WISCONSIN AVE,WISCONSIN AVE,Lincoln,21,17,14,HACKBERRY,Celtis occidentalis,0.095,Acer,MAPLE,0.095,2.78,0.934,11,20,10,14765,14488,false,false,false,false,500,true
+600 WOODBINE AVE,WOODBINE AVE,Mann,26,18,14,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.231,2.758,0.926,19,40,40,26016,25692,false,true,true,false,673,true
+700 ADAMS ST,ADAMS ST,Lincoln,29,22,16,MAPLE-SILVER,Acer saccharinum,0.103,Acer,MAPLE,0.207,3.015,0.946,10,30,20,17397,17000,false,true,true,false,667,true
+700 AUGUSTA ST,AUGUSTA ST,Mann,24,12,9,LINDEN-AMERICAN,Tilia americana,0.208,Tilia,LINDEN,0.292,2.337,0.889,18,40,30,25231,24752,false,true,true,false,665,true
+700 BELLEFORTE AVE,BELLEFORTE AVE,Mann,22,18,13,MAPLE-NORWAY,Acer platanoides,0.136,Acer,MAPLE,0.227,2.815,0.934,18,40,35,30159,27192,false,true,true,false,666,true
+700 BERKSHIRE ST,BERKSHIRE ST,Mann,22,15,8,OAK-RED,Quercus rubra,0.136,Acer,MAPLE,0.273,2.626,0.921,11.5,30,20,11722,11568,false,true,true,false,666,true
+700 CARPENTER AVE,CARPENTER AVE,Lincoln,21,15,9,MAPLE-NORWAY,Acer platanoides,0.143,Acer,MAPLE,0.286,2.599,0.916,15,40,20,13980,12884,false,true,true,false,516,true
+700 CHICAGO AVE,CHICAGO AVE,Holmes,17,10,7,MAPLE-NORWAY,Acer platanoides,0.176,Acer,MAPLE,0.353,2.232,0.886,13,30,20,10249,10264,false,true,true,true,495,true
+700 CLARENCE AVE,CLARENCE AVE,Longfellow,31,19,12,LINDEN-LITTLELEAF,Tilia cordata,0.194,Acer,MAPLE,0.29,2.693,0.909,18,40,30,25604,24896,false,true,true,false,666,true
+700 CLINTON AVE,CLINTON AVE,Lincoln,23,20,13,ELM-AMERICAN,Ulmus americana,0.13,Acer,MAPLE,0.217,2.932,0.941,10,40,20,17770,17304,false,true,true,false,516,true
+700 COLUMBIAN AVE,COLUMBIAN AVE,Mann,24,16,13,OAK-SWAMP WHITE,Quercus bicolor,0.125,Acer,MAPLE,0.167,2.672,0.924,13.5,40,30,15453,15508,false,true,false,false,607,true
+700 DIVISION ST,DIVISION ST,Mann,16,10,8,HONEYLOCUST,Gleditsia triacanthos,0.25,Gleditsia,HONEYLOCUST,0.25,2.133,0.859,9,30,20,11015,10988,false,true,true,false,662,true
+700 ERIE ST,ERIE ST,Holmes,18,15,9,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.222,2.659,0.926,14.5,40,25,10917,10912,false,true,true,false,496,true
+700 FAIR OAKS AVE,FAIR OAKS AVE,Whittier,24,20,11,MAPLE-NORWAY,Acer platanoides,0.125,Acer,MAPLE,0.25,2.925,0.941,14.5,45,30,24524,23704,false,true,true,false,608,true
+700 FILLMORE ST,FILLMORE ST,Irving,23,13,10,MAPLE-NORWAY,Acer platanoides,0.13,Acer,MAPLE,0.304,2.442,0.904,15,30,30,20538,19920,false,true,true,true,663,true
+700 FOREST AVE,FOREST AVE,Mann,23,17,13,MAPLE-NORWAY,Acer platanoides,0.13,Acer,MAPLE,0.304,2.728,0.926,17,40,30,22639,21652,false,true,true,true,669,true
+700 GARFIELD ST,GARFIELD ST,Irving,3,1,1,HONEYLOCUST,Gleditsia triacanthos,1,Gleditsia,HONEYLOCUST,1,0,0,20,40,50,6754,5916,true,false,false,false,670,true
+700 GREENFIELD ST,GREENFIELD ST,Mann,19,15,11,MAPLE-AUTUMN BLAZE,Acer x freemanii 'Jeffersred',0.105,Acer,MAPLE,0.158,2.653,0.925,10,20,20,5125,5116,false,true,false,false,660,true
+700 GUNDERSON AVE,GUNDERSON AVE,Longfellow,30,19,13,OAK-ENGLISH,Quercus robur,0.133,Quercus,OAK,0.233,2.812,0.931,16,50,30,24976,23192,false,true,true,false,665,true
+700 HARRISON ST,HARRISON ST,Lincoln,4,3,3,HACKBERRY,Celtis occidentalis,0.5,Celtis,HACKBERRY,0.5,1.04,0.625,7.5,20,15,1178,1184,true,false,false,false,675,true
+700 HARVARD ST,HARVARD ST,Irving,24,17,10,MAPLE-NORWAY,Acer platanoides,0.208,Acer,MAPLE,0.292,2.648,0.91,17.5,40,40,28392,26764,false,true,true,false,664,true
+700 HAYES AVE,HAYES AVE,Whittier,31,22,16,HACKBERRY,Celtis occidentalis,0.097,Celtis,HACKBERRY,0.129,3.015,0.947,14,30,20,20774,18584,false,false,false,false,665,true
+700 HIGHLAND AVE,HIGHLAND AVE,Longfellow,27,17,14,OAK-ENGLISH,Quercus robur,0.185,Quercus,OAK,0.222,2.69,0.919,17,50,30,26841,26212,false,true,true,false,666,true
+700 HOME AVE,HOME AVE,Lincoln,20,16,10,MAPLE-SILVER,Acer saccharinum,0.1,Acer,MAPLE,0.3,2.718,0.93,16,40,30,16356,15552,false,false,true,true,516,true
+700 IOWA ST,IOWA ST,Holmes,16,14,10,MAPLE-FREEMAN,Acer x freemanii 'Jeffersred',0.125,Acer,MAPLE,0.313,2.599,0.922,10.5,25,20,8914,8420,false,true,true,true,496,true
+700 JACKSON BLVD,JACKSON BLVD,Lincoln,23,17,12,MAPLE-NORWAY,Acer platanoides,0.13,Acer,MAPLE,0.217,2.728,0.926,15,30,30,13823,13840,false,true,true,false,667,true
+700 LAKE ST,LAKE ST,Holmes,17,6,6,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.235,Gymnocladus,KENTUCKY COFFEETREE,0.235,1.712,0.81,4,20,10,1041,1020,false,true,true,false,498,true
+700 LE MOYNE PKWY,LE MOYNE PKWY,Mann,20,13,9,MAPLE-AUTUMN BLAZE,Acer x freemanii 'Jeffersred',0.2,Acer,MAPLE,0.3,2.441,0.9,14.5,35,30,14746,14592,false,true,true,true,659,true
+700 LEXINGTON ST,LEXINGTON ST,Lincoln,22,16,13,MAPLE-NORWAY,Acer platanoides,0.227,Acer,MAPLE,0.227,2.575,0.901,16.5,55,40,20852,20004,false,true,true,false,664,true
+700 LINDEN AVE,LINDEN AVE,Mann,23,18,10,MAPLE-SILVER,Acer saccharinum,0.087,Acer,MAPLE,0.261,2.834,0.938,12,30,20,15512,15500,false,false,true,false,606,true
+700 LYMAN AVE,LYMAN AVE,Longfellow,29,19,11,ELM-HYBRID,Ulmus x spp,0.138,Ulmus,ELM,0.241,2.805,0.93,14,40,30,29943,29360,false,true,true,false,655,true
+700 MADISON ST,MADISON ST,Lincoln,20,7,7,LINDEN-AMERICAN,Tilia americana,0.3,Tilia,LINDEN,0.3,1.782,0.81,3,10,5,3200,3208,false,true,true,true,446,true
+700 N AUSTIN BLVD,N AUSTIN BLVD,Beye,8,8,6,MAPLE-NORWAY,Acer platanoides,0.125,Acer,MAPLE,0.25,2.079,0.875,15,30,30,5576,5592,true,false,false,false,563,true
+700 N CUYLER AVE,N CUYLER AVE,Whittier,28,21,16,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.143,Acer,MAPLE,0.214,2.917,0.936,6,15,10,9621,9604,false,true,true,false,609,true
+700 N EAST AVE,N EAST AVE,Whittier,24,17,11,HONEYLOCUST,Gleditsia triacanthos,0.167,Ulmus,ELM,0.292,2.658,0.913,14.5,45,30,30945,29700,false,true,true,false,607,true
+700 N ELMWOOD AVE,N ELMWOOD AVE,Whittier,22,16,11,MAPLE-NORWAY,Acer platanoides,0.136,Acer,MAPLE,0.318,2.689,0.926,13,45,30,22521,22196,false,true,true,true,609,true
+700 N GROVE AVE,N GROVE AVE,Mann,28,21,12,MAPLE-SILVER,Acer saccharinum,0.107,Quercus,OAK,0.25,2.948,0.941,13,30,30,19105,18724,false,true,true,false,661,true
+700 N HARVEY AVE,N HARVEY AVE,Whittier,28,17,13,HACKBERRY,Celtis occidentalis,0.143,Acer,MAPLE,0.214,2.651,0.916,14.5,30,20,14392,14304,false,true,true,false,610,true
+700 N HUMPHREY AVE,N HUMPHREY AVE,Whittier,28,20,11,MAPLE-NORWAY,Acer platanoides,0.107,Acer,MAPLE,0.286,2.917,0.941,17,40,30,17298,16996,false,true,true,false,665,true
+700 N KENILWORTH AVE,N KENILWORTH AVE,Mann,26,19,13,MAPLE-NORWAY,Acer platanoides,0.231,Acer,MAPLE,0.385,2.738,0.911,15,30,30,21579,21428,false,true,true,true,663,true
+700 N LOMBARD AVE,N LOMBARD AVE,Whittier,28,17,14,MAPLE-NORWAY,Acer platanoides,0.179,Acer,MAPLE,0.321,2.649,0.913,14,30,20,14648,14432,false,true,true,true,664,true
+700 N MARION ST,N MARION ST,Mann,26,16,11,GINKGO,Ginkgo biloba,0.154,Quercus,OAK,0.269,2.631,0.917,17,40,25,16395,15880,false,true,true,false,666,true
+700 N OAK PARK AVE,N OAK PARK AVE,Mann,22,13,9,HONEYLOCUST,Gleditsia triacanthos,0.227,Acer,MAPLE,0.318,2.41,0.893,13,30,30,16022,16008,false,true,true,true,660,true
+700 N RIDGELAND AVE,N RIDGELAND AVE,Whittier,27,20,14,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.185,2.898,0.938,13,30,30,23876,23048,false,true,false,false,610,true
+700 N TAYLOR AVE,N TAYLOR AVE,Whittier,27,20,11,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.296,2.917,0.941,16,40,30,21677,20864,false,true,true,false,665,true
+700 NORTH BLVD,NORTH BLVD,Holmes,6,2,2,SERVICEBERRY-SPP,Amelanchier spp,0.5,Amelanchier,SERVICEBERRY,0.5,0.693,0.5,12,20,20,2199,1972,true,false,false,false,490,true
+700 ONTARIO ST,ONTARIO ST,Holmes,16,13,9,MAPLE-RED,Acer rubrum,0.125,Acer,MAPLE,0.25,2.513,0.914,14,40,30,12645,12604,false,true,true,false,496,true
+700 PLEASANT ST,PLEASANT ST,Holmes,13,12,11,GINKGO,Ginkgo biloba,0.154,Ginkgo,GINKGO,0.154,2.458,0.911,13,30,20,6244,6256,false,true,false,false,448,true
+700 RANDOLPH ST,RANDOLPH ST,Holmes,15,14,10,MAPLE-FREEMAN,Acer x freemanii 'Jeffersred',0.133,Acer,MAPLE,0.333,2.616,0.924,15,50,30,12056,11728,false,true,true,true,447,true
+700 S CUYLER AVE,S CUYLER AVE,Longfellow,13,11,10,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.231,2.352,0.899,16,50,30,13823,12676,false,true,true,false,377,true
+700 S EAST AVE,S EAST AVE,Longfellow,28,16,10,ELM-AMERICAN,Ulmus americana,0.179,Acer,MAPLE,0.25,2.593,0.911,18.5,40,30,21756,21528,false,true,true,false,666,true
+700 S ELMWOOD AVE,S ELMWOOD AVE,Longfellow,28,24,17,MAPLE-NORWAY,Acer platanoides,0.071,Acer,MAPLE,0.143,3.134,0.954,14.5,50,25,25035,23400,false,false,false,false,665,true
+700 S EUCLID AVE,S EUCLID AVE,Lincoln,28,21,15,LINDEN-LITTLELEAF,Tilia cordata,0.107,Acer,MAPLE,0.143,2.948,0.941,11,35,20,18182,17948,false,true,false,false,665,true
+700 S GROVE AVE,S GROVE AVE,Lincoln,35,17,11,LILAC-TREE,Syringia pekinensis 'Morton',0.143,Acer,MAPLE,0.143,2.686,0.922,15,30,20,22619,21960,false,true,false,false,1037,true
+700 S HARVEY AVE,S HARVEY AVE,Longfellow,29,19,13,MAPLE-NORWAY,Acer platanoides,0.103,Acer,MAPLE,0.241,2.835,0.935,20,50,30,31102,29252,false,true,true,false,666,true
+700 S HUMPHREY AVE,S HUMPHREY AVE,Longfellow,31,19,13,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.129,Ulmus,ELM,0.161,2.819,0.932,13,40,30,22973,22272,false,true,false,false,654,true
+700 S KENILWORTH AVE,S KENILWORTH AVE,Lincoln,26,18,15,MAPLE-NORWAY,Acer platanoides,0.115,Acer,MAPLE,0.269,2.791,0.932,16.5,45,40,30218,26160,false,true,true,false,516,true
+700 S LOMBARD AVE,S LOMBARD AVE,Longfellow,30,18,13,GINKGO,Ginkgo biloba,0.167,Acer,MAPLE,0.167,2.711,0.92,20,50,40,32398,31088,false,true,false,false,655,true
+700 S MAPLE AVE,S MAPLE AVE,Lincoln,23,18,12,LINDEN-LITTLELEAF,Tilia cordata,0.13,Acer,MAPLE,0.261,2.811,0.934,15,40,30,16768,16360,false,true,true,false,582,true
+700 S OAK PARK AVE,S OAK PARK AVE,Lincoln,23,15,10,LINDEN-LITTLELEAF,Tilia cordata,0.217,Tilia,LINDEN,0.261,2.522,0.9,17,50,30,18535,17212,false,true,true,false,666,true
+700 S RIDGELAND AVE,S RIDGELAND AVE,Longfellow,26,17,13,GINKGO,Ginkgo biloba,0.115,Acer,MAPLE,0.154,2.738,0.929,18.5,50,40,36796,32352,false,true,false,false,665,true
+700 S SCOVILLE AVE,S SCOVILLE AVE,Longfellow,28,25,16,MAPLE-MIYABEI,Acer miyabei 'Morton',0.071,Acer,MAPLE,0.214,3.184,0.957,7.5,20,15,14569,14560,false,false,true,false,666,true
+700 S TAYLOR AVE,S TAYLOR AVE,Longfellow,27,19,12,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.296,2.846,0.936,13,30,20,16886,16788,false,true,true,false,655,true
+700 SOUTH BLVD,SOUTH BLVD,Holmes,1,1,1,HONEYLOCUST,Gleditsia triacanthos,1,Gleditsia,HONEYLOCUST,1,0,0,30,50,50,1963,1956,true,false,false,false,456,true
+700 SUPERIOR ST,SUPERIOR ST,Holmes,15,10,7,MAPLE-NORWAY,Acer platanoides,0.333,Acer,MAPLE,0.533,2.079,0.836,9,30,20,9032,9004,false,true,true,true,495,true
+700 THOMAS ST,THOMAS ST,Mann,19,17,11,MAPLE-FREEMAN,Acer x freemanii,0.105,Acer,MAPLE,0.316,2.799,0.936,13,30,20,15335,15244,false,true,true,true,664,true
+700 VAN BUREN ST,VAN BUREN ST,Lincoln,25,13,10,ELM-AMERICAN,Ulmus americana,0.2,Ulmus,ELM,0.2,2.398,0.893,17,40,30,18948,17612,false,true,false,false,667,true
+700 WASHINGTON BLVD,WASHINGTON BLVD,Holmes,12,8,7,MAPLE-RED,Acer rubrum,0.25,Ulmus,ELM,0.333,1.936,0.833,13,30,25,8207,8224,false,true,true,true,446,true
+700 WENONAH AVE,WENONAH AVE,Lincoln,27,20,14,ELM-AMERICAN,Ulmus americana,0.222,Ulmus,ELM,0.296,2.795,0.916,13,40,30,20833,18232,false,true,true,false,516,true
+700 WESLEY AVE,WESLEY AVE,Longfellow,29,17,12,MAPLE-NORWAY,Acer platanoides,0.138,Acer,MAPLE,0.31,2.698,0.923,16,40,30,23071,22316,false,true,true,true,665,true
+700 WISCONSIN AVE,WISCONSIN AVE,Lincoln,20,14,10,LINDEN-LITTLELEAF,Tilia cordata,0.15,Acer,MAPLE,0.25,2.554,0.915,18,40,30,17632,17444,false,true,true,false,516,true
+700 WOODBINE AVE,WOODBINE AVE,Mann,28,18,9,ELM-AMERICAN,Ulmus americana,0.143,Acer,MAPLE,0.286,2.769,0.929,20.5,45,40,35539,32140,false,true,true,false,663,true
+800 ADAMS ST,ADAMS ST,Lincoln,27,18,12,MAPLE-NORWAY,Acer platanoides,0.148,Acer,MAPLE,0.333,2.763,0.927,16,40,30,22521,22208,false,true,true,true,853,true
+800 AUGUSTA ST,AUGUSTA ST,Mann,29,18,12,MAPLE-NORWAY,Acer platanoides,0.172,Acer,MAPLE,0.345,2.755,0.925,17,40,30,31514,30896,false,true,true,true,820,true
+800 BELLEFORTE AVE,BELLEFORTE AVE,Mann,27,20,12,HACKBERRY,Celtis occidentalis,0.111,Acer,MAPLE,0.222,2.917,0.941,13,40,30,27646,26888,false,true,true,false,665,true
+800 BERKSHIRE ST,BERKSHIRE ST,Mann,26,18,13,MAPLE-BLACK,Acer platanoides,0.269,Acer,MAPLE,0.346,2.628,0.893,14,35,25,13705,13688,false,true,true,true,869,true
+800 CARPENTER AVE,CARPENTER AVE,Lincoln,37,22,14,HACKBERRY,Celtis occidentalis,0.108,Quercus,OAK,0.189,2.908,0.935,13,30,20,23483,22740,false,true,false,false,885,true
+800 CHICAGO AVE,CHICAGO AVE,Holmes,25,15,11,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.16,Ulmus,ELM,0.24,2.567,0.912,13,30,20,19655,18848,false,true,true,false,817,true
+800 CLARENCE AVE,CLARENCE AVE,Longfellow,30,20,14,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.167,Acer,MAPLE,0.2,2.856,0.931,13.5,40,25,18634,17864,false,true,false,false,657,true
+800 CLINTON AVE,CLINTON AVE,Lincoln,30,17,10,ELM-AMERICAN,Ulmus americana,0.167,Acer,MAPLE,0.3,2.636,0.913,16,40,30,26488,26284,false,true,true,true,721,true
+800 COLUMBIAN AVE,COLUMBIAN AVE,Mann,29,17,11,MAPLE-NORWAY,Acer platanoides,0.345,Acer,MAPLE,0.414,2.412,0.849,19,40,30,25290,24704,false,true,true,true,720,true
+800 DIVISION ST,DIVISION ST,Mann,22,12,10,MAPLE-NORWAY,Acer platanoides,0.364,Acer,MAPLE,0.364,2.146,0.826,14,30,20,9641,9668,false,true,true,true,827,true
+800 ERIE ST,ERIE ST,Holmes,24,17,11,HACKBERRY,Celtis occidentalis,0.125,Ulmus,ELM,0.208,2.73,0.927,9,30,20,22561,22252,false,true,true,false,814,true
+800 FAIR OAKS AVE,FAIR OAKS AVE,Whittier,31,19,12,MAPLE-NORWAY,Acer platanoides,0.097,Acer,MAPLE,0.29,2.83,0.934,15,40,30,36894,34876,false,false,true,false,721,true
+800 FILLMORE ST,FILLMORE ST,Lincoln,26,19,15,MAPLE-NORWAY,Acer platanoides,0.192,Acer,MAPLE,0.308,2.789,0.923,11.5,30,30,18202,18164,false,true,true,true,713,true
+800 FOREST AVE,FOREST AVE,Mann,27,25,13,OAK-RED,Quercus rubra,0.074,Quercus,OAK,0.259,3.193,0.957,18,40,30,25722,24032,false,false,true,false,665,true
+800 GARFIELD ST,GARFIELD ST,Lincoln,1,1,1,ELM-HYBRID,Ulmus 'Homestead',1,Ulmus,ELM,1,0,0,16,30,40,1257,1264,true,false,false,false,720,true
+800 GREENFIELD ST,GREENFIELD ST,Mann,25,19,15,LONDON PLANETREE,Platanus x acerifolia,0.12,Acer,MAPLE,0.24,2.865,0.938,9,20,20,8816,8860,false,true,true,false,864,true
+800 GUNDERSON AVE,GUNDERSON AVE,Longfellow,27,20,14,LONDON PLANETREE,Platanus x acerifolia,0.111,Acer,MAPLE,0.222,2.898,0.938,13,40,30,22187,21784,false,true,true,false,665,true
+800 HARRISON ST,HARRISON ST,Lincoln,18,8,5,HACKBERRY,Celtis occidentalis,0.222,Ulmus,ELM,0.5,1.956,0.846,7,20,10,1296,1224,false,true,true,true,875,true
+800 HARVARD ST,HARVARD ST,Lincoln,26,17,11,ELM-HYBRID,Ulmus x spp,0.154,Acer,MAPLE,0.192,2.705,0.923,11.5,30,20,17259,17120,false,true,false,false,713,true
+800 HAYES AVE,HAYES AVE,Whittier,27,19,13,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.111,Acer,MAPLE,0.185,2.846,0.936,13,30,20,13077,13016,false,true,false,false,666,true
+800 HIGHLAND AVE,HIGHLAND AVE,Longfellow,30,23,14,LINDEN-LITTLELEAF,Tilia cordata,0.133,Acer,MAPLE,0.167,3.014,0.942,14.5,50,40,29668,27828,false,true,false,false,666,true
+800 HOME AVE,HOME AVE,Lincoln,33,19,10,ELM-AMERICAN,Ulmus americana,0.182,Ulmus,ELM,0.303,2.717,0.915,17,40,40,33497,30176,false,true,true,true,707,true
+800 IOWA ST,IOWA ST,Holmes,28,17,12,MAPLE-NORWAY,Acer platanoides,0.179,Acer,MAPLE,0.321,2.661,0.916,19,40,35,30022,29076,false,true,true,true,818,true
+800 JACKSON BLVD,JACKSON BLVD,Lincoln,28,20,14,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.143,Quercus,OAK,0.179,2.868,0.934,10,30,20,19164,19004,false,true,false,false,869,true
+800 LAKE ST,LAKE ST,Holmes,2,1,1,GINKGO,Ginkgo biloba,1,Ginkgo,GINKGO,1,0,0,3,10,5,39,40,true,false,false,false,718,true
+800 LE MOYNE PKWY,LE MOYNE PKWY,Mann,26,17,9,HACKBERRY,Celtis occidentalis,0.192,Acer,MAPLE,0.192,2.682,0.917,10.5,25,20,14491,14536,false,true,false,false,869,true
+800 LEXINGTON ST,LEXINGTON ST,Lincoln,22,15,11,MAPLE-NORWAY,Acer platanoides,0.227,Acer,MAPLE,0.227,2.512,0.897,21,50,40,26645,24056,false,true,true,false,712,true
+800 LINDEN AVE,LINDEN AVE,Mann,33,19,12,MAPLE-NORWAY,Acer platanoides,0.182,Acer,MAPLE,0.333,2.735,0.918,19,40,30,37895,32800,false,true,true,true,720,true
+800 LYMAN AVE,LYMAN AVE,Irving,30,22,16,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.1,Tilia,LINDEN,0.167,2.997,0.944,17,50,40,39054,36480,false,false,false,false,664,true
+800 MAPLETON AVE,MAPLETON AVE,Whittier,36,24,14,OAK-SWAMP WHITE,Quercus bicolor,0.139,Quercus,OAK,0.222,3.037,0.943,9.5,20,10,11761,11064,false,true,true,false,720,true
+800 MONROE ST,MONROE ST,Lincoln,15,11,9,MAPLE-SUGAR,Acer saccharum,0.133,Acer,MAPLE,0.2,2.338,0.898,18,40,30,13214,13236,false,true,false,false,527,true
+800 N AUSTIN BLVD,N AUSTIN BLVD,Whittier,13,8,7,HONEYLOCUST,Gleditsia triacanthos,0.231,Gleditsia,HONEYLOCUST,0.231,1.951,0.84,9,30,20,9582,8804,false,true,true,false,666,true
+800 N CUYLER AVE,N CUYLER AVE,Whittier,31,19,12,HACKBERRY,Celtis occidentalis,0.226,Acer,MAPLE,0.323,2.646,0.899,13,30,20,18850,18192,false,true,true,true,721,true
+800 N EAST AVE,N EAST AVE,Whittier,30,23,14,MAPLE-NORWAY,Acer platanoides,0.1,Acer,MAPLE,0.167,3.06,0.949,11.5,35,30,29924,28368,false,false,false,false,720,true
+800 N ELMWOOD AVE,N ELMWOOD AVE,Whittier,32,17,12,HACKBERRY,Celtis occidentalis,0.156,Acer,MAPLE,0.313,2.635,0.914,17.5,40,30,36148,34172,false,true,true,true,721,true
+800 N EUCLID AVE,N EUCLID AVE,Mann,28,16,10,MAPLE-NORWAY,Acer platanoides,0.143,Acer,MAPLE,0.286,2.633,0.918,20,40,35,28137,26832,false,true,true,false,719,true
+800 N GROVE AVE,N GROVE AVE,Mann,30,20,13,MAPLE-SILVER,Acer saccharinum,0.133,Acer,MAPLE,0.267,2.829,0.929,19,40,35,29335,27332,false,true,true,false,665,true
+800 N HARVEY AVE,N HARVEY AVE,Whittier,34,20,11,HACKBERRY,Celtis occidentalis,0.118,Acer,MAPLE,0.235,2.869,0.936,12,30,20,21402,20432,false,true,true,false,720,true
+800 N HUMPHREY AVE,N HUMPHREY AVE,Whittier,30,22,12,ELM-HYBRID,Ulmus x spp,0.133,Acer,MAPLE,0.233,2.985,0.942,12.5,25,15,9916,9612,false,true,true,false,671,true
+800 N KENILWORTH AVE,N KENILWORTH AVE,Mann,29,21,14,MAPLE-NORWAY,Acer platanoides,0.172,Acer,MAPLE,0.31,2.881,0.93,15,40,30,25467,24848,false,true,true,true,665,true
+800 N LOMBARD AVE,N LOMBARD AVE,Whittier,27,19,12,MAPLE-SILVER,Acer saccharinum,0.111,Acer,MAPLE,0.296,2.866,0.938,16,40,20,17829,16220,false,true,true,false,666,true
+800 N MARION ST,N MARION ST,Mann,25,18,10,OAK-SWAMP WHITE,Quercus bicolor,0.12,Acer,MAPLE,0.28,2.81,0.934,14,30,30,21324,20872,false,true,true,false,666,true
+800 N OAK PARK AVE,N OAK PARK AVE,Mann,25,17,10,MAPLE-NORWAY,Acer platanoides,0.12,Acer,MAPLE,0.24,2.754,0.931,9,30,20,12684,12248,false,true,true,false,665,true
+800 N RIDGELAND AVE,N RIDGELAND AVE,Whittier,30,19,12,MAPLE-NORWAY,Acer platanoides,0.167,Acer,MAPLE,0.3,2.792,0.927,14,30,30,26468,25816,false,true,true,true,733,true
+800 N TAYLOR AVE,N TAYLOR AVE,Whittier,29,20,12,LINDEN-LITTLELEAF,Tilia cordata,0.138,Acer,MAPLE,0.276,2.871,0.935,14,30,20,18025,17488,false,true,true,false,672,true
+800 NORTH BLVD,NORTH BLVD,Holmes,6,5,5,OSAGE ORANGE,Maclura pomifera,0.333,Maclura,OSAGE ORANGE,0.333,1.561,0.778,8.5,25,20,2631,2644,true,false,false,false,722,true
+800 ONTARIO ST,ONTARIO ST,Holmes,5,4,4,BALDCYPRESS,Taxodium distichum,0.4,Taxodium,BALDCYPRESS,0.4,1.332,0.72,20,60,40,5517,5420,true,false,false,false,815,true
+800 PLEASANT ST,PLEASANT ST,Holmes,22,16,10,MAPLE-NORWAY,Acer platanoides,0.136,Acer,MAPLE,0.318,2.689,0.926,21,50,30,16336,15500,false,true,true,true,727,true
+800 RANDOLPH ST,RANDOLPH ST,Holmes,30,16,12,LINDEN-AMERICAN,Tilia americana,0.167,Tilia,LINDEN,0.2,2.524,0.9,23,50,30,28608,25800,false,true,false,false,727,true
+800 S AUSTIN BLVD,S AUSTIN BLVD,Irving,7,6,6,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.286,Gymnocladus,KENTUCKY COFFEETREE,0.286,1.748,0.816,13,30,20,4182,4136,true,false,false,false,511,true
+800 S CUYLER AVE,S CUYLER AVE,Longfellow,30,19,13,MAPLE-SILVER,Acer saccharinum,0.133,Acer,MAPLE,0.233,2.812,0.931,16.5,50,40,35107,31864,false,true,true,false,665,true
+800 S EAST AVE,S EAST AVE,Longfellow,23,16,10,MAPLE-SILVER,Acer saccharinum,0.174,Acer,MAPLE,0.304,2.653,0.919,15,30,20,17652,16144,false,true,true,true,1006,true
+800 S ELMWOOD AVE,S ELMWOOD AVE,Longfellow,26,19,16,GINKGO,Ginkgo biloba,0.154,Ginkgo,GINKGO,0.154,2.832,0.932,17.5,50,40,29001,28240,false,true,false,false,666,true
+800 S EUCLID AVE,S EUCLID AVE,Lincoln,25,16,13,HONEYLOCUST,Gleditsia triacanthos,0.2,Gleditsia,HONEYLOCUST,0.2,2.599,0.909,13,40,30,16415,15392,false,true,false,false,598,true
+800 S GROVE AVE,S GROVE AVE,Lincoln,18,14,9,MAPLE-SUGAR,Acer saccharum,0.111,Acer,MAPLE,0.167,2.582,0.92,14,45,30,14707,14388,false,true,false,false,898,true
+800 S HARVEY AVE,S HARVEY AVE,Longfellow,28,21,15,OAK-ENGLISH,Quercus robur,0.107,Ulmus,ELM,0.214,2.967,0.944,17,50,30,30218,28984,false,true,true,false,666,true
+800 S HUMPHREY AVE,S HUMPHREY AVE,Irving,29,15,10,MAPLE-SUGAR,Acer saccharum,0.172,Acer,MAPLE,0.31,2.528,0.906,14,40,30,26684,25284,false,true,true,true,666,true
+800 S KENILWORTH AVE,S KENILWORTH AVE,Lincoln,39,27,16,TULIPTREE,Liriodendron tulipifera,0.077,Quercus,OAK,0.179,3.21,0.956,14,30,30,26232,25976,false,false,false,false,810,true
+800 S LOMBARD AVE,S LOMBARD AVE,Longfellow,31,22,14,MAPLE-NORWAY,Acer platanoides,0.097,Acer,MAPLE,0.226,2.981,0.943,20,50,40,37483,35496,false,false,true,false,664,true
+800 S MAPLE AVE,S MAPLE AVE,Lincoln,22,18,11,MAPLE-NORWAY,Acer platanoides,0.091,Acer,MAPLE,0.227,2.839,0.938,12.5,30,20,16788,16316,false,false,true,false,499,true
+800 S OAK PARK AVE,S OAK PARK AVE,Lincoln,8,3,3,ELM-HYBRID,Ulmus 'Homestead',0.625,Ulmus,ELM,0.625,0.9,0.531,14,35,20,1630,1628,true,false,false,false,825,true
+800 S RIDGELAND AVE,S RIDGELAND AVE,Longfellow,25,13,8,GINKGO,Ginkgo biloba,0.16,Ulmus,ELM,0.2,2.435,0.902,20,60,40,32751,30476,false,true,false,false,666,true
+800 S SCOVILLE AVE,S SCOVILLE AVE,Longfellow,29,20,12,HACKBERRY,Celtis occidentalis,0.207,Quercus,OAK,0.241,2.787,0.918,17,50,30,30041,28200,false,true,true,false,664,true
+800 S TAYLOR AVE,S TAYLOR AVE,Irving,28,22,16,LINDEN-LITTLELEAF,Tilia americana,0.107,Acer,MAPLE,0.143,3.016,0.946,12.5,40,30,23523,22844,false,true,false,false,664,true
+800 SOUTH BLVD,SOUTH BLVD,Holmes,9,3,3,HONEYLOCUST,Gleditsia triacanthos,0.778,Gleditsia,HONEYLOCUST,0.778,0.684,0.37,24,40,30,8482,8420,true,false,false,false,726,true
+800 THOMAS ST,THOMAS ST,Mann,28,17,8,HACKBERRY,Celtis occidentalis,0.179,Acer,MAPLE,0.429,2.63,0.911,11,30,20,15944,15804,false,true,true,true,824,true
+800 VAN BUREN ST,VAN BUREN ST,Lincoln,23,15,11,LONDON PLANETREE,Platanus x acerifolia,0.13,Acer,MAPLE,0.217,2.585,0.915,12,30,20,13470,13364,false,true,true,false,658,true
+800 WASHINGTON BLVD,WASHINGTON BLVD,Holmes,21,13,9,ELM-AMERICAN,Ulmus americana,0.238,Ulmus,ELM,0.429,2.347,0.88,13,45,20,15158,14820,false,true,true,true,726,true
+800 WENONAH AVE,WENONAH AVE,Lincoln,29,18,12,ELM-AMERICAN,Ulmus americana,0.172,Acer,MAPLE,0.207,2.689,0.916,13,40,30,22993,21764,false,true,true,false,658,true
+800 WESLEY AVE,WESLEY AVE,Longfellow,30,22,17,MAPLE-NORWAY,Acer platanoides,0.1,Acer,MAPLE,0.167,2.979,0.942,15,45,30,25565,23684,false,false,false,false,643,true
+800 WISCONSIN AVE,WISCONSIN AVE,Lincoln,24,20,11,MAPLE-NORWAY,Acer platanoides,0.125,Acer,MAPLE,0.208,2.925,0.941,18,35,30,17809,17388,false,true,true,false,612,true
+800 WOODBINE AVE,WOODBINE AVE,Mann,27,19,13,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.259,2.827,0.933,16,40,30,22757,22024,false,true,true,false,665,true
+900 ADAMS ST,ADAMS ST,Lincoln,20,12,9,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.35,2.346,0.89,14,40,30,16670,16464,false,true,true,true,674,true
+900 AUGUSTA ST,AUGUSTA ST,Mann,26,18,13,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.231,2.778,0.929,11,30,25,16179,16228,false,true,true,false,813,true
+900 BELLEFORTE AVE,BELLEFORTE AVE,Mann,28,17,11,MAPLE-NORWAY,Acer platanoides,0.143,Ulmus,ELM,0.286,2.682,0.921,16.5,40,30,22698,21924,false,true,true,false,669,true
+900 BERKSHIRE ST,BERKSHIRE ST,Mann,19,18,12,MAPLE-NORWAY,Acer platanoides,0.105,Acer,MAPLE,0.316,2.871,0.942,11,30,20,9601,9624,false,true,true,true,796,true
+900 CHICAGO AVE,CHICAGO AVE,Holmes,23,14,10,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.174,Tilia,LINDEN,0.217,2.487,0.904,16,40,30,13038,12996,false,true,true,false,800,true
+900 CLARENCE AVE,CLARENCE AVE,Irving,14,12,11,MAPLE-NORWAY,Acer platanoides,0.143,Acer,MAPLE,0.214,2.441,0.908,14,35,25,11977,10944,false,true,true,false,370,true
+900 CLINTON AVE,CLINTON AVE,Lincoln,28,19,13,MAPLE-NORWAY,Acer platanoides,0.143,Acer,MAPLE,0.214,2.818,0.931,11,35,25,22835,22024,false,true,true,false,650,true
+900 COLUMBIAN AVE,COLUMBIAN AVE,Mann,30,19,10,MAPLE-RED,Acer rubrum,0.167,Acer,MAPLE,0.333,2.746,0.92,11.5,30,20,14039,13756,false,true,true,true,699,true
+900 DIVISION ST,DIVISION ST,Mann,24,16,12,LINDEN-AMERICAN,Tilia americana,0.167,Acer,MAPLE,0.167,2.615,0.913,15.5,30,25,17711,17484,false,true,false,false,830,true
+900 FAIR OAKS AVE,FAIR OAKS AVE,Hatch,31,17,13,HACKBERRY,Celtis occidentalis,0.226,Celtis,HACKBERRY,0.226,2.603,0.903,13,30,20,17632,17376,false,true,true,false,698,true
+900 FILLMORE ST,FILLMORE ST,Lincoln,27,20,13,HONEYLOCUST,Gleditsia triacanthos,0.111,Ulmus,ELM,0.185,2.878,0.936,19,50,40,28569,25424,false,true,false,false,712,true
+900 FOREST AVE,FOREST AVE,Mann,26,16,11,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.308,2.618,0.914,14,40,30,20617,20044,false,true,true,true,669,true
+900 GARFIELD ST,GARFIELD ST,Lincoln,14,8,8,HACKBERRY,Celtis occidentalis,0.214,Celtis,HACKBERRY,0.214,1.97,0.847,11.5,20,20,4712,4724,false,true,true,false,717,true
+900 GREENFIELD ST,GREENFIELD ST,Mann,27,19,12,MAPLE-FREEMAN,Acer x freemanii,0.148,Acer,MAPLE,0.407,2.814,0.93,14,30,20,11879,11912,false,true,true,true,798,true
+900 GUNDERSON AVE,GUNDERSON AVE,Irving,11,10,8,BUCKEYE-OHIO,Aesculus glabra,0.182,Acer,MAPLE,0.182,2.272,0.893,21,50,40,15551,13792,false,true,false,false,269,true
+900 HARRISON ST,HARRISON ST,Lincoln,3,2,1,ELM-SIBERIAN,Ulmus pumila,0.667,Ulmus,ELM,1,0.637,0.444,8,20,10,177,192,true,false,false,false,684,true
+900 HARVARD ST,HARVARD ST,Lincoln,23,16,11,MAPLE-NORWAY,Acer platanoides,0.13,Acer,MAPLE,0.261,2.668,0.922,18,50,40,24367,23988,false,true,true,false,713,true
+900 HAYES AVE,HAYES AVE,Hatch,35,24,14,MAPLE-NORWAY,Acer platanoides,0.143,Acer,MAPLE,0.257,3.018,0.94,12,20,20,15021,14876,false,true,true,false,698,true
+900 HIGHLAND AVE,HIGHLAND AVE,Longfellow,11,6,5,ELM-AMERICAN,Ulmus americana,0.545,Ulmus,ELM,0.545,1.421,0.661,21,60,40,15040,12400,false,true,true,true,270,true
+900 HOME AVE,HOME AVE,Lincoln,26,16,13,LINDEN-LITTLELEAF,Tilia cordata,0.308,Tilia,LINDEN,0.308,2.458,0.87,20,55,40,31259,29552,false,true,true,true,665,true
+900 JACKSON BLVD,JACKSON BLVD,Lincoln,22,15,11,MAPLE-NORWAY,Acer platanoides,0.273,Acer,MAPLE,0.318,2.476,0.884,18.5,40,30,15531,14660,false,true,true,true,674,true
+900 LAKE ST,LAKE ST,Holmes,6,3,3,HONEYLOCUST,Gleditsia triacanthos,0.333,Gleditsia,HONEYLOCUST,0.333,1.099,0.667,5,20,10,353,368,true,false,false,false,990,true
+900 LE MOYNE PKWY,LE MOYNE PKWY,Mann,29,17,12,GINKGO,Ginkgo biloba,0.241,Ginkgo,GINKGO,0.241,2.545,0.892,11,30,20,13097,13020,false,true,true,false,796,true
+900 LEXINGTON ST,LEXINGTON ST,Lincoln,25,18,13,ELM-AMERICAN,Ulmus americana,0.16,Acer,MAPLE,0.2,2.775,0.928,18,50,40,30513,27024,false,true,false,false,713,true
+900 LINDEN AVE,LINDEN AVE,Mann,29,20,14,MAPLE-NORWAY,Acer platanoides,0.138,Acer,MAPLE,0.172,2.871,0.935,12,30,20,16611,16524,false,true,false,false,699,true
+900 LYMAN AVE,LYMAN AVE,Irving,20,13,11,MAPLE-NORWAY,Acer platanoides,0.1,Acer,MAPLE,0.15,2.511,0.915,13,40,30,14765,14628,false,false,false,false,428,true
+900 MAPLETON AVE,MAPLETON AVE,Hatch,32,15,10,HACKBERRY,Celtis occidentalis,0.25,Celtis,HACKBERRY,0.25,2.418,0.881,14,30,20,16140,15856,false,true,true,false,698,true
+900 MONROE ST,MONROE ST,Lincoln,22,13,9,MAPLE-NORWAY,Acer platanoides,0.318,Acer,MAPLE,0.364,2.283,0.855,18,40,35,19969,19520,false,true,true,true,675,true
+900 N AUSTIN BLVD,N AUSTIN BLVD,Whittier,14,9,8,HONEYLOCUST,Gleditsia triacanthos,0.286,Gleditsia,HONEYLOCUST,0.286,2.045,0.847,10,25,15,5144,5132,false,true,true,false,665,true
+900 N EAST AVE,N EAST AVE,Hatch,29,14,10,HACKBERRY,Celtis occidentalis,0.172,Tilia,LINDEN,0.207,2.382,0.887,19,30,30,19713,19592,false,true,true,false,699,true
+900 N ELMWOOD AVE,N ELMWOOD AVE,Hatch,34,22,14,MAPLE-NORWAY,Acer platanoides,0.147,Acer,MAPLE,0.265,2.89,0.929,15,30,25,20735,20208,false,true,true,false,699,true
+900 N EUCLID AVE,N EUCLID AVE,Mann,30,19,13,MAPLE-FREEMAN,Acer x freemanii 'Jeffersred',0.1,Acer,MAPLE,0.2,2.841,0.936,14,40,30,16945,16864,false,false,false,false,700,true
+900 N GROVE AVE,N GROVE AVE,Mann,26,19,10,LINDEN-AMERICAN,Tilia americana,0.115,Acer,MAPLE,0.192,2.865,0.938,10.5,20,20,11722,11648,false,true,false,false,668,true
+900 N HARVEY AVE,N HARVEY AVE,Hatch,33,22,13,HACKBERRY,Celtis occidentalis,0.121,Acer,MAPLE,0.273,2.961,0.94,12,30,20,13941,13900,false,true,true,false,697,true
+900 N HUMPHREY AVE,N HUMPHREY AVE,Hatch,32,21,14,MAPLE-NORWAY,Acer platanoides,0.094,Quercus,OAK,0.219,2.94,0.941,7,20,15,11074,10684,false,false,true,false,699,true
+900 N KENILWORTH AVE,N KENILWORTH AVE,Mann,70,37,28,SERVICEBERRY-SPP,Amelanchier spp,0.086,Acer,MAPLE,0.114,3.463,0.964,6,20,10,20636,19556,false,false,false,false,1335,true
+900 N LOMBARD AVE,N LOMBARD AVE,Hatch,31,20,11,MAPLE-RED,Acer rubrum,0.097,Quercus,OAK,0.226,2.891,0.939,13,30,20,16592,16496,false,false,true,false,698,true
+900 N MARION ST,N MARION ST,Mann,26,20,11,MAPLE-NORWAY,Acer platanoides,0.115,Acer,MAPLE,0.269,2.918,0.941,16.5,40,30,23483,21588,false,true,true,false,670,true
+900 N OAK PARK AVE,N OAK PARK AVE,Mann,27,17,13,HONEYLOCUST,Gleditsia triacanthos,0.148,Acer,MAPLE,0.185,2.712,0.925,9,30,20,11781,11692,false,true,false,false,685,true
+900 N RIDGELAND AVE,N RIDGELAND AVE,Hatch,30,18,13,HONEYLOCUST,Gleditsia triacanthos,0.167,Quercus,OAK,0.2,2.728,0.922,10.5,20,20,9012,8488,false,true,false,false,698,true
+900 N TAYLOR AVE,N TAYLOR AVE,Hatch,30,19,13,LINDEN-AMERICAN,Tilia americana,0.2,Acer,MAPLE,0.267,2.731,0.916,18,30,30,19242,18248,false,true,true,false,699,true
+900 NORTH BLVD,NORTH BLVD,Holmes,13,11,9,HACKBERRY,Celtis occidentalis,0.154,Ulmus,ELM,0.231,2.352,0.899,18,40,30,11231,10776,false,true,true,false,951,true
+900 PLEASANT ST,PLEASANT ST,Holmes,23,18,9,BALDCYPRESS,Taxodium distichum,0.13,Acer,MAPLE,0.174,2.811,0.934,17,50,30,16376,15396,false,true,false,false,811,true
+900 RANDOLPH ST,RANDOLPH ST,Holmes,27,21,16,LINDEN-LITTLELEAF,Tilia cordata,0.111,Tilia,LINDEN,0.185,2.968,0.944,14,40,20,20303,20180,false,true,false,false,809,true
+900 S AUSTIN BLVD,S AUSTIN BLVD,Irving,9,6,6,HONEYLOCUST,Gleditsia triacanthos,0.333,Gleditsia,HONEYLOCUST,0.333,1.677,0.79,17,40,30,9052,9048,true,false,false,false,925,true
+900 S CUYLER AVE,S CUYLER AVE,Longfellow,6,6,5,MAPLE-MIYABEI,Acer miyabei 'Morton',0.167,Ulmus,ELM,0.333,1.792,0.833,12,50,30,5419,5424,true,false,false,false,167,true
+900 S EAST AVE,S EAST AVE,Irving,7,4,4,HACKBERRY,Celtis occidentalis,0.429,Celtis,HACKBERRY,0.429,1.277,0.694,26,60,50,11702,11248,true,false,false,false,324,true
+900 S ELMWOOD AVE,S ELMWOOD AVE,Irving,15,15,12,MAPLE-AMUR,Acer ginnala,0.067,Acer,MAPLE,0.2,2.708,0.933,8,20,20,10524,9668,false,false,false,false,345,true
+900 S EUCLID AVE,S EUCLID AVE,Irving,22,15,10,LINDEN-LITTLELEAF,Tilia cordata,0.136,Acer,MAPLE,0.273,2.626,0.921,18,50,40,25427,22328,false,true,true,false,461,true
+900 S GROVE AVE,S GROVE AVE,Lincoln,27,17,11,LINDEN-LITTLELEAF,Tilia cordata,0.148,Ulmus,ELM,0.259,2.66,0.916,20,50,40,31278,28488,false,true,true,false,554,true
+900 S HUMPHREY AVE,S HUMPHREY AVE,Irving,26,19,16,ELM-AMERICAN,Ulmus americana,0.115,Aesculus,HORSECHESTNUT,0.115,2.865,0.938,6,15,10,16984,15932,false,true,false,false,464,true
+900 S KENILWORTH AVE,S KENILWORTH AVE,Lincoln,28,17,12,MAPLE-NORWAY,Acer platanoides,0.107,Acer,MAPLE,0.321,2.713,0.926,19.5,40,30,26311,24464,false,true,true,true,602,true
+900 S LOMBARD AVE,S LOMBARD AVE,Irving,10,9,7,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.3,2.164,0.88,15.5,35,25,8718,8476,false,true,true,true,702,true
+900 S MAPLE AVE,S MAPLE AVE,Lincoln,24,15,12,MAPLE-NORWAY,Acer platanoides,0.25,Acer,MAPLE,0.375,2.477,0.889,16,30,30,17338,16348,false,true,true,true,665,true
+900 S OAK PARK AVE,S OAK PARK AVE,Lincoln,11,7,6,HONEYLOCUST,Gleditsia triacanthos,0.273,Gleditsia,HONEYLOCUST,0.273,1.846,0.826,12,30,20,5380,5388,false,true,true,false,505,true
+900 S RIDGELAND AVE,S RIDGELAND AVE,Longfellow,4,3,3,APPLE-CRAB SPP,Malus spp,0.5,Malus,APPLE,0.5,1.04,0.625,12.5,20,15,1728,1712,true,false,false,false,672,true
+900 S TAYLOR AVE,S TAYLOR AVE,Irving,16,11,10,HONEYLOCUST,Gleditsia triacanthos,0.188,Acer,MAPLE,0.188,2.274,0.883,12.5,35,25,13921,13344,false,true,false,false,385,true
+900 SOUTH BLVD,SOUTH BLVD,Holmes,10,8,7,MAPLE-NORWAY,Acer platanoides,0.3,Acer,MAPLE,0.4,1.973,0.84,14.5,40,20,3947,3964,false,true,true,true,842,true
+900 THOMAS ST,THOMAS ST,Mann,27,23,16,MAPLE-NORWAY,Acer platanoides,0.185,Acer,MAPLE,0.333,2.998,0.936,17,40,30,25663,25476,false,true,true,true,830,true
+900 WASHINGTON BLVD,WASHINGTON BLVD,Holmes,24,13,11,HONEYLOCUST,Gleditsia triacanthos,0.25,Gleditsia,HONEYLOCUST,0.25,2.326,0.875,14,40,30,18928,18828,false,true,true,false,807,true
+900 WENONAH AVE,WENONAH AVE,Lincoln,32,22,15,ELM-AMERICAN,Ulmus americana,0.125,Ulmus,ELM,0.219,2.956,0.939,18,50,40,37012,31624,false,true,true,false,665,true
+900 WESLEY AVE,WESLEY AVE,Irving,18,10,9,MAPLE-NORWAY,Acer platanoides,0.222,Acer,MAPLE,0.278,2.12,0.858,20,50,45,24760,21060,false,true,true,false,416,true
+900 WISCONSIN AVE,WISCONSIN AVE,Lincoln,27,15,12,LINDEN-LITTLELEAF,Tilia cordata,0.148,Acer,MAPLE,0.222,2.538,0.908,18,50,40,31259,27120,false,true,true,false,665,true
+1000 ADAMS ST,ADAMS ST,Lincoln,25,16,13,HACKBERRY,Celtis occidentalis,0.2,Acer,MAPLE,0.32,2.599,0.909,15,40,30,26193,23556,false,true,true,true,664,true
+1000 AUGUSTA ST,AUGUSTA ST,Mann,26,16,11,MAPLE-SUGAR,Acer saccharum,0.115,Acer,MAPLE,0.269,2.685,0.926,18,40,30,25447,25024,false,true,true,false,843,true
+1000 BELLEFORTE AVE,BELLEFORTE AVE,Mann,26,17,11,MAPLE-NORWAY,Acer platanoides,0.115,Acer,MAPLE,0.308,2.758,0.932,14,40,30,24033,23300,false,true,true,true,669,true
+1000 BERKSHIRE ST,BERKSHIRE ST,Mann,28,17,11,MAPLE-NORWAY,Acer platanoides,0.107,Tilia,LINDEN,0.214,2.713,0.926,20.5,40,30,27980,27568,false,true,true,false,830,true
+1000 CHICAGO AVE,CHICAGO AVE,Holmes,26,14,11,HONEYLOCUST,Gleditsia triacanthos,0.308,Gleditsia,HONEYLOCUST,0.308,2.311,0.858,11,30,30,21324,21176,false,true,true,true,724,true
+1000 CLARENCE AVE,CLARENCE AVE,Irving,30,20,13,MAPLE-NORWAY,Acer platanoides,0.133,Acer,MAPLE,0.3,2.875,0.936,12,40,30,24446,22384,false,true,true,true,666,true
+1000 CLINTON AVE,CLINTON AVE,Lincoln,30,17,12,LINDEN-LITTLELEAF,Tilia cordata,0.167,Acer,MAPLE,0.267,2.665,0.918,17,50,40,29295,27860,false,true,true,false,667,true
+1000 COLUMBIAN AVE,COLUMBIAN AVE,Mann,30,14,11,HACKBERRY,Celtis occidentalis,0.167,Celtis,HACKBERRY,0.167,2.443,0.898,5,20,10,9464,9444,false,true,false,false,705,true
+1000 DIVISION ST,DIVISION ST,Mann,30,20,13,OAK-SWAMP WHITE,Quercus bicolor,0.1,Acer,MAPLE,0.167,2.922,0.942,19.5,40,30,28451,26900,false,false,false,false,828,true
+1000 ERIE ST,ERIE ST,Holmes,26,21,15,MAPLE-FREEMAN,Acer x freemanii 'Jeffersred',0.077,Acer,MAPLE,0.192,2.992,0.947,17,40,30,24230,23304,false,false,false,false,675,true
+1000 FAIR OAKS AVE,FAIR OAKS AVE,Hatch,29,21,13,MAPLE-BLACK,Acer nigrum,0.069,Acer,MAPLE,0.276,2.985,0.946,13,30,20,16042,15496,false,false,true,false,702,true
+1000 FILLMORE ST,FILLMORE ST,Lincoln,25,15,11,HACKBERRY,Celtis occidentalis,0.2,Acer,MAPLE,0.24,2.488,0.896,19,50,40,26546,26000,false,true,true,false,764,true
+1000 FOREST AVE,FOREST AVE,Mann,29,16,12,LINDEN-AMERICAN,Tilia americana,0.207,Acer,MAPLE,0.207,2.596,0.908,15,40,30,19655,19492,false,true,true,false,669,true
+1000 GARFIELD ST,GARFIELD ST,Lincoln,31,12,10,OAK-BURR,Quercus macrocarpa,0.387,Quercus,OAK,0.484,2.036,0.803,6,20,10,14176,13488,false,true,true,true,765,true
+1000 GREENFIELD ST,GREENFIELD ST,Mann,30,18,15,HACKBERRY,Celtis occidentalis,0.2,Celtis,HACKBERRY,0.233,2.592,0.896,19.5,40,30,28412,26592,false,true,true,false,831,true
+1000 GUNDERSON AVE,GUNDERSON AVE,Irving,28,19,11,MAPLE-NORWAY,Acer platanoides,0.143,Quercus,OAK,0.286,2.818,0.931,17,50,30,28333,26952,false,true,true,false,631,true
+1000 HARRISON ST,HARRISON ST,Lincoln,8,5,5,HACKBERRY,Celtis occidentalis,0.25,Celtis,HACKBERRY,0.25,1.56,0.781,5,10,5,334,320,true,false,false,false,672,true
+1000 HARVARD ST,HARVARD ST,Lincoln,26,14,12,HACKBERRY,Celtis occidentalis,0.154,Acer,MAPLE,0.192,2.525,0.911,20.5,50,40,32103,30588,false,true,false,false,764,true
+1000 HAYES AVE,HAYES AVE,Hatch,34,20,14,LINDEN-AMERICAN,Tilia americana,0.118,Acer,MAPLE,0.176,2.869,0.936,12,30,20,11879,11448,false,true,false,false,719,true
+1000 HIGHLAND AVE,HIGHLAND AVE,Irving,29,19,11,HACKBERRY,Celtis occidentalis,0.103,Acer,MAPLE,0.207,2.853,0.937,15,30,30,17789,17120,false,true,true,false,660,true
+1000 HOME AVE,HOME AVE,Lincoln,32,21,14,LINDEN-LITTLELEAF,Tilia cordata,0.125,Acer,MAPLE,0.188,2.897,0.936,16.5,45,40,36973,33080,false,true,false,false,666,true
+1000 JACKSON BLVD,JACKSON BLVD,Lincoln,22,17,12,MAPLE-SILVER,Acer saccharinum,0.136,Acer,MAPLE,0.318,2.728,0.926,16,40,30,18673,17888,false,true,true,true,665,true
+1000 LAKE ST,LAKE ST,Holmes,15,5,5,GINKGO,Ginkgo biloba,0.467,Ginkgo,GINKGO,0.467,1.338,0.684,5,20,10,1885,1900,false,true,true,true,500,true
+1000 LE MOYNE PKWY,LE MOYNE PKWY,Mann,39,22,14,VIBURNUM,Viburnum spp,0.103,Acer,MAPLE,0.256,2.97,0.943,11,30,20,18103,17536,false,true,true,false,830,true
+1000 LEXINGTON ST,LEXINGTON ST,Lincoln,24,20,11,MAPLE-BLACK,Acer nigrum,0.083,Acer,MAPLE,0.208,2.947,0.944,10,30,20,15787,15600,false,false,true,false,765,true
+1000 LINDEN AVE,LINDEN AVE,Mann,28,18,14,HACKBERRY,Celtis occidentalis,0.179,Celtis,HACKBERRY,0.214,2.729,0.921,9.5,30,20,14373,14364,false,true,true,false,707,true
+1000 LYMAN AVE,LYMAN AVE,Irving,24,21,11,MAPLE-SILVER,Acer saccharinum,0.083,Acer,MAPLE,0.25,3.005,0.948,16,30,30,20067,19268,false,false,true,false,544,true
+1000 MAPLETON AVE,MAPLETON AVE,Hatch,36,24,15,OAK-SWAMP WHITE,Quercus bicolor,0.111,Quercus,OAK,0.222,3.054,0.946,13,30,20,13686,13520,false,true,true,false,721,true
+1000 MONROE ST,MONROE ST,Lincoln,23,14,10,LINDEN-LITTLELEAF,Tilia cordata,0.174,Tilia,LINDEN,0.261,2.487,0.904,18,50,30,24230,23216,false,true,true,false,671,true
+1000 N AUSTIN BLVD,N AUSTIN BLVD,Whittier,7,5,4,HONEYLOCUST,Gleditsia triacanthos,0.286,Gleditsia,HONEYLOCUST,0.286,1.55,0.776,9,20,10,2533,2540,true,false,false,false,660,true
+1000 N EAST AVE,N EAST AVE,Hatch,33,22,13,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.152,Acer,MAPLE,0.182,2.927,0.935,13,30,20,13430,13424,false,true,false,false,704,true
+1000 N ELMWOOD AVE,N ELMWOOD AVE,Hatch,26,19,12,MAPLE-NORWAY,Acer platanoides,0.115,Acer,MAPLE,0.231,2.865,0.938,14.5,30,25,16493,15908,false,true,true,false,700,true
+1000 N EUCLID AVE,N EUCLID AVE,Mann,29,21,12,HACKBERRY,Celtis occidentalis,0.207,Acer,MAPLE,0.207,2.853,0.923,11,30,20,20656,20476,false,true,true,false,708,true
+1000 N GROVE AVE,N GROVE AVE,Mann,28,19,12,LINDEN-AMERICAN,Tilia americana,0.214,Tilia,LINDEN,0.25,2.732,0.913,14,30,25,18319,18296,false,true,true,false,666,true
+1000 N HARVEY AVE,N HARVEY AVE,Hatch,24,16,12,CATALPA,Catalpa speciosa,0.167,Catalpa,CATALPA,0.167,2.636,0.917,8,20,10,8168,8180,false,true,false,false,750,true
+1000 N HUMPHREY AVE,N HUMPHREY AVE,Hatch,33,19,12,MAPLE-SILVER,Acer saccharinum,0.152,Acer,MAPLE,0.303,2.775,0.926,18,40,30,21579,20724,false,true,true,true,719,true
+1000 N KENILWORTH AVE,N KENILWORTH AVE,Mann,70,32,22,MAPLE-RED,Acer rubrum,0.086,Quercus,OAK,0.157,3.242,0.953,6.5,20,15,25486,25276,false,false,false,false,1335,true
+1000 N LOMBARD AVE,N LOMBARD AVE,Hatch,36,19,11,HACKBERRY,Celtis occidentalis,0.222,Acer,MAPLE,0.306,2.707,0.91,15,30,20,17789,17520,false,true,true,true,719,true
+1000 N MARION ST,N MARION ST,Mann,26,21,13,LINDEN-AMERICAN,Tilia americana,0.115,Acer,MAPLE,0.192,2.971,0.944,16,40,25,14883,14688,false,true,false,false,670,true
+1000 N OAK PARK AVE,N OAK PARK AVE,Mann,26,17,14,MAPLE-AUTUMN BLAZE,Acer x freemanii 'Jeffersred',0.115,Acer,MAPLE,0.231,2.718,0.926,11.5,30,20,14510,14528,false,true,true,false,725,true
+1000 N RIDGELAND AVE,N RIDGELAND AVE,Hatch,18,14,11,HONEYLOCUST,Gleditsia triacanthos,0.111,Quercus,OAK,0.222,2.582,0.92,7,20,10,7854,7840,false,true,true,false,752,true
+1000 N TAYLOR AVE,N TAYLOR AVE,Hatch,34,24,14,MAPLE-SILVER,Acer saccharinum,0.118,Acer,MAPLE,0.294,3.062,0.946,12,30,20,18732,17912,false,true,true,false,719,true
+1000 NORTH BLVD,NORTH BLVD,Holmes,22,4,4,HONEYLOCUST,Gleditsia triacanthos,0.591,Gleditsia,HONEYLOCUST,0.591,1.111,0.591,10,20,20,8895,8536,false,true,true,true,462,true
+1000 ONTARIO ST,ONTARIO ST,Holmes,18,10,8,OAK-BURR,Quercus macrocarpa,0.278,Quercus,OAK,0.333,2.058,0.84,13.5,30,30,15787,15504,false,true,true,true,671,true
+1000 PLEASANT ST,PLEASANT ST,Holmes,26,15,11,PLUM-SPP,Prunus spp,0.154,Acer,MAPLE,0.192,2.578,0.914,8,30,20,13470,13272,false,true,false,false,663,true
+1000 RANDOLPH ST,RANDOLPH ST,Holmes,24,17,14,HONEYLOCUST,Gleditsia triacanthos,0.208,Gleditsia,HONEYLOCUST,0.208,2.669,0.913,19.5,40,35,21913,21508,false,true,true,false,664,true
+1000 S AUSTIN BLVD,S AUSTIN BLVD,Irving,9,9,8,MAPLE-MIYABEI,Acer miyabei 'Morton',0.111,Tilia,LINDEN,0.222,2.197,0.889,7,20,10,3691,3704,true,false,false,false,849,true
+1000 S CUYLER AVE,S CUYLER AVE,Irving,31,17,13,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.161,Acer,MAPLE,0.161,2.585,0.905,15,30,20,20950,18836,false,true,false,false,665,true
+1000 S EAST AVE,S EAST AVE,Irving,28,16,12,ELM-AMERICAN,Ulmus americana,0.25,Ulmus,ELM,0.25,2.511,0.89,12.5,40,35,25427,23928,false,true,true,false,666,true
+1000 S ELMWOOD AVE,S ELMWOOD AVE,Irving,27,18,10,ELM-AMERICAN,Ulmus americana,0.185,Acer,MAPLE,0.222,2.741,0.922,15,40,30,29472,25660,false,true,true,false,624,true
+1000 S EUCLID AVE,S EUCLID AVE,Lincoln,31,20,14,MAPLE-NORWAY,Acer platanoides,0.161,Acer,MAPLE,0.258,2.781,0.92,18,50,40,32201,28440,false,true,true,false,666,true
+1000 S GROVE AVE,S GROVE AVE,Lincoln,28,20,13,LINDEN-AMERICAN,Tilia cordata,0.107,Acer,MAPLE,0.179,2.917,0.941,11.5,40,30,26272,25336,false,true,false,false,666,true
+1000 S HARVEY AVE,S HARVEY AVE,Irving,28,23,12,LINDEN-AMERICAN,Tilia americana,0.107,Acer,MAPLE,0.25,3.066,0.949,10.5,30,20,11918,11620,false,true,true,false,653,true
+1000 S HUMPHREY AVE,S HUMPHREY AVE,Irving,20,16,15,MAPLE-NORWAY,Acer platanoides,0.1,Quercus,OAK,0.15,2.718,0.93,12,30,20,9601,9456,false,false,false,false,509,true
+1000 S KENILWORTH AVE,S KENILWORTH AVE,Lincoln,28,19,12,MAPLE-NORWAY,Acer platanoides,0.107,Acer,MAPLE,0.286,2.849,0.936,21,50,40,32771,30628,false,true,true,false,666,true
+1000 S LOMBARD AVE,S LOMBARD AVE,Irving,31,20,14,MAPLE-RED,Acer rubrum,0.129,Acer,MAPLE,0.226,2.864,0.934,10,20,20,16081,15428,false,true,true,false,631,true
+1000 S MAPLE AVE,S MAPLE AVE,Lincoln,26,16,13,MAPLE-NORWAY,Acer platanoides,0.115,Acer,MAPLE,0.192,2.665,0.923,15.5,40,30,22246,21712,false,true,false,false,666,true
+1000 S OAK PARK AVE,S OAK PARK AVE,Lincoln,24,14,13,HACKBERRY,Celtis occidentalis,0.292,Celtis,HACKBERRY,0.292,2.379,0.872,20.5,50,40,29688,28656,false,true,true,false,666,true
+1000 S RIDGELAND AVE,S RIDGELAND AVE,Irving,29,16,10,HACKBERRY,Celtis occidentalis,0.103,Acer,MAPLE,0.241,2.674,0.925,17,40,30,21147,20592,false,true,true,false,658,true
+1000 S SCOVILLE AVE,S SCOVILLE AVE,Irving,22,15,10,MAPLE-NORWAY,Acer platanoides,0.227,Acer,MAPLE,0.364,2.512,0.897,16.5,50,40,28078,26596,false,true,true,true,482,true
+1000 S TAYLOR AVE,S TAYLOR AVE,Irving,26,16,11,APPLE-CRAB SPP,Malus spp,0.154,Quercus,OAK,0.192,2.651,0.92,13,25,20,11054,10940,false,true,false,false,588,true
+1000 SOUTH BLVD,SOUTH BLVD,Holmes,12,5,5,HONEYLOCUST,Gleditsia triacanthos,0.583,Gleditsia,HONEYLOCUST,0.583,1.234,0.611,7.5,20,10,3063,3028,false,true,true,true,630,true
+1000 SUPERIOR ST,SUPERIOR ST,Holmes,21,15,11,MAPLE-RED,Acer rubrum,0.095,Acer,MAPLE,0.286,2.648,0.925,22,40,30,24760,24180,false,false,true,false,676,true
+1000 THOMAS ST,THOMAS ST,Mann,29,21,12,LONDON PLANETREE,Platanus x acerifolia,0.138,Quercus,OAK,0.172,2.937,0.939,11,30,30,17455,17280,false,true,false,false,827,true
+1000 WASHINGTON BLVD,WASHINGTON BLVD,Lincoln,21,13,8,HACKBERRY,Celtis occidentalis,0.143,Quercus,OAK,0.19,2.467,0.907,17,40,30,15688,15728,false,true,false,false,663,true
+1000 WENONAH AVE,WENONAH AVE,Lincoln,31,18,11,ELM-AMERICAN,Ulmus americana,0.355,Ulmus,ELM,0.387,2.449,0.847,20,60,40,38406,32640,false,true,true,true,666,true
+1000 WESLEY AVE,WESLEY AVE,Irving,30,16,11,HACKBERRY,Celtis occidentalis,0.2,Celtis,HACKBERRY,0.2,2.546,0.902,17,40,40,33851,29572,false,true,false,false,666,true
+1000 WISCONSIN AVE,WISCONSIN AVE,Lincoln,30,16,11,MAPLE-NORWAY,Acer platanoides,0.167,Acer,MAPLE,0.333,2.59,0.911,19.5,50,40,39211,35896,false,true,true,true,666,true
+1000 WOODBINE AVE,WOODBINE AVE,Mann,30,22,16,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.133,Acer,MAPLE,0.267,2.968,0.94,12,35,20,13273,12880,false,true,true,false,668,true
+1100 ADAMS ST,ADAMS ST,Lincoln,13,10,9,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.231,Gymnocladus,KENTUCKY COFFEETREE,0.231,2.205,0.876,10,40,20,8659,8660,false,true,true,false,426,true
+1100 AUGUSTA ST,AUGUSTA ST,Mann,13,9,8,LINDEN-AMERICAN,Tilia americana,0.231,Acer,MAPLE,0.231,2.098,0.864,23,40,30,11251,10860,false,true,true,false,414,true
+1100 BERKSHIRE ST,BERKSHIRE ST,Mann,13,12,9,HACKBERRY,Celtis occidentalis,0.154,Acer,MAPLE,0.231,2.458,0.911,14,40,20,6892,6824,false,true,true,false,415,true
+1100 CHICAGO AVE,CHICAGO AVE,Holmes,14,7,6,GINKGO,Ginkgo biloba,0.357,Ginkgo,GINKGO,0.357,1.767,0.796,12.5,30,20,6126,6144,false,true,true,true,658,true
+1100 CLARENCE AVE,CLARENCE AVE,Irving,56,31,21,MAPLE-NORWAY,Acer platanoides,0.179,Acer,MAPLE,0.286,3.141,0.938,16,40,30,54605,51728,false,true,true,false,1330,true
+1100 CLINTON AVE,CLINTON AVE,Lincoln,60,28,17,MAPLE-NORWAY,Acer platanoides,0.267,Acer,MAPLE,0.383,2.848,0.897,18,50,40,63735,59396,false,true,true,true,1330,true
+1100 COLUMBIAN AVE,COLUMBIAN AVE,Mann,23,17,13,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.217,Gymnocladus,KENTUCKY COFFEETREE,0.217,2.665,0.911,11,30,20,12468,12464,false,true,true,false,589,true
+1100 DIVISION ST,DIVISION ST,Mann,9,8,7,HONEYLOCUST,Gleditsia triacanthos,0.222,Acer,MAPLE,0.222,2.043,0.864,14,30,20,5498,5372,true,false,false,false,416,true
+1100 EDMER AVE,EDMER AVE,Hatch,26,14,10,MAPLE-SILVER,Acer saccharinum,0.154,Acer,MAPLE,0.269,2.471,0.902,17.5,40,30,21186,19992,false,true,true,false,588,true
+1100 ERIE ST,ERIE ST,Holmes,21,15,12,MAPLE-NORWAY,Acer platanoides,0.143,Quercus,OAK,0.19,2.599,0.916,19,30,30,15276,14468,false,true,false,false,654,true
+1100 FAIR OAKS AVE,FAIR OAKS AVE,Hatch,27,22,15,OAK-SWAMP WHITE,Quercus bicolor,0.111,Quercus,OAK,0.222,3.02,0.947,8,20,20,11801,11380,false,true,true,false,588,true
+1100 FILLMORE ST,FILLMORE ST,Lincoln,13,11,8,TULIPTREE,Liriodendron tulipifera,0.154,Acer,MAPLE,0.231,2.352,0.899,12,40,30,11722,11480,false,true,true,false,425,true
+1100 GARFIELD ST,GARFIELD ST,Lincoln,8,7,6,ELM-HYBRID,Ulmus 'Morton Glossy',0.25,Ulmus,ELM,0.375,1.906,0.844,7.5,25,15,2395,2328,true,false,false,false,661,true
+1100 GREENFIELD ST,GREENFIELD ST,Mann,14,13,9,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.143,Quercus,OAK,0.214,2.54,0.918,16.5,40,30,11428,11264,false,true,true,false,416,true
+1100 GUNDERSON AVE,GUNDERSON AVE,Irving,57,30,17,HACKBERRY,Celtis occidentalis,0.123,Acer,MAPLE,0.263,3.114,0.941,14,50,40,65522,58696,false,true,true,false,1165,true
+1100 HARRISON ST,HARRISON ST,Lincoln,13,7,4,HACKBERRY,Celtis occidentalis,0.308,Ulmus,ELM,0.538,1.778,0.805,6,10,10,726,612,false,true,true,true,426,true
+1100 HARVARD ST,HARVARD ST,Lincoln,17,16,15,MAPLE-NORWAY,Acer platanoides,0.118,Acer,MAPLE,0.118,2.752,0.934,16,40,30,17534,16612,false,true,false,false,424,true
+1100 HAYES AVE,HAYES AVE,Hatch,24,15,11,HACKBERRY,Celtis occidentalis,0.208,Acer,MAPLE,0.208,2.554,0.906,18,30,25,16395,15496,false,true,true,false,559,true
+1100 HIGHLAND AVE,HIGHLAND AVE,Irving,60,33,21,MAPLE-NORWAY,Acer platanoides,0.133,Quercus,OAK,0.25,3.287,0.952,16.5,30,30,38131,36872,false,true,true,false,1330,true
+1100 HOLLEY CT,HOLLEY CT,Holmes,6,4,4,HONEYLOCUST,Gleditsia triacanthos,0.333,Gleditsia,HONEYLOCUST,0.333,1.33,0.722,8.5,25,20,3397,3436,true,false,false,false,154,true
+1100 HOME AVE,HOME AVE,Lincoln,58,31,16,HACKBERRY,Celtis occidentalis,0.086,Acer,MAPLE,0.241,3.245,0.954,14,40,30,49244,47068,false,false,true,false,1331,true
+1100 JACKSON BLVD,JACKSON BLVD,Lincoln,15,10,9,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.267,2.176,0.871,20,40,30,13941,13872,false,true,true,false,635,true
+1100 LAKE ST,LAKE ST,Holmes,22,5,5,LONDON PLANETREE,Platanus x acerifolia,0.273,Platanus,LONDON PLANETREE,0.273,1.583,0.789,5,20,10,1728,1752,false,true,true,false,661,true
+1100 LE MOYNE PKWY,LE MOYNE PKWY,Mann,14,13,10,LINDEN-AMERICAN,Tilia americana,0.143,Acer,MAPLE,0.214,2.54,0.918,14.5,35,25,8502,8472,false,true,true,false,422,true
+1100 LEXINGTON ST,LEXINGTON ST,Lincoln,24,14,9,MAPLE-SILVER,Acer saccharinum,0.167,Acer,MAPLE,0.417,2.521,0.91,14,40,30,22325,19932,false,true,true,true,661,true
+1100 LINDEN AVE,LINDEN AVE,Mann,25,17,12,MAPLE-AUTUMN BLAZE,Acer x freemanii 'Jeffersred',0.12,Quercus,OAK,0.2,2.733,0.928,11,30,20,10426,10468,false,true,false,false,589,true
+1100 LYMAN AVE,LYMAN AVE,Irving,60,28,16,LINDEN-LITTLELEAF,Tilia cordata,0.133,Quercus,OAK,0.217,3.095,0.943,10.5,30,20,31494,30744,false,true,true,false,1333,true
+1100 MADISON ST,MADISON ST,Lincoln,1,1,1,HONEYLOCUST,Gleditsia triacanthos,1,Gleditsia,HONEYLOCUST,1,0,0,22,50,40,1257,1264,true,false,false,false,659,true
+1100 MILLER AVE,MILLER AVE,Mann,18,14,10,MAPLE-NORWAY,Acer platanoides,0.111,Acer,MAPLE,0.278,2.582,0.92,13,35,25,13587,13300,false,true,true,false,545,true
+1100 MONROE ST,MONROE ST,Lincoln,4,4,4,MAPLE-NORWAY,Acer platanoides,0.25,Acer,MAPLE,0.25,1.386,0.75,13,35,25,2592,2592,true,false,false,false,235,true
+1100 N AUSTIN BLVD,N AUSTIN BLVD,Whittier,11,4,4,HONEYLOCUST,Gleditsia triacanthos,0.636,Gleditsia,HONEYLOCUST,0.636,1.034,0.545,18,40,30,7834,7660,false,true,true,true,665,true
+1100 N EAST AVE,N EAST AVE,Hatch,22,15,10,MAPLE-AUTUMN BLAZE,Acer x freemanii 'Jeffersred',0.136,Quercus,OAK,0.227,2.602,0.917,10,30,20,9955,9984,false,true,true,false,588,true
+1100 N ELMWOOD AVE,N ELMWOOD AVE,Hatch,25,18,10,ELM-HYBRID,Ulmus x spp,0.12,Ulmus,ELM,0.28,2.81,0.934,13,40,20,16022,15992,false,true,true,false,588,true
+1100 N EUCLID AVE,N EUCLID AVE,Mann,25,19,11,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.2,Gymnocladus,KENTUCKY COFFEETREE,0.2,2.786,0.922,10,30,20,10662,10672,false,true,false,false,590,true
+1100 N GROVE AVE,N GROVE AVE,Mann,28,20,13,ELM-HYBRID,Ulmus x spp,0.107,Ulmus,ELM,0.25,2.917,0.941,12,30,20,14118,14136,false,true,true,false,667,true
+1100 N HARVEY AVE,N HARVEY AVE,Hatch,24,16,12,HACKBERRY,Celtis occidentalis,0.125,Acer,MAPLE,0.208,2.694,0.927,11.5,20,20,8580,8512,false,true,true,false,561,true
+1100 N HUMPHREY AVE,N HUMPHREY AVE,Hatch,22,19,13,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.091,Quercus,OAK,0.227,2.902,0.942,14,30,20,9268,9244,false,false,true,false,561,true
+1100 N KENILWORTH AVE,N KENILWORTH AVE,Mann,79,32,22,HAWTHORN-SPP,Crataegus spp,0.215,Crataegus,HAWTHORN,0.215,3.065,0.924,9,20,20,30257,29420,false,true,true,false,1335,true
+1100 N LOMBARD AVE,N LOMBARD AVE,Hatch,27,21,12,MAPLE-NORWAY,Acer platanoides,0.074,Acer,MAPLE,0.222,2.988,0.947,10,20,20,10132,9900,false,false,true,false,560,true
+1100 N MARION ST,N MARION ST,Mann,13,12,9,MAPLE-SILVER,Acer saccharinum,0.154,Acer,MAPLE,0.308,2.458,0.911,5,20,20,8384,8364,false,true,true,true,668,true
+1100 N OAK PARK AVE,N OAK PARK AVE,Mann,24,17,12,MAPLE-SILVER,Acer saccharinum,0.083,Acer,MAPLE,0.208,2.774,0.934,10,25,20,16336,15140,false,false,true,false,667,true
+1100 N RIDGELAND AVE,N RIDGELAND AVE,Hatch,24,13,9,HACKBERRY,Celtis occidentalis,0.167,Acer,MAPLE,0.167,2.42,0.899,12.5,30,20,13646,13420,false,true,false,false,584,true
+1100 N TAYLOR AVE,N TAYLOR AVE,Hatch,23,16,9,MAPLE-RED,Acer rubrum,0.087,Quercus,OAK,0.261,2.714,0.93,12,30,20,9111,9144,false,false,true,false,558,true
+1100 NORTH BLVD,NORTH BLVD,Holmes,6,1,1,BALDCYPRESS,Taxodium distichum,1,Taxodium,BALDCYPRESS,1,0,0,5,20,5,118,112,true,false,false,false,709,true
+1100 ONTARIO ST,ONTARIO ST,Holmes,16,10,8,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.188,Tilia,LINDEN,0.25,2.187,0.875,12,30,30,12763,12316,false,true,true,false,658,true
+1100 PAULINA ST,PAULINA ST,Holmes,21,13,9,MAPLE-SILVER,Acer saccharinum,0.143,Acer,MAPLE,0.286,2.491,0.912,18,40,30,22011,19764,false,true,true,false,544,true
+1100 PLEASANT ST,PLEASANT ST,Holmes,22,14,11,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.273,Gymnocladus,KENTUCKY COFFEETREE,0.273,2.413,0.88,7,20,20,8875,8848,false,true,true,false,663,true
+1100 PRAIRIE WAY,PRAIRIE WAY,Holmes,4,4,4,DOGWOOD-CORNELIANCHERRY,Cornus spp,0.25,Cornus,DOGWOOD,0.25,1.386,0.75,6,20,10,314,328,true,false,false,false,465,true
+1100 RANDOLPH ST,RANDOLPH ST,Holmes,16,10,9,HACKBERRY,Celtis occidentalis,0.188,Celtis,HACKBERRY,0.188,2.22,0.883,16.5,40,25,11761,11676,false,true,false,false,660,true
+1100 ROSSELL AVE,ROSSELL AVE,Hatch,24,18,12,MAPLE-NORWAY,Acer platanoides,0.125,Acer,MAPLE,0.25,2.81,0.934,16.5,40,30,19537,19020,false,true,true,false,588,true
+1100 S AUSTIN BLVD,S AUSTIN BLVD,Irving,7,6,6,OAK-ENGLISH,Quercus robur,0.286,Quercus,OAK,0.286,1.748,0.816,14,30,30,4732,4708,true,false,false,false,663,true
+1100 S CUYLER AVE,S CUYLER AVE,Irving,55,25,16,LINDEN-AMERICAN,Tilia cordata,0.182,Acer,MAPLE,0.291,2.889,0.921,18,40,30,58021,53628,false,true,true,false,1328,true
+1100 S EAST AVE,S EAST AVE,Irving,58,29,20,MAPLE-NORWAY,Acer platanoides,0.103,Acer,MAPLE,0.155,3.141,0.946,15,40,30,53819,48780,false,true,false,false,1329,true
+1100 S ELMWOOD AVE,S ELMWOOD AVE,Irving,56,25,16,MAPLE-NORWAY,Acer platanoides,0.25,Acer,MAPLE,0.321,2.818,0.905,15,50,40,63715,59212,false,true,true,true,1329,true
+1100 S EUCLID AVE,S EUCLID AVE,Irving,60,28,15,MAPLE-NORWAY,Acer platanoides,0.2,Acer,MAPLE,0.267,3.021,0.928,15.5,40,30,61438,57300,false,true,true,false,1330,true
+1100 S GROVE AVE,S GROVE AVE,Lincoln,65,37,24,MAPLE-NORWAY,Acer platanoides,0.062,Acer,MAPLE,0.169,3.446,0.963,13,40,30,50246,48652,false,false,false,false,1314,true
+1100 S HARVEY AVE,S HARVEY AVE,Irving,56,26,16,HACKBERRY,Celtis occidentalis,0.125,Acer,MAPLE,0.196,3.002,0.938,17,40,30,41940,40804,false,true,false,false,1330,true
+1100 S HUMPHREY AVE,S HUMPHREY AVE,Irving,61,31,21,MAPLE-RED,Acer saccharinum,0.131,Acer,MAPLE,0.197,3.203,0.947,13,30,30,35834,33972,false,true,false,false,1334,true
+1100 S KENILWORTH AVE,S KENILWORTH AVE,Lincoln,36,21,14,MAPLE-NORWAY,Acer platanoides,0.167,Acer,MAPLE,0.25,2.818,0.924,13,40,30,30650,30072,false,true,true,false,925,true
+1100 S LOMBARD AVE,S LOMBARD AVE,Irving,56,31,19,MAPLE-NORWAY,Acer platanoides,0.089,Acer,MAPLE,0.214,3.29,0.957,13.5,30,30,35048,34616,false,false,true,false,1313,true
+1100 S MAPLE AVE,S MAPLE AVE,Lincoln,47,24,16,MAPLE-SILVER,Acer saccharinum,0.128,Acer,MAPLE,0.255,2.946,0.934,11,40,30,39152,35756,false,true,true,false,1328,true
+1100 S OAK PARK AVE,S OAK PARK AVE,Lincoln,43,24,17,MAPLE-NORWAY,Acer platanoides,0.209,Acer,MAPLE,0.256,2.83,0.913,17,50,30,45317,44216,false,true,true,false,1330,true
+1100 S RIDGELAND AVE,S RIDGELAND AVE,Irving,48,29,17,HACKBERRY,Celtis occidentalis,0.104,Acer,MAPLE,0.188,3.216,0.953,8,20,15,24230,23800,false,true,false,false,1329,true
+1100 S SCOVILLE AVE,S SCOVILLE AVE,Irving,56,27,16,MAPLE-NORWAY,Acer platanoides,0.179,Acer,MAPLE,0.304,3.066,0.937,18,60,40,72119,63312,false,true,true,true,1165,true
+1100 S TAYLOR AVE,S TAYLOR AVE,Irving,59,34,20,MAPLE-SILVER,Acer saccharinum,0.119,Acer,MAPLE,0.254,3.299,0.953,14,30,20,30964,30272,false,true,true,false,1332,true
+1100 SCHNEIDER AVE,SCHNEIDER AVE,Mann,16,14,10,MAPLE-FREEMAN,Acer x freemanii,0.125,Acer,MAPLE,0.25,2.599,0.922,12.5,30,30,9601,9572,false,true,true,false,544,true
+1100 SOUTH BLVD,SOUTH BLVD,Holmes,12,5,5,HONEYLOCUST,Gleditsia triacanthos,0.333,Gleditsia,HONEYLOCUST,0.333,1.517,0.764,5,20,10,1178,1212,false,true,true,true,669,true
+1100 SUPERIOR ST,SUPERIOR ST,Holmes,24,18,12,HORSECHESTNUT,Aesculus hippocastanum,0.167,Acer,MAPLE,0.208,2.774,0.927,17,30,30,18575,17900,false,true,true,false,657,true
+1100 THOMAS ST,THOMAS ST,Mann,14,10,10,GINKGO,Ginkgo biloba,0.357,Ginkgo,GINKGO,0.357,2.064,0.827,16.5,40,30,9562,9564,false,true,true,true,420,true
+1100 WASHINGTON BLVD,WASHINGTON BLVD,Lincoln,15,10,9,LINDEN-LITTLELEAF,Tilia cordata,0.267,Tilia,LINDEN,0.267,2.154,0.862,18,40,30,11781,11768,false,true,true,false,661,true
+1100 WENONAH AVE,WENONAH AVE,Lincoln,52,26,15,HACKBERRY,Celtis occidentalis,0.154,Acer,MAPLE,0.154,3.003,0.936,16.5,50,30,48420,45304,false,true,false,false,1098,true
+1100 WESLEY AVE,WESLEY AVE,Irving,56,26,18,MAPLE-NORWAY,Acer platanoides,0.196,Acer,MAPLE,0.214,2.938,0.924,15.5,40,30,50776,48616,false,true,true,false,1330,true
+1100 WESTGATE ST,WESTGATE ST,Holmes,8,2,2,PEAR-CALLERY,Pyrus calleryana,0.5,Pyrus,PEAR,0.5,0.693,0.5,9,25,20,3142,3152,true,false,false,false,705,true
+1100 WISCONSIN AVE,WISCONSIN AVE,Lincoln,52,35,21,MAPLE-NORWAY,Acer platanoides,0.096,Acer,MAPLE,0.231,3.382,0.958,13,40,30,43393,42604,false,false,true,false,1331,true
+1100 WOODBINE AVE,WOODBINE AVE,Mann,25,17,11,ELM-AMERICAN,Ulmus americana,0.16,Ulmus,ELM,0.24,2.699,0.922,14,40,30,20263,19844,false,true,true,false,669,true
+1200 BELLEFORTE AVE,BELLEFORTE AVE,Mann,23,16,9,HAWTHORN-SPP,Crataegus spp,0.174,Ulmus,ELM,0.217,2.653,0.919,10,30,20,11879,11608,false,true,true,false,618,true
+1200 COLUMBIAN AVE,COLUMBIAN AVE,Mann,23,15,9,MAPLE-NORWAY,Acer platanoides,0.174,Acer,MAPLE,0.478,2.57,0.911,14,40,30,15099,15144,false,true,true,true,667,true
+1200 EDMER AVE,EDMER AVE,Hatch,29,19,10,HAWTHORN-SPP,Crataegus spp,0.138,Acer,MAPLE,0.241,2.805,0.93,9,20,10,11290,10780,false,true,true,false,484,true
+1200 FAIR OAKS AVE,FAIR OAKS AVE,Hatch,23,15,11,HACKBERRY,Celtis occidentalis,0.174,Acer,MAPLE,0.174,2.593,0.915,12,30,20,14235,13704,false,true,false,false,630,true
+1200 FOREST AVE,FOREST AVE,Mann,28,18,11,GINKGO,Ginkgo biloba,0.143,Acer,MAPLE,0.214,2.769,0.929,13.5,30,20,17534,16452,false,true,true,false,670,true
+1200 HAYES AVE,HAYES AVE,Hatch,21,15,12,MAPLE-NORWAY,Acer platanoides,0.143,Acer,MAPLE,0.333,2.624,0.921,9,20,20,10387,10388,false,true,true,true,631,true
+1200 LINDEN AVE,LINDEN AVE,Mann,26,22,16,HACKBERRY,Celtis occidentalis,0.077,Tilia,LINDEN,0.154,3.045,0.95,14.5,35,30,20990,20784,false,false,false,false,666,true
+1200 N AUSTIN BLVD,N AUSTIN BLVD,Hatch,10,10,7,MAPLE-FREEMAN,Acer x freemanii,0.1,Acer,MAPLE,0.2,2.303,0.9,4.5,15,7.5,3004,3008,false,false,false,false,701,true
+1200 N EAST AVE,N EAST AVE,Hatch,25,19,11,HACKBERRY,Celtis occidentalis,0.16,Acer,MAPLE,0.2,2.81,0.928,12,30,20,11290,11280,false,true,false,false,667,true
+1200 N ELMWOOD AVE,N ELMWOOD AVE,Hatch,28,18,12,HACKBERRY,Celtis occidentalis,0.107,Acer,MAPLE,0.179,2.8,0.934,13.5,30,20,18221,17716,false,true,false,false,666,true
+1200 N EUCLID AVE,N EUCLID AVE,Mann,29,18,12,HONEYLOCUST,Gleditsia triacanthos,0.241,Gleditsia,HONEYLOCUST,0.241,2.611,0.897,10,30,20,15453,15332,false,true,true,false,666,true
+1200 N GROVE AVE,N GROVE AVE,Mann,27,19,12,MAPLE-RED,Acer rubrum,0.111,Acer,MAPLE,0.259,2.846,0.936,11,30,20,14157,14092,false,true,true,false,668,true
+1200 N HARLEM AVE,N HARLEM AVE,Mann,10,7,6,BUCKEYE-OHIO,Aesculus glabra,0.3,Acer,MAPLE,0.3,1.834,0.82,19.5,40,30,9248,9228,false,true,true,true,666,true
+1200 N HARVEY AVE,N HARVEY AVE,Hatch,23,17,9,HACKBERRY,Celtis occidentalis,0.13,Acer,MAPLE,0.261,2.728,0.926,10,30,20,11545,11236,false,true,true,false,668,true
+1200 N HUMPHREY AVE,N HUMPHREY AVE,Hatch,24,18,13,MAPLE-NORWAY,Acer platanoides,0.125,Acer,MAPLE,0.375,2.788,0.931,15.5,25,20,11860,11784,false,true,true,true,674,true
+1200 N KENILWORTH AVE,N KENILWORTH AVE,Mann,70,32,22,SERVICEBERRY-SPP,Amelanchier spp,0.129,Acer,MAPLE,0.171,3.231,0.95,11,20,20,26114,24464,false,true,false,false,1330,true
+1200 N LOMBARD AVE,N LOMBARD AVE,Hatch,26,20,14,MAPLE-SILVER,Acer saccharinum,0.077,Acer,MAPLE,0.192,2.938,0.944,11.5,30,20,9798,9800,false,false,false,false,670,true
+1200 N MARION ST,N MARION ST,Mann,28,12,11,HAWTHORN-SPP,Crataegus spp,0.25,Crataegus,HAWTHORN,0.25,2.243,0.867,10,20,20,19458,16432,false,true,true,false,621,true
+1200 N OAK PARK AVE,N OAK PARK AVE,Mann,18,16,9,BUCKEYE-OHIO,Aesculus glabra,0.111,Quercus,OAK,0.278,2.736,0.932,5.5,20,10,6185,6200,false,true,true,false,667,true
+1200 N RIDGELAND AVE,N RIDGELAND AVE,Hatch,28,21,15,MAPLE-NORWAY,Acer platanoides,0.179,Acer,MAPLE,0.321,2.896,0.931,10,25,15,11958,11700,false,true,true,true,666,true
+1200 N TAYLOR AVE,N TAYLOR AVE,Hatch,23,16,12,MAPLE-NORWAY,Acer platanoides,0.174,Acer,MAPLE,0.391,2.631,0.915,18,40,30,18045,17720,false,true,true,true,670,true
+1200 ROSSELL AVE,ROSSELL AVE,Hatch,31,19,14,HONEYLOCUST,Gleditsia triacanthos,0.161,Acer,MAPLE,0.194,2.755,0.922,13,30,20,23582,22796,false,true,false,false,666,true
+1200 WOODBINE AVE,WOODBINE AVE,Mann,26,16,9,MAPLE-NORWAY,Acer platanoides,0.154,Acer,MAPLE,0.346,2.598,0.911,12,30,20,10897,10912,false,true,true,true,669,true
+1300 N AUSTIN BLVD,N AUSTIN BLVD,Hatch,15,8,7,HONEYLOCUST,Gleditsia triacanthos,0.333,Gleditsia,HONEYLOCUST,0.333,1.859,0.809,9,30,20,8266,8116,false,true,true,true,714,true
+1300 N HARLEM AVE,N HARLEM AVE,Mann,14,9,8,CATALPA,Catalpa speciosa,0.214,Aesculus,HORSECHESTNUT,0.286,2.107,0.867,12,20,20,6342,6364,false,true,true,false,675,true
+1400 N AUSTIN BLVD,N AUSTIN BLVD,Hatch,11,9,8,HONEYLOCUST,Gleditsia triacanthos,0.273,Gleditsia,HONEYLOCUST,0.273,2.098,0.86,9,30,20,3868,3880,false,true,true,false,570,true
+1400 N HARLEM AVE,N HARLEM AVE,Mann,12,10,9,HORSECHESTNUT,Aesculus hippocastanum,0.167,Aesculus,HORSECHESTNUT,0.25,2.254,0.889,11.5,30,20,5851,5564,false,true,true,false,666,true
+1500 N AUSTIN BLVD,N AUSTIN BLVD,Hatch,10,6,6,HONEYLOCUST,Gleditsia triacanthos,0.3,Gleditsia,HONEYLOCUST,0.3,1.696,0.8,8.5,20,10,1433,1432,false,true,true,true,661,true
+1500 N HARLEM AVE,N HARLEM AVE,Mann,2,2,2,CATALPA,Catalpa speciosa,0.5,Catalpa,CATALPA,0.5,0.693,0.5,11.5,20,20,785,792,true,false,false,false,671,true
+6000 NORTH AVE,NORTH AVE,Hatch,7,3,3,HONEYLOCUST,Gleditsia triacanthos,0.714,Gleditsia,HONEYLOCUST,0.714,0.796,0.449,3,20,5,785,804,true,false,false,false,714,true
+6000 ROOSEVELT RD,ROOSEVELT RD,Irving,2,2,2,MAPLE-AUTUMN BLAZE,Acer x freemanii,0.5,Acer,MAPLE,0.5,0.693,0.5,4.5,15,7.5,98,104,true,false,false,false,669,true
+6100 ROOSEVELT RD,ROOSEVELT RD,Irving,2,2,2,MAPLE-NORWAY,Acer platanoides,0.5,Acer,MAPLE,0.5,0.693,0.5,7,20,12.5,334,340,true,false,false,false,670,true
+6200 NORTH AVE,NORTH AVE,Hatch,6,4,4,SYCAMORE,Platanus occidentalis,0.333,Platanus,LONDON PLANETREE,0.333,1.33,0.722,5.5,20,10,2710,2708,true,false,false,false,693,true
+6200 ROOSEVELT RD,ROOSEVELT RD,Irving,2,2,2,GINKGO,Ginkgo biloba,0.5,Ginkgo,GINKGO,0.5,0.693,0.5,7,20,12.5,334,336,true,false,false,false,668,true
+6300 NORTH AVE,NORTH AVE,Hatch,6,5,5,APPLE-CRAB SPP,Malus spp,0.333,Malus,APPLE,0.333,1.561,0.778,9,20,15,1119,1116,true,false,false,false,410,true
+6300 ROOSEVELT RD,ROOSEVELT RD,Irving,3,3,3,MAPLE-RED,Acer rubrum,0.333,Acer,MAPLE,0.333,1.099,0.667,3,10,5,59,60,true,false,false,false,670,true
+6400 NORTH AVE,NORTH AVE,Hatch,11,7,7,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.273,Gymnocladus,KENTUCKY COFFEETREE,0.273,1.846,0.826,10,20,20,3868,3908,false,true,true,false,674,true
+6400 ROOSEVELT RD,ROOSEVELT RD,Irving,4,3,3,HONEYLOCUST,Gleditsia triacanthos,0.5,Gleditsia,HONEYLOCUST,0.5,1.04,0.625,6,30,17.5,1453,1456,true,false,false,false,668,true
+6500 NORTH AVE,NORTH AVE,Hatch,10,9,8,HONEYLOCUST,Gleditsia triacanthos,0.2,Gleditsia,HONEYLOCUST,0.2,2.164,0.88,9.5,20,15,2572,2576,false,true,false,false,779,true
+6500 ROOSEVELT RD,ROOSEVELT RD,Irving,2,2,2,KENTUCKY COFFEETREE,Gymnocladus dioicus,0.5,Gymnocladus,KENTUCKY COFFEETREE,0.5,0.693,0.5,8,25,20,628,632,true,false,false,false,666,true
+6600 NORTH AVE,NORTH AVE,Mann,8,6,5,HONEYLOCUST,Gleditsia triacanthos,0.25,Ulmus,ELM,0.375,1.733,0.813,12,25,20,3083,3092,true,false,false,false,659,true
+6600 ROOSEVELT RD,ROOSEVELT RD,Irving,1,1,1,HONEYLOCUST,Gleditsia triacanthos,1,Gleditsia,HONEYLOCUST,1,0,0,10,10,10,79,84,true,false,false,false,669,true
+6700 NORTH AVE,NORTH AVE,Mann,5,5,5,HACKBERRY,Celtis occidentalis,0.2,Celtis,HACKBERRY,0.2,1.609,0.8,15,30,20,2317,2324,true,false,false,false,660,true
+6700 ROOSEVELT RD,ROOSEVELT RD,Lincoln,5,5,4,MAPLE-RED,Acer rubrum,0.2,Quercus,OAK,0.4,1.609,0.8,3,10,5,98,92,true,false,false,false,663,true
+6800 NORTH AVE,NORTH AVE,Mann,11,6,5,ELM-HYBRID,Ulmus x spp,0.364,Ulmus,ELM,0.455,1.642,0.777,7,20,10,4045,4076,false,true,true,true,870,true
+6800 ROOSEVELT RD,ROOSEVELT RD,Lincoln,2,2,2,HONEYLOCUST,Gleditsia triacanthos,0.5,Gleditsia,HONEYLOCUST,0.5,0.693,0.5,6.5,20,15,393,396,true,false,false,false,712,true
+6900 NORTH AVE,NORTH AVE,Mann,17,6,5,ELM-HYBRID,Ulmus x spp,0.353,Ulmus,ELM,0.529,1.599,0.768,10,20,20,8031,7864,false,true,true,true,798,true
+6900 ROOSEVELT RD,ROOSEVELT RD,Lincoln,3,2,2,ELM-HYBRID,Ulmus x spp,0.667,Ulmus,ELM,0.667,0.637,0.444,7,20,10,471,476,true,false,false,false,713,true
+7000 NORTH AVE,NORTH AVE,Mann,15,5,5,ELM-HYBRID,Ulmus x spp,0.4,Ulmus,ELM,0.4,1.437,0.729,7,20,10,1649,1648,false,true,true,true,825,true
+7000 ROOSEVELT RD,ROOSEVELT RD,Lincoln,2,2,2,MAPLE-AUTUMN BLAZE,Acer x freemanii,0.5,Acer,MAPLE,0.5,0.693,0.5,4,15,7.5,98,100,true,false,false,false,763,true
+ELIZABETH CT,ELIZABETH CT,Holmes,4,3,3,OAK-BURR,Quercus macrocarpa,0.5,Quercus,OAK,0.5,1.04,0.625,19.5,40,30,4889,4904,true,false,false,false,,false
+HOME AVE,HOME AVE,Lincoln,1,1,1,OAK-BURR,Quercus macrocarpa,1,Quercus,OAK,1,0,0,4,20,5,20,16,true,false,false,false,,false
+I290 EXPY W,I290 EXPY W,Longfellow,5,2,2,HACKBERRY,Celtis occidentalis,0.8,Celtis,HACKBERRY,0.8,0.5,0.32,14,30,30,4634,4372,true,false,false,false,,false
+S TAYLOR AVE,S TAYLOR AVE,Beye,4,2,2,HAWTHORN-SPP,Crataegus spp,0.75,Crataegus,HAWTHORN,0.75,0.562,0.375,4,10,10,255,248,true,false,false,false,,false
